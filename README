@@ -1,0 +1,17 @@
+Welcome!
+
+This dotfiles repository uses a combination of `git` and GNU `stow`. To use, simply clone:
+
+	cd ~
+    git clone <repo_url>
+    cd <repo_dir>
+
+From inside `~/<repo_dir>`, one may `stow` typical `$HOME` based configurations in the following manner:
+
+    stow i3
+    stow vim
+
+And other configurations as follows:
+
+    stow -t / root
+
