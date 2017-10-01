@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Example IPs
+# Riot Games NA:  104.160.131.3
+# Google DNS:     8.8.8.8
+
+ip=104.160.131.3
+
+result=$(fping -e $ip)
+
+#if [[ $result == *"is unreachable"* ]]; then
+if [[ $result != *"is alive"* ]]; then
+	echo "∞ ms"
+	echo "∞"
+	echo "#ff0000"
+	exit
+fi
+
+ping=$(echo $result | tail -n 1 | perl -pe 's/.+?(\d+)\.?\d* ms.*/\1/')
+
+if (($ping < 30)); then
+	color="#00ff00"
+elif (($ping < 80)); then
+	color="#77ff00"
+elif (($ping < 130)); then
+	color="#ccff00"
+elif (($ping < 180)); then
+	color="#ffff00"
+elif (($ping < 230)); then
+	color="#ff7700"
+elif (($ping < 280)); then
+	color="#ff4400"
+else
+	color="#ff0000"
+fi
+
+echo "$ping""ms"
+echo "$ping"
+echo $color
+

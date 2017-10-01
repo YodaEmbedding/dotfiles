@@ -1,0 +1,9 @@
+#!/bin/sh
+
+VOL=$(qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Volume)
+
+#NEWVOL=$(python -c "import sys; print('{0:.2f}'.format(float(sys.argv[1]) $@))" $VOL)
+NEWVOL=$(python -c "print('{0:.2f}'.format(float($VOL) $@))")
+
+qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Volume $NEWVOL >> /dev/null
+

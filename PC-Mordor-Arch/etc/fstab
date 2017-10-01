@@ -1,0 +1,24 @@
+# 
+# /etc/fstab: static file system information
+#
+# <file system>	<dir>	<type>	<options>	<dump>	<pass>
+# /dev/sda5
+UUID=74efbfd5-7dcd-41fc-b21e-3173ce46b653	/         	ext4      	rw,relatime,data=ordered	0 1
+
+# /dev/sdb5
+UUID=baae547e-1ac3-4f38-86ef-0408c8e5dfdb	none      	swap      	defaults  	0 0
+
+# /dev/sda2
+UUID=94FAFAC0FAFA9E24	/mnt/windows	ntfs-3g	defaults,windows_names,locale=en_US.utf8	0 0
+
+# /dev/sdb1
+UUID=649C40119C3FDBEC	/mnt/data	ntfs-3g	defaults,uid=1000,gid=1000,windows_names,locale=en_US.utf8	0 0
+
+# /dev/sdb2
+UUID=30B6F039B6F000E0	/mnt/data2	ntfs-3g	defaults,uid=1000,gid=1000,windows_names,locale=en_US.utf8	0 0
+
+# Flags:
+# permissions
+# uid=1000,gid=1000,dmask=007,fmask=117
+# uid=1000,gid=1000,dmask=027,fmask=137 https://askubuntu.com/a/113746/6514
+

@@ -1,0 +1,114 @@
+# i3blocks config file
+
+# UNICODE LABELS
+# http://jrgraphix.net/r/Unicode/2600-26FF
+# http://fontawesome.io/cheatsheet/
+# Chess: ♚ ♛ ♜ ♝ ♞ ♟
+
+# Unused properties:
+# short_text
+# full_text
+# name
+# signal
+# urgent
+
+# Global properties
+command=~/.config/i3blocks/scripts/$BLOCK_NAME
+align=center
+markup=none
+separator=false
+separator_block_width=10
+
+# TODO Scrolling should change volume of this
+[gpmdp]
+command=~/.config/i3blocks/scripts/$BLOCK_NAME --layout A-t-p
+label=
+# ♩ ♪ ♫ ♬  𝅗𝅥 𝅘𝅥 𝅘𝅥𝅮 𝅘𝅥𝅯 𝄞 ♯ ♭
+color=#8CE000
+interval=1
+
+[arch-update]
+command=~/.config/i3blocks/scripts/$BLOCK_NAME -q -c 20 -b "#5fff5f" -u "#CCCC55"
+label=
+markup=pango
+interval=86400
+
+#[wifi]
+#instance=enp7s0
+#instance=wlp8s0
+#separator=false
+#interval=10
+
+[bandwidth]
+#label=  # 
+#instance=eth0
+#color=#77FF00
+color=#33AA00
+interval=1
+
+#[iface]
+#label=
+##instance=wlan0
+#color=#77FF00
+#separator=false
+#interval=60
+
+[ping]
+interval=10
+
+[disk]
+label=
+# 
+#instance=/mnt/data
+interval=30
+
+#[disk-io]
+#label=
+#interval=persist
+
+[memory]
+label=
+separator=false
+interval=30
+
+[cpu_usage]
+label=
+min_width="MM%"
+separator=false
+interval=5
+
+[temperature]
+label=∿
+# 
+separator=false
+interval=15
+
+[battery]
+#label=⚡  # 
+markup=pango
+#instance=1
+interval=30
+
+#[volume]
+#label=  # 𝆏 𝆐 𝆑 𝆒 𝆓  △ ▽ ▲ ▼
+#instance=Master  # PCM
+#interval=1
+
+[volume-pulseaudio]
+command=~/.config/i3blocks/scripts/$BLOCK_NAME -a -F3 -t 30 -T 70 -c \#CC3333 -C \#FFCCCC
+#command=~/.config/i3blocks/scripts/$BLOCK_NAME -Sa -F3 -t 30 -T 70 -c \#CC3333 -C \#FFCCCC
+signal=1
+interval=once
+#interval=persist
+
+[calendar]
+command=date '+%Y-%m-%d'; [[ -z "${BLOCK_BUTTON}" ]] || i3-msg exec gsimplecal
+label=
+# 
+interval=1
+
+[time]
+command=date '+%H:%M:%S  '
+#label=  # ⌚⌛ ⏳ ⧗ ⧖
+interval=1
+

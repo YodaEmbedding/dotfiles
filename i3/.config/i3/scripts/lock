@@ -1,0 +1,37 @@
+#!/bin/sh
+
+curr_ws=$(i3-msg -t get_workspaces | jq ".[] | select(.focused==true).name" | cut -d"\"" -f2)
+desired_ws=$1
+wallpaper=$2
+
+# Switch only if not on desired workspace
+# This prevents accidental switching if workspace_auto_back_and_forth is enabled
+if [[ "$curr_ws" != "$desired_ws" ]]; then
+	i3-msg workspace $desired_ws
+fi
+
+## Generic wallpaper
+#i3lock \
+	#--indicator --radius=120 \
+	#--clock --datestr="%a  %m-%d" \
+	#--textsize=36 --timesize=32 --datesize=20 \
+	#--timecolor=223377ff --datecolor=223377ff \
+	#--insidecolor=ffffff55 --line-uses-inside --ringcolor=ffffff77 --separatorcolor=ffffff77 \
+	#-c 333344 -i $wallpaper
+
+# Moon wallpaper
+i3lock \
+	--indpos="x+(0.4741*w):y+(0.230*h)" --radius=273 \
+	--clock --datestr="%a %m-%d" \
+	--datepos="x+ix-(0.5*cw):y+iy-(0.5*ch)+40" \
+	--textsize=36 --timesize=48 --datesize=24 \
+	--timecolor=223377ff --datecolor=223377ff \
+	--insidecolor=ffffff55 --line-uses-inside --ringcolor=ffffff00 --separatorcolor=ffffff77 \
+	-c 333344 -i $wallpaper
+
+# https://github.com/chrjguill/i3lock-color
+	#--timepos="x+ix-(0.5*cw):y+iy-(0.5*ch)" \
+	#--composite \
+	#--textcolor=223377ff \
+	#--insidewrongcolor=ff7777cc \
+

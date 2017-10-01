@@ -1,0 +1,104 @@
+# List available commands
+alias list='compgen -c'
+alias commands='compgen -c'
+
+# Grep
+alias grepi='grep -i'
+alias cgrep='grep --color=always'
+alias ngrep='grep --color=never'
+
+# Listing
+alias ls='ls --color=auto -h --group-directories-first'
+alias lsd='ls -d */'
+alias lsa='ls -a'
+alias lsl='ls -al'
+alias lsg='ls -al | grepi'
+alias lsu='ls --color=none'
+
+# Navigation
+alias ~='cd ~'
+alias up='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../../'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
+
+# Copy paste
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Statistics
+alias perm='stat -c "%a %n"'
+alias class='xprop | grep WM_CLASS'
+
+# Terminal
+alias term='exec xfce4-terminal &'
+
+# emoji
+alias lenny='emoji -lc'
+alias shruggie='emoji -sc'
+
+# redshift
+alias rs4='rs 4000'
+alias rs5='rs 3500'
+
+# Selfspy
+alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
+alias sss='kill -STOP $(pgrep selfspy)'
+alias ssc='kill -CONT $(pgrep selfspy)'
+
+# Disk usage
+alias diskusage='du -sh'
+
+# Sudo
+alias s='sudo'
+alias se='sudo -e'
+
+# Pacman
+alias sp='sudo pacman'
+alias sps='sudo pacman -S'
+
+# AUR Package managers
+alias yaou='yaourt'
+alias yaous='yaourt -S'
+alias yaouq='yaourt -Qs'
+alias pac='pacaur --noedit --noconfirm'
+alias pacs='pac -S'
+alias pacq='pac -Qs'
+
+# Update ~/.locate.db
+alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
+
+# GPG
+alias gpgaddkey="gpg --recv-keys"
+
+# Background
+alias xopen='bgrnd xdg-open'
+alias b='bgrnd'
+alias o='xopen'
+
+# Open thunar
+alias th='bgrnd thunar'
+
+# Config
+alias bashaliases='vim ~/.bash_aliases'
+alias bashrc='vim ~/.bashrc'
+alias vimrc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
+alias i3config='vim ~/.config/i3/config'
+alias i3bconfig='vim ~/.config/i3blocks/config'
+alias pythonstartup='sudo -e /usr/local/share/pythonstartup.py'
+
+# Todo
+alias todo='vim ~/Dropbox/sfu/Current/todo.md'
+
+# WINE
+alias prefix32='env WINEARCH=win32 WINEPREFIX="$HOME/.wine32"'
+alias wine32='env WINEARCH=win32 WINEPREFIX="$HOME/.wine32" wine'
+
+# Buildozer
+alias builddebug='buildozer android debug deploy run'
+alias buildlogcat='buildozer android adb -- logcat -s python'
