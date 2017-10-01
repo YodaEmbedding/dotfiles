@@ -2,7 +2,7 @@ Welcome!
 
 This dotfiles repository uses a combination of `git` and GNU `stow`. To use, simply clone:
 
-	cd ~
+    cd ~
     git clone <repo_url>
     cd <repo_dir>
 

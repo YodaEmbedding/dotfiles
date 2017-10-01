@@ -89,6 +89,9 @@ add-zsh-hook chpwd chpwd_recent_dirs
 setopt extendedglob
 #setopt kshglob
 
+# Style
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS to autocomplete
+
 # Keybindings
 bindkey -v                                              # vim
 #bindkey '^?' backward-delete-char                      # backspace (doesn't work after hitting <esc>i)
@@ -110,6 +113,9 @@ cdd() { cd "$@" && ls; }
 
 # mv then cd then ls
 mvv() { mv "$@" && cdd "$2"; }
+
+# Echo path to file
+fpwd() { echo "$PWD/$@" }
 
 # Run process in background
 # https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out

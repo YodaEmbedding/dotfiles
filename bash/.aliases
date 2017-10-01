@@ -26,9 +26,16 @@ alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 
+# percol
+alias p='percol'
+
 # Copy paste
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'
+
+# Copy path
+alias cpp='pwd | pbcopy'
+alias cppf='fpwd | pbcopy'
 
 # Statistics
 alias perm='stat -c "%a %n"'
@@ -84,7 +91,7 @@ alias o='xopen'
 alias th='bgrnd thunar'
 
 # Config
-alias bashaliases='vim ~/.bash_aliases'
+alias aliases='vim ~/.aliases'
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
 alias zshrc='vim ~/.zshrc'
