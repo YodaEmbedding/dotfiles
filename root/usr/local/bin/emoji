@@ -1,0 +1,52 @@
+#!/usr/bin/env python3
+
+import argparse
+import clipboard
+import sys
+
+emoji = {
+    "disapproval": "ಠ_ಠ",
+    "lenny": "( ͡° ͜ʖ ͡°)",
+    "shruggie": "¯\\_(ツ)_/¯",
+    "thicc": "乇乂T尺卂 丅卄l匸匚"
+}
+
+parser = argparse.ArgumentParser(description='Outputs emoji')
+parser.add_argument('-c', '--copy', dest='copy', action='store_true', help='copy to clipboard')
+parser.add_argument('-e', '--escape', dest='escape', action='store_true', help='escape backslashes')
+parser.add_argument('-m', '--markdown', dest='markdown', action='store_true',
+        help='escaping for markdown (escapes \\ * _ ^)')
+parser.add_argument('-d', '--disapproval', dest='disapproval', action='store_true', help='disapproval')
+parser.add_argument('-l', '--lenny', dest='lenny', action='store_true', help='lenny')
+parser.add_argument('-s', '--shruggie', dest='shruggie', action='store_true', help='shruggie')
+parser.add_argument('-t', '--thicc', dest='thicc', action='store_true', help='thicc')
+args = parser.parse_args()
+
+name = ''
+value = ''
+
+if args.disapproval: name = 'disapproval'
+if args.lenny: name = 'lenny'
+if args.shruggie: name = 'shruggie'
+if args.thicc: name = 'thicc'
+
+if name == '':
+    print('Run emoji -h for help')
+    sys.exit(0)
+
+value = emoji[name]
+
+if args.escape or args.markdown:
+    value = value.replace('\\', '\\\\')
+
+if args.markdown:
+    value = value.replace('_', '\\_')
+    value = value.replace('*', '\\*')
+    value = value.replace('^', '\\^')
+
+print(value)
+
+if args.copy:
+    clipboard.copy(value)
+    print('Copied!')
+

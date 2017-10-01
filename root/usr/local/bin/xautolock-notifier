@@ -1,0 +1,29 @@
+#!/bin/bash -i
+
+# TODO Alternatively, use analyse-gamma and LUT
+# Get temperature
+temp=$(analyse-gamma | grep temperature: | grep -oP "\d+" -m 1)
+
+# Remap using LUT
+temp=$(cat /usr/local/share/gamma_lut.csv | grep -P "\d+,$temp" | grep -oP "^\d+")
+
+echo $temp
+
+## TODO Shouldn't this only work on the current session? (clear ~/.rshift at end of session?)
+## Get temperature
+#temp=$(cat ~/.rshift)
+
+# Reduce brightness
+exec redshift -O $temp -b 0.3 &
+
+end=$((SECONDS + 5))
+
+# Wait for 5 seconds or if user is no longer idle
+while [ $SECONDS -lt $end ] && [ $(xprintidle) -gt 1000 ]; do
+	sleep 0.1
+done
+
+# Revert brightness
+killall redshift
+exec redshift -O $temp -b 1.0 &
+
