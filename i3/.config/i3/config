@@ -4,20 +4,20 @@
 set $mod Mod4
 
 
-# USER VARIABLES
+### USER VARIABLES ###
 
 # Named workspaces
 #          
-set $ws1  "1:"
-set $ws2  "2:"
-set $ws3  "3:"
-set $ws4  "4:"
-set $ws5  "5:5"
-set $ws6  "6:6"
-set $ws7  "7:7"
-set $ws8  "8:8"
-set $ws9  "9:9"
-set $ws10 "10:"
+set $ws1   "1:"
+set $ws2   "2:"
+set $ws3   "3:"
+set $ws4   "4:"
+set $ws5   "5:5"
+set $ws6   "6:6"
+set $ws7   "7:7"
+set $ws8   "8:8"
+set $ws9   "9:9"
+set $ws10  "10:"
 set $ws666 "666: 666 "
 
 # Keypad keycodes
@@ -33,114 +33,110 @@ set $KP_9 81
 set $KP_0 90
 
 # Page up/down
-set $PG_UP 112
+set $PG_UP   112
 set $PG_DOWN 117
 
 # Wallpaper paths
-set $wallpaper /usr/share/backgrounds/000current.jpg
+set $wallpaper      /usr/share/backgrounds/000current.jpg
 set $lock_wallpaper /usr/share/backgrounds/001current.png
 
 # Common style options
-set $rofi_style -lines 10 -hide-scrollbar -separator-style none -line-padding 4 -bw 2 -font 'Roboto Mono 14' -kb-row-select 'Tab' -kb-row-tab ''
+set $rofi_style     -lines 10 -hide-scrollbar -separator-style none -line-padding 4 -bw 2 -font 'Roboto Mono 14' -kb-row-select 'Tab' -kb-row-tab ''
 
 # File search locations
-# (run sudo updatedb beforehand and make sure /etc/updatedb.conf doesn't exclude useful directories)
-set $locate_dirs $HOME/Desktop $HOME/Downloads /mnt/data/
+# Run this to update database:  updatedb --require-visibility 0 -o ~/.locate.db
+set $locate_dirs    $HOME/Desktop $HOME/Downloads /mnt/data/
 
 
-# DEFAULT BINDINGS
+### DEFAULT BINDINGS ###
 
 # Kill window
-bindsym $mod+Shift+q kill
+bindsym $mod+Shift+q            kill
 
 # Terminal
-bindsym $mod+Return exec termite
-
-# dmenu
-# bindsym $mod+d exec dmenu_run
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -l 10'
+bindsym $mod+Return             exec termite
 
 # Focus window
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h                  focus left
+bindsym $mod+j                  focus down
+bindsym $mod+k                  focus up
+bindsym $mod+l                  focus right
 
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left               focus left
+bindsym $mod+Down               focus down
+bindsym $mod+Up                 focus up
+bindsym $mod+Right              focus right
 
 # Move window
-bindsym $mod+Shift+h move left
-bindsym $mod+Shift+j move down
-bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h            move left
+bindsym $mod+Shift+j            move down
+bindsym $mod+Shift+k            move up
+bindsym $mod+Shift+l            move right
 
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left         move left
+bindsym $mod+Shift+Down         move down
+bindsym $mod+Shift+Up           move up
+bindsym $mod+Shift+Right        move right
 
 # Split
-bindsym $mod+semicolon split h
-bindsym $mod+v split v
+bindsym $mod+semicolon          split h
+bindsym $mod+v                  split v
 
 # Fullscreen
-bindsym $mod+f fullscreen toggle
+bindsym $mod+f                  fullscreen toggle
 
 # Layout
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+s layout           stacking
+bindsym $mod+w layout           tabbed
+bindsym $mod+e layout           toggle split
 
 # Floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+space        floating toggle
 
 # Focus floating
-bindsym $mod+space focus mode_toggle
+bindsym $mod+space              focus mode_toggle
 
 # Focus parent
-bindsym $mod+a focus parent
+bindsym $mod+a                  focus parent
 
 # Focus child
-bindsym $mod+Shift+a focus child
+bindsym $mod+Shift+a            focus child
 
 # Workspace switching
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
+bindsym $mod+1                  workspace $ws1
+bindsym $mod+2                  workspace $ws2
+bindsym $mod+3                  workspace $ws3
+bindsym $mod+4                  workspace $ws4
+bindsym $mod+5                  workspace $ws5
+bindsym $mod+6                  workspace $ws6
+bindsym $mod+7                  workspace $ws7
+bindsym $mod+8                  workspace $ws8
+bindsym $mod+9                  workspace $ws9
+bindsym $mod+0                  workspace $ws10
 
 # Workspace switching (keypad) (USER)
-bindsym $mod+Mod2+KP_1 workspace $ws1
-bindsym $mod+Mod2+KP_2 workspace $ws2
-bindsym $mod+Mod2+KP_3 workspace $ws3
-bindsym $mod+Mod2+KP_4 workspace $ws4
-bindsym $mod+Mod2+KP_5 workspace $ws5
-bindsym $mod+Mod2+KP_6 workspace $ws6
-bindsym $mod+Mod2+KP_7 workspace $ws7
-bindsym $mod+Mod2+KP_8 workspace $ws8
-bindsym $mod+Mod2+KP_9 workspace $ws9
-bindsym $mod+Mod2+KP_0 workspace $ws10
+bindsym $mod+Mod2+KP_1          workspace $ws1
+bindsym $mod+Mod2+KP_2          workspace $ws2
+bindsym $mod+Mod2+KP_3          workspace $ws3
+bindsym $mod+Mod2+KP_4          workspace $ws4
+bindsym $mod+Mod2+KP_5          workspace $ws5
+bindsym $mod+Mod2+KP_6          workspace $ws6
+bindsym $mod+Mod2+KP_7          workspace $ws7
+bindsym $mod+Mod2+KP_8          workspace $ws8
+bindsym $mod+Mod2+KP_9          workspace $ws9
+bindsym $mod+Mod2+KP_0          workspace $ws10
 
 # Move to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1;  workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2;  workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3;  workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4;  workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5;  workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6;  workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7;  workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8;  workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9;  workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10; workspace $ws10
+bindsym $mod+Shift+1            move container to workspace $ws1;  workspace $ws1
+bindsym $mod+Shift+2            move container to workspace $ws2;  workspace $ws2
+bindsym $mod+Shift+3            move container to workspace $ws3;  workspace $ws3
+bindsym $mod+Shift+4            move container to workspace $ws4;  workspace $ws4
+bindsym $mod+Shift+5            move container to workspace $ws5;  workspace $ws5
+bindsym $mod+Shift+6            move container to workspace $ws6;  workspace $ws6
+bindsym $mod+Shift+7            move container to workspace $ws7;  workspace $ws7
+bindsym $mod+Shift+8            move container to workspace $ws8;  workspace $ws8
+bindsym $mod+Shift+9            move container to workspace $ws9;  workspace $ws9
+bindsym $mod+Shift+0            move container to workspace $ws10; workspace $ws10
 
 # Move to workspace (keypad) (USER)
 bindsym $mod+Shift+Mod2+KP_End    move container to workspace $ws1
@@ -154,182 +150,164 @@ bindsym $mod+Shift+Mod2+KP_Up     move container to workspace $ws8
 bindsym $mod+Shift+Mod2+KP_Prior  move container to workspace $ws9
 bindsym $mod+Shift+Mod2+KP_Insert move container to workspace $ws10
 
-# Reload configuration file
-bindsym $mod+Shift+c reload
-
-# Restart i3
-bindsym $mod+Shift+r restart
+# Restart/reload i3
+bindsym $mod+Shift+r            restart  # Restarting is VERY fast. Use it.
+bindsym $mod+Shift+c            reload
 
 # Exit i3
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window
-bindsym $mod+r mode "resize"
+bindsym $mod+r                  mode "resize"
 
 
-# USER BINDINGS
+### USER BINDINGS ###
 
 # Mouse (scroll wheel) bindings
-bindsym --whole-window --border $mod+Button4 workspace prev
-bindsym --whole-window --border $mod+Button5 workspace next
-bindsym --whole-window --border $mod+Shift+Button4 focus left
-bindsym --whole-window --border $mod+Shift+Button5 focus right
-bindsym --whole-window --border $mod+Ctrl+Button4 exec amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym --whole-window --border $mod+Ctrl+Button5 exec amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
-bindsym --border Button2 kill
+bindsym --whole-window --border $mod+Button4        workspace prev
+bindsym --whole-window --border $mod+Button5        workspace next
+bindsym --whole-window --border $mod+Shift+Button4  focus left
+bindsym --whole-window --border $mod+Shift+Button5  focus right
+bindsym --whole-window --border $mod+Ctrl+Button4   exec amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
+bindsym --whole-window --border $mod+Ctrl+Button5   exec amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
+bindsym --border                Button2             kill
 
-# Urgent window (NEW)
-bindsym $mod+x [urgent=latest] focus
+# Jump to urgent window
+bindsym $mod+x                  [urgent=latest] focus
 
 # Gaps
-bindsym $mod+period gaps inner all plus 5
-bindsym $mod+Shift+period gaps inner all minus 5
-
-bindsym $mod+slash gaps outer all plus 5
-bindsym $mod+Shift+slash gaps outer all minus 5
+bindsym $mod+period             gaps inner all plus 5
+bindsym $mod+Shift+period       gaps inner all minus 5
+bindsym $mod+slash              gaps outer all plus 5
+bindsym $mod+Shift+slash        gaps outer all minus 5
 
 # Cycle border
-bindsym $mod+b border toggle
+bindsym $mod+b                  border toggle
 
 # Next/previous windows
-bindsym Mod1+Tab focus right
-bindsym Mod1+Shift+Tab focus left
+bindsym Mod1+Tab focus          right
+bindsym Mod1+Shift+Tab          focus left
 
 # TODO
 # Alt+tab style window switching back/forth
-bindsym Mod1+grave focus right
+bindsym Mod1+grave              focus right
 
 # Workspace switching/cycling next/previous
-bindsym $mod+Tab workspace next
-bindsym $mod+Shift+Tab workspace prev
+bindsym $mod+Tab                workspace next
+bindsym $mod+Shift+Tab          workspace prev
 
 # Workspace switch back/forth
-bindsym $mod+grave workspace back_and_forth
+bindsym $mod+grave              workspace back_and_forth
 
 # Lock
-#bindsym $mod+Shift+x exec xautolock -locknow
-#bindsym $mod+Shift+x exec i3workspace $ws666, \
-#    exec i3lock -k --indicator --datestr="%a  %m-%d" --radius=120 \
-#        --textsize=36 --datesize=20 --timecolor=112266cc \
-#        --insidecolor=ffffff33 --linecolor=ffffff33 --ringcolor=ffffff77 \
-#        --line-uses-inside --separatorcolor=ffffff77 -c 555555 \
-#        -i /usr/share/backgrounds/000current.png
-bindsym $mod+Shift+x exec ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
-
-# Task manager
-bindsym Mod1+Ctrl+Delete exec ksysguard, workspace 10
-
-# Volume control
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMute exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
-
-bindsym $mod+z exec amixer set Master 5%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+z exec amixer set Master 5%- && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Ctrl+Shift+z exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
-
-bindsym $mod+comma exec amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+comma exec amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
-
-# Media control
-bindsym XF86AudioPlay exec playerctl play-pause
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl prev
-
-bindsym $mod+Ctrl+z exec playerctl play-pause
-
-# GPMDP control
-bindsym $mod+Mod1+ctrl+z exec qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+Mod1+z exec ~/.config/i3/scripts/gpmdp_vol + 0.05
-bindsym $mod+Mod1+shift+z exec ~/.config/i3/scripts/gpmdp_vol - 0.05
+bindsym $mod+Shift+x            exec ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
 
 # Center floating fullscreen window
-bindsym $mod+ctrl+c move position +0+0
+bindsym $mod+ctrl+c             move position +0+0
+
+# Task manager
+bindsym Mod1+Ctrl+Delete        exec ksysguard, workspace 10
+
+# Volume control
+bindsym XF86AudioLowerVolume    exec amixer set Master 5%- && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume    exec amixer set Master 5%+ && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioMute           exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
+
+bindsym $mod+z                  exec amixer set Master 5%+ && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+z            exec amixer set Master 5%- && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Ctrl+Shift+z       exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
+
+bindsym $mod+comma              exec amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+comma        exec amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
+
+# Media control
+bindsym XF86AudioPlay           exec playerctl play-pause
+bindsym XF86AudioPause          exec playerctl pause
+bindsym XF86AudioNext           exec playerctl next
+bindsym XF86AudioPrev           exec playerctl prev
+
+bindsym $mod+Ctrl+z             exec playerctl play-pause
+
+# GPMDP control
+bindsym $mod+Mod1+ctrl+z        exec qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+Mod1+z             exec ~/.config/i3/scripts/gpmdp_vol + 0.05
+bindsym $mod+Mod1+shift+z       exec ~/.config/i3/scripts/gpmdp_vol - 0.05
 
 # YouTube windowed fullscreen
-bindsym $mod+y exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
+bindsym $mod+y                  exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
 
 # YouTube popout
-bindsym $mod+Shift+y floating enable, resize set 800 600, sticky enable; exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
+bindsym $mod+Shift+y            floating enable, resize set 800 600, sticky enable; exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
 
-# Python terminal
-bindsym $mod+p exec termite -e python -t "python"
-
-# Floating python (calculator)
-bindsym $mod+Shift+p exec termite -e python -t "floating python"
-bindsym $mod+c exec termite -e python -t "floating python"
+# Python terminal (i.e. calculator)
+bindsym $mod+p                  exec termite -e python -t "python"
+bindsym $mod+Shift+p            exec termite -e python -t "floating python"
+bindsym $mod+c                  exec termite -e python -t "floating python"
 
 # Redshift control
-bindsym $mod+m exec --no-startup-id rs $(($(cat ~/.rshift) + 200))
-bindsym $mod+Shift+m exec --no-startup-id rs $(($(cat ~/.rshift) - 200))
-bindsym $mod+Ctrl+m exec --no-startup-id rs 4000
-bindsym $mod+Ctrl+Shift+m exec --no-startup-id rs 6500
+bindsym $mod+m                  exec --no-startup-id rs $(($(cat ~/.rshift) + 200))
+bindsym $mod+Shift+m            exec --no-startup-id rs $(($(cat ~/.rshift) - 200))
+bindsym $mod+Ctrl+m             exec --no-startup-id rs 4000
+bindsym $mod+Ctrl+Shift+m       exec --no-startup-id rs 6500
 
 # Thunar
-bindsym $mod+t exec thunar
+bindsym $mod+t                  exec thunar
 
-# rofi
-bindsym $mod+q exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
+# rofi (app launcher)
+bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
 
-# rofi sudo
-bindsym $mod+Ctrl+q exec "rofi -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}' -p 'run (sudo):' $rofi_style"
+# rofi (sudo app launcher)
+bindsym $mod+Ctrl+q             exec "rofi -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}' -p 'run (sudo):' $rofi_style"
 
-# rofi goto window
-# i3-msg -t get_tree  then use  i3-msg '[con_id="123456789"] focus'
-# wmctrl -l           then use  i3-msg '[id="0x12345678"] focus'
-#bindsym $mod+shift+d exec "rofi -combi-modi window -show combi -modi combi -p 'window:' $rofi_style"
-bindsym $mod+shift+d exec "wmctrl -l | rofi -dmenu -i -p 'window:' $rofi_style | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
+# rofi (goto window)
+bindsym $mod+shift+d            exec "wmctrl -l | rofi -dmenu -i -p 'window:' $rofi_style | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
-# File search
-bindsym $mod+d exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -0 xdg-open"
-
-## TEST
-#bindsym $mod+Shift+Return "layout tabbed, exec termite, exec termite, exec termite, move right, exec termite, layout splitv, focus left, layout splitv"
+# rofi (file search)
+bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -0 xdg-open"
 
 
-# DEFAULT MODES
+### DEFAULT MODES ###
 
 # Resize window
 mode "resize" {
-        bindsym h          resize shrink width   10 px or  10 ppt
-        bindsym j          resize grow   height  10 px or  10 ppt
-        bindsym k          resize shrink height  10 px or  10 ppt
-        bindsym l          resize grow   width   10 px or  10 ppt
+    bindsym h          resize shrink width   10 px or  10 ppt
+    bindsym j          resize grow   height  10 px or  10 ppt
+    bindsym k          resize shrink height  10 px or  10 ppt
+    bindsym l          resize grow   width   10 px or  10 ppt
 
-        bindsym Left       resize shrink width   10 px or  10 ppt
-        bindsym Down       resize grow   height  10 px or  10 ppt
-        bindsym Up         resize shrink height  10 px or  10 ppt
-        bindsym Right      resize grow   width   10 px or  10 ppt
+    bindsym Left       resize shrink width   10 px or  10 ppt
+    bindsym Down       resize grow   height  10 px or  10 ppt
+    bindsym Up         resize shrink height  10 px or  10 ppt
+    bindsym Right      resize grow   width   10 px or  10 ppt
 
-        bindsym Ctrl+h     resize shrink width  100 px or 100 ppt
-        bindsym Ctrl+j     resize grow   height 100 px or 100 ppt
-        bindsym Ctrl+k     resize shrink height 100 px or 100 ppt
-        bindsym Ctrl+l     resize grow   width  100 px or 100 ppt
+    bindsym Ctrl+h     resize shrink width  100 px or 100 ppt
+    bindsym Ctrl+j     resize grow   height 100 px or 100 ppt
+    bindsym Ctrl+k     resize shrink height 100 px or 100 ppt
+    bindsym Ctrl+l     resize grow   width  100 px or 100 ppt
 
-        bindsym Ctrl+Left  resize shrink width  100 px or 100 ppt
-        bindsym Ctrl+Down  resize grow   height 100 px or 100 ppt
-        bindsym Ctrl+Up    resize shrink height 100 px or 100 ppt
-        bindsym Ctrl+Right resize grow   width  100 px or 100 ppt
+    bindsym Ctrl+Left  resize shrink width  100 px or 100 ppt
+    bindsym Ctrl+Down  resize grow   height 100 px or 100 ppt
+    bindsym Ctrl+Up    resize shrink height 100 px or 100 ppt
+    bindsym Ctrl+Right resize grow   width  100 px or 100 ppt
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 
-# USER MODES
+### USER MODES ###
 
 # TODO
 
 
-# USER CUSTOMIZATIONS
+### USER CUSTOMIZATIONS ###
 
-font pango:Noto Mono Regular, Awesome 8
-floating_modifier $mod
-focus_follows_mouse no
-hide_edge_borders smart
+font                          pango:Noto Mono Regular, Awesome 8
+floating_modifier             $mod
+focus_follows_mouse           no
+hide_edge_borders             smart
 workspace_auto_back_and_forth yes
-workspace_layout tabbed
+workspace_layout              tabbed
 
 # Colors
 # class                 border  backgr. text    indicator child_border
@@ -359,67 +337,53 @@ assign [class="Vlc"]                              → $ws4
 assign [class="ksysguard"]                        → $ws10
 
 
-# USER BAR
+### USER BAR ###
 
 bar {
-	#status_command i3status
-	status_command i3blocks
+    #status_command i3status
+    status_command i3blocks
 
-	font pango:FontAwesome 10
-	#font pango:Noto Mono Bold 8, FontAwesome 8
-	#font pango:Noto Mono Regular, FontAwesome 8
-	#font pango:DejaVu Sans Mono, FontAwesome 8
+    font pango:FontAwesome 10
 
-	position top
-	#separator_symbol "|"
-	strip_workspace_numbers yes
-	#tray_output primary
+    position top
+    strip_workspace_numbers yes
 
-	colors {
-		background #220000
-		statusline #ffcccc
-		separator  #662222
-		focused_workspace  #884422 #441122 #ffffff #442211   #442211
-		active_workspace   #333333 #5f676a #ffffff #333333   #333333
-		inactive_workspace #333333 #222222 #888888 #292d2e   #222222
-		urgent_workspace   #2f343a #900000 #ffffff #900000   #900000
-		binding_mode       #2f343a #900000 #ffffff #900000   #900000
-	}
+    colors {
+        background         #220000
+        statusline         #ffcccc
+        separator          #662222
+
+        # class            border  backgr. text    indicator child_border
+        focused_workspace  #884422 #441122 #ffffff #442211  #442211
+        active_workspace   #333333 #5f676a #ffffff #333333  #333333
+        inactive_workspace #333333 #222222 #888888 #292d2e  #222222
+        urgent_workspace   #2f343a #900000 #ffffff #900000  #900000
+        binding_mode       #2f343a #900000 #ffffff #900000  #900000
+    }
 }
 
 
-# USER STARTUP
+### USER STARTUP ###
 
 # System
-# TODO Vary these settings depending on system name (PC-Mordor vs Y570)
-exec xmodmap ~/.Xmodmap
-exec xset led on
-# TODO: Actually set these in system configs
-# exec xinput --set-prop 9 'libinput Accel Speed' -0.125
-# exec xinput --set-prop 9 'libinput Accel Speed' 0
-exec_always xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
-
-# Power settings
-# xset -dpms
-# xset s off
-
-# Disable annoying mouse-keys!
-# exec_always xkbset -m
+exec        --no-startup-id     xmodmap ~/.Xmodmap
+exec        --no-startup-id     xset led on
+exec_always --no-startup-id     xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
 
 # Fast startup
-exec --no-startup-id compton
-exec --no-startup-id dunst
-exec_always --no-startup-id feh --bg-scale $wallpaper
+exec        --no-startup-id     compton
+exec        --no-startup-id     dunst
+exec_always --no-startup-id     feh --bg-scale $wallpaper
 
 # Medium startup
-exec --no-startup-id rescuetime
-exec --no-startup-id screencloud
-# exec --no-startup-id selfspy
-exec --no-startup-id sspy
-exec --no-startup-id tilda
+exec        --no-startup-id     rescuetime
+exec        --no-startup-id     screencloud
+# exec      --no-startup-id     selfspy
+exec        --no-startup-id     sspy
+exec        --no-startup-id     tilda
 
 # Slow startup
-exec --no-startup-id dropbox
+exec        --no-startup-id     dropbox
 
 
 # TODO
