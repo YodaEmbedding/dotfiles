@@ -29,6 +29,10 @@ alias ........='cd ../../../../../../..'
 # percol
 alias p='percol'
 
+# vim
+#alias vi='/usr/bin/vim'
+alias vim='nvim'
+
 # Copy paste
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'

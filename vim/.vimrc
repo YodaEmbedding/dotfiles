@@ -349,3 +349,7 @@ cmap w!! w !sudo tee > /dev/null %
 "Free:
 "    Normal: Space
 
+" TODO
+" Compton transparency causes laggy page up/down
+
+
