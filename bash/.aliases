@@ -94,6 +94,9 @@ alias o='xopen'
 # Open thunar
 alias th='bgrnd thunar'
 
+# qimgv
+alias qimg='bgrnd qimgv ./'
+
 # Config
 alias aliases='vim ~/.aliases'
 alias bashrc='vim ~/.bashrc'
