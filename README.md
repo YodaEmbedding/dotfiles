@@ -41,7 +41,6 @@ List of configs, which directories these belong in, and other details.
 | root           | `/`            | Personal scripts (e.g. `emoji` clipboard copier) |
 | termite        | `$HOME`        |                |
 | vim            | `$HOME`        |                |
-| xinit          | `$HOME`        | Default. I don't know why I included it in my dotfiles... |
 | xmodmap        | `$HOME`        | Keyboard remappings (e.g. Caps Lock -> Escape) |
 | zsh            | `$HOME`        |                |
 
