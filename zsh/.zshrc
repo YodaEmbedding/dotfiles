@@ -82,6 +82,8 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
+# Rename files using zmv 'test(*).png' '$1.png'
+autoload zmv
 
 # SECTION: MISCELLANEOUS CONFIGURATIONS
 
@@ -101,6 +103,7 @@ bindkey '^ ' autosuggest-accept                         #
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
 #bindkey '^x^b' anyframe-widget-checkout-git-branch     #
 #bindkey '^r' anyframe-widget-execute-history           # Execute history command
+bindkey '^f' anyframe-widget-insert-filename
 #bindkey '^xe' anyframe-widget-insert-git-branch        #
 bindkey '^k' anyframe-widget-kill                       # Kill process
 bindkey '^r' anyframe-widget-put-history                # Recall history command
@@ -130,4 +133,8 @@ bgrnd() {
 
 # redshift
 # rs() { echo "$1" > ~/.rshift && redshift -O "$1"; }
+
+# TODO
+
+# fasd (similar to autojump but with shell commands): https://github.com/clvv/fasd
 
