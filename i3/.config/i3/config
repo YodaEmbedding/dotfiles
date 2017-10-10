@@ -31,7 +31,21 @@ set $KP_8 80
 set $KP_9 81
 set $KP_0 90
 
-# Page up/down
+# Function key keycodes
+set $F1  62
+set $F2  63
+set $F3  64
+set $F4  65
+set $F5  66
+set $F6  67
+set $F7  68
+set $F8  69
+set $F9  70
+set $F10 71
+set $F11 72
+set $F12 73
+
+# Page up/down keycodes
 set $PG_UP   112
 set $PG_DOWN 117
 
@@ -125,6 +139,12 @@ bindsym $mod+Mod2+KP_8          workspace $ws8
 bindsym $mod+Mod2+KP_9          workspace $ws9
 bindsym $mod+Mod2+KP_0          workspace $ws10
 
+# Workspace switching (F-keys) (USER)
+bindsym $mod+F1                 workspace $ws5
+bindsym $mod+F2                 workspace $ws6
+bindsym $mod+F3                 workspace $ws7
+bindsym $mod+F4                 workspace $ws8
+
 # Move to workspace
 bindsym $mod+Shift+1            move container to workspace $ws1;  workspace $ws1
 bindsym $mod+Shift+2            move container to workspace $ws2;  workspace $ws2
@@ -148,6 +168,12 @@ bindsym $mod+Shift+Mod2+KP_Home   move container to workspace $ws7
 bindsym $mod+Shift+Mod2+KP_Up     move container to workspace $ws8
 bindsym $mod+Shift+Mod2+KP_Prior  move container to workspace $ws9
 bindsym $mod+Shift+Mod2+KP_Insert move container to workspace $ws10
+
+# Workspace switching (F-keys) (USER)
+bindsym $mod+Shift+F1           move container to workspace $ws5;  workspace $ws5
+bindsym $mod+Shift+F2           move container to workspace $ws6;  workspace $ws6
+bindsym $mod+Shift+F3           move container to workspace $ws7;  workspace $ws7
+bindsym $mod+Shift+F4           move container to workspace $ws8;  workspace $ws8
 
 # Restart/reload i3
 bindsym $mod+Shift+r            restart  # Restarting is VERY fast. Use it.
@@ -200,6 +226,9 @@ bindsym $mod+Shift+Tab          move container to workspace next; workspace next
 
 # Workspace switch back/forth
 bindsym $mod+grave              workspace back_and_forth
+
+# Workspace switch back/forth and move
+bindsym $mod+shift+grave        move container to workspace back_and_forth; workspace back_and_forth
 
 # Lock
 bindsym $mod+Shift+x            exec ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
