@@ -31,7 +31,16 @@ alias p='percol'
 
 # vim
 #alias vi='/usr/bin/vim'
+alias v='nvim'
 alias vim='nvim'
+
+# git
+alias ga='git add'
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcm='git commit -m'
+alias gd='git diff'
+alias gst='git status'
 
 # Copy paste
 alias pbcopy='xclip -selection c'
