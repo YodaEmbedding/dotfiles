@@ -109,6 +109,9 @@ alias pythonstartup='sudo -e /usr/local/share/pythonstartup.py'
 # Todo
 alias todo='vim ~/Dropbox/sfu/Current/todo.md'
 
+# GNU Parallel - Remove annoying citation message...
+alias parallel='parallel --will-cite'
+
 # WINE
 alias prefix32='env WINEARCH=win32 WINEPREFIX="$HOME/.wine32"'
 alias wine32='env WINEARCH=win32 WINEPREFIX="$HOME/.wine32" wine'
