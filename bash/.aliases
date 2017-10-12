@@ -3,21 +3,15 @@ alias list='compgen -c'
 alias commands='compgen -c'
 
 # Grep
-alias grepi='grep -i'
-alias cgrep='grep --color=always'
-alias ngrep='grep --color=never'
+alias g='grep -i'
 
 # Listing
 alias ls='ls --color=auto -h --group-directories-first'
 alias lsd='ls -d */'
-alias lsa='ls -a'
 alias lsl='ls -al'
-alias lsg='ls -al | grepi'
-alias lsu='ls --color=none'
+alias lsg='ls -al | g'
 
 # Navigation
-alias ~='cd ~'
-alias up='cd ..'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../../'
@@ -30,7 +24,6 @@ alias ........='cd ../../../../../../..'
 alias p='percol'
 
 # vim
-#alias vi='/usr/bin/vim'
 alias v='nvim'
 alias vim='nvim'
 
@@ -48,27 +41,16 @@ alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'
 
 # Statistics
-alias perm='stat -c "%a %n"'
 alias class='xprop | grep WM_CLASS'
-
-# Terminal
-alias term='exec xfce4-terminal &'
+alias diskusage='du -sh'
+alias perm='stat -c "%a %n"'
 
 # emoji
 alias lenny='emoji -lc'
 alias shruggie='emoji -sc'
 
-# redshift
-alias rs4='rs 4000'
-alias rs5='rs 3500'
-
 # Selfspy
 alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
-alias sss='kill -STOP $(pgrep selfspy)'
-alias ssc='kill -CONT $(pgrep selfspy)'
-
-# Disk usage
-alias diskusage='du -sh'
 
 # Sudo
 alias s='sudo'
@@ -78,13 +60,12 @@ alias se='sudo -e'
 alias sp='sudo pacman'
 alias sps='sudo pacman -S'
 
-# AUR Package managers
-alias yaou='yaourt'
-alias yaous='yaourt -S'
-alias yaouq='yaourt -Qs'
+# AUR Package managers: yaourt
+alias yao='yaourt'
+
+# AUR Package managers: pacaur
 alias pac='pacaur --noedit --noconfirm'
 alias pacs='pac -S'
-alias pacq='pac -Qs'
 
 # Update ~/.locate.db
 alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
@@ -92,16 +73,12 @@ alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
 # GPG
 alias gpgaddkey="gpg --recv-keys"
 
-# Background
-alias xopen='bgrnd xdg-open'
+# File opening
 alias b='bgrnd'
-alias o='xopen'
+alias o='bgrnd xdg-open'
 
-# Open thunar
+# Thunar
 alias th='bgrnd thunar'
-
-# qimgv
-alias qimg='bgrnd qimgv ./'
 
 # Config
 alias aliases='vim ~/.aliases'
@@ -118,10 +95,7 @@ alias todo='vim ~/Dropbox/sfu/Current/todo.md'
 # GNU Parallel - Remove annoying citation message...
 alias parallel='parallel --will-cite'
 
-# WINE
-alias prefix32='env WINEARCH=win32 WINEPREFIX="$HOME/.wine32"'
-alias wine32='env WINEARCH=win32 WINEPREFIX="$HOME/.wine32" wine'
-
 # Buildozer
 alias builddebug='buildozer android debug deploy run'
 alias buildlogcat='buildozer android adb -- logcat -s python'
+
