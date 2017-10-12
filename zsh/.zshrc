@@ -95,11 +95,12 @@ bindkey '^r' anyframe-widget-put-history                # Recall history command
 # Echo path to file
 pwdf() { echo "$PWD/$@" }
 
+# NOTE This isn't actually really needed because of $OLDPWD
 # Save path to working directory
-spwd() { SPWD=$PWD }
+spwd() { s=$PWD }
 
 # Save path to file
-spwdf() { SPWDF=$(pwdf) }
+spwdf() { s=$(pwdf) }
 
 # Run process in background
 # https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
