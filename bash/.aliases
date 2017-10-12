@@ -47,10 +47,6 @@ alias gst='git status'
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'
 
-# Copy path
-alias cpp='pwd | pbcopy'
-alias cppf='fpwd | pbcopy'
-
 # Statistics
 alias perm='stat -c "%a %n"'
 alias class='xprop | grep WM_CLASS'

@@ -3,10 +3,9 @@
 
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
-#[[ -o login ]] && return
 
 
-# SECTION: ZPLUG
+### SECTION: ZPLUG ###
 
 source ~/.zplug/init.zsh
 
@@ -29,15 +28,6 @@ zplug 'rupa/z', use:'*.sh'                                  # Navigate to most u
 #zplug "zsh-users/zsh-history-substring-search", defer:3    #
 #zplug "zsh-users/zsh-syntax-highlighting", defer:3         #
 
-# TODO fuzzy searching fzf, peco, percol, ...
-
-#zplug "junegunn/fzf-bin", \
-#    from:gh-r, \
-#    at:0.11.0, \
-#    as:command, \
-#    use:"*darwin*amd64*", \
-#    rename-to:fzf
-
 # THEMES
 #zplug "agnoster/agnoster-zsh-theme", from:oh-my-zsh, as:theme
 #zplug "halfo/lambda-mod-zsh-theme", as:theme
@@ -47,17 +37,11 @@ zplug "sindresorhus/pure", use:pure.zsh, as:theme
 
 # PLUGIN CONFIGURATION
 PURE_PROMPT_SYMBOL=λ
-#PROMPT="%(?.%F{yellow}.%F{red})${PURE_PROMPT_SYMBOL:-λ}%f "
 _Z_CMD=j
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
 	zplug install
-
-	#printf "Install? [y/N]: "
-	#if read -q; then
-		#echo; zplug install
-	#fi
 fi
 
 # Consider updating
@@ -67,12 +51,9 @@ fi
 zplug load
 
 
-# SECTION: SOURCE
+### SECTION: SOURCE ###
 
 [ -f ~/.aliases ] && source ~/.aliases
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash  # Fuzzy file finder
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh  # Fuzzy file finder
-#source /etc/profile.d/autojump.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ls colors
@@ -85,11 +66,11 @@ add-zsh-hook chpwd chpwd_recent_dirs
 # Rename files using zmv 'test(*).png' '$1.png'
 autoload zmv
 
-# SECTION: MISCELLANEOUS CONFIGURATIONS
+
+### SECTION: MISCELLANEOUS CONFIGURATIONS ###
 
 # Terminal options
 setopt extendedglob
-#setopt kshglob
 
 # Style
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS to autocomplete
@@ -109,16 +90,16 @@ bindkey '^k' anyframe-widget-kill                       # Kill process
 bindkey '^r' anyframe-widget-put-history                # Recall history command
 
 
-# SECTION: CUSTOM FUNCTIONS
-
-# cd then ls
-cdd() { cd "$@" && ls; }
-
-# mv then cd then ls
-mvv() { mv "$@" && cdd "$2"; }
+### SECTION: CUSTOM FUNCTIONS ###
 
 # Echo path to file
-fpwd() { echo "$PWD/$@" }
+pwdf() { echo "$PWD/$@" }
+
+# Save path to working directory
+spwd() { SPWD=$PWD }
+
+# Save path to file
+spwdf() { SPWDF=$(pwdf) }
 
 # Run process in background
 # https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
@@ -127,14 +108,9 @@ bgrnd() {
 	disown
 }
 
-# xopen() {
-#     bgrnd xdg-open "$@"
-# }
-
-# redshift
-# rs() { echo "$1" > ~/.rshift && redshift -O "$1"; }
 
 # TODO
 
 # fasd (similar to autojump but with shell commands): https://github.com/clvv/fasd
+# Update plugins every N days
 
