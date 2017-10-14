@@ -10,6 +10,7 @@ alias ls='ls --color=auto -h --group-directories-first'
 alias lsd='ls -d */'
 alias lsl='ls -al'
 alias lsg='ls -al | g'
+alias lsp='ls -al | p'
 
 # Navigation
 alias ..='cd ..'
