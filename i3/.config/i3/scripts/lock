@@ -16,8 +16,13 @@ if [[ "$curr_ws" != "$desired_ws" ]]; then
 	i3-msg workspace $desired_ws
 fi
 
+# Pause notification manager
+# (Prevents on-screen notifications)
+pkill -u "$USER" -USR1 dunst
+
 # Moon wallpaper
 i3lock \
+	-n \
 	--indpos="x+(0.4741*w):y+(0.230*h)" --radius=273 \
 	--clock --datestr="%a %m-%d" \
 	--datepos="x+ix-(0.5*cw):y+iy-(0.5*ch)+40" \
@@ -28,6 +33,7 @@ i3lock \
 
 # Generic wallpaper
 #i3lock \
+#	-n \
 #	--indicator --radius=120 \
 #	--clock --datestr="%a  %m-%d" \
 #	--textsize=36 --timesize=32 --datesize=20 \
@@ -40,4 +46,7 @@ i3lock \
 #	--composite \
 #	--textcolor=223377ff \
 #	--insidewrongcolor=ff7777cc \
+
+# Resume notification manager
+pkill -u "$USER" -USR2 dunst
 
