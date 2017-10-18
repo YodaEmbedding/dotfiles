@@ -67,6 +67,8 @@ alias yao='yaourt'
 # AUR Package managers: pacaur
 alias pac='pacaur --noedit --noconfirm'
 alias pacs='pac -S'
+alias pacu='pacaur -Syyu'
+alias pacua='pacaur -Syyua'
 
 # Update ~/.locate.db
 alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
