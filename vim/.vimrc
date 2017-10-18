@@ -13,40 +13,53 @@ Plug 'othree/eregex.vim'                    " PCRE style regex (use :%S// to sea
 Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
+Plug 'majutsushi/tagbar'                    " (NEW) ctags; bound to \t
 Plug 'vim-airline/vim-airline'              " Theme
 Plug 'vim-airline/vim-airline-themes'       " Theme
-Plug 'terryma/vim-expand-region'            " (NEW)  Expand selection region using + and _
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
-Plug 'terryma/vim-multiple-cursors'         " (RARELY USED)  Multiple cursors WITH REGEX?! OMG
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
-Plug 'lervag/vimtex'                        " (NEW) (RARELY USED)  vim latex
 Plug 'Valloric/YouCompleteMe'               " Autocompletion
 
 " Disabled
 
 "Plug 'python-mode/python-mode', {'for': 'python'}
 "Plug 'easymotion/vim-easymotion'
+"Plug 'terryma/vim-expand-region'            " Expand selection region using + and _
 "Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'terryma/vim-multiple-cursors'         " Multiple cursors WITH REGEX?! OMG
 "Plug 'tpope/vim-surround'
+"Plug 'lervag/vimtex'                        " vim latex
 
 " Untried
 
-"thaerkh/vim-workspace
-"chrisbra/NrrwRgn               " oooh this is cool (extract buffer)
-"davidhalter/jedi-vim
-"vim-syntastic/syntastic
-"benmills/vimux
-"AndrewRadev/sideways.vim       " Parameter swapping
-"ervandew/supertab
+" A bunch of cool stuff here:
+"https://www.reddit.com/r/vim/comments/76z4ux/vim_after_15_years/doj0qb6/
+
 "wincent/command-t
+"davidhalter/jedi-vim
 "scrooloose/nerdtree
 "Xuyuanp/nerdtree-git-plugin
+"chrisbra/NrrwRgn               " oooh this is cool (extract buffer)
+"AndrewRadev/sideways.vim       " Parameter swapping
+"ervandew/supertab
+"vim-syntastic/syntastic        " Syntax (compile) checking
+"mbbill/undotree
+"justinmk/vim-dirvish            " Directory viewer
+"junegunn/vim-easy-align
+"mhinz/vim-grepper
+"ludovicchabant/vim-gutentags   " Fast ctagging?
+"tpope/vim-repeat
+"justinmk/vim-syntax-extra      " More syntax highlighting
+"thaerkh/vim-workspace
+"benmills/vimux
+"kkoenig/wimproved.vim          " For Windows
 
-" What is this?
-
-"Plug 'humiaozuzu/tabbar'
+" Autocompletion
+"SirVer/ultisnips               " Snippet completion
+"Shougo/neocomplete.vim         "
+"lifepillar/vim-mucomplete      "
 
 
 call plug#end()
@@ -281,6 +294,8 @@ noremap <silent> <C-j> :call <SID>swap_down()<CR>
 
 " eregex toggle
 nnoremap <leader>/ :call eregex#toggle()<CR>
+
+noremap <Leader>t :TagbarToggle<CR>
 
 " Word wrap, up/down visually
 noremap <silent> <Leader>w :call ToggleWrap()<CR>
