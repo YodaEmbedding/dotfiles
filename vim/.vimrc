@@ -21,6 +21,7 @@ Plug 'vim-airline/vim-airline'              " Theme
 Plug 'vim-airline/vim-airline-themes'       " Theme
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
+Plug 'goldfeld/vim-seek'                    " Use two character find (mapped to 's')
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 Plug 'Valloric/YouCompleteMe'               " Autocompletion
@@ -74,23 +75,29 @@ call plug#end()
 
 " PLUGIN SETTINGS {{{1
 
-" ctrlp
+" ctrlp {{{2
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'min:4,max:72'
 let g:ctrlp_working_path_mode = 'r'
 
-" Use silver searcher (ag)
 if executable('ag')
+    " Use silver searcher (ag)
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
-" indentLine
+" indentLine {{{2
 let g:indentLine_char = '│'
 
-" vim-airline
+" vim-airline {{{2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
+
+" vim-seek {{{2
+" See https://github.com/goldfeld/vim-seek for more useful bindings
+let g:SeekKey = 's'
+let g:SeekBackKey = '<S-s>'
+let g:seek_subst_disable = 1
 
 " COLOR SCHEMES {{{1
 
@@ -343,7 +350,7 @@ nnoremap <CR> mqo<Esc>`q
 nmap <silent> <F2> @q
 nmap <silent> <F3> @@
 
-" Search {{{2
+" Search for visually selected text {{{2
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Buffer navigation {{{2
@@ -376,4 +383,7 @@ cmap w!! w !sudo tee > /dev/null %
 " TODO {{{1
 " Compton transparency causes laggy page up/down
 " Cycle through colorschemes (NextColors() function)
+
+" Free bindings:
+" <S-d> <S-x> <S-s>
 
