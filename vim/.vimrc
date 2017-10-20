@@ -2,11 +2,13 @@
 " Author: Mateen Ulhaq <mulhaq2005@gmail.com>
 
 
-" SECTION: VIM-PLUG
+" VIM-PLUG {{{1
 
+" Begin {{{2
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.vim/plugged')
 
+" Enabled {{{2
 Plug 'gkjgh/cobalt'                         " Theme
 Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
 Plug 'othree/eregex.vim'                    " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
@@ -22,7 +24,7 @@ Plug 'tpope/vim-sleuth'                     " Automatically detect indent settin
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 Plug 'Valloric/YouCompleteMe'               " Autocompletion
 
-" Disabled
+" Disabled {{{2
 
 "Plug 'python-mode/python-mode', {'for': 'python'}
 "Plug 'easymotion/vim-easymotion'
@@ -33,7 +35,7 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'lervag/vimtex'                        " vim latex
 "Plug 'altercation/vim-colors-solarized'     " Theme
 
-" Untried
+" Untried {{{2
 
 " A bunch of cool stuff here:
 "https://www.reddit.com/r/vim/comments/76z4ux/vim_after_15_years/doj0qb6/
@@ -65,11 +67,11 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Shougo/neocomplete.vim         "
 "lifepillar/vim-mucomplete      "
 
-" Load plugins
+" End {{{2
 call plug#end()
 
 
-" SECTION: COLOR SCHEMES
+" COLOR SCHEMES {{{1
 
 "set t_Co=256        " Force 256-colors
 set background=dark  " Dark background
@@ -96,7 +98,7 @@ hi Normal guibg=NONE ctermbg=NONE
 let g:airline_theme = "base16"
 
 
-" SECTION: PLUGIN SETTINGS
+" PLUGIN SETTINGS {{{1
 
 " ctrlp
 let g:ctrlp_use_caching = 0
@@ -117,9 +119,9 @@ let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
 
-" SECTION: USER CUSTOMIZATIONS
+" USER CUSTOMIZATIONS {{{1
 
-" Indenting and Tabs
+" Indenting and Tabs {{{2
 "set autoindent         "
 "set expandtab          " Spaces
 "set noexpandtab        " Tabs
@@ -129,39 +131,39 @@ set smarttab            "
 set softtabstop=4       "
 set tabstop=4           " Indentation levels every four columns
 
-" Search
+" Search {{{2
 set hlsearch            " Highlight search results
 set ignorecase          " Ignore case
 "set magic              " Escape like regular regexes; use \V to revert
 set smartcase           " Ignore case if lower
 
-" Visual
+" Visual {{{2
 set colorcolumn=80      " Column guide
 "set cursorline         " Highlight current line (disabled because it causes cursor lag)
 set laststatus=2        " Show status line
 set mouse=a             " Mouse interactivity
 set number              " Line numbers
 
-" Undo
+" Undo {{{2
 set undofile                " Save undo's after file closes
 set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
 set undoreload=10000        " number of lines to save for undo
 
-" Conceal
+" Conceal {{{2
 set conceallevel=0
 let g:tex_conceal = ""
 
-" Miscellaneous
+" Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
 
-" Performance
+" Performance {{{2
 "set lazyredraw
 "set nocul               " disable highlight current line
 "set ttyfast             " speeds up page up/down?
 
-" GUI
+" GUI {{{2
 if has("gui_running")
     "set guioptions +=e     " Use GUI tabs
     "set guioptions -=m     " Remove menubar
@@ -170,7 +172,7 @@ if has("gui_running")
 endif
 
 
-" SECTION: AUTOCMDS
+" AUTOCMDS {{{1
 
 " Disable continue comment on new line
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
@@ -182,12 +184,14 @@ autocmd BufNewFile,BufRead *.tex,*.md set spell
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Folding
+"autocmd FileType * setlocal foldcolumn=3 foldmethod=indent
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
+autocmd FileType vim setlocal foldcolumn=3 foldmethod=marker
 
 
-" SECTION: USER FUNCTIONS
+" USER FUNCTIONS {{{1
 
-" Copy search matches
+" Copy search matches {{{2
 function! CopyMatches(reg)
     let hits = []
     %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
@@ -196,7 +200,7 @@ function! CopyMatches(reg)
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
 
-" Strip trailing white spaces
+" Strip trailing white spaces {{{2
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -204,7 +208,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-" Swap lines
+" Swap lines {{{2
 function! s:swap_lines(n1, n2)
     let line1 = getline(a:n1)
     let line2 = getline(a:n2)
@@ -232,7 +236,7 @@ function! s:swap_down()
     exec n + 1
 endfunction
 
-" Word wrap
+" Word wrap {{{2
 function ToggleWrap()
     setlocal wrap linebreak nolist
     set virtualedit=
@@ -241,7 +245,7 @@ function ToggleWrap()
     noremap <buffer> <silent> j gj
 endfunction
 
-" Folding: Markdown
+" Folding: Markdown {{{2
 function! FoldMarkdown()
     let thisline = getline(v:lnum)
     let match = matchstr(thisline, '^#*')
@@ -255,7 +259,7 @@ function! FoldMarkdown()
 endfunction
 
 
-" SECTION: USER KEYBOARD MAPPINGS
+" USER KEYBOARD MAPPINGS {{{1
 
 " Repeat motion bindings
 if !empty(glob('$HOME/.vim/plugged/repmo-vim'))
@@ -354,7 +358,7 @@ vnoremap <Space> za
 cmap w!! w !sudo tee > /dev/null %
 
 
-" SECTION: TODO
+" TODO {{{1
 " Spacing and formatting
 " Folding
 " Compton transparency causes laggy page up/down
