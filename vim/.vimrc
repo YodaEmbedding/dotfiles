@@ -261,7 +261,7 @@ endfunction
 
 " USER KEYBOARD MAPPINGS {{{1
 
-" Repeat motion bindings
+" Repeat motion bindings {{{2
 if !empty(glob('$HOME/.vim/plugged/repmo-vim'))
     map <expr> ; repmo#LastKey(';')|sunmap ;
     map <expr> , repmo#LastRevKey(',')|sunmap ,
@@ -285,25 +285,25 @@ if !empty(glob('$HOME/.vim/plugged/repmo-vim'))
     noremap <expr> T repmo#ZapKey('T')|sunmap T
 endif
 
-" Swap lines
+" Swap lines {{{2
 noremap <silent> <C-S-Up>   :call <SID>swap_up()<CR>
 noremap <silent> <C-S-Down> :call <SID>swap_down()<CR>
 noremap <silent> <C-k>      :call <SID>swap_up()<CR>
 noremap <silent> <C-j>      :call <SID>swap_down()<CR>
 
-" eregex toggle
+" eregex toggle {{{2
 nnoremap <Leader>/ :call eregex#toggle()<CR>
 
-" ctags toggle
+" ctags toggle {{{2
 noremap <Leader>t :TagbarToggle<CR>
 
-" Word wrap, up/down visually
+" Word wrap, up/down visually {{{2
 noremap <Leader>w :call ToggleWrap()<CR>
 
-" Relative numbering
+" Relative numbering {{{2
 nnoremap <Leader>r :set relativenumber!<CR>
 
-" Black hole delete
+" Black hole delete {{{2
 nnoremap <Backspace> "_dd
 vnoremap <Backspace> "_dd
 nnoremap <Leader>d   "_d
@@ -311,50 +311,50 @@ vnoremap <Leader>d   "_d
 nnoremap <Leader>x   "_x
 vnoremap <Leader>x   "_x
 
-"Black hole paste (in visual mode)
+"Black hole paste (in visual mode) {{{2
 xnoremap <silent> p p:let @"=@0<CR>
 
-" Clipboard (copy/paste)
+" Clipboard (copy/paste) {{{2
 nmap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
 nmap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
 map  <silent> <Leader>y "+y
 map  <silent> <Leader>Y "+Y
 
-" New line without insert mode (uses q register to mark)
+" New line without insert mode (uses q register to mark) {{{2
 nnoremap <CR> mqo<Esc>`q
 
-" Macro
+" Macro {{{2
 nmap <silent> <F2> @q
 nmap <silent> <F3> @@
 
-" Search
+" Search {{{2
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-" Buffer navigation
+" Buffer navigation {{{2
 nnoremap <Tab>   :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <A-n>   :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <A-p>   :bprevious<CR>:redraw<CR>:ls<CR>
 
-" Navigate up/down in wrapped text
+" Navigate up/down in wrapped text {{{2
 nnoremap <Down> gj
 nnoremap <Up>   gk
 inoremap <Down> <C-o>gj
 inoremap <Up>   <C-o>gk
 
-" Navigate 5 lines up/down
+" Navigate 5 lines up/down {{{2
 noremap <C-Down> 5<C-e>
 noremap <C-Up>   5<C-y>
 
-" Navigate screen up/down
+" Navigate screen up/down {{{2
 noremap <S-Down> <C-e>
 noremap <S-Up>   <C-y>
 
-" Folding
+" Folding {{{2
 nnoremap <Space> za
 vnoremap <Space> za
 
-" Save as sudo
+" Save as sudo {{{2
 cmap w!! w !sudo tee > /dev/null %
 
 
