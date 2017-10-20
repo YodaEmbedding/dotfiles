@@ -70,7 +70,6 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 " End {{{2
 call plug#end()
 
-
 " COLOR SCHEMES {{{1
 
 "set t_Co=256        " Force 256-colors
@@ -97,7 +96,6 @@ hi Normal guibg=NONE ctermbg=NONE
 " base16, base16_ashes, base16_default, hybrid, jellybeans, lucius
 let g:airline_theme = "base16"
 
-
 " PLUGIN SETTINGS {{{1
 
 " ctrlp
@@ -117,7 +115,6 @@ let g:indentLine_char = '│'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
-
 
 " USER CUSTOMIZATIONS {{{1
 
@@ -171,7 +168,6 @@ if has("gui_running")
     "set guitablabel=%N\ %t\ %M  " GUI tab labels
 endif
 
-
 " AUTOCMDS {{{1
 
 " Disable continue comment on new line
@@ -187,7 +183,6 @@ autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <
 "autocmd FileType * setlocal foldcolumn=3 foldmethod=indent
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
 autocmd FileType vim setlocal foldcolumn=3 foldmethod=marker
-
 
 " USER FUNCTIONS {{{1
 
@@ -257,7 +252,6 @@ function! FoldMarkdown()
 
     return "="
 endfunction
-
 
 " USER KEYBOARD MAPPINGS {{{1
 
@@ -357,11 +351,9 @@ vnoremap <Space> za
 " Save as sudo {{{2
 cmap w!! w !sudo tee > /dev/null %
 
-
 " TODO {{{1
 " Spacing and formatting
 " Folding
 " Compton transparency causes laggy page up/down
 " Cycle through colorschemes (NextColors() function)
-
 
