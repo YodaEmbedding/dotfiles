@@ -21,7 +21,7 @@ Plug 'vim-airline/vim-airline'              " Theme
 Plug 'vim-airline/vim-airline-themes'       " Theme
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
-Plug 'goldfeld/vim-seek'                    " Use two character find (mapped to 's')
+Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 Plug 'Valloric/YouCompleteMe'               " Autocompletion
@@ -34,6 +34,7 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
 "Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'terryma/vim-multiple-cursors'        " Multiple cursors WITH REGEX?! OMG
+"Plug 'goldfeld/vim-seek'                   " Use two character find (mapped to 's')
 "Plug 'tpope/vim-surround'
 "Plug 'lervag/vimtex'                       " vim latex
 "Plug 'altercation/vim-colors-solarized'    " Theme
@@ -92,12 +93,6 @@ let g:indentLine_char = '│'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
-
-" vim-seek {{{2
-" See https://github.com/goldfeld/vim-seek for more useful bindings
-let g:SeekKey = 's'
-let g:SeekBackKey = '<S-s>'
-let g:seek_subst_disable = 1
 
 " COLOR SCHEMES {{{1
 
