@@ -12,6 +12,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'gkjgh/cobalt'                         " Theme
 Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
 Plug 'othree/eregex.vim'                    " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
+Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
 Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
@@ -26,46 +27,47 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 
 " Disabled {{{2
 
+"Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
 "Plug 'python-mode/python-mode', {'for': 'python'}
 "Plug 'easymotion/vim-easymotion'
-"Plug 'terryma/vim-expand-region'            " Expand selection region using + and _
+"Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
 "Plug 'nathanaelkane/vim-indent-guides'
-"Plug 'terryma/vim-multiple-cursors'         " Multiple cursors WITH REGEX?! OMG
+"Plug 'terryma/vim-multiple-cursors'        " Multiple cursors WITH REGEX?! OMG
 "Plug 'tpope/vim-surround'
-"Plug 'lervag/vimtex'                        " vim latex
-"Plug 'altercation/vim-colors-solarized'     " Theme
+"Plug 'lervag/vimtex'                       " vim latex
+"Plug 'altercation/vim-colors-solarized'    " Theme
 
 " Untried {{{2
 
 " A bunch of cool stuff here:
 "https://www.reddit.com/r/vim/comments/76z4ux/vim_after_15_years/doj0qb6/
 
-"wincent/command-t
-"Konfekt/FastFold                           " Speed up lag caused by unnecessary evaluation of folding expressions/etc
-"davidhalter/jedi-vim
-"scrooloose/nerdtree
-"Xuyuanp/nerdtree-git-plugin
-"chrisbra/NrrwRgn                           " oooh this is cool (extract buffer)
-"AndrewRadev/sideways.vim                   " Parameter swapping
-"tmhedberg/SimpylFold                       " Python folding
-"ervandew/supertab
-"vim-syntastic/syntastic                    " Syntax (compile) checking
-"mbbill/undotree
-"justinmk/vim-dirvish                       " Directory viewer
-"junegunn/vim-easy-align
-"mhinz/vim-grepper
-"ludovicchabant/vim-gutentags               " Fast ctagging?
-"tpope/vim-repeat
-"justinmk/vim-syntax-extra                  " More syntax highlighting
-"thaerkh/vim-workspace
-"jreybert/vimagit                           " vim git magic!!!
-"benmills/vimux
-"kkoenig/wimproved.vim                      " For Windows
+"Plug 'wincent/command-t'
+"Plug 'davidhalter/jedi-vim'
+"Plug 'scrooloose/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'chrisbra/NrrwRgn'                    " oooh this is cool (extract buffer)
+"Plug 'wincent/scalpel'                     " SublimeText-like word replace?
+"Plug 'AndrewRadev/sideways.vim'            " Parameter swapping
+"Plug 'tmhedberg/SimpylFold'                " Python folding
+"Plug 'ervandew/supertab'
+"Plug 'vim-syntastic/syntastic'             " Syntax (compile) checking
+"Plug 'mbbill/undotree'
+"Plug 'justinmk/vim-dirvish'                " Directory viewer
+"Plug 'junegunn/vim-easy-align'
+"Plug 'mhinz/vim-grepper'
+"Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
+"Plug 'tpope/vim-repeat'
+"Plug 'justinmk/vim-syntax-extra'           " More syntax highlighting
+"Plug 'thaerkh/vim-workspace'
+"Plug 'jreybert/vimagit'                    " vim git magic!!!
+"Plug 'benmills/vimux'
+"Plug 'kkoenig/wimproved.vim'               " For Windows
 
 " Autocompletion
-"SirVer/ultisnips               " Snippet completion
-"Shougo/neocomplete.vim         "
-"lifepillar/vim-mucomplete      "
+"Plug 'SirVer/ultisnips'                    " Snippet completion
+"Plug 'Shougo/neocomplete.vim'              "
+"Plug 'lifepillar/vim-mucomplete'           "
 
 " End {{{2
 call plug#end()
@@ -173,14 +175,12 @@ endif
 " Disable continue comment on new line
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
-" Spell check
-autocmd BufNewFile,BufRead *.tex,*.md set spell
-
 " Remove trailing whitespace on file save
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Folding
 "autocmd FileType * setlocal foldcolumn=3 foldmethod=indent
+autocmd FileType conf setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldConfig()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
 autocmd FileType vim setlocal foldcolumn=3 foldmethod=marker
 
@@ -240,14 +240,28 @@ function ToggleWrap()
     noremap <buffer> <silent> j gj
 endfunction
 
-" Folding: Markdown {{{2
+" Folding {{{2
+function! FoldConfig()
+    let thisline = getline(v:lnum)
+    let matchline = matchstr(thisline, '^#\+.\+#\+$')
+    let match = matchstr(matchline, '^#*')
+    let level = strlen(match)
+
+    if level > 0
+        "return ">" . string(level)
+        return ">1"
+    endif
+
+    return "="
+endfunction
+
 function! FoldMarkdown()
     let thisline = getline(v:lnum)
     let match = matchstr(thisline, '^#*')
-    let matches = strlen(match)
+    let level = strlen(match)
 
-    if matches > 0
-        return ">" . string(matches)
+    if level > 0
+        return ">" . string(level)
     endif
 
     return "="
@@ -314,6 +328,14 @@ nmap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
 map  <silent> <Leader>y "+y
 map  <silent> <Leader>Y "+Y
 
+" Spell checker {{{2
+" toggle, next, previous, add, correct
+map <leader>ss :setlocal spell!<CR>
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>sc z=
+
 " New line without insert mode (uses q register to mark) {{{2
 nnoremap <CR> mqo<Esc>`q
 
@@ -352,8 +374,6 @@ vnoremap <Space> za
 cmap w!! w !sudo tee > /dev/null %
 
 " TODO {{{1
-" Spacing and formatting
-" Folding
 " Compton transparency causes laggy page up/down
 " Cycle through colorschemes (NextColors() function)
 
