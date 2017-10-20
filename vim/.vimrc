@@ -31,6 +31,7 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'terryma/vim-multiple-cursors'         " Multiple cursors WITH REGEX?! OMG
 "Plug 'tpope/vim-surround'
 "Plug 'lervag/vimtex'                        " vim latex
+"Plug 'altercation/vim-colors-solarized'     " Theme
 
 " Untried
 
@@ -38,11 +39,13 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "https://www.reddit.com/r/vim/comments/76z4ux/vim_after_15_years/doj0qb6/
 
 "wincent/command-t
+"Konfekt/FastFold                           " Speed up lag caused by unnecessary evaluation of folding expressions/etc
 "davidhalter/jedi-vim
 "scrooloose/nerdtree
 "Xuyuanp/nerdtree-git-plugin
 "chrisbra/NrrwRgn                           " oooh this is cool (extract buffer)
 "AndrewRadev/sideways.vim                   " Parameter swapping
+"tmhedberg/SimpylFold                       " Python folding
 "ervandew/supertab
 "vim-syntastic/syntastic                    " Syntax (compile) checking
 "mbbill/undotree
@@ -75,6 +78,7 @@ set background=dark  " Dark background
 "colorscheme cobalt
 "colorscheme hybrid_reverse
 colorscheme hybrid_material
+"colorscheme solarized
 
 " Custom colors
 " http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
@@ -165,8 +169,20 @@ if has("gui_running")
     "set guitablabel=%N\ %t\ %M  " GUI tab labels
 endif
 
+
+" SECTION: AUTOCMDS
+
 " Disable continue comment on new line
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
+
+" Spell check
+autocmd BufNewFile,BufRead *.tex,*.md set spell
+
+" Remove trailing whitespace on file save
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" Folding
+autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
 
 
 " SECTION: USER FUNCTIONS
@@ -180,15 +196,13 @@ function! CopyMatches(reg)
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
 
-" Strip trailing white spaces (only for certain filetypes; add your own)
+" Strip trailing white spaces
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-
-autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Swap lines
 function! s:swap_lines(n1, n2)
@@ -225,6 +239,19 @@ function ToggleWrap()
     setlocal display+=lastline
     noremap <buffer> <silent> k gk
     noremap <buffer> <silent> j gj
+endfunction
+
+" Folding: Markdown
+function! FoldMarkdown()
+    let thisline = getline(v:lnum)
+    let match = matchstr(thisline, '^#*')
+    let matches = strlen(match)
+
+    if matches > 0
+        return ">" . string(matches)
+    endif
+
+    return "="
 endfunction
 
 
@@ -319,6 +346,10 @@ noremap <C-Up>   5<C-y>
 noremap <S-Down> <C-e>
 noremap <S-Up>   <C-y>
 
+" Folding
+nnoremap <Space> za
+vnoremap <Space> za
+
 " Save as sudo
 cmap w!! w !sudo tee > /dev/null %
 
@@ -327,4 +358,6 @@ cmap w!! w !sudo tee > /dev/null %
 " Spacing and formatting
 " Folding
 " Compton transparency causes laggy page up/down
+" Cycle through colorschemes (NextColors() function)
+
 
