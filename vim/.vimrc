@@ -72,6 +72,26 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 " End {{{2
 call plug#end()
 
+" PLUGIN SETTINGS {{{1
+
+" ctrlp
+let g:ctrlp_use_caching = 0
+let g:ctrlp_match_window = 'min:4,max:72'
+let g:ctrlp_working_path_mode = 'r'
+
+" Use silver searcher (ag)
+if executable('ag')
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+" indentLine
+let g:indentLine_char = '│'
+
+" vim-airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+
 " COLOR SCHEMES {{{1
 
 "set t_Co=256        " Force 256-colors
@@ -98,27 +118,7 @@ hi Normal guibg=NONE ctermbg=NONE
 " base16, base16_ashes, base16_default, hybrid, jellybeans, lucius
 let g:airline_theme = "base16"
 
-" PLUGIN SETTINGS {{{1
-
-" ctrlp
-let g:ctrlp_use_caching = 0
-let g:ctrlp_match_window = 'min:4,max:72'
-let g:ctrlp_working_path_mode = 'r'
-
-" Use silver searcher (ag)
-if executable('ag')
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-
-" indentLine
-let g:indentLine_char = '│'
-
-" vim-airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-
-" USER CUSTOMIZATIONS {{{1
+" OPTIONS {{{1
 
 " Indenting and Tabs {{{2
 "set autoindent         "
@@ -184,7 +184,7 @@ autocmd FileType conf setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldConfig(
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
 autocmd FileType vim setlocal foldcolumn=3 foldmethod=marker
 
-" USER FUNCTIONS {{{1
+" FUNCTIONS {{{1
 
 " Copy search matches {{{2
 function! CopyMatches(reg)
@@ -267,7 +267,7 @@ function! FoldMarkdown()
     return "="
 endfunction
 
-" USER KEYBOARD MAPPINGS {{{1
+" KEYBOARD MAPPINGS {{{1
 
 " Repeat motion bindings {{{2
 if !empty(glob('$HOME/.vim/plugged/repmo-vim'))
