@@ -28,6 +28,7 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 " Disabled {{{2
 
 "Plug 'gkjgh/cobalt'                        " Theme
+"Plug 'junegunn/fzf.vim'                    " Fuzzy search/open files within directory
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
 "Plug 'python-mode/python-mode', {'for': 'python'}
 "Plug 'altercation/vim-colors-solarized'    " Theme
@@ -310,7 +311,16 @@ if match(&runtimepath, 'repmo-vim') != -1
     noremap <expr> E repmo#Key('E', 'B')|sunmap E
     noremap <expr> w repmo#Key('w', 'b')|sunmap w
     noremap <expr> W repmo#Key('W', 'B')|sunmap W
-endif "}}}
+endif
+
+" fzf bindings {{{2
+" TODO: Probably make buffers even more accessible
+if match(&runtimepath, 'fzf') != -1
+    nmap <Leader>b :Buffers<CR>
+    "nmap <Leader>t :Files<CR>
+    nmap <Leader>f :Files<CR>
+    nmap <Leader>r :Tags<CR>
+endif
 
 " Swap lines {{{2
 noremap <silent> <C-S-Up>   :call <SID>swap_up()<CR>
@@ -393,9 +403,9 @@ vnoremap <Space> za
 cmap w!! w !sudo tee > /dev/null %
 
 " TODO {{{1
-" Compton transparency causes laggy page up/down
-" Cycle through colorschemes (NextColors() function)
 
-" Free bindings:
-" <S-d> <S-x> <S-s>
+" Free bindings: <S-d> <S-x> <S-s>
+
+" fzf: Probably make buffers even more accessible
+" Cycle through colorschemes (NextColors() function)
 
