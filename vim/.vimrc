@@ -9,7 +9,6 @@
 call plug#begin('~/.vim/plugged')
 
 " Enabled {{{2
-Plug 'gkjgh/cobalt'                         " Theme
 Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
 Plug 'othree/eregex.vim'                    " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
@@ -21,49 +20,50 @@ Plug 'vim-airline/vim-airline'              " Theme
 Plug 'vim-airline/vim-airline-themes'       " Theme
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
-Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
+Plug 'justinmk/vim-sneak'                   " (NEW) Use two character find (mapped to 's')
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 Plug 'Valloric/YouCompleteMe'               " Autocompletion
 
 " Disabled {{{2
 
+"Plug 'gkjgh/cobalt'                        " Theme
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
 "Plug 'python-mode/python-mode', {'for': 'python'}
-"Plug 'easymotion/vim-easymotion'
+"Plug 'altercation/vim-colors-solarized'    " Theme
+"Plug 'easymotion/vim-easymotion'           " Motion
 "Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
-"Plug 'nathanaelkane/vim-indent-guides'
+"Plug 'nathanaelkane/vim-indent-guides'     "
 "Plug 'terryma/vim-multiple-cursors'        " Multiple cursors WITH REGEX?! OMG
 "Plug 'goldfeld/vim-seek'                   " Use two character find (mapped to 's')
-"Plug 'tpope/vim-surround'
+"Plug 'tpope/vim-surround'                  "
 "Plug 'lervag/vimtex'                       " vim latex
-"Plug 'altercation/vim-colors-solarized'    " Theme
 
 " Untried {{{2
 
 " A bunch of cool stuff here:
 "https://www.reddit.com/r/vim/comments/76z4ux/vim_after_15_years/doj0qb6/
 
-"Plug 'wincent/command-t'
-"Plug 'davidhalter/jedi-vim'
-"Plug 'scrooloose/nerdtree'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'wincent/command-t'                   "
+"Plug 'davidhalter/jedi-vim'                "
+"Plug 'scrooloose/nerdtree'                 "
+"Plug 'Xuyuanp/nerdtree-git-plugin'         "
 "Plug 'chrisbra/NrrwRgn'                    " oooh this is cool (extract buffer)
 "Plug 'wincent/scalpel'                     " SublimeText-like word replace?
 "Plug 'AndrewRadev/sideways.vim'            " Parameter swapping
 "Plug 'tmhedberg/SimpylFold'                " Python folding
-"Plug 'ervandew/supertab'
+"Plug 'ervandew/supertab'                   "
 "Plug 'vim-syntastic/syntastic'             " Syntax (compile) checking
-"Plug 'mbbill/undotree'
+"Plug 'mbbill/undotree'                     "
 "Plug 'justinmk/vim-dirvish'                " Directory viewer
-"Plug 'junegunn/vim-easy-align'
-"Plug 'mhinz/vim-grepper'
+"Plug 'junegunn/vim-easy-align'             "
+"Plug 'mhinz/vim-grepper'                   "
 "Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
-"Plug 'tpope/vim-repeat'
+"Plug 'tpope/vim-repeat'                    "
 "Plug 'justinmk/vim-syntax-extra'           " More syntax highlighting
-"Plug 'thaerkh/vim-workspace'
+"Plug 'thaerkh/vim-workspace'               "
 "Plug 'jreybert/vimagit'                    " vim git magic!!!
-"Plug 'benmills/vimux'
+"Plug 'benmills/vimux'                      "
 "Plug 'kkoenig/wimproved.vim'               " For Windows
 
 " Autocompletion
@@ -272,10 +272,32 @@ endfunction
 " KEYBOARD MAPPINGS {{{1
 
 " Repeat motion bindings {{{2
-if !empty(glob('$HOME/.vim/plugged/repmo-vim'))
-    map <expr> ; repmo#LastKey(';')|sunmap ;
-    map <expr> , repmo#LastRevKey(',')|sunmap ,
+if match(&runtimepath, 'repmo-vim') != -1
+    " Specific mappings if vim-sneak plugin enabled
+    if match(&runtimepath, 'vim-sneak') != -1 "{{{3
+        map  <expr> ; repmo#LastKey('<Plug>Sneak_;')|sunmap ;
+        map  <expr> , repmo#LastRevKey('<Plug>Sneak_,')|sunmap ,
 
+        map  <expr> f repmo#ZapKey('<Plug>Sneak_f')|sunmap f
+        map  <expr> F repmo#ZapKey('<Plug>Sneak_F')|sunmap F
+        map  <expr> t repmo#ZapKey('<Plug>Sneak_t')|sunmap t
+        map  <expr> T repmo#ZapKey('<Plug>Sneak_T')|sunmap T
+
+        map  <expr> s repmo#ZapKey('<Plug>Sneak_s')|ounmap s|sunmap s
+        map  <expr> S repmo#ZapKey('<Plug>Sneak_S')|ounmap S|sunmap S
+        omap <expr> z repmo#ZapKey('<Plug>Sneak_s')
+        omap <expr> Z repmo#ZapKey('<Plug>Sneak_S')
+    else "{{{3
+        map <expr> ; repmo#LastKey(';')|sunmap ;
+        map <expr> , repmo#LastRevKey(',')|sunmap ,
+
+        noremap <expr> f repmo#ZapKey('f')|sunmap f
+        noremap <expr> F repmo#ZapKey('F')|sunmap F
+        noremap <expr> t repmo#ZapKey('t')|sunmap t
+        noremap <expr> T repmo#ZapKey('T')|sunmap T
+    endif "}}}
+
+    " Non-specific mappings
     noremap <expr> h repmo#SelfKey('h', 'l')|sunmap h
     noremap <expr> l repmo#SelfKey('l', 'h')|sunmap l
 
@@ -288,12 +310,7 @@ if !empty(glob('$HOME/.vim/plugged/repmo-vim'))
     noremap <expr> E repmo#Key('E', 'B')|sunmap E
     noremap <expr> w repmo#Key('w', 'b')|sunmap w
     noremap <expr> W repmo#Key('W', 'B')|sunmap W
-
-    noremap <expr> f repmo#ZapKey('f')|sunmap f
-    noremap <expr> F repmo#ZapKey('F')|sunmap F
-    noremap <expr> t repmo#ZapKey('t')|sunmap t
-    noremap <expr> T repmo#ZapKey('T')|sunmap T
-endif
+endif "}}}
 
 " Swap lines {{{2
 noremap <silent> <C-S-Up>   :call <SID>swap_up()<CR>
