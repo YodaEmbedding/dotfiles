@@ -83,7 +83,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS t
 bindkey -v                                              # vim
 
 bindkey '^ ' autosuggest-accept                         # Fill suggestion
-bindkey '^M' autosuggest-execute                        # Fill and run suggestion
+bindkey '^^M' autosuggest-execute                        # Fill and run suggestion
 
 #bindkey '^?' backward-delete-char                      # Backspace (doesn't work after hitting <esc>i)
 
