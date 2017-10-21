@@ -1,15 +1,16 @@
 # Installation: Please install zplug then simply copy this to ~/.zshrc
 # Author: Mateen Ulhaq <mulhaq2005@gmail.com>
 
+# INITIAL {{{1
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
 
 
-### SECTION: ZPLUG ###
+# ZPLUG {{{1
 
 source ~/.zplug/init.zsh
 
-# PLUGINS
+# PLUGINS {{{2
 #zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 #zplug "lib/colorize", from:oh-my-zsh                       # Syntax highlight cat output
 zplug "lib/completion", from:oh-my-zsh                      # Suggests command completions
@@ -28,17 +29,18 @@ zplug 'rupa/z', use:'*.sh'                                  # Navigate to most u
 #zplug "zsh-users/zsh-history-substring-search", defer:3    #
 #zplug "zsh-users/zsh-syntax-highlighting", defer:3         #
 
-# THEMES
+# THEMES {{{2
 #zplug "agnoster/agnoster-zsh-theme", from:oh-my-zsh, as:theme
 #zplug "halfo/lambda-mod-zsh-theme", as:theme
 #zplug "inanimate/darkblood-modular", as:theme
 #zplug "marszall87/lambda-pure", use:lambda-pure.zsh, as:theme
 zplug "sindresorhus/pure", use:pure.zsh, as:theme
 
-# PLUGIN CONFIGURATION
+# PLUGIN CONFIGURATION {{{2
 PURE_PROMPT_SYMBOL=λ
 _Z_CMD=j
 
+# LOAD {{{2
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
 	zplug install
@@ -50,10 +52,12 @@ fi
 # Source plugins and add commands to $PATH
 zplug load
 
+# SOURCING {{{1
 
-### SECTION: SOURCE ###
-
+# Aliases
 [ -f ~/.aliases ] && source ~/.aliases
+
+# Fish-like autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ls colors
@@ -66,8 +70,7 @@ add-zsh-hook chpwd chpwd_recent_dirs
 # Rename files using zmv 'test(*).png' '$1.png'
 autoload zmv
 
-
-### SECTION: MISCELLANEOUS CONFIGURATIONS ###
+# MISCELLANEOUS CONFIGURATIONS {{{1
 
 # Terminal options
 setopt extendedglob
@@ -75,22 +78,27 @@ setopt extendedglob
 # Style
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS to autocomplete
 
-# Keybindings
+# KEYBINDINGS {{{1
+
 bindkey -v                                              # vim
-#bindkey '^?' backward-delete-char                      # backspace (doesn't work after hitting <esc>i)
-bindkey '^ ' autosuggest-accept                         #
-#bindkey '^-r' percol_select_history                    #
-#bindkey '^-b' percol_select_marks                      #
+
+bindkey '^ ' autosuggest-accept                         # Fill suggestion
+bindkey '^M' autosuggest-execute                        # Fill and run suggestion
+
+#bindkey '^?' backward-delete-char                      # Backspace (doesn't work after hitting <esc>i)
+
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
-#bindkey '^x^b' anyframe-widget-checkout-git-branch     #
-#bindkey '^r' anyframe-widget-execute-history           # Execute history command
-bindkey '^f' anyframe-widget-insert-filename
-#bindkey '^xe' anyframe-widget-insert-git-branch        #
+bindkey '^f' anyframe-widget-insert-filename            #
 bindkey '^k' anyframe-widget-kill                       # Kill process
 bindkey '^r' anyframe-widget-put-history                # Recall history command
+#bindkey '^x^b' anyframe-widget-checkout-git-branch     #
+#bindkey '^r'   anyframe-widget-execute-history         # Execute history command
+#bindkey '^xe'  anyframe-widget-insert-git-branch       #
 
+#bindkey '^-r' percol_select_history                    #
+#bindkey '^-b' percol_select_marks                      #
 
-### SECTION: CUSTOM FUNCTIONS ###
+# FUNCTIONS {{{1
 
 # Echo path to file
 pwdf() { echo "$PWD/$@" }
@@ -109,8 +117,9 @@ bgrnd() {
 	disown
 }
 
+# TODO {{{1
 
-# TODO
+# Use Ctrl+Enter to fill fish command then execute
 
 # fasd (similar to autojump but with shell commands): https://github.com/clvv/fasd
 # Update plugins every N days

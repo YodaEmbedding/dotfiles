@@ -184,7 +184,7 @@ autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <
 "autocmd FileType * setlocal foldcolumn=3 foldmethod=indent
 autocmd FileType conf setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldConfig()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
-autocmd FileType vim setlocal foldcolumn=3 foldmethod=marker
+autocmd FileType vim,zsh setlocal foldcolumn=3 foldmethod=marker
 
 " FUNCTIONS {{{1
 
