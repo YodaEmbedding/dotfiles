@@ -284,6 +284,9 @@ bindsym $mod+Ctrl+Shift+m       exec --no-startup-id rs 6500
 # Thunar
 bindsym $mod+t                  exec thunar
 
+# Thunar > Downloads
+bindsym $mod+Shift+t            exec thunar ~/Downloads
+
 # rofi (app launcher)
 bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
 
