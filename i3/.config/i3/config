@@ -197,47 +197,32 @@ bindsym --whole-window --border $mod+Ctrl+Button4   exec amixer set Master 1%+ &
 bindsym --whole-window --border $mod+Ctrl+Button5   exec amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
 bindsym --border                Button2             kill
 
-# Jump to urgent window
-bindsym $mod+x                  [urgent=latest] focus
-
-# Gaps
-bindsym $mod+period             gaps inner all plus 5
-bindsym $mod+Shift+period       gaps inner all minus 5
-bindsym $mod+slash              gaps outer all plus 5
-bindsym $mod+Shift+slash        gaps outer all minus 5
-
-# Cycle border
-bindsym $mod+b                  border toggle
-
-# Next/previous windows
-bindsym Mod1+Tab focus          right
-bindsym Mod1+Shift+Tab          focus left
-
-# TODO
-# Alt+tab style window switching back/forth
-bindsym Mod1+grave              focus right
-
-# Workspace switching/cycling next/previous
-bindsym $mod+Tab                workspace next
-#bindsym $mod+Shift+Tab         workspace prev
-
-# Workspace switching/cycling next/previous and moving
-bindsym $mod+Shift+Tab          move container to workspace next; workspace next
-
 # Workspace switch back/forth
 bindsym $mod+grave              workspace back_and_forth
 
 # Workspace switch back/forth and move
 bindsym $mod+shift+grave        move container to workspace back_and_forth; workspace back_and_forth
 
-# Lock
-bindsym $mod+Shift+x            exec ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+# TODO
+# Alt+tab like window switching back/forth
+bindsym Mod1+grave              focus right
 
-# Center floating fullscreen window
-bindsym $mod+ctrl+c             move position +0+0
+# Next/previous windows
+bindsym Mod1+Tab focus          right
+bindsym Mod1+Shift+Tab          focus left
 
-# Task manager
-bindsym Mod1+Ctrl+Delete        exec ksysguard, workspace 10
+# Workspace cycling
+bindsym $mod+Tab                workspace next
+#bindsym $mod+Shift+Tab         workspace prev
+
+# Workspace cycling and moving
+bindsym $mod+Shift+Tab          move container to workspace next; workspace next
+
+# Gaps
+bindsym $mod+period             gaps inner all plus 5
+bindsym $mod+Shift+period       gaps inner all minus 5
+bindsym $mod+slash              gaps outer all plus 5
+bindsym $mod+Shift+slash        gaps outer all minus 5
 
 # Volume control
 bindsym XF86AudioLowerVolume    exec amixer set Master 5%- && pkill -SIGRTMIN+1 i3blocks
@@ -264,11 +249,26 @@ bindsym $mod+Mod1+ctrl+z        exec qdbus org.mpris.MediaPlayer2.google-play-mu
 bindsym $mod+Mod1+z             exec ~/.config/i3/scripts/gpmdp_vol + 0.05
 bindsym $mod+Mod1+shift+z       exec ~/.config/i3/scripts/gpmdp_vol - 0.05
 
-# YouTube windowed fullscreen
-bindsym $mod+y                  exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
+# rofi (app launcher, sudo app launcher, file search, window jumper)
+bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
+bindsym $mod+Ctrl+q             exec "rofi -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}' -p 'run (sudo):' $rofi_style"
+bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -0 xdg-open"
+bindsym $mod+Shift+d            exec "wmctrl -l | rofi -dmenu -i -p 'window:' $rofi_style | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
-# YouTube popout
-bindsym $mod+Shift+y            floating enable, resize set 800 600, sticky enable; exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
+# Cycle border
+bindsym $mod+b                  border toggle
+
+# Jump to urgent window
+bindsym $mod+x                  [urgent=latest] focus
+
+# Lock screen
+bindsym $mod+Shift+x            exec ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+
+# Thunar
+bindsym $mod+t                  exec thunar
+
+# Thunar > Downloads
+bindsym $mod+Shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
 bindsym $mod+p                  exec termite -e python -t "python"
@@ -281,23 +281,17 @@ bindsym $mod+Shift+m            exec --no-startup-id rs $(($(cat ~/.rshift) - 20
 bindsym $mod+Ctrl+m             exec --no-startup-id rs 4000
 bindsym $mod+Ctrl+Shift+m       exec --no-startup-id rs 6500
 
-# Thunar
-bindsym $mod+t                  exec thunar
+# Task manager
+bindsym Mod1+Ctrl+Delete        exec ksysguard, workspace 10
 
-# Thunar > Downloads
-bindsym $mod+Shift+t            exec thunar ~/Downloads
+# Move window to position (0, 0)
+bindsym $mod+ctrl+c             move position +0+0
 
-# rofi (app launcher)
-bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
+# YouTube windowed fullscreen
+bindsym $mod+y                  exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
 
-# rofi (sudo app launcher)
-bindsym $mod+Ctrl+q             exec "rofi -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}' -p 'run (sudo):' $rofi_style"
-
-# rofi (goto window)
-bindsym $mod+shift+d            exec "wmctrl -l | rofi -dmenu -i -p 'window:' $rofi_style | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
-
-# rofi (file search)
-bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -0 xdg-open"
+# YouTube popout
+bindsym $mod+Shift+y            floating enable, resize set 800 600, sticky enable; exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
 
 
 ### DEFAULT MODES ###
