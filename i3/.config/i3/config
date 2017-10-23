@@ -213,7 +213,6 @@ bindsym Mod1+Shift+Tab          focus left
 
 # Workspace cycling
 bindsym $mod+Tab                workspace next
-#bindsym $mod+Shift+Tab         workspace prev
 
 # Workspace cycling and moving
 bindsym $mod+Shift+Tab          move container to workspace next; workspace next
@@ -271,8 +270,6 @@ bindsym $mod+t                  exec thunar
 bindsym $mod+Shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
-bindsym $mod+p                  exec termite -e python -t "python"
-bindsym $mod+Shift+p            exec termite -e python -t "floating python"
 bindsym $mod+c                  exec termite -e python -t "floating python"
 
 # Redshift control
@@ -280,18 +277,6 @@ bindsym $mod+m                  exec --no-startup-id rs $(($(cat ~/.rshift) + 20
 bindsym $mod+Shift+m            exec --no-startup-id rs $(($(cat ~/.rshift) - 200))
 bindsym $mod+Ctrl+m             exec --no-startup-id rs 4000
 bindsym $mod+Ctrl+Shift+m       exec --no-startup-id rs 6500
-
-# Task manager
-bindsym Mod1+Ctrl+Delete        exec ksysguard, workspace 10
-
-# Move window to position (0, 0)
-bindsym $mod+ctrl+c             move position +0+0
-
-# YouTube windowed fullscreen
-bindsym $mod+y                  exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
-
-# YouTube popout
-bindsym $mod+Shift+y            floating enable, resize set 800 600, sticky enable; exec "sleep 0.5 && xdotool key --clearmodifiers f && i3 fullscreen disable"
 
 
 ### DEFAULT MODES ###
@@ -321,11 +306,6 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-
-### USER MODES ###
-
-# TODO
 
 
 ### USER CUSTOMIZATIONS ###
