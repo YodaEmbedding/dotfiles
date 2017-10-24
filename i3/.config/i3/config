@@ -218,22 +218,22 @@ bindsym $mod+Tab                workspace next
 bindsym $mod+Shift+Tab          move container to workspace next; workspace next
 
 # Gaps
-bindsym $mod+period             gaps inner all plus 5
+bindsym $mod+period             gaps inner all plus  5
 bindsym $mod+Shift+period       gaps inner all minus 5
-bindsym $mod+slash              gaps outer all plus 5
+bindsym $mod+slash              gaps outer all plus  5
 bindsym $mod+Shift+slash        gaps outer all minus 5
 
 # Volume control
-bindsym XF86AudioLowerVolume    exec amixer set Master 5%- && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume    exec amixer set Master 5%+ && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume    exec amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume    exec amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
 bindsym XF86AudioMute           exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
 
-bindsym $mod+z                  exec amixer set Master 5%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+z            exec amixer set Master 5%- && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+z                  exec amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+z            exec amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
 bindsym $mod+Ctrl+Shift+z       exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
 
-bindsym $mod+comma              exec amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+comma        exec amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+comma              exec amixer set Master 1%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+comma        exec amixer set Master 1%-    && pkill -SIGRTMIN+1 i3blocks
 
 # Media control
 bindsym XF86AudioPlay           exec playerctl play-pause
@@ -314,7 +314,6 @@ font                          pango:Noto Mono Regular, Awesome 8
 floating_modifier             $mod
 focus_follows_mouse           no
 hide_edge_borders             smart
-#hide_edge_borders            vertical
 workspace_auto_back_and_forth yes
 workspace_layout              tabbed
 
@@ -350,7 +349,6 @@ assign [class="ksysguard"]                        → $ws10
 ### USER BAR ###
 
 bar {
-    #status_command i3status
     status_command i3blocks
 
     font pango:FontAwesome 10
@@ -364,11 +362,11 @@ bar {
         separator          #662222
 
         # class            border  backgr. text    indicator child_border
-        focused_workspace  #884422 #441122 #ffffff #442211  #442211
-        active_workspace   #333333 #5f676a #ffffff #333333  #333333
-        inactive_workspace #333333 #222222 #888888 #292d2e  #222222
-        urgent_workspace   #2f343a #900000 #ffffff #900000  #900000
-        binding_mode       #2f343a #900000 #ffffff #900000  #900000
+        focused_workspace  #884422 #441122 #ffffff #442211   #442211
+        active_workspace   #333333 #5f676a #ffffff #333333   #333333
+        inactive_workspace #333333 #222222 #888888 #292d2e   #222222
+        urgent_workspace   #2f343a #900000 #ffffff #900000   #900000
+        binding_mode       #2f343a #900000 #ffffff #900000   #900000
     }
 }
 
@@ -396,24 +394,23 @@ exec        --no-startup-id     tilda
 exec        --no-startup-id     dropbox
 
 
-# TODO
+### TODO ###
 
-# rofi file-search save common and sort first (or at least, list first before filtering)
+# Unused bindings:
+# $mod+y
+# $mod+Shift+w
+# $mod+Shift+s
+# $mod+Shift+v
+# $mod+Shift+f
+# $mod+Shift+y
 
-# Jump to specific window (subl3, ff)
-# https://i3wm.org/docs/3.e/userguide.html#_jumping_to_specific_windows
+# rofi select from options and pipe
+
+# vim-like mark window with keybind
 
 # Formatting, indenting like https://www.youtube.com/watch?v=-BOW61luzF4
 
-# rofi style select from options and pipe
-
-# vim style marking
-
 # Alt-tabbing (focus last)
 # Perhaps save previous window ID when selecting between different windows
-# (It's actually better to ignore mouse navigation here)
 # https://www.reddit.com/r/i3wm/comments/3o2bdn/i3_how_to_quickly_switch_between_current_and/?st=j4hmby3s&sh=1dc36d16
-
-# Consider xdotool keyup Return instead of sleep
-# https://stackoverflow.com/questions/34092604/xdotool-why-sleep-before-running-commands
 

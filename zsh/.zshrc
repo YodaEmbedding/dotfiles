@@ -75,15 +75,20 @@ autoload zmv
 # Terminal options
 setopt extendedglob
 
+# Do not save to history commands prefixed wtih space
+setopt histignorespace
+
 # Style
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS to autocomplete
 
 # KEYBINDINGS {{{1
 
+# Use showkey -a to detect terminal keycodes
+
 bindkey -v                                              # vim
 
-bindkey '^ ' autosuggest-accept                         # Fill suggestion
-bindkey '^^M' autosuggest-execute                        # Fill and run suggestion
+bindkey '^ '   autosuggest-accept                       # Fill suggestion
+bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 
 #bindkey '^?' backward-delete-char                      # Backspace (doesn't work after hitting <esc>i)
 
