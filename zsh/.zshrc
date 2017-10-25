@@ -72,11 +72,22 @@ autoload zmv
 
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
-# Terminal options
-setopt extendedglob
+# History sizes
+HISTSIZE=20000
+SAVEHIST=10000
+
+# Do not save common commands to history
+# HISTORY_IGNORE="(ls|lsl|cd|cd ..|..|pwd|exit|vimrc|zshrc|i3config|gst|gd)"
 
 # Do not save to history commands prefixed wtih space
-setopt histignorespace
+setopt hist_ignore_space
+
+# Remove duplicate commands from history on exit
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+
+# Better globbing
+setopt extended_glob
 
 # Style
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS to autocomplete
