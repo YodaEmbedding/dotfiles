@@ -54,6 +54,7 @@ alias shruggie='emoji -sc'
 alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
 
 # Sudo
+alias sudo='sudo '   # make sudo work with aliases
 alias s='sudo'
 alias se='sudo -e'
 

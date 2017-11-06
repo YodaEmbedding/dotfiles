@@ -95,6 +95,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
+" YouCompleteMe {{{2
+
+let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_autoclose_preview_window_after_completion = 1
+
 " COLOR SCHEMES {{{1
 
 "set t_Co=256        " Force 256-colors
