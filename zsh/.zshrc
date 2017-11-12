@@ -78,6 +78,7 @@ SAVEHIST=10000
 
 # Do not save common commands to history
 # HISTORY_IGNORE="(ls|lsl|cd|cd ..|..|pwd|exit|vimrc|zshrc|i3config|gst|gd)"
+HISTORY_IGNORE="(kill <->|kill -<-> <->)"
 
 # Do not save to history commands prefixed wtih space
 setopt hist_ignore_space
