@@ -14,6 +14,7 @@ Plug 'othree/eregex.vim'                    " PCRE style regex (use :%S// to sea
 Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
 Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
+Plug 'scrooloose/nerdtree'                  " File explorer
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
 Plug 'majutsushi/tagbar'                    " (NEW) ctags; bound to \t
 Plug 'vim-airline/vim-airline'              " Theme
@@ -21,9 +22,9 @@ Plug 'vim-airline/vim-airline-themes'       " Theme
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
 Plug 'justinmk/vim-sneak'                   " (NEW) Use two character find (mapped to 's')
-Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
+"Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
+Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
-Plug 'Valloric/YouCompleteMe'               " Autocompletion
 
 " Disabled {{{2
 
@@ -40,14 +41,36 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'tpope/vim-surround'                  "
 "Plug 'lervag/vimtex'                       " vim latex
 
+" Autocompletion {{{2
+
+"Plug 'Valloric/YouCompleteMe'               " Autocompletion
+
+"Plug 'davidhalter/jedi-vim'                " Autocompletion (Python)
+"Plug 'ervandew/supertab'                    " Supertab
+
+"if has('nvim')
+"    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"else
+"    Plug 'Shougo/deoplete.nvim'
+"    Plug 'roxma/nvim-yarp'
+"    Plug 'roxma/vim-hug-neovim-rpc'
+"endif
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'                 " Autocompletion (Python)
+""Plug 'roxma/nvim-yarp'
+""Plug 'roxma/vim-hug-neovim-rpc'
+"
+"Plug 'roxma/nvim-completion-manager'
+
+"Plug 'Shougo/echodoc.vim'
+
 " Untried {{{2
 
 " A bunch of cool stuff here:
 "https://www.reddit.com/r/vim/comments/76z4ux/vim_after_15_years/doj0qb6/
 
 "Plug 'wincent/command-t'                   "
-"Plug 'davidhalter/jedi-vim'                "
-"Plug 'scrooloose/nerdtree'                 "
 "Plug 'Xuyuanp/nerdtree-git-plugin'         "
 "Plug 'chrisbra/NrrwRgn'                    " oooh this is cool (extract buffer)
 "Plug 'wincent/scalpel'                     " SublimeText-like word replace?
@@ -78,6 +101,7 @@ call plug#end()
 " PLUGIN SETTINGS {{{1
 
 " ctrlp {{{2
+
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'min:4,max:72'
 let g:ctrlp_working_path_mode = 'r'
@@ -87,18 +111,48 @@ if executable('ag')
     let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 
+" deoplete {{{2
+
+let g:deoplete#enable_at_startup = 1
+
+let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#auto_completion_start_length = 2
+
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#show_call_signatures = 0
+
+" echodoc {{{2
+
+ let g:echodoc_enable_at_startup=1
+
 " indentLine {{{2
+
 let g:indentLine_char = '│'
 
+" NERDTree {{{2
+
+"let NERDTreeShowHidden = 1
+
 " vim-airline {{{2
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
+
+" vim-sleuth {{{2
+
+let b:sleuth_mixed_tabstop = 4
 
 " YouCompleteMe {{{2
 
 let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_python_binary_path = '/usr/bin/python3'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
+"let g:ycm_python_binary_path = '/usr/bin/env python3'
 
 " COLOR SCHEMES {{{1
 
@@ -129,13 +183,16 @@ let g:airline_theme = "base16"
 " OPTIONS {{{1
 
 " Indenting and Tabs {{{2
+
 "set autoindent         "
-"set expandtab          " Spaces
-"set noexpandtab        " Tabs
-set shiftwidth=4        " Indent/outdent by four columns
 "set smartindent        "
-set smarttab            "
-set softtabstop=4       "
+"set smarttab           "
+
+"set expandtab          " Tabs to Spaces
+set noexpandtab         " Tabs to Tabs
+
+set shiftwidth=4        " Indent/outdent by four columns
+"set softtabstop=4      " Indent as if four columns...?
 set tabstop=4           " Indentation levels every four columns
 
 " Search {{{2
@@ -180,17 +237,29 @@ endif
 
 " AUTOCMDS {{{1
 
-" Disable continue comment on new line
+" Disable continue comment on new line {{{2
+
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
-" Remove trailing whitespace on file save
+" Remove trailing whitespace on file save {{{2
+
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
-" Folding
+" Folding {{{2
+
 "autocmd FileType * setlocal foldcolumn=3 foldmethod=indent
 autocmd FileType conf setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldConfig()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
 autocmd FileType vim,zsh setlocal foldcolumn=3 foldmethod=marker
+
+" Auto close preview {{{2
+
+"autocmd CompleteDone * silent! pclose!
+autocmd InsertLeave * silent! pclose!
+
+" Indenting and Tabs {{{2
+
+autocmd FileType python setlocal tabstop=4
 
 " FUNCTIONS {{{1
 
@@ -202,6 +271,12 @@ function! CopyMatches(reg)
     execute 'let @'.reg.' = join(hits, "\n") . "\n"'
 endfunction
 command! -register CopyMatches call CopyMatches(<q-reg>)
+
+" Check backspace {{{2
+function! s:check_back_space() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
 
 " Strip trailing white spaces {{{2
 fun! <SID>StripTrailingWhitespaces()
@@ -277,6 +352,15 @@ endfunction
 
 " KEYBOARD MAPPINGS {{{1
 
+" Deoplete bindings {{{2
+
+if match(&runtimepath, 'deoplete.nvim') != -1
+    " inoremap <silent><expr> <Tab>
+    "     \ pumvisible() ? "\<C-n>" :
+    "     \ <SID>check_back_space() ? "\<Tab>" :
+    "     \ deoplete#mappings#manual_complete()
+endif
+
 " Repeat motion bindings {{{2
 if match(&runtimepath, 'repmo-vim') != -1
     " Specific mappings if vim-sneak plugin enabled
@@ -322,10 +406,13 @@ endif
 " TODO: Probably make buffers even more accessible
 if match(&runtimepath, 'fzf') != -1
     nmap <Leader>b :Buffers<CR>
-    "nmap <Leader>t :Files<CR>
     nmap <Leader>f :Files<CR>
-    nmap <Leader>r :Tags<CR>
+    nmap <Leader>t :Tags<CR>
 endif
+
+" Nerdtree bindings {{{2
+
+nmap <Leader>f :NERDTreeToggle<CR>
 
 " Swap lines {{{2
 noremap <silent> <C-S-Up>   :call <SID>swap_up()<CR>
@@ -413,4 +500,32 @@ cmap w!! w !sudo tee > /dev/null %
 
 " fzf: Probably make buffers even more accessible
 " Cycle through colorschemes (NextColors() function)
+
+" Deoplete bindings
+" https://vi.stackexchange.com/questions/9468/cant-get-deoplete-plugin-working-in-neovim/9554
+" "use <tab> for completion
+" function! TabWrap()
+"     if pumvisible()
+"         return "\<C-N>"
+"     elseif strpart( getline('.'), 0, col('.') - 1 ) =~ '^\s*$'
+"         return "\<tab>"
+"     elseif &omnifunc !~ ''
+"         return "\<C-X>\<C-O>"
+"     else
+"         return "\<C-N>"
+"     endif
+" endfunction
+" 
+" " power tab
+" imap <silent><expr><tab> TabWrap()
+" 
+" " Enter: complete&close popup if visible (so next Enter works); else: break undo
+" inoremap <silent><expr> <Cr> pumvisible() ?
+"             \ deoplete#mappings#close_popup() : "<C-g>u<Cr>"
+" 
+" " Ctrl-Space: summon FULL (synced) autocompletion
+" inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
+" 
+" " Escape: exit autocompletion, go to Normal mode
+" inoremap <silent><expr> <Esc> pumvisible() ? "<C-e><Esc>" : "<Esc>"
 
