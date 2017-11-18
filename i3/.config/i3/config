@@ -213,7 +213,9 @@ bindsym Mod1+Shift+Tab          focus left
 
 # Workspace cycling
 bindsym $mod+Tab                workspace next
-bindsym $mod+Shift+Tab          workspace prev
+
+# Workspace cycling and moving
+bindsym $mod+Shift+Tab          move container to workspace next; workspace next
 
 # Gaps
 bindsym $mod+period             gaps inner all plus  5
@@ -245,7 +247,6 @@ bindsym $mod+Ctrl+z             exec playerctl play-pause
 bindsym $mod+Mod1+ctrl+z        exec qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
 bindsym $mod+Mod1+z             exec ~/.config/i3/scripts/gpmdp_vol + 0.05
 bindsym $mod+Mod1+shift+z       exec ~/.config/i3/scripts/gpmdp_vol - 0.05
-# TODO seek/skip tracks
 
 # rofi (app launcher, sudo app launcher, file search, window jumper)
 bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
