@@ -272,6 +272,10 @@ bindsym $mod+Shift+t            exec thunar ~/Downloads
 # Python terminal (i.e. calculator)
 bindsym $mod+c                  exec termite -e python -t "floating python"
 
+# termite transparency
+bindsym $mod+semicolon          exec ~/.config/i3/scripts/termite_transparency ' + 0.01'
+bindsym $mod+Shift+semicolon    exec ~/.config/i3/scripts/termite_transparency ' - 0.01'
+
 # Redshift control
 bindsym $mod+m                  exec --no-startup-id rs $(($(cat ~/.rshift) + 200))
 bindsym $mod+Shift+m            exec --no-startup-id rs $(($(cat ~/.rshift) - 200))

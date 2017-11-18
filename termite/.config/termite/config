@@ -2,17 +2,10 @@
 font = Roboto Mono 14
 
 [colors]
-# special
-# foreground = #dcdccc
-# background = rgba(28, 28, 28, 0.9)
-# foreground      = #c5c8c6
-# foreground_bold = #c5c8c6
-# cursor          = #c5c8c6
-# background      = #1d1f21
 foreground      = #dcdccc
 foreground_bold = #dcdccc
 cursor          = #dcdccc
-background      = rgba(29, 31, 33, 0.92)
+background      = rgba(29, 31, 33, 0.93)
 
 # black
 color0  = #282a2e
