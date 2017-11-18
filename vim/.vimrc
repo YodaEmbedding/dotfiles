@@ -16,13 +16,15 @@ Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
 Plug 'scrooloose/nerdtree'                  " File explorer
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
+Plug 'tmhedberg/SimpylFold'                 " Python folding
 Plug 'majutsushi/tagbar'                    " (NEW) ctags; bound to \t
 Plug 'vim-airline/vim-airline'              " Theme
 Plug 'vim-airline/vim-airline-themes'       " Theme
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
-Plug 'justinmk/vim-sneak'                   " (NEW) Use two character find (mapped to 's')
-"Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
+Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (i.e. vim-sneak)
+Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
+Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
 Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 
@@ -43,7 +45,7 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 
 " Autocompletion {{{2
 
-"Plug 'Valloric/YouCompleteMe'               " Autocompletion
+Plug 'Valloric/YouCompleteMe'               " Autocompletion
 
 "Plug 'davidhalter/jedi-vim'                " Autocompletion (Python)
 "Plug 'ervandew/supertab'                    " Supertab
@@ -56,12 +58,11 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "    Plug 'roxma/vim-hug-neovim-rpc'
 "endif
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'                 " Autocompletion (Python)
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'zchee/deoplete-jedi'                 " Autocompletion (Python)
 ""Plug 'roxma/nvim-yarp'
 ""Plug 'roxma/vim-hug-neovim-rpc'
-"
-"Plug 'roxma/nvim-completion-manager'
+""Plug 'roxma/nvim-completion-manager'
 
 "Plug 'Shougo/echodoc.vim'
 
@@ -75,12 +76,12 @@ Plug 'zchee/deoplete-jedi'                 " Autocompletion (Python)
 "Plug 'chrisbra/NrrwRgn'                    " oooh this is cool (extract buffer)
 "Plug 'wincent/scalpel'                     " SublimeText-like word replace?
 "Plug 'AndrewRadev/sideways.vim'            " Parameter swapping
-"Plug 'tmhedberg/SimpylFold'                " Python folding
 "Plug 'ervandew/supertab'                   "
 "Plug 'vim-syntastic/syntastic'             " Syntax (compile) checking
 "Plug 'mbbill/undotree'                     "
 "Plug 'justinmk/vim-dirvish'                " Directory viewer
 "Plug 'junegunn/vim-easy-align'             "
+"Plug 'svermeulen/vim-easyclip'             " (USEFUL)
 "Plug 'mhinz/vim-grepper'                   "
 "Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
 "Plug 'tpope/vim-repeat'                    "
@@ -165,12 +166,13 @@ set background=dark  " Dark background
 colorscheme hybrid_material
 "colorscheme solarized
 
-" Custom colors
-" http://vim.wikia.com/wiki/Xterm256_color_names_for_console_Vim
-hi Normal guifg=PapayaWhip ctermfg=255
-
 " Transparent background
 hi Normal guibg=NONE ctermbg=NONE
+
+if has("gui_running")
+    hi Normal guifg=PapayaWhip ctermfg=255
+    set guifont=Roboto\ Mono\ 16
+endif
 
 " Bold font
 "let g:enable_bold_font = 1
@@ -424,13 +426,19 @@ noremap <silent> <C-j>      :call <SID>swap_down()<CR>
 nnoremap <Leader>/ :call eregex#toggle()<CR>
 
 " ctags toggle {{{2
-noremap <Leader>t :TagbarToggle<CR>
+noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
+
+" Buffer menu {{{2
+nnoremap <Leader>b :buffers<CR>:b<Space>
+
+" Register menu {{{2
+nnoremap <Leader>r :registers<CR>:put<Space>
 
 " Word wrap, up/down visually {{{2
 noremap <Leader>w :call ToggleWrap()<CR>
 
 " Relative numbering {{{2
-nnoremap <Leader>r :set relativenumber!<CR>
+nnoremap <Leader>n :set relativenumber!<CR>
 
 " Black hole delete {{{2
 nnoremap <Backspace> "_dd
@@ -472,6 +480,10 @@ nnoremap <Tab>   :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <A-n>   :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <A-p>   :bprevious<CR>:redraw<CR>:ls<CR>
+
+" Window navigation {{{2
+map ' <C-w>
+map '' <C-w>w
 
 " Navigate up/down in wrapped text {{{2
 nnoremap <Down> gj
