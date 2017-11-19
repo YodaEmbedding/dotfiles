@@ -92,8 +92,8 @@ bindsym $mod+Shift+Up           move up
 bindsym $mod+Shift+Right        move right
 
 # Split
-bindsym $mod+g                  split h
 bindsym $mod+v                  split v
+bindsym $mod+Shift+v            split h
 
 # Fullscreen
 bindsym $mod+f                  fullscreen toggle
@@ -177,7 +177,7 @@ bindsym $mod+Shift+F4           move container to workspace $ws8;  workspace $ws
 
 # Restart/reload i3
 bindsym $mod+Shift+r            restart  # Restarting is VERY fast. Use it.
-bindsym $mod+Shift+c            reload
+#bindsym $mod+Shift+c            reload
 
 # Exit i3
 bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -256,12 +256,19 @@ bindsym $mod+Shift+d            exec "wmctrl -l | rofi -dmenu -i -p 'window:' $r
 
 # Cycle border
 bindsym $mod+b                  border toggle
+bindsym $mod+Shift+b            border normal
 
 # Jump to urgent window
 bindsym $mod+x                  [urgent=latest] focus
 
 # Lock screen
 bindsym $mod+Shift+x            exec ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+
+# Make window a scratchpad
+bindsym $mod+Shift+minus        move scratchpad
+
+# Show scratchpad window
+bindsym $mod+minus              scratchpad show
 
 # Thunar
 bindsym $mod+t                  exec thunar
@@ -270,7 +277,7 @@ bindsym $mod+t                  exec thunar
 bindsym $mod+Shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
-bindsym $mod+c                  exec termite -e python -t "floating python"
+bindsym $mod+c                  exec termite -e python -t "python scratchpad"
 
 # termite transparency
 bindsym $mod+semicolon          exec ~/.config/i3/scripts/termite_transparency ' + 0.01'
@@ -294,8 +301,18 @@ mode "resize" {
 
     bindsym Left       resize shrink width   10 px or  10 ppt
     bindsym Down       resize grow   height  10 px or  10 ppt
-    bindsym Up         resize shrink height  10 px or  10 ppt
     bindsym Right      resize grow   width   10 px or  10 ppt
+    bindsym Up         resize shrink height  10 px or  10 ppt
+
+    bindsym Shift+h     resize shrink width   1 px or   1 ppt
+    bindsym Shift+j     resize grow   height  1 px or   1 ppt
+    bindsym Shift+k     resize shrink height  1 px or   1 ppt
+    bindsym Shift+l     resize grow   width   1 px or   1 ppt
+
+    bindsym Shift+Left  resize shrink width   1 px or   1 ppt
+    bindsym Shift+Down  resize grow   height  1 px or   1 ppt
+    bindsym Shift+Up    resize shrink height  1 px or   1 ppt
+    bindsym Shift+Right resize grow   width   1 px or   1 ppt
 
     bindsym Ctrl+h     resize shrink width  100 px or 100 ppt
     bindsym Ctrl+j     resize grow   height 100 px or 100 ppt
@@ -323,16 +340,18 @@ workspace_layout              tabbed
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #884422 #441122 #ffffff #442211   #442211
-client.focused_inactive #333333 #5f676a #ffffff #333333   #333333
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.focused          #441122 #441122 #ffffff #442211   #442211
+client.focused_inactive #5f676a #5f676a #ffffff #333333   #333333
+client.unfocused        #222222 #222222 #888888 #292d2e   #222222
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #333333
 
 # Default window locations
-for_window [title="floating python"] floating enable, resize set 600 100, move position 0 0
+for_window [title="python scratchpad"] floating enable, border none, \
+    resize set 600 100, move position 0 20, \
+    move scratchpad, scratchpad show
 
 # Default workspace locations
 assign [class="discord"]                          → $ws1
@@ -344,9 +363,9 @@ assign [class="League of Legends.exe"]            → $ws4
 assign [class="LeagueClientUx.exe"]               → $ws4
 assign [class="leagueclientux.exe"]               → $ws4
 assign [class="Lutris"]                           → $ws4
-assign [class="mpv"]                              → $ws4
+#assign [class="mpv"]                              → $ws4
 assign [class="qBittorrent"]                      → $ws4
-assign [class="Vlc"]                              → $ws4
+#assign [class="Vlc"]                              → $ws4
 assign [class="ksysguard"]                        → $ws10
 
 
@@ -401,11 +420,13 @@ exec        --no-startup-id     dropbox
 ### TODO ###
 
 # Unused bindings:
+# $mod+g
 # $mod+y
-# $mod+Shift+w
+# $mod+Shift+f
+# $mod+Shift+g
 # $mod+Shift+s
 # $mod+Shift+v
-# $mod+Shift+f
+# $mod+Shift+w
 # $mod+Shift+y
 
 # rofi select from options and pipe
