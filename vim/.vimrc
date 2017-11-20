@@ -48,6 +48,7 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 Plug 'Valloric/YouCompleteMe'               " Autocompletion
 
 "Plug 'davidhalter/jedi-vim'                " Autocompletion (Python)
+"Plug 'davidhalter/jedi-vim', {'for': 'python'}
 "Plug 'ervandew/supertab'                    " Supertab
 
 "if has('nvim')
@@ -155,32 +156,44 @@ let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 "let g:ycm_python_binary_path = '/usr/bin/env python3'
 
-" COLOR SCHEMES {{{1
+" THEMING {{{1
+
+" Color scheme {{{2
+
+" Favorites:
+" cobalt, desert, hybrid_reverse, hybrid_material, solarized
+colorscheme hybrid_material
+
+" Background {{{2
 
 "set t_Co=256        " Force 256-colors
 set background=dark  " Dark background
 
-"color desert
-"colorscheme cobalt
-"colorscheme hybrid_reverse
-colorscheme hybrid_material
-"colorscheme solarized
-
-" Transparent background
 hi Normal guibg=NONE ctermbg=NONE
 
 if has("gui_running")
     hi Normal guifg=PapayaWhip ctermfg=255
+endif
+
+" Font {{{2
+
+if has("gui_running")
     set guifont=Roboto\ Mono\ 16
 endif
 
 " Bold font
 "let g:enable_bold_font = 1
 
+" Airline {{{2
+
 " https://github.com/vim-airline/vim-airline/wiki/Screenshots
 " Change using :Airline Theme
 " base16, base16_ashes, base16_default, hybrid, jellybeans, lucius
 let g:airline_theme = "base16"
+
+" Highlight groups {{{2
+
+syn keyword Todo NOTE DEBUG
 
 " OPTIONS {{{1
 
@@ -196,6 +209,12 @@ set noexpandtab         " Tabs to Tabs
 set shiftwidth=4        " Indent/outdent by four columns
 "set softtabstop=4      " Indent as if four columns...?
 set tabstop=4           " Indentation levels every four columns
+
+" Python indenting
+let g:pyindent_continue     = '&sw'
+let g:pyindent_nested_paren = '&sw'
+let g:pyindent_open_paren   = '&sw'
+" let g:pyindent_continue   = '&sw * 2'
 
 " Search {{{2
 set hlsearch            " Highlight search results
