@@ -335,6 +335,7 @@ font                          pango:Noto Mono Regular, Awesome 8
 floating_modifier             $mod
 focus_follows_mouse           no
 hide_edge_borders             smart
+new_window                    normal 0 px
 workspace_auto_back_and_forth yes
 workspace_layout              tabbed
 
