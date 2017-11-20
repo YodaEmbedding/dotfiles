@@ -193,8 +193,8 @@ bindsym --whole-window --border $mod+Button4        workspace prev
 bindsym --whole-window --border $mod+Button5        workspace next
 bindsym --whole-window --border $mod+Shift+Button4  focus left
 bindsym --whole-window --border $mod+Shift+Button5  focus right
-bindsym --whole-window --border $mod+Ctrl+Button4   exec amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym --whole-window --border $mod+Ctrl+Button5   exec amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
+bindsym --whole-window --border $mod+Ctrl+Button4   exec --no-startup-id amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
+bindsym --whole-window --border $mod+Ctrl+Button5   exec --no-startup-id amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
 bindsym --border                Button2             kill
 
 # Workspace switch back/forth
@@ -224,29 +224,29 @@ bindsym $mod+slash              gaps outer all plus  5
 bindsym $mod+Shift+slash        gaps outer all minus 5
 
 # Volume control
-bindsym XF86AudioLowerVolume    exec amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume    exec amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMute           exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume    exec --no-startup-id amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioMute           exec --no-startup-id amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
 
-bindsym $mod+z                  exec amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+z            exec amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Ctrl+Shift+z       exec amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+z                  exec --no-startup-id amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+z            exec --no-startup-id amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Ctrl+Shift+z       exec --no-startup-id amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
 
-bindsym $mod+comma              exec amixer set Master 1%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+comma        exec amixer set Master 1%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+comma              exec --no-startup-id amixer set Master 1%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+comma        exec --no-startup-id amixer set Master 1%-    && pkill -SIGRTMIN+1 i3blocks
 
 # Media control
-bindsym XF86AudioPlay           exec playerctl play-pause
-bindsym XF86AudioPause          exec playerctl pause
-bindsym XF86AudioNext           exec playerctl next
-bindsym XF86AudioPrev           exec playerctl prev
+bindsym XF86AudioPlay           exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause          exec --no-startup-id playerctl pause
+bindsym XF86AudioNext           exec --no-startup-id playerctl next
+bindsym XF86AudioPrev           exec --no-startup-id playerctl prev
 
-bindsym $mod+Ctrl+z             exec playerctl play-pause
+bindsym $mod+Ctrl+z             exec --no-startup-id playerctl play-pause
 
 # GPMDP control
-bindsym $mod+Mod1+ctrl+z        exec qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+Mod1+z             exec ~/.config/i3/scripts/gpmdp_vol + 0.05
-bindsym $mod+Mod1+shift+z       exec ~/.config/i3/scripts/gpmdp_vol - 0.05
+bindsym $mod+Mod1+ctrl+z        exec --no-startup-id qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+Mod1+z             exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol + 0.05
+bindsym $mod+Mod1+shift+z       exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol - 0.05
 
 # rofi (app launcher, sudo app launcher, file search, window jumper)
 bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
@@ -262,7 +262,7 @@ bindsym $mod+Shift+b            border normal
 bindsym $mod+x                  [urgent=latest] focus
 
 # Lock screen
-bindsym $mod+Shift+x            exec ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+bindsym $mod+Shift+x            exec --no-startup-id ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
 
 # Make window a scratchpad
 bindsym $mod+Shift+minus        move scratchpad
@@ -277,11 +277,11 @@ bindsym $mod+t                  exec thunar
 bindsym $mod+Shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
-bindsym $mod+c                  exec termite -e python -t "python scratchpad"
+bindsym $mod+c                  exec --no-startup-id termite -e python -t "python scratchpad"
 
 # termite transparency
-bindsym $mod+semicolon          exec ~/.config/i3/scripts/termite_transparency ' + 0.01'
-bindsym $mod+Shift+semicolon    exec ~/.config/i3/scripts/termite_transparency ' - 0.01'
+bindsym $mod+semicolon          exec --no-startup-id ~/.config/i3/scripts/termite_transparency ' + 0.01'
+bindsym $mod+Shift+semicolon    exec --no-startup-id ~/.config/i3/scripts/termite_transparency ' - 0.01'
 
 # Redshift control
 bindsym $mod+m                  exec --no-startup-id rs $(($(cat ~/.rshift) + 200))
