@@ -3,7 +3,8 @@
 ### USER VARIABLES ###
 
 # Main modifier key
-set $mod Mod4
+set $mod  Mod4
+set $mod_ Mod1
 
 # Named workspaces
 #          
@@ -205,11 +206,11 @@ bindsym $mod+shift+grave        move container to workspace back_and_forth; work
 
 # TODO
 # Alt+tab like window switching back/forth
-bindsym Mod1+grave              focus right
+bindsym $mod_+grave             focus right
 
 # Next/previous windows
-bindsym Mod1+Tab focus          right
-bindsym Mod1+Shift+Tab          focus left
+bindsym $mod_+Tab focus         right
+bindsym $mod_+Shift+Tab         focus left
 
 # Workspace cycling
 bindsym $mod+Tab                workspace next
@@ -244,9 +245,9 @@ bindsym XF86AudioPrev           exec --no-startup-id playerctl prev
 bindsym $mod+Ctrl+z             exec --no-startup-id playerctl play-pause
 
 # GPMDP control
-bindsym $mod+Mod1+ctrl+z        exec --no-startup-id qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+Mod1+z             exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol + 0.05
-bindsym $mod+Mod1+shift+z       exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol - 0.05
+bindsym $mod+$mod_+ctrl+z       exec --no-startup-id qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+$mod_+z            exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol + 0.05
+bindsym $mod+$mod_+shift+z      exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol - 0.05
 
 # rofi (app launcher, sudo app launcher, file search, window jumper)
 bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
@@ -289,43 +290,74 @@ bindsym $mod+Shift+m            exec --no-startup-id rs $(($(cat ~/.rshift) - 20
 bindsym $mod+Ctrl+m             exec --no-startup-id rs 4000
 bindsym $mod+Ctrl+Shift+m       exec --no-startup-id rs 6500
 
+# Resize window
+bindsym $mod+$mod_+h            resize shrink width   10 px or  10 ppt
+bindsym $mod+$mod_+j            resize grow   height  10 px or  10 ppt
+bindsym $mod+$mod_+k            resize shrink height  10 px or  10 ppt
+bindsym $mod+$mod_+l            resize grow   width   10 px or  10 ppt
+
+bindsym $mod+$mod_+Left         resize shrink width   10 px or  10 ppt
+bindsym $mod+$mod_+Down         resize grow   height  10 px or  10 ppt
+bindsym $mod+$mod_+Right        resize grow   width   10 px or  10 ppt
+bindsym $mod+$mod_+Up           resize shrink height  10 px or  10 ppt
+
+bindsym $mod+$mod_+Shift+h      resize shrink width    1 px or   1 ppt
+bindsym $mod+$mod_+Shift+j      resize grow   height   1 px or   1 ppt
+bindsym $mod+$mod_+Shift+k      resize shrink height   1 px or   1 ppt
+bindsym $mod+$mod_+Shift+l      resize grow   width    1 px or   1 ppt
+
+bindsym $mod+$mod_+Shift+Left   resize shrink width    1 px or   1 ppt
+bindsym $mod+$mod_+Shift+Down   resize grow   height   1 px or   1 ppt
+bindsym $mod+$mod_+Shift+Up     resize shrink height   1 px or   1 ppt
+bindsym $mod+$mod_+Shift+Right  resize grow   width    1 px or   1 ppt
+
+bindsym $mod+$mod_+Ctrl+h       resize shrink width  100 px or 100 ppt
+bindsym $mod+$mod_+Ctrl+j       resize grow   height 100 px or 100 ppt
+bindsym $mod+$mod_+Ctrl+k       resize shrink height 100 px or 100 ppt
+bindsym $mod+$mod_+Ctrl+l       resize grow   width  100 px or 100 ppt
+
+bindsym $mod+$mod_+Ctrl+Left    resize shrink width  100 px or 100 ppt
+bindsym $mod+$mod_+Ctrl+Down    resize grow   height 100 px or 100 ppt
+bindsym $mod+$mod_+Ctrl+Up      resize shrink height 100 px or 100 ppt
+bindsym $mod+$mod_+Ctrl+Right   resize grow   width  100 px or 100 ppt
+
 
 ### DEFAULT MODES ###
 
 # Resize window
 mode "resize" {
-    bindsym h          resize shrink width   10 px or  10 ppt
-    bindsym j          resize grow   height  10 px or  10 ppt
-    bindsym k          resize shrink height  10 px or  10 ppt
-    bindsym l          resize grow   width   10 px or  10 ppt
+    bindsym h                   resize shrink width   10 px or  10 ppt
+    bindsym j                   resize grow   height  10 px or  10 ppt
+    bindsym k                   resize shrink height  10 px or  10 ppt
+    bindsym l                   resize grow   width   10 px or  10 ppt
 
-    bindsym Left       resize shrink width   10 px or  10 ppt
-    bindsym Down       resize grow   height  10 px or  10 ppt
-    bindsym Right      resize grow   width   10 px or  10 ppt
-    bindsym Up         resize shrink height  10 px or  10 ppt
+    bindsym Left                resize shrink width   10 px or  10 ppt
+    bindsym Down                resize grow   height  10 px or  10 ppt
+    bindsym Right               resize grow   width   10 px or  10 ppt
+    bindsym Up                  resize shrink height  10 px or  10 ppt
 
-    bindsym Shift+h     resize shrink width   1 px or   1 ppt
-    bindsym Shift+j     resize grow   height  1 px or   1 ppt
-    bindsym Shift+k     resize shrink height  1 px or   1 ppt
-    bindsym Shift+l     resize grow   width   1 px or   1 ppt
+    bindsym Shift+h             resize shrink width    1 px or   1 ppt
+    bindsym Shift+j             resize grow   height   1 px or   1 ppt
+    bindsym Shift+k             resize shrink height   1 px or   1 ppt
+    bindsym Shift+l             resize grow   width    1 px or   1 ppt
 
-    bindsym Shift+Left  resize shrink width   1 px or   1 ppt
-    bindsym Shift+Down  resize grow   height  1 px or   1 ppt
-    bindsym Shift+Up    resize shrink height  1 px or   1 ppt
-    bindsym Shift+Right resize grow   width   1 px or   1 ppt
+    bindsym Shift+Left          resize shrink width    1 px or   1 ppt
+    bindsym Shift+Down          resize grow   height   1 px or   1 ppt
+    bindsym Shift+Up            resize shrink height   1 px or   1 ppt
+    bindsym Shift+Right         resize grow   width    1 px or   1 ppt
 
-    bindsym Ctrl+h     resize shrink width  100 px or 100 ppt
-    bindsym Ctrl+j     resize grow   height 100 px or 100 ppt
-    bindsym Ctrl+k     resize shrink height 100 px or 100 ppt
-    bindsym Ctrl+l     resize grow   width  100 px or 100 ppt
+    bindsym Ctrl+h              resize shrink width  100 px or 100 ppt
+    bindsym Ctrl+j              resize grow   height 100 px or 100 ppt
+    bindsym Ctrl+k              resize shrink height 100 px or 100 ppt
+    bindsym Ctrl+l              resize grow   width  100 px or 100 ppt
 
-    bindsym Ctrl+Left  resize shrink width  100 px or 100 ppt
-    bindsym Ctrl+Down  resize grow   height 100 px or 100 ppt
-    bindsym Ctrl+Up    resize shrink height 100 px or 100 ppt
-    bindsym Ctrl+Right resize grow   width  100 px or 100 ppt
+    bindsym Ctrl+Left           resize shrink width  100 px or 100 ppt
+    bindsym Ctrl+Down           resize grow   height 100 px or 100 ppt
+    bindsym Ctrl+Up             resize shrink height 100 px or 100 ppt
+    bindsym Ctrl+Right          resize grow   width  100 px or 100 ppt
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Return              mode "default"
+    bindsym Escape              mode "default"
 }
 
 
