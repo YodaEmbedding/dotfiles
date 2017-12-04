@@ -283,61 +283,68 @@ autocmd InsertLeave * silent! pclose!
 
 autocmd FileType python setlocal tabstop=4
 
+" COMMANDS {{{1
+
+" Copy search matches {{{2
+command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
+
 " FUNCTIONS {{{1
 
 " Copy search matches {{{2
-function! CopyMatches(reg)
+function! s:CopyMatches(reg)
     let hits = []
     %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
     let reg = empty(a:reg) ? '+' : a:reg
     execute 'let @'.reg.' = join(hits, "\n") . "\n"'
 endfunction
-command! -register CopyMatches call CopyMatches(<q-reg>)
 
 " Check backspace {{{2
-function! s:check_back_space() abort
+function! s:CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 " Strip trailing white spaces {{{2
-fun! <SID>StripTrailingWhitespaces()
+function! s:StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
     %s/\s\+$//e
     call cursor(l, c)
-endfun
+endfunction
 
 " Swap lines {{{2
-function! s:swap_lines(n1, n2)
+" Swap lines {{{3
+function! s:SwapLines(n1, n2)
     let line1 = getline(a:n1)
     let line2 = getline(a:n2)
     call setline(a:n1, line2)
     call setline(a:n2, line1)
 endfunction
 
-function! s:swap_up()
+" Swap up {{{3
+function! s:SwapUp()
     let n = line('.')
     if n == 1
         return
     endif
 
-    call s:swap_lines(n, n - 1)
+    call s:SwapLines(n, n - 1)
     exec n - 1
 endfunction
 
-function! s:swap_down()
+" Swap down {{{3
+function! s:SwapDown()
     let n = line('.')
     if n == line('$')
         return
     endif
 
-    call s:swap_lines(n, n + 1)
+    call s:SwapLines(n, n + 1)
     exec n + 1
 endfunction
 
 " Word wrap {{{2
-function ToggleWrap()
+function! s:ToggleWrap()
     setlocal wrap linebreak nolist
     set virtualedit=
     setlocal display+=lastline
@@ -346,6 +353,7 @@ function ToggleWrap()
 endfunction
 
 " Folding {{{2
+" Fold config files {{{3
 function! FoldConfig()
     let thisline = getline(v:lnum)
     let matchline = matchstr(thisline, '^#\+.\+#\+$')
@@ -360,6 +368,7 @@ function! FoldConfig()
     return "="
 endfunction
 
+" Fold markdown files {{{3
 function! FoldMarkdown()
     let thisline = getline(v:lnum)
     let match = matchstr(thisline, '^#*')
@@ -379,7 +388,7 @@ endfunction
 if match(&runtimepath, 'deoplete.nvim') != -1
     " inoremap <silent><expr> <Tab>
     "     \ pumvisible() ? "\<C-n>" :
-    "     \ <SID>check_back_space() ? "\<Tab>" :
+    "     \ <SID>CheckBackspace() ? "\<Tab>" :
     "     \ deoplete#mappings#manual_complete()
 endif
 
@@ -437,10 +446,10 @@ endif
 nmap <Leader>f :NERDTreeToggle<CR>
 
 " Swap lines {{{2
-noremap <silent> <C-S-Up>   :call <SID>swap_up()<CR>
-noremap <silent> <C-S-Down> :call <SID>swap_down()<CR>
-noremap <silent> <C-k>      :call <SID>swap_up()<CR>
-noremap <silent> <C-j>      :call <SID>swap_down()<CR>
+noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
+noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
+noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
+noremap <silent> <C-j>      :call <SID>SwapDown()<CR>
 
 " eregex toggle {{{2
 nnoremap <Leader>/ :call eregex#toggle()<CR>
@@ -458,7 +467,7 @@ nnoremap <Leader>r :registers<CR>:put<Space>
 nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Word wrap, up/down visually {{{2
-noremap <Leader>w :call ToggleWrap()<CR>
+noremap <Leader>w :call <SID>ToggleWrap()<CR>
 
 " Relative numbering {{{2
 nnoremap <Leader>n :set relativenumber!<CR>
@@ -551,17 +560,17 @@ cmap w!! w !sudo tee > /dev/null %
 "         return "\<C-N>"
 "     endif
 " endfunction
-" 
+"
 " " power tab
 " imap <silent><expr><tab> TabWrap()
-" 
+"
 " " Enter: complete&close popup if visible (so next Enter works); else: break undo
 " inoremap <silent><expr> <Cr> pumvisible() ?
 "             \ deoplete#mappings#close_popup() : "<C-g>u<Cr>"
-" 
+"
 " " Ctrl-Space: summon FULL (synced) autocompletion
 " inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
-" 
+"
 " " Escape: exit autocompletion, go to Normal mode
 " inoremap <silent><expr> <Esc> pumvisible() ? "<C-e><Esc>" : "<Esc>"
 
