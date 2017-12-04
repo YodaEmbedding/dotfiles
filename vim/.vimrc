@@ -454,6 +454,9 @@ nnoremap <Leader>b :buffers<CR>:b<Space>
 " Register menu {{{2
 nnoremap <Leader>r :registers<CR>:put<Space>
 
+" Strip trailing whitespace {{{2
+nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
+
 " Word wrap, up/down visually {{{2
 noremap <Leader>w :call ToggleWrap()<CR>
 
