@@ -25,6 +25,8 @@ Plug 'farmergreg/vim-lastplace'             " Reopen file last position
 Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (i.e. vim-sneak)
 Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
+Plug 'lervag/vimtex'                        " LaTeX
+Plug 'matze/vim-tex-fold'                   " LaTeX folding
 Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 
@@ -41,7 +43,6 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'terryma/vim-multiple-cursors'        " Multiple cursors WITH REGEX?! OMG
 "Plug 'goldfeld/vim-seek'                   " Use two character find (mapped to 's')
 "Plug 'tpope/vim-surround'                  "
-"Plug 'lervag/vimtex'                       " vim latex
 
 " Autocompletion {{{2
 
@@ -82,7 +83,7 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'mbbill/undotree'                     "
 "Plug 'justinmk/vim-dirvish'                " Directory viewer
 "Plug 'junegunn/vim-easy-align'             "
-"Plug 'svermeulen/vim-easyclip'             " (USEFUL)
+"Plug 'svermeulen/vim-easyclip'             " (USEFUL)  Blackhole delete, smart yanking, etc
 "Plug 'mhinz/vim-grepper'                   "
 "Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
 "Plug 'tpope/vim-repeat'                    "
