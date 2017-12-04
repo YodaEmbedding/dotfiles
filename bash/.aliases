@@ -6,6 +6,7 @@ alias commands='compgen -c'
 alias g='grep -i'
 
 # Listing
+alias ll='ls -l'
 alias ls='ls --color=auto -h --group-directories-first'
 alias lsd='ls -d */'
 alias lsl='ls -al'
@@ -35,6 +36,8 @@ alias gca='git commit -a'
 alias gcam='git commit -am'
 alias gcm='git commit -m'
 alias gd='git diff'
+alias gl='git log --graph --full-history --all --color --oneline'
+alias gla='git log --graph --decorate $(git rev-list -g --all)'
 alias gst='git status'
 
 # Copy paste
@@ -43,6 +46,7 @@ alias pbpaste='xclip -selection clipboard -o'
 
 # Statistics
 alias class='xprop | grep WM_CLASS'
+alias count='ls -1 | wc -l'
 alias diskusage='du -sh'
 alias perm='stat -c "%a %n"'
 
