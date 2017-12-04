@@ -194,7 +194,7 @@ let g:airline_theme = "base16"
 
 " Highlight groups {{{2
 
-syn keyword Todo NOTE DEBUG
+syn keyword Todo NOTE DEBUG FIXME
 
 " OPTIONS {{{1
 
@@ -460,6 +460,10 @@ noremap <Leader>w :call ToggleWrap()<CR>
 " Relative numbering {{{2
 nnoremap <Leader>n :set relativenumber!<CR>
 
+" Count search matches {{{2
+nnoremap <Leader>s :%s///gn<left><left><left><left>
+nnoremap <Leader>S :%s/\<lt>\>//gn<left><left><left><left><left><left>
+
 " Black hole delete {{{2
 nnoremap <Backspace> "_dd
 vnoremap <Backspace> "_dd
@@ -474,6 +478,7 @@ xnoremap <silent> p p:let @"=@0<CR>
 " Clipboard (copy/paste) {{{2
 nmap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
 nmap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
+"nmap <silent> <Leader><C-p> :set paste<CR>"+p:set nopaste<CR> " TODO paste inline
 map  <silent> <Leader>y "+y
 map  <silent> <Leader>Y "+Y
 
@@ -511,13 +516,9 @@ nnoremap <Up>   gk
 inoremap <Down> <C-o>gj
 inoremap <Up>   <C-o>gk
 
-" Navigate 5 lines up/down {{{2
-noremap <C-Down> 5<C-e>
-noremap <C-Up>   5<C-y>
-
-" Navigate screen up/down {{{2
-noremap <S-Down> <C-e>
-noremap <S-Up>   <C-y>
+" Scroll 5 lines up/down {{{2
+noremap <Down> 5<C-d>
+noremap <Up>   5<C-u>
 
 " Folding {{{2
 nnoremap <Space> za
