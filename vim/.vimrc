@@ -170,11 +170,8 @@ colorscheme hybrid_material
 "set t_Co=256        " Force 256-colors
 set background=dark  " Dark background
 
-hi Normal guibg=NONE ctermbg=NONE
-
-if has("gui_running")
-    hi Normal guifg=PapayaWhip ctermfg=255
-endif
+hi Normal guibg=DarkSlateGray ctermbg=NONE
+hi Normal guifg=PapayaWhip ctermfg=249
 
 " Font {{{2
 
