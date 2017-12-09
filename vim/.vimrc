@@ -14,7 +14,6 @@ Plug 'othree/eregex.vim'                    " PCRE style regex (use :%S// to sea
 Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
 Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
-Plug 'scrooloose/nerdtree'                  " File explorer
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
 Plug 'tmhedberg/SimpylFold'                 " Python folding
 Plug 'majutsushi/tagbar'                    " (NEW) ctags; bound to \t
@@ -25,7 +24,7 @@ Plug 'farmergreg/vim-lastplace'             " Reopen file last position
 Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (i.e. vim-sneak)
 Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
-Plug 'lervag/vimtex'                        " LaTeX
+Plug 'tpope/vim-surround'                   " (NEW) Change surrounding parenthesis, i.e. cs([
 Plug 'matze/vim-tex-fold'                   " LaTeX folding
 Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
@@ -35,6 +34,7 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'gkjgh/cobalt'                        " Theme
 "Plug 'junegunn/fzf.vim'                    " Fuzzy search/open files within directory
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
+"Plug 'scrooloose/nerdtree'                 " File explorer
 "Plug 'python-mode/python-mode', {'for': 'python'}
 "Plug 'altercation/vim-colors-solarized'    " Theme
 "Plug 'easymotion/vim-easymotion'           " Motion
@@ -42,7 +42,7 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'nathanaelkane/vim-indent-guides'     "
 "Plug 'terryma/vim-multiple-cursors'        " Multiple cursors WITH REGEX?! OMG
 "Plug 'goldfeld/vim-seek'                   " Use two character find (mapped to 's')
-"Plug 'tpope/vim-surround'                  "
+"Plug 'lervag/vimtex'                       " LaTeX
 
 " Autocompletion {{{2
 
@@ -87,6 +87,7 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'mhinz/vim-grepper'                   "
 "Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
 "Plug 'tpope/vim-repeat'                    "
+"Plug 'kana/vim-submode'                    " More modes
 "Plug 'justinmk/vim-syntax-extra'           " More syntax highlighting
 "Plug 'thaerkh/vim-workspace'               "
 "Plug 'jreybert/vimagit'                    " vim git magic!!!
