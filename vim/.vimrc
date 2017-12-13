@@ -519,51 +519,53 @@ nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
 " Word wrap, up/down visually {{{3
 noremap <Leader>w :call <SID>ToggleWrap()<CR>
 
-"Black hole paste (in visual mode) {{{2
+" Miscellaneous {{{2
+
+"Black hole paste (in visual mode) {{{3
 xnoremap <silent> p p:let @"=@0<CR>
 
-" New line without insert mode (uses q register to mark) {{{2
-nnoremap <CR> mqo<Esc>`q
+" Folding {{{3
+nnoremap <Space> za
+vnoremap <Space> za
 
-" Macro {{{2
+" Macro {{{3
 nmap <silent> <F2> @q
 nmap <silent> <F3> @@
 
-" Search for visually selected text {{{2
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-
-" Buffer navigation {{{2
+" Navigate buffer {{{3
 nnoremap <Tab>   :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <A-n>   :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <A-p>   :bprevious<CR>:redraw<CR>:ls<CR>
 
-" Window navigation {{{2
-map ' <C-w>
-map '' <C-w>w
-
-" Navigate up/down in wrapped text {{{2
+" Navigate up/down in wrapped text {{{3
 nnoremap <Down> gj
 nnoremap <Up>   gk
 inoremap <Down> <C-o>gj
 inoremap <Up>   <C-o>gk
 
-" Scroll 5 lines up/down {{{2
+" Navigate window {{{3
+map ' <C-w>
+map '' <C-w>w
+
+" New line without insert mode (uses q register to mark) {{{3
+nnoremap <CR> mqo<Esc>`q
+
+" Save as sudo {{{3
+cmap w!! w !sudo tee > /dev/null %
+
+" Scroll 5 lines up/down {{{3
 noremap <Down> 5<C-d>
 noremap <Up>   5<C-u>
 
-" Swap lines {{{2
+" Search for visually selected text {{{3
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" Swap lines {{{3
 noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
 noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
 noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
 noremap <silent> <C-j>      :call <SID>SwapDown()<CR>
-
-" Folding {{{2
-nnoremap <Space> za
-vnoremap <Space> za
-
-" Save as sudo {{{2
-cmap w!! w !sudo tee > /dev/null %
 
 " TODO {{{1
 
