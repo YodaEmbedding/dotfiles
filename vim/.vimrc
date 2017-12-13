@@ -31,7 +31,6 @@ Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 
 " Disabled {{{2
-
 "Plug 'gkjgh/cobalt'                        " Theme
 "Plug 'junegunn/fzf.vim'                    " Fuzzy search/open files within directory
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
@@ -47,8 +46,13 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'lervag/vimtex'                       " LaTeX
 
 " Autocompletion {{{2
-
 Plug 'Valloric/YouCompleteMe'               " Autocompletion
+
+" UNTRIED {{{3
+"Plug 'SirVer/ultisnips'                    " Snippet completion
+"Plug 'Shougo/neocomplete.vim'              "
+"Plug 'lifepillar/vim-mucomplete'           "
+"}}}
 
 "Plug 'davidhalter/jedi-vim'                " Autocompletion (Python)
 "Plug 'davidhalter/jedi-vim', {'for': 'python'}
@@ -71,10 +75,6 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'Shougo/echodoc.vim'
 
 " Untried {{{2
-
-" A bunch of cool stuff here:
-"https://www.reddit.com/r/vim/comments/76z4ux/vim_after_15_years/doj0qb6/
-
 "Plug 'wincent/command-t'                   "
 "Plug 'Xuyuanp/nerdtree-git-plugin'         "
 "Plug 'chrisbra/NrrwRgn'                    " oooh this is cool (extract buffer)
@@ -95,11 +95,6 @@ Plug 'Valloric/YouCompleteMe'               " Autocompletion
 "Plug 'jreybert/vimagit'                    " vim git magic!!!
 "Plug 'benmills/vimux'                      "
 "Plug 'kkoenig/wimproved.vim'               " For Windows
-
-" Autocompletion
-"Plug 'SirVer/ultisnips'                    " Snippet completion
-"Plug 'Shougo/neocomplete.vim'              "
-"Plug 'lifepillar/vim-mucomplete'           "
 
 " End {{{2
 call plug#end()
@@ -538,6 +533,10 @@ nnoremap <S-Tab> :bprevious<CR>
 nnoremap <A-n>   :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <A-p>   :bprevious<CR>:redraw<CR>:ls<CR>
 
+" Navigate scroll 5 lines up/down {{{3
+noremap <Down> 5<C-d>
+noremap <Up>   5<C-u>
+
 " Navigate up/down in wrapped text {{{3
 nnoremap <Down> gj
 nnoremap <Up>   gk
@@ -554,10 +553,6 @@ nnoremap <CR> mqo<Esc>`q
 " Save as sudo {{{3
 cmap w!! w !sudo tee > /dev/null %
 cmap x!! x !sudo tee > /dev/null %
-
-" Scroll 5 lines up/down {{{3
-noremap <Down> 5<C-d>
-noremap <Up>   5<C-u>
 
 " Search for visually selected text {{{3
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
