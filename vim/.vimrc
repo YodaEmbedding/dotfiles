@@ -207,6 +207,22 @@ syn keyword Todo NOTE DEBUG FIXME
 
 " OPTIONS {{{1
 
+" Conceal {{{2
+set conceallevel=0
+let g:tex_conceal = ""
+
+" Folding {{{2
+set foldnestmax=3
+set foldminlines=4
+
+" GUI {{{2
+if has("gui_running")
+    "set guioptions +=e     " Use GUI tabs
+    "set guioptions -=m     " Remove menubar
+    set guioptions -=T      " Remove toolbar
+    "set guitablabel=%N\ %t\ %M  " GUI tab labels
+endif
+
 " Indenting and Tabs {{{2
 
 "set autoindent         "
@@ -226,33 +242,6 @@ let g:pyindent_nested_paren = '&sw'
 let g:pyindent_open_paren   = '&sw'
 " let g:pyindent_continue   = '&sw * 2'
 
-" Search {{{2
-set hlsearch            " Highlight search results
-set ignorecase          " Ignore case
-"set magic              " Escape like regular regexes; use \V to revert
-set smartcase           " Ignore case if lower
-
-" Visual {{{2
-set colorcolumn=80      " Column guide
-"set cursorline         " Highlight current line (disabled because it causes cursor lag)
-set laststatus=2        " Show status line
-set mouse=a             " Mouse interactivity
-set number              " Line numbers
-
-" Undo {{{2
-set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
-set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
-
-" Conceal {{{2
-set conceallevel=0
-let g:tex_conceal = ""
-
-" Folding {{{2
-set foldnestmax=3
-set foldminlines=4
-
 " Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
@@ -262,13 +251,24 @@ set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
 "set nocul               " disable highlight current line
 "set ttyfast             " speeds up page up/down?
 
-" GUI {{{2
-if has("gui_running")
-    "set guioptions +=e     " Use GUI tabs
-    "set guioptions -=m     " Remove menubar
-    set guioptions -=T      " Remove toolbar
-    "set guitablabel=%N\ %t\ %M  " GUI tab labels
-endif
+" Search {{{2
+set hlsearch            " Highlight search results
+set ignorecase          " Ignore case
+"set magic              " Escape like regular regexes; use \V to revert
+set smartcase           " Ignore case if lower
+
+" Undo {{{2
+set undofile                " Save undo's after file closes
+set undodir=$HOME/.vim/undo " where to save undo histories
+set undolevels=1000         " How many undos
+set undoreload=10000        " number of lines to save for undo
+
+" Visual {{{2
+set colorcolumn=80      " Column guide
+"set cursorline         " Highlight current line (disabled because it causes cursor lag)
+set laststatus=2        " Show status line
+set mouse=a             " Mouse interactivity
+set number              " Line numbers
 
 " AUTOCMDS {{{1
 
