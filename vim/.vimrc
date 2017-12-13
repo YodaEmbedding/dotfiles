@@ -553,6 +553,7 @@ nnoremap <CR> mqo<Esc>`q
 
 " Save as sudo {{{3
 cmap w!! w !sudo tee > /dev/null %
+cmap x!! x !sudo tee > /dev/null %
 
 " Scroll 5 lines up/down {{{3
 noremap <Down> 5<C-d>
