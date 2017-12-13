@@ -15,10 +15,11 @@ Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary
 Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
-Plug 'tmhedberg/SimpylFold'                 " Python folding
 Plug 'majutsushi/tagbar'                    " (NEW) ctags; bound to \t
 Plug 'vim-airline/vim-airline'              " Theme
 Plug 'vim-airline/vim-airline-themes'       " Theme
+Plug 'pseewald/vim-anyfold'                 " Fold on indent
+Plug 'airblade/vim-gitgutter'               " Git gutter
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
 Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (i.e. vim-sneak)
@@ -36,6 +37,7 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
 "Plug 'scrooloose/nerdtree'                 " File explorer
 "Plug 'python-mode/python-mode', {'for': 'python'}
+"Plug 'tmhedberg/SimpylFold'                " Python folding
 "Plug 'altercation/vim-colors-solarized'    " Theme
 "Plug 'easymotion/vim-easymotion'           " Motion
 "Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
@@ -146,6 +148,15 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
+" vim-anyfold {{{2
+
+let anyfold_activate=1
+"let anyfold_fold_display=0
+"let anyfold_motion=0
+let anyfold_identify_comments=0
+"let anyfold_fold_comments=1
+"let anyfold_fold_toplevel=1
+
 " vim-sleuth {{{2
 
 let b:sleuth_mixed_tabstop = 4
@@ -238,6 +249,10 @@ set undoreload=10000        " number of lines to save for undo
 set conceallevel=0
 let g:tex_conceal = ""
 
+" Folding {{{2
+set foldnestmax=3
+set foldminlines=4
+
 " Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
@@ -268,6 +283,8 @@ autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <
 " Folding {{{2
 
 "autocmd FileType * setlocal foldcolumn=3 foldmethod=indent
+autocmd Filetype conf,markdown,vim,zsh let anyfold_activate=0
+autocmd Filetype conf,markdown,vim,zsh setlocal foldminlines=0
 autocmd FileType conf setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldConfig()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
 autocmd FileType vim,zsh setlocal foldcolumn=3 foldmethod=marker
