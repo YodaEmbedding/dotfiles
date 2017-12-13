@@ -278,7 +278,8 @@ bindsym $mod+t                  exec thunar
 bindsym $mod+Shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
-bindsym $mod+c                  exec --no-startup-id termite -e python -t "python scratchpad"
+bindsym $mod+c                  exec --no-startup-id termite -e ptpython  -t "python scratchpad"
+bindsym $mod+shift+c            exec --no-startup-id termite -e ptipython -t "ipython scratchpad"
 
 # termite transparency
 bindsym $mod+semicolon          exec --no-startup-id ~/.config/i3/scripts/termite_transparency ' + 0.01'
@@ -383,7 +384,11 @@ client.background       #333333
 
 # Default window locations
 for_window [title="python scratchpad"] floating enable, border none, \
-    resize set 600 100, move position 0 20, \
+    resize set 600 232, move position 0 20, \
+    move scratchpad, scratchpad show
+
+for_window [title="ipython scratchpad"] floating enable, border none, \
+    resize set 600 232, move position 0 20, \
     move scratchpad, scratchpad show
 
 # Default workspace locations
