@@ -404,7 +404,9 @@ endfunction
 
 " KEYBOARD MAPPINGS {{{1
 
-" Deoplete bindings {{{2
+" Plugin bindings {{{2
+
+" deoplete bindings {{{3
 
 if match(&runtimepath, 'deoplete.nvim') != -1
     " inoremap <silent><expr> <Tab>
@@ -413,10 +415,22 @@ if match(&runtimepath, 'deoplete.nvim') != -1
     "     \ deoplete#mappings#manual_complete()
 endif
 
-" Repeat motion bindings {{{2
+" fzf bindings {{{3
+" TODO: Probably make buffers even more accessible
+if match(&runtimepath, 'fzf') != -1
+    nmap <Leader>b :Buffers<CR>
+    nmap <Leader>f :Files<CR>
+    nmap <Leader>t :Tags<CR>
+endif
+
+" NERDTree bindings {{{3
+
+nmap <Leader>f :NERDTreeToggle<CR>
+
+" repmo-vim bindings {{{3
 if match(&runtimepath, 'repmo-vim') != -1
     " Specific mappings if vim-sneak plugin enabled
-    if match(&runtimepath, 'vim-sneak') != -1 "{{{3
+    if match(&runtimepath, 'vim-sneak') != -1 "{{{4
         map  <expr> ; repmo#LastKey('<Plug>Sneak_;')|sunmap ;
         map  <expr> , repmo#LastRevKey('<Plug>Sneak_,')|sunmap ,
 
@@ -429,7 +443,7 @@ if match(&runtimepath, 'repmo-vim') != -1
         map  <expr> S repmo#ZapKey('<Plug>Sneak_S')|ounmap S|sunmap S
         omap <expr> z repmo#ZapKey('<Plug>Sneak_s')
         omap <expr> Z repmo#ZapKey('<Plug>Sneak_S')
-    else "{{{3
+    else "{{{4
         map <expr> ; repmo#LastKey(';')|sunmap ;
         map <expr> , repmo#LastRevKey(',')|sunmap ,
 
@@ -439,7 +453,7 @@ if match(&runtimepath, 'repmo-vim') != -1
         noremap <expr> T repmo#ZapKey('T')|sunmap T
     endif "}}}
 
-    " Non-specific mappings
+    " Non-specific mappings {{{4
     noremap <expr> h repmo#SelfKey('h', 'l')|sunmap h
     noremap <expr> l repmo#SelfKey('l', 'h')|sunmap l
 
@@ -452,19 +466,8 @@ if match(&runtimepath, 'repmo-vim') != -1
     noremap <expr> E repmo#Key('E', 'B')|sunmap E
     noremap <expr> w repmo#Key('w', 'b')|sunmap w
     noremap <expr> W repmo#Key('W', 'B')|sunmap W
+    "}}}
 endif
-
-" fzf bindings {{{2
-" TODO: Probably make buffers even more accessible
-if match(&runtimepath, 'fzf') != -1
-    nmap <Leader>b :Buffers<CR>
-    nmap <Leader>f :Files<CR>
-    nmap <Leader>t :Tags<CR>
-endif
-
-" Nerdtree bindings {{{2
-
-nmap <Leader>f :NERDTreeToggle<CR>
 
 " Swap lines {{{2
 noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
