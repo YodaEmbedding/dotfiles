@@ -311,18 +311,18 @@ command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 
 " FUNCTIONS {{{1
 
+" Check backspace {{{2
+function! s:CheckBackspace() abort
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
 " Copy search matches {{{2
 function! s:CopyMatches(reg)
     let hits = []
     %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
     let reg = empty(a:reg) ? '+' : a:reg
     execute 'let @'.reg.' = join(hits, "\n") . "\n"'
-endfunction
-
-" Check backspace {{{2
-function! s:CheckBackspace() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
 " Folding {{{2
