@@ -469,62 +469,58 @@ if match(&runtimepath, 'repmo-vim') != -1
     "}}}
 endif
 
-" Swap lines {{{2
-noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
-noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
-noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
-noremap <silent> <C-j>      :call <SID>SwapDown()<CR>
+" Leader {{{2
 
-" eregex toggle {{{2
-nnoremap <Leader>/ :call eregex#toggle()<CR>
-
-" ctags toggle {{{2
-noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
-
-" Buffer menu {{{2
-nnoremap <Leader>b :buffers<CR>:b<Space>
-
-" Register menu {{{2
-nnoremap <Leader>r :registers<CR>:put<Space>
-
-" Strip trailing whitespace {{{2
-nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
-
-" Word wrap, up/down visually {{{2
-noremap <Leader>w :call <SID>ToggleWrap()<CR>
-
-" Relative numbering {{{2
-nnoremap <Leader>n :set relativenumber!<CR>
-
-" Count search matches {{{2
-nnoremap <Leader>s :%s///gn<left><left><left><left>
-nnoremap <Leader>S :%s/\<lt>\>//gn<left><left><left><left><left><left>
-
-" Black hole delete {{{2
-nnoremap <Backspace> "_dd
-vnoremap <Backspace> "_dd
+" Black hole delete {{{3
 nnoremap <Leader>d   "_d
 vnoremap <Leader>d   "_d
 nnoremap <Leader>x   "_x
 vnoremap <Leader>x   "_x
+nnoremap <Backspace> "_dd
+vnoremap <Backspace> "_dd
 
-"Black hole paste (in visual mode) {{{2
-xnoremap <silent> p p:let @"=@0<CR>
+" Buffer menu {{{3
+nnoremap <Leader>b :buffers<CR>:b<Space>
 
-" Clipboard (copy/paste) {{{2
+" Clipboard (copy/paste) {{{3
 nmap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
 nmap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
 "nmap <silent> <Leader><C-p> :set paste<CR>"+p:set nopaste<CR> " TODO paste inline
 map  <silent> <Leader>y "+y
 map  <silent> <Leader>Y "+Y
 
-" Spell checker {{{2
+" Count search matches {{{3
+nnoremap <Leader>s :%s///gn<left><left><left><left>
+nnoremap <Leader>S :%s/\<lt>\>//gn<left><left><left><left><left><left>
+
+" ctags toggle {{{3
+noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
+
+" eregex toggle {{{3
+nnoremap <Leader>/ :call eregex#toggle()<CR>
+
+" Register menu {{{3
+nnoremap <Leader>r :registers<CR>:put<Space>
+
+" Relative numbering {{{3
+nnoremap <Leader>n :set relativenumber!<CR>
+
+" Spell checker {{{3
 " toggle, next, previous, add, correct
 map <leader>ss :setlocal spell!<CR>
 map <leader>sn ]s
 map <leader>sp [s
 map <leader>sa zg
 map <leader>sc z=
+
+" Strip trailing whitespace {{{3
+nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
+
+" Word wrap, up/down visually {{{3
+noremap <Leader>w :call <SID>ToggleWrap()<CR>
+
+"Black hole paste (in visual mode) {{{2
+xnoremap <silent> p p:let @"=@0<CR>
 
 " New line without insert mode (uses q register to mark) {{{2
 nnoremap <CR> mqo<Esc>`q
@@ -555,6 +551,12 @@ inoremap <Up>   <C-o>gk
 " Scroll 5 lines up/down {{{2
 noremap <Down> 5<C-d>
 noremap <Up>   5<C-u>
+
+" Swap lines {{{2
+noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
+noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
+noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
+noremap <silent> <C-j>      :call <SID>SwapDown()<CR>
 
 " Folding {{{2
 nnoremap <Space> za
