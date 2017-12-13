@@ -220,7 +220,7 @@ set shiftwidth=4        " Indent/outdent by four columns
 "set softtabstop=4      " Indent as if four columns...?
 set tabstop=4           " Indentation levels every four columns
 
-" Python indenting
+" Python indenting {{{3
 let g:pyindent_continue     = '&sw'
 let g:pyindent_nested_paren = '&sw'
 let g:pyindent_open_paren   = '&sw'
@@ -272,13 +272,20 @@ endif
 
 " AUTOCMDS {{{1
 
+" Auto close preview {{{2
+
+"autocmd CompleteDone * silent! pclose!
+autocmd InsertLeave * silent! pclose!
+
+" Conceal level {{{2
+
+autocmd FileType markdown setlocal conceallevel=0
+" TODO This isn't working...
+"autocmd FileType tex setlocal conceallevel=0
+
 " Disable continue comment on new line {{{2
 
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
-
-" Remove trailing whitespace on file save {{{2
-
-autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Folding {{{2
 
@@ -289,14 +296,13 @@ autocmd FileType conf setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldConfig(
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
 autocmd FileType vim,zsh setlocal foldcolumn=3 foldmethod=marker
 
-" Auto close preview {{{2
-
-"autocmd CompleteDone * silent! pclose!
-autocmd InsertLeave * silent! pclose!
-
 " Indenting and Tabs {{{2
 
 autocmd FileType python setlocal tabstop=4
+
+" Remove trailing whitespace on file save {{{2
+
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " COMMANDS {{{1
 
@@ -317,6 +323,35 @@ endfunction
 function! s:CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Folding {{{2
+" Fold config files {{{3
+function! FoldConfig()
+    let thisline = getline(v:lnum)
+    let matchline = matchstr(thisline, '^#\+.\+#\+$')
+    let match = matchstr(matchline, '^#*')
+    let level = strlen(match)
+
+    if level > 0
+        "return ">" . string(level)
+        return ">1"
+    endif
+
+    return "="
+endfunction
+
+" Fold markdown files {{{3
+function! FoldMarkdown()
+    let thisline = getline(v:lnum)
+    let match = matchstr(thisline, '^#*')
+    let level = strlen(match)
+
+    if level > 0
+        return ">" . string(level)
+    endif
+
+    return "="
 endfunction
 
 " Strip trailing white spaces {{{2
@@ -365,35 +400,6 @@ function! s:ToggleWrap()
     setlocal display+=lastline
     noremap <buffer> <silent> k gk
     noremap <buffer> <silent> j gj
-endfunction
-
-" Folding {{{2
-" Fold config files {{{3
-function! FoldConfig()
-    let thisline = getline(v:lnum)
-    let matchline = matchstr(thisline, '^#\+.\+#\+$')
-    let match = matchstr(matchline, '^#*')
-    let level = strlen(match)
-
-    if level > 0
-        "return ">" . string(level)
-        return ">1"
-    endif
-
-    return "="
-endfunction
-
-" Fold markdown files {{{3
-function! FoldMarkdown()
-    let thisline = getline(v:lnum)
-    let match = matchstr(thisline, '^#*')
-    let level = strlen(match)
-
-    if level > 0
-        return ">" . string(level)
-    endif
-
-    return "="
 endfunction
 
 " KEYBOARD MAPPINGS {{{1
