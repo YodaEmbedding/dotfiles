@@ -3,6 +3,8 @@
 <!-- [[![Click for full album.](https://i.imgur.com/0DqKJaD.mp4)](https://imgur.com/a/W5QwA) -->
 <!-- [Full album.](https://imgur.com/a/W5QwA) -->
 
+# Dotfiles
+
 ## Installation
 
 This dotfiles repository uses a combination of `git` and GNU `stow`. To use, simply clone:
@@ -26,21 +28,21 @@ Similarly, configurations for other directories may be symlinked as follows:
 
 List of configs, which directories these belong in, and other details.
 
-| Name           | Stow directory | Details        |
-| :------------: | :------------- | :------------- |
-| bash           | `$HOME`        |                |
-| colors         | `$HOME`        | Terminal and rofi colors |
-| compton        | `$HOME`        |                |
-| dunst          | `$HOME`        |                |
-| git            | `$HOME`        | Personal       |
-| i3             | `$HOME`        |                |
-| i3blocks       | `$HOME`        | Better i3 bar  |
-| mimeapps       | `$HOME`        | Choose default app used to open files |
-| mpv            | `$HOME`        |                |
-| PC-Mordor-Arch | `/`            | Personal       |
-| root           | `/`            | Personal scripts (e.g. `emoji` clipboard copier) |
-| termite        | `$HOME`        |                |
-| vim            | `$HOME`        |                |
-| xmodmap        | `$HOME`        | Keyboard remappings (e.g. Caps Lock -> Escape) |
-| zsh            | `$HOME`        |                |
+| Name           | Stow directory | Dependencies   | Details                                          |
+| :------------- | :------------- | :------------- | :----------------------------------------------- |
+| bash           | `$HOME`        |                |                                                  |
+| colors         | `$HOME`        |                | Terminal and rofi colors                         |
+| compton        | `$HOME`        |                |                                                  |
+| dunst          | `$HOME`        |                |                                                  |
+| git            | `$HOME`        |                | Personal                                         |
+| i3             | `$HOME`        | feh, i3lock-color, mlocate |                                      |
+| i3blocks       | `$HOME`        | fping          | Better i3 bar                                    |
+| mimeapps       | `$HOME`        |                | Choose default app used to open files            |
+| mpv            | `$HOME`        |                |                                                  |
+| PC-Mordor-Arch | `/`            |                | Personal                                         |
+| root           | `/`            |                | Personal scripts (e.g. `emoji` clipboard copier) |
+| termite        | `$HOME`        |                |                                                  |
+| vim            | `$HOME`        | neovim, neovim-plug (or vim-plug), python-neovim |                |
+| xmodmap        | `$HOME`        |                | Keyboard remappings (e.g. Caps Lock -> Escape)   |
+| zsh            | `$HOME`        | zplug          |                                                  |
 
