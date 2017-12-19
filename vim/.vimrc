@@ -205,6 +205,7 @@ syn keyword Todo NOTE DEBUG FIXME
 " Conceal {{{2
 set conceallevel=0
 let g:tex_conceal = ""
+let g:vim_json_syntax_conceal = 0
 
 " Folding {{{2
 set foldnestmax=3

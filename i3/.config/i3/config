@@ -443,12 +443,14 @@ exec_always --no-startup-id     xinput --set-prop $(xinput list --short | grep "
 exec        --no-startup-id     compton
 exec        --no-startup-id     dunst
 exec_always --no-startup-id     feh --bg-scale $wallpaper
+exec        --no-startup-id     /usr/local/bin/lightsOn/lightsOn.sh 300
 
 # Medium startup
+#exec_always --no-startup-id     ~/.config/polybar/polybar.sh &
 exec        --no-startup-id     rescuetime
 exec        --no-startup-id     screencloud
 # exec      --no-startup-id     selfspy
-exec        --no-startup-id     sspy
+# exec      --no-startup-id     sspy
 exec        --no-startup-id     tilda
 
 # Slow startup
