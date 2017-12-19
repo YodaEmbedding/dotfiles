@@ -98,7 +98,7 @@ alias i3bconfig='vim ~/.config/i3blocks/config'
 alias pythonstartup='sudo -e /usr/local/share/pythonstartup.py'
 
 # Todo
-alias todo='vim ~/Dropbox/sfu/Current/todo.md'
+alias todo='vim ~/Dropbox/Misc/Notepad/todo.md'
 
 # GNU Parallel - Remove annoying citation message...
 alias parallel='parallel --will-cite'
