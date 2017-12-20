@@ -20,26 +20,20 @@ fi
 # (Prevents on-screen notifications)
 pkill -u "$USER" -USR1 dunst
 
+# Compute parameters
+width=$(xdpyinfo | grep dimensions | perl -ne 'print $_ =~ /(\d+)/')
+radius=$((273 * $width / 1920))
+
 # Moon wallpaper
 i3lock \
 	-n \
-	--indpos="x+(0.4741*w):y+(0.230*h)" --radius=273 \
+	--indpos="x+(0.4741*w):y+(0.230*h)" --radius=$radius \
 	--clock --datestr="%a %m-%d" \
 	--datepos="x+ix-(0.5*cw):y+iy-(0.5*ch)+40" \
 	--textsize=36 --timesize=48 --datesize=24 \
 	--timecolor=223377ff --datecolor=223377ff \
 	--insidecolor=ffffff55 --line-uses-inside --ringcolor=ffffff00 --separatorcolor=ffffff77 \
 	-c 333344 -i $wallpaper
-
-# Generic wallpaper
-#i3lock \
-#	-n \
-#	--indicator --radius=120 \
-#	--clock --datestr="%a  %m-%d" \
-#	--textsize=36 --timesize=32 --datesize=20 \
-#	--timecolor=223377ff --datecolor=223377ff \
-#	--insidecolor=ffffff55 --line-uses-inside --ringcolor=ffffff77 --separatorcolor=ffffff77 \
-#	-c 333344 -i $wallpaper
 
 # Other options
 #	--timepos="x+ix-(0.5*cw):y+iy-(0.5*ch)" \
