@@ -12,8 +12,7 @@ else
 endif
 
 " Enabled {{{2
-Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
-Plug 'othree/eregex.vim'                    " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
+Plug 'Shougo/denite.nvim'                   " Fuzzy search/open files within directory
 Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
 Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
@@ -35,6 +34,10 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 
 " Disabled {{{2
 "Plug 'gkjgh/cobalt'                        " Theme
+"Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
+"Plug 'othree/eregex.vim'                   " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
+"Plug '/usr/local/opt/fzf'
+"Plug '/usr/bin/fzf'
 "Plug 'junegunn/fzf.vim'                    " Fuzzy search/open files within directory
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
 "Plug 'scrooloose/nerdtree'                 " File explorer
@@ -405,6 +408,10 @@ endfunction
 
 " Plugin bindings {{{2
 
+" Denite bindings {{{3
+
+nmap <C-p> :Denite -winheight=10 file buffer<CR>
+
 " deoplete bindings {{{3
 
 if match(&runtimepath, 'deoplete.nvim') != -1
@@ -419,6 +426,7 @@ endif
 if match(&runtimepath, 'fzf') != -1
     nmap <Leader>b :Buffers<CR>
     nmap <Leader>f :Files<CR>
+    nmap <C-p> :Files<CR>
     nmap <Leader>t :Tags<CR>
 endif
 
