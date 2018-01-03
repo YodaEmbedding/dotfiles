@@ -264,6 +264,7 @@ set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
 " Search {{{2
 set hlsearch            " Highlight search results
 set ignorecase          " Ignore case
+set inccommand=nosplit  " Incremental highlight during :%s
 "set magic              " Escape like regular regexes; use \V to revert
 set smartcase           " Ignore case if lower
 
@@ -275,7 +276,7 @@ set undoreload=10000        " number of lines to save for undo
 
 " Visual {{{2
 set colorcolumn=80      " Column guide
-"set cursorline         " Highlight current line (disabled because it causes cursor lag)
+set cursorline          " Highlight current line
 set laststatus=2        " Show status line
 set mouse=a             " Mouse interactivity
 set number              " Line numbers
@@ -510,6 +511,10 @@ nnoremap <Leader>S :%s/\<lt>\>//gn<left><left><left><left><left><left>
 
 " ctags toggle {{{3
 noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
+
+" Cursor column toggle {{{3
+
+noremap <Leader>v :set cursorcolumn!<CR>
 
 " eregex toggle {{{3
 nnoremap <Leader>/ :call eregex#toggle()<CR>
