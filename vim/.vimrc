@@ -5,8 +5,11 @@
 " VIM-PLUG {{{1
 
 " Begin {{{2
-" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
-call plug#begin('~/.vim/plugged')
+if has('nvim')
+    call plug#begin('~/.local/share/nvim/plugged')
+else
+    call plug#begin('~/.vim/plugged')
+endif
 
 " Enabled {{{2
 Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
