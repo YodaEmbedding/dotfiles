@@ -52,31 +52,32 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'lervag/vimtex'                       " LaTeX
 
 " Autocompletion {{{2
-Plug 'Valloric/YouCompleteMe'               " Autocompletion
+"Plug 'Valloric/YouCompleteMe'              " Autocompletion
 
 " UNTRIED {{{3
 "Plug 'SirVer/ultisnips'                    " Snippet completion
-"Plug 'Shougo/neocomplete.vim'              "
 "Plug 'lifepillar/vim-mucomplete'           "
 "}}}
 
 "Plug 'davidhalter/jedi-vim'                " Autocompletion (Python)
 "Plug 'davidhalter/jedi-vim', {'for': 'python'}
-"Plug 'ervandew/supertab'                    " Supertab
+"Plug 'ervandew/supertab'                   " Supertab
 
-"if has('nvim')
-"    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"else
-"    Plug 'Shougo/deoplete.nvim'
-"    Plug 'roxma/nvim-yarp'
-"    Plug 'roxma/vim-hug-neovim-rpc'
-"endif
+"Plug 'ajh17/VimCompletesMe'                " Autocompletion
 
-"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-"Plug 'zchee/deoplete-jedi'                 " Autocompletion (Python)
-""Plug 'roxma/nvim-yarp'
-""Plug 'roxma/vim-hug-neovim-rpc'
-""Plug 'roxma/nvim-completion-manager'
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+"Plug 'roxma/nvim-completion-manager'
+
+Plug 'zchee/deoplete-jedi'                  " Autocompletion (Python)
+Plug 'eagletmt/neco-ghc'                    " Autocompletion (Haskell)
+
+Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 
 "Plug 'Shougo/echodoc.vim'
 
@@ -122,9 +123,16 @@ endif
 
 let g:deoplete#enable_at_startup = 1
 
-let g:neocomplete#enable_auto_select = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#auto_completion_start_length = 2
+"let g:deoplete#enable_auto_select = 1
+"let g:deoplete#enable_smart_case = 1
+"let g:deoplete#auto_completion_start_length = 2
+
+" deoplete-jedi {{{2
+
+let g:deoplete#sources#jedi#server_timeout = 60
+"let g:deoplete#sources#jedi#show_docstring = 1
+
+" jedi {{{2
 
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
