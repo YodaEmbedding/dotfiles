@@ -19,8 +19,6 @@ Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
 Plug 'tmhedberg/SimpylFold'                 " Folding (Python)
 Plug 'majutsushi/tagbar'                    " (RARELYUSED) ctags; bound to \t
-Plug 'vim-airline/vim-airline'              " (REMOVE) Theme
-Plug 'vim-airline/vim-airline-themes'       " (REMOVE) Theme
 Plug 'airblade/vim-gitgutter'               " Git gutter
 Plug 'Twinside/vim-haskellFold'             " Folding (Haskell)
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
@@ -43,6 +41,8 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
 "Plug 'scrooloose/nerdtree'                 " File explorer
 "Plug 'python-mode/python-mode', {'for': 'python'}
+"Plug 'vim-airline/vim-airline'             " Theme (statusline)
+"Plug 'vim-airline/vim-airline-themes'      " Theme (statusline)
 "Plug 'pseewald/vim-anyfold'                 " Fold on indent
 "Plug 'altercation/vim-colors-solarized'    " Theme
 "Plug 'easymotion/vim-easymotion'           " Motion
@@ -84,6 +84,7 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 
 " Untried {{{2
 "Plug 'wincent/command-t'                   "
+"Plug 'itchyny/lightline.vim'               " Theme (statusline)
 "Plug 'Xuyuanp/nerdtree-git-plugin'         "
 "Plug 'chrisbra/NrrwRgn'                    " oooh this is cool (extract buffer)
 "Plug 'wincent/scalpel'                     " SublimeText-like word replace?
@@ -212,6 +213,60 @@ endif
 " Change using :Airline Theme
 " base16, base16_ashes, base16_default, hybrid, jellybeans, lucius
 let g:airline_theme = "base16"
+
+" Statusline {{{2
+
+" Mode dictionary {{{3
+let g:currentmode={
+    \ 'n'  : 'N ',
+    \ 'no' : 'N·Operator Pending ',
+    \ 'v'  : 'V ',
+    \ 'V'  : 'V·Line ',
+    \ '^V' : 'V·Block ',
+    \ 's'  : 'Select ',
+    \ 'S'  : 'S·Line ',
+    \ '^S' : 'S·Block ',
+    \ 'i'  : 'I ',
+    \ 'R'  : 'R ',
+    \ 'Rv' : 'V·Replace ',
+    \ 'c'  : 'Command ',
+    \ 'cv' : 'Vim Ex ',
+    \ 'ce' : 'Ex ',
+    \ 'r'  : 'Prompt ',
+    \ 'rm' : 'More ',
+    \ 'r?' : 'Confirm ',
+    \ '!'  : 'Shell ',
+    \ 't'  : 'Terminal '
+    \}
+
+" Statusline definition {{{3
+set statusline=                             " Clear
+"set statusline+=%0*\ %{toupper(g:currentmode[mode()])}  " Mode
+set statusline+=%1*-                        " Color -
+set statusline+=%t                          " Tail of the filename
+set statusline+=%2*                         " Color
+set statusline+=%h                          " Help file flag
+set statusline+=%m                          " Modified flag
+set statusline+=%r                          " Read only flag
+set statusline+=%=                          " Left/right separator
+set statusline+=%3*\                        " Color -
+set statusline+=%{&filetype}                " Filetype
+set statusline+=\ \                         " --
+set statusline+=%{&fenc}                    " File encoding
+set statusline+=[%{&ff}]                    " File format
+set statusline+=\ %4*\ \ \                  " - Color ---
+set statusline+=%2c                         " Cursor column
+set statusline+=\ \                         " --
+set statusline+=%2v                         " Cursor column (virtual)
+set statusline+=\ \                         " --
+set statusline+=(%l\ /\ %L)                 " Cursor line/total lines
+set statusline+=\ \                         " --
+set statusline+=%P                          " Percent through file
+
+hi User1 ctermfg=250 ctermbg=234
+hi User2 ctermfg=008 ctermbg=234
+hi User3 ctermfg=237 ctermbg=233
+hi User4 ctermfg=238 ctermbg=233
 
 " Highlight groups {{{2
 
