@@ -17,18 +17,19 @@ Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary
 Plug 'Yggdroot/indentLine'                  " Indent guides
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
-Plug 'majutsushi/tagbar'                    " (NEW) ctags; bound to \t
-Plug 'vim-airline/vim-airline'              " Theme
-Plug 'vim-airline/vim-airline-themes'       " Theme
-Plug 'pseewald/vim-anyfold'                 " Fold on indent
+Plug 'tmhedberg/SimpylFold'                 " Folding (Python)
+Plug 'majutsushi/tagbar'                    " (RARELYUSED) ctags; bound to \t
+Plug 'vim-airline/vim-airline'              " (REMOVE) Theme
+Plug 'vim-airline/vim-airline-themes'       " (REMOVE) Theme
 Plug 'airblade/vim-gitgutter'               " Git gutter
+Plug 'Twinside/vim-haskellFold'             " Folding (Haskell)
 Plug 'kristijanhusak/vim-hybrid-material'   " Theme
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
 Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (i.e. vim-sneak)
 Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
-Plug 'tpope/vim-surround'                   " (NEW) Change surrounding parenthesis, i.e. cs([
-Plug 'matze/vim-tex-fold'                   " LaTeX folding
+Plug 'tpope/vim-surround'                   " (RARELYUSED) Change surrounding parenthesis, i.e. cs([
+Plug 'matze/vim-tex-fold'                   " Folding (LaTeX)
 Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 
@@ -42,7 +43,7 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
 "Plug 'scrooloose/nerdtree'                 " File explorer
 "Plug 'python-mode/python-mode', {'for': 'python'}
-"Plug 'tmhedberg/SimpylFold'                " Python folding
+"Plug 'pseewald/vim-anyfold'                 " Fold on indent
 "Plug 'altercation/vim-colors-solarized'    " Theme
 "Plug 'easymotion/vim-easymotion'           " Motion
 "Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
@@ -93,6 +94,8 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug 'justinmk/vim-dirvish'                " Directory viewer
 "Plug 'junegunn/vim-easy-align'             "
 "Plug 'svermeulen/vim-easyclip'             " (USEFUL)  Blackhole delete, smart yanking, etc
+"Plug 'LucHermitte/lh-vim-lib'              " Library of functions for LucHermitte's scripts
+"Plug 'LucHermitte/VimFold4C'               " Folding (C++)
 "Plug 'mhinz/vim-grepper'                   "
 "Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
 "Plug 'tpope/vim-repeat'                    "
@@ -222,8 +225,8 @@ let g:tex_conceal = ""
 let g:vim_json_syntax_conceal = 0
 
 " Folding {{{2
-set foldminlines=4
-set foldnestmax=3
+set fillchars=fold:\ 
+set foldnestmax=4
 set foldtext=FoldTextStyle()
 
 " GUI {{{2
@@ -301,12 +304,13 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " Folding {{{2
 
-"autocmd FileType * setlocal foldcolumn=3 foldmethod=indent
-autocmd Filetype conf,markdown,vim,zsh let anyfold_activate=0
-autocmd Filetype conf,markdown,vim,zsh setlocal foldminlines=0
-autocmd FileType conf setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldConfig()
-autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr foldexpr=FoldMarkdown()
-autocmd FileType vim,zsh setlocal foldcolumn=3 foldmethod=marker
+autocmd FileType conf,markdown,python,vim,zsh let anyfold_activate=0
+autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=0
+
+"autocmd FileType *       setlocal foldcolumn=3 foldmethod=indent
+autocmd FileType conf     setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
+autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldMarkdown()
+autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
 
 " Indenting and Tabs {{{2
 
