@@ -222,8 +222,9 @@ let g:tex_conceal = ""
 let g:vim_json_syntax_conceal = 0
 
 " Folding {{{2
-set foldnestmax=3
 set foldminlines=4
+set foldnestmax=3
+set foldtext=FoldTextStyle()
 
 " GUI {{{2
 if has("gui_running")
@@ -363,6 +364,26 @@ function! FoldMarkdown()
     endif
 
     return "="
+endfunction
+
+" Fold text style {{{3
+
+function! FoldTextStyle()
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 2
+
+    let foldlinecount = v:foldend - v:foldstart
+    let posttext = "  " . foldlinecount . " lines   +  ----"
+
+    let spacetab = strpart('         ', 0, &tabstop)
+    let line = substitute(line, '\t', spacetab, 'g')
+    let line = strpart(line, 0, windowwidth - len(posttext))
+
+    let filltext = repeat(" ", windowwidth - len(line) - len(posttext))
+
+    return line . filltext . posttext
 endfunction
 
 " Strip trailing white spaces {{{2
