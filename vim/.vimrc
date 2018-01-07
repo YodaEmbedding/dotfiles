@@ -274,12 +274,12 @@ endif
 "set smartindent        "
 "set smarttab           "
 
-"set expandtab          " Tabs to Spaces
-set noexpandtab         " Tabs to Tabs
+"set expandtab          " Tabs to spaces
+"set noexpandtab        " Tabs to tabs
 
-set shiftwidth=4        " Indent/outdent by four columns
-"set softtabstop=4      " Indent as if four columns...?
-set tabstop=4           " Indentation levels every four columns
+set shiftwidth=4        " Indent/outdent by n columns
+"set softtabstop=4      " Indent as if n columns...?
+set tabstop=4           " Indentation levels every n columns
 
 " Python indenting {{{3
 let g:pyindent_continue     = '&sw'
