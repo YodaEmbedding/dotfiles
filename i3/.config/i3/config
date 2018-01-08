@@ -252,7 +252,7 @@ bindsym $mod+$mod_+shift+z      exec --no-startup-id ~/.config/i3/scripts/gpmdp_
 # rofi (app launcher, sudo app launcher, file search, window jumper)
 bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
 bindsym $mod+Ctrl+q             exec "rofi -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}' -p 'run (sudo):' $rofi_style"
-bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -0 xdg-open"
+bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -0 gvfs-open"
 bindsym $mod+Shift+d            exec "wmctrl -l | rofi -dmenu -i -p 'window:' $rofi_style | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Cycle border

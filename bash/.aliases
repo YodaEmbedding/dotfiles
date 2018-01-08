@@ -83,7 +83,7 @@ alias gpgaddkey="gpg --recv-keys"
 
 # File opening
 alias b='bgrnd'
-alias o='bgrnd xdg-open'
+alias o='bgrnd gvfs-open'
 
 # Thunar
 alias th='bgrnd thunar'
