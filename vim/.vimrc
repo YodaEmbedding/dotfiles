@@ -31,6 +31,19 @@ Plug 'matze/vim-tex-fold'                   " Folding (LaTeX)
 Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
 Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
 
+" Autocompletion {{{3
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+Plug 'zchee/deoplete-jedi'                  " Autocompletion (Python)
+Plug 'eagletmt/neco-ghc'                    " Autocompletion (Haskell)
+Plug 'fs111/pydoc.vim'                      " Documentation (Python)
+
 " Disabled {{{2
 "Plug 'gkjgh/cobalt'                        " Theme
 "Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
@@ -52,35 +65,14 @@ Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitesp
 "Plug 'goldfeld/vim-seek'                   " Use two character find (mapped to 's')
 "Plug 'lervag/vimtex'                       " LaTeX
 
-" Autocompletion {{{2
-"Plug 'Valloric/YouCompleteMe'              " Autocompletion
-
-" UNTRIED {{{3
-"Plug 'SirVer/ultisnips'                    " Snippet completion
-"Plug 'lifepillar/vim-mucomplete'           "
-"}}}
-
+" Autocompletion {{{3
+"Plug 'Shougo/echodoc.vim'                  " Documentation in command line
 "Plug 'davidhalter/jedi-vim'                " Autocompletion (Python)
-"Plug 'davidhalter/jedi-vim', {'for': 'python'}
-"Plug 'ervandew/supertab'                   " Supertab
-
+"Plug 'ervandew/supertab'                   "
+"Plug 'SirVer/ultisnips'                    " Snippet completion
 "Plug 'ajh17/VimCompletesMe'                " Autocompletion
-
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-"Plug 'roxma/nvim-completion-manager'
-
-Plug 'zchee/deoplete-jedi'                  " Autocompletion (Python)
-Plug 'eagletmt/neco-ghc'                    " Autocompletion (Haskell)
-
-Plug 'fs111/pydoc.vim'                      " Documentation (Python)
-
-"Plug 'Shougo/echodoc.vim'
+"Plug 'lifepillar/vim-mucomplete'           " Autocompletion
+"Plug 'Valloric/YouCompleteMe'              " Autocompletion
 
 " Untried {{{2
 "Plug 'wincent/command-t'                   "
