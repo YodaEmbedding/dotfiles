@@ -646,6 +646,13 @@ noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
 noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
 noremap <silent> <C-j>      :call <SID>SwapDown()<CR>
 
+" CHEATSHEET {{{1
+
+" Useful Ex-mode commands
+" Sort lines                :%!sort
+" Reverse lines             :%!tap
+" List of numbers           :put =range(1,10)
+
 " TODO {{{1
 
 " Free bindings: <S-d> <S-x> <S-s>
