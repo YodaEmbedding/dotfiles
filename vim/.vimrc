@@ -46,7 +46,7 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 
 " Disabled {{{2
 "Plug 'gkjgh/cobalt'                        " Theme
-"Plug 'ctrlpvim/ctrlp.vim'                   " Fuzzy search/open files within directory
+"Plug 'ctrlpvim/ctrlp.vim'                  " Fuzzy search/open files within directory
 "Plug 'othree/eregex.vim'                   " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 "Plug '/usr/local/opt/fzf'
 "Plug '/usr/bin/fzf'
@@ -56,7 +56,7 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug 'python-mode/python-mode', {'for': 'python'}
 "Plug 'vim-airline/vim-airline'             " Theme (statusline)
 "Plug 'vim-airline/vim-airline-themes'      " Theme (statusline)
-"Plug 'pseewald/vim-anyfold'                 " Fold on indent
+"Plug 'pseewald/vim-anyfold'                " Fold on indent
 "Plug 'altercation/vim-colors-solarized'    " Theme
 "Plug 'easymotion/vim-easymotion'           " Motion
 "Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
@@ -75,9 +75,8 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug 'Valloric/YouCompleteMe'              " Autocompletion
 
 " Untried {{{2
-"Plug 'wincent/command-t'                   "
+"Plug 'jiangmiao/auto-pairs'                " Auto-insert parens/quotes
 "Plug 'itchyny/lightline.vim'               " Theme (statusline)
-"Plug 'Xuyuanp/nerdtree-git-plugin'         "
 "Plug 'chrisbra/NrrwRgn'                    " oooh this is cool (extract buffer)
 "Plug 'wincent/scalpel'                     " SublimeText-like word replace?
 "Plug 'AndrewRadev/sideways.vim'            " Parameter swapping
@@ -85,18 +84,20 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug 'vim-syntastic/syntastic'             " Syntax (compile) checking
 "Plug 'mbbill/undotree'                     "
 "Plug 'justinmk/vim-dirvish'                " Directory viewer
-"Plug 'junegunn/vim-easy-align'             "
+"Plug 'junegunn/vim-easy-align'             " Alignment
 "Plug 'svermeulen/vim-easyclip'             " (USEFUL)  Blackhole delete, smart yanking, etc
 "Plug 'LucHermitte/lh-vim-lib'              " Library of functions for LucHermitte's scripts
 "Plug 'LucHermitte/VimFold4C'               " Folding (C++)
-"Plug 'mhinz/vim-grepper'                   "
 "Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
+"Plug 'ivanov/vim-ipython'                  "
+"Plug 'tommcdo/vim-lion'                    " (USEFUL) Alignment
 "Plug 'tpope/vim-repeat'                    "
+"Plug 'idbrii/vim-ripple'                   " REPL within vim
+"Plug 'jpalardy/vim-slime'                  " Emacs like REPL
 "Plug 'kana/vim-submode'                    " More modes
 "Plug 'justinmk/vim-syntax-extra'           " More syntax highlighting
 "Plug 'thaerkh/vim-workspace'               "
 "Plug 'jreybert/vimagit'                    " vim git magic!!!
-"Plug 'benmills/vimux'                      "
 "Plug 'kkoenig/wimproved.vim'               " For Windows
 
 " End {{{2
