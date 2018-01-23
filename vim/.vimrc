@@ -21,7 +21,7 @@ Plug 'tmhedberg/SimpylFold'                 " Folding (Python)
 Plug 'majutsushi/tagbar'                    " (RARELYUSED) ctags; bound to \t
 Plug 'airblade/vim-gitgutter'               " Git gutter
 Plug 'Twinside/vim-haskellFold'             " Folding (Haskell)
-Plug 'kristijanhusak/vim-hybrid-material'   " Theme
+Plug 'kristijanhusak/vim-hybrid-material'   " Theme (Color scheme)
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
 Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (i.e. vim-sneak)
 Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
@@ -99,6 +99,11 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug 'thaerkh/vim-workspace'               "
 "Plug 'jreybert/vimagit'                    " vim git magic!!!
 "Plug 'kkoenig/wimproved.vim'               " For Windows
+
+"Color scheme
+Plug 'sjl/badwolf'                          " Theme (Color scheme)
+Plug 'junegunn/seoul256.vim'                " Theme (Color scheme)
+Plug 'noahfrederick/vim-noctu'              " Theme (Color scheme)
 
 " End {{{2
 call plug#end()
@@ -592,7 +597,7 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 
 " Miscellaneous {{{2
 
-"Black hole paste (in visual mode) {{{3
+" Black hole paste (in visual mode) {{{3
 xnoremap <silent> p p:let @"=@0<CR>
 
 " Folding {{{3
