@@ -89,17 +89,16 @@ markup=pango
 #instance=1
 interval=30
 
-#[volume]
+[volume]
 #label=  # 𝆏 𝆐 𝆑 𝆒 𝆓  △ ▽ ▲ ▼
 #instance=Master  # PCM
-#interval=1
-
-[volume-pulseaudio]
-command=~/.config/i3blocks/scripts/$BLOCK_NAME -a -F3 -t 30 -T 70 -c \#CC3333 -C \#FFCCCC
-#command=~/.config/i3blocks/scripts/$BLOCK_NAME -Sa -F3 -t 30 -T 70 -c \#CC3333 -C \#FFCCCC
 signal=1
 interval=once
-#interval=persist
+
+#[volume-pulseaudio]
+#command=~/.config/i3blocks/scripts/$BLOCK_NAME -a -F3 -t 30 -T 70 -c \#CC3333 -C \#FFCCCC
+#signal=1
+#interval=once
 
 [calendar]
 command=date '+%Y-%m-%d'; [[ -z "${BLOCK_BUTTON}" ]] || i3-msg exec gsimplecal
