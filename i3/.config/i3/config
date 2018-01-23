@@ -256,7 +256,7 @@ bindsym $mod+$mod_+shift+z      exec --no-startup-id ~/.config/i3/scripts/gpmdp_
 # rofi (app launcher, sudo app launcher, file search, window jumper)
 bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
 bindsym $mod+Ctrl+q             exec "rofi -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}' -p 'run (sudo):' $rofi_style"
-bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -0 gvfs-open"
+bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -I {} gio open {}"
 bindsym $mod+Shift+d            exec "wmctrl -l | rofi -dmenu -i -p 'window:' $rofi_style | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Cycle border
@@ -395,6 +395,9 @@ for_window [title="ipython scratchpad"] floating enable, border none, \
     resize set 600 232, move position 0 20, \
     move scratchpad, scratchpad show
 
+for_window [title="^JACK Audio Connection Kit"] floating enable
+for_window [title="^Cadence$"] floating enable
+
 # Default workspace locations
 assign [class="discord"]                          → $ws1
 assign [class="Firefox"]                          → $ws1
@@ -458,8 +461,9 @@ exec        --no-startup-id     screencloud
 exec        --no-startup-id     tilda
 
 # Slow startup
+exec        --no-startup-id     cadence-session-start --system-start
+exec        --no-startup-id     cadence --minimized
 exec        --no-startup-id     dropbox
-
 
 ### TODO ###
 
