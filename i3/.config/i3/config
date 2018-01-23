@@ -326,6 +326,9 @@ bindsym $mod+$mod_+Ctrl+Down    resize grow   height 100 px or 100 ppt
 bindsym $mod+$mod_+Ctrl+Up      resize shrink height 100 px or 100 ppt
 bindsym $mod+$mod_+Ctrl+Right   resize grow   width  100 px or 100 ppt
 
+# Center window
+bindsym $mod+$mod_+c            move position center
+
 
 ### DEFAULT MODES ###
 
