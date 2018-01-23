@@ -592,6 +592,9 @@ map <leader>sc z=
 " Strip trailing whitespace {{{3
 nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
 
+" Unfold all {{{3
+nnoremap <Leader>z :set foldlevel=20<CR>
+
 " Word wrap, up/down visually {{{3
 noremap <Leader>w :call <SID>ToggleWrap()<CR>
 
@@ -643,6 +646,13 @@ noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
 noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
 noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
 noremap <silent> <C-j>      :call <SID>SwapDown()<CR>
+
+" Visual selection apply dot {{{3
+vnoremap <silent> . :normal .<CR>
+
+" Visual selection apply macro {{{3
+vnoremap <silent> <F2> :normal @q<CR>
+vnoremap <silent> <F3> :normal @@<CR>
 
 " CHEATSHEET {{{1
 
