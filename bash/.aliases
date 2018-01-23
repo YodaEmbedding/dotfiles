@@ -62,9 +62,13 @@ alias sudo='sudo '   # make sudo work with aliases
 alias s='sudo'
 alias se='sudo -e'
 
+# chmod
+alias chx='chmod +x'
+
 # Pacman
 alias sp='sudo pacman'
 alias sps='sudo pacman -S'
+alias orphans='pacman -Qtdq'
 
 # AUR Package managers: yaourt
 alias yao='yaourt'
@@ -80,6 +84,7 @@ alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
 
 # GPG
 alias gpgaddkey="gpg --recv-keys"
+alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
 
 # File opening
 alias b='bgrnd'
