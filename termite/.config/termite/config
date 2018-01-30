@@ -5,7 +5,7 @@ font = Roboto Mono 14
 foreground      = #dcdccc
 foreground_bold = #dcdccc
 cursor          = #dcdccc
-background      = rgba(29, 31, 33, 0.97)
+background      = rgba(29, 31, 33, 0.94)
 
 # black
 color0  = #282a2e

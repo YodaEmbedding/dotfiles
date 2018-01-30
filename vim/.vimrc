@@ -287,6 +287,9 @@ let g:pyindent_nested_paren = '&sw'
 let g:pyindent_open_paren   = '&sw'
 " let g:pyindent_continue   = '&sw * 2'
 
+" VHDL indenting {{{3
+let g:vhdl_indent_genportmap = 0
+
 " Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
@@ -495,7 +498,6 @@ if match(&runtimepath, 'fzf') != -1
 endif
 
 " NERDTree bindings {{{3
-
 nmap <Leader>f :NERDTreeToggle<CR>
 
 " repmo-vim bindings {{{3
