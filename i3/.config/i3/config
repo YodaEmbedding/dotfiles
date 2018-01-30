@@ -61,6 +61,10 @@ set $rofi_style     -lines 10 -hide-scrollbar -separator-style none -line-paddin
 # Run this to update database:  updatedb --require-visibility 0 -o ~/.locate.db
 set $locate_dirs    $HOME/Desktop $HOME/Downloads /mnt/data/
 
+# Sound control
+#set $amixer        amixer -c PCH set Master
+set $amixer         amixer -q -D pulse set Master
+
 
 ### DEFAULT BINDINGS ###
 
@@ -229,16 +233,16 @@ bindsym $mod+slash              gaps outer all plus  5
 bindsym $mod+Shift+slash        gaps outer all minus 5
 
 # Volume control
-bindsym XF86AudioLowerVolume    exec --no-startup-id amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMute           exec --no-startup-id amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume    exec --no-startup-id $amixer 5%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioRaiseVolume    exec --no-startup-id $amixer 5%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioMute           exec --no-startup-id $amixer toggle && pkill -SIGRTMIN+1 i3blocks
 
-bindsym $mod+z                  exec --no-startup-id amixer set Master 5%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+z            exec --no-startup-id amixer set Master 5%-    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Ctrl+Shift+z       exec --no-startup-id amixer set Master toggle && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+z                  exec --no-startup-id $amixer 5%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+z            exec --no-startup-id $amixer 5%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Ctrl+Shift+z       exec --no-startup-id $amixer toggle && pkill -SIGRTMIN+1 i3blocks
 
-bindsym $mod+comma              exec --no-startup-id amixer set Master 1%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+comma        exec --no-startup-id amixer set Master 1%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+comma              exec --no-startup-id $amixer 1%+    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+Shift+comma        exec --no-startup-id $amixer 1%-    && pkill -SIGRTMIN+1 i3blocks
 
 # Media control
 bindsym XF86AudioPlay           exec --no-startup-id playerctl play-pause
