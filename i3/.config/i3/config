@@ -400,11 +400,13 @@ for_window [title="ipython scratchpad"] floating enable, border none, \
 
 for_window [title="^JACK Audio Connection Kit"] floating enable
 for_window [title="^Cadence$"] floating enable
+for_window [title="^Guitarix: gx_head$"] floating enable, border none, move position center
 
 # Default workspace locations
 assign [class="discord"]                          → $ws1
 assign [class="Firefox"]                          → $ws1
 assign [class="Google Play Music Desktop Player"] → $ws1
+assign [class="Guitarix"]                         → $ws3
 assign [class="GalaxyClient.exe"]                 → $ws4
 assign [class="Gwent.exe"]                        → $ws4
 assign [class="League of Legends.exe"]            → $ws4
@@ -464,7 +466,7 @@ exec        --no-startup-id     screencloud
 exec        --no-startup-id     tilda
 
 # Slow startup
-exec        --no-startup-id     cadence-session-start --system-start
+#exec        --no-startup-id     cadence-session-start --system-start
 exec        --no-startup-id     cadence --minimized
 exec        --no-startup-id     dropbox
 
