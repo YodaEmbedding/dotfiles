@@ -633,6 +633,10 @@ map '' <C-w>w
 " New line without insert mode (uses q register to mark) {{{3
 nnoremap <CR> mqo<Esc>`q
 
+" Paste from clipboard {{{3
+
+inoremap <C-v> <C-o>:set paste<CR><C-o>"+p<C-o>:set nopaste<CR>
+
 " Save as sudo {{{3
 cmap w!! w !sudo tee > /dev/null %
 cmap x!! x !sudo tee > /dev/null %
