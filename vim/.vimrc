@@ -474,11 +474,10 @@ endfunction
 " Plugin bindings {{{2
 
 " Denite bindings {{{3
-
 nmap <C-p> :Denite -winheight=10 file buffer<CR>
+nmap <Leader>b :Denite -winheight=10 buffer<CR>
 
 " deoplete bindings {{{3
-
 if match(&runtimepath, 'deoplete.nvim') != -1
     " inoremap <silent><expr> <Tab>
     "     \ pumvisible() ? "\<C-n>" :
@@ -552,7 +551,7 @@ nnoremap <Backspace> "_dd
 vnoremap <Backspace> "_dd
 
 " Buffer menu {{{3
-nnoremap <Leader>b :buffers<CR>:b<Space>
+"nnoremap <Leader>b :buffers<CR>:b<Space>
 
 " Clipboard (copy/paste) {{{3
 nmap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
