@@ -57,8 +57,8 @@ interval=1
 interval=10
 
 [disk]
-label=
-# 
+label=
+# 
 #instance=/mnt/data
 interval=30
 
@@ -72,25 +72,29 @@ separator=false
 interval=30
 
 [cpu_usage]
-label=
+label=
+# 
 min_width="MM%"
 separator=false
 interval=5
 
 [temperature]
-label=∿
-# 
+label=
+#   ∿
 separator=false
 interval=15
 
 [battery]
 #label=⚡  # 
+#label=
 markup=pango
 #instance=1
 interval=30
 
 [volume]
 #label=  # 𝆏 𝆐 𝆑 𝆒 𝆓  △ ▽ ▲ ▼
+label=
+#       🔊
 #instance=Master  # PCM
 signal=1
 interval=once
