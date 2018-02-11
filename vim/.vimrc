@@ -339,7 +339,7 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 " Folding {{{2
 
 autocmd FileType conf,markdown,python,vim,zsh let anyfold_activate=0
-autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=0
+autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 
 "autocmd FileType *       setlocal foldcolumn=3 foldmethod=indent
 autocmd FileType conf     setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
