@@ -57,9 +57,14 @@ set $lock_wallpaper /usr/share/backgrounds/001current.png
 # Common style options
 set $rofi_style     -lines 10 -hide-scrollbar -separator-style none -line-padding 4 -bw 2 -font 'Roboto Mono 14' -kb-row-select 'Tab' -kb-row-tab ''
 
-# File search locations
-# Run this to update database:  updatedb --require-visibility 0 -o ~/.locate.db
-set $locate_dirs    $HOME/Desktop $HOME/Downloads /mnt/data/
+# File search
+# Create database:  updatedb --require-visibility 0 -o ~/.locate.db
+set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data
+
+# Folder search
+set $list_folders   cat ~/.dir_index.txt
+set $update_folders ~/code/scripts/rofi_scripts/update_freq.sh ~/.dir_frequent.txt
+set $update_index  ~/code/scripts/rofi_scripts/update_index.sh
 
 # Sound control
 #set $amixer        amixer -c PCH set Master
@@ -257,12 +262,12 @@ bindsym $mod+$mod_+ctrl+z       exec --no-startup-id qdbus org.mpris.MediaPlayer
 bindsym $mod+$mod_+z            exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol + 0.05
 bindsym $mod+$mod_+shift+z      exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol - 0.05
 
-# rofi (app launcher, sudo app launcher, file search, window jumper)
+# rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
 bindsym $mod+Ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
-bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi $rofi_style -p 'files'   -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
-bindsym $mod+Ctrl+d             exec "cat ~/.dir_index.txt                | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
-bindsym $mod+Shift+d            exec "wmctrl -l                           | rofi $rofi_style -p 'window'  -dmenu -i | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
+bindsym $mod+d                  exec "$list_files   | rofi $rofi_style -p 'files'   -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
+bindsym $mod+Ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\" && $update_folders \\"$x\\" && $update_index))"
+bindsym $mod+Shift+d            exec "wmctrl -l     | rofi $rofi_style -p 'window'  -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Cycle border
 bindsym $mod+b                  border toggle
