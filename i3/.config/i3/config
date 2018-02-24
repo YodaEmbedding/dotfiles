@@ -258,10 +258,11 @@ bindsym $mod+$mod_+z            exec --no-startup-id ~/.config/i3/scripts/gpmdp_
 bindsym $mod+$mod_+shift+z      exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol - 0.05
 
 # rofi (app launcher, sudo app launcher, file search, window jumper)
-bindsym $mod+q                  exec "rofi -combi-modi drun,run -show combi -modi combi -p 'run:' $rofi_style"
-bindsym $mod+Ctrl+q             exec "rofi -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}' -p 'run (sudo):' $rofi_style"
-bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi -dmenu -i -levenshtein-sort -p 'files:' $rofi_style | xargs -I {} gio open {}"
-bindsym $mod+Shift+d            exec "wmctrl -l | rofi -dmenu -i -p 'window:' $rofi_style | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
+bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
+bindsym $mod+Ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
+bindsym $mod+d                  exec "locate -d ~/.locate.db $locate_dirs | rofi $rofi_style -p 'files'   -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
+bindsym $mod+Ctrl+d             exec "cat ~/.dir_index.txt                | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
+bindsym $mod+Shift+d            exec "wmctrl -l                           | rofi $rofi_style -p 'window'  -dmenu -i | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Cycle border
 bindsym $mod+b                  border toggle
@@ -485,11 +486,11 @@ exec        --no-startup-id     dropbox
 # $mod+Shift+v
 # $mod+Shift+w
 # $mod+Shift+y
+# Rename Shift/Ctrl to shift/ctrl?
 
-# rofi select from options and pipe
-
+# Stacking/etc can be moved to low-priority keys
 # vim-like mark window with keybind
-
+# rofi select from options and pipe
 # Formatting, indenting like https://www.youtube.com/watch?v=-BOW61luzF4
 
 # Alt-tabbing (focus last)
