@@ -62,9 +62,10 @@ set $rofi_style     -lines 10 -hide-scrollbar -separator-style none -line-paddin
 set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data
 
 # Folder search
-set $list_folders   ~/code/scripts/rofi_scripts/list_index.sh   ~/.dir_index.txt ~/.dir_frequent.txt
-set $update_folders ~/code/scripts/rofi_scripts/update_freq.sh                   ~/.dir_frequent.txt
-set $update_index   ~/code/scripts/rofi_scripts/update_index.sh ~/.dir_index.txt ~/.dir_frequent.txt
+# Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
+set $list_folders   ~/code/frequency-index-scripts/list_index.sh   ~/.dir_index.txt ~/.dir_frequent.txt
+set $update_folders ~/code/frequency-index-scripts/update_freq.sh                   ~/.dir_frequent.txt
+set $update_index   ~/code/frequency-index-scripts/update_index.sh ~/.dir_index.txt ~/.dir_frequent.txt
 
 # Sound control
 #set $amixer        amixer -c PCH set Master
