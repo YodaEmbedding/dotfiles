@@ -22,8 +22,8 @@ separator_block_width=10
 # TODO Scrolling should change volume of this
 [gpmdp]
 command=~/.config/i3blocks/scripts/$BLOCK_NAME --layout A-t-p
-label=
-# ♩ ♪ ♫ ♬  𝅗𝅥 𝅘𝅥 𝅘𝅥𝅮 𝅘𝅥𝅯 𝄞 ♯ ♭
+label=
+#   ♩ ♪ ♫ ♬  𝅗𝅥 𝅘𝅥 𝅘𝅥𝅮 𝅘𝅥𝅯 𝄞 ♯ ♭
 color=#8CE000
 interval=1
 
@@ -54,7 +54,7 @@ interval=1
 #interval=60
 
 [ping]
-interval=10
+interval=15
 
 [disk]
 label=

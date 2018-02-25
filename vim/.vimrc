@@ -238,6 +238,7 @@ set statusline+=(%l\ /\ %L)                 " Cursor line/total lines
 set statusline+=\ \                         " --
 set statusline+=%P                          " Percent through file
 
+" Statusline colors {{{3
 hi User1 ctermfg=250 ctermbg=234
 hi User2 ctermfg=008 ctermbg=234
 hi User3 ctermfg=143 ctermbg=234
@@ -292,6 +293,7 @@ let g:vhdl_indent_genportmap = 0
 
 " Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
+set title               " Change window title to current buffer
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
 
 " Performance {{{2
@@ -353,6 +355,12 @@ autocmd FileType python setlocal tabstop=4
 " Remove trailing whitespace on file save {{{2
 
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+
+" Syntax highlighting {{{2
+
+autocmd BufRead,BufNewFile *.cls set filetype=tex
+autocmd BufRead,BufNewFile *.nxc set filetype=cpp
+"autocmd BufRead,BufNewFile *.nxc set syntax=cpp
 
 " COMMANDS {{{1
 
@@ -637,7 +645,7 @@ nnoremap <CR> mqo<Esc>`q
 
 " Paste from clipboard {{{3
 
-inoremap <C-v> <C-o>:set paste<CR><C-o>"+p<C-o>:set nopaste<CR>
+inoremap <C-v> <C-o>:set paste<CR><C-o>"+P<C-o>:set nopaste<CR>
 
 " Save as sudo {{{3
 cmap w!! w !sudo tee > /dev/null %
@@ -663,6 +671,7 @@ vnoremap <silent> <F3> :normal @@<CR>
 
 " Useful Ex-mode commands
 " Sort lines                :%!sort
+" Sort after skipping       :sort n /.\{-}|/
 " Reverse lines             :%!tap
 " List of numbers           :put =range(1,10)
 

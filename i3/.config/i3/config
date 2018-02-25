@@ -408,7 +408,6 @@ for_window [title="ipython scratchpad"] floating enable, border none, \
     resize set 600 232, move position 0 20, \
     move scratchpad, scratchpad show
 
-for_window [title="^JACK Audio Connection Kit"] floating enable
 for_window [title="^Cadence$"] floating enable
 for_window [title="^Guitarix: gx_head$"] floating enable, border none, move position center
 
@@ -463,7 +462,8 @@ exec_always --no-startup-id     xinput --set-prop $(xinput list --short | grep "
 
 # Fast startup
 exec        --no-startup-id     compton
-exec        --no-startup-id     dunst
+#exec        --no-startup-id     dunst
+#exec        --no-startup-id     /usr/lib/notify-osd/notify-osd
 exec_always --no-startup-id     feh --bg-scale $wallpaper
 exec        --no-startup-id     /usr/local/bin/lightsOn/lightsOn.sh 300
 
@@ -477,8 +477,10 @@ exec        --no-startup-id     tilda
 
 # Slow startup
 #exec        --no-startup-id     cadence-session-start --system-start
-exec        --no-startup-id     cadence --minimized
+exec        --no-startup-id     "sleep 10 && cadence-session-start --system-start"
+#exec        --no-startup-id     cadence --minimized
 exec        --no-startup-id     dropbox
+#exec        --no-startup-id     pasystray
 
 ### TODO ###
 

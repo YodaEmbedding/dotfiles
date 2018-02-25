@@ -140,6 +140,13 @@ cfp() { echo "$PWD/$@" | pbcopy }
 # Paste from file path
 pfp() { cp "$(pbpaste)" . }
 
+# OLDPWD {{{2
+
+# Move to previous directory
+mvold() {
+	mv "$@" "$OLDPWD"
+}
+
 # Run process in background {{{2
 # https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
 bgrnd() {
