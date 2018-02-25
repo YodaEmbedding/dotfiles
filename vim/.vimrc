@@ -15,6 +15,7 @@ endif
 Plug 'Shougo/denite.nvim'                   " Fuzzy search/open files within directory
 Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
 Plug 'Yggdroot/indentLine'                  " Indent guides
+Plug 'Yggdroot/LeaderF'                     " Fuzzy search/open files within directory
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks i.e. \cb
 Plug 'Houl/repmo-vim'                       " Repeat last motion using ; or ,
 Plug 'tmhedberg/SimpylFold'                 " Folding (Python)
@@ -506,7 +507,7 @@ if match(&runtimepath, 'fzf') != -1
 endif
 
 " NERDTree bindings {{{3
-nmap <Leader>f :NERDTreeToggle<CR>
+"nmap <Leader>f :NERDTreeToggle<CR>
 
 " repmo-vim bindings {{{3
 if match(&runtimepath, 'repmo-vim') != -1
@@ -679,8 +680,11 @@ vnoremap <silent> <F3> :normal @@<CR>
 
 " Free bindings: <S-d> <S-x> <S-s>
 
-" fzf: Probably make buffers even more accessible
 " Cycle through colorschemes (NextColors() function)
+
+" fzf, ripgrep
+" http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
+" https://www.reddit.com/r/vim/comments/3f0zbg/psa_if_youre_using_ctrlp_use_this_maintained_fork/?st=jdk5ylw4&sh=44df905a
 
 " Deoplete bindings
 " https://vi.stackexchange.com/questions/9468/cant-get-deoplete-plugin-working-in-neovim/9554
