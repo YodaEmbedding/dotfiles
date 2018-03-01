@@ -16,9 +16,9 @@ set $ws5   "5:5"
 set $ws6   "6:6"
 set $ws7   "7:7"
 set $ws8   "8:8"
-set $ws9   "9:9"
-set $ws10  "10:"
-set $ws666 "666: 666 "
+set $ws9   "9:"
+set $ws10  "10:10"
+set $ws666 "666:"
 
 # Keypad keycodes
 set $KP_1 87
@@ -419,7 +419,6 @@ for_window [title="^Guitarix: gx_head$"] floating enable, border none, move posi
 # Default workspace locations
 assign [class="discord"]                          → $ws1
 assign [class="Firefox"]                          → $ws1
-assign [class="Google Play Music Desktop Player"] → $ws1
 assign [class="Guitarix"]                         → $ws3
 assign [class="GalaxyClient.exe"]                 → $ws4
 assign [class="Gwent.exe"]                        → $ws4
@@ -430,32 +429,32 @@ assign [class="Lutris"]                           → $ws4
 #assign [class="mpv"]                              → $ws4
 assign [class="qBittorrent"]                      → $ws4
 #assign [class="Vlc"]                              → $ws4
-assign [class="ksysguard"]                        → $ws10
+assign [class="Google Play Music Desktop Player"] → $ws9
 
 
 ### USER BAR ###
 
-bar {
-    status_command i3blocks
-
-    font pango:FontAwesome 10
-
-    position top
-    strip_workspace_numbers yes
-
-    colors {
-        background         #220000
-        statusline         #ffcccc
-        separator          #662222
-
-        # class            border  backgr. text    indicator child_border
-        focused_workspace  #884422 #441122 #ffffff #442211   #442211
-        active_workspace   #333333 #5f676a #ffffff #333333   #333333
-        inactive_workspace #333333 #222222 #888888 #292d2e   #222222
-        urgent_workspace   #2f343a #900000 #ffffff #900000   #900000
-        binding_mode       #2f343a #900000 #ffffff #900000   #900000
-    }
-}
+#bar {
+#    status_command i3blocks
+#
+#    font pango:FontAwesome 10
+#
+#    position top
+#    strip_workspace_numbers yes
+#
+#    colors {
+#        background         #220000
+#        statusline         #ffcccc
+#        separator          #662222
+#
+#        # class            border  backgr. text    indicator child_border
+#        focused_workspace  #884422 #441122 #ffffff #442211   #442211
+#        active_workspace   #333333 #5f676a #ffffff #333333   #333333
+#        inactive_workspace #333333 #222222 #888888 #292d2e   #222222
+#        urgent_workspace   #2f343a #900000 #ffffff #900000   #900000
+#        binding_mode       #2f343a #900000 #ffffff #900000   #900000
+#    }
+#}
 
 
 ### USER STARTUP ###
@@ -473,7 +472,7 @@ exec_always --no-startup-id     feh --bg-scale $wallpaper
 exec        --no-startup-id     /usr/local/bin/lightsOn/lightsOn.sh 300
 
 # Medium startup
-#exec_always --no-startup-id     ~/.config/polybar/polybar.sh &
+exec_always --no-startup-id     ~/.config/polybar/polybar.sh
 exec        --no-startup-id     rescuetime
 exec        --no-startup-id     screencloud
 # exec      --no-startup-id     selfspy

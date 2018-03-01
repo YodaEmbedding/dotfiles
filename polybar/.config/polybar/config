@@ -1,0 +1,147 @@
+; polybar config file
+; vim:ft=dosini
+
+[bar/top]
+width = 100%
+height = 24
+
+background = #aa000000
+foreground = #ccffffff
+line-color = ${bar/top.foreground}
+line-size = 2
+module-margin = 2
+padding-right = 2
+
+font-0 = NotoSans-Regular:size=10.5;3
+font-1 = FontAwesome5Free:style=Solid:size=10;2
+font-2 = FontAwesome5Brands:style=Solid:size=10;2
+font-3 = MaterialIcons:size=10;3
+font-4 = Roboto:size=10;0
+
+;tray-detached = true
+;tray-padding = 1
+;tray-transparent = true
+tray-background = #330000
+tray-position = right
+
+modules-left = i3 gpmdp
+modules-center = title
+modules-right = updates bandwidth ping filesystem memory cpu temperature pulseaudio date
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+[module/i3]
+type = internal/i3
+format = <label-state>
+label-focused-background = #88000000
+label-focused-padding = 2
+label-unfocused-padding = 1
+strip-wsnumbers = true
+
+; TODO Music (gpmdp? or separate module that uses /org/mpris)
+[module/gpmdp]
+type = custom/script
+exec = ~/.config/i3blocks/scripts/gpmdp --layout A-t-p
+;format-prefix = " "
+interval = 1
+format-foreground = #8CE000
+
+; TODO label-alt
+[module/title]
+type = internal/xwindow
+label-maxlen = 45
+;label = %title:0:60:...%
+;label-alt = %title:0:160:...%
+;label-active-font = 4
+;format-underline = #d17f14
+;format-underline = #a04f0f
+
+[module/updates]
+type = custom/script
+exec = ~/.config/polybar/scripts/updates-arch-combined.sh
+format-prefix = " "
+interval = 43200
+
+; TODO icons
+[module/bandwidth]
+type = custom/script
+exec = ~/.config/i3blocks/scripts/bandwidth
+interval = 1
+;format-foreground = #95B47B
+format-foreground = #66cc00
+
+; TODO color
+[module/ping]
+type = custom/script
+exec = ~/.config/i3blocks/scripts/ping
+interval = 15
+
+[module/filesystem]
+type = internal/fs
+format-prefix = " "
+label-mounted = %free%
+mount-0 = /
+interval = 30
+
+[module/memory]
+type = internal/memory
+label = %gb_used%
+;format-prefix = " "
+format-prefix = " "
+interval = 15
+
+; TODO center/fix width (same with ping... and download?)
+; TODO ramp?
+[module/cpu]
+type = internal/cpu
+format-prefix = " "
+;label = %percentage%%
+;format = <ramp-coreload> <label>
+;ramp-coreload-0 = ▁
+;ramp-coreload-1 = ▂
+;ramp-coreload-2 = ▃
+;ramp-coreload-3 = ▄
+;ramp-coreload-4 = ▅
+;ramp-coreload-5 = ▆
+;ramp-coreload-6 = ▇
+;ramp-coreload-7 = █
+;ramp-coreload-0-foreground = #ffffff
+;ramp-coreload-1-foreground = #ffffff
+;ramp-coreload-2-foreground = #ffffff
+;ramp-coreload-3-foreground = #ffffff
+;ramp-coreload-4-foreground = #ffffff
+;ramp-coreload-5-foreground = #ffffff
+;ramp-coreload-6-foreground = #ffffff
+;ramp-coreload-7-foreground = #ffffff
+interval = 5
+
+; TODO ramp color
+[module/temperature]
+type = internal/temperature
+format-prefix = " "
+label-warn-foreground = #ff7777
+warn-temperature = 60
+interval = 5
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+label-muted =   muted
+label-muted-foreground = #66
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-3 = 
+
+; TODO better icon...
+[module/date]
+type = internal/date
+date =   %Y-%m-%d  %H:%M:%S
+date-alt = %A, %d %B %Y  %H:%M:%S
+
+; TODO
+; Moon icon ramp for calendar
+; Color temperature (redshift)
+; Consistent sorting for interval, format, etc
+
