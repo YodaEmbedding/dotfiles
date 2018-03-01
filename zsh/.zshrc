@@ -11,6 +11,7 @@
 source ~/.zplug/init.zsh
 
 # PLUGINS {{{2
+zplug "changyuheng/fz", defer:1                             # Fuzzy tab completion for z
 #zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 #zplug "lib/colorize", from:oh-my-zsh                       # Syntax highlight cat output
 zplug "lib/completion", from:oh-my-zsh                      # Suggests command completions

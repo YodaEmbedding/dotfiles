@@ -499,11 +499,13 @@ exec        --no-startup-id     dropbox
 # $mod+Shift+w
 # $mod+Shift+y
 # Rename Shift/Ctrl to shift/ctrl?
+# Remove unused defaults
 
 # Stacking/etc can be moved to low-priority keys
 # vim-like mark window with keybind
 # rofi select from options and pipe
 # Formatting, indenting like https://www.youtube.com/watch?v=-BOW61luzF4
+# Organize bindings better
 
 # Alt-tabbing (focus last)
 # Perhaps save previous window ID when selecting between different windows

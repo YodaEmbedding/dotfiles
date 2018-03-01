@@ -1,3 +1,6 @@
+# Utility replacements
+alias cat='ccat'
+
 # List available commands
 alias list='compgen -c'
 alias commands='compgen -c'
