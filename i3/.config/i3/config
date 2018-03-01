@@ -59,7 +59,11 @@ set $rofi_style     -lines 10 -hide-scrollbar -separator-style none -line-paddin
 
 # File search
 # Create database:  updatedb --require-visibility 0 -o ~/.locate.db
-set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data
+set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data | \
+                    grep -vP '^/mnt/data/((code/OpenCV-android-sdk)|(Dropbox/((Apps/)|(Backup/Android/)|(Camera Uploads/.*\..*$)))|(Games/)|(matlab_install/)).*$' | \
+                    grep -vP '^/mnt/data2/((ProgFiles/)).*$' | \
+                    grep -vP '/\.'
+#| grep -vP '^.*\.((dropbox)|(git))$'
 
 # Folder search
 # Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
