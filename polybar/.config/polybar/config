@@ -38,7 +38,7 @@ strip-wsnumbers = true
 
 [module/gpmdp]
 type = custom/script
-exec = ~/.config/i3blocks/scripts/gpmdp --layout A-t-p
+exec = ~/dotfiles/i3blocks/.config/i3blocks/scripts/gpmdp --layout A-t-p
 interval = 1
 format-foreground = #8CE000
 
@@ -54,20 +54,19 @@ format-prefix = " "
 
 [module/bandwidth]
 type = custom/script
-exec = ~/.config/i3blocks/scripts/bandwidth
+exec = ~/dotfiles/i3blocks/.config/i3blocks/scripts/bandwidth
 interval = 1
 format-foreground = #66cc00
 
 [module/ping]
 type = custom/script
-exec = ~/.config/i3blocks/scripts/ping
+exec = ~/dotfiles/polybar/.config/polybar/scripts/ping
 interval = 15
 
 [module/filesystem]
 type = internal/fs
 interval = 30
-format-prefix = " "
-label-mounted = %free%
+label-mounted =  %free%
 mount-0 = /
 
 [module/memory]
@@ -75,6 +74,7 @@ type = internal/memory
 interval = 15
 format-prefix = " "
 label = %gb_used%
+fixed-values = true
 
 [module/cpu]
 type = internal/cpu
