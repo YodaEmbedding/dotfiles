@@ -246,6 +246,11 @@ hi User3 ctermfg=143 ctermbg=234
 hi User4 ctermfg=237 ctermbg=233
 hi User5 ctermfg=238 ctermbg=233
 
+" Window title {{{2
+
+set title               " Change window title to current buffer
+set titlestring=%t      " Change window title
+
 " Highlight groups {{{2
 
 syn keyword Todo NOTE DEBUG FIXME
@@ -294,7 +299,6 @@ let g:vhdl_indent_genportmap = 0
 
 " Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
-set title               " Change window title to current buffer
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
 
 " Performance {{{2
@@ -321,6 +325,7 @@ set cursorline          " Highlight current line
 set laststatus=2        " Show status line
 set mouse=a             " Mouse interactivity
 set number              " Line numbers
+set relativenumber      " Relative line numbers
 
 " AUTOCMDS {{{1
 
