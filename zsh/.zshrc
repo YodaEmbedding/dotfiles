@@ -143,6 +143,11 @@ pfp() { cp "$(pbpaste)" . }
 
 # OLDPWD {{{2
 
+# Copy to previous directory
+cpold() {
+	cp "$@" "$OLDPWD"
+}
+
 # Move to previous directory
 mvold() {
 	mv "$@" "$OLDPWD"

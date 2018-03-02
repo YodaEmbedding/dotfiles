@@ -290,6 +290,12 @@ bindsym $mod+Shift+minus        move scratchpad
 # Show scratchpad window
 bindsym $mod+minus              scratchpad show
 
+# Shortcuts: open/switch to
+bindsym $mod+$mod_+f            exec wmctrl -xa firefox
+bindsym $mod+$mod_+g            exec wmctrl -xa "Google Play Music Desktop Player"
+bindsym $mod+$mod_+o            exec wmctrl -xa okular
+bindsym $mod+$mod_+s            exec wmctrl -xa subl
+
 # Thunar
 bindsym $mod+t                  exec thunar
 

@@ -23,7 +23,7 @@ tray-position = right
 
 modules-left = i3 gpmdp
 modules-center = title
-modules-right = updates bandwidth ping filesystem memory cpu temperature pulseaudio date
+modules-right = updates bandwidth ping cpu temperature pulseaudio date
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -35,6 +35,7 @@ label-focused-background = #88000000
 label-focused-padding = 2
 label-unfocused-padding = 1
 strip-wsnumbers = true
+wrapping-scroll = false
 
 [module/gpmdp]
 type = custom/script
@@ -44,7 +45,7 @@ format-foreground = #8CE000
 
 [module/title]
 type = internal/xwindow
-label-maxlen = 45
+label-maxlen = 60
 
 [module/updates]
 type = custom/script
@@ -108,9 +109,10 @@ date-alt = %A, %d %B %Y  %H:%M:%S
 ; Minimum 2 columns for CPU
 ; Minimum 3 columns for ping
 ; Minimum 8 columns for download
-; Ping colors
+;
+; Ping click to refresh
 ; Temperature ramp color
-; Title enlarge label on click
+; Title click to enlarge label
 ; Music now playing detection for other players (also for YT?)
 ;
 ; Moon icon ramp for calendar
