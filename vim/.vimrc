@@ -22,8 +22,9 @@ Plug 'tmhedberg/SimpylFold'                 " Folding (Python)
 Plug 'majutsushi/tagbar'                    " (RARELYUSED) ctags; bound to \t
 Plug 'airblade/vim-gitgutter'               " Git gutter
 Plug 'Twinside/vim-haskellFold'             " Folding (Haskell)
-Plug 'kristijanhusak/vim-hybrid-material'   " Theme (Color scheme)
+Plug 'kristijanhusak/vim-hybrid-material'   " Theme (Colorscheme)
 Plug 'farmergreg/vim-lastplace'             " Reopen file last position
+Plug 'junegunn/vim-peekaboo'                " Show registers during \", @, and <C-R>
 Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (i.e. vim-sneak)
 Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
 Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
@@ -46,7 +47,6 @@ Plug 'eagletmt/neco-ghc'                    " Autocompletion (Haskell)
 Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 
 " Disabled {{{2
-"Plug 'gkjgh/cobalt'                        " Theme
 "Plug 'ctrlpvim/ctrlp.vim'                  " Fuzzy search/open files within directory
 "Plug 'othree/eregex.vim'                   " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 "Plug '/usr/local/opt/fzf'
@@ -58,13 +58,19 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug 'vim-airline/vim-airline'             " Theme (statusline)
 "Plug 'vim-airline/vim-airline-themes'      " Theme (statusline)
 "Plug 'pseewald/vim-anyfold'                " Fold on indent
-"Plug 'altercation/vim-colors-solarized'    " Theme
 "Plug 'easymotion/vim-easymotion'           " Motion
 "Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
 "Plug 'nathanaelkane/vim-indent-guides'     "
 "Plug 'terryma/vim-multiple-cursors'        " Multiple cursors WITH REGEX?! OMG
 "Plug 'goldfeld/vim-seek'                   " Use two character find (mapped to 's')
 "Plug 'lervag/vimtex'                       " LaTeX
+
+"Color scheme {{{3
+"Plug 'sjl/badwolf'                         " Theme (Colorscheme)
+"Plug 'junegunn/seoul256.vim'               " Theme (Colorscheme)
+"Plug 'noahfrederick/vim-noctu'             " Theme (Colorscheme)
+"Plug 'gkjgh/cobalt'                        " Theme (Colorscheme)
+"Plug 'altercation/vim-colors-solarized'    " Theme (Colorscheme)
 
 " Autocompletion {{{3
 "Plug 'Shougo/echodoc.vim'                  " Documentation in command line
@@ -101,18 +107,12 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug 'jreybert/vimagit'                    " vim git magic!!!
 "Plug 'kkoenig/wimproved.vim'               " For Windows
 
-"Color scheme
-Plug 'sjl/badwolf'                          " Theme (Color scheme)
-Plug 'junegunn/seoul256.vim'                " Theme (Color scheme)
-Plug 'noahfrederick/vim-noctu'              " Theme (Color scheme)
-
 " End {{{2
 call plug#end()
 
 " PLUGIN SETTINGS {{{1
 
 " ctrlp {{{2
-
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'min:4,max:72'
 let g:ctrlp_working_path_mode = 'r'
@@ -123,45 +123,36 @@ if executable('ag')
 endif
 
 " deoplete {{{2
-
 let g:deoplete#enable_at_startup = 1
-
 "let g:deoplete#enable_auto_select = 1
 "let g:deoplete#enable_smart_case = 1
 "let g:deoplete#auto_completion_start_length = 2
 
 " deoplete-jedi {{{2
-
 let g:deoplete#sources#jedi#server_timeout = 60
 "let g:deoplete#sources#jedi#show_docstring = 1
 
 " jedi {{{2
-
 let g:jedi#completions_enabled = 0
 let g:jedi#auto_vim_configuration = 0
 let g:jedi#smart_auto_mappings = 0
 let g:jedi#show_call_signatures = 0
 
 " echodoc {{{2
-
  let g:echodoc_enable_at_startup=1
 
 " indentLine {{{2
-
 let g:indentLine_char = '│'
 
 " NERDTree {{{2
-
 "let NERDTreeShowHidden = 1
 
 " vim-airline {{{2
-
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = ''
 
 " vim-anyfold {{{2
-
 let anyfold_activate=1
 "let anyfold_fold_display=0
 "let anyfold_motion=0
@@ -170,11 +161,9 @@ let anyfold_identify_comments=0
 "let anyfold_fold_toplevel=1
 
 " vim-sleuth {{{2
-
 let b:sleuth_mixed_tabstop = 4
 
 " YouCompleteMe {{{2
-
 let g:ycm_autoclose_preview_window_after_insertion = 1
 "let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_python_binary_path = '/usr/bin/python3'
@@ -183,22 +172,17 @@ let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 
 " THEMING {{{1
 
-" Color scheme {{{2
-
-" Favorites:
-" cobalt, desert, hybrid_reverse, hybrid_material, solarized
+" Colorscheme {{{2
+" Favorites: cobalt, desert, hybrid_reverse, hybrid_material, solarized
 colorscheme hybrid_material
 
 " Background {{{2
-
 "set t_Co=256        " Force 256-colors
 set background=dark  " Dark background
-
 hi Normal guibg=DarkSlateGray ctermbg=NONE
 hi Normal guifg=PapayaWhip ctermfg=249
 
 " Font {{{2
-
 if has("gui_running")
     set guifont=Roboto\ Mono\ 16
 endif
@@ -207,7 +191,6 @@ endif
 "let g:enable_bold_font = 1
 
 " Airline {{{2
-
 " https://github.com/vim-airline/vim-airline/wiki/Screenshots
 " Change using :Airline Theme
 " base16, base16_ashes, base16_default, hybrid, jellybeans, lucius
@@ -247,12 +230,10 @@ hi User4 ctermfg=237 ctermbg=233
 hi User5 ctermfg=238 ctermbg=233
 
 " Window title {{{2
-
 set title               " Change window title to current buffer
 set titlestring=%t      " Change window title
 
 " Highlight groups {{{2
-
 syn keyword Todo NOTE DEBUG FIXME
 
 " OPTIONS {{{1
@@ -269,14 +250,13 @@ set foldtext=FoldTextStyle()
 
 " GUI {{{2
 if has("gui_running")
-    "set guioptions +=e     " Use GUI tabs
-    "set guioptions -=m     " Remove menubar
-    set guioptions -=T      " Remove toolbar
+    "set guioptions +=e " Use GUI tabs
+    "set guioptions -=m " Remove menubar
+    set guioptions -=T  " Remove toolbar
     "set guitablabel=%N\ %t\ %M  " GUI tab labels
 endif
 
 " Indenting and Tabs {{{2
-
 "set autoindent         "
 "set smartindent        "
 "set smarttab           "
@@ -303,8 +283,8 @@ set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
 
 " Performance {{{2
 "set lazyredraw
-"set nocul               " disable highlight current line
-"set ttyfast             " speeds up page up/down?
+"set nocul              " disable highlight current line
+"set ttyfast            " speeds up page up/down?
 
 " Search {{{2
 set hlsearch            " Highlight search results
@@ -330,22 +310,18 @@ set relativenumber      " Relative line numbers
 " AUTOCMDS {{{1
 
 " Auto close preview {{{2
-
 "autocmd CompleteDone * silent! pclose!
 autocmd InsertLeave * silent! pclose!
 
 " Conceal level {{{2
-
 autocmd FileType markdown setlocal conceallevel=0
 " TODO This isn't working...
 "autocmd FileType tex setlocal conceallevel=0
 
 " Disable continue comment on new line {{{2
-
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " Folding {{{2
-
 autocmd FileType conf,markdown,python,vim,zsh let anyfold_activate=0
 autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 
@@ -355,15 +331,12 @@ autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldM
 autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
 
 " Indenting and Tabs {{{2
-
 autocmd FileType python setlocal tabstop=4
 
 " Remove trailing whitespace on file save {{{2
-
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 " Syntax highlighting {{{2
-
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 autocmd BufRead,BufNewFile *.nxc set filetype=cpp
 "autocmd BufRead,BufNewFile *.nxc set syntax=cpp
@@ -419,7 +392,6 @@ function! FoldMarkdown()
 endfunction
 
 " Fold text style {{{3
-
 function! FoldTextStyle()
     let line = getline(v:foldstart)
 
@@ -566,6 +538,9 @@ vnoremap <Leader>x   "_x
 nnoremap <Backspace> "_dd
 vnoremap <Backspace> "_dd
 
+" File explorer (netrw) {{{3
+nnoremap <Leader>F   :Lex<CR>
+
 " Buffer menu {{{3
 "nnoremap <Leader>b :buffers<CR>:b<Space>
 
@@ -584,7 +559,6 @@ nnoremap <Leader>S :%s/\<lt>\>//gn<left><left><left><left><left><left>
 noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
 
 " Cursor column toggle {{{3
-
 noremap <Leader>v :set cursorcolumn!<CR>
 
 " eregex toggle {{{3
@@ -686,6 +660,7 @@ vnoremap <silent> <F3> :normal @@<CR>
 " Free bindings: <S-d> <S-x> <S-s>
 
 " Cycle through colorschemes (NextColors() function)
+" Especially favorite colorschemes
 
 " fzf, ripgrep
 " http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
