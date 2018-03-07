@@ -4,8 +4,11 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
+EDITOR=nvim
+PAGER=most
+#PAGER=nvim
 PYTHONSTARTUP=/usr/local/share/pythonstartup.py
 QT_QPA_PLATFORMTHEME=qt5ct
 TERMINAL=termite
-VISUAL=vim
+VISUAL=nvim
 
