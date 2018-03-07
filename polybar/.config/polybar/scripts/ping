@@ -4,15 +4,13 @@
 # Riot Games NA:  104.160.131.3
 # Google DNS:     8.8.8.8
 
-ip=104.160.131.3
+ip="$1"
 
 result=$(fping -e $ip)
 
 #if [[ $result == *"is unreachable"* ]]; then
 if [[ $result != *"is alive"* ]]; then
-	echo "∞ ms"
-	echo "∞"
-	echo "#ff0000"
+	echo "%{F#ff0000}∞ ms%{F-}"
 	exit
 fi
 

@@ -350,6 +350,9 @@ bindsym $mod+$mod_+Ctrl+Right   resize grow   width  100 px or 100 ppt
 # Center window
 bindsym $mod+$mod_+c            move position center
 
+# Disable certain keybindings
+#bindsym Ctrl+q                 exec ~/.config/i3/scripts/noctrlq
+
 
 ### DEFAULT MODES ###
 
@@ -395,7 +398,7 @@ mode "resize" {
 font                          pango:Noto Mono Regular, Awesome 8
 floating_modifier             $mod
 focus_follows_mouse           no
-hide_edge_borders             smart
+hide_edge_borders             both
 new_window                    normal 0 px
 workspace_auto_back_and_forth yes
 workspace_layout              tabbed
@@ -410,17 +413,17 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #333333
 
-# Default window locations
-for_window [title="python scratchpad"] floating enable, border none, \
-    resize set 600 232, move position 0 20, \
-    move scratchpad, scratchpad show
-
-for_window [title="ipython scratchpad"] floating enable, border none, \
+# Default window settings
+for_window [title="^i?python scratchpad$"] \
+    floating enable, border none, \
     resize set 600 232, move position 0 20, \
     move scratchpad, scratchpad show
 
 for_window [title="^Cadence$"] floating enable
+
 for_window [title="^Guitarix: gx_head$"] floating enable, border none, move position center
+
+for_window [title="Mozilla Firefox"] border none
 
 # Default workspace locations
 assign [class="discord"]                          → $ws1

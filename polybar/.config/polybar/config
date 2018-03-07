@@ -27,6 +27,8 @@ modules-right = updates bandwidth ping cpu temperature pulseaudio date
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
+# todo double-click-middle
+click-middle = i3-msg "kill"
 
 [module/i3]
 type = internal/i3
@@ -61,7 +63,8 @@ format-foreground = #66cc00
 
 [module/ping]
 type = custom/script
-exec = ~/dotfiles/polybar/.config/polybar/scripts/ping
+exec = ~/dotfiles/polybar/.config/polybar/scripts/ping 8.8.8.8
+;exec = ~/dotfiles/polybar/.config/polybar/scripts/ping 104.160.131.3
 interval = 15
 
 [module/filesystem]
