@@ -1,0 +1,8 @@
+#!/bin/bash
+
+matches=$(progress 2>/dev/null | sed -n '/^\[/{p;n;p}')
+lines=$(sed '/^\[/{$!{N;s|^\[[^]]*\] \([^ ]*\)[^\n]*\n\s*\(.*\)|\1 \2|}}' <<< "$matches")
+output=$(awk '{print}' ORS=' | ' <<< "$lines" | sed 's/^\(.*\) | $/\1/')
+
+echo "$output"
+

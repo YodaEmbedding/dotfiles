@@ -41,13 +41,12 @@ wrapping-scroll = false
 
 [module/progress]
 type = custom/script
-;exec = echo $(x=$(progress 2>/dev/null) && [[ -z "$x" ]] || echo "$x" | sed -n '/^\[/{p;n;p}' | sed '/^\[/{$!{N;s|^\[[^]]*\] \([^ ]*\)[^\n]*\n\s*\(.*\)|\1 \2|}}' | awk '{print}' ORS=' | ' | sed 's/^\(.*\) | $/\1/')
-exec = echo "$(progress 2>/dev/null | sed -n '/^\[/{p;n;p}' | sed '/^\[/{$!{N;s|^\[[^]]*\] \([^ ]*\)[^\n]*\n\s*\(.*\)|\1 \2|}}' | awk '{print}' ORS=' | ' | sed 's/^\(.*\) | $/\1/')"
+exec = ~/.config/polybar/scripts/progress
 interval = 1
 
 [module/gpmdp]
 type = custom/script
-exec = ~/dotfiles/i3blocks/.config/i3blocks/scripts/gpmdp --layout A-t-p
+exec = ~/.config/i3blocks/scripts/gpmdp --layout A-t-p
 interval = 1
 format-foreground = #8CE000
 
@@ -63,14 +62,14 @@ format-prefix = " "
 
 [module/bandwidth]
 type = custom/script
-exec = ~/dotfiles/i3blocks/.config/i3blocks/scripts/bandwidth
+exec = ~/.config/i3blocks/scripts/bandwidth
 interval = 1
 format-foreground = #66cc00
 
 [module/ping]
 type = custom/script
-exec = ~/dotfiles/polybar/.config/polybar/scripts/ping 8.8.8.8
-;exec = ~/dotfiles/polybar/.config/polybar/scripts/ping 104.160.131.3
+exec = ~/.config/polybar/scripts/ping 8.8.8.8
+;exec = ~/.config/polybar/scripts/ping 104.160.131.3
 interval = 15
 
 [module/filesystem]

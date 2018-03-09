@@ -6,7 +6,8 @@ alias list='compgen -c'
 alias commands='compgen -c'
 
 # Grep
-alias g='grep -i'
+alias g='grep --color=never -i'
+
 
 # Listing
 alias ll='ls -l'
@@ -15,6 +16,7 @@ alias lsd='ls -d */'
 alias lsl='ls -al'
 alias lsg='ls -al | g'
 alias lsp='ls -al | p'
+alias lss='ls -al --color=always | grep "\->"'
 
 # Navigation
 alias ..='cd ..'
