@@ -21,7 +21,7 @@ font-4 = Roboto:size=10;0
 tray-background = #330000
 tray-position = right
 
-modules-left = i3 gpmdp
+modules-left = i3 progress gpmdp
 modules-center = title
 modules-right = updates bandwidth ping cpu temperature pulseaudio date
 
@@ -38,6 +38,12 @@ label-focused-padding = 2
 label-unfocused-padding = 1
 strip-wsnumbers = true
 wrapping-scroll = false
+
+[module/progress]
+type = custom/script
+;exec = echo $(x=$(progress 2>/dev/null) && [[ -z "$x" ]] || echo "$x" | sed -n '/^\[/{p;n;p}' | sed '/^\[/{$!{N;s|^\[[^]]*\] \([^ ]*\)[^\n]*\n\s*\(.*\)|\1 \2|}}' | awk '{print}' ORS=' | ' | sed 's/^\(.*\) | $/\1/')
+exec = echo "$(progress 2>/dev/null | sed -n '/^\[/{p;n;p}' | sed '/^\[/{$!{N;s|^\[[^]]*\] \([^ ]*\)[^\n]*\n\s*\(.*\)|\1 \2|}}' | awk '{print}' ORS=' | ' | sed 's/^\(.*\) | $/\1/')"
+interval = 1
 
 [module/gpmdp]
 type = custom/script
@@ -117,6 +123,7 @@ date-alt = %A, %d %B %Y  %H:%M:%S
 ; Temperature ramp color
 ; Title click to enlarge label
 ; Music now playing detection for other players (also for YT?)
+; Progress should ignore "Cannot open proc" and "opendir" warnings... just output only %
 ;
 ; Moon icon ramp for calendar
 ; Redshift color temperature
