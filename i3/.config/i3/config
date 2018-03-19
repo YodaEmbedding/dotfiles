@@ -20,6 +20,9 @@ set $ws9   "9:"
 set $ws10  "10:10"
 set $ws666 "666:"
 
+# Flags
+set $nsi            --no-startup-id
+
 # Wallpaper paths
 set $wallpaper      /usr/share/backgrounds/000current.jpg
 set $lock_wallpaper /usr/share/backgrounds/001current.png
@@ -42,6 +45,7 @@ set $update_index   ~/code/frequency-index-scripts/update_index.sh ~/.dir_index.
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
+set $vol_change     pkill -SIGRTMIN+1 i3blocks
 
 
 ### DEFAULT BINDINGS ###
@@ -136,8 +140,8 @@ bindsym --whole-window --border $mod+Button4        workspace prev
 bindsym --whole-window --border $mod+Button5        workspace next
 bindsym --whole-window --border $mod+Shift+Button4  focus left
 bindsym --whole-window --border $mod+Shift+Button5  focus right
-bindsym --whole-window --border $mod+Ctrl+Button4   exec --no-startup-id $amixer 1%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym --whole-window --border $mod+Ctrl+Button5   exec --no-startup-id $amixer 1%- && pkill -SIGRTMIN+1 i3blocks
+bindsym --whole-window --border $mod+Ctrl+Button4   exec $nsi $amixer 1%+ && $vol_change
+bindsym --whole-window --border $mod+Ctrl+Button5   exec $nsi $amixer 1%- && $vol_change
 bindsym --border                Button2             kill
 
 # Workspace switch back/forth
@@ -175,29 +179,29 @@ bindsym $mod+slash              gaps outer all plus  5
 bindsym $mod+Shift+slash        gaps outer all minus 5
 
 # Volume control
-bindsym XF86AudioLowerVolume    exec --no-startup-id $amixer 5%-    && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioRaiseVolume    exec --no-startup-id $amixer 5%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym XF86AudioMute           exec --no-startup-id $amixer toggle && pkill -SIGRTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume    exec $nsi $amixer 5%-    && $vol_change
+bindsym XF86AudioRaiseVolume    exec $nsi $amixer 5%+    && $vol_change
+bindsym XF86AudioMute           exec $nsi $amixer toggle && $vol_change
 
-bindsym $mod+z                  exec --no-startup-id $amixer 5%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+z            exec --no-startup-id $amixer 5%-    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Ctrl+Shift+z       exec --no-startup-id $amixer toggle && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+z                  exec $nsi $amixer 5%+    && $vol_change
+bindsym $mod+Shift+z            exec $nsi $amixer 5%-    && $vol_change
+bindsym $mod+Ctrl+Shift+z       exec $nsi $amixer toggle && $vol_change
 
-bindsym $mod+comma              exec --no-startup-id $amixer 1%+    && pkill -SIGRTMIN+1 i3blocks
-bindsym $mod+Shift+comma        exec --no-startup-id $amixer 1%-    && pkill -SIGRTMIN+1 i3blocks
+bindsym $mod+comma              exec $nsi $amixer 1%+    && $vol_change
+bindsym $mod+Shift+comma        exec $nsi $amixer 1%-    && $vol_change
 
 # Media control
-bindsym XF86AudioPlay           exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPause          exec --no-startup-id playerctl pause
-bindsym XF86AudioNext           exec --no-startup-id playerctl next
-bindsym XF86AudioPrev           exec --no-startup-id playerctl prev
+bindsym XF86AudioPlay           exec $nsi playerctl play-pause
+bindsym XF86AudioPause          exec $nsi playerctl pause
+bindsym XF86AudioNext           exec $nsi playerctl next
+bindsym XF86AudioPrev           exec $nsi playerctl prev
 
-bindsym $mod+Ctrl+z             exec --no-startup-id playerctl play-pause
+bindsym $mod+Ctrl+z             exec $nsi playerctl play-pause
 
 # GPMDP control
-bindsym $mod+$mod_+ctrl+z       exec --no-startup-id qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+$mod_+z            exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol + 0.05
-bindsym $mod+$mod_+shift+z      exec --no-startup-id ~/.config/i3/scripts/gpmdp_vol - 0.05
+bindsym $mod+$mod_+ctrl+z       exec $nsi qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+$mod_+z            exec $nsi ~/.config/i3/scripts/gpmdp_vol + 0.05
+bindsym $mod+$mod_+shift+z      exec $nsi ~/.config/i3/scripts/gpmdp_vol - 0.05
 
 # rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
@@ -214,7 +218,7 @@ bindsym $mod+Shift+b            border normal
 bindsym $mod+x                  [urgent=latest] focus
 
 # Lock screen
-bindsym $mod+Shift+x            exec --no-startup-id ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+bindsym $mod+Shift+x            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
 
 # Make window a scratchpad
 bindsym $mod+Shift+minus        move scratchpad
@@ -235,18 +239,18 @@ bindsym $mod+t                  exec thunar
 bindsym $mod+Shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
-bindsym $mod+c                  exec --no-startup-id termite -e ptpython  -t "python scratchpad"
-bindsym $mod+shift+c            exec --no-startup-id termite -e ptipython -t "ipython scratchpad"
+bindsym $mod+c                  exec $nsi termite -e ptpython  -t "python scratchpad"
+bindsym $mod+shift+c            exec $nsi termite -e ptipython -t "ipython scratchpad"
 
 # termite transparency
-bindsym $mod+semicolon          exec --no-startup-id ~/.config/i3/scripts/termite_transparency ' + 0.01'
-bindsym $mod+Shift+semicolon    exec --no-startup-id ~/.config/i3/scripts/termite_transparency ' - 0.01'
+bindsym $mod+semicolon          exec $nsi ~/.config/i3/scripts/termite_transparency ' + 0.01'
+bindsym $mod+Shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
 
 # Redshift control
-bindsym $mod+m                  exec --no-startup-id rs $(($(cat ~/.rshift) + 200))
-bindsym $mod+Shift+m            exec --no-startup-id rs $(($(cat ~/.rshift) - 200))
-bindsym $mod+Ctrl+m             exec --no-startup-id rs 4000
-bindsym $mod+Ctrl+Shift+m       exec --no-startup-id rs 6500
+bindsym $mod+m                  exec $nsi rs $(($(cat ~/.rshift) + 200))
+bindsym $mod+Shift+m            exec $nsi rs $(($(cat ~/.rshift) - 200))
+bindsym $mod+Ctrl+m             exec $nsi rs 4000
+bindsym $mod+Ctrl+Shift+m       exec $nsi rs 6500
 
 # Resize window
 bindsym $mod+$mod_+h            resize shrink width   10 px or  10 ppt
@@ -373,31 +377,31 @@ assign [class="Google Play Music Desktop Player"] → $ws9
 ### USER STARTUP ###
 
 # System
-exec        --no-startup-id     xmodmap ~/.Xmodmap
-exec        --no-startup-id     xset led on
-exec_always --no-startup-id     xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
+exec        $nsi     xmodmap ~/.Xmodmap
+exec        $nsi     xset led on
+exec_always $nsi     xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
 
 # Fast startup
-exec        --no-startup-id     compton
-exec_always --no-startup-id     feh --bg-scale $wallpaper
-exec        --no-startup-id     /usr/local/bin/lightsOn/lightsOn.sh 300
+exec        $nsi     compton
+exec_always $nsi     feh --bg-scale $wallpaper
+exec        $nsi     /usr/local/bin/lightsOn/lightsOn.sh 300
 
 # Medium startup
-exec_always --no-startup-id     ~/.config/polybar/polybar.sh
-exec        --no-startup-id     "sleep 5 && copyq"
-exec        --no-startup-id     rescuetime
-exec        --no-startup-id     screencloud
-exec        --no-startup-id     tilda
+exec_always $nsi     ~/.config/polybar/polybar.sh
+exec        $nsi     "sleep 5 && copyq"
+exec        $nsi     rescuetime
+exec        $nsi     screencloud
+exec        $nsi     tilda
 
 # Slow startup
-exec        --no-startup-id     "sleep 10 && cadence-session-start --system-start"
-exec        --no-startup-id     "sleep 20 && alsa_out -j 'speakers' -d speakers"
-exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
-exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
-exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
-exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
+exec        $nsi     "sleep 10 && cadence-session-start --system-start"
+exec        $nsi     "sleep 20 && alsa_out -j 'speakers' -d speakers"
+exec        $nsi     "sleep 25 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
+exec        $nsi     "sleep 25 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
+exec        $nsi     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
+exec        $nsi     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
 
-exec        --no-startup-id     dropbox
+exec        $nsi     dropbox
 
 
 ### TODO ###
