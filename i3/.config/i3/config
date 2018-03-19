@@ -2,7 +2,7 @@
 
 ### USER VARIABLES ###
 
-# Main modifier key
+# Main modifier keys
 set $mod  Mod4
 set $mod_ Mod1
 
@@ -33,7 +33,6 @@ set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data | \
                     grep -vP '^/mnt/data/((code/OpenCV-android-sdk)|(Dropbox/((Apps/)|(Backup/Android/)|(Camera Uploads/.*\..*$)))|(Games/)|(matlab_install/)).*$' | \
                     grep -vP '^/mnt/data2/((ProgFiles/)).*$' | \
                     grep -vP '/\.'
-#| grep -vP '^.*\.((dropbox)|(git))$'
 
 # Folder search
 # Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
@@ -42,7 +41,6 @@ set $update_folders ~/code/frequency-index-scripts/update_freq.sh               
 set $update_index   ~/code/frequency-index-scripts/update_index.sh ~/.dir_index.txt ~/.dir_frequent.txt
 
 # Sound control
-#set $amixer        amixer -c PCH set Master
 set $amixer         amixer -q -D pulse set Master
 
 
@@ -127,9 +125,6 @@ bindsym $mod+Shift+0            move container to workspace $ws10; workspace $ws
 # Restart/reload i3
 bindsym $mod+Shift+r            restart
 
-# Exit i3
-bindsym $mod+Shift+e            exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
 # Resize window
 bindsym $mod+r                  mode "resize"
 
@@ -141,8 +136,8 @@ bindsym --whole-window --border $mod+Button4        workspace prev
 bindsym --whole-window --border $mod+Button5        workspace next
 bindsym --whole-window --border $mod+Shift+Button4  focus left
 bindsym --whole-window --border $mod+Shift+Button5  focus right
-bindsym --whole-window --border $mod+Ctrl+Button4   exec --no-startup-id amixer set Master 1%+ && pkill -SIGRTMIN+1 i3blocks
-bindsym --whole-window --border $mod+Ctrl+Button5   exec --no-startup-id amixer set Master 1%- && pkill -SIGRTMIN+1 i3blocks
+bindsym --whole-window --border $mod+Ctrl+Button4   exec --no-startup-id $amixer 1%+ && pkill -SIGRTMIN+1 i3blocks
+bindsym --whole-window --border $mod+Ctrl+Button5   exec --no-startup-id $amixer 1%- && pkill -SIGRTMIN+1 i3blocks
 bindsym --border                Button2             kill
 
 # Workspace switch back/forth
@@ -287,9 +282,6 @@ bindsym $mod+$mod_+Ctrl+Right   resize grow   width  100 px or 100 ppt
 # Center window
 bindsym $mod+$mod_+c            move position center
 
-# Disable certain keybindings
-#bindsym Ctrl+q                 exec ~/.config/i3/scripts/noctrlq
-
 
 ### DEFAULT MODES ###
 
@@ -378,31 +370,6 @@ assign [class="qBittorrent"]                      → $ws4
 assign [class="Google Play Music Desktop Player"] → $ws9
 
 
-### USER BAR ###
-
-#bar {
-#    status_command i3blocks
-#
-#    font pango:FontAwesome 10
-#
-#    position top
-#    strip_workspace_numbers yes
-#
-#    colors {
-#        background         #220000
-#        statusline         #ffcccc
-#        separator          #662222
-#
-#        # class            border  backgr. text    indicator child_border
-#        focused_workspace  #884422 #441122 #ffffff #442211   #442211
-#        active_workspace   #333333 #5f676a #ffffff #333333   #333333
-#        inactive_workspace #333333 #222222 #888888 #292d2e   #222222
-#        urgent_workspace   #2f343a #900000 #ffffff #900000   #900000
-#        binding_mode       #2f343a #900000 #ffffff #900000   #900000
-#    }
-#}
-
-
 ### USER STARTUP ###
 
 # System
@@ -412,8 +379,6 @@ exec_always --no-startup-id     xinput --set-prop $(xinput list --short | grep "
 
 # Fast startup
 exec        --no-startup-id     compton
-#exec        --no-startup-id     dunst
-#exec        --no-startup-id     /usr/lib/notify-osd/notify-osd
 exec_always --no-startup-id     feh --bg-scale $wallpaper
 exec        --no-startup-id     /usr/local/bin/lightsOn/lightsOn.sh 300
 
@@ -422,12 +387,9 @@ exec_always --no-startup-id     ~/.config/polybar/polybar.sh
 exec        --no-startup-id     "sleep 5 && copyq"
 exec        --no-startup-id     rescuetime
 exec        --no-startup-id     screencloud
-# exec      --no-startup-id     selfspy
-# exec      --no-startup-id     sspy
 exec        --no-startup-id     tilda
 
 # Slow startup
-#exec        --no-startup-id     cadence-session-start --system-start
 exec        --no-startup-id     "sleep 10 && cadence-session-start --system-start"
 exec        --no-startup-id     "sleep 20 && alsa_out -j 'speakers' -d speakers"
 exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
@@ -435,29 +397,44 @@ exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink:
 exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
 exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
 
-#exec        --no-startup-id     cadence --minimized
 exec        --no-startup-id     dropbox
-#exec        --no-startup-id     pasystray
+
 
 ### TODO ###
 
 # Unused bindings:
 # $mod+g
+# $mod+i
+# $mod+n
+# $mod+o
+# $mod+p
+# $mod+u
 # $mod+y
+# $mod+Shift+e
 # $mod+Shift+f
 # $mod+Shift+g
 # $mod+Shift+s
 # $mod+Shift+v
 # $mod+Shift+w
 # $mod+Shift+y
-# Rename Shift/Ctrl to shift/ctrl?
-# Remove unused defaults
 
-# Stacking/etc can be moved to low-priority keys
+# Rarely used bindings:
+# $mod+a
+# $mod+e
+# $mod+r
+# $mod+s
+# $mod+t
+# $mod+w
+# $mod+x
+
+# Highly used bindings (that are hard to reach):
+# $mod+$mod_+g
+# $mod+shift+t
+# F1
+
+# rofi emoji
+# Rename Shift/Ctrl to shift/ctrl?
 # vim-like mark window with keybind
-# rofi select from options and pipe
-# Formatting, indenting like https://www.youtube.com/watch?v=-BOW61luzF4
-# Organize bindings better
 
 # Alt-tabbing (focus last)
 # Perhaps save previous window ID when selecting between different windows
