@@ -42,12 +42,12 @@ wrapping-scroll = false
 [module/progress]
 type = custom/script
 exec = ~/.config/polybar/scripts/progress
-interval = 1
+interval = 5
 
 [module/gpmdp]
 type = custom/script
 exec = ~/.config/i3blocks/scripts/gpmdp --layout A-t-p
-interval = 1
+interval = 5
 format-foreground = #8CE000
 
 [module/title]

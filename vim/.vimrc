@@ -236,9 +236,12 @@ set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
 " Search {{{2
 set hlsearch            " Highlight search results
 set ignorecase          " Ignore case
-set inccommand=nosplit  " Incremental highlight during :%s
 "set magic              " Escape like regular regexes; use \V to revert
 set smartcase           " Ignore case if lower
+
+if has('nvim')
+    set inccommand=nosplit  " Incremental highlight during :%s
+endif
 
 " Undo {{{2
 set undofile                " Save undo's after file closes

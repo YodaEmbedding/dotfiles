@@ -230,11 +230,15 @@ bindsym $mod_+Shift+Tab         focus left
 bindsym $mod+Tab                workspace next
 bindsym $mod+Ctrl+h             workspace prev
 bindsym $mod+Ctrl+l             workspace next
+bindsym $mod+Ctrl+Left          workspace prev
+bindsym $mod+Ctrl+Right         workspace next
 
 # Workspace cycling and moving
 bindsym $mod+Shift+Tab          move container to workspace next; workspace next
 bindsym $mod+Ctrl+Shift+h       move container to workspace prev; workspace prev
 bindsym $mod+Ctrl+Shift+l       move container to workspace next; workspace next
+bindsym $mod+Ctrl+Shift+Left    move container to workspace prev; workspace prev
+bindsym $mod+Ctrl+Shift+Right   move container to workspace next; workspace next
 
 # Gaps
 bindsym $mod+period             gaps inner all plus  5
@@ -399,7 +403,7 @@ font                          pango:Noto Mono Regular, Awesome 8
 floating_modifier             $mod
 focus_follows_mouse           no
 hide_edge_borders             both
-new_window                    pixel
+new_window                    none
 workspace_auto_back_and_forth yes
 workspace_layout              tabbed
 
@@ -419,7 +423,7 @@ for_window [title="^i?python scratchpad$"] \
     resize set 600 232, move position 0 20, \
     move scratchpad, scratchpad show
 
-for_window [title="^Cadence$"] floating enable
+for_window [title="^Cadence$"] floating enable, resize set 800 600, move position center
 
 for_window [title="^Guitarix: gx_head$"] floating enable, border none, move position center
 
@@ -482,6 +486,7 @@ exec        --no-startup-id     /usr/local/bin/lightsOn/lightsOn.sh 300
 
 # Medium startup
 exec_always --no-startup-id     ~/.config/polybar/polybar.sh
+exec        --no-startup-id     "sleep 5 && copyq"
 exec        --no-startup-id     rescuetime
 exec        --no-startup-id     screencloud
 # exec      --no-startup-id     selfspy
@@ -491,6 +496,12 @@ exec        --no-startup-id     tilda
 # Slow startup
 #exec        --no-startup-id     cadence-session-start --system-start
 exec        --no-startup-id     "sleep 10 && cadence-session-start --system-start"
+exec        --no-startup-id     "sleep 20 && alsa_out -j 'speakers' -d speakers"
+exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
+exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
+exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
+exec        --no-startup-id     "sleep 25 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
+
 #exec        --no-startup-id     cadence --minimized
 exec        --no-startup-id     dropbox
 #exec        --no-startup-id     pasystray
