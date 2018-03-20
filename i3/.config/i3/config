@@ -51,10 +51,10 @@ set $vol_change     pkill -SIGRTMIN+1 i3blocks
 ### DEFAULT BINDINGS ###
 
 # Kill window
-bindsym $mod+Shift+q            kill
+bindsym $mod+shift+q            kill
 
 # Terminal
-bindsym $mod+Return             exec termite
+bindsym $mod+return             exec termite
 
 # Focus window
 bindsym $mod+h                  focus left
@@ -62,25 +62,25 @@ bindsym $mod+j                  focus down
 bindsym $mod+k                  focus up
 bindsym $mod+l                  focus right
 
-bindsym $mod+Left               focus left
-bindsym $mod+Down               focus down
-bindsym $mod+Up                 focus up
-bindsym $mod+Right              focus right
+bindsym $mod+left               focus left
+bindsym $mod+down               focus down
+bindsym $mod+up                 focus up
+bindsym $mod+right              focus right
 
 # Move window
-bindsym $mod+Shift+h            move left
-bindsym $mod+Shift+j            move down
-bindsym $mod+Shift+k            move up
-bindsym $mod+Shift+l            move right
+bindsym $mod+shift+h            move left
+bindsym $mod+shift+j            move down
+bindsym $mod+shift+k            move up
+bindsym $mod+shift+l            move right
 
-bindsym $mod+Shift+Left         move left
-bindsym $mod+Shift+Down         move down
-bindsym $mod+Shift+Up           move up
-bindsym $mod+Shift+Right        move right
+bindsym $mod+shift+left         move left
+bindsym $mod+shift+down         move down
+bindsym $mod+shift+up           move up
+bindsym $mod+shift+right        move right
 
 # Split
 bindsym $mod+v                  split v
-bindsym $mod+Shift+v            split h
+bindsym $mod+shift+v            split h
 
 # Fullscreen
 bindsym $mod+f                  fullscreen toggle
@@ -91,7 +91,7 @@ bindsym $mod+w layout           tabbed
 bindsym $mod+e layout           toggle split
 
 # Floating
-bindsym $mod+Shift+space        floating toggle
+bindsym $mod+shift+space        floating toggle
 
 # Focus floating
 bindsym $mod+space              focus mode_toggle
@@ -100,7 +100,7 @@ bindsym $mod+space              focus mode_toggle
 bindsym $mod+a                  focus parent
 
 # Focus child
-bindsym $mod+Shift+a            focus child
+bindsym $mod+shift+a            focus child
 
 # Workspace switching
 bindsym $mod+1                  workspace $ws1
@@ -115,19 +115,19 @@ bindsym $mod+9                  workspace $ws9
 bindsym $mod+0                  workspace $ws10
 
 # Move to workspace
-bindsym $mod+Shift+1            move container to workspace $ws1;  workspace $ws1
-bindsym $mod+Shift+2            move container to workspace $ws2;  workspace $ws2
-bindsym $mod+Shift+3            move container to workspace $ws3;  workspace $ws3
-bindsym $mod+Shift+4            move container to workspace $ws4;  workspace $ws4
-bindsym $mod+Shift+5            move container to workspace $ws5;  workspace $ws5
-bindsym $mod+Shift+6            move container to workspace $ws6;  workspace $ws6
-bindsym $mod+Shift+7            move container to workspace $ws7;  workspace $ws7
-bindsym $mod+Shift+8            move container to workspace $ws8;  workspace $ws8
-bindsym $mod+Shift+9            move container to workspace $ws9;  workspace $ws9
-bindsym $mod+Shift+0            move container to workspace $ws10; workspace $ws10
+bindsym $mod+shift+1            move container to workspace $ws1;  workspace $ws1
+bindsym $mod+shift+2            move container to workspace $ws2;  workspace $ws2
+bindsym $mod+shift+3            move container to workspace $ws3;  workspace $ws3
+bindsym $mod+shift+4            move container to workspace $ws4;  workspace $ws4
+bindsym $mod+shift+5            move container to workspace $ws5;  workspace $ws5
+bindsym $mod+shift+6            move container to workspace $ws6;  workspace $ws6
+bindsym $mod+shift+7            move container to workspace $ws7;  workspace $ws7
+bindsym $mod+shift+8            move container to workspace $ws8;  workspace $ws8
+bindsym $mod+shift+9            move container to workspace $ws9;  workspace $ws9
+bindsym $mod+shift+0            move container to workspace $ws10; workspace $ws10
 
 # Restart/reload i3
-bindsym $mod+Shift+r            restart
+bindsym $mod+shift+r            restart
 
 # Resize window
 bindsym $mod+r                  mode "resize"
@@ -136,13 +136,13 @@ bindsym $mod+r                  mode "resize"
 ### USER BINDINGS ###
 
 # Mouse (scroll wheel) bindings
-bindsym --whole-window --border $mod+Button4        workspace prev
-bindsym --whole-window --border $mod+Button5        workspace next
-bindsym --whole-window --border $mod+Shift+Button4  focus left
-bindsym --whole-window --border $mod+Shift+Button5  focus right
-bindsym --whole-window --border $mod+Ctrl+Button4   exec $nsi $amixer 1%+ && $vol_change
-bindsym --whole-window --border $mod+Ctrl+Button5   exec $nsi $amixer 1%- && $vol_change
-bindsym --border                Button2             kill
+bindsym --whole-window --border $mod+button4        workspace prev
+bindsym --whole-window --border $mod+button5        workspace next
+bindsym --whole-window --border $mod+shift+button4  focus left
+bindsym --whole-window --border $mod+shift+button5  focus right
+bindsym --whole-window --border $mod+ctrl+button4   exec $nsi $amixer 1%+ && $vol_change
+bindsym --whole-window --border $mod+ctrl+button5   exec $nsi $amixer 1%- && $vol_change
+bindsym --border                button2             kill
 
 # Workspace switch back/forth
 bindsym $mod+grave              workspace back_and_forth
@@ -155,28 +155,28 @@ bindsym $mod+shift+grave        move container to workspace back_and_forth; work
 bindsym $mod_+grave             focus right
 
 # Next/previous windows
-bindsym $mod_+Tab               focus right
-bindsym $mod_+Shift+Tab         focus left
+bindsym $mod_+tab               focus right
+bindsym $mod_+shift+tab         focus left
 
 # Workspace cycling
-bindsym $mod+Tab                workspace next
-bindsym $mod+Ctrl+h             workspace prev
-bindsym $mod+Ctrl+l             workspace next
-bindsym $mod+Ctrl+Left          workspace prev
-bindsym $mod+Ctrl+Right         workspace next
+bindsym $mod+tab                workspace next
+bindsym $mod+ctrl+h             workspace prev
+bindsym $mod+ctrl+l             workspace next
+bindsym $mod+ctrl+left          workspace prev
+bindsym $mod+ctrl+right         workspace next
 
 # Workspace cycling and moving
-bindsym $mod+Shift+Tab          move container to workspace next; workspace next
-bindsym $mod+Ctrl+Shift+h       move container to workspace prev; workspace prev
-bindsym $mod+Ctrl+Shift+l       move container to workspace next; workspace next
-bindsym $mod+Ctrl+Shift+Left    move container to workspace prev; workspace prev
-bindsym $mod+Ctrl+Shift+Right   move container to workspace next; workspace next
+bindsym $mod+shift+tab          move container to workspace next; workspace next
+bindsym $mod+ctrl+shift+h       move container to workspace prev; workspace prev
+bindsym $mod+ctrl+shift+l       move container to workspace next; workspace next
+bindsym $mod+ctrl+shift+left    move container to workspace prev; workspace prev
+bindsym $mod+ctrl+shift+right   move container to workspace next; workspace next
 
 # Gaps
 bindsym $mod+period             gaps inner all plus  5
-bindsym $mod+Shift+period       gaps inner all minus 5
+bindsym $mod+shift+period       gaps inner all minus 5
 bindsym $mod+slash              gaps outer all plus  5
-bindsym $mod+Shift+slash        gaps outer all minus 5
+bindsym $mod+shift+slash        gaps outer all minus 5
 
 # Volume control
 bindsym XF86AudioLowerVolume    exec $nsi $amixer 5%-    && $vol_change
@@ -184,11 +184,11 @@ bindsym XF86AudioRaiseVolume    exec $nsi $amixer 5%+    && $vol_change
 bindsym XF86AudioMute           exec $nsi $amixer toggle && $vol_change
 
 bindsym $mod+z                  exec $nsi $amixer 5%+    && $vol_change
-bindsym $mod+Shift+z            exec $nsi $amixer 5%-    && $vol_change
+bindsym $mod+shift+z            exec $nsi $amixer 5%-    && $vol_change
 bindsym $mod+x                  exec $nsi $amixer toggle && $vol_change
 
 bindsym $mod+comma              exec $nsi $amixer 1%+    && $vol_change
-bindsym $mod+Shift+comma        exec $nsi $amixer 1%-    && $vol_change
+bindsym $mod+shift+comma        exec $nsi $amixer 1%-    && $vol_change
 
 # Media control
 bindsym XF86AudioPlay           exec $nsi playerctl play-pause
@@ -196,32 +196,32 @@ bindsym XF86AudioPause          exec $nsi playerctl pause
 bindsym XF86AudioNext           exec $nsi playerctl next
 bindsym XF86AudioPrev           exec $nsi playerctl prev
 
-bindsym $mod+Ctrl+x             exec $nsi playerctl play-pause
+bindsym $mod+ctrl+x             exec $nsi playerctl play-pause
 
 # GPMDP control
-#bindsym $mod+Ctrl+x             exec $nsi qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+Ctrl+z             exec $nsi ~/.config/i3/scripts/gpmdp_vol + 0.05
-bindsym $mod+Ctrl+Shift+z       exec $nsi ~/.config/i3/scripts/gpmdp_vol - 0.05
+#bindsym $mod+ctrl+x             exec $nsi qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+ctrl+z             exec $nsi ~/.config/i3/scripts/gpmdp_vol + 0.05
+bindsym $mod+ctrl+shift+z       exec $nsi ~/.config/i3/scripts/gpmdp_vol - 0.05
 
 # rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
-bindsym $mod+Ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
+bindsym $mod+ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
 bindsym $mod+d                  exec "$list_files   | rofi $rofi_style -p 'files'   -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
-bindsym $mod+Ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_folders \\"$x\\"; $update_index \\"$x\\"))"
-bindsym $mod+Shift+d            exec "wmctrl -l     | rofi $rofi_style -p 'window'  -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
+bindsym $mod+ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_folders \\"$x\\"; $update_index \\"$x\\"))"
+bindsym $mod+shift+d            exec "wmctrl -l     | rofi $rofi_style -p 'window'  -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Cycle border
 bindsym $mod+b                  border toggle
-bindsym $mod+Shift+b            border normal
+bindsym $mod+shift+b            border normal
 
 # Jump to urgent window
 bindsym $mod+u                  [urgent=latest] focus
 
 # Lock screen
-bindsym $mod+Shift+x            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+bindsym $mod+shift+x            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
 
 # Make window a scratchpad
-bindsym $mod+Shift+minus        move scratchpad
+bindsym $mod+shift+minus        move scratchpad
 
 # Show scratchpad window
 bindsym $mod+minus              scratchpad show
@@ -236,7 +236,7 @@ bindsym $mod+$mod_+s            exec wmctrl -xa subl
 bindsym $mod+t                  exec thunar
 
 # Thunar > Downloads
-bindsym $mod+Shift+t            exec thunar ~/Downloads
+bindsym $mod+shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
 bindsym $mod+c                  exec $nsi termite -e ptpython  -t "python scratchpad"
@@ -244,13 +244,13 @@ bindsym $mod+shift+c            exec $nsi termite -e ptipython -t "ipython scrat
 
 # termite transparency
 bindsym $mod+semicolon          exec $nsi ~/.config/i3/scripts/termite_transparency ' + 0.01'
-bindsym $mod+Shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
+bindsym $mod+shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
 
 # Redshift control
 bindsym $mod+m                  exec $nsi rs $(($(cat ~/.rshift) + 200))
-bindsym $mod+Shift+m            exec $nsi rs $(($(cat ~/.rshift) - 200))
-bindsym $mod+Ctrl+m             exec $nsi rs 4000
-bindsym $mod+Ctrl+Shift+m       exec $nsi rs 6500
+bindsym $mod+shift+m            exec $nsi rs $(($(cat ~/.rshift) - 200))
+bindsym $mod+ctrl+m             exec $nsi rs 4000
+bindsym $mod+ctrl+shift+m       exec $nsi rs 6500
 
 # Resize window
 bindsym $mod+$mod_+h            resize shrink width   10 px or  10 ppt
@@ -258,30 +258,30 @@ bindsym $mod+$mod_+j            resize grow   height  10 px or  10 ppt
 bindsym $mod+$mod_+k            resize shrink height  10 px or  10 ppt
 bindsym $mod+$mod_+l            resize grow   width   10 px or  10 ppt
 
-bindsym $mod+$mod_+Left         resize shrink width   10 px or  10 ppt
-bindsym $mod+$mod_+Down         resize grow   height  10 px or  10 ppt
-bindsym $mod+$mod_+Right        resize grow   width   10 px or  10 ppt
-bindsym $mod+$mod_+Up           resize shrink height  10 px or  10 ppt
+bindsym $mod+$mod_+left         resize shrink width   10 px or  10 ppt
+bindsym $mod+$mod_+down         resize grow   height  10 px or  10 ppt
+bindsym $mod+$mod_+right        resize grow   width   10 px or  10 ppt
+bindsym $mod+$mod_+up           resize shrink height  10 px or  10 ppt
 
-bindsym $mod+$mod_+Shift+h      resize shrink width    1 px or   1 ppt
-bindsym $mod+$mod_+Shift+j      resize grow   height   1 px or   1 ppt
-bindsym $mod+$mod_+Shift+k      resize shrink height   1 px or   1 ppt
-bindsym $mod+$mod_+Shift+l      resize grow   width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+h      resize shrink width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+j      resize grow   height   1 px or   1 ppt
+bindsym $mod+$mod_+shift+k      resize shrink height   1 px or   1 ppt
+bindsym $mod+$mod_+shift+l      resize grow   width    1 px or   1 ppt
 
-bindsym $mod+$mod_+Shift+Left   resize shrink width    1 px or   1 ppt
-bindsym $mod+$mod_+Shift+Down   resize grow   height   1 px or   1 ppt
-bindsym $mod+$mod_+Shift+Up     resize shrink height   1 px or   1 ppt
-bindsym $mod+$mod_+Shift+Right  resize grow   width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+left   resize shrink width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+down   resize grow   height   1 px or   1 ppt
+bindsym $mod+$mod_+shift+up     resize shrink height   1 px or   1 ppt
+bindsym $mod+$mod_+shift+right  resize grow   width    1 px or   1 ppt
 
-bindsym $mod+$mod_+Ctrl+h       resize shrink width  100 px or 100 ppt
-bindsym $mod+$mod_+Ctrl+j       resize grow   height 100 px or 100 ppt
-bindsym $mod+$mod_+Ctrl+k       resize shrink height 100 px or 100 ppt
-bindsym $mod+$mod_+Ctrl+l       resize grow   width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+h       resize shrink width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+j       resize grow   height 100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+k       resize shrink height 100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+l       resize grow   width  100 px or 100 ppt
 
-bindsym $mod+$mod_+Ctrl+Left    resize shrink width  100 px or 100 ppt
-bindsym $mod+$mod_+Ctrl+Down    resize grow   height 100 px or 100 ppt
-bindsym $mod+$mod_+Ctrl+Up      resize shrink height 100 px or 100 ppt
-bindsym $mod+$mod_+Ctrl+Right   resize grow   width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+left    resize shrink width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+down    resize grow   height 100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+up      resize shrink height 100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+right   resize grow   width  100 px or 100 ppt
 
 # Center window
 bindsym $mod+$mod_+c            move position center
@@ -296,33 +296,33 @@ mode "resize" {
     bindsym k                   resize shrink height  10 px or  10 ppt
     bindsym l                   resize grow   width   10 px or  10 ppt
 
-    bindsym Left                resize shrink width   10 px or  10 ppt
-    bindsym Down                resize grow   height  10 px or  10 ppt
-    bindsym Right               resize grow   width   10 px or  10 ppt
-    bindsym Up                  resize shrink height  10 px or  10 ppt
+    bindsym left                resize shrink width   10 px or  10 ppt
+    bindsym down                resize grow   height  10 px or  10 ppt
+    bindsym right               resize grow   width   10 px or  10 ppt
+    bindsym up                  resize shrink height  10 px or  10 ppt
 
-    bindsym Shift+h             resize shrink width    1 px or   1 ppt
-    bindsym Shift+j             resize grow   height   1 px or   1 ppt
-    bindsym Shift+k             resize shrink height   1 px or   1 ppt
-    bindsym Shift+l             resize grow   width    1 px or   1 ppt
+    bindsym shift+h             resize shrink width    1 px or   1 ppt
+    bindsym shift+j             resize grow   height   1 px or   1 ppt
+    bindsym shift+k             resize shrink height   1 px or   1 ppt
+    bindsym shift+l             resize grow   width    1 px or   1 ppt
 
-    bindsym Shift+Left          resize shrink width    1 px or   1 ppt
-    bindsym Shift+Down          resize grow   height   1 px or   1 ppt
-    bindsym Shift+Up            resize shrink height   1 px or   1 ppt
-    bindsym Shift+Right         resize grow   width    1 px or   1 ppt
+    bindsym shift+left          resize shrink width    1 px or   1 ppt
+    bindsym shift+down          resize grow   height   1 px or   1 ppt
+    bindsym shift+up            resize shrink height   1 px or   1 ppt
+    bindsym shift+right         resize grow   width    1 px or   1 ppt
 
-    bindsym Ctrl+h              resize shrink width  100 px or 100 ppt
-    bindsym Ctrl+j              resize grow   height 100 px or 100 ppt
-    bindsym Ctrl+k              resize shrink height 100 px or 100 ppt
-    bindsym Ctrl+l              resize grow   width  100 px or 100 ppt
+    bindsym ctrl+h              resize shrink width  100 px or 100 ppt
+    bindsym ctrl+j              resize grow   height 100 px or 100 ppt
+    bindsym ctrl+k              resize shrink height 100 px or 100 ppt
+    bindsym ctrl+l              resize grow   width  100 px or 100 ppt
 
-    bindsym Ctrl+Left           resize shrink width  100 px or 100 ppt
-    bindsym Ctrl+Down           resize grow   height 100 px or 100 ppt
-    bindsym Ctrl+Up             resize shrink height 100 px or 100 ppt
-    bindsym Ctrl+Right          resize grow   width  100 px or 100 ppt
+    bindsym ctrl+left           resize shrink width  100 px or 100 ppt
+    bindsym ctrl+down           resize grow   height 100 px or 100 ppt
+    bindsym ctrl+up             resize shrink height 100 px or 100 ppt
+    bindsym ctrl+right          resize grow   width  100 px or 100 ppt
 
-    bindsym Return              mode "default"
-    bindsym Escape              mode "default"
+    bindsym return              mode "default"
+    bindsym escape              mode "default"
 }
 
 
@@ -414,13 +414,13 @@ exec        $nsi     dropbox
 # $mod+p
 # $mod+u
 # $mod+y
-# $mod+Shift+e
-# $mod+Shift+f
-# $mod+Shift+g
-# $mod+Shift+s
-# $mod+Shift+v
-# $mod+Shift+w
-# $mod+Shift+y
+# $mod+shift+e
+# $mod+shift+f
+# $mod+shift+g
+# $mod+shift+s
+# $mod+shift+v
+# $mod+shift+w
+# $mod+shift+y
 
 # Rarely used bindings:
 # $mod+a
@@ -437,7 +437,6 @@ exec        $nsi     dropbox
 # F1
 
 # rofi emoji
-# Rename Shift/Ctrl to shift/ctrl?
 # vim-like mark window with keybind
 
 # Alt-tabbing (focus last)
