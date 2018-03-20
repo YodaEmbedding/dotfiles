@@ -129,9 +129,6 @@ bindsym $mod+shift+0            move container to workspace $ws10; workspace $ws
 # Restart/reload i3
 bindsym $mod+shift+r            restart
 
-# Resize window
-bindsym $mod+r                  mode "resize"
-
 
 ### USER BINDINGS ###
 
@@ -287,45 +284,6 @@ bindsym $mod+$mod_+ctrl+right   resize grow   width  100 px or 100 ppt
 bindsym $mod+$mod_+c            move position center
 
 
-### DEFAULT MODES ###
-
-# Resize window
-mode "resize" {
-    bindsym h                   resize shrink width   10 px or  10 ppt
-    bindsym j                   resize grow   height  10 px or  10 ppt
-    bindsym k                   resize shrink height  10 px or  10 ppt
-    bindsym l                   resize grow   width   10 px or  10 ppt
-
-    bindsym left                resize shrink width   10 px or  10 ppt
-    bindsym down                resize grow   height  10 px or  10 ppt
-    bindsym right               resize grow   width   10 px or  10 ppt
-    bindsym up                  resize shrink height  10 px or  10 ppt
-
-    bindsym shift+h             resize shrink width    1 px or   1 ppt
-    bindsym shift+j             resize grow   height   1 px or   1 ppt
-    bindsym shift+k             resize shrink height   1 px or   1 ppt
-    bindsym shift+l             resize grow   width    1 px or   1 ppt
-
-    bindsym shift+left          resize shrink width    1 px or   1 ppt
-    bindsym shift+down          resize grow   height   1 px or   1 ppt
-    bindsym shift+up            resize shrink height   1 px or   1 ppt
-    bindsym shift+right         resize grow   width    1 px or   1 ppt
-
-    bindsym ctrl+h              resize shrink width  100 px or 100 ppt
-    bindsym ctrl+j              resize grow   height 100 px or 100 ppt
-    bindsym ctrl+k              resize shrink height 100 px or 100 ppt
-    bindsym ctrl+l              resize grow   width  100 px or 100 ppt
-
-    bindsym ctrl+left           resize shrink width  100 px or 100 ppt
-    bindsym ctrl+down           resize grow   height 100 px or 100 ppt
-    bindsym ctrl+up             resize shrink height 100 px or 100 ppt
-    bindsym ctrl+right          resize grow   width  100 px or 100 ppt
-
-    bindsym return              mode "default"
-    bindsym escape              mode "default"
-}
-
-
 ### USER CUSTOMIZATIONS ###
 
 font                          pango:Noto Mono Regular, Awesome 8
@@ -412,6 +370,7 @@ exec        $nsi     dropbox
 # $mod+n
 # $mod+o
 # $mod+p
+# $mod+r
 # $mod+u
 # $mod+y
 # $mod+shift+e
@@ -425,11 +384,9 @@ exec        $nsi     dropbox
 # Rarely used bindings:
 # $mod+a
 # $mod+e
-# $mod+r
 # $mod+s
 # $mod+t
 # $mod+w
-# $mod+x
 
 # Highly used bindings (that are hard to reach):
 # $mod+$mod_+g
