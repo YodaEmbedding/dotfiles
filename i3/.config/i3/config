@@ -185,7 +185,7 @@ bindsym XF86AudioMute           exec $nsi $amixer toggle && $vol_change
 
 bindsym $mod+z                  exec $nsi $amixer 5%+    && $vol_change
 bindsym $mod+Shift+z            exec $nsi $amixer 5%-    && $vol_change
-bindsym $mod+Ctrl+Shift+z       exec $nsi $amixer toggle && $vol_change
+bindsym $mod+x                  exec $nsi $amixer toggle && $vol_change
 
 bindsym $mod+comma              exec $nsi $amixer 1%+    && $vol_change
 bindsym $mod+Shift+comma        exec $nsi $amixer 1%-    && $vol_change
@@ -196,12 +196,12 @@ bindsym XF86AudioPause          exec $nsi playerctl pause
 bindsym XF86AudioNext           exec $nsi playerctl next
 bindsym XF86AudioPrev           exec $nsi playerctl prev
 
-bindsym $mod+Ctrl+z             exec $nsi playerctl play-pause
+bindsym $mod+Ctrl+x             exec $nsi playerctl play-pause
 
 # GPMDP control
-bindsym $mod+$mod_+ctrl+z       exec $nsi qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+$mod_+z            exec $nsi ~/.config/i3/scripts/gpmdp_vol + 0.05
-bindsym $mod+$mod_+shift+z      exec $nsi ~/.config/i3/scripts/gpmdp_vol - 0.05
+#bindsym $mod+Ctrl+x             exec $nsi qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym $mod+Ctrl+z             exec $nsi ~/.config/i3/scripts/gpmdp_vol + 0.05
+bindsym $mod+Ctrl+Shift+z       exec $nsi ~/.config/i3/scripts/gpmdp_vol - 0.05
 
 # rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
@@ -215,7 +215,7 @@ bindsym $mod+b                  border toggle
 bindsym $mod+Shift+b            border normal
 
 # Jump to urgent window
-bindsym $mod+x                  [urgent=latest] focus
+bindsym $mod+u                  [urgent=latest] focus
 
 # Lock screen
 bindsym $mod+Shift+x            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
