@@ -29,7 +29,7 @@ endif
 " Enabled {{{2
 Plug 'Shougo/denite.nvim'                   " Fuzzy search/open files within directory
 Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
-Plug 'Yggdroot/indentLine'                  " Indent guides
+Plug 'thaerkh/vim-indentguides'             " Indent guides
 Plug 'Yggdroot/LeaderF'                     " Fuzzy search/open files within directory
 Plug 'scrooloose/nerdcommenter'             " Commenting blocks e.g. \cb
 Plug 'tmhedberg/SimpylFold'                 " Folding (Python)
@@ -57,7 +57,7 @@ endif
 
 Plug 'zchee/deoplete-jedi'                  " Autocompletion (Python)
 Plug 'eagletmt/neco-ghc'                    " Autocompletion (Haskell)
-Plug 'fs111/pydoc.vim'                      " Documentation (Python)
+Plug 'fs111/pydoc.vim'                      " Documentation  (Python)
 
 " Disabled {{{2
 " Possibly useful {{{3
@@ -74,6 +74,7 @@ Plug 'fs111/pydoc.vim'                      " Documentation (Python)
 "Plug '/usr/bin/fzf'
 "Plug 'junegunn/fzf.vim'                    " Fuzzy search/open files within directory
 "Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
+"Plug 'Yggdroot/indentLine'                 " Indent guides
 "Plug 'scrooloose/nerdtree'                 " File explorer
 "Plug 'python-mode/python-mode', {'for': 'python'}
 "Plug 'vim-airline/vim-airline'             " Theme (statusline)
@@ -141,8 +142,8 @@ let g:deoplete#enable_at_startup = 1
 " deoplete-jedi {{{2
 let g:deoplete#sources#jedi#server_timeout = 60
 
-" indentLine {{{2
-let g:indentLine_char = '│'
+" indentguides {{{2
+let g:indentguides_spacechar = '│'
 
 " vim-sleuth {{{2
 let b:sleuth_mixed_tabstop = 4
@@ -169,28 +170,32 @@ let g:enable_bold_font = 1
 " Statusline {{{2
 
 " Statusline definition {{{3
-set statusline=                             " Clear
-set statusline+=%1*\                        " Color -
-set statusline+=%t                          " Tail of the filename
-set statusline+=%2*                         " Color
-set statusline+=%h                          " Help file flag
-set statusline+=%r                          " Read only flag
-set statusline+=%3*                         " Color
-set statusline+=%m                          " Modified flag
-set statusline+=%=                          " Left/right separator
-set statusline+=%4*\                        " Color -
-set statusline+=%{&filetype}                " Filetype
-set statusline+=\ \                         " --
-set statusline+=%{&fenc}                    " File encoding
-set statusline+=[%{&ff}]                    " File format
-set statusline+=\ %5*\ \ \                  " - Color ---
-set statusline+=%2c                         " Cursor column
-set statusline+=\ \                         " --
-set statusline+=%2v                         " Cursor column (virtual)
-set statusline+=\ \                         " --
-set statusline+=(%l\ /\ %L)                 " Cursor line/total lines
-set statusline+=\ \                         " --
-set statusline+=%P                          " Percent through file
+set statusline=                                 " Clear
+set statusline+=%1*\                            " Color -
+set statusline+=%t                              " Tail of the filename
+set statusline+=%2*                             " Color
+set statusline+=%h                              " Help file flag
+set statusline+=%r                              " Read only flag
+set statusline+=%3*                             " Color
+set statusline+=%m                              " Modified flag
+set statusline+=%=                              " Left/right separator
+set statusline+=%4*\                            " Color -
+set statusline+=%{&filetype}                    " Filetype
+set statusline+=\ \                             " --
+set statusline+=%{&fenc}                        " File encoding
+set statusline+=[%{&ff}]                        " File format
+set statusline+=[                               " Indent settings: begin
+set statusline+=%{&expandtab?\"sp\":\"tab\"}\   " Indent settings
+set statusline+=%{&shiftwidth}                  " Indent settings
+set statusline+=]                               " Indent settings: end
+set statusline+=\ %5*\ \ \                      " - Color ---
+set statusline+=%2c                             " Cursor column
+set statusline+=\ \                             " --
+set statusline+=%2v                             " Cursor column (virtual)
+set statusline+=\ \                             " --
+set statusline+=(%l\ /\ %L)                     " Cursor line/total lines
+set statusline+=\ \                             " --
+set statusline+=%P                              " Percent through file
 
 " Statusline colors {{{3
 hi User1 ctermfg=250 ctermbg=234
@@ -225,15 +230,7 @@ if has("gui_running")
 endif
 
 " Indenting and Tabs {{{2
-"set autoindent         "
-"set smartindent        "
-"set smarttab           "
-
-"set expandtab          " Tabs to spaces
-"set noexpandtab        " Tabs to tabs
-
 set shiftwidth=4        " Indent/outdent by n columns
-"set softtabstop=4      " Indent as if n columns...?
 set tabstop=4           " Indentation levels every n columns
 
 " Python indenting {{{3
@@ -295,7 +292,8 @@ autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldM
 autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
 
 " Indenting and Tabs {{{2
-autocmd FileType python setlocal tabstop=4
+autocmd FileType markdown setlocal expandtab
+autocmd FileType python   setlocal expandtab
 
 " Remove trailing whitespace on file save {{{2
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
