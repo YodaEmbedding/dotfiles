@@ -5,17 +5,16 @@
 " VIM-PLUG {{{1
 
 " Installation {{{2
-if has('nvim') && empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-    silent execute "
-        \ !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
+if has('nvim')
+    let plug_path = expand('~/.local/share/nvim/site/autoload/plug.vim')
+else
+    let plug_path = expand('~/.vim/autoload/plug.vim')
 endif
 
-if !has('nvim') && empty(glob('~/.vim/autoload/plug.vim'))
-    silent execute "
-        \ !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+let plug_remote = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+
+if empty(glob(plug_path))
+    silent execute "!curl -fLo " . plug_path . " --create-dirs " . plug_remote
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
