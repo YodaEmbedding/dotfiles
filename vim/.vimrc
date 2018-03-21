@@ -5,10 +5,15 @@
 " VIM-PLUG {{{1
 
 " Installation {{{2
+
 if has('nvim')
-    let plug_path = expand('~/.local/share/nvim/site/autoload/plug.vim')
+    if has('win32') | let plug_path = expand('~/AppData/Local/nvim/autoload/plug.vim')
+    else            | let plug_path = expand('~/.local/share/nvim/site/autoload/plug.vim')
+    endif
 else
-    let plug_path = expand('~/.vim/autoload/plug.vim')
+    if has('win32') | let plug_path = expand('~/vimfiles/autoload/plug.vim')
+    else            | let plug_path = expand('~/.vim/autoload/plug.vim')
+    endif
 endif
 
 let plug_remote = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
