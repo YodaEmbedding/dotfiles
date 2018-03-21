@@ -54,7 +54,7 @@ set $vol_change     pkill -SIGRTMIN+1 i3blocks
 bindsym $mod+shift+q            kill
 
 # Terminal
-bindsym $mod+return             exec termite
+bindsym $mod+Return             exec termite
 
 # Focus window
 bindsym $mod+h                  focus left
@@ -133,13 +133,13 @@ bindsym $mod+shift+r            restart
 ### USER BINDINGS ###
 
 # Mouse (scroll wheel) bindings
-bindsym --whole-window --border $mod+button4        workspace prev
-bindsym --whole-window --border $mod+button5        workspace next
-bindsym --whole-window --border $mod+shift+button4  focus left
-bindsym --whole-window --border $mod+shift+button5  focus right
-bindsym --whole-window --border $mod+ctrl+button4   exec $nsi $amixer 1%+ && $vol_change
-bindsym --whole-window --border $mod+ctrl+button5   exec $nsi $amixer 1%- && $vol_change
-bindsym --border                button2             kill
+bindsym --whole-window --border $mod+Button4        workspace prev
+bindsym --whole-window --border $mod+Button5        workspace next
+bindsym --whole-window --border $mod+shift+Button4  focus left
+bindsym --whole-window --border $mod+shift+Button5  focus right
+bindsym --whole-window --border $mod+ctrl+Button4   exec $nsi $amixer 1%+ && $vol_change
+bindsym --whole-window --border $mod+ctrl+Button5   exec $nsi $amixer 1%- && $vol_change
+bindsym --border                Button2             kill
 
 # Workspace switch back/forth
 bindsym $mod+grave              workspace back_and_forth
@@ -152,18 +152,18 @@ bindsym $mod+shift+grave        move container to workspace back_and_forth; work
 bindsym $mod_+grave             focus right
 
 # Next/previous windows
-bindsym $mod_+tab               focus right
-bindsym $mod_+shift+tab         focus left
+bindsym $mod_+Tab               focus right
+bindsym $mod_+shift+Tab         focus left
 
 # Workspace cycling
-bindsym $mod+tab                workspace next
+bindsym $mod+Tab                workspace next
 bindsym $mod+ctrl+h             workspace prev
 bindsym $mod+ctrl+l             workspace next
 bindsym $mod+ctrl+left          workspace prev
 bindsym $mod+ctrl+right         workspace next
 
 # Workspace cycling and moving
-bindsym $mod+shift+tab          move container to workspace next; workspace next
+bindsym $mod+shift+Tab          move container to workspace next; workspace next
 bindsym $mod+ctrl+shift+h       move container to workspace prev; workspace prev
 bindsym $mod+ctrl+shift+l       move container to workspace next; workspace next
 bindsym $mod+ctrl+shift+left    move container to workspace prev; workspace prev
