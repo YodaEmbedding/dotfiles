@@ -436,6 +436,7 @@ nnoremap <Leader>b :Denite -winheight=10 buffer<CR>
 
 " deoplete {{{3
 if match(&runtimepath, 'deoplete.nvim') != -1
+    " TODO RARELYUSED
     " inoremap <silent><expr> <Tab>
     "     \ pumvisible() ? "\<C-n>" :
     "     \ <SID>CheckBackspace() ? "\<Tab>" :
@@ -443,6 +444,7 @@ if match(&runtimepath, 'deoplete.nvim') != -1
 endif
 
 " eregex {{{3
+" TODO RARELYUSED
 nnoremap <Leader>/ :call eregex#toggle()<CR>
 
 " fzf {{{3
@@ -454,9 +456,11 @@ if match(&runtimepath, 'fzf') != -1
 endif
 
 " indentLine {{{3
+" TODO RARELYUSED
 nnoremap <Leader>i :IndentLinesToggle<CR>
 
 " repmo-vim {{{3
+" TODO RARELYUSED
 if match(&runtimepath, 'repmo-vim') != -1
     " Specific mappings if vim-sneak plugin enabled
     if match(&runtimepath, 'vim-sneak') != -1 "{{{4
@@ -501,6 +505,7 @@ endif
 " Leader {{{2
 
 " Black hole delete {{{3
+" TODO RARELYUSED
 nnoremap <Leader>d   "_d
 vnoremap <Leader>d   "_d
 nnoremap <Leader>x   "_x
@@ -562,16 +567,19 @@ nnoremap <Tab>   :bnext<CR>
 nnoremap gb      :ls<CR>:b<Space>
 
 " Navigate scroll 5 lines up/down {{{3
+" TODO RARELYUSED
 noremap <Down> 5<C-d>
 noremap <Up>   5<C-u>
 
 " Navigate up/down in wrapped text {{{3
+" TODO RARELYUSED
 nnoremap <Down> gj
 nnoremap <Up>   gk
 inoremap <Down> <C-o>gj
 inoremap <Up>   <C-o>gk
 
 " Navigate windows {{{3
+" TODO RARELYUSED
 nnoremap '  <C-w>
 nnoremap '' <C-w>w
 
@@ -595,13 +603,16 @@ nnoremap <CR> mqo<Esc>`q
 inoremap <C-v> <C-o>:set paste<CR><C-o>"+P<C-o>:set nopaste<CR>
 
 " Save as sudo {{{3
+" TODO RARELYUSED
 cmap w!! w !sudo tee > /dev/null %
 cmap x!! x !sudo tee > /dev/null %
 
 " Search for visually selected text {{{3
+" TODO RARELYUSED
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Swap lines {{{3
+" TODO RARELYUSED
 noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
 noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
 noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
