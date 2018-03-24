@@ -62,10 +62,10 @@ bindsym $mod+j                  focus down
 bindsym $mod+k                  focus up
 bindsym $mod+l                  focus right
 
-bindsym $mod+left               focus left
-bindsym $mod+down               focus down
-bindsym $mod+up                 focus up
-bindsym $mod+right              focus right
+bindsym $mod+Left               focus left
+bindsym $mod+Down               focus down
+bindsym $mod+Up                 focus up
+bindsym $mod+Right              focus right
 
 # Move window
 bindsym $mod+shift+h            move left
@@ -73,10 +73,10 @@ bindsym $mod+shift+j            move down
 bindsym $mod+shift+k            move up
 bindsym $mod+shift+l            move right
 
-bindsym $mod+shift+left         move left
-bindsym $mod+shift+down         move down
-bindsym $mod+shift+up           move up
-bindsym $mod+shift+right        move right
+bindsym $mod+shift+Left         move left
+bindsym $mod+shift+Down         move down
+bindsym $mod+shift+Up           move up
+bindsym $mod+shift+Right        move right
 
 # Split
 bindsym $mod+v                  split v
@@ -159,15 +159,15 @@ bindsym $mod_+shift+Tab         focus left
 bindsym $mod+Tab                workspace next
 bindsym $mod+ctrl+h             workspace prev
 bindsym $mod+ctrl+l             workspace next
-bindsym $mod+ctrl+left          workspace prev
-bindsym $mod+ctrl+right         workspace next
+bindsym $mod+ctrl+Left          workspace prev
+bindsym $mod+ctrl+Right         workspace next
 
 # Workspace cycling and moving
 bindsym $mod+shift+Tab          move container to workspace next; workspace next
 bindsym $mod+ctrl+shift+h       move container to workspace prev; workspace prev
 bindsym $mod+ctrl+shift+l       move container to workspace next; workspace next
-bindsym $mod+ctrl+shift+left    move container to workspace prev; workspace prev
-bindsym $mod+ctrl+shift+right   move container to workspace next; workspace next
+bindsym $mod+ctrl+shift+Left    move container to workspace prev; workspace prev
+bindsym $mod+ctrl+shift+Right   move container to workspace next; workspace next
 
 # Gaps
 bindsym $mod+period             gaps inner all plus  5
@@ -255,30 +255,30 @@ bindsym $mod+$mod_+j            resize grow   height  10 px or  10 ppt
 bindsym $mod+$mod_+k            resize shrink height  10 px or  10 ppt
 bindsym $mod+$mod_+l            resize grow   width   10 px or  10 ppt
 
-bindsym $mod+$mod_+left         resize shrink width   10 px or  10 ppt
-bindsym $mod+$mod_+down         resize grow   height  10 px or  10 ppt
-bindsym $mod+$mod_+right        resize grow   width   10 px or  10 ppt
-bindsym $mod+$mod_+up           resize shrink height  10 px or  10 ppt
+bindsym $mod+$mod_+Left         resize shrink width   10 px or  10 ppt
+bindsym $mod+$mod_+Down         resize grow   height  10 px or  10 ppt
+bindsym $mod+$mod_+Right        resize grow   width   10 px or  10 ppt
+bindsym $mod+$mod_+Up           resize shrink height  10 px or  10 ppt
 
 bindsym $mod+$mod_+shift+h      resize shrink width    1 px or   1 ppt
 bindsym $mod+$mod_+shift+j      resize grow   height   1 px or   1 ppt
 bindsym $mod+$mod_+shift+k      resize shrink height   1 px or   1 ppt
 bindsym $mod+$mod_+shift+l      resize grow   width    1 px or   1 ppt
 
-bindsym $mod+$mod_+shift+left   resize shrink width    1 px or   1 ppt
-bindsym $mod+$mod_+shift+down   resize grow   height   1 px or   1 ppt
-bindsym $mod+$mod_+shift+up     resize shrink height   1 px or   1 ppt
-bindsym $mod+$mod_+shift+right  resize grow   width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+Left   resize shrink width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+Down   resize grow   height   1 px or   1 ppt
+bindsym $mod+$mod_+shift+Up     resize shrink height   1 px or   1 ppt
+bindsym $mod+$mod_+shift+Right  resize grow   width    1 px or   1 ppt
 
 bindsym $mod+$mod_+ctrl+h       resize shrink width  100 px or 100 ppt
 bindsym $mod+$mod_+ctrl+j       resize grow   height 100 px or 100 ppt
 bindsym $mod+$mod_+ctrl+k       resize shrink height 100 px or 100 ppt
 bindsym $mod+$mod_+ctrl+l       resize grow   width  100 px or 100 ppt
 
-bindsym $mod+$mod_+ctrl+left    resize shrink width  100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+down    resize grow   height 100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+up      resize shrink height 100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+right   resize grow   width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+Left    resize shrink width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+Down    resize grow   height 100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+Up      resize shrink height 100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+Right   resize grow   width  100 px or 100 ppt
 
 # Center window
 bindsym $mod+$mod_+c            move position center
