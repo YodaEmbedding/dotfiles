@@ -543,10 +543,32 @@ map <leader>sc z=
 nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
 
 " Unfold all {{{3
+" TODO RARELYUSED
 nnoremap <Leader>z :set foldlevel=20<CR>
 
 " Word wrap, up/down visually {{{3
 noremap <Leader>w :call <SID>ToggleWrap()<CR>
+
+" Navigation {{{2
+
+" Navigate buffers {{{3
+nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab>   :bnext<CR>
+nnoremap gb      :ls<CR>:b<Space>
+
+" Navigate scroll 5 lines up/down {{{3
+noremap <Down> 5<C-d>
+noremap <Up>   5<C-u>
+
+" Navigate up/down in wrapped text {{{3
+nnoremap <Down> gj
+nnoremap <Up>   gk
+inoremap <Down> <C-o>gj
+inoremap <Up>   <C-o>gk
+
+" Navigate windows {{{3
+map ' <C-w>
+map '' <C-w>w
 
 " Miscellaneous {{{2
 
@@ -560,26 +582,6 @@ vnoremap <Space> za
 " Macro {{{3
 nmap <silent> <F2> @q
 nmap <silent> <F3> @@
-
-" Navigate buffer {{{3
-nnoremap <Tab>   :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <A-n>   :bnext<CR>:redraw<CR>:ls<CR>
-nnoremap <A-p>   :bprevious<CR>:redraw<CR>:ls<CR>
-
-" Navigate scroll 5 lines up/down {{{3
-noremap <Down> 5<C-d>
-noremap <Up>   5<C-u>
-
-" Navigate up/down in wrapped text {{{3
-nnoremap <Down> gj
-nnoremap <Up>   gk
-inoremap <Down> <C-o>gj
-inoremap <Up>   <C-o>gk
-
-" Navigate window {{{3
-map ' <C-w>
-map '' <C-w>w
 
 " New line without insert mode (uses q register to mark) {{{3
 nnoremap <CR> mqo<Esc>`q
