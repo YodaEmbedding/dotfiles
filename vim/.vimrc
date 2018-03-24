@@ -431,8 +431,8 @@ endfunction
 noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
 
 " Denite {{{3
-nmap <C-p> :Denite -winheight=10 file buffer<CR>
-nmap <Leader>b :Denite -winheight=10 buffer<CR>
+nnoremap <C-p>     :Denite -winheight=10 file buffer<CR>
+nnoremap <Leader>b :Denite -winheight=10 buffer<CR>
 
 " deoplete {{{3
 if match(&runtimepath, 'deoplete.nvim') != -1
@@ -447,10 +447,10 @@ nnoremap <Leader>/ :call eregex#toggle()<CR>
 
 " fzf {{{3
 if match(&runtimepath, 'fzf') != -1
-    nmap <Leader>b :Buffers<CR>
-    nmap <Leader>f :Files<CR>
-    nmap <C-p> :Files<CR>
-    nmap <Leader>t :Tags<CR>
+    nnoremap <Leader>b :Buffers<CR>
+    nnoremap <Leader>f :Files<CR>
+    nnoremap <C-p>     :Files<CR>
+    nnoremap <Leader>t :Tags<CR>
 endif
 
 " indentLine {{{3
@@ -509,35 +509,40 @@ nnoremap <Backspace> "_dd
 vnoremap <Backspace> "_dd
 
 " Clipboard (copy/paste) {{{3
-nmap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
-nmap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
-"nmap <silent> <Leader><C-p> :set paste<CR>"+p:set nopaste<CR> " TODO paste inline
-map  <silent> <Leader>y "+y
-map  <silent> <Leader>Y "+Y
+nnoremap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
+nnoremap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
+noremap  <silent> <Leader>y "+y
+noremap  <silent> <Leader>Y "+Y
 
 " Count search matches {{{3
+" TODO RARELYUSED
 nnoremap <Leader>s :%s///gn<left><left><left><left>
 nnoremap <Leader>S :%s/\<lt>\>//gn<left><left><left><left><left><left>
 
 " Cursor column toggle {{{3
+" TODO RARELYUSED
 noremap <Leader>v :set cursorcolumn!<CR>
 
 " File explorer (netrw) {{{3
+" TODO RARELYUSED
 nnoremap <Leader>F   :Lex<CR>
 
 " Register menu {{{3
+" TODO RARELYUSED
 nnoremap <Leader>r :registers<CR>:put<Space>
 
 " Relative numbering {{{3
+" TODO RARELYUSED
 nnoremap <Leader>n :set relativenumber!<CR>
 
 " Spell checker {{{3
+" TODO RARELYUSED
 " toggle, next, previous, add, correct
-map <leader>ss :setlocal spell!<CR>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>sc z=
+noremap <leader>ss :setlocal spell!<CR>
+noremap <leader>sn ]s
+noremap <leader>sp [s
+noremap <leader>sa zg
+noremap <leader>sc z=
 
 " Strip trailing whitespace {{{3
 nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
@@ -567,8 +572,8 @@ inoremap <Down> <C-o>gj
 inoremap <Up>   <C-o>gk
 
 " Navigate windows {{{3
-map ' <C-w>
-map '' <C-w>w
+nnoremap '  <C-w>
+nnoremap '' <C-w>w
 
 " Miscellaneous {{{2
 
@@ -580,8 +585,8 @@ nnoremap <Space> za
 vnoremap <Space> za
 
 " Macro {{{3
-nmap <silent> <F2> @q
-nmap <silent> <F3> @@
+nnoremap <silent> <F2> @q
+nnoremap <silent> <F3> @@
 
 " New line without insert mode (uses q register to mark) {{{3
 nnoremap <CR> mqo<Esc>`q
