@@ -443,10 +443,6 @@ if match(&runtimepath, 'deoplete.nvim') != -1
     "     \ deoplete#mappings#manual_complete()
 endif
 
-" eregex {{{3
-" TODO RARELYUSED
-nnoremap <Leader>/ :call eregex#toggle()<CR>
-
 " fzf {{{3
 if match(&runtimepath, 'fzf') != -1
     nnoremap <Leader>b :Buffers<CR>
@@ -455,63 +451,7 @@ if match(&runtimepath, 'fzf') != -1
     nnoremap <Leader>t :Tags<CR>
 endif
 
-" indentLine {{{3
-" TODO RARELYUSED
-nnoremap <Leader>i :IndentLinesToggle<CR>
-
-" repmo-vim {{{3
-" TODO RARELYUSED
-if match(&runtimepath, 'repmo-vim') != -1
-    " Specific mappings if vim-sneak plugin enabled
-    if match(&runtimepath, 'vim-sneak') != -1 "{{{4
-        map  <expr> ; repmo#LastKey('<Plug>Sneak_;')|sunmap ;
-        map  <expr> , repmo#LastRevKey('<Plug>Sneak_,')|sunmap ,
-
-        map  <expr> f repmo#ZapKey('<Plug>Sneak_f')|sunmap f
-        map  <expr> F repmo#ZapKey('<Plug>Sneak_F')|sunmap F
-        map  <expr> t repmo#ZapKey('<Plug>Sneak_t')|sunmap t
-        map  <expr> T repmo#ZapKey('<Plug>Sneak_T')|sunmap T
-
-        map  <expr> s repmo#ZapKey('<Plug>Sneak_s')|ounmap s|sunmap s
-        map  <expr> S repmo#ZapKey('<Plug>Sneak_S')|ounmap S|sunmap S
-        omap <expr> z repmo#ZapKey('<Plug>Sneak_s')
-        omap <expr> Z repmo#ZapKey('<Plug>Sneak_S')
-    else "{{{4
-        map <expr> ; repmo#LastKey(';')|sunmap ;
-        map <expr> , repmo#LastRevKey(',')|sunmap ,
-
-        noremap <expr> f repmo#ZapKey('f')|sunmap f
-        noremap <expr> F repmo#ZapKey('F')|sunmap F
-        noremap <expr> t repmo#ZapKey('t')|sunmap t
-        noremap <expr> T repmo#ZapKey('T')|sunmap T
-    endif "}}}
-
-    " Non-specific mappings {{{4
-    noremap <expr> h repmo#SelfKey('h', 'l')|sunmap h
-    noremap <expr> l repmo#SelfKey('l', 'h')|sunmap l
-
-    noremap <expr> j repmo#Key('j', 'k')|sunmap j
-    noremap <expr> k repmo#Key('k', 'j')|sunmap k
-
-    noremap <expr> b repmo#Key('b', 'w')|sunmap b
-    noremap <expr> B repmo#Key('B', 'W')|sunmap B
-    noremap <expr> e repmo#Key('e', 'b')|sunmap e
-    noremap <expr> E repmo#Key('E', 'B')|sunmap E
-    noremap <expr> w repmo#Key('w', 'b')|sunmap w
-    noremap <expr> W repmo#Key('W', 'B')|sunmap W
-    "}}}
-endif
-
 " Leader {{{2
-
-" Black hole delete {{{3
-" TODO RARELYUSED
-nnoremap <Leader>d   "_d
-vnoremap <Leader>d   "_d
-nnoremap <Leader>x   "_x
-vnoremap <Leader>x   "_x
-nnoremap <Backspace> "_dd
-vnoremap <Backspace> "_dd
 
 " Clipboard (copy/paste) {{{3
 nnoremap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
@@ -519,26 +459,9 @@ nnoremap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
 noremap  <silent> <Leader>y "+y
 noremap  <silent> <Leader>Y "+Y
 
-" Count search matches {{{3
-" TODO RARELYUSED
-nnoremap <Leader>s :%s///gn<left><left><left><left>
-nnoremap <Leader>S :%s/\<lt>\>//gn<left><left><left><left><left><left>
-
-" Cursor column toggle {{{3
-" TODO RARELYUSED
-noremap <Leader>v :set cursorcolumn!<CR>
-
 " File explorer (netrw) {{{3
 " TODO RARELYUSED
 nnoremap <Leader>F   :Lex<CR>
-
-" Register menu {{{3
-" TODO RARELYUSED
-nnoremap <Leader>r :registers<CR>:put<Space>
-
-" Relative numbering {{{3
-" TODO RARELYUSED
-nnoremap <Leader>n :set relativenumber!<CR>
 
 " Spell checker {{{3
 " TODO RARELYUSED
@@ -552,10 +475,6 @@ noremap <leader>sc z=
 " Strip trailing whitespace {{{3
 nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
 
-" Unfold all {{{3
-" TODO RARELYUSED
-nnoremap <Leader>z :set foldlevel=20<CR>
-
 " Word wrap, up/down visually {{{3
 noremap <Leader>w :call <SID>ToggleWrap()<CR>
 
@@ -566,24 +485,11 @@ nnoremap <S-Tab> :bprevious<CR>
 nnoremap <Tab>   :bnext<CR>
 nnoremap gb      :ls<CR>:b<Space>
 
-" Navigate scroll 5 lines up/down {{{3
-" TODO RARELYUSED
-noremap <Down> 5<C-d>
-noremap <Up>   5<C-u>
-
-" Navigate up/down in wrapped text {{{3
-" TODO RARELYUSED
-nnoremap <Down> gj
-nnoremap <Up>   gk
-inoremap <Down> <C-o>gj
-inoremap <Up>   <C-o>gk
-
-" Navigate windows {{{3
-" TODO RARELYUSED
-nnoremap '  <C-w>
-nnoremap '' <C-w>w
-
 " Miscellaneous {{{2
+
+" Black hole delete {{{3
+nnoremap <Backspace> "_dd
+vnoremap <Backspace> "_dd
 
 " Black hole paste (in visual mode) {{{3
 xnoremap <silent> p p:let @"=@0<CR>
@@ -611,13 +517,6 @@ cmap x!! x !sudo tee > /dev/null %
 " TODO RARELYUSED
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-" Swap lines {{{3
-" TODO RARELYUSED
-noremap <silent> <C-S-Up>   :call <SID>SwapUp()<CR>
-noremap <silent> <C-S-Down> :call <SID>SwapDown()<CR>
-noremap <silent> <C-k>      :call <SID>SwapUp()<CR>
-noremap <silent> <C-j>      :call <SID>SwapDown()<CR>
-
 " Visual selection apply dot {{{3
 vnoremap <silent> . :normal .<CR>
 
@@ -635,40 +534,31 @@ vnoremap <silent> <F3> :normal @@<CR>
 
 " TODO {{{1
 
-" Free bindings: <S-d> <S-x> <S-s>
+" Free bindings: <S-d> <S-x> <S-s> '
 
-" Cycle through colorschemes (NextColors() function)
-" Especially favorite colorschemes
+" Cleanup (RARELYUSED)
+" PLUGIN SETTINGS
+" THEMING
+" OPTIONS
+" AUTOCMDS
+" COMMANDS
+" FUNCTIONS
+" KEYBOARD MAPPINGS
+
+" LeaderF, CtrlP, Denite, vim builtins
+
+" Indent guide unobtrusive color
+" Theme: tomorrow night
 
 " fzf, ripgrep
 " http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
 " https://www.reddit.com/r/vim/comments/3f0zbg/psa_if_youre_using_ctrlp_use_this_maintained_fork/?st=jdk5ylw4&sh=44df905a
 
+" NextColors() Cycle through favorite colorschemes
+
 " Deoplete bindings
 " https://vi.stackexchange.com/questions/9468/cant-get-deoplete-plugin-working-in-neovim/9554
 " "use <tab> for completion
-" function! TabWrap()
-"     if pumvisible()
-"         return "\<C-N>"
-"     elseif strpart( getline('.'), 0, col('.') - 1 ) =~ '^\s*$'
-"         return "\<tab>"
-"     elseif &omnifunc !~ ''
-"         return "\<C-X>\<C-O>"
-"     else
-"         return "\<C-N>"
-"     endif
-" endfunction
-"
-" " power tab
-" imap <silent><expr><tab> TabWrap()
-"
-" " Enter: complete&close popup if visible (so next Enter works); else: break undo
-" inoremap <silent><expr> <Cr> pumvisible() ?
-"             \ deoplete#mappings#close_popup() : "<C-g>u<Cr>"
-"
-" " Ctrl-Space: summon FULL (synced) autocompletion
-" inoremap <silent><expr> <C-Space> deoplete#mappings#manual_complete()
-"
-" " Escape: exit autocompletion, go to Normal mode
-" inoremap <silent><expr> <Esc> pumvisible() ? "<C-e><Esc>" : "<Esc>"
+
+" vim-ghost, vim-anywhere
 
