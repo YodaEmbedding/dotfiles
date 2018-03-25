@@ -260,18 +260,19 @@ if has('nvim')
 endif
 
 " Undo {{{2
+set undodir=$HOME/.vim/undo " Where to save undo histories
 set undofile                " Save undo's after file closes
-set undodir=$HOME/.vim/undo " where to save undo histories
 set undolevels=1000         " How many undos
-set undoreload=10000        " number of lines to save for undo
+set undoreload=10000        " Number of lines to save for undo
 
 " Visual {{{2
 set colorcolumn=80      " Column guide
 set cursorline          " Highlight current line
 set laststatus=2        " Show status line
 set mouse=a             " Mouse interactivity
-set number              " Line numbers
+set numberwidth=2       " Numbering column width
 set relativenumber      " Relative line numbers
+set scrolloff=3         " Keep some lines visible when scrolling to edges of screen
 
 " AUTOCMDS {{{1
 
