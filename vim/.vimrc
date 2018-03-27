@@ -31,109 +31,109 @@ else
 endif
 
 " Enabled {{{2
-Plug 'Shougo/denite.nvim'                   " Fuzzy search/open files within directory
-Plug 'Konfekt/FastFold'                     " Speed up lag caused by unnecessary evaluation of folding expressions/etc
-Plug 'thaerkh/vim-indentguides'             " Indent guides
-Plug 'Yggdroot/LeaderF'                     " Fuzzy search/open files within directory
-Plug 'scrooloose/nerdcommenter'             " Commenting blocks e.g. \cb
-Plug 'tmhedberg/SimpylFold'                 " Folding (Python)
-Plug 'majutsushi/tagbar'                    " (RARELYUSED) ctags; bound to \t
-Plug 'airblade/vim-gitgutter'               " Git gutter
-Plug 'Twinside/vim-haskellFold'             " Folding (Haskell)
-Plug 'kristijanhusak/vim-hybrid-material'   " Theme (Colorscheme)
-Plug 'farmergreg/vim-lastplace'             " Reopen file last position
-Plug 'junegunn/vim-peekaboo'                " Show registers during \", @, and <C-R>
-Plug 'tpope/vim-repeat'                     " Repairs dot key for certain plugins (e.g. vim-sneak)
-Plug 'justinmk/vim-sneak'                   " Use two character find (mapped to 's')
-Plug 'tpope/vim-sleuth'                     " Automatically detect indent settings from file
-Plug 'matze/vim-tex-fold'                   " Folding (LaTeX)
-Plug 'nelstrom/vim-visual-star-search'      " Select visually then *
-Plug 'bronson/vim-trailing-whitespace'      " Highlight trailing and :FixWhitespace
+Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaulation lag
+Plug 'Twinside/'        . 'vim-haskellFold'         " Folding: Haskell
+Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
+Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
+Plug 'scrooloose/'      . 'nerdcommenter'           " Functional: Commenting blocks e.g. \cb
+Plug 'majutsushi/'      . 'tagbar'                  " Functional: (RARELYUSED) ctags; bound to \t
+Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
+Plug 'Yggdroot/'        . 'LeaderF'                 " Functional: Fuzzy search/open files within directory
+Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
+Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
+Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
+Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
+Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
+Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
+Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
+Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
+Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
+Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Autocompletion {{{3
 if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    Plug 'Shougo/'      . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
+    Plug 'Shougo/'      . 'deoplete.nvim'
+    Plug 'roxma/'       . 'nvim-yarp'
+    Plug 'roxma/'       . 'vim-hug-neovim-rpc'
 endif
 
-Plug 'zchee/deoplete-jedi'                  " Autocompletion (Python)
-Plug 'eagletmt/neco-ghc'                    " Autocompletion (Haskell)
-Plug 'fs111/pydoc.vim'                      " Documentation  (Python)
+Plug 'eagletmt/'        . 'neco-ghc'                " Autocompletion: Haskell
+Plug 'zchee/'           . 'deoplete-jedi'           " Autocompletion: Python
+Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 
 " Disabled {{{2
 " Possibly useful {{{3
-"Plug 'othree/eregex.vim'                   " PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
-"Plug 'Houl/repmo-vim'                      " Repeat last motion using ; or ,
-"Plug 'pseewald/vim-anyfold'                " Fold on indent
-"Plug 'terryma/vim-multiple-cursors'        " Multiple cursors WITH REGEX?! OMG
-"Plug 'tpope/vim-surround'                  " Change surrounding parenthesis, i.e. cs([
-"Plug 'lervag/vimtex'                       " LaTeX
+"Plug 'pseewald/'       . 'vim-anyfold'             " Folding: Fold on indent
+"Plug 'tpope/'          . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
+"Plug 'terryma/'        . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
+"Plug 'othree/'         . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
+"Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
+"Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
 
 " Probably useless {{{3
-"Plug 'ctrlpvim/ctrlp.vim'                  " Fuzzy search/open files within directory
-"Plug '/usr/local/opt/fzf'
-"Plug '/usr/bin/fzf'
-"Plug 'junegunn/fzf.vim'                    " Fuzzy search/open files within directory
-"Plug 'PotatoesMaster/i3-vim-syntax'        " Syntax highlighting (i3)
-"Plug 'Yggdroot/indentLine'                 " Indent guides
-"Plug 'scrooloose/nerdtree'                 " File explorer
-"Plug 'python-mode/python-mode', {'for': 'python'}
-"Plug 'vim-airline/vim-airline'             " Theme (statusline)
-"Plug 'vim-airline/vim-airline-themes'      " Theme (statusline)
-"Plug 'easymotion/vim-easymotion'           " Motion
-"Plug 'terryma/vim-expand-region'           " Expand selection region using + and _
-"Plug 'nathanaelkane/vim-indent-guides'     "
-"Plug 'goldfeld/vim-seek'                   " Use two character find (mapped to 's')
+"Plug 'terryma/'        . 'vim-expand-region'       " Functional: Expand selection region using + and _
+"Plug 'ctrlpvim/'       . 'ctrlp.vim'               " Functional: Fuzzy search/open files within directory
+"Plug '/usr/local/opt/' . 'fzf'                     " Functional: Fuzzy search/open files within directory
+"Plug '/usr/bin/'       . 'fzf'                     " Functional: Fuzzy search/open files within directory
+"Plug 'junegunn/'       . 'fzf.vim'                 " Functional: Fuzzy search/open files within directory
+"Plug 'easymotion/'     . 'vim-easymotion'          " Functional: Motion
+"Plug 'goldfeld/'       . 'vim-seek'                " Functional: Use two character find (mapped to 's')
+"Plug 'scrooloose/'     . 'nerdtree'                " Visual: File explorer
+"Plug 'Yggdroot/'       . 'indentLine'              " Visual: Indent guides
+"Plug 'nathanaelkane/'  . 'vim-indent-guides'       " Visual: Indent guides
+"Plug 'vim-airline/'    . 'vim-airline'             " Visual: Statusline
+"Plug 'vim-airline/'    . 'vim-airline-themes'      " Visual: Statusline
+"Plug 'PotatoesMaster/  . 'i3-vim-syntax'           " Visual: Syntax highlighting (i3)
+"Plug 'python-mode/'    . 'python-mode', {'for': 'python'}
 
 " Autocompletion {{{3
-"Plug 'Shougo/echodoc.vim'                  " Documentation in command line
-"Plug 'davidhalter/jedi-vim'                " Autocompletion (Python)
-"Plug 'ervandew/supertab'                   "
-"Plug 'SirVer/ultisnips'                    " Snippet completion
-"Plug 'ajh17/VimCompletesMe'                " Autocompletion
-"Plug 'lifepillar/vim-mucomplete'           " Autocompletion
-"Plug 'Valloric/YouCompleteMe'              " Autocompletion
+"Plug 'Shougo/          . 'echodoc.vim'             " Documentation: Hint in command line
+"Plug 'ajh17/           . 'VimCompletesMe'          " Autocompletion: General
+"Plug 'lifepillar/      . 'vim-mucomplete'          " Autocompletion: General
+"Plug 'Valloric/        . 'YouCompleteMe'           " Autocompletion: General
+"Plug 'davidhalter/     . 'jedi-vim'                " Autocompletion: Python
+"Plug 'SirVer/          . 'ultisnips'               " Autocompletion: Snippet completion
+"Plug 'ervandew/        . 'supertab'                " Autocompletion: Tab
 
 " Colorscheme {{{3
-"Plug 'sjl/badwolf'                         " Theme (Colorscheme)
-"Plug 'junegunn/seoul256.vim'               " Theme (Colorscheme)
-"Plug 'noahfrederick/vim-noctu'             " Theme (Colorscheme)
-"Plug 'gkjgh/cobalt'                        " Theme (Colorscheme)
-"Plug 'altercation/vim-colors-solarized'    " Theme (Colorscheme)
+"Plug 'sjl/             . 'badwolf'                 " Visual: Colorscheme
+"Plug 'gkjgh/           . 'cobalt'                  " Visual: Colorscheme
+"Plug 'junegunn/        . 'seoul256.vim'            " Visual: Colorscheme
+"Plug 'altercation/     . 'vim-colors-solarized'    " Visual: Colorscheme
+"Plug 'noahfrederick/   . 'vim-noctu'               " Visual: Colorscheme
 
 " Untried {{{2
 
 " Evaluate next {{{3
-"Plug 'maralla/completor.vim'               " Autocompletion
-"Plug 'junegunn/vim-easy-align'             " Alignment
-"Plug 'tommcdo/vim-lion'                    " Alignment
+"Plug 'maralla/         . 'completor.vim'           " Autocompletion: General
+"Plug 'junegunn/        . 'vim-easy-align'          " Functional: Alignment
+"Plug 'tommcdo/         . 'vim-lion'                " Functional: Alignment
+"Plug 'nhooyr/          . 'neoman.vim'              " Tools: Pager (manpages)
+"Plug 'justinmk/        . 'vim-dirvish'             " Visual: Directory viewer
 
 " Other {{{3
-"Plug 'jiangmiao/auto-pairs'                " Auto-insert parens/quotes
-"Plug 'chrisbra/NrrwRgn'                    " Oooh this is cool (extract buffer)
-"Plug 'wincent/scalpel'                     " SublimeText-like word replace?
-"Plug 'AndrewRadev/sideways.vim'            " Parameter swapping
-"Plug 'ervandew/supertab'                   "
-"Plug 'vim-syntastic/syntastic'             " Syntax (compile) checking
-"Plug 'mbbill/undotree'                     "
-"Plug 'justinmk/vim-dirvish'                " Directory viewer
-"Plug 'svermeulen/vim-easyclip'             " (USEFUL)  Blackhole delete, smart yanking, etc
-"Plug 'LucHermitte/lh-vim-lib'              " Library of functions for LucHermitte's scripts
-"Plug 'LucHermitte/VimFold4C'               " Folding (C++)
-"Plug 'ludovicchabant/vim-gutentags'        " Fast ctagging?
-"Plug 'ivanov/vim-ipython'                  "
-"Plug 'romainl/vim-qf'                      " Quickfix
-"Plug 'romainl/vim-qlist'                   " Quickfix - Definition search
-"Plug 'idbrii/vim-ripple'                   " REPL within vim
-"Plug 'jpalardy/vim-slime'                  " Emacs like REPL
-"Plug 'kana/vim-submode'                    " More modes
-"Plug 'justinmk/vim-syntax-extra'           " More syntax highlighting
-"Plug 'thaerkh/vim-workspace'               "
-"Plug 'jreybert/vimagit'                    " vim git magic!!!
-"Plug 'kkoenig/wimproved.vim'               " For Windows
+"Plug 'LucHermitte/     . 'VimFold4C'               " Folding: C++
+"Plug 'LucHermitte/     . 'lh-vim-lib'              " Folding: Library of functions for LucHermitte's scripts
+"Plug 'jiangmiao/       . 'auto-pairs'              " Functional: Auto-insert parens/quotes
+"Plug 'svermeulen/      . 'vim-easyclip'            " Functional: Blackhole delete, smart yanking, etc
+"Plug 'chrisbra/        . 'NrrwRgn'                 " Functional: Extract buffer (oooh this is cool)
+"Plug 'ludovicchabant/  . 'vim-gutentags'           " Functional: Fast ctagging?
+"Plug 'kana/            . 'vim-submode'             " Functional: More modes
+"Plug 'AndrewRadev/     . 'sideways.vim'            " Functional: Parameter swapping
+"Plug 'romainl/         . 'vim-qf'                  " Functional: Quickfix
+"Plug 'romainl/         . 'vim-qlist'               " Functional: Quickfix - Definition search
+"Plug 'wincent/         . 'scalpel'                 " Functional: Sublime Text-like word replace? (Ctrl+D)
+"Plug 'mbbill/          . 'undotree'                " Functional: Undo tree
+"Plug 'ivanov/          . 'vim-ipython'             " Tools:
+"Plug 'jpalardy/        . 'vim-slime'               " Tools: REPL Emacs-like
+"Plug 'idbrii/          . 'vim-ripple'              " Tools: REPL within vim
+"Plug 'vim-syntastic/   . 'syntastic'               " Tools: Syntax (compile) checking
+"Plug 'kkoenig/         . 'wimproved.vim'           " Tweak: Windows systems
+"Plug 'justinmk/        . 'vim-syntax-extra'        " Visual: More syntax highlighting
+"Plug 'thaerkh/         . 'vim-workspace'           "
+"Plug 'jreybert/        . 'vimagit'                 " vim git magic!!!
 
 " End {{{2
 call plug#end()
