@@ -384,37 +384,6 @@ function! s:StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 
-" Swap lines {{{2
-" Swap lines {{{3
-function! s:SwapLines(n1, n2)
-    let line1 = getline(a:n1)
-    let line2 = getline(a:n2)
-    call setline(a:n1, line2)
-    call setline(a:n2, line1)
-endfunction
-
-" Swap up {{{3
-function! s:SwapUp()
-    let n = line('.')
-    if n == 1
-        return
-    endif
-
-    call s:SwapLines(n, n - 1)
-    exec n - 1
-endfunction
-
-" Swap down {{{3
-function! s:SwapDown()
-    let n = line('.')
-    if n == line('$')
-        return
-    endif
-
-    call s:SwapLines(n, n + 1)
-    exec n + 1
-endfunction
-
 " Word wrap {{{2
 function! s:ToggleWrap()
     setlocal wrap linebreak nolist
