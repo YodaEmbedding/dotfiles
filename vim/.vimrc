@@ -301,7 +301,7 @@ autocmd FileType markdown setlocal expandtab
 autocmd FileType python   setlocal expandtab
 
 " Remove trailing whitespace on file save {{{2
-autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :FixWhitespace<CR>
 
 " Syntax highlighting {{{2
 autocmd BufRead,BufNewFile *.cls set filetype=tex
@@ -376,14 +376,6 @@ function! FoldTextStyle()
     return line . filltext . posttext
 endfunction
 
-" Strip trailing white spaces {{{2
-function! s:StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-endfunction
-
 " Word wrap {{{2
 function! s:ToggleWrap()
     setlocal wrap linebreak nolist
@@ -443,7 +435,7 @@ noremap <leader>sa zg
 noremap <leader>sc z=
 
 " Strip trailing whitespace {{{3
-nnoremap <Leader><Space> :call <SID>StripTrailingWhitespaces()<CR>
+nnoremap <Leader><Space> :FixWhitespace<CR>
 
 " Word wrap, up/down visually {{{3
 noremap <Leader>w :call <SID>ToggleWrap()<CR>
