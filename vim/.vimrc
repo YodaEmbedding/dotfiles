@@ -38,16 +38,18 @@ Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 Plug 'scrooloose/'      . 'nerdcommenter'           " Functional: Commenting blocks e.g. \cb
 Plug 'majutsushi/'      . 'tagbar'                  " Functional: (RARELYUSED) ctags; bound to \t
 Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
-Plug 'Yggdroot/'        . 'LeaderF'                 " Functional: Fuzzy search/open files within directory
+Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
+Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
 Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
+Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Autocompletion {{{3
@@ -301,6 +303,7 @@ autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 autocmd FileType conf     setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldMarkdown()
 autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
+autocmd FileType c,cpp,java,rust setlocal foldcolumn=3 foldmethod=syntax
 
 " Indenting and Tabs {{{2
 autocmd FileType markdown setlocal expandtab
@@ -452,6 +455,9 @@ if match(&runtimepath, 'fzf') != -1
     nnoremap <C-p>     :Files<CR>
     nnoremap <Leader>t :Tags<CR>
 endif
+
+" LeaderF {{{3
+nnoremap <leader>f :LeaderfFile<CR>
 
 " Leader {{{2
 
