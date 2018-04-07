@@ -71,6 +71,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'othree/'         . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 "Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
+"Plug 'semanser/'       . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
 " Probably useless {{{3
 "Plug 'terryma/'        . 'vim-expand-region'       " Functional: Expand selection region using + and _
@@ -184,6 +185,8 @@ set statusline+=%3*                             " Color
 set statusline+=%m                              " Modified flag
 set statusline+=%=                              " Left/right separator
 set statusline+=%4*\                            " Color -
+set statusline+=%{g:pluginUpdateStatus}         " Up to date plugins
+set statusline+=\ \                             " --
 set statusline+=%{&filetype}                    " Filetype
 set statusline+=\ \                             " --
 set statusline+=%{&fenc}                        " File encoding
@@ -272,12 +275,15 @@ set laststatus=2        " Show status line
 set mouse=a             " Mouse interactivity
 set numberwidth=2       " Numbering column width
 set relativenumber      " Relative line numbers
-set scrolloff=3         " Keep some lines visible when scrolling to edges of screen
+set scrolloff=2         " Keep some lines visible when scrolling to edges of screen
 
 " AUTOCMDS {{{1
 
 " Auto close preview {{{2
 autocmd InsertLeave * silent! pclose!
+
+" Check up to date plugins {{{2
+autocmd VimEnter * call CheckForUpdates()
 
 " Conceal level {{{2
 autocmd FileType markdown setlocal conceallevel=0
@@ -301,7 +307,7 @@ autocmd FileType markdown setlocal expandtab
 autocmd FileType python   setlocal expandtab
 
 " Remove trailing whitespace on file save {{{2
-autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :FixWhitespace<CR>
+"autocmd FileType c,cpp,python autocmd BufWritePre <buffer> :FixWhitespace
 
 " Syntax highlighting {{{2
 autocmd BufRead,BufNewFile *.cls set filetype=tex
@@ -318,6 +324,40 @@ command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 function! s:CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+" Check for plugin updates {{{2
+" Modified from https://gitbub.com/semanser/vim-outdated-plugins
+function! s:JobHandlerVim(chanell, msg)
+    if (a:msg =~ "is behind")
+        let g:needToUpDate += 1
+        let g:pluginUpdateStatus = string(g:needToUpDate) . ' new updates'
+    endif
+endfunction
+
+function! s:JobHandlerNeovim(job_id, data, event) dict
+    if (join(a:data) =~ "is behind")
+        let g:needToUpDate += 1
+        let g:pluginUpdateStatus = string(g:needToUpDate) . ' new updates'
+    endif
+endfunction
+
+function! CheckForUpdates()
+    let g:needToUpDate = 0
+    let g:pluginUpdateStatus = ''
+    let s:callbacksNeovim = {'on_stdout': function('s:JobHandlerNeovim')}
+    let s:callbacksVim    = {'out_cb':    function('s:JobHandlerVim')}
+
+    " TODO check only activated plugins and not all downloaded
+    if has('nvim')
+        for key in keys(g:plugs)
+            let job2 = jobstart( ['bash', '-c', "cd " . g:plugs[key].dir ." && git remote update && git status -uno"], s:callbacksNeovim)
+        endfor
+    else
+        for key in keys(g:plugs)
+            let job2 = job_start(['bash', '-c', "cd " . g:plugs[key].dir ." && git remote update && git status -uno"], s:callbacksVim)
+        endfor
+    endif
 endfunction
 
 " Copy search matches {{{2
