@@ -48,6 +48,9 @@ set $update_index   ~/code/frequency-index-scripts/update_index.sh ~/.dir_index.
 set $amixer         amixer -q -D pulse set Master
 set $vol_change     pkill -SIGRTMIN+1 i3blocks
 
+# Screenshot path
+set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S_%3N.png')
+
 
 ### DEFAULT BINDINGS ###
 
@@ -235,6 +238,16 @@ bindsym $mod+shift+minus        move scratchpad
 # Show scratchpad window
 bindsym $mod+minus              scratchpad show
 
+# Screenshot (cropped region, full, full + cursor, active, active + cursor)
+bindsym            Print        exec "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
+bindsym       ctrl+Print        exec maim -u "$screen_path"
+bindsym  $mod+ctrl+Print        exec maim    "$screen_path"
+bindsym      shift+Print        exec maim -u -i $(xdotool getactivewindow) "$screen_path"
+bindsym $mod+shift+Print        exec maim    -i $(xdotool getactivewindow) "$screen_path"
+
+# Screencapture
+# TODO
+
 # Shortcuts: open/switch to
 bindsym $mod+$mod_+f            exec wmctrl -xa firefox
 bindsym $mod+$mod_+g            exec wmctrl -xa "Google Play Music Desktop Player"
@@ -362,7 +375,6 @@ exec_always $nsi    ~/.config/polybar/polybar.sh
 # Medium startup
 exec        $nsi    "sleep 5 && copyq"
 exec        $nsi    rescuetime
-exec        $nsi    screencloud
 exec        $nsi    tilda
 
 # Slow startup
