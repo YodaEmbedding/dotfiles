@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cmd="$1"
+name="$2"
+
+function is_not_running() {
+	(($(wmctrl -l | grep "$name" | wc -l) == 0))
+}
+
+if is_not_running; then
+	eval "$cmd"
+fi
+
+while is_not_running; do
+	sleep 0.1
+done
+
+wmctrl -xa "$name"
+

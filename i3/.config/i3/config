@@ -249,11 +249,12 @@ bindsym $mod+shift+Print        exec maim    -i $(xdotool getactivewindow) "$scr
 # TODO
 
 # Shortcuts: open/switch to
-bindsym $mod+$mod_+f            exec wmctrl -xa firefox
-bindsym $mod+$mod_+g            exec wmctrl -xa "Google Play Music Desktop Player"
-bindsym $mod+$mod_+o            exec wmctrl -xa okular
-bindsym $mod+$mod_+q            exec wmctrl -xa qBittorrent
-bindsym $mod+$mod_+s            exec wmctrl -xa subl
+bindsym $mod+$mod_+f            exec ~/.config/i3/scripts/switchto "firefox"              "Firefox"
+bindsym $mod+$mod_+g            exec ~/.config/i3/scripts/switchto "google-chrome-stable" "Chrome"
+bindsym $mod+$mod_+o            exec ~/.config/i3/scripts/switchto "okular"               "Okular"
+bindsym $mod+$mod_+q            exec ~/.config/i3/scripts/switchto "qbittorrent"          "qBittorrent"
+bindsym $mod+$mod_+s            exec ~/.config/i3/scripts/switchto "subl"                 "subl"
+bindsym $mod+$mod_+x            exec ~/.config/i3/scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
 
 # Thunar
 bindsym $mod+t                  exec thunar
