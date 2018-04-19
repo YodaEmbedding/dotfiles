@@ -260,35 +260,35 @@ bindsym $mod+ctrl+m             exec $nsi rs 4000
 bindsym $mod+ctrl+shift+m       exec $nsi rs 6500
 
 # Resize window
-bindsym $mod+$mod_+h            resize shrink width   10 px or  10 ppt
-bindsym $mod+$mod_+j            resize grow   height  10 px or  10 ppt
-bindsym $mod+$mod_+k            resize shrink height  10 px or  10 ppt
-bindsym $mod+$mod_+l            resize grow   width   10 px or  10 ppt
+bindsym $mod+$mod_+h            resize shrink width   50 px or  50 ppt
+bindsym $mod+$mod_+j            resize grow   height  50 px or  50 ppt
+bindsym $mod+$mod_+k            resize shrink height  50 px or  50 ppt
+bindsym $mod+$mod_+l            resize grow   width   50 px or  50 ppt
 
-bindsym $mod+$mod_+Left         resize shrink width   10 px or  10 ppt
-bindsym $mod+$mod_+Down         resize grow   height  10 px or  10 ppt
-bindsym $mod+$mod_+Right        resize grow   width   10 px or  10 ppt
-bindsym $mod+$mod_+Up           resize shrink height  10 px or  10 ppt
+bindsym $mod+$mod_+Left         resize shrink width   50 px or  50 ppt
+bindsym $mod+$mod_+Down         resize grow   height  50 px or  50 ppt
+bindsym $mod+$mod_+Right        resize grow   width   50 px or  50 ppt
+bindsym $mod+$mod_+Up           resize shrink height  50 px or  50 ppt
 
-bindsym $mod+$mod_+shift+h      resize shrink width    1 px or   1 ppt
-bindsym $mod+$mod_+shift+j      resize grow   height   1 px or   1 ppt
-bindsym $mod+$mod_+shift+k      resize shrink height   1 px or   1 ppt
-bindsym $mod+$mod_+shift+l      resize grow   width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+h      resize shrink width   10 px or  10 ppt
+bindsym $mod+$mod_+shift+j      resize grow   height  10 px or  10 ppt
+bindsym $mod+$mod_+shift+k      resize shrink height  10 px or  10 ppt
+bindsym $mod+$mod_+shift+l      resize grow   width   10 px or  10 ppt
 
-bindsym $mod+$mod_+shift+Left   resize shrink width    1 px or   1 ppt
-bindsym $mod+$mod_+shift+Down   resize grow   height   1 px or   1 ppt
-bindsym $mod+$mod_+shift+Up     resize shrink height   1 px or   1 ppt
-bindsym $mod+$mod_+shift+Right  resize grow   width    1 px or   1 ppt
+bindsym $mod+$mod_+shift+Left   resize shrink width   10 px or  10 ppt
+bindsym $mod+$mod_+shift+Down   resize grow   height  10 px or  10 ppt
+bindsym $mod+$mod_+shift+Up     resize shrink height  10 px or  10 ppt
+bindsym $mod+$mod_+shift+Right  resize grow   width   10 px or  10 ppt
 
-bindsym $mod+$mod_+ctrl+h       resize shrink width  100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+j       resize grow   height 100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+k       resize shrink height 100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+l       resize grow   width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+h       resize shrink width  250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+j       resize grow   height 250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+k       resize shrink height 250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+l       resize grow   width  250 px or 250 ppt
 
-bindsym $mod+$mod_+ctrl+Left    resize shrink width  100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+Down    resize grow   height 100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+Up      resize shrink height 100 px or 100 ppt
-bindsym $mod+$mod_+ctrl+Right   resize grow   width  100 px or 100 ppt
+bindsym $mod+$mod_+ctrl+Left    resize shrink width  250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+Down    resize grow   height 250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+Up      resize shrink height 250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+Right   resize grow   width  250 px or 250 ppt
 
 # Center window
 bindsym $mod+$mod_+c            move position center
