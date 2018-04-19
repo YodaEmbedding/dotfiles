@@ -323,43 +323,45 @@ assign [class="Guitarix"]                         → $ws3
 assign [class="GalaxyClient.exe"]                 → $ws4
 assign [class="Gwent.exe"]                        → $ws4
 assign [class="League of Legends.exe"]            → $ws4
-assign [class="LeagueClientUx.exe"]               → $ws4
 assign [class="leagueclientux.exe"]               → $ws4
+assign [class="LeagueClientUx.exe"]               → $ws4
 assign [class="Lutris"]                           → $ws4
+assign [class="Steam"]                            → $ws4
 #assign [class="mpv"]                              → $ws4
-assign [class="qBittorrent"]                      → $ws4
 #assign [class="Vlc"]                              → $ws4
+assign [class="qBittorrent"]                      → $ws8
 assign [class="Google Play Music Desktop Player"] → $ws9
 
 
 ### USER STARTUP ###
 
 # System
-exec        $nsi     compton
-exec        $nsi     xmodmap ~/.Xmodmap
-exec        $nsi     xset led on
-exec_always $nsi     xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
+exec        $nsi    compton
+exec        $nsi    xmodmap ~/.Xmodmap
+exec        $nsi    xset led on
+exec_always $nsi    xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
 
 # Fast startup
-exec        $nsi     /usr/local/bin/lightsOn/lightsOn.sh 300
-exec_always $nsi     feh --bg-scale $wallpaper
-exec_always $nsi     ~/.config/polybar/polybar.sh
+exec        $nsi    /usr/local/bin/lightsOn/lightsOn.sh 300
+exec_always $nsi    feh --bg-scale $wallpaper
+exec_always $nsi    ~/.config/polybar/polybar.sh
 
 # Medium startup
-exec        $nsi     "sleep 1 && copyq"
-exec        $nsi     rescuetime
-exec        $nsi     screencloud
-exec        $nsi     tilda
+exec        $nsi    "sleep 5 && copyq"
+exec        $nsi    rescuetime
+exec        $nsi    screencloud
+exec        $nsi    tilda
 
 # Slow startup
-exec        $nsi     "sleep 10 && alsa_out -j 'speakers' -d speakers"
-exec        $nsi     "sleep 15 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
-exec        $nsi     "sleep 15 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
-exec        $nsi     "sleep 15 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
-exec        $nsi     "sleep 15 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
-exec        $nsi     "sleep 5 && cadence-session-start --system-start"
+exec        $nsi    "sleep 10 && cadence-session-start --system-start"
+exec        $nsi    "sleep 20 && alsa_in  -j 'scarlett' -d hw:2 -p 256 -n 2 -q 0"
+exec        $nsi    "sleep 20 && alsa_out -j 'speakers' -d speakers"
+exec        $nsi    "sleep 22 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
+exec        $nsi    "sleep 22 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
+exec        $nsi    "sleep 22 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
+exec        $nsi    "sleep 22 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
 
-exec        $nsi     dropbox
+exec        $nsi    dropbox
 
 
 ### TODO ###
