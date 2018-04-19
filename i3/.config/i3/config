@@ -67,17 +67,6 @@ bindsym $mod+Down               focus down
 bindsym $mod+Up                 focus up
 bindsym $mod+Right              focus right
 
-# Move window
-bindsym $mod+shift+h            move left
-bindsym $mod+shift+j            move down
-bindsym $mod+shift+k            move up
-bindsym $mod+shift+l            move right
-
-bindsym $mod+shift+Left         move left
-bindsym $mod+shift+Down         move down
-bindsym $mod+shift+Up           move up
-bindsym $mod+shift+Right        move right
-
 # Split
 bindsym $mod+v                  split v
 bindsym $mod+shift+v            split h
@@ -163,11 +152,32 @@ bindsym $mod+ctrl+Left          workspace prev
 bindsym $mod+ctrl+Right         workspace next
 
 # Workspace cycling and moving
-bindsym $mod+shift+Tab          move container to workspace next; workspace next
-bindsym $mod+ctrl+shift+h       move container to workspace prev; workspace prev
-bindsym $mod+ctrl+shift+l       move container to workspace next; workspace next
-bindsym $mod+ctrl+shift+Left    move container to workspace prev; workspace prev
-bindsym $mod+ctrl+shift+Right   move container to workspace next; workspace next
+#bindsym $mod+ctrl+shift+h       move container to workspace prev; workspace prev
+#bindsym $mod+ctrl+shift+l       move container to workspace next; workspace next
+#bindsym $mod+ctrl+shift+Left    move container to workspace prev; workspace prev
+#bindsym $mod+ctrl+shift+Right   move container to workspace next; workspace next
+
+# Move window
+bindsym $mod+shift+h            move left
+bindsym $mod+shift+j            move down
+bindsym $mod+shift+k            move up
+bindsym $mod+shift+l            move right
+
+bindsym $mod+shift+Left         move left
+bindsym $mod+shift+Down         move down
+bindsym $mod+shift+Up           move up
+bindsym $mod+shift+Right        move right
+
+# Move window (fast)
+bindsym $mod+shift+ctrl+h       move left  100px
+bindsym $mod+shift+ctrl+j       move down  100px
+bindsym $mod+shift+ctrl+k       move up    100px
+bindsym $mod+shift+ctrl+l       move right 100px
+
+bindsym $mod+shift+ctrl+Left    move left  100px
+bindsym $mod+shift+ctrl+Down    move down  100px
+bindsym $mod+shift+ctrl+Up      move up    100px
+bindsym $mod+shift+ctrl+Right   move right 100px
 
 # Gaps
 bindsym $mod+period             gaps inner all plus  5
