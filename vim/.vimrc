@@ -448,6 +448,8 @@ if match(&runtimepath, 'deoplete.nvim') != -1
     "     \ deoplete#mappings#manual_complete()
 endif
 
+inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
+
 " fzf {{{3
 if match(&runtimepath, 'fzf') != -1
     nnoremap <Leader>b :Buffers<CR>
@@ -501,6 +503,9 @@ vnoremap <Backspace> "_dd
 
 " Black hole paste (in visual mode) {{{3
 xnoremap <silent> p p:let @"=@0<CR>
+
+" Close location list {{{3
+autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
 
 " Folding {{{3
 nnoremap <Space> za

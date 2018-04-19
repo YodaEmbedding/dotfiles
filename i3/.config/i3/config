@@ -8,14 +8,15 @@ set $mod_ Mod1
 
 # Named workspaces
 #               
+#  
 set $ws1   "1:"
 set $ws2   "2:"
-set $ws3   "3:"
+set $ws3   "3:"
 set $ws4   "4:"
 set $ws5   "5:5"
 set $ws6   "6:6"
 set $ws7   "7:7"
-set $ws8   "8:8"
+set $ws8   "8:"
 set $ws9   "9:"
 set $ws10  "10:10"
 set $ws666 "666:"
@@ -145,6 +146,7 @@ bindsym $mod_+Tab               focus right
 bindsym $mod_+shift+Tab         focus left
 
 # Workspace cycling
+bindsym $mod+shift+Tab          workspace prev
 bindsym $mod+Tab                workspace next
 bindsym $mod+ctrl+h             workspace prev
 bindsym $mod+ctrl+l             workspace next
@@ -237,6 +239,7 @@ bindsym $mod+minus              scratchpad show
 bindsym $mod+$mod_+f            exec wmctrl -xa firefox
 bindsym $mod+$mod_+g            exec wmctrl -xa "Google Play Music Desktop Player"
 bindsym $mod+$mod_+o            exec wmctrl -xa okular
+bindsym $mod+$mod_+q            exec wmctrl -xa qBittorrent
 bindsym $mod+$mod_+s            exec wmctrl -xa subl
 
 # Thunar
@@ -320,7 +323,7 @@ for_window [title="^i?python scratchpad$"] \
     resize set 600 232, move position 0 20, \
     move scratchpad, scratchpad show
 
-for_window [title="^Cadence$"] floating enable, resize set 800 600, move position center
+for_window [title="^Cadence$"] floating enable, border normal, resize set 800 600, move position center
 
 for_window [title="^Guitarix: gx_head$"] floating enable, border none, move position center
 

@@ -1,4 +1,6 @@
-sub-auto=all
-slang=eng,en
-# stop-screensaver=no
+
+sub-ass-force-style=FontName=OpenSans,Default
+#sub-ass-force-style=FontName=NotoSans,Default
+ass-force-style=Kerning=yes
+#sub-font-size=32
 

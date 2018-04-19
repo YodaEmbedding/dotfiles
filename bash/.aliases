@@ -2,12 +2,11 @@
 alias cat='ccat'
 
 # List available commands
-alias list='compgen -c'
-alias commands='compgen -c'
+#alias commands='compgen -c'
+alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k)builtins} ${(k)commands} | percol'
 
 # Grep
 alias g='grep --color=never -i'
-
 
 # Listing
 alias ll='ls -l'
@@ -119,4 +118,10 @@ alias parallel='parallel --will-cite'
 # Buildozer
 alias builddebug='buildozer android debug deploy run'
 alias buildlogcat='buildozer android adb -- logcat -s python'
+
+# Music
+alias qdbus_gpmdp="qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2"
+alias  album="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:album: '  | sed 's/^xesam:album: //'"
+alias artist="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:artist: ' | sed 's/^xesam:artist: //'"
+alias  title="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:title: '  | sed 's/^xesam:title: //'"
 
