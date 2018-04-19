@@ -6,6 +6,7 @@ import json
 from os.path import expanduser
 import sys
 import argparse
+from functools import wraps
 
 home = expanduser("~")
 parser = argparse.ArgumentParser(formatter_class=argparse.RawTextHelpFormatter, description="Parses and print Google Play Music Desktop Player song info")
@@ -19,12 +20,26 @@ def parseJson():
             data = f.read()
     return json.loads(data)
 
+def max_chars(char_limit):
+    def decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            s = func(*args, **kwargs)
+            if len(s) < char_limit:
+                return s
+            return s[:max(0, char_limit - 3)] + "..."
+        return wrapper
+    return decorator
+
+@max_chars(60)
 def getSong(data):
     return data['song']['title']
 
+@max_chars(40)
 def getAlbum(data):
     return data['song']['album']
 
+@max_chars(30)
 def getArtist(data):
     return data['song']['artist']
 
@@ -59,9 +74,8 @@ def run(data, layout):
     if data['playing']:
         displaystr = parseLayout(layout)
     else:
-        # sys.stdout.write("   ")
+        print('')
         return
-        # pass
     if sys.version[0] == '2':
         print(displaystr.encode('utf-8'))
     else:
