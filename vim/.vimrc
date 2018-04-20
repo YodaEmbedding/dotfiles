@@ -284,6 +284,10 @@ set scrolloff=2         " Keep some lines visible when scrolling to edges of scr
 " Auto close preview {{{2
 autocmd InsertLeave * silent! pclose!
 
+" Autocompletion {{{2
+
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+
 " Check up to date plugins {{{2
 autocmd VimEnter * call CheckForUpdates()
 
