@@ -35,12 +35,12 @@ List of configs, which directories these belong in, and other details.
 | compton        | `$HOME`  |                                                      | Compositor                                       |
 | dunst          | `$HOME`  |                                                      | Notification manager                             |
 | git            | `$HOME`  |                                                      | Personal                                         |
-| i3             | `$HOME`  | feh, i3lock-color, jq, maim, mlocate, rofi, ttf-noto | Window manager                                   |
+| i3             | `$HOME`  | feh, i3lock-color, jq, maim, mlocate, rofi, ttf-noto, wmctrl | Window manager                           |
 | i3blocks       | `$HOME`  | fping, gsimplecal, tff-font-awesome                  | Better system bar                                |
 | mimeapps       | `$HOME`  |                                                      | Choose default app used to open files            |
 | mpv            | `$HOME`  |                                                      | Video player                                     |
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
-| polybar        | `$HOME`  | fping, progress, tff-font-awesome                    | Better system bar                                |
+| polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | root           | `/`      |                                                      | Personal scripts (e.g. `emoji` clipboard copier) |
 | termite        | `$HOME`  |                                                      | Terminal emulator                                |
 | vim            | `$HOME`  | neovim, neovim-plug, python-neovim                   | Better than emacs                                |
