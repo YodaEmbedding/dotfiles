@@ -9,13 +9,13 @@ alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k
 alias g='grep --color=never -i'
 
 # Listing
-alias ll='ls -l'
+alias ll='ls -l -gG --time-style="+%Y-%m-%d %H:%M:%S"'
 alias ls='ls --color=auto -h --group-directories-first'
 alias lsd='ls -d */'
-alias lsl='ls -al'
-alias lsg='ls -al | g'
-alias lsp='ls -al | p'
-alias lss='ls -al --color=always | grep "\->"'
+alias lsg='ll -al | g'
+alias lsl='ll -al'
+alias lsp='ll -al | p'
+alias lss='ll -al --color=always | grep "\->"'
 
 # Navigation
 alias ..='cd ..'
