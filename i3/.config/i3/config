@@ -250,9 +250,9 @@ bindsym $mod+shift+Print        exec maim    -i $(xdotool getactivewindow) "$scr
 
 # Shortcuts: open/switch to
 bindsym $mod+$mod_+f            exec ~/.config/i3/scripts/switchto "firefox"              "Firefox"
-bindsym $mod+$mod_+g            exec ~/.config/i3/scripts/switchto "google-chrome-stable" "Chrome"
+bindsym $mod+$mod_+g            exec ~/.config/i3/scripts/switchto "google-chrome"        "Chrome"
 bindsym $mod+$mod_+o            exec ~/.config/i3/scripts/switchto "okular"               "Okular"
-bindsym $mod+$mod_+q            exec ~/.config/i3/scripts/switchto "qbittorrent"          "qBittorrent"
+bindsym $mod+$mod_+b            exec ~/.config/i3/scripts/switchto "qbittorrent"          "qBittorrent"
 bindsym $mod+$mod_+s            exec ~/.config/i3/scripts/switchto "subl"                 "subl"
 bindsym $mod+$mod_+x            exec ~/.config/i3/scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
 
@@ -277,35 +277,35 @@ bindsym $mod+ctrl+m             exec $nsi rs 4000
 bindsym $mod+ctrl+shift+m       exec $nsi rs 6500
 
 # Resize window
-bindsym $mod+$mod_+h            resize shrink width   50 px or  50 ppt
-bindsym $mod+$mod_+j            resize grow   height  50 px or  50 ppt
-bindsym $mod+$mod_+k            resize shrink height  50 px or  50 ppt
-bindsym $mod+$mod_+l            resize grow   width   50 px or  50 ppt
+bindsym $mod+$mod_+h            exec $nsi ~/.config/i3/scripts/resize shrink width  5
+bindsym $mod+$mod_+j            exec $nsi ~/.config/i3/scripts/resize grow   height 5
+bindsym $mod+$mod_+k            exec $nsi ~/.config/i3/scripts/resize shrink height 5
+bindsym $mod+$mod_+l            exec $nsi ~/.config/i3/scripts/resize grow   width  5
 
-bindsym $mod+$mod_+Left         resize shrink width   50 px or  50 ppt
-bindsym $mod+$mod_+Down         resize grow   height  50 px or  50 ppt
-bindsym $mod+$mod_+Right        resize grow   width   50 px or  50 ppt
-bindsym $mod+$mod_+Up           resize shrink height  50 px or  50 ppt
+bindsym $mod+$mod_+Left         exec $nsi ~/.config/i3/scripts/resize shrink width  5
+bindsym $mod+$mod_+Down         exec $nsi ~/.config/i3/scripts/resize grow   height 5
+bindsym $mod+$mod_+Right        exec $nsi ~/.config/i3/scripts/resize shrink height 5
+bindsym $mod+$mod_+Up           exec $nsi ~/.config/i3/scripts/resize grow   width  5
 
-bindsym $mod+$mod_+shift+h      resize shrink width   10 px or  10 ppt
-bindsym $mod+$mod_+shift+j      resize grow   height  10 px or  10 ppt
-bindsym $mod+$mod_+shift+k      resize shrink height  10 px or  10 ppt
-bindsym $mod+$mod_+shift+l      resize grow   width   10 px or  10 ppt
+bindsym $mod+$mod_+shift+h      exec $nsi ~/.config/i3/scripts/resize shrink width  1
+bindsym $mod+$mod_+shift+j      exec $nsi ~/.config/i3/scripts/resize grow   height 1
+bindsym $mod+$mod_+shift+k      exec $nsi ~/.config/i3/scripts/resize shrink height 1
+bindsym $mod+$mod_+shift+l      exec $nsi ~/.config/i3/scripts/resize grow   width  1
 
-bindsym $mod+$mod_+shift+Left   resize shrink width   10 px or  10 ppt
-bindsym $mod+$mod_+shift+Down   resize grow   height  10 px or  10 ppt
-bindsym $mod+$mod_+shift+Up     resize shrink height  10 px or  10 ppt
-bindsym $mod+$mod_+shift+Right  resize grow   width   10 px or  10 ppt
+bindsym $mod+$mod_+shift+Left   exec $nsi ~/.config/i3/scripts/resize shrink width  1
+bindsym $mod+$mod_+shift+Down   exec $nsi ~/.config/i3/scripts/resize grow   height 1
+bindsym $mod+$mod_+shift+Up     exec $nsi ~/.config/i3/scripts/resize shrink height 1
+bindsym $mod+$mod_+shift+Right  exec $nsi ~/.config/i3/scripts/resize grow   width  1
 
-bindsym $mod+$mod_+ctrl+h       resize shrink width  250 px or 250 ppt
-bindsym $mod+$mod_+ctrl+j       resize grow   height 250 px or 250 ppt
-bindsym $mod+$mod_+ctrl+k       resize shrink height 250 px or 250 ppt
-bindsym $mod+$mod_+ctrl+l       resize grow   width  250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+h       exec $nsi ~/.config/i3/scripts/resize shrink width  20
+bindsym $mod+$mod_+ctrl+j       exec $nsi ~/.config/i3/scripts/resize grow   height 20
+bindsym $mod+$mod_+ctrl+k       exec $nsi ~/.config/i3/scripts/resize shrink height 20
+bindsym $mod+$mod_+ctrl+l       exec $nsi ~/.config/i3/scripts/resize grow   width  20
 
-bindsym $mod+$mod_+ctrl+Left    resize shrink width  250 px or 250 ppt
-bindsym $mod+$mod_+ctrl+Down    resize grow   height 250 px or 250 ppt
-bindsym $mod+$mod_+ctrl+Up      resize shrink height 250 px or 250 ppt
-bindsym $mod+$mod_+ctrl+Right   resize grow   width  250 px or 250 ppt
+bindsym $mod+$mod_+ctrl+Left    exec $nsi ~/.config/i3/scripts/resize shrink width  20
+bindsym $mod+$mod_+ctrl+Down    exec $nsi ~/.config/i3/scripts/resize grow   height 20
+bindsym $mod+$mod_+ctrl+Up      exec $nsi ~/.config/i3/scripts/resize shrink height 20
+bindsym $mod+$mod_+ctrl+Right   exec $nsi ~/.config/i3/scripts/resize grow   width  20
 
 # Center window
 bindsym $mod+$mod_+c            move position center
