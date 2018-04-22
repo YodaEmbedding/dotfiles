@@ -32,7 +32,6 @@ endif
 
 " Enabled {{{2
 Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaulation lag
-Plug 'Twinside/'        . 'vim-haskellFold'         " Folding: Haskell
 Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 Plug 'scrooloose/'      . 'nerdcommenter'           " Functional: Commenting blocks e.g. \cb
@@ -42,6 +41,7 @@ Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzz
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
+Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell
 Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
@@ -68,6 +68,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 " Disabled {{{2
 " Possibly useful {{{3
 "Plug 'pseewald/'       . 'vim-anyfold'             " Folding: Fold on indent
+"Plug 'Twinside/'       . 'vim-haskellFold'         " Folding: Haskell
 "Plug 'tpope/'          . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 "Plug 'terryma/'        . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
 "Plug 'othree/'         . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
@@ -286,6 +287,7 @@ autocmd InsertLeave * silent! pclose!
 
 " Autocompletion {{{2
 
+let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " Check up to date plugins {{{2
