@@ -34,7 +34,8 @@ endif
 Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaulation lag
 Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
-Plug 'scrooloose/'      . 'nerdcommenter'           " Functional: Commenting blocks e.g. \cb
+Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
+Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'majutsushi/'      . 'tagbar'                  " Functional: (RARELYUSED) ctags; bound to \t
 Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
 Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
@@ -70,6 +71,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'pseewald/'       . 'vim-anyfold'             " Folding: Fold on indent
 "Plug 'Twinside/'       . 'vim-haskellFold'         " Folding: Haskell
 "Plug 'tpope/'          . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
+"Plug 'tpope/'          . 'vim-commentary'          " Functional: Commenting
 "Plug 'terryma/'        . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
 "Plug 'othree/'         . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 "Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
@@ -77,6 +79,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'semanser/'       . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
 " Probably useless {{{3
+"Plug 'scrooloose/'     . 'nerdcommenter'           " Functional: Commenting
 "Plug 'terryma/'        . 'vim-expand-region'       " Functional: Expand selection region using + and _
 "Plug 'ctrlpvim/'       . 'ctrlp.vim'               " Functional: Fuzzy search/open files within directory
 "Plug '/usr/local/opt/' . 'fzf'                     " Functional: Fuzzy search/open files within directory
@@ -112,7 +115,6 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 
 " Evaluate next {{{3
 "Plug 'maralla/         . 'completor.vim'           " Autocompletion: General
-"Plug 'junegunn/        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'tommcdo/         . 'vim-lion'                " Functional: Alignment
 "Plug 'nhooyr/          . 'neoman.vim'              " Tools: Pager (manpages)
 "Plug 'justinmk/        . 'vim-dirvish'             " Visual: Directory viewer
@@ -151,10 +153,14 @@ let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#jedi#server_timeout = 60
 
 " indentguides {{{2
+let g:indentguides_ignorelist = ['haskell']
 let g:indentguides_spacechar = '│'
 
 " vim-sleuth {{{2
 let b:sleuth_mixed_tabstop = 4
+
+" vim2hs {{{2
+let g:haskell_conceal_enumerations = 0
 
 " THEMING {{{1
 
@@ -467,6 +473,13 @@ endif
 " LeaderF {{{3
 nnoremap <leader>f :LeaderfFile<CR>
 
+" vim-easy-align {{{3
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 " Leader {{{2
 
 " Clipboard (copy/paste) {{{3
@@ -497,8 +510,8 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 " Navigation {{{2
 
 " Navigate buffers {{{3
-nnoremap <S-Tab> :bprevious<CR>
-nnoremap <Tab>   :bnext<CR>
+nnoremap <Tab>   :ls<CR>:b<Space>
+nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
 
 " Miscellaneous {{{2
