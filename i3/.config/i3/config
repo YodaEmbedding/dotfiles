@@ -238,8 +238,9 @@ bindsym $mod+shift+minus        move scratchpad
 # Show scratchpad window
 bindsym $mod+minus              scratchpad show
 
-# Screenshot (cropped region, full, full + cursor, active, active + cursor)
-bindsym            Print        exec "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
+# Screenshot (cropped, cropped + edit, full, full + cursor, active, active + cursor)
+bindsym            Print        exec maim -u -s "$screen_path"
+bindsym ctrl+shift+Print        exec "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
 bindsym       ctrl+Print        exec maim -u "$screen_path"
 bindsym  $mod+ctrl+Print        exec maim    "$screen_path"
 bindsym      shift+Print        exec maim -u -i $(xdotool getactivewindow) "$screen_path"
