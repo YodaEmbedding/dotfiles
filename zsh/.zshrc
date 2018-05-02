@@ -35,7 +35,7 @@ zplug 'rupa/z', use:'*.sh'                                  # Navigate to most u
 #zplug "halfo/lambda-mod-zsh-theme", as:theme
 #zplug "inanimate/darkblood-modular", as:theme
 #zplug "marszall87/lambda-pure", use:lambda-pure.zsh, as:theme
-zplug "sindresorhus/pure", use:pure.zsh, as:theme
+#zplug "sindresorhus/pure", use:pure.zsh, as:theme
 
 # PLUGIN CONFIGURATION {{{2
 PURE_PROMPT_SYMBOL=λ
@@ -70,6 +70,19 @@ add-zsh-hook chpwd chpwd_recent_dirs
 
 # Rename files using zmv 'test(*).png' '$1.png'
 autoload zmv
+
+# THEME {{{1
+
+setopt promptsubst
+# preexec() { tput sgr0 }
+
+PS1="
+%}%F{blue}%K{90}%B· %~ %f%k%b
+%K{235}%}%(12V.%F{242}%12v%f .)%(?.%F{magenta}.%F{red})${PURE_PROMPT_SYMBOL:-❯}%f "
+
+RPROMPT='%{$reset_color%}'
+
+# for ((i=0;i<256;i++)); do echo "$(tput setab $i)$(tput setaf 4)$(tput bold)$i$(tput sgr0)"; done
 
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
