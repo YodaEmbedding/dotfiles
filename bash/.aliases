@@ -77,14 +77,19 @@ alias sp='sudo pacman'
 alias sps='sudo pacman -S'
 alias orphans='pacman -Qtdq'
 
-# AUR Package managers: yaourt
-alias yao='yaourt'
+# AUR package managers: pacaur
+alias pac='pacaur'
+alias pacs='pacaur --noedit --noconfirm -S'
+alias pacu='pacaur --noedit --noconfirm -Syu'
 
-# AUR Package managers: pacaur
-alias pac='pacaur --noedit --noconfirm'
-alias pacs='pac -S'
-alias pacu='pacaur -Syyu'
-alias pacua='pacaur -Syyua'
+# AUR package managers: trizen
+alias tz='trizen'
+alias tzs='trizen --noedit -S'
+alias tzu='trizen --noedit --install_built_with_noconfirm -Syu'
+
+# AUR package managers: yay
+alias yays='yay --noedit --noconfirm -S'
+alias yayu='yay --noedit --noconfirm -Syu'
 
 # Update ~/.locate.db
 alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
