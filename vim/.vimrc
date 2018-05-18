@@ -64,6 +64,7 @@ endif
 
 Plug 'eagletmt/'        . 'neco-ghc'                " Autocompletion: Haskell
 Plug 'zchee/'           . 'deoplete-jedi'           " Autocompletion: Python
+Plug 'sebastianmarkow/' . 'deoplete-rust'           " Autocompletion: Rust
 Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 
 " Disabled {{{2
@@ -151,6 +152,11 @@ let g:deoplete#enable_at_startup = 1
 
 " deoplete-jedi {{{2
 let g:deoplete#sources#jedi#server_timeout = 60
+
+" deoplete-rust {{{2
+let g:deoplete#sources#rust#racer_binary=expand('$HOME/.cargo/bin/racer')
+"let g:deoplete#sources#rust#rust_source_path=systemlist('echo "$(rustc --print sysroot)/lib/rustlib/src/rust/src"')[0]
+let g:deoplete#sources#rust#rust_source_path=expand('$RUST_SRC_PATH')
 
 " indentguides {{{2
 let g:indentguides_ignorelist = ['haskell']
