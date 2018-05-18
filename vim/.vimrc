@@ -172,14 +172,28 @@ let g:haskell_conceal_enumerations = 0
 " THEMING {{{1
 
 " Colorscheme {{{2
-" Favorites: cobalt, desert, hybrid_reverse, hybrid_material, solarized
+" Favorites: cobalt, desert, hybrid_reverse, hybrid_material, quantum, solarized
+" let g:quantum_black=1
+" colorscheme quantum
 colorscheme hybrid_material
 
-" Background {{{2
-"set t_Co=256        " Force 256-colors
-set background=dark  " Dark background
-hi Normal guibg=DarkSlateGray ctermbg=NONE
-hi Normal guifg=PapayaWhip ctermfg=249
+" Colors {{{2
+set background=dark
+" set termguicolors
+
+hi Normal guibg=NONE    ctermbg=NONE
+hi Normal guifg=Grey70  ctermfg=249
+hi LineNr guifg=Grey30  ctermfg=239
+hi Folded guibg=Grey11  ctermbg=234
+hi Folded guifg=Grey39  ctermfg=241
+" hi ColorColumn  guibg=#272727
+" hi CursorColumn guibg=#272727
+" hi CursorLine   guibg=#272727
+
+if has('gui_running')
+    hi Normal guibg=DarkSlateGrey
+    hi Normal guifg=PapayaWhip
+endif
 
 " Font {{{2
 if has("gui_running")
