@@ -87,6 +87,13 @@ RPROMPT='%{$reset_color%}'
 
 # for ((i=0;i<256;i++)); do echo "$(tput setab $i)$(tput setaf 4)$(tput bold)$i$(tput sgr0)"; done
 
+# Title
+case $TERM in
+  xterm*)
+    precmd () {print -Pn "\e]0;%~\a"}
+    ;;
+esac
+
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
 # History sizes
