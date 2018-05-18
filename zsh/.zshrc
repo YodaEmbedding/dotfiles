@@ -58,6 +58,9 @@ zplug load
 # Aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
+# Profile
+[ -f ~/.profile ] && source ~/.profile
+
 # Fish-like autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
@@ -112,6 +115,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS t
 # Use showkey -a to detect terminal keycodes
 
 bindkey -v                                              # vim
+bindkey -v '^?' backward-delete-char                    # vim backspace
 
 bindkey '^ '   autosuggest-accept                       # Fill suggestion
 bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
