@@ -71,6 +71,11 @@ bindsym $mod+Down               focus down
 bindsym $mod+Up                 focus up
 bindsym $mod+Right              focus right
 
+# Layout
+#bindsym $mod+s layout           stacking
+#bindsym $mod+w layout           tabbed
+#bindsym $mod+e layout           toggle split
+
 # Split
 bindsym $mod+v                  split v
 bindsym $mod+shift+v            split h
@@ -78,21 +83,12 @@ bindsym $mod+shift+v            split h
 # Fullscreen
 bindsym $mod+f                  fullscreen toggle
 
-# Layout
-bindsym $mod+s layout           stacking
-bindsym $mod+w layout           tabbed
-bindsym $mod+e layout           toggle split
-
 # Floating
-bindsym $mod+shift+space        floating toggle
+bindsym $mod+s                  focus mode_toggle
+bindsym $mod+shift+s            floating toggle
 
-# Focus floating
-bindsym $mod+space              focus mode_toggle
-
-# Focus parent
+# Focus parent/child
 bindsym $mod+a                  focus parent
-
-# Focus child
 bindsym $mod+shift+a            focus child
 
 # Workspace switching
@@ -190,6 +186,15 @@ bindsym $mod+shift+period       gaps inner all minus 5
 bindsym $mod+slash              gaps outer all plus  5
 bindsym $mod+shift+slash        gaps outer all minus 5
 
+# Window property control
+bindsym $mod+b                  border toggle
+bindsym $mod+shift+b            border normal
+bindsym $mod+shift+minus        move scratchpad
+bindsym $mod+minus              scratchpad show
+bindsym $mod+g                  sticky toggle
+bindsym $mod+shift+g            floating enable, sticky enable, move position 920 480, resize set 1000 600
+bindsym $mod+$mod_+c            move position center
+
 # Volume control
 bindsym XF86AudioLowerVolume    exec $nsi $amixer 5%-    && $vol_change
 bindsym XF86AudioRaiseVolume    exec $nsi $amixer 5%+    && $vol_change
@@ -222,21 +227,11 @@ bindsym $mod+d                  exec "$list_files   | rofi $rofi_style -p 'files
 bindsym $mod+ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_folders \\"$x\\"; $update_index \\"$x\\"))"
 bindsym $mod+shift+d            exec "wmctrl -l     | rofi $rofi_style -p 'window'  -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
-# Cycle border
-bindsym $mod+b                  border toggle
-bindsym $mod+shift+b            border normal
-
-# Jump to urgent window
-bindsym $mod+u                  [urgent=latest] focus
-
 # Lock screen
 bindsym $mod+shift+x            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
 
-# Make window a scratchpad
-bindsym $mod+shift+minus        move scratchpad
-
-# Show scratchpad window
-bindsym $mod+minus              scratchpad show
+# Jump to urgent window
+bindsym $mod+u                  [urgent=latest] focus
 
 # Screenshot (cropped, cropped + edit, full, full + cursor, active, active + cursor)
 bindsym            Print        exec maim -u -s "$screen_path"
@@ -285,8 +280,8 @@ bindsym $mod+$mod_+l            exec $nsi ~/.config/i3/scripts/resize grow   wid
 
 bindsym $mod+$mod_+Left         exec $nsi ~/.config/i3/scripts/resize shrink width  5
 bindsym $mod+$mod_+Down         exec $nsi ~/.config/i3/scripts/resize grow   height 5
-bindsym $mod+$mod_+Right        exec $nsi ~/.config/i3/scripts/resize shrink height 5
-bindsym $mod+$mod_+Up           exec $nsi ~/.config/i3/scripts/resize grow   width  5
+bindsym $mod+$mod_+Up           exec $nsi ~/.config/i3/scripts/resize shrink height 5
+bindsym $mod+$mod_+Right        exec $nsi ~/.config/i3/scripts/resize grow   width  5
 
 bindsym $mod+$mod_+shift+h      exec $nsi ~/.config/i3/scripts/resize shrink width  1
 bindsym $mod+$mod_+shift+j      exec $nsi ~/.config/i3/scripts/resize grow   height 1
@@ -307,9 +302,6 @@ bindsym $mod+$mod_+ctrl+Left    exec $nsi ~/.config/i3/scripts/resize shrink wid
 bindsym $mod+$mod_+ctrl+Down    exec $nsi ~/.config/i3/scripts/resize grow   height 20
 bindsym $mod+$mod_+ctrl+Up      exec $nsi ~/.config/i3/scripts/resize shrink height 20
 bindsym $mod+$mod_+ctrl+Right   exec $nsi ~/.config/i3/scripts/resize grow   width  20
-
-# Center window
-bindsym $mod+$mod_+c            move position center
 
 
 ### USER CUSTOMIZATIONS ###
@@ -393,7 +385,15 @@ exec        $nsi    dropbox
 
 ### TODO ###
 
+# High real-estate:
+# $mod+e
+# $mod+w
+# $mod+shift+e
+# $mod+shift+w
+
 # Unused bindings:
+# $mod+space
+# $mod+shift+space
 # $mod+g
 # $mod+i
 # $mod+n
@@ -402,25 +402,18 @@ exec        $nsi    dropbox
 # $mod+r
 # $mod+u
 # $mod+y
-# $mod+shift+e
 # $mod+shift+f
 # $mod+shift+g
-# $mod+shift+s
 # $mod+shift+v
-# $mod+shift+w
 # $mod+shift+y
 
 # Rarely used bindings:
 # $mod+a
-# $mod+e
-# $mod+s
 # $mod+t
-# $mod+w
+# $mod+s
 
 # Highly used bindings (that are hard to reach):
-# $mod+$mod_+g
 # $mod+shift+t
-# F1
 
 # rofi emoji
 # vim-like mark window with keybind
