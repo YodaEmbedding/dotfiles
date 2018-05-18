@@ -9,6 +9,7 @@ alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k
 alias g='grep --color=never -i'
 
 # Listing
+alias l='ll'
 alias ll='ls -l -gG --time-style="+%Y-%m-%d %H:%M:%S"'
 alias ls='ls --color=auto -h --group-directories-first'
 alias lsd='ls -d */'
@@ -35,6 +36,9 @@ alias p='percol'
 # vim
 alias v='nvim'
 alias vim='nvim'
+
+# python
+alias py="python3"
 
 # git
 alias ga='git add'
