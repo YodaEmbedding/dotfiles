@@ -253,8 +253,8 @@ if has("gui_running")
 endif
 
 " Indenting and Tabs {{{2
-set shiftwidth=4        " Indent/outdent by n columns
-set tabstop=4           " Indentation levels every n columns
+set shiftwidth=4        " Indent by n columns
+set softtabstop=4       " Spaces [tab] key is equivalent to
 
 " Python indenting {{{3
 let g:pyindent_continue     = '&sw'
@@ -322,7 +322,9 @@ autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 autocmd FileType conf     setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldMarkdown()
 autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
-autocmd FileType c,cpp,java,rust setlocal foldcolumn=3 foldmethod=syntax
+autocmd FileType c,cpp    setlocal foldcolumn=3 foldmethod=syntax
+autocmd FileType java     setlocal foldcolumn=3 foldmethod=syntax
+autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
 
 " Indenting and Tabs {{{2
 autocmd FileType markdown setlocal expandtab
