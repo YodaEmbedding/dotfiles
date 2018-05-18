@@ -35,7 +35,7 @@ Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexp
 Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
-Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
+Plug 'tpope/'           . 'vim-commentary'          " Functional: Commenting
 Plug 'majutsushi/'      . 'tagbar'                  " Functional: (RARELYUSED) ctags; bound to \t
 Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
 Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
@@ -47,6 +47,7 @@ Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup bre
 Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
 Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
+Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
