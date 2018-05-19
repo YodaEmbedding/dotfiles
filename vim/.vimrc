@@ -267,8 +267,9 @@ if has("gui_running")
 endif
 
 " Indenting and Tabs {{{2
-set shiftwidth=4        " Indent by n columns
+set shiftwidth=4        " Spaces [>>]  key is equivalent to
 set softtabstop=4       " Spaces [tab] key is equivalent to
+set tabstop=4           " Tab display width
 
 " Python indenting {{{3
 let g:pyindent_continue     = '&sw'
