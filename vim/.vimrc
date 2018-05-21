@@ -185,7 +185,7 @@ hi Normal guibg=NONE    ctermbg=NONE
 hi Normal guifg=Grey70  ctermfg=249
 hi LineNr guifg=Grey30  ctermfg=239
 hi Folded guibg=Grey11  ctermbg=234
-hi Folded guifg=Grey39  ctermfg=241
+hi Folded guifg=Grey46  ctermfg=243
 " hi ColorColumn  guibg=#272727
 " hi CursorColumn guibg=#272727
 " hi CursorLine   guibg=#272727
@@ -282,6 +282,7 @@ let g:vhdl_indent_genportmap = 0
 " Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
+set wildmode=list:longest
 
 " Search {{{2
 set hlsearch            " Highlight search results
@@ -472,7 +473,7 @@ endfunction
 noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
 
 " Denite {{{3
-nnoremap <C-p>     :Denite -winheight=10 file buffer<CR>
+nnoremap <C-p>     :Denite -winheight=10 file_rec buffer<CR>
 nnoremap <Leader>b :Denite -winheight=10 buffer<CR>
 
 " deoplete {{{3

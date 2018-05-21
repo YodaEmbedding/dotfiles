@@ -106,6 +106,9 @@ alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
 alias b='bgrnd'
 alias o='bgrnd gvfs-open'
 
+# File templates
+alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '
+
 # Thunar
 alias th='bgrnd thunar'
 
