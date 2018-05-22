@@ -1,0 +1,12 @@
+[Unit]
+Description=Updates directory index
+
+[Service]
+Type=oneshot
+ExecStart=/home/mulhaq/code/frequency-index-scripts/update_dir_index.sh
+CPUSchedulingPolicy=idle
+CPUSchedulingPriority=1
+IOSchedulingClass=idle
+IOSchedulingPriority=7
+Nice=19
+

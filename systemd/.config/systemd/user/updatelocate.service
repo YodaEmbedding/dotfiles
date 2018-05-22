@@ -1,0 +1,12 @@
+[Unit]
+Description=Updates locate database
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/updatedb --require-visibility 0 -o /home/mulhaq/.locate.db
+CPUSchedulingPolicy=idle
+CPUSchedulingPriority=1
+IOSchedulingClass=idle
+IOSchedulingPriority=7
+Nice=19
+
