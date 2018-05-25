@@ -1,14 +1,18 @@
-# Utility replacements
-alias cat='ccat'
+### CORE UTILITIES ###
 
-# List available commands
-#alias commands='compgen -c'
-alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k)builtins} ${(k)commands} | percol'
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../../'
+alias .....='cd ../../../..'
+alias ......='cd ../../../../..'
+alias .......='cd ../../../../../..'
+alias ........='cd ../../../../../../..'
 
-# Grep
-alias g='grep --color=never -i'
+# chmod
+alias chx='chmod +x' # (RARELY USED)
 
-# Listing
+# ls
 alias l='ll'
 alias ll='ls -l -gG --time-style="+%Y-%m-%d %H:%M:%S"'
 alias ls='ls --color=auto -h --group-directories-first'
@@ -18,27 +22,16 @@ alias lsl='ll -al'
 alias lsp='ll -al | p'
 alias lss='ll -al --color=always | grep "\->"'
 
-# Navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../../'
-alias .....='cd ../../../..'
-alias ......='cd ../../../../..'
-alias .......='cd ../../../../../..'
-alias ........='cd ../../../../../../..'
+# sudo
+alias sudo='sudo '   # make sudo work with aliases
+alias s='sudo'
+alias se='sudo -e'
 
-# Ranger (open navigated folder in terminal on exit)
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+### UTILITY REPLACEMENTS ###
 
-# percol
-alias p='percol'
+alias cat='ccat'
 
-# vim
-alias v='nvim'
-alias vim='nvim'
-
-# python
-alias py="python3"
+### IMPORTANT UTILITIES ###
 
 # git
 alias ga='git add'
@@ -51,30 +44,17 @@ alias gl='git log --graph --full-history --all --color --oneline'
 alias gla='git log --graph --decorate $(git rev-list -g --all)'
 alias gst='git status'
 
-# Copy paste
-alias pbcopy='xclip -selection c'
-alias pbpaste='xclip -selection clipboard -o'
+# grep
+alias g='grep --color=never -i'
 
-# Statistics
-alias class='xprop | grep WM_CLASS'
-alias count='ls -1 | wc -l'
-alias diskusage='du -sh'
-alias perm='stat -c "%a %n"'
+# python
+alias py="python3"
 
-# emoji
-alias lenny='emoji -lc'
-alias shruggie='emoji -sc'
+# vim
+alias v='nvim'
+alias vim='nvim'
 
-# Selfspy
-alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
-
-# Sudo
-alias sudo='sudo '   # make sudo work with aliases
-alias s='sudo'
-alias se='sudo -e'
-
-# chmod
-alias chx='chmod +x'
+### PACKAGE MANAGEMENT ###
 
 # Pacman
 alias sp='sudo pacman'
@@ -95,24 +75,33 @@ alias tzu='trizen --noedit --install_built_with_noconfirm -Syu'
 alias yays='yay --noedit --noconfirm -S'
 alias yayu='yay --noedit --noconfirm -Syu'
 
-# Update ~/.locate.db
-alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
+### OTHER UTILITIES ###
 
-# GPG
+# gpg
 alias gpgaddkey="gpg --recv-keys"
 alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
 
-# File opening
-alias b='bgrnd'
-alias o='bgrnd gvfs-open'
+# parallel
+alias parallel='parallel --will-cite'
 
-# File templates
-alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '
+# percol
+alias p='percol'
 
-# Thunar
+# ranger (open navigated folder in terminal on exit)
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# selfspy
+alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
+
+# thunar
 alias th='bgrnd thunar'
 
-# Config
+### FILE PATHS ###
+
+# File common
+alias todo='vim ~/Dropbox/Misc/Notepad/todo.md'
+
+# File config
 alias aliases='vim ~/.aliases'
 alias bashrc='vim ~/.bashrc'
 alias vimrc='vim ~/.vimrc'
@@ -121,19 +110,44 @@ alias i3config='vim ~/.config/i3/config'
 alias i3bconfig='vim ~/.config/i3blocks/config'
 alias pythonstartup='sudo -e /usr/local/share/pythonstartup.py'
 
-# Todo
-alias todo='vim ~/Dropbox/Misc/Notepad/todo.md'
-
-# GNU Parallel - Remove annoying citation message...
-alias parallel='parallel --will-cite'
+### MISCELLANEOUS ###
 
 # Buildozer
 alias builddebug='buildozer android debug deploy run'
 alias buildlogcat='buildozer android adb -- logcat -s python'
+
+# Copy paste
+# TODO rename these to something more accessible?
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection clipboard -o'
+
+# File opening
+alias b='bgrnd'
+alias o='bgrnd gvfs-open'
+
+# File templates
+alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '
+
+# emoji
+alias lenny='emoji -lc'
+alias shruggie='emoji -sc'
+
+# List available commands
+#alias commands='compgen -c'
+alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k)builtins} ${(k)commands} | percol'
 
 # Music
 alias qdbus_gpmdp="qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2"
 alias  album="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:album: '  | sed 's/^xesam:album: //'"
 alias artist="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:artist: ' | sed 's/^xesam:artist: //'"
 alias  title="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:title: '  | sed 's/^xesam:title: //'"
+
+# Statistics
+alias class='xprop | grep WM_CLASS'
+alias count='ls -1 | wc -l'
+alias diskusage='du -sh'
+alias perm='stat -c "%a %n"'
+
+# Update ~/.locate.db
+alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
 
