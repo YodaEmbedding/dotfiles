@@ -192,8 +192,19 @@ bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
 bindsym $mod+minus              scratchpad show
 bindsym $mod+g                  sticky toggle
-bindsym $mod+shift+g            floating enable, sticky enable, move position 920 480, resize set 1000 600
+bindsym $mod+shift+g            floating enable, sticky enable, resize set 1000 600, exec $nsi ~/.config/i3/scripts/move bottom right
 bindsym $mod+$mod_+c            move position center
+
+# Window snap floating to edge
+bindcode $mod+87                exec $nsi ~/.config/i3/scripts/move bottom left
+bindcode $mod+88                exec $nsi ~/.config/i3/scripts/move bottom center
+bindcode $mod+89                exec $nsi ~/.config/i3/scripts/move bottom right
+bindcode $mod+83                exec $nsi ~/.config/i3/scripts/move middle left
+bindcode $mod+84                exec $nsi ~/.config/i3/scripts/move middle center
+bindcode $mod+85                exec $nsi ~/.config/i3/scripts/move middle right
+bindcode $mod+79                exec $nsi ~/.config/i3/scripts/move top left
+bindcode $mod+80                exec $nsi ~/.config/i3/scripts/move top center
+bindcode $mod+81                exec $nsi ~/.config/i3/scripts/move top right
 
 # Volume control
 bindsym XF86AudioLowerVolume    exec $nsi $amixer 5%-    && $vol_change
@@ -333,6 +344,10 @@ for_window [title="^i?python scratchpad$"] \
 for_window [title="^Cadence$"] \
     floating enable, border normal, \
     resize set 800 600, move position center
+
+for_window [title="^gcolor2$"] \
+    floating enable, border none, sticky enable, \
+    move position 1381 800
 
 for_window [title="^Guitarix: gx_head$"] \
     floating enable, border none, \
