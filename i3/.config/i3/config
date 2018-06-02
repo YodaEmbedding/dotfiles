@@ -330,11 +330,19 @@ for_window [title="^i?python scratchpad$"] \
     resize set 600 232, move position 0 20, \
     move scratchpad, scratchpad show
 
-for_window [title="^Cadence$"] floating enable, border normal, resize set 800 600, move position center
+for_window [title="^Cadence$"] \
+    floating enable, border normal, \
+    resize set 800 600, move position center
 
-for_window [title="^Guitarix: gx_head$"] floating enable, border none, move position center
+for_window [title="^Guitarix: gx_head$"] \
+    floating enable, border none, \
+    move position center
 
-for_window [title="Mozilla Firefox"] border none
+for_window [title="Mozilla Firefox"] \
+    border none
+
+for_window [class="matplotlib"] \
+    floating enable
 
 # Default workspace locations
 assign [class="discord"]                          → $ws1
