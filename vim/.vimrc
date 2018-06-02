@@ -31,23 +31,21 @@ else
 endif
 
 " Enabled {{{2
-Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaulation lag
+Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
-Plug 'tpope/'           . 'vim-commentary'          " Functional: Commenting
-Plug 'majutsushi/'      . 'tagbar'                  " Functional: (RARELYUSED) ctags; bound to \t
-Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
-Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
+Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
+Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
+Plug 'majutsushi/'      . 'tagbar'                  " (RARELYUSED) Functional: ctags; bound to \t
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
+Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
-Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell
 Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
 Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
-Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
@@ -72,22 +70,24 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 " Possibly useful {{{3
 "Plug 'pseewald/'       . 'vim-anyfold'             " Folding: Fold on indent
 "Plug 'Twinside/'       . 'vim-haskellFold'         " Folding: Haskell
-"Plug 'tpope/'          . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 "Plug 'tpope/'          . 'vim-commentary'          " Functional: Commenting
+"Plug 'Shougo/'         . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
+"Plug 'Yggdroot/'       . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
 "Plug 'terryma/'        . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
 "Plug 'othree/'         . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 "Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
+"Plug 'justinmk/'       . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
+"Plug 'tyrannicaltoucan/'. 'vim-quantum'            " Visual: Colorscheme
 "Plug 'semanser/'       . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
 " Probably useless {{{3
 "Plug 'scrooloose/'     . 'nerdcommenter'           " Functional: Commenting
 "Plug 'terryma/'        . 'vim-expand-region'       " Functional: Expand selection region using + and _
 "Plug 'ctrlpvim/'       . 'ctrlp.vim'               " Functional: Fuzzy search/open files within directory
-"Plug '/usr/local/opt/' . 'fzf'                     " Functional: Fuzzy search/open files within directory
 "Plug '/usr/bin/'       . 'fzf'                     " Functional: Fuzzy search/open files within directory
-"Plug 'junegunn/'       . 'fzf.vim'                 " Functional: Fuzzy search/open files within directory
 "Plug 'easymotion/'     . 'vim-easymotion'          " Functional: Motion
+"Plug 'jremmen/'        . 'vim-ripgrep'             " Functional: Search
 "Plug 'goldfeld/'       . 'vim-seek'                " Functional: Use two character find (mapped to 's')
 "Plug 'scrooloose/'     . 'nerdtree'                " Visual: File explorer
 "Plug 'Yggdroot/'       . 'indentLine'              " Visual: Indent guides
@@ -359,6 +359,27 @@ autocmd BufRead,BufNewFile *.nxc set filetype=cpp
 " Copy search matches {{{2
 command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 
+" fzf {{{2
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%'),
+  \                 <bang>0)
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%'),
+  \   <bang>0)
+
+command! -bang -nargs=? -complete=dir Files
+  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+
+command! -bang -nargs=? -complete=dir GFiles
+  \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
+
 " FUNCTIONS {{{1
 
 " Check backspace {{{2
@@ -489,15 +510,16 @@ endif
 inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
 
 " fzf {{{3
-if match(&runtimepath, 'fzf') != -1
-    nnoremap <Leader>b :Buffers<CR>
-    nnoremap <Leader>f :Files<CR>
-    nnoremap <C-p>     :Files<CR>
-    nnoremap <Leader>t :Tags<CR>
-endif
 
-" LeaderF {{{3
-nnoremap <leader>f :LeaderfFile<CR>
+nnoremap <Tab>     :Buffers<CR>
+nnoremap ,         :GFiles<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>g :GFiles<CR>
+nnoremap <Leader>l :Lines<CR>
+nnoremap <Leader>a :Ag!<CR>
+nnoremap <Leader>r :Rg!<CR>
+nnoremap <Leader>m :Marks<CR>
+nnoremap <Leader>t :Tags<CR>
 
 " vim-easy-align {{{3
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -536,7 +558,7 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 " Navigation {{{2
 
 " Navigate buffers {{{3
-nnoremap <Tab>   :ls<CR>:b<Space>
+" nnoremap <Tab>   :ls<CR>:b<Space> " Replaced with fzf (see above)
 nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
 nnoremap gn      :bn<CR>
