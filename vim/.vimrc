@@ -45,7 +45,9 @@ Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell
 Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
+Plug 'archSeer/'        . 'colibri.vim'             " Visual: Colorscheme
 Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
+Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
@@ -78,7 +80,6 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'justinmk/'       . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
-"Plug 'tyrannicaltoucan/'. 'vim-quantum'            " Visual: Colorscheme
 "Plug 'semanser/'       . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
 " Probably useless {{{3
@@ -173,22 +174,31 @@ let g:haskell_conceal_enumerations = 0
 
 " Colorscheme {{{2
 " Favorites: cobalt, desert, hybrid_reverse, hybrid_material, quantum, solarized
-" let g:quantum_black=1
-" colorscheme quantum
-colorscheme hybrid_material
+let g:quantum_black=1
+" colorscheme colibri
+" colorscheme hybrid_material
+colorscheme quantum
 
 " Colors {{{2
 set background=dark
-" set termguicolors
+set termguicolors
 
-hi Normal guibg=NONE    ctermbg=NONE
-hi Normal guifg=Grey70  ctermfg=249
-hi LineNr guifg=Grey30  ctermfg=239
-hi Folded guibg=Grey11  ctermbg=234
-hi Folded guifg=Grey46  ctermfg=243
+hi Normal       guibg=NONE    ctermbg=NONE
+hi Normal       guifg=Grey70  ctermfg=249
+hi ColorColumn  guibg=#332331
+hi CursorLine   guibg=#402B3D
+" hi Folded       guibg=#1A1318
+" hi Folded       guibg=#1A1218
+" hi Folded       guibg=#1C1219
+hi Folded       guibg=#1E161F
+
 " hi ColorColumn  guibg=#272727
+" hi ColorColumn  guibg=#362532
 " hi CursorColumn guibg=#272727
 " hi CursorLine   guibg=#272727
+" hi Folded       guibg=Grey11  ctermbg=234
+" hi Folded       guifg=Grey46  ctermfg=243
+" hi LineNr       guifg=Grey30  ctermfg=239
 
 if has('gui_running')
     hi Normal guibg=DarkSlateGrey
@@ -303,6 +313,7 @@ set undoreload=10000        " Number of lines to save for undo
 
 " Visual {{{2
 set colorcolumn=80      " Column guide
+" let &colorcolumn=join(range(81,999), ",") " Column guide
 set cursorline          " Highlight current line
 set laststatus=2        " Show status line
 set mouse=a             " Mouse interactivity

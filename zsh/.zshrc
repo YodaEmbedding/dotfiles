@@ -80,7 +80,7 @@ setopt promptsubst
 # preexec() { tput sgr0 }
 
 PS1="
-%}%F{blue}%K{90}%B· %~ %f%k%b
+%}%F{blue}%K{53}%B· %~ %f%k%b
 %K{235}%}%(12V.%F{242}%12v%f .)%(?.%F{magenta}.%F{red})${PURE_PROMPT_SYMBOL:-❯}%f "
 
 RPROMPT='%{$reset_color%}'
