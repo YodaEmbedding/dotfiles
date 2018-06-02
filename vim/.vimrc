@@ -267,6 +267,7 @@ if has("gui_running")
 endif
 
 " Indenting and Tabs {{{2
+set expandtab
 set shiftwidth=4        " Spaces [>>]  key is equivalent to
 set softtabstop=4       " Spaces [tab] key is equivalent to
 set tabstop=4           " Tab display width
@@ -343,8 +344,8 @@ autocmd FileType java     setlocal foldcolumn=3 foldmethod=syntax
 autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
 
 " Indenting and Tabs {{{2
-autocmd FileType markdown setlocal expandtab
-autocmd FileType python   setlocal expandtab
+autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType python   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 
 " Remove trailing whitespace on file save {{{2
 "autocmd FileType c,cpp,python autocmd BufWritePre <buffer> :FixWhitespace
@@ -538,6 +539,8 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 nnoremap <Tab>   :ls<CR>:b<Space>
 nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
+nnoremap gn      :bn<CR>
+nnoremap gp      :bp<CR>
 
 " Miscellaneous {{{2
 
@@ -547,6 +550,15 @@ vnoremap <Backspace> "_dd
 
 " Black hole paste (in visual mode) {{{3
 xnoremap <silent> p p:let @"=@0<CR>
+
+" Clipboard copy {{{3
+nnoremap 'c    "+yy
+vnoremap 'c    "+y
+
+" Clipboard paste {{{3
+nnoremap ''    "+P
+vnoremap ''    "+P
+inoremap <C-v> <C-o>"+P
 
 " Close location list {{{3
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
@@ -562,8 +574,10 @@ nnoremap <silent> <F3> @@
 " New line without insert mode (uses q register to mark) {{{3
 nnoremap <CR> mqo<Esc>`q
 
-" Paste from clipboard {{{3
-inoremap <C-v> <C-o>:set paste<CR><C-o>"+P<C-o>:set nopaste<CR>
+" Save {{{3
+nnoremap <C-s> :w<CR>
+vnoremap <C-s> :w<CR>
+inoremap <C-s> <C-o>:w<CR>
 
 " Save as sudo {{{3
 " TODO RARELYUSED
@@ -591,7 +605,10 @@ vnoremap <silent> <F3> :normal @@<CR>
 
 " TODO {{{1
 
-" Free bindings: <S-d> <S-x> <S-s> '
+" Free bindings:
+" ,
+" '
+" <S-d> <S-x> <S-s>
 
 " Cleanup (RARELYUSED)
 " PLUGIN SETTINGS
