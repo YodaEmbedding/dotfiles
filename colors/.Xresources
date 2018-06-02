@@ -57,13 +57,30 @@ xterm*eightBitInput: false
 
 ! Rofi
 rofi.color-enabled: true
-!rofi.color-window:  #393939, #393939, #268bd2
-!rofi.color-normal:  #393939, #ffffff, #2c2c2c, #268bd2, #ffffff
-!rofi.color-active:  #393939, #268bd2, #2c2c2c, #268bd2, #205171
-!rofi.color-urgent:  #393939, #f3843d, #2c2c2c, #268bd2, #ffc39c
-rofi.color-window: #3a4c54, #2a373e, #c3c6c8
-rofi.color-normal: #455a64, #fafbfc, #455a64, #00bcd4, #fafbfc
-rofi.color-active: #455a64, #00bcd4, #455a64, #009688, #fdf6e3
-rofi.color-urgent: #455a64, #ff5252, #455a64, #ff5252, #fdf6e3
 rofi.terminal:      termite
+
+! Theme: Gray
+! !                  'bg',    'bord', 'sepratr'
+! rofi.color-window:  #393939, #393939, #268bd2
+! ! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
+! rofi.color-normal:  #393939, #ffffff, #2c2c2c, #268bd2, #ffffff
+! rofi.color-active:  #393939, #268bd2, #2c2c2c, #268bd2, #205171
+! rofi.color-urgent:  #393939, #f3843d, #2c2c2c, #268bd2, #ffc39c
+
+! Theme: Adapta Nokto Eta
+! !                  'bg',    'bord', 'sepratr'
+! rofi.color-window: #3a4c54, #2a373e, #c3c6c8
+! ! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
+! rofi.color-normal: #455a64, #fafbfc, #455a64, #00bcd4, #fafbfc
+! rofi.color-active: #455a64, #00bcd4, #455a64, #009688, #fdf6e3
+! rofi.color-urgent: #455a64, #ff5252, #455a64, #ff5252, #fdf6e3
+
+! Theme: Cyberpunk Neon
+! #55384f
+!                  'bg',    'bord', 'sepratr'
+rofi.color-window: #65485f, #65485f, #c3c6c8
+! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
+rofi.color-normal: #5a3c54, #fafbfc, #5a3c54, #00bcd4, #fafbfc
+rofi.color-active: #5a3c54, #00bcd4, #5a3c54, #009688, #fdf6e3
+rofi.color-urgent: #5a3c54, #ff5252, #5a3c54, #ff5252, #fdf6e3
 
