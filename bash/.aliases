@@ -77,6 +77,9 @@ alias yayu='yay --noedit --noconfirm -Syu'
 
 ### OTHER UTILITIES ###
 
+# googler
+alias goo="googler -n 5"
+
 # gpg
 alias gpgaddkey="gpg --recv-keys"
 alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'

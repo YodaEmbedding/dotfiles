@@ -1,5 +1,5 @@
 #!/bin/bash
 
 echo $1 > ~/.rshift
-redshift -O $1
+redshift -PO $1
 

@@ -97,8 +97,8 @@ esac
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
 # History sizes
-HISTSIZE=20000
-SAVEHIST=10000
+# HISTSIZE=20000
+# SAVEHIST=10000
 
 # Do not save common commands to history
 # HISTORY_IGNORE="(ls|lsl|cd|cd ..|..|pwd|exit|vimrc|zshrc|i3config|gst|gd)"
