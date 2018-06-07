@@ -213,7 +213,7 @@ bindsym XF86AudioMute           exec $nsi $amixer toggle && $vol_change
 
 bindsym $mod+z                  exec $nsi $amixer 5%+    && $vol_change
 bindsym $mod+shift+z            exec $nsi $amixer 5%-    && $vol_change
-bindsym $mod+x                  exec $nsi $amixer toggle && $vol_change
+bindsym $mod+ctrl+z             exec $nsi $amixer toggle && $vol_change
 
 bindsym $mod+comma              exec $nsi $amixer 1%+    && $vol_change
 bindsym $mod+shift+comma        exec $nsi $amixer 1%-    && $vol_change
@@ -225,11 +225,8 @@ bindsym XF86AudioNext           exec $nsi playerctl next
 bindsym XF86AudioPrev           exec $nsi playerctl prev
 
 bindsym $mod+ctrl+x             exec $nsi playerctl play-pause
-
-# GPMDP control
-#bindsym $mod+ctrl+x             exec $nsi qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
-bindsym $mod+ctrl+z             exec $nsi ~/.config/i3/scripts/gpmdp_vol + 0.05
-bindsym $mod+ctrl+shift+z       exec $nsi ~/.config/i3/scripts/gpmdp_vol - 0.05
+bindsym $mod+x                  exec $nsi playerctl volume 0.05+
+bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 
 # rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
@@ -239,7 +236,7 @@ bindsym $mod+ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folde
 bindsym $mod+shift+d            exec "wmctrl -l     | rofi $rofi_style -p 'window'  -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Lock screen
-bindsym $mod+shift+x            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+bindsym $mod+$mod_+z            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
 
 # Jump to urgent window
 bindsym $mod+u                  [urgent=latest] focus
