@@ -1,5 +1,6 @@
 [options]
 font = Roboto Mono 14
+scrollback_lines = 65536
 
 [colors]
 foreground      = #dcdccc
@@ -7,7 +8,7 @@ foreground_bold = #dcdccc
 cursor          = #dcdccc
 #background      = rgba(29, 31, 33, 0.96)
 #background      = rgba(62, 42, 60, 0.96)
-background      = rgba(51, 35, 49, 0.96)
+background      = rgba(51, 35, 49, 0.97)
 
 # black
 color0  = #282a2e

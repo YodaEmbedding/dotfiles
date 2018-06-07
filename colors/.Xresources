@@ -78,9 +78,9 @@ rofi.terminal:      termite
 ! Theme: Cyberpunk Neon
 ! #55384f
 !                  'bg',    'bord', 'sepratr'
-rofi.color-window: #65485f, #65485f, #c3c6c8
+rofi.color-window: #5a3c54, #5a3c54, #c3c6c8
 ! State:           'bg',    'fg',    'bgalt', 'hlbg',  'hlfg'
-rofi.color-normal: #5a3c54, #fafbfc, #5a3c54, #00bcd4, #fafbfc
-rofi.color-active: #5a3c54, #00bcd4, #5a3c54, #009688, #fdf6e3
-rofi.color-urgent: #5a3c54, #ff5252, #5a3c54, #ff5252, #fdf6e3
+rofi.color-normal: #65485f, #faebbc, #5d3f57, #00bcd4, #fafbfc
+rofi.color-active: #5a3c54, #fafbfc, #5a3c54, #009688, #fde6d3
+rofi.color-urgent: #5a3c54, #ff5252, #5a3c54, #ff5252, #fde6d3
 

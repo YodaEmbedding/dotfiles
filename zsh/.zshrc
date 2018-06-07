@@ -77,10 +77,16 @@ autoload zmv
 # THEME {{{1
 
 setopt promptsubst
-# preexec() { tput sgr0 }
 
+# 54  , blue
+# blue, 178
+# 169 , 190
+# 59  , 217
+# 60  , 217
+# 96  , 217
+# 234 , 217
 PS1="
-%}%F{blue}%K{53}%B· %~ %f%k%b
+%}%K{96}%F{217}%B· %~ %b%f%k
 %K{235}%}%(12V.%F{242}%12v%f .)%(?.%F{magenta}.%F{red})${PURE_PROMPT_SYMBOL:-❯}%f "
 
 RPROMPT='%{$reset_color%}'
