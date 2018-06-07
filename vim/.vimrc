@@ -35,15 +35,18 @@ Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexp
 Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
+Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'majutsushi/'      . 'tagbar'                  " (RARELYUSED) Functional: ctags; bound to \t
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
+Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell
+Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
-Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
+Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
 Plug 'archSeer/'        . 'colibri.vim'             " Visual: Colorscheme
 Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
@@ -80,6 +83,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'justinmk/'       . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
+" Plug 'tpope/'         . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'semanser/'       . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
 " Probably useless {{{3
@@ -128,7 +132,6 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'jiangmiao/       . 'auto-pairs'              " Functional: Auto-insert parens/quotes
 "Plug 'svermeulen/      . 'vim-easyclip'            " Functional: Blackhole delete, smart yanking, etc
 "Plug 'chrisbra/        . 'NrrwRgn'                 " Functional: Extract buffer (oooh this is cool)
-"Plug 'ludovicchabant/  . 'vim-gutentags'           " Functional: Fast ctagging?
 "Plug 'kana/            . 'vim-submode'             " Functional: More modes
 "Plug 'AndrewRadev/     . 'sideways.vim'            " Functional: Parameter swapping
 "Plug 'romainl/         . 'vim-qf'                  " Functional: Quickfix
@@ -163,6 +166,13 @@ let g:deoplete#sources#rust#rust_source_path=expand('$RUST_SRC_PATH')
 " indentguides {{{2
 let g:indentguides_ignorelist = ['haskell']
 let g:indentguides_spacechar = '│'
+
+" vim-polyglot {{{3
+let g:polyglot_disabled = ['python-ident']
+
+" vim-gutentags {{{2
+
+let g:gutentags_file_list_command = 'rg --files'
 
 " vim-sleuth {{{2
 let b:sleuth_mixed_tabstop = 4
@@ -243,8 +253,8 @@ set statusline+=\ \                             " --
 set statusline+=%2v                             " Cursor column (virtual)
 set statusline+=\ \                             " --
 set statusline+=(%l\ /\ %L)                     " Cursor line/total lines
-set statusline+=\ \                             " --
-set statusline+=%P                              " Percent through file
+" set statusline+=\ \                             " --
+" set statusline+=%P                              " Percent through file
 
 " Statusline colors {{{3
 hi User1 ctermfg=250 ctermbg=234
@@ -258,7 +268,8 @@ set title               " Change window title to current buffer
 set titlestring=%t      " Change window title
 
 " Highlight groups {{{2
-syn keyword Todo NOTE DEBUG FIXME
+autocmd BufEnter * syn keyword Todo NOTE  containedin=.*Comment
+autocmd BufEnter * syn keyword Todo DEBUG containedin=.*Comment
 
 " OPTIONS {{{1
 
@@ -350,6 +361,7 @@ autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 
 "autocmd FileType *       setlocal foldcolumn=3 foldmethod=indent
 autocmd FileType conf     setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
+autocmd FileType i3       setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldMarkdown()
 autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
 autocmd FileType c,cpp    setlocal foldcolumn=3 foldmethod=syntax
@@ -544,6 +556,7 @@ nmap ga <Plug>(EasyAlign)
 " Leader {{{2
 
 " Clipboard (copy/paste) {{{3
+" TODO RARELYUSED
 nnoremap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
 nnoremap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
 noremap  <silent> <Leader>y "+y
@@ -591,9 +604,11 @@ nnoremap 'c    "+yy
 vnoremap 'c    "+y
 
 " Clipboard paste {{{3
-nnoremap ''    "+P
-vnoremap ''    "+P
-inoremap <C-v> <C-o>"+P
+nnoremap ''    "+p
+vnoremap ''    "+p
+nnoremap '"    "+P
+vnoremap '"    "+P
+inoremap <C-v> <C-o>"+p
 
 " Close location list {{{3
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
@@ -622,6 +637,10 @@ cmap x!! x !sudo tee > /dev/null %
 " Search for visually selected text {{{3
 " TODO RARELYUSED
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" Search for whole word {{{3
+
+nnoremap ? /\<\><Left><Left>
 
 " Visual selection apply dot {{{3
 vnoremap <silent> . :normal .<CR>

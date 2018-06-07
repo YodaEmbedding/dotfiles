@@ -72,6 +72,7 @@ alias tzs='trizen --noedit -S'
 alias tzu='trizen --noedit --install_built_with_noconfirm -Syu'
 
 # AUR package managers: yay
+alias yayq='yay -Qs'
 alias yays='yay --noedit --noconfirm -S'
 alias yayu='yay --noedit --noconfirm -Syu'
 
@@ -146,7 +147,7 @@ alias artist="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xes
 alias  title="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:title: '  | sed 's/^xesam:title: //'"
 
 # Statistics
-alias class='xprop | grep WM_CLASS'
+alias class='xprop WM_CLASS'
 alias count='ls -1 | wc -l'
 alias diskusage='du -sh'
 alias perm='stat -c "%a %n"'
