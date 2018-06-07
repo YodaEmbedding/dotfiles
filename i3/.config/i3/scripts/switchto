@@ -1,19 +1,14 @@
 #!/bin/bash
 
-cmd="$1"
-name="$2"
+runcmd="$1"
+wmclass="$2"
 
-function is_not_running() {
-	(($(wmctrl -l | grep "$name" | wc -l) == 0))
+function switch() {
+    wmctrl -xa "$wmclass"
 }
 
-if is_not_running; then
-	eval "$cmd"
+if ! switch; then
+    eval "$runcmd" &
+    while ! switch; do sleep 0.1; done
 fi
-
-while is_not_running; do
-	sleep 0.1
-done
-
-wmctrl -xa "$name"
 

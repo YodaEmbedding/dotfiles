@@ -254,7 +254,7 @@ bindsym $mod+shift+Print        exec maim    -i $(xdotool getactivewindow) "$scr
 
 # Shortcuts: open/switch to
 bindsym $mod+$mod_+f            exec ~/.config/i3/scripts/switchto "firefox"              "Firefox"
-bindsym $mod+$mod_+g            exec ~/.config/i3/scripts/switchto "google-chrome"        "Chrome"
+bindsym $mod+$mod_+g            exec ~/.config/i3/scripts/switchto "google-chrome-stable" "Chrome"
 bindsym $mod+$mod_+o            exec ~/.config/i3/scripts/switchto "okular"               "Okular"
 bindsym $mod+$mod_+b            exec ~/.config/i3/scripts/switchto "qbittorrent"          "qBittorrent"
 bindsym $mod+$mod_+s            exec ~/.config/i3/scripts/switchto "subl"                 "subl"
