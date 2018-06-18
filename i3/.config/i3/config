@@ -49,7 +49,7 @@ set $amixer         amixer -q -D pulse set Master
 set $vol_change     pkill -SIGRTMIN+1 i3blocks
 
 # Screenshot path
-set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S_%3N.png')
+set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 
 
 ### DEFAULT BINDINGS ###
@@ -228,6 +228,9 @@ bindsym $mod+ctrl+x             exec $nsi playerctl play-pause
 bindsym $mod+x                  exec $nsi playerctl volume 0.05+
 bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 
+# Lyrics
+bindsym $mod+$mod_+shift+x      exec $nsi termite -e lyvi -t lyvi
+
 # rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
 bindsym $mod+ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
@@ -251,6 +254,9 @@ bindsym $mod+shift+Print        exec maim    -i $(xdotool getactivewindow) "$scr
 
 # Screencapture
 # TODO
+
+# Color picker
+bindsym $mod+p                  exec gcolor2
 
 # Shortcuts: open/switch to
 bindsym $mod+$mod_+f            exec ~/.config/i3/scripts/switchto "firefox"              "Firefox"
@@ -349,6 +355,11 @@ for_window [title="^gcolor2$"] \
 for_window [title="^Guitarix: gx_head$"] \
     floating enable, border none, \
     move position center
+
+for_window [title="^lyvi$"] \
+    floating enable, \
+    exec $nsi ~/.config/i3/scripts/move bottom right, \
+    move scratchpad, scratchpad show
 
 for_window [title="Mozilla Firefox"] \
     border none

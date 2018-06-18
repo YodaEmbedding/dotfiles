@@ -20,6 +20,7 @@ zplug $(printf "%s%s" "lib/"         "key-bindings"),      from:oh-my-zsh       
 zplug $(printf "%s%s" "lib/"         "vi-mode"),           from:oh-my-zsh       #
 zplug $(printf "%s%s" "mafredri/"    "zsh-async"),         defer:0              #
 zplug $(printf "%s%s" "mollifier/"   "anyframe")                                # Bindings for fuzzy commands
+zplug $(printf "%s%s" "plugins/"     "colored-man-pages"), from:oh-my-zsh       # Easier to read man pages
 zplug $(printf "%s%s" "rupa/"        "z"),                 use:'*.sh'           # Navigate to most used directories
 
 # DISABLED {{{3
