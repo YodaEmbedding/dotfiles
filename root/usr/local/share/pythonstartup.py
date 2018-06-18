@@ -28,17 +28,20 @@ np.set_printoptions(precision=3)
 def E(x, precision=3):
     return ('{:.' + str(precision) + 'E}').format(x)
 
+def print_reformat(x):
+    return (
+        "{:.3f}".format(x) if isinstance(x, float)   else
+        "{:.3f}".format(x) if isinstance(x, complex) else
+        "{:.3f}".format(x) if isinstance(x, np.complex128) else
+        str(x))
+
 def print(*args):
-    def reformat(x):
-        return (
-            "{:.3f}".format(x) if isinstance(x, float)   else
-            "{:.3f}".format(x) if isinstance(x, complex) else
-            x)
-    __builtins__.print(*map(reformat, args))
+    __builtins__.print(*map(print_reformat, args))
 
 def namestr(obj, namespace):
     return next(name for name in namespace if namespace[name] is obj)
 
 def printn(*args, namespace=globals(), padding=20):
     for x in args:
-        print(namestr(x, namespace).ljust(padding), x)
+        print(namestr(x, namespace).ljust(padding - 1),
+            print_reformat(x).replace('\n', '\n' + ' ' * padding))
