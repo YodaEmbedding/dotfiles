@@ -11,31 +11,35 @@
 source ~/.zplug/init.zsh
 
 # PLUGINS {{{2
-zplug "changyuheng/fz", defer:1                             # Fuzzy tab completion for z
-#zplug "lib/clipboard", from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-#zplug "lib/colorize", from:oh-my-zsh                       # Syntax highlight cat output
-zplug "lib/completion", from:oh-my-zsh                      # Suggests command completions
-#zplug "lib/git", from:oh-my-zsh                            #
-zplug "lib/history", from:oh-my-zsh                         #
-zplug "lib/key-bindings", from:oh-my-zsh                    # Useful keybindings
-#zplug "lib/python", from:oh-my-zsh                         #
-#zplug "lib/themes", from:oh-my-zsh                         #
-zplug "lib/vi-mode", from:oh-my-zsh                         #
-zplug "mafredri/zsh-async", defer:0                         #
-zplug "mollifier/anyframe"                                  # Bindings for fuzzy commands
-zplug 'rupa/z', use:'*.sh'                                  # Navigate to most used directories
-#zplug "urbainvaes/fzf-marks"                               #
-#zplug "zsh-users/zsh-autosuggestions"                      #
-#zplug "zsh-users/zsh-completions"                          #
-#zplug "zsh-users/zsh-history-substring-search", defer:3    #
-#zplug "zsh-users/zsh-syntax-highlighting", defer:3         #
+
+# ENABLED {{{3
+zplug $(printf "%s%s" "changyuheng/" "fz"),                defer:1              # Fuzzy tab completion for z
+zplug $(printf "%s%s" "lib/"         "completion"),        from:oh-my-zsh       # Suggests command completions
+zplug $(printf "%s%s" "lib/"         "history"),           from:oh-my-zsh       #
+zplug $(printf "%s%s" "lib/"         "key-bindings"),      from:oh-my-zsh       # Useful keybindings
+zplug $(printf "%s%s" "lib/"         "vi-mode"),           from:oh-my-zsh       #
+zplug $(printf "%s%s" "mafredri/"    "zsh-async"),         defer:0              #
+zplug $(printf "%s%s" "mollifier/"   "anyframe")                                # Bindings for fuzzy commands
+zplug $(printf "%s%s" "rupa/"        "z"),                 use:'*.sh'           # Navigate to most used directories
+
+# DISABLED {{{3
+#zplug $(printf "%s%s" "lib/"         "clipboard"),         from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+#zplug $(printf "%s%s" "lib/"         "colorize"),          from:oh-my-zsh       # Syntax highlight cat output
+#zplug $(printf "%s%s" "lib/"         "git"),               from:oh-my-zsh       #
+#zplug $(printf "%s%s" "lib/"         "python"),            from:oh-my-zsh       #
+#zplug $(printf "%s%s" "lib/"         "themes"),            from:oh-my-zsh       #
+#zplug $(printf "%s%s" "urbainvaes/"  "fzf-marks")                               #
+#zplug $(printf "%s%s" "zsh-users/"   "zsh-autosuggestions")                     #
+#zplug $(printf "%s%s" "zsh-users/"   "zsh-completions")                         #
+#zplug $(printf "%s%s" "zsh-users/"   "zsh-history-substring-search"), defer:3   #
+#zplug $(printf "%s%s" "zsh-users/"   "zsh-syntax-highlighting"),      defer:3   #
 
 # THEMES {{{2
-#zplug "agnoster/agnoster-zsh-theme", from:oh-my-zsh, as:theme
-#zplug "halfo/lambda-mod-zsh-theme", as:theme
-#zplug "inanimate/darkblood-modular", as:theme
-#zplug "marszall87/lambda-pure", use:lambda-pure.zsh, as:theme
-#zplug "sindresorhus/pure", use:pure.zsh, as:theme
+#zplug $(printf "%s%s" "agnoster/"     "agnoster-zsh-theme"),   as:theme, from:oh-my-zsh
+#zplug $(printf "%s%s" "halfo/"        "lambda-mod-zsh-theme"), as:theme
+#zplug $(printf "%s%s" "inanimate/"    "darkblood-modular"),    as:theme
+#zplug $(printf "%s%s" "marszall87/"   "lambda-pure"),          as:theme, use:lambda-pure.zsh
+#zplug $(printf "%s%s" "sindresorhus/" "pure"),                 as:theme, use:pure.zsh
 
 # PLUGIN CONFIGURATION {{{2
 PURE_PROMPT_SYMBOL=λ
