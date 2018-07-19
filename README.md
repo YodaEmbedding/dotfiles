@@ -2,6 +2,8 @@
 
 [![Click for full album.](https://i.imgur.com/tJlW7l1.gif)](https://imgur.com/a/W5QwA)
 
+[![Click for full album.](https://i.imgur.com/azSHUBZ.gif)](https://imgur.com/a/JK2Pc6m)
+
 <!-- [[![Click for full album.](https://i.imgur.com/0DqKJaD.mp4)](https://imgur.com/a/W5QwA) -->
 <!-- [Full album.](https://imgur.com/a/W5QwA) -->
 
