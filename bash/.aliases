@@ -47,12 +47,16 @@ alias gst='git status'
 # grep
 alias g='grep --color=never -i'
 
+# less
+alias less='less -r'
+
 # python
 alias py="python3"
 
 # vim
 alias v='nvim'
 alias vim='nvim'
+alias vimprivate='vim -c "setlocal history=0 nobackup nomodeline noshelltemp noswapfile noundofile nowritebackup secure viminfo=\"\""'
 
 ### PACKAGE MANAGEMENT ###
 
@@ -74,8 +78,8 @@ alias tzu='trizen --noedit --install_built_with_noconfirm -Syu'
 
 # AUR package managers: yay
 alias yayq='yay -Qs'
-alias yays='yay --noedit --noconfirm -S'
-alias yayu='yay --noedit --noconfirm -Syu'
+alias yays='yay --noconfirm -S'
+alias yayu='yay --noconfirm -Syu'
 
 ### OTHER UTILITIES ###
 
@@ -93,6 +97,7 @@ alias parallel='parallel --will-cite'
 alias p='percol'
 
 # ranger (open navigated folder in terminal on exit)
+alias r='ranger'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # selfspy

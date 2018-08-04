@@ -54,7 +54,6 @@ Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
-Plug 'w0rp/'            . 'ale'                     " Visual: Linting
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
@@ -84,7 +83,8 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'justinmk/'       . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
-" Plug 'tpope/'         . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
+"Plug 'tpope/'          . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
+"Plug 'w0rp/'           . 'ale'                     " Visual: Linting
 "Plug 'semanser/'       . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
 " Probably useless {{{3
@@ -157,6 +157,8 @@ call plug#end()
 let g:deoplete#enable_at_startup = 1
 
 " deoplete-jedi {{{2
+let g:deoplete#omni_patterns = {}
+let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
 let g:deoplete#sources#jedi#server_timeout = 60
 
 " deoplete-rust {{{2
@@ -168,7 +170,10 @@ let g:deoplete#sources#rust#rust_source_path=expand('$RUST_SRC_PATH')
 let g:indentguides_ignorelist = ['haskell']
 let g:indentguides_spacechar = '│'
 
-" vim-polyglot {{{3
+" jedi-vim {{{2
+let g:jedi#smart_auto_mappings = 0
+
+" vim-polyglot {{{2
 let g:polyglot_disabled = ['python-ident']
 
 " vim-gutentags {{{2
@@ -197,7 +202,7 @@ set termguicolors
 hi Normal       guibg=NONE    ctermbg=NONE
 hi Normal       guifg=Grey70  ctermfg=249
 
-hi ColorColumn  guibg=#332331
+hi ColorColumn  guibg=#372735
 hi CursorLine   guibg=#402B3D
 hi Folded       guibg=#1E161F
 hi Folded       guifg=#666666
@@ -601,8 +606,8 @@ vnoremap <Backspace> "_dd
 xnoremap <silent> p p:let @"=@0<CR>
 
 " Clipboard copy {{{3
-nnoremap 'c    "+yy
-vnoremap 'c    "+y
+nnoremap 'y    "+yy
+vnoremap 'y    "+y
 
 " Clipboard paste {{{3
 nnoremap ''    "+p

@@ -134,6 +134,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS t
 
 bindkey -v                                              # vim
 bindkey -v '^?' backward-delete-char                    # vim backspace
+bindkey -M vicmd V edit-command-line                    # vim edit command
 
 bindkey '^ '   autosuggest-accept                       # Fill suggestion
 bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
