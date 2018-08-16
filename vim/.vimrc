@@ -43,7 +43,6 @@ Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot ke
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
-Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
@@ -82,6 +81,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'othree/'         . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 "Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'justinmk/'       . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
+"Plug 'dag/'            . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
 "Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
 "Plug 'tpope/'          . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'w0rp/'           . 'ale'                     " Visual: Linting
@@ -375,6 +375,7 @@ autocmd FileType java     setlocal foldcolumn=3 foldmethod=syntax
 autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
 
 " Indenting and Tabs {{{2
+autocmd FileType haskell  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType python   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 
