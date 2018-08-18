@@ -42,7 +42,13 @@ set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data | \
 # Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
 set $list_folders   ~/code/frequency-index-scripts/list_index.sh   ~/.dir_index.txt ~/.dir_frequent.txt
 set $update_folders ~/code/frequency-index-scripts/update_freq.sh                   ~/.dir_frequent.txt
-set $update_index   ~/code/frequency-index-scripts/update_index.sh ~/.dir_index.txt ~/.dir_frequent.txt
+set $update_folders_index ~/code/frequency-index-scripts/update_index.sh ~/.dir_index.txt ~/.dir_frequent.txt
+
+# Folder search
+# Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
+set $list_emojis    ~/code/frequency-index-scripts/list_index.sh   ~/.emoji_index.txt ~/.emoji_frequent.txt
+set $update_emojis  ~/code/frequency-index-scripts/update_freq.sh                   ~/.emoji_frequent.txt
+set $update_emojis_index ~/code/frequency-index-scripts/update_index.sh ~/.emoji_index.txt ~/.emoji_frequent.txt
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
@@ -235,7 +241,8 @@ bindsym $mod+$mod_+shift+x      exec $nsi termite -e lyvi -t lyvi
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
 bindsym $mod+ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
 bindsym $mod+d                  exec "$list_files   | rofi $rofi_style -p 'files'   -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
-bindsym $mod+ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_folders \\"$x\\"; $update_index \\"$x\\"))"
+bindsym $mod+ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_folders \\"$x\\"; $update_folders_index \\"$x\\"))"
+bindsym $mod+ctrl+e             exec "$list_emojis  | rofi $rofi_style -p 'emojis'  -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_emojis  \\"$x\\"; $update_emojis_index  \\"$x\\"))"
 bindsym $mod+shift+d            exec "wmctrl -l     | rofi $rofi_style -p 'window'  -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Lock screen
@@ -446,7 +453,6 @@ exec        $nsi    dropbox
 # Highly used bindings (that are hard to reach):
 # $mod+shift+t
 
-# rofi emoji
 # vim-like mark window with keybind
 
 # Alt-tabbing (focus last)
