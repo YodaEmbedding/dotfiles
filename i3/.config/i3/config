@@ -38,17 +38,9 @@ set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data | \
                     grep -vP '^/mnt/data2/((ProgFiles/)).*$' | \
                     grep -vP '/\.'
 
-# Folder search
 # Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
-set $list_folders   ~/code/frequency-index-scripts/list_index.sh   ~/.dir_index.txt ~/.dir_frequent.txt
-set $update_folders ~/code/frequency-index-scripts/update_freq.sh                   ~/.dir_frequent.txt
-set $update_folders_index ~/code/frequency-index-scripts/update_index.sh ~/.dir_index.txt ~/.dir_frequent.txt
-
-# Folder search
-# Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
-set $list_emojis    ~/code/frequency-index-scripts/list_index.sh   ~/.emoji_index.txt ~/.emoji_frequent.txt
-set $update_emojis  ~/code/frequency-index-scripts/update_freq.sh                   ~/.emoji_frequent.txt
-set $update_emojis_index ~/code/frequency-index-scripts/update_index.sh ~/.emoji_index.txt ~/.emoji_frequent.txt
+set $rofi_dir       ~/code/frequency-index-scripts/examples/rofi_dir.sh
+set $rofi_emoji     ~/code/frequency-index-scripts/examples/rofi_emoji.sh
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
@@ -240,10 +232,10 @@ bindsym $mod+$mod_+shift+x      exec $nsi termite -e lyvi -t lyvi
 # rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
 bindsym $mod+ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
-bindsym $mod+d                  exec "$list_files   | rofi $rofi_style -p 'files'   -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
-bindsym $mod+ctrl+d             exec "$list_folders | rofi $rofi_style -p 'folders' -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_folders \\"$x\\"; $update_folders_index \\"$x\\"))"
-bindsym $mod+ctrl+e             exec "$list_emojis  | rofi $rofi_style -p 'emojis'  -dmenu -i -levenshtein-sort | (read x; [[ -z \\"$x\\" ]] || (gio open \\"$x\\"; $update_emojis  \\"$x\\"; $update_emojis_index  \\"$x\\"))"
-bindsym $mod+shift+d            exec "wmctrl -l     | rofi $rofi_style -p 'window'  -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
+bindsym $mod+ctrl+d             exec eval "$rofi_dir   $rofi_style -p 'folders' -i -levenshtein-sort"
+bindsym $mod+ctrl+e             exec eval "$rofi_emoji $rofi_style -p 'emojis'  -i -levenshtein-sort"
+bindsym $mod+d                  exec "$list_files | rofi $rofi_style -p 'files'  -dmenu -i -levenshtein-sort | xargs -I {} gio open {}"
+bindsym $mod+shift+d            exec "wmctrl -l   | rofi $rofi_style -p 'window' -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Lock screen
 bindsym $mod+$mod_+z            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
