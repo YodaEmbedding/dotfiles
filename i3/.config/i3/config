@@ -383,6 +383,28 @@ assign [class="qBittorrent"]                      → $ws8
 assign [class="Google Play Music Desktop Player"] → $ws9
 
 
+### USER BAR ###
+
+bar {
+    # font pango:Noto Sans Regular, FontAwesome 9
+    # font pango:Roboto Mono, FontAwesome 9
+    font pango:Dejavu Sans Mono, FontAwesome 9
+    position top
+    status_command i3status-rs ~/.config/i3/status.toml
+    strip_workspace_numbers yes
+    colors {
+        separator           #666666
+        background          #221133
+        statusline          #dddddd
+        # class             border  backgr. text
+        focused_workspace   #aa3366 #aa3366 #ffffff
+        active_workspace    #333333 #333333 #ffffff
+        inactive_workspace  #552244 #662255 #888888
+        urgent_workspace    #cc3399 #cc3399 #ffffff
+    }
+}
+
+
 ### USER STARTUP ###
 
 # System
@@ -394,7 +416,7 @@ exec_always $nsi    xinput --set-prop $(xinput list --short | grep "Razer Abyssu
 # Fast startup
 exec        $nsi    /usr/local/bin/lightsOn/lightsOn.sh 300
 exec_always $nsi    feh --bg-scale $wallpaper
-exec_always $nsi    ~/.config/polybar/polybar.sh
+#exec_always $nsi    ~/.config/polybar/polybar.sh
 
 # Medium startup
 exec        $nsi    "sleep 5 && copyq"
