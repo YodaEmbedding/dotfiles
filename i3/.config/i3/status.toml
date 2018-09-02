@@ -10,8 +10,7 @@ info_fg = "#ffcc77"
 [icons]
 name = "awesome"
 [icons.overrides]
-thermometer = " "
-#music = " "
+thermometer = " "
 memory_mem = ""
 time = ""
 
