@@ -5,8 +5,8 @@
 width = 100%
 height = 24
 
-background = #aa000000
-foreground = #ccffffff
+background = #ff221133
+foreground = #ccfdfdff
 line-color = ${bar/top.foreground}
 line-size = 2
 module-margin = 2
@@ -18,7 +18,7 @@ font-2 = FontAwesome5Brands:style=Solid:size=10;2
 font-3 = MaterialIcons:size=10;3
 font-4 = Roboto:size=10;0
 
-tray-background = #330000
+tray-background = #221133
 tray-position = right
 
 modules-left = i3 gpmdp
@@ -27,13 +27,15 @@ modules-right = updates bandwidth ping cpu temperature pulseaudio date
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
-# todo double-click-middle
 click-middle = i3-msg "kill"
 
 [module/i3]
 type = internal/i3
 format = <label-state>
-label-focused-background = #88000000
+label-focused-background = #aa3366
+label-focused-foreground = #eeccdd
+label-unfocused-background = #552244
+label-unfocused-foreground = #88777f
 label-focused-padding = 2
 label-unfocused-padding = 1
 strip-wsnumbers = true
@@ -119,12 +121,8 @@ date-alt = %A, %d %B %Y  %H:%M:%S
 ; Minimum 3 columns for ping
 ; Minimum 8 columns for download
 ;
-; Ping click to refresh
 ; Temperature ramp color
 ; Title click to enlarge label
 ; Music now playing detection for other players (also for YT?)
-; Progress should ignore "Cannot open proc" and "opendir" warnings... just output only %
 ;
 ; Moon icon ramp for calendar
-; Redshift color temperature
-
