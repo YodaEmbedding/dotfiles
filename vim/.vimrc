@@ -34,9 +34,9 @@ endif
 Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
-Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
+Plug 'junegunn/'        . 'vim-easy-align'          " (RARELYUSED) Functional: Alignment
 Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
-Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
+Plug 'tpope/'           . 'vim-surround'            " (RARELYUSED) Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'majutsushi/'      . 'tagbar'                  " (RARELYUSED) Functional: ctags; bound to \t
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
