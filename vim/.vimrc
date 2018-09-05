@@ -42,7 +42,7 @@ Plug 'majutsushi/'      . 'tagbar'                  " (RARELYUSED) Functional: c
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
-Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
+"Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
@@ -52,7 +52,7 @@ Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
 Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
-Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
+"Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
@@ -60,9 +60,9 @@ Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers dur
 if has('nvim')
     Plug 'Shougo/'      . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-    Plug 'Shougo/'      . 'deoplete.nvim'
-    Plug 'roxma/'       . 'nvim-yarp'
-    Plug 'roxma/'       . 'vim-hug-neovim-rpc'
+    "Plug 'Shougo/'      . 'deoplete.nvim'
+    "Plug 'roxma/'       . 'nvim-yarp'
+    "Plug 'roxma/'       . 'vim-hug-neovim-rpc'
 endif
 
 Plug 'eagletmt/'        . 'neco-ghc'                " Autocompletion: Haskell
@@ -197,7 +197,7 @@ colorscheme quantum
 
 " Colors {{{2
 set background=dark
-set termguicolors
+"set termguicolors
 
 hi Normal       guibg=NONE    ctermbg=NONE
 hi Normal       guifg=Grey70  ctermfg=249
@@ -243,7 +243,7 @@ set statusline+=%3*                             " Color
 set statusline+=%m                              " Modified flag
 set statusline+=%=                              " Left/right separator
 set statusline+=%4*\                            " Color -
-set statusline+=%{g:pluginUpdateStatus}         " Up to date plugins
+"set statusline+=%{g:pluginUpdateStatus}         " Up to date plugins
 set statusline+=\ \                             " --
 set statusline+=%{&filetype}                    " Filetype
 set statusline+=\ \                             " --
@@ -351,7 +351,7 @@ let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " Check up to date plugins {{{2
-autocmd VimEnter * call CheckForUpdates()
+"autocmd VimEnter * call CheckForUpdates()
 
 " Conceal level {{{2
 autocmd FileType markdown setlocal conceallevel=0
@@ -539,7 +539,7 @@ if match(&runtimepath, 'deoplete.nvim') != -1
     "     \ deoplete#mappings#manual_complete()
 endif
 
-inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
+"inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
 
 " fzf {{{3
 

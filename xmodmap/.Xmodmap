@@ -2,5 +2,6 @@
 ! Set Caps Lock to Escape
 !remove Lock = Caps_Lock
 clear Lock
-keycode 66 = Escape NoSymbol Escape
+keycode 255 = Escape NoSymbol Escape
+!keycode 66 = Escape NoSymbol Escape
 

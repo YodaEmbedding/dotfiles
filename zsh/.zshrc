@@ -43,7 +43,7 @@ zplug $(printf "%s%s" "rupa/"        "z"),                 use:'*.sh'           
 #zplug $(printf "%s%s" "sindresorhus/" "pure"),                 as:theme, use:pure.zsh
 
 # PLUGIN CONFIGURATION {{{2
-PURE_PROMPT_SYMBOL=λ
+PURE_PROMPT_SYMBOL="> "
 _Z_CMD=j
 
 # LOAD {{{2
@@ -66,8 +66,12 @@ zplug load
 # Profile
 [ -f ~/.profile ] && source ~/.profile
 
+# fzf
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Fish-like autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # ls colors
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
@@ -91,7 +95,7 @@ setopt promptsubst
 # 96  , 217
 # 234 , 217
 PS1="
-%}%K{96}%F{217}%B· %~ %b%f%k
+%}%K{96}%F{217}%B* %~ %b%f%k
 %K{235}%}%(12V.%F{242}%12v%f .)%(?.%F{magenta}.%F{red})${PURE_PROMPT_SYMBOL:-❯}%f "
 
 RPROMPT='%{$reset_color%}'
@@ -196,10 +200,13 @@ bgrnd() {
 	disown
 }
 
+# FINAL {{{1
+
+clear
+
 # TODO {{{1
 
 # Use Ctrl+Enter to fill fish command then execute
 
 # fasd (similar to autojump but with shell commands): https://github.com/clvv/fasd
 # Update plugins every N days
-
