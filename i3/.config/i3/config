@@ -134,10 +134,6 @@ bindsym $mod+grave              workspace back_and_forth
 # Workspace switch back/forth and move
 bindsym $mod+shift+grave        move container to workspace back_and_forth; workspace back_and_forth
 
-# TODO
-# Alt+tab like window switching back/forth
-bindsym $mod_+grave             focus right
-
 # Next/previous windows
 bindsym $mod_+Tab               focus right
 bindsym $mod_+shift+Tab         focus left
@@ -276,8 +272,8 @@ bindsym $mod+c                  exec $nsi termite -e ptpython  -t "python scratc
 bindsym $mod+shift+c            exec $nsi termite -e ptipython -t "ipython scratchpad"
 
 # termite transparency
-bindsym $mod+semicolon          exec $nsi ~/.config/i3/scripts/termite_transparency ' + 0.01'
-bindsym $mod+shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
+# bindsym $mod+semicolon          exec $nsi ~/.config/i3/scripts/termite_transparency ' + 0.01'
+# bindsym $mod+shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
 
 # Redshift control
 bindsym $mod+m                  exec $nsi rs $(($(cat ~/.rshift) + 200))

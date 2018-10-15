@@ -29,7 +29,7 @@ alias se='sudo -e'
 
 ### UTILITY REPLACEMENTS ###
 
-alias cat='ccat'
+#alias cat='ccat'
 
 ### IMPORTANT UTILITIES ###
 

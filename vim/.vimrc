@@ -286,6 +286,7 @@ let g:vim_json_syntax_conceal = 0
 
 " Folding {{{2
 set fillchars=fold:\ 
+"set foldlevelstart=20
 set foldnestmax=4
 set foldtext=FoldTextStyle()
 
