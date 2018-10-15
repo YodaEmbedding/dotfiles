@@ -412,6 +412,12 @@ command! -bang -nargs=? -complete=dir Files
 command! -bang -nargs=? -complete=dir GFiles
   \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
+command! -bang -nargs=? -complete=dir LocateFiles
+  \ call fzf#run(fzf#wrap({
+  \     'source': 'locate --database=./.locate.db <q-args>',
+  \     'options': '-m' },
+  \   <bang>0))
+
 " FUNCTIONS {{{1
 
 " Check backspace {{{2
@@ -545,8 +551,10 @@ inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
 
 nnoremap <Tab>     :Buffers<CR>
 nnoremap ,         :GFiles<CR>
+nnoremap <Leader>d :LocateFiles .<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>g :GFiles<CR>
+nnoremap <Leader>h :History<CR>
 nnoremap <Leader>l :Lines<CR>
 nnoremap <Leader>a :Ag!<CR>
 nnoremap <Leader>r :Rg!<CR>
