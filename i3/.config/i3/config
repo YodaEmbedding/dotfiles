@@ -56,7 +56,7 @@ set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 bindsym $mod+shift+q            kill
 
 # Terminal
-bindsym $mod+Return             exec termite
+bindsym $mod+Return             exec alacritty
 
 # Focus window
 bindsym $mod+h                  focus left
