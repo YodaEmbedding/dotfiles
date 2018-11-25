@@ -1,5 +1,5 @@
-env:
-  # TERM: xterm-256color
+# env:
+#   TERM: xterm-256color
 
 window:
   # TODO what is this for...?
@@ -66,11 +66,7 @@ font:
     x: 0
     y: 0
 
-  scale_with_dpi: true
-
 render_timer: false
-
-custom_cursor_colors: false
 
 draw_bold_text_with_bright_colors: true
 
@@ -83,7 +79,8 @@ colors:
 
   cursor:
     text: '0x000000'
-    cursor: '0xffffff'
+    cursor: '0xdfd7d7'
+    unfocused_hollow: true
 
   normal:
     black:   '0x000000'
@@ -174,12 +171,6 @@ selection:
 
 dynamic_title: true
 
-hide_cursor_when_typing: false
-
-cursor_style: Block
-
-unfocused_hollow_cursor: true
-
 live_config_reload: true
 
 #shell:
@@ -269,14 +260,18 @@ key_bindings:
   - { key: Key0,     mods: Control, action: ResetFontSize                }
   - { key: Equals,   mods: Control, action: IncreaseFontSize             }
   - { key: Subtract, mods: Control, action: DecreaseFontSize             }
+  - { key: Home,     mods: Shift,   action: ScrollToTop                  }
+  - { key: End,      mods: Shift,   action: ScrollToBottom               }
+  - { key: PageUp,   mods: Shift,   action: ScrollPageUp                 }
+  - { key: PageDown, mods: Shift,   action: ScrollPageDown               }
   - { key: Home,                    chars: "\x1bOH",   mode: AppCursor   }
   - { key: Home,                    chars: "\x1b[H",   mode: ~AppCursor  }
   - { key: End,                     chars: "\x1bOF",   mode: AppCursor   }
   - { key: End,                     chars: "\x1b[F",   mode: ~AppCursor  }
-  - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
+# - { key: PageUp,   mods: Shift,   chars: "\x1b[5;2~"                   }
   - { key: PageUp,   mods: Control, chars: "\x1b[5;5~"                   }
   - { key: PageUp,                  chars: "\x1b[5~"                     }
-  - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
+# - { key: PageDown, mods: Shift,   chars: "\x1b[6;2~"                   }
   - { key: PageDown, mods: Control, chars: "\x1b[6;5~"                   }
   - { key: PageDown,                chars: "\x1b[6~"                     }
   - { key: Tab,      mods: Shift,   chars: "\x1b[Z"                      }
