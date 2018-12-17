@@ -250,6 +250,8 @@ live_config_reload: true
 #   - ~AppKeypad
 #   - AppKeypad
 key_bindings:
+  - { key: Left,     mods: Control|Shift,    chars: "\x1b[1;6D"          }
+  - { key: Right,    mods: Control|Shift,    chars: "\x1b[1;6C"          }
   - { key: V,        mods: Control|Shift,    action: Paste               }
   - { key: C,        mods: Control|Shift,    action: Copy                }
   - { key: Paste,                   action: Paste                        }

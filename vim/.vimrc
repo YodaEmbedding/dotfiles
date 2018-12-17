@@ -31,9 +31,9 @@ else
 endif
 
 " Enabled {{{2
-Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
+"Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
-Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
+Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
 Plug 'junegunn/'        . 'vim-easy-align'          " (RARELYUSED) Functional: Alignment
 Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
 Plug 'tpope/'           . 'vim-surround'            " (RARELYUSED) Functional: Change surrounding parenthesis, e.g. cs([
@@ -74,6 +74,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 " Possibly useful {{{3
 "Plug 'pseewald/'       . 'vim-anyfold'             " Folding: Fold on indent
 "Plug 'Twinside/'       . 'vim-haskellFold'         " Folding: Haskell
+"Plug 'tmhedberg/'      . 'SimpylFold'              " Folding: Python
 "Plug 'tpope/'          . 'vim-commentary'          " Functional: Commenting
 "Plug 'Shougo/'         . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
 "Plug 'Yggdroot/'       . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
@@ -379,6 +380,7 @@ autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
 autocmd FileType haskell  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType python   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType tex      setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
 
 " Remove trailing whitespace on file save {{{2
 "autocmd FileType c,cpp,python autocmd BufWritePre <buffer> :FixWhitespace
@@ -552,7 +554,7 @@ inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
 
 nnoremap <Tab>     :Buffers<CR>
 nnoremap ,         :GFiles<CR>
-nnoremap <Leader>d :LocateFiles .<CR>
+nnoremap <Leader>s :LocateFiles .<CR>
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>g :GFiles<CR>
 nnoremap <Leader>h :History<CR>
