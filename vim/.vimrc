@@ -378,6 +378,7 @@ autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
 
 " Indenting and Tabs {{{2
 autocmd FileType haskell  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType lisp     setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType python   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType tex      setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
