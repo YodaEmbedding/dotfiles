@@ -32,6 +32,7 @@ List of configs, which directories these belong in, and other details.
 
 | Name           | Stow dir | Dependencies                                         | Details                                          |
 | :------------- | :------- | :--------------------------------------------------- | :----------------------------------------------- |
+| alacritty      | `$HOME`  | alacritty                                            | Terminal emulator                                |
 | bash           | `$HOME`  |                                                      | Shell                                            |
 | colors         | `$HOME`  |                                                      | Terminal and rofi colors                         |
 | compton        | `$HOME`  |                                                      | Compositor                                       |
@@ -44,7 +45,9 @@ List of configs, which directories these belong in, and other details.
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | root           | `/`      |                                                      | Personal scripts (e.g. `emoji` clipboard copier) |
+| systemd        | `$HOME`  |                                                      | Services                                         |
 | termite        | `$HOME`  |                                                      | Terminal emulator                                |
+| tmux           | `$HOME`  | tmux                                                 | Terminal multiplexer                             |
 | vim            | `$HOME`  | neovim, neovim-plug, python-neovim                   | Better than emacs                                |
 | xmodmap        | `$HOME`  |                                                      | Keyboard remappings (e.g. Caps Lock -> Escape)   |
 | zsh            | `$HOME`  | zplug                                                | Shell                                            |
