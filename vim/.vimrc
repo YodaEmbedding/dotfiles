@@ -54,6 +54,7 @@ Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
+Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Autocompletion {{{3
@@ -377,6 +378,7 @@ autocmd FileType java     setlocal foldcolumn=3 foldmethod=syntax
 autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
 
 " Indenting and Tabs {{{2
+autocmd FileType fortran  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType haskell  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType lisp     setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
