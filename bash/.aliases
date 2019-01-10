@@ -53,6 +53,9 @@ alias less='less -r'
 # python
 alias py="python3"
 
+# tmux
+alias t="tmux"
+
 # vim
 alias v='nvim'
 alias vim='nvim'

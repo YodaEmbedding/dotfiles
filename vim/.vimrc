@@ -385,6 +385,10 @@ autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=
 autocmd FileType python   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType tex      setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
 
+let fortran_do_enddo=1
+let fortran_free_source=1
+let fortran_fold=1
+
 " Remove trailing whitespace on file save {{{2
 "autocmd FileType c,cpp,python autocmd BufWritePre <buffer> :FixWhitespace
 

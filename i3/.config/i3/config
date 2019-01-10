@@ -417,7 +417,6 @@ exec_always $nsi    ~/.config/polybar/polybar.sh
 
 # Medium startup
 exec        $nsi    "sleep 5 && copyq"
-exec        $nsi    rescuetime
 exec        $nsi    tilda
 
 # Slow startup
