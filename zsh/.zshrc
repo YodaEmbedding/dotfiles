@@ -154,40 +154,16 @@ bindkey '^r' anyframe-widget-put-history                # Recall history command
 
 # FUNCTIONS {{{1
 
-# UNUSED {{{2
-
-## Echo path to file
-#pwdf() { echo "$PWD/$@" }
-#
-## NOTE This isn't actually really needed because of $OLDPWD
-## Save path to working directory
-#spwd() { s=$PWD }
-#
-## Save path to file
-#spwdf() { s=$(pwdf) }
-
 # Copy paths {{{2
 
 # Copy directory path
-cdp() { pwd | pbcopy }
+cpdp() { pwd | pbcopy }
 
 # Copy file path
-cfp() { echo "$PWD/$@" | pbcopy }
+cpfp() { echo "$PWD/$@" | pbcopy }
 
 # Paste from file path
 pfp() { cp "$(pbpaste)" . }
-
-# OLDPWD {{{2
-
-# Copy to previous directory
-cpold() {
-	cp "$@" "$OLDPWD"
-}
-
-# Move to previous directory
-mvold() {
-	mv "$@" "$OLDPWD"
-}
 
 # Run process in background {{{2
 # https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out

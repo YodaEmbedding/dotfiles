@@ -5,7 +5,6 @@
 " VIM-PLUG {{{1
 
 " Installation {{{2
-
 if has('nvim')
     if has('win32') | let plug_path = expand('~/AppData/Local/nvim/autoload/plug.vim')
     else            | let plug_path = expand('~/.local/share/nvim/site/autoload/plug.vim')
@@ -91,21 +90,6 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
 "Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
-" Probably useless {{{3
-"Plug 'scrooloose/'      . 'nerdcommenter'           " Functional: Commenting
-"Plug 'terryma/'         . 'vim-expand-region'       " Functional: Expand selection region using + and _
-"Plug 'ctrlpvim/'        . 'ctrlp.vim'               " Functional: Fuzzy search/open files within directory
-"Plug 'easymotion/'      . 'vim-easymotion'          " Functional: Motion
-"Plug 'jremmen/'         . 'vim-ripgrep'             " Functional: Search
-"Plug 'goldfeld/'        . 'vim-seek'                " Functional: Use two character find (mapped to 's')
-"Plug 'scrooloose/'      . 'nerdtree'                " Visual: File explorer
-"Plug 'Yggdroot/'        . 'indentLine'              " Visual: Indent guides
-"Plug 'nathanaelkane/'   . 'vim-indent-guides'       " Visual: Indent guides
-"Plug 'vim-airline/'     . 'vim-airline'             " Visual: Statusline
-"Plug 'vim-airline/'     . 'vim-airline-themes'      " Visual: Statusline
-"Plug 'PotatoesMaster/   . 'i3-vim-syntax'           " Visual: Syntax highlighting (i3)
-"Plug 'python-mode/'     . 'python-mode', {'for': 'python'}
-
 " Autocompletion {{{3
 "Plug 'Shougo/'          . 'echodoc.vim'             " Documentation: Hint in command line
 "Plug 'ajh17/'           . 'VimCompletesMe'          " Autocompletion: General
@@ -181,7 +165,6 @@ let g:jedi#smart_auto_mappings = 0
 let g:polyglot_disabled = ['python-ident']
 
 " vim-gutentags {{{2
-
 let g:gutentags_file_list_command = 'rg --files'
 
 " vim-sleuth {{{2
@@ -351,7 +334,6 @@ set scrolloff=2         " Keep some lines visible when scrolling to edges of scr
 autocmd InsertLeave * silent! pclose!
 
 " Autocompletion {{{2
-
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
@@ -360,8 +342,6 @@ autocmd VimEnter * call CheckForUpdates()
 
 " Conceal level {{{2
 autocmd FileType markdown setlocal conceallevel=0
-" TODO This isn't working...
-"autocmd FileType tex setlocal conceallevel=0
 
 " Disable continue comment on new line {{{2
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
@@ -405,7 +385,6 @@ autocmd BufRead,BufNewFile *.nxc set filetype=cpp
 command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 
 " fzf {{{2
-
 command! -bang -nargs=* Ag
   \ call fzf#vim#ag(<q-args>,
   \                 <bang>0 ? fzf#vim#with_preview('up:60%')
@@ -550,18 +529,9 @@ nnoremap <C-p>     :Denite -winheight=10 file_rec buffer<CR>
 nnoremap <Leader>b :Denite -winheight=10 buffer<CR>
 
 " deoplete {{{3
-if match(&runtimepath, 'deoplete.nvim') != -1
-    " TODO RARELYUSED
-    " inoremap <silent><expr> <Tab>
-    "     \ pumvisible() ? "\<C-n>" :
-    "     \ <SID>CheckBackspace() ? "\<Tab>" :
-    "     \ deoplete#mappings#manual_complete()
-endif
-
 inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
 
 " fzf {{{3
-
 nnoremap <Tab>     :Buffers<CR>
 nnoremap ,         :GFiles<CR>
 nnoremap <Leader>s :LocateFiles .<CR>
@@ -583,26 +553,6 @@ nmap ga <Plug>(EasyAlign)
 
 " Leader {{{2
 
-" Clipboard (copy/paste) {{{3
-" TODO RARELYUSED
-nnoremap <silent> <Leader>p :set paste<CR>"+p:set nopaste<CR>
-nnoremap <silent> <Leader>P :set paste<CR>"+P:set nopaste<CR>
-noremap  <silent> <Leader>y "+y
-noremap  <silent> <Leader>Y "+Y
-
-" File explorer (netrw) {{{3
-" TODO RARELYUSED
-nnoremap <Leader>F   :Lex<CR>
-
-" Spell checker {{{3
-" TODO RARELYUSED
-" toggle, next, previous, add, correct
-noremap <leader>ss :setlocal spell!<CR>
-noremap <leader>sn ]s
-noremap <leader>sp [s
-noremap <leader>sa zg
-noremap <leader>sc z=
-
 " Strip trailing whitespace {{{3
 nnoremap <Leader><Space> :FixWhitespace<CR>
 
@@ -612,7 +562,6 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 " Navigation {{{2
 
 " Navigate buffers {{{3
-" nnoremap <Tab>   :ls<CR>:b<Space> " Replaced with fzf (see above)
 nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
 nnoremap gn      :bn<CR>
@@ -628,10 +577,12 @@ vnoremap <Backspace> "_dd
 xnoremap <silent> p p:let @"=@0<CR>
 
 " Clipboard copy {{{3
+" TODO RARELYUSED
 nnoremap 'y    "+yy
 vnoremap 'y    "+y
 
 " Clipboard paste {{{3
+" TODO RARELYUSED
 nnoremap ''    "+p
 vnoremap ''    "+p
 nnoremap '"    "+P
@@ -649,14 +600,6 @@ vnoremap <Space> za
 nnoremap <silent> <F2> @q
 nnoremap <silent> <F3> @@
 
-" New line without insert mode (uses q register to mark) {{{3
-nnoremap <CR> mqo<Esc>`q
-
-" Save {{{3
-nnoremap <C-s> :w<CR>
-vnoremap <C-s> :w<CR>
-inoremap <C-s> <C-o>:w<CR>
-
 " Save as sudo {{{3
 " TODO RARELYUSED
 cmap w!! w !sudo tee > /dev/null %
@@ -667,7 +610,6 @@ cmap x!! x !sudo tee > /dev/null %
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Search for whole word {{{3
-
 nnoremap ? /\<\><Left><Left>
 
 " Visual selection apply dot {{{3
@@ -680,7 +622,6 @@ vnoremap <silent> <F3> :normal @@<CR>
 " CHEATSHEET {{{1
 
 " Useful Ex-mode commands
-" Sort lines                :%!sort
 " Sort after skipping       :sort n /.\{-}|/
 " Reverse lines             :%!tap
 " List of numbers           :put =range(1,10)
@@ -691,30 +632,3 @@ vnoremap <silent> <F3> :normal @@<CR>
 " ,
 " '
 " <S-d> <S-x> <S-s>
-
-" Cleanup (RARELYUSED)
-" PLUGIN SETTINGS
-" THEMING
-" OPTIONS
-" AUTOCMDS
-" COMMANDS
-" FUNCTIONS
-" KEYBOARD MAPPINGS
-
-" LeaderF, CtrlP, Denite, vim builtins
-
-" Indent guide unobtrusive color
-" Theme: tomorrow night
-
-" fzf, ripgrep
-" http://owen.cymru/fzf-ripgrep-navigate-with-bash-faster-than-ever-before/
-" https://www.reddit.com/r/vim/comments/3f0zbg/psa_if_youre_using_ctrlp_use_this_maintained_fork/?st=jdk5ylw4&sh=44df905a
-
-" NextColors() Cycle through favorite colorschemes
-
-" Deoplete bindings
-" https://vi.stackexchange.com/questions/9468/cant-get-deoplete-plugin-working-in-neovim/9554
-" "use <tab> for completion
-
-" vim-ghost, vim-anywhere
-

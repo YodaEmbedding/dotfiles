@@ -416,7 +416,7 @@ exec_always $nsi    feh --bg-scale $wallpaper
 exec_always $nsi    ~/.config/polybar/polybar.sh
 
 # Medium startup
-exec        $nsi    "sleep 5 && copyq"
+exec        $nsi    "sleep 20 && copyq"
 exec        $nsi    tilda
 
 # Slow startup
