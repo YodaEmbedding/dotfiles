@@ -31,31 +31,21 @@ else
 endif
 
 " Enabled {{{2
-"Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
-Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
-Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
-Plug 'junegunn/'        . 'vim-easy-align'          " (RARELYUSED) Functional: Alignment
-Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
-Plug 'tpope/'           . 'vim-surround'            " (RARELYUSED) Functional: Change surrounding parenthesis, e.g. cs([
+Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
-Plug 'majutsushi/'      . 'tagbar'                  " (RARELYUSED) Functional: ctags; bound to \t
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
-Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
-Plug 'archSeer/'        . 'colibri.vim'             " Visual: Colorscheme
-Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
 Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
+Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
-Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
-Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
+Plug 'w0rp/'            . 'ale'                     " Visual: Linting
 Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
-Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Autocompletion {{{3
 if has('nvim')
@@ -72,83 +62,95 @@ Plug 'sebastianmarkow/' . 'deoplete-rust'           " Autocompletion: Rust
 Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 
 " Disabled {{{2
+" Sometimes useful {{{3
+"Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
+"Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
+"Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
+"Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
+"Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
+"Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
+"Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
+"Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
+"Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
+
 " Possibly useful {{{3
-"Plug 'pseewald/'       . 'vim-anyfold'             " Folding: Fold on indent
-"Plug 'Twinside/'       . 'vim-haskellFold'         " Folding: Haskell
-"Plug 'tmhedberg/'      . 'SimpylFold'              " Folding: Python
-"Plug 'tpope/'          . 'vim-commentary'          " Functional: Commenting
-"Plug 'Shougo/'         . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
-"Plug 'Yggdroot/'       . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
-"Plug 'terryma/'        . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
-"Plug 'othree/'         . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
-"Plug 'Houl/'           . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
-"Plug 'justinmk/'       . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
-"Plug 'dag/'            . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
-"Plug 'lervag/'         . 'vimtex'                  " Tools: LaTeX
-"Plug 'tpope/'          . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
-"Plug 'w0rp/'           . 'ale'                     " Visual: Linting
-"Plug 'semanser/'       . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
+"Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
+"Plug 'Twinside/'        . 'vim-haskellFold'         " Folding: Haskell
+"Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
+"Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
+"Plug 'tpope/'           . 'vim-commentary'          " Functional: Commenting
+"Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
+"Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
+"Plug 'terryma/'         . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
+"Plug 'othree/'          . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
+"Plug 'Houl/'            . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
+"Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
+"Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
+"Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
+"Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
+"Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
+"Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 
 " Probably useless {{{3
-"Plug 'scrooloose/'     . 'nerdcommenter'           " Functional: Commenting
-"Plug 'terryma/'        . 'vim-expand-region'       " Functional: Expand selection region using + and _
-"Plug 'ctrlpvim/'       . 'ctrlp.vim'               " Functional: Fuzzy search/open files within directory
-"Plug '/usr/bin/'       . 'fzf'                     " Functional: Fuzzy search/open files within directory
-"Plug 'easymotion/'     . 'vim-easymotion'          " Functional: Motion
-"Plug 'jremmen/'        . 'vim-ripgrep'             " Functional: Search
-"Plug 'goldfeld/'       . 'vim-seek'                " Functional: Use two character find (mapped to 's')
-"Plug 'scrooloose/'     . 'nerdtree'                " Visual: File explorer
-"Plug 'Yggdroot/'       . 'indentLine'              " Visual: Indent guides
-"Plug 'nathanaelkane/'  . 'vim-indent-guides'       " Visual: Indent guides
-"Plug 'vim-airline/'    . 'vim-airline'             " Visual: Statusline
-"Plug 'vim-airline/'    . 'vim-airline-themes'      " Visual: Statusline
-"Plug 'PotatoesMaster/  . 'i3-vim-syntax'           " Visual: Syntax highlighting (i3)
-"Plug 'python-mode/'    . 'python-mode', {'for': 'python'}
+"Plug 'scrooloose/'      . 'nerdcommenter'           " Functional: Commenting
+"Plug 'terryma/'         . 'vim-expand-region'       " Functional: Expand selection region using + and _
+"Plug 'ctrlpvim/'        . 'ctrlp.vim'               " Functional: Fuzzy search/open files within directory
+"Plug 'easymotion/'      . 'vim-easymotion'          " Functional: Motion
+"Plug 'jremmen/'         . 'vim-ripgrep'             " Functional: Search
+"Plug 'goldfeld/'        . 'vim-seek'                " Functional: Use two character find (mapped to 's')
+"Plug 'scrooloose/'      . 'nerdtree'                " Visual: File explorer
+"Plug 'Yggdroot/'        . 'indentLine'              " Visual: Indent guides
+"Plug 'nathanaelkane/'   . 'vim-indent-guides'       " Visual: Indent guides
+"Plug 'vim-airline/'     . 'vim-airline'             " Visual: Statusline
+"Plug 'vim-airline/'     . 'vim-airline-themes'      " Visual: Statusline
+"Plug 'PotatoesMaster/   . 'i3-vim-syntax'           " Visual: Syntax highlighting (i3)
+"Plug 'python-mode/'     . 'python-mode', {'for': 'python'}
 
 " Autocompletion {{{3
-"Plug 'Shougo/          . 'echodoc.vim'             " Documentation: Hint in command line
-"Plug 'ajh17/           . 'VimCompletesMe'          " Autocompletion: General
-"Plug 'lifepillar/      . 'vim-mucomplete'          " Autocompletion: General
-"Plug 'Valloric/        . 'YouCompleteMe'           " Autocompletion: General
-"Plug 'davidhalter/     . 'jedi-vim'                " Autocompletion: Python
-"Plug 'SirVer/          . 'ultisnips'               " Autocompletion: Snippet completion
-"Plug 'ervandew/        . 'supertab'                " Autocompletion: Tab
+"Plug 'Shougo/'          . 'echodoc.vim'             " Documentation: Hint in command line
+"Plug 'ajh17/'           . 'VimCompletesMe'          " Autocompletion: General
+"Plug 'lifepillar/'      . 'vim-mucomplete'          " Autocompletion: General
+"Plug 'Valloric/'        . 'YouCompleteMe'           " Autocompletion: General
+"Plug 'davidhalter/'     . 'jedi-vim'                " Autocompletion: Python
+"Plug 'SirVer/'          . 'ultisnips'               " Autocompletion: Snippet completion
+"Plug 'ervandew/'        . 'supertab'                " Autocompletion: Tab
 
 " Colorscheme {{{3
-"Plug 'sjl/             . 'badwolf'                 " Visual: Colorscheme
-"Plug 'gkjgh/           . 'cobalt'                  " Visual: Colorscheme
-"Plug 'junegunn/        . 'seoul256.vim'            " Visual: Colorscheme
-"Plug 'altercation/     . 'vim-colors-solarized'    " Visual: Colorscheme
-"Plug 'noahfrederick/   . 'vim-noctu'               " Visual: Colorscheme
+"Plug 'sjl/              . 'badwolf'                 " Visual: Colorscheme
+"Plug 'gkjgh/            . 'cobalt'                  " Visual: Colorscheme
+"Plug 'archSeer/'        . 'colibri.vim'             " Visual: Colorscheme (purple, cloudy)
+"Plug 'junegunn/         . 'seoul256.vim'            " Visual: Colorscheme
+"Plug 'altercation/      . 'vim-colors-solarized'    " Visual: Colorscheme
+"Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
+"Plug 'noahfrederick/    . 'vim-noctu'               " Visual: Colorscheme
 
 " Untried {{{2
 
 " Evaluate next {{{3
-"Plug 'maralla/         . 'completor.vim'           " Autocompletion: General
-"Plug 'tommcdo/         . 'vim-lion'                " Functional: Alignment
-"Plug 'nhooyr/          . 'neoman.vim'              " Tools: Pager (manpages)
-"Plug 'justinmk/        . 'vim-dirvish'             " Visual: Directory viewer
+"Plug 'maralla/'         . 'completor.vim'           " Autocompletion: General
+"Plug 'tommcdo/'         . 'vim-lion'                " Functional: Alignment
+"Plug 'nhooyr/'          . 'neoman.vim'              " Tools: Pager (manpages)
 
 " Other {{{3
-"Plug 'LucHermitte/     . 'VimFold4C'               " Folding: C++
-"Plug 'LucHermitte/     . 'lh-vim-lib'              " Folding: Library of functions for LucHermitte's scripts
-"Plug 'jiangmiao/       . 'auto-pairs'              " Functional: Auto-insert parens/quotes
-"Plug 'svermeulen/      . 'vim-easyclip'            " Functional: Blackhole delete, smart yanking, etc
-"Plug 'chrisbra/        . 'NrrwRgn'                 " Functional: Extract buffer (oooh this is cool)
-"Plug 'kana/            . 'vim-submode'             " Functional: More modes
-"Plug 'AndrewRadev/     . 'sideways.vim'            " Functional: Parameter swapping
-"Plug 'romainl/         . 'vim-qf'                  " Functional: Quickfix
-"Plug 'romainl/         . 'vim-qlist'               " Functional: Quickfix - Definition search
-"Plug 'wincent/         . 'scalpel'                 " Functional: Sublime Text-like word replace? (Ctrl+D)
-"Plug 'mbbill/          . 'undotree'                " Functional: Undo tree
-"Plug 'ivanov/          . 'vim-ipython'             " Tools:
-"Plug 'jpalardy/        . 'vim-slime'               " Tools: REPL Emacs-like
-"Plug 'idbrii/          . 'vim-ripple'              " Tools: REPL within vim
-"Plug 'vim-syntastic/   . 'syntastic'               " Tools: Syntax (compile) checking
-"Plug 'kkoenig/         . 'wimproved.vim'           " Tweak: Windows systems
-"Plug 'justinmk/        . 'vim-syntax-extra'        " Visual: More syntax highlighting
-"Plug 'thaerkh/         . 'vim-workspace'           "
-"Plug 'jreybert/        . 'vimagit'                 " vim git magic!!!
+"Plug 'LucHermitte/'     . 'VimFold4C'               " Folding: C++
+"Plug 'LucHermitte/'     . 'lh-vim-lib'              " Folding: Library of functions for LucHermitte's scripts
+"Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Auto-insert parens/quotes
+"Plug 'svermeulen/'      . 'vim-easyclip'            " Functional: Blackhole delete, smart yanking, etc
+"Plug 'chrisbra/'        . 'NrrwRgn'                 " Functional: Extract buffer (oooh this is cool)
+"Plug 'kana/'            . 'vim-submode'             " Functional: More modes
+"Plug 'AndrewRadev/'     . 'sideways.vim'            " Functional: Parameter swapping
+"Plug 'romainl/'         . 'vim-qf'                  " Functional: Quickfix
+"Plug 'romainl/'         . 'vim-qlist'               " Functional: Quickfix - Definition search
+"Plug 'wincent/'         . 'scalpel'                 " Functional: Sublime Text-like word replace? (Ctrl+D)
+"Plug 'mbbill/'          . 'undotree'                " Functional: Undo tree
+"Plug 'ivanov/'          . 'vim-ipython'             " Tools:
+"Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
+"Plug 'idbrii/'          . 'vim-ripple'              " Tools: REPL within vim
+"Plug 'vim-syntastic/'   . 'syntastic'               " Tools: Syntax (compile) checking
+"Plug 'kkoenig/'         . 'wimproved.vim'           " Tweak: Windows systems
+"Plug 'justinmk/'        . 'vim-syntax-extra'        " Visual: More syntax highlighting
+"Plug 'thaerkh/'         . 'vim-workspace'           "
+"Plug 'jreybert/'        . 'vimagit'                 " vim git magic!!!
 
 " End {{{2
 call plug#end()
@@ -376,6 +378,7 @@ autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
 autocmd FileType c,cpp    setlocal foldcolumn=3 foldmethod=syntax
 autocmd FileType java     setlocal foldcolumn=3 foldmethod=syntax
 autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
+autocmd FileType python   setlocal foldtext=FoldTextStyle()
 
 " Indenting and Tabs {{{2
 autocmd FileType fortran  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
