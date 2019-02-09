@@ -44,6 +44,7 @@ Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'w0rp/'            . 'ale'                     " Visual: Linting
+Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
 " Autocompletion {{{3
@@ -69,7 +70,6 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
-"Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 "Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Possibly useful {{{3
@@ -147,6 +147,7 @@ let g:deoplete#enable_at_startup = 1
 " deoplete-jedi {{{2
 let g:deoplete#omni_patterns = {}
 let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
+let g:deoplete#sources#jedi#ignore_errors = v:true
 let g:deoplete#sources#jedi#server_timeout = 60
 
 " deoplete-rust {{{2

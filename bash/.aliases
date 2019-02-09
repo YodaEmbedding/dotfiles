@@ -77,7 +77,8 @@ alias pacu='pacaur --noedit --noconfirm -Syu'
 alias tz='trizen'
 alias tzq='trizen -Qs'
 alias tzs='trizen --noedit -S'
-alias tzu='trizen --noedit --install_built_with_noconfirm -Syu'
+# alias tzu='trizen --noedit --install_built_with_noconfirm -Syu'
+alias tzu='trizen --noedit -Syu'
 
 # AUR package managers: yay
 alias yayq='yay -Qs'
