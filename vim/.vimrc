@@ -43,23 +43,29 @@ Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
 Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
-Plug 'w0rp/'            . 'ale'                     " Visual: Linting
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
 " Autocompletion {{{3
+Plug 'autozimu/'        . 'LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }  " Functional: LSP
+
+"Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Functional: LSP
+
 if has('nvim')
-    Plug 'Shougo/'      . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+   Plug 'Shougo/'      . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
-    Plug 'Shougo/'      . 'deoplete.nvim'
-    Plug 'roxma/'       . 'nvim-yarp'
-    Plug 'roxma/'       . 'vim-hug-neovim-rpc'
+   Plug 'Shougo/'      . 'deoplete.nvim'
+   Plug 'roxma/'       . 'nvim-yarp'
+   Plug 'roxma/'       . 'vim-hug-neovim-rpc'
 endif
 
-Plug 'eagletmt/'        . 'neco-ghc'                " Autocompletion: Haskell
-Plug 'zchee/'           . 'deoplete-jedi'           " Autocompletion: Python
-Plug 'sebastianmarkow/' . 'deoplete-rust'           " Autocompletion: Rust
-Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
+"Plug 'eagletmt/'        . 'neco-ghc'                " Autocompletion: Haskell
+"Plug 'zchee/'           . 'deoplete-jedi'           " Autocompletion: Python
+"Plug 'sebastianmarkow/' . 'deoplete-rust'           " Autocompletion: Rust
+"Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 
 " Disabled {{{2
 " Sometimes useful {{{3
@@ -69,6 +75,7 @@ Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 "Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
 "Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
+"Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 "Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
@@ -141,6 +148,13 @@ call plug#end()
 
 " PLUGIN SETTINGS {{{1
 
+" ALE {{{2
+" let g:ale_completion_enabled = 1
+" let g:ale_linters = {
+"     \ 'python': ['flake8', 'mypy', 'pylint', 'pyls'],
+"     \ 'rust': ['cargo', 'rls'],
+" \}
+
 " deoplete {{{2
 let g:deoplete#enable_at_startup = 1
 
@@ -161,6 +175,17 @@ let g:indentguides_spacechar = '│'
 
 " jedi-vim {{{2
 let g:jedi#smart_auto_mappings = 0
+
+" LanguageClient-neovim {{{2
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['pyls'],
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
+
+" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " vim-polyglot {{{2
 let g:polyglot_disabled = ['python-ident']
@@ -530,7 +555,7 @@ nnoremap <C-p>     :Denite -winheight=10 file_rec buffer<CR>
 nnoremap <Leader>b :Denite -winheight=10 buffer<CR>
 
 " deoplete {{{3
-inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
+" inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
 
 " fzf {{{3
 nnoremap <Tab>     :Buffers<CR>
