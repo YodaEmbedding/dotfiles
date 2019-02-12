@@ -32,6 +32,7 @@ endif
 " Enabled {{{2
 Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
+Plug 'takac/'           . 'vim-hardtime'            " Functional: Disable repeat hjkl movements
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
@@ -187,11 +188,16 @@ let g:LanguageClient_serverCommands = {
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
-" vim-polyglot {{{2
-let g:polyglot_disabled = ['python-ident']
-
 " vim-gutentags {{{2
 let g:gutentags_file_list_command = 'rg --files'
+
+" vim-hardtime {{{2
+let g:hardtime_allow_different_key = 1
+let g:hardtime_default_on = 1
+let g:hardtime_maxcount = 2
+
+" vim-polyglot {{{2
+let g:polyglot_disabled = ['python-ident']
 
 " vim-sleuth {{{2
 let b:sleuth_mixed_tabstop = 4
@@ -218,7 +224,8 @@ hi Normal       guifg=Grey70  ctermfg=249
 hi ColorColumn  guibg=#372735
 hi CursorLine   guibg=#402B3D
 hi Folded       guibg=#1E161F
-hi Folded       guifg=#666666
+hi Folded       guifg=#6f6f6f
+hi LineNr       guifg=#6f6f6f
 
 " hi ColorColumn  guibg=#272727
 " hi ColorColumn  guibg=#362532
