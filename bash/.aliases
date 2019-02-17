@@ -165,3 +165,5 @@ alias perm='stat -c "%a %n"'
 # Update ~/.locate.db
 alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
 
+# Update blocklists
+alias updateblocklist='wget http://john.bitsurge.net/public/biglist.p2p.gz -NP ~/.config/qBittorrent && gunzip -kf ~/.config/qBittorrent/biglist.p2p.gz'

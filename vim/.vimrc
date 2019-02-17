@@ -188,12 +188,16 @@ let g:LanguageClient_serverCommands = {
 " nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
+" tcomment_vim {{{2
+let g:tcomment_mapleader1 = ''
+
 " vim-gutentags {{{2
 let g:gutentags_file_list_command = 'rg --files'
 
 " vim-hardtime {{{2
 let g:hardtime_allow_different_key = 1
 let g:hardtime_default_on = 1
+let g:hardtime_timeout = 250
 let g:hardtime_maxcount = 2
 
 " vim-polyglot {{{2
@@ -643,7 +647,7 @@ cmap x!! x !sudo tee > /dev/null %
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Search for whole word {{{3
-nnoremap ? /\<\><Left><Left>
+nnoremap <C-_> /\<\><Left><Left>
 
 " Visual selection apply dot {{{3
 vnoremap <silent> . :normal .<CR>

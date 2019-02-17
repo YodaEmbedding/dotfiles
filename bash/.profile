@@ -1,3 +1,4 @@
+export CLASSPATH=""
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
