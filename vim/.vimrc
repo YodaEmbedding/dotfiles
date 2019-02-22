@@ -179,8 +179,9 @@ let g:jedi#smart_auto_mappings = 0
 
 " LanguageClient-neovim {{{2
 let g:LanguageClient_serverCommands = {
+    \ 'clojure': ['bash', '-c', 'clojure-lsp'],
     \ 'python': ['pyls'],
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'beta', 'rls'],
     \ }
 
 " nnoremap <F5> :call LanguageClient_contextMenu()<CR>
@@ -613,17 +614,7 @@ vnoremap <Backspace> "_dd
 " Black hole paste (in visual mode) {{{3
 xnoremap <silent> p p:let @"=@0<CR>
 
-" Clipboard copy {{{3
-" TODO RARELYUSED
-nnoremap 'y    "+yy
-vnoremap 'y    "+y
-
 " Clipboard paste {{{3
-" TODO RARELYUSED
-nnoremap ''    "+p
-vnoremap ''    "+p
-nnoremap '"    "+P
-vnoremap '"    "+P
 inoremap <C-v> <C-o>"+p
 
 " Close location list {{{3

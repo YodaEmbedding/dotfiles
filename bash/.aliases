@@ -57,7 +57,7 @@ alias py="python3"
 alias t="tmux"
 
 # vim
-alias v='nvim'
+# alias v='nvim'
 alias vim='nvim'
 alias vimprivate='vim -c "setlocal history=0 nobackup nomodeline noshelltemp noswapfile noundofile nowritebackup secure viminfo=\"\""'
 
@@ -73,11 +73,16 @@ alias pac='pacaur'
 alias pacs='pacaur --noedit --noconfirm -S'
 alias pacu='pacaur --noedit --noconfirm -Syu'
 
+# AUR package managers: pikaur
+alias pk='pikaur'
+alias pkq='pikaur -Qs'
+alias pks='pikaur -S --noconfirm'
+alias pku='pikaur -Syu'
+
 # AUR package managers: trizen
 alias tz='trizen'
 alias tzq='trizen -Qs'
 alias tzs='trizen --noedit -S'
-# alias tzu='trizen --noedit --install_built_with_noconfirm -Syu'
 alias tzu='trizen --noedit -Syu'
 
 # AUR package managers: yay
@@ -137,7 +142,7 @@ alias pbpaste='xclip -selection clipboard -o'
 
 # File opening
 alias b='bgrnd'
-alias o='bgrnd gvfs-open'
+alias o='bgrnd xdg-open'
 
 # File templates
 alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '

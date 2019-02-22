@@ -13,7 +13,7 @@ source ~/.zplug/init.zsh
 # PLUGINS {{{2
 
 # ENABLED {{{3
-zplug $(printf "%s%s" "changyuheng/" "fz"),                defer:1              # Fuzzy tab completion for z
+# zplug $(printf "%s%s" "changyuheng/" "fz"),                defer:1              # Fuzzy tab completion for z
 zplug $(printf "%s%s" "lib/"         "completion"),        from:oh-my-zsh       # Suggests command completions
 zplug $(printf "%s%s" "lib/"         "history"),           from:oh-my-zsh       #
 zplug $(printf "%s%s" "lib/"         "key-bindings"),      from:oh-my-zsh       # Useful keybindings
@@ -76,8 +76,11 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
+# fasd
+eval "$(fasd --init posix-alias zsh-hook)"
+
 # Rename files using zmv 'test(*).png' '$1.png'
-autoload zmv
+# autoload zmv
 
 # THEME {{{1
 
