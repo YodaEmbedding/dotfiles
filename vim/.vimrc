@@ -32,7 +32,7 @@ endif
 " Enabled {{{2
 Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
-Plug 'takac/'           . 'vim-hardtime'            " Functional: Disable repeat hjkl movements
+Plug 'terryma/'         . 'vim-smooth-scroll'       " Visual: Smooth scrolling
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
@@ -86,6 +86,7 @@ endif
 "Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 "Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
 "Plug 'tpope/'           . 'vim-commentary'          " Functional: Commenting
+"Plug 'takac/'           . 'vim-hardtime'            " Functional: Disable repeat hjkl movements
 "Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
 "Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
 "Plug 'terryma/'         . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
@@ -97,6 +98,7 @@ endif
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
 "Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
+" Plug 'yuttie/'          . 'comfortable-motion.vim' " Visual: Smooth scrolling
 
 " Autocompletion {{{3
 "Plug 'Shougo/'          . 'echodoc.vim'             " Documentation: Hint in command line
@@ -588,6 +590,13 @@ xmap ga <Plug>(EasyAlign)
 
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
+
+" vim-smooth-scroll {{{3
+let g:smooth_scroll_speed=25
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, g:smooth_scroll_speed, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, g:smooth_scroll_speed, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, g:smooth_scroll_speed, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, g:smooth_scroll_speed, 4)<CR>
 
 " Leader {{{2
 
