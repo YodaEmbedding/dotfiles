@@ -182,6 +182,7 @@ let g:jedi#smart_auto_mappings = 0
 " LanguageClient-neovim {{{2
 let g:LanguageClient_serverCommands = {
     \ 'clojure': ['bash', '-c', 'clojure-lsp'],
+    \ 'fortran': ['fortls', '--symbol_skip_mem', '--incrmental_sync', '--autocomplete_no_prefix'],
     \ 'python': ['pyls'],
     \ 'rust': ['~/.cargo/bin/rustup', 'run', 'beta', 'rls'],
     \ }
@@ -393,6 +394,7 @@ autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 "autocmd FileType *       setlocal foldcolumn=3 foldmethod=indent
 autocmd FileType conf     setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
 autocmd FileType i3       setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
+autocmd FileType fortran  setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldFortran()
 autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldMarkdown()
 autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
 autocmd FileType c,cpp    setlocal foldcolumn=3 foldmethod=syntax
@@ -508,11 +510,18 @@ function! FoldConfig()
     let match = matchstr(matchline, '^#*')
     let level = strlen(match)
 
-    if level > 0
-        "return ">" . string(level)
-        return ">1"
-    endif
+    if level > 0 | return ">1" | endif
+    return "="
+endfunction
 
+" Fold Fortran files {{{3
+function! FoldFortran()
+    let thisline = getline(v:lnum)
+    let match_start = match(thisline, '^\s*\(subroutine\|function\|pure function\|elemental function\)')       != -1
+    let match_end   = match(thisline, '^\s*end program') != -1
+
+    if match_start | return ">1" | endif
+    if match_end   | return ">0" | endif
     return "="
 endfunction
 
@@ -522,10 +531,7 @@ function! FoldMarkdown()
     let match = matchstr(thisline, '^#*')
     let level = strlen(match)
 
-    if level > 0
-        return ">" . string(level)
-    endif
-
+    if level > 0 | return ">" . string(level) | endif
     return "="
 endfunction
 
