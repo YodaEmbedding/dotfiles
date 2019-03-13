@@ -48,20 +48,33 @@ Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
 " Autocompletion {{{3
-Plug 'autozimu/'        . 'LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }  " Functional: LSP
+" Plug 'prabirshrestha/'  . 'asyncomplete.vim'        " Functional: Autocompletion
+" Plug 'prabirshrestha/'  . 'async.vim'               " Functional: Async API
+" Plug 'prabirshrestha/'  . 'vim-lsp'                 " Functional: LSP
+" Plug 'prabirshrestha/'  . 'asyncomplete-lsp.vim'    " Functional: Autocompletion and LSP
 
-"Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Functional: LSP
+Plug 'roxma/'           . 'nvim-yarp'               " Functional: Update framework
+Plug 'ncm2/'            . 'ncm2'                    " Functional: Autocompletion
+" Plug 'ncm2/'            . 'ncm2-vim-lsp'            " Functional: Autocompletion and LSP
+Plug 'ncm2/'            . 'ncm2-jedi'               " Autocompletion: Python
+autocmd BufEnter * call ncm2#enable_for_buffer()
+set completeopt=noinsert,menuone,noselect
+" call ncm2#override_source('LanguageClient_python', {'enable': 0})
 
-if has('nvim')
-   Plug 'Shougo/'      . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-   Plug 'Shougo/'      . 'deoplete.nvim'
-   Plug 'roxma/'       . 'nvim-yarp'
-   Plug 'roxma/'       . 'vim-hug-neovim-rpc'
-endif
+" Plug 'autozimu/'        . 'LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }  " Functional: LSP
+
+" Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Functional: LSP
+
+" if has('nvim')
+"    Plug 'Shougo/'       . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"    Plug 'Shougo/'       . 'deoplete.nvim'
+"    Plug 'roxma/'        . 'nvim-yarp'
+"    Plug 'roxma/'        . 'vim-hug-neovim-rpc'
+" endif
 
 "Plug 'eagletmt/'        . 'neco-ghc'                " Autocompletion: Haskell
 "Plug 'zchee/'           . 'deoplete-jedi'           " Autocompletion: Python
@@ -203,6 +216,15 @@ let g:hardtime_allow_different_key = 1
 let g:hardtime_default_on = 1
 let g:hardtime_timeout = 250
 let g:hardtime_maxcount = 2
+
+" vim-lsp {{{2
+if executable('pyls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
 
 " vim-polyglot {{{2
 let g:polyglot_disabled = ['python-ident']
@@ -598,7 +620,7 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 " vim-smooth-scroll {{{3
-let g:smooth_scroll_speed=25
+let g:smooth_scroll_speed=5
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, g:smooth_scroll_speed, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, g:smooth_scroll_speed, 2)<CR>
 noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, g:smooth_scroll_speed, 4)<CR>
