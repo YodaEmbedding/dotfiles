@@ -53,12 +53,12 @@ Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlightin
 " Plug 'prabirshrestha/'  . 'vim-lsp'                 " Functional: LSP
 " Plug 'prabirshrestha/'  . 'asyncomplete-lsp.vim'    " Functional: Autocompletion and LSP
 
-Plug 'roxma/'           . 'nvim-yarp'               " Functional: Update framework
-Plug 'ncm2/'            . 'ncm2'                    " Functional: Autocompletion
+" Plug 'roxma/'           . 'nvim-yarp'               " Functional: Update framework
+" Plug 'ncm2/'            . 'ncm2'                    " Functional: Autocompletion
 " Plug 'ncm2/'            . 'ncm2-vim-lsp'            " Functional: Autocompletion and LSP
-Plug 'ncm2/'            . 'ncm2-jedi'               " Autocompletion: Python
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=noinsert,menuone,noselect
+" Plug 'ncm2/'            . 'ncm2-jedi'               " Autocompletion: Python
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+" set completeopt=noinsert,menuone,noselect
 " call ncm2#override_source('LanguageClient_python', {'enable': 0})
 
 " Plug 'autozimu/'        . 'LanguageClient-neovim', {
@@ -66,7 +66,7 @@ set completeopt=noinsert,menuone,noselect
 "     \ 'do': 'bash install.sh',
 "     \ }  " Functional: LSP
 
-" Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Functional: LSP
+Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Functional: LSP
 
 " if has('nvim')
 "    Plug 'Shougo/'       . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -207,6 +207,7 @@ let g:LanguageClient_serverCommands = {
 
 " tcomment_vim {{{2
 let g:tcomment_mapleader1 = ''
+let g:tcomment_types = {'c': '// %s'}
 
 " vim-gutentags {{{2
 let g:gutentags_file_list_command = 'rg --files'
