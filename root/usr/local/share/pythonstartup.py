@@ -30,7 +30,7 @@ def print_reformat(x):
         "{:.3f}".format(x) if isinstance(x, np.complex128) else
         str(x))
 
-def print(*args, **kwargs):
+def print2(*args, **kwargs):
     __builtins__.print(*map(print_reformat, args), **kwargs)
 
 def namestr(obj, namespace):

@@ -1,0 +1,18 @@
+{
+    "languageserver": {
+        "MPLS": {
+            "command": "dotnet",
+            "args": ["exec", "/home/mulhaq/.local/share/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll"],
+            "filetypes": ["python"],
+            "initializationOptions": {
+                "interpreter": {
+                    "properties": {
+                        "InterpreterPath": "/bin/python3",
+                        "UseDefaultDatabase": true,
+                        "Version": "3.7.2"
+                    }
+                }
+            }
+        }
+    }
+}

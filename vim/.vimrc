@@ -32,12 +32,12 @@ endif
 " Enabled {{{2
 Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
-Plug 'terryma/'         . 'vim-smooth-scroll'       " Visual: Smooth scrolling
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
+Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
 Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
@@ -111,7 +111,8 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
 "Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
-" Plug 'yuttie/'          . 'comfortable-motion.vim' " Visual: Smooth scrolling
+" Plug 'yuttie/'         . 'comfortable-motion.vim'  " Visual: Smooth scrolling
+" Plug 'terryma/'        . 'vim-smooth-scroll'       " Visual: Smooth scrolling
 
 " Autocompletion {{{3
 "Plug 'Shougo/'          . 'echodoc.vim'             " Documentation: Hint in command line
@@ -151,7 +152,6 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 "Plug 'wincent/'         . 'scalpel'                 " Functional: Sublime Text-like word replace? (Ctrl+D)
 "Plug 'mbbill/'          . 'undotree'                " Functional: Undo tree
 "Plug 'ivanov/'          . 'vim-ipython'             " Tools:
-"Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 "Plug 'idbrii/'          . 'vim-ripple'              " Tools: REPL within vim
 "Plug 'vim-syntastic/'   . 'syntastic'               " Tools: Syntax (compile) checking
 "Plug 'kkoenig/'         . 'wimproved.vim'           " Tweak: Windows systems
@@ -193,12 +193,15 @@ let g:indentguides_spacechar = '│'
 let g:jedi#smart_auto_mappings = 0
 
 " LanguageClient-neovim {{{2
+let g:LanguageClient_autoStart = 1
+let g:LanguageClient_settingsPath = expand('~/.local/share/nvim/settings.json')
 let g:LanguageClient_serverCommands = {
     \ 'clojure': ['bash', '-c', 'clojure-lsp'],
     \ 'fortran': ['fortls', '--symbol_skip_mem', '--incrmental_sync', '--autocomplete_no_prefix'],
     \ 'python': ['pyls'],
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'beta', 'rls'],
+    \ 'rust': ['rustup', 'run', 'beta', 'rls'],
     \ }
+    " \ 'python': ['dotnet', 'exec', '~/.local/share/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll'],
 
 " nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 " nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
@@ -232,6 +235,9 @@ let g:polyglot_disabled = ['python-ident']
 
 " vim-sleuth {{{2
 let b:sleuth_mixed_tabstop = 4
+
+" vim-slime {{{2
+let g:slime_target = "tmux"
 
 " vim2hs {{{2
 let g:haskell_conceal_enumerations = 0
@@ -622,10 +628,10 @@ nmap ga <Plug>(EasyAlign)
 
 " vim-smooth-scroll {{{3
 let g:smooth_scroll_speed=5
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, g:smooth_scroll_speed, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, g:smooth_scroll_speed, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, g:smooth_scroll_speed, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, g:smooth_scroll_speed, 4)<CR>
+" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, g:smooth_scroll_speed, 2)<CR>
+" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, g:smooth_scroll_speed, 2)<CR>
+" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, g:smooth_scroll_speed, 4)<CR>
+" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, g:smooth_scroll_speed, 4)<CR>
 
 " Leader {{{2
 
