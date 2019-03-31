@@ -13,8 +13,8 @@ source ~/.zplug/init.zsh
 # PLUGINS {{{2
 
 # ENABLED {{{3
-# zplug $(printf "%s%s" "changyuheng/" "fz"),                defer:1              # Fuzzy tab completion for z
 zplug $(printf "%s%s" "lib/"         "completion"),        from:oh-my-zsh       # Suggests command completions
+zplug $(printf "%s%s" "lib/"         "git"),               from:oh-my-zsh       # Prompt
 zplug $(printf "%s%s" "lib/"         "history"),           from:oh-my-zsh       #
 zplug $(printf "%s%s" "lib/"         "key-bindings"),      from:oh-my-zsh       # Useful keybindings
 zplug $(printf "%s%s" "lib/"         "vi-mode"),           from:oh-my-zsh       #
@@ -24,9 +24,9 @@ zplug $(printf "%s%s" "plugins/"     "colored-man-pages"), from:oh-my-zsh       
 zplug $(printf "%s%s" "rupa/"        "z"),                 use:'*.sh'           # Navigate to most used directories
 
 # DISABLED {{{3
+#zplug $(printf "%s%s" "changyuheng/" "fz"),                defer:1              # Fuzzy tab completion for z
 #zplug $(printf "%s%s" "lib/"         "clipboard"),         from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 #zplug $(printf "%s%s" "lib/"         "colorize"),          from:oh-my-zsh       # Syntax highlight cat output
-#zplug $(printf "%s%s" "lib/"         "git"),               from:oh-my-zsh       #
 #zplug $(printf "%s%s" "lib/"         "python"),            from:oh-my-zsh       #
 #zplug $(printf "%s%s" "lib/"         "themes"),            from:oh-my-zsh       #
 #zplug $(printf "%s%s" "urbainvaes/"  "fzf-marks")                               #
@@ -97,7 +97,9 @@ setopt promptsubst
 
 PS1=$'\n'
 PS1+="%}%K{96}%F{217}%B"
-PS1+="· %D{%H:%M:%S} · %~ "
+PS1+='· %D{%H:%M:%S} '
+PS1+='· %~ '
+PS1+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
 PS1+="%b%f%k"
 PS1+=$'\n'
 PS1+="%(?.%F{magenta}.%F{red})"
