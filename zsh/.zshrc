@@ -93,13 +93,20 @@ setopt promptsubst
 # 60  , 217
 # 96  , 217
 # 234 , 217
-PS1="
-%}%K{96}%F{217}%B· %~ %b%f%k
-%K{235}%}%(12V.%F{242}%12v%f .)%(?.%F{magenta}.%F{red})${PURE_PROMPT_SYMBOL:-❯}%f "
+# for ((i=0;i<256;i++)); do echo "$(tput setab $i)$(tput setaf 4)$(tput bold)$i$(tput sgr0)"; done
+
+PS1=$'\n'
+PS1+="%}%K{96}%F{217}%B"
+PS1+="· %D{%H:%M:%S} · %~ "
+PS1+="%b%f%k"
+PS1+=$'\n'
+PS1+="%K{235}%}"
+PS1+="%(12V.%F{242}%12v%f .)"
+PS1+="%(?.%F{magenta}.%F{red})"
+PS1+="${PURE_PROMPT_SYMBOL:-❯}"
+PS1+="%f "
 
 RPROMPT='%{$reset_color%}'
-
-# for ((i=0;i<256;i++)); do echo "$(tput setab $i)$(tput setaf 4)$(tput bold)$i$(tput sgr0)"; done
 
 # Title
 case $TERM in
