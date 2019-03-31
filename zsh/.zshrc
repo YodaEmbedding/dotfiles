@@ -100,11 +100,11 @@ PS1+="%}%K{96}%F{217}%B"
 PS1+="· %D{%H:%M:%S} · %~ "
 PS1+="%b%f%k"
 PS1+=$'\n'
-PS1+="%K{235}%}"
-PS1+="%(12V.%F{242}%12v%f .)"
 PS1+="%(?.%F{magenta}.%F{red})"
-PS1+="${PURE_PROMPT_SYMBOL:-❯}"
+PS1+="$PURE_PROMPT_SYMBOL"
 PS1+="%f "
+
+PS2="> "
 
 RPROMPT='%{$reset_color%}'
 
