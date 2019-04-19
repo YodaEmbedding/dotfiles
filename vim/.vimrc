@@ -33,7 +33,7 @@ endif
 Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
-Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
+Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
@@ -41,7 +41,6 @@ Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
 Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
-Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
@@ -90,6 +89,7 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 "Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
+"Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 "Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
@@ -100,7 +100,6 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 "Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
 "Plug 'tpope/'           . 'vim-commentary'          " Functional: Commenting
 "Plug 'takac/'           . 'vim-hardtime'            " Functional: Disable repeat hjkl movements
-"Plug 'Shougo/'          . 'denite.nvim'             " Functional: Fuzzy search/open files within directory
 "Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
 "Plug 'terryma/'         . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
 "Plug 'othree/'          . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
@@ -109,10 +108,11 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 "Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
 "Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
+"Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
 "Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
 "Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
-" Plug 'yuttie/'         . 'comfortable-motion.vim'  " Visual: Smooth scrolling
-" Plug 'terryma/'        . 'vim-smooth-scroll'       " Visual: Smooth scrolling
+"Plug 'yuttie/'          . 'comfortable-motion.vim'  " Visual: Smooth scrolling
+"Plug 'terryma/'         . 'vim-smooth-scroll'       " Visual: Smooth scrolling
 
 " Autocompletion {{{3
 "Plug 'Shougo/'          . 'echodoc.vim'             " Documentation: Hint in command line
@@ -532,6 +532,15 @@ function! s:CopyMatches(reg)
     execute 'let @'.reg.' = join(hits, "\n") . "\n"'
 endfunction
 
+" Denite configure options {{{2
+function! s:denite_profile(opts) abort
+  for l:fname in keys(a:opts)
+    for l:dopt in keys(a:opts[l:fname])
+      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
+    endfor
+  endfor
+endfunction
+
 " Folding {{{2
 " Fold config files {{{3
 function! FoldConfig()
@@ -601,24 +610,49 @@ endfunction
 noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
 
 " Denite {{{3
-nnoremap <C-p>     :Denite -winheight=10 file_rec buffer<CR>
-nnoremap <Leader>b :Denite -winheight=10 buffer<CR>
+if match(&runtimepath, 'denite') != -1
+    " <Tab>         List buffers
+    " ,             List files in current directory recursively
+    " <Leader>f     List files in current directory recursively
+    " <Leader>d     List files in current directory
+    " <Leader>s     Search current directory
+    " <Leader>j     Search current directory for occurences of word under cursor
+    nnoremap <Tab>     :Denite buffer   -split=floating -winrow=1<CR>
+    nnoremap ,         :Denite file/rec -split=floating -winrow=1<CR>
+    nnoremap <Leader>f :Denite file/rec -split=floating -winrow=1<CR>
+    nnoremap <Leader>d :Denite file     -split=floating -winrow=1<CR>
+    nnoremap <Leader>s :<C-u>Denite grep:. -no-empty -mode=normal<CR>
+    nnoremap <Leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+
+    let s:denite_options = {'default' : {
+        \ 'auto_resize': 1,
+        \ 'highlight_matched_char': 'Function',
+        \ 'highlight_matched_range': 'Normal',
+        \ 'prompt': 'λ:',
+        \ 'prompt_highlight': 'Function',
+        \ 'winheight': 10
+        \ }}
+
+    call s:denite_profile(s:denite_options)
+endif
 
 " deoplete {{{3
 " inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
 
 " fzf {{{3
-nnoremap <Tab>     :Buffers<CR>
-nnoremap ,         :GFiles<CR>
-nnoremap <Leader>s :LocateFiles .<CR>
-nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>g :GFiles<CR>
-nnoremap <Leader>h :History<CR>
-nnoremap <Leader>l :Lines<CR>
-nnoremap <Leader>a :Ag!<CR>
-nnoremap <Leader>r :Rg!<CR>
-nnoremap <Leader>m :Marks<CR>
-nnoremap <Leader>t :Tags<CR>
+if match(&runtimepath, 'fzf.vim') != -1
+    nnoremap <Tab>     :Buffers<CR>
+    nnoremap ,         :GFiles<CR>
+    nnoremap <Leader>s :LocateFiles .<CR>
+    nnoremap <Leader>f :Files<CR>
+    nnoremap <Leader>g :GFiles<CR>
+    nnoremap <Leader>h :History<CR>
+    nnoremap <Leader>l :Lines<CR>
+    nnoremap <Leader>a :Ag!<CR>
+    nnoremap <Leader>r :Rg!<CR>
+    nnoremap <Leader>m :Marks<CR>
+    nnoremap <Leader>t :Tags<CR>
+endif
 
 " vim-easy-align {{{3
 " Start interactive EasyAlign in visual mode (e.g. vipga)
@@ -694,17 +728,3 @@ vnoremap <silent> . :normal .<CR>
 " Visual selection apply macro {{{3
 vnoremap <silent> <F2> :normal @q<CR>
 vnoremap <silent> <F3> :normal @@<CR>
-
-" CHEATSHEET {{{1
-
-" Useful Ex-mode commands
-" Sort after skipping       :sort n /.\{-}|/
-" Reverse lines             :%!tap
-" List of numbers           :put =range(1,10)
-
-" TODO {{{1
-
-" Free bindings:
-" ,
-" '
-" <S-d> <S-x> <S-s>
