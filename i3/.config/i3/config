@@ -187,7 +187,7 @@ bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
 bindsym $mod+minus              scratchpad show
 bindsym $mod+g                  sticky toggle
-bindsym $mod+shift+g            floating enable, sticky enable, resize set 1000 600, exec $nsi ~/.config/i3/scripts/move bottom right
+bindsym $mod+shift+g            floating toggle, sticky toggle, resize set 1000 600, exec $nsi ~/.config/i3/scripts/move bottom right
 bindsym $mod+$mod_+c            move position center
 
 # Window snap floating to edge

@@ -238,6 +238,7 @@ let b:sleuth_mixed_tabstop = 4
 
 " vim-slime {{{2
 let g:slime_target = "tmux"
+" let g:slime_python_ipython = 1
 
 " vim2hs {{{2
 let g:haskell_conceal_enumerations = 0
@@ -671,6 +672,9 @@ vnoremap <Space> za
 " Macro {{{3
 nnoremap <silent> <F2> @q
 nnoremap <silent> <F3> @@
+
+" Paste mode toggle {{{3
+set pastetoggle=<F4>
 
 " Save as sudo {{{3
 " TODO RARELYUSED
