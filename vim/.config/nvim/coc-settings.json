@@ -1,18 +1,7 @@
 {
-    "languageserver": {
-        "MPLS": {
-            "command": "dotnet",
-            "args": ["exec", "/home/mulhaq/.local/share/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll"],
-            "filetypes": ["python"],
-            "initializationOptions": {
-                "interpreter": {
-                    "properties": {
-                        "InterpreterPath": "/bin/python3",
-                        "UseDefaultDatabase": true,
-                        "Version": "3.7.2"
-                    }
-                }
-            }
-        }
-    }
+    "suggest.enablePreview": true,
+    "python.jediEnabled": false,
+    "python.linting.flake8Enabled": false,
+    "python.linting.pylintEnabled": true,
+    "suggest.timeout": 5000
 }
