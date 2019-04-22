@@ -617,10 +617,10 @@ if match(&runtimepath, 'denite') != -1
     " <Leader>d     List files in current directory
     " <Leader>s     Search current directory
     " <Leader>j     Search current directory for occurences of word under cursor
-    nnoremap <Tab>     :Denite buffer   -split=floating -winrow=1<CR>
-    nnoremap ,         :Denite file/rec -split=floating -winrow=1<CR>
-    nnoremap <Leader>f :Denite file/rec -split=floating -winrow=1<CR>
-    nnoremap <Leader>d :Denite file     -split=floating -winrow=1<CR>
+    nnoremap <Tab>     :Denite buffer  <CR>
+    nnoremap ,         :Denite file/rec<CR>
+    nnoremap <Leader>f :Denite file/rec<CR>
+    nnoremap <Leader>d :Denite file    <CR>
     nnoremap <Leader>s :<C-u>Denite grep:. -no-empty -mode=normal<CR>
     nnoremap <Leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 
@@ -630,7 +630,6 @@ if match(&runtimepath, 'denite') != -1
         \ 'highlight_matched_range': 'Normal',
         \ 'prompt': 'λ:',
         \ 'prompt_highlight': 'Function',
-        \ 'winheight': 10
         \ }}
 
     call s:denite_profile(s:denite_options)
