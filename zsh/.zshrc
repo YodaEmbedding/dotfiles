@@ -16,19 +16,19 @@ source ~/.zplug/init.zsh
 zplug $(printf "%s%s" "lib/"         "completion"),        from:oh-my-zsh       # Suggests command completions
 zplug $(printf "%s%s" "lib/"         "git"),               from:oh-my-zsh       # Prompt
 zplug $(printf "%s%s" "lib/"         "history"),           from:oh-my-zsh       #
-zplug $(printf "%s%s" "lib/"         "key-bindings"),      from:oh-my-zsh       # Useful keybindings
 zplug $(printf "%s%s" "lib/"         "vi-mode"),           from:oh-my-zsh       #
-zplug $(printf "%s%s" "mafredri/"    "zsh-async"),         defer:0              #
 zplug $(printf "%s%s" "mollifier/"   "anyframe")                                # Bindings for fuzzy commands
 zplug $(printf "%s%s" "plugins/"     "colored-man-pages"), from:oh-my-zsh       # Easier to read man pages
-zplug $(printf "%s%s" "rupa/"        "z"),                 use:'*.sh'           # Navigate to most used directories
 
 # DISABLED {{{3
 #zplug $(printf "%s%s" "changyuheng/" "fz"),                defer:1              # Fuzzy tab completion for z
 #zplug $(printf "%s%s" "lib/"         "clipboard"),         from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
 #zplug $(printf "%s%s" "lib/"         "colorize"),          from:oh-my-zsh       # Syntax highlight cat output
+#zplug $(printf "%s%s" "lib/"         "key-bindings"),      from:oh-my-zsh       # Useful keybindings
 #zplug $(printf "%s%s" "lib/"         "python"),            from:oh-my-zsh       #
 #zplug $(printf "%s%s" "lib/"         "themes"),            from:oh-my-zsh       #
+#zplug $(printf "%s%s" "mafredri/"    "zsh-async"),         defer:0              #
+#zplug $(printf "%s%s" "rupa/"        "z"),                 use:'*.sh'           # Navigate to most used directories
 #zplug $(printf "%s%s" "urbainvaes/"  "fzf-marks")                               #
 #zplug $(printf "%s%s" "zsh-users/"   "zsh-autosuggestions")                     #
 #zplug $(printf "%s%s" "zsh-users/"   "zsh-completions")                         #
@@ -190,4 +190,3 @@ bgrnd() {
 
 # fasd (similar to autojump but with shell commands): https://github.com/clvv/fasd
 # Update plugins every N days
-
