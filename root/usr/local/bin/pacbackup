@@ -1,7 +1,0 @@
-#!/bin/bash -i
-
-dir=${1:-.}
-
-pacaur -Q > "$dir/pacbackup_Q.txt"
-pacaur -Qe > "$dir/pacbackup_Qe.txt"
-

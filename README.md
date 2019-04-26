@@ -45,7 +45,8 @@ List of configs, which directories these belong in, and other details.
 | mpv            | `$HOME`  |                                                      | Video player                                     |
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
-| root           | `/`      |                                                      | Personal scripts (e.g. `emoji` clipboard copier) |
+| root           | `/`      |                                                      | PYTHONSTARTUP                                    |
+| scripts        | `$HOME`  |                                                      | Personal (e.g. `emoji` clipboard copier)         |
 | systemd        | `$HOME`  |                                                      | Services                                         |
 | termite        | `$HOME`  |                                                      | Terminal emulator                                |
 | tmux           | `$HOME`  | tmux                                                 | Terminal multiplexer                             |

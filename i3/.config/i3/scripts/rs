@@ -2,4 +2,3 @@
 
 echo $1 > ~/.rshift
 redshift -PO $1
-

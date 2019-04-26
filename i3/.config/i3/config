@@ -277,10 +277,10 @@ bindsym $mod+shift+c            exec $nsi termite -e ptipython -t "ipython scrat
 # bindsym $mod+shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
 
 # Redshift control
-bindsym $mod+m                  exec $nsi rs $(($(cat ~/.rshift) + 200))
-bindsym $mod+shift+m            exec $nsi rs $(($(cat ~/.rshift) - 200))
-bindsym $mod+ctrl+m             exec $nsi rs 4000
-bindsym $mod+ctrl+shift+m       exec $nsi rs 6500
+bindsym $mod+m                  exec $nsi ~/.config/i3/scripts/rs $(($(cat ~/.rshift) + 200))
+bindsym $mod+shift+m            exec $nsi ~/.config/i3/scripts/rs $(($(cat ~/.rshift) - 200))
+bindsym $mod+ctrl+m             exec $nsi ~/.config/i3/scripts/rs 4000
+bindsym $mod+ctrl+shift+m       exec $nsi ~/.config/i3/scripts/rs 6500
 
 # Resize window
 bindsym $mod+$mod_+h            exec $nsi ~/.config/i3/scripts/resize shrink width  5
