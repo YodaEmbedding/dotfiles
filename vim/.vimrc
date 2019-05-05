@@ -603,17 +603,21 @@ noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
 " Denite {{{3
 if match(&runtimepath, 'denite') != -1
     " <Tab>         List buffers
-    " ,             List files in current directory recursively
+    " ,             List files in current directory recursively (using fd)
     " <Leader>f     List files in current directory recursively
     " <Leader>d     List files in current directory
     " <Leader>s     Search current directory
     " <Leader>j     Search current directory for occurences of word under cursor
-    nnoremap <Tab>     :Denite buffer  <CR>
-    nnoremap ,         :Denite file/rec<CR>
-    nnoremap <Leader>f :Denite file/rec<CR>
-    nnoremap <Leader>d :Denite file    <CR>
+    nnoremap <Tab>     :Denite buffer     <CR>
+    nnoremap ,         :Denite file/rec/fd<CR>
+    nnoremap <Leader>f :Denite file/rec   <CR>
+    nnoremap <Leader>d :Denite file       <CR>
     nnoremap <Leader>s :<C-u>Denite grep:. -no-empty -mode=normal<CR>
     nnoremap <Leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
+
+    call denite#custom#alias('source', 'file/rec/fd', 'file/rec')
+    call denite#custom#var('file/rec/fd', 'command',
+        \ ['fd', '--type=f', '--follow', '--hidden', '--full-path', '--color=never', '--exclude=.git', ''])
 
     let s:denite_options = {'default' : {
         \ 'auto_resize': 1,
