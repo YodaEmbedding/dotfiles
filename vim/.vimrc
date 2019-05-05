@@ -264,17 +264,8 @@ hi CursorLine   guibg=#402B3D
 hi Folded       guibg=#1E161F
 hi Folded       guifg=#6f6f6f
 hi LineNr       guifg=#6f6f6f
-
-" hi ColorColumn  guibg=#272727
-" hi ColorColumn  guibg=#362532
-" hi CursorColumn guibg=#272727
-" hi CursorLine   guibg=#272727
-" hi Folded       guibg=#1A1218
-" hi Folded       guibg=#1A1318
-" hi Folded       guibg=#1C1219
-" hi Folded       guibg=Grey11  ctermbg=234
-" hi Folded       guifg=Grey46  ctermfg=243
-" hi LineNr       guifg=Grey30  ctermfg=239
+hi MatchParen   guibg=#446677
+hi MatchParen   guifg=#dddddd
 
 if has('gui_running')
     hi Normal guibg=DarkSlateGrey
