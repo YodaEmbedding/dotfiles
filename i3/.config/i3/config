@@ -224,7 +224,7 @@ bindsym $mod+x                  exec $nsi playerctl volume 0.05+
 bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 
 # Lyrics
-bindsym $mod+$mod_+shift+x      exec $nsi termite -e lyvi -t lyvi
+bindsym $mod+$mod_+shift+x      exec $nsi alacritty -e="lyvi" -t="lyvi"
 
 # rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
 bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
@@ -269,8 +269,8 @@ bindsym $mod+t                  exec thunar
 bindsym $mod+shift+t            exec thunar ~/Downloads
 
 # Python terminal (i.e. calculator)
-bindsym $mod+c                  exec $nsi termite -e ptpython  -t "python scratchpad"
-bindsym $mod+shift+c            exec $nsi termite -e ptipython -t "ipython scratchpad"
+bindsym $mod+c                  exec $nsi alacritty -e=ptpython  -t="python scratchpad"
+bindsym $mod+shift+c            exec $nsi alacritty -e=ptipython -t="ipython scratchpad"
 
 # termite transparency
 # bindsym $mod+semicolon          exec $nsi ~/.config/i3/scripts/termite_transparency ' + 0.01'
