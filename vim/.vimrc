@@ -37,6 +37,7 @@ Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
+Plug 'rhysd/'           . 'git-messenger.vim'       " Tools: Git commit history
 Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position

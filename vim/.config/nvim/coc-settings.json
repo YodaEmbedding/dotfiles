@@ -1,7 +1,9 @@
 {
-    "suggest.enablePreview": true,
     "python.jediEnabled": false,
     "python.linting.flake8Enabled": false,
     "python.linting.pylintEnabled": true,
+    "rust-client.channel": "beta",
+    "suggest.detailMaxLength": 50,
+    "suggest.enablePreview": true,
     "suggest.timeout": 5000
 }
