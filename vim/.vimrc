@@ -412,15 +412,15 @@ autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 autocmd FileType conf,markdown,python,vim,zsh let anyfold_activate=0
 autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 
-"autocmd FileType *       setlocal foldcolumn=3 foldmethod=indent
-autocmd FileType conf     setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
-autocmd FileType i3       setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldConfig()
-autocmd FileType fortran  setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldFortran()
-autocmd FileType markdown setlocal foldcolumn=3 foldmethod=expr   foldexpr=FoldMarkdown()
-autocmd FileType vim,zsh  setlocal foldcolumn=3 foldmethod=marker
-autocmd FileType c,cpp    setlocal foldcolumn=3 foldmethod=syntax
-autocmd FileType java     setlocal foldcolumn=3 foldmethod=syntax
-autocmd FileType rust     setlocal foldcolumn=3 foldmethod=syntax foldnestmax=2
+"autocmd FileType *       setlocal foldmethod=indent
+autocmd FileType conf     setlocal foldmethod=expr   foldexpr=FoldConfig()
+autocmd FileType i3       setlocal foldmethod=expr   foldexpr=FoldConfig()
+autocmd FileType fortran  setlocal foldmethod=expr   foldexpr=FoldFortran()
+autocmd FileType markdown setlocal foldmethod=expr   foldexpr=FoldMarkdown()
+autocmd FileType vim,zsh  setlocal foldmethod=marker
+autocmd FileType c,cpp    setlocal foldmethod=syntax
+autocmd FileType java     setlocal foldmethod=syntax
+autocmd FileType rust     setlocal foldmethod=syntax foldnestmax=2
 autocmd FileType python   setlocal foldtext=FoldTextStyle()
 
 " Indenting and Tabs {{{2
