@@ -108,6 +108,7 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 "Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
 "Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
+"Plug 'buztard/'         . 'vim-rel-jump'            " Tweak: Add to relative jk motions to jumpstack
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
 "Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
@@ -585,6 +586,15 @@ function! FoldTextStyle()
     return line . filltext . posttext
 endfunction
 
+" Save jump {{{2
+function! s:SaveJump(key, min_count)
+    let num_repeats = v:count1
+    if (v:count >= a:min_count)
+        normal! m`
+    endif
+    execute 'normal! ' . num_repeats . a:key
+endfunction
+
 " Word wrap {{{2
 function! s:ToggleWrap()
     setlocal wrap linebreak nolist
@@ -709,6 +719,10 @@ set pastetoggle=<F4>
 " TODO RARELYUSED
 cmap w!! w !sudo tee > /dev/null %
 cmap x!! x !sudo tee > /dev/null %
+
+" Save jump for up/down {{{3
+nnoremap <silent> j :<C-U>call <SID>SaveJump('j', 1)<CR>
+nnoremap <silent> k :<C-U>call <SID>SaveJump('k', 1)<CR>
 
 " Search for visually selected text {{{3
 " TODO RARELYUSED
