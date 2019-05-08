@@ -586,15 +586,6 @@ function! FoldTextStyle()
     return line . filltext . posttext
 endfunction
 
-" Save jump {{{2
-function! s:SaveJump(key, min_count)
-    let num_repeats = v:count1
-    if (v:count >= a:min_count)
-        normal! m`
-    endif
-    execute 'normal! ' . num_repeats . a:key
-endfunction
-
 " Word wrap {{{2
 function! s:ToggleWrap()
     setlocal wrap linebreak nolist
@@ -721,8 +712,11 @@ cmap w!! w !sudo tee > /dev/null %
 cmap x!! x !sudo tee > /dev/null %
 
 " Save jump for up/down {{{3
-nnoremap <silent> j :<C-U>call <SID>SaveJump('j', 1)<CR>
-nnoremap <silent> k :<C-U>call <SID>SaveJump('k', 1)<CR>
+nnoremap <expr> j (v:count >= 1 ? "m`" . v:count : '') . 'j'
+vnoremap <expr> j (v:count >= 1 ? "m`" . v:count : '') . 'j'
+
+nnoremap <expr> k (v:count >= 1 ? "m`" . v:count : '') . 'k'
+vnoremap <expr> k (v:count >= 1 ? "m`" . v:count : '') . 'k'
 
 " Search for visually selected text {{{3
 " TODO RARELYUSED
