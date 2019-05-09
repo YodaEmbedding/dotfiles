@@ -696,8 +696,11 @@ inoremap <C-v> <C-o>"+p
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
 
 " Folding {{{3
-nnoremap <Space> za
-vnoremap <Space> za
+nnoremap <Space> zA
+vnoremap <Space> zA
+
+nnoremap <C-Space> za
+vnoremap <C-Space> za
 
 " Macro {{{3
 nnoremap <silent> <F2> @q
