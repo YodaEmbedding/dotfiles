@@ -3,7 +3,36 @@
     "python.linting.flake8Enabled": false,
     "python.linting.pylintEnabled": true,
     "rust-client.channel": "beta",
-    "suggest.detailMaxLength": 50,
+    "suggest.detailField": "preview",
     "suggest.enablePreview": true,
-    "suggest.timeout": 5000
+    "suggest.timeout": 5000,
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"],
+            "ignoredRootPaths": ["~"]
+        },
+        "ccls": {
+            "command": "ccls",
+            "filetypes": ["c", "cpp", "objc", "objcpp"],
+            "rootPatterns": [".ccls", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+            "initializationOptions": {
+                "cache": {
+                    "directory": "/tmp/ccls"
+                }
+            }
+        },
+        "clojure": {
+            "command": "clojure-lsp",
+            "args": ["--stdio"],
+            "filetypes": ["clojure"]
+        },
+        "haskell": {
+            "command": "hie-wrapper",
+            "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
+            "filetypes": ["hs", "lhs", "haskell"],
+            "initializationOptions": {}
+        }
+    }
 }

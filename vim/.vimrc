@@ -68,6 +68,25 @@ Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlightin
 
 Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Functional: LSP
 
+" Extensions:
+" coc-css
+" coc-git
+" coc-highlight
+" coc-html
+" coc-json
+" coc-lists
+" coc-python
+" coc-rls
+" coc-vimlsp
+" coc-yaml
+
+" Language servers:
+" Bash: bash-language-server
+" C++: ccls
+" Clojure: clojure-lsp
+" Haskell: haskell-ide-engine
+" Rust: rls, racer
+
 " if has('nvim')
 "    Plug 'Shougo/'       . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " else
