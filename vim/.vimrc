@@ -47,26 +47,22 @@ Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
+if !has('nvim')
+    Plug 'roxma/'       . 'nvim-yarp'               " Functional: Update framework
+    Plug 'roxma/'       . 'vim-hug-neovim-rpc'      " Functional: RPC client compatibility layer
+    " Also, run: pip3 install --user pynvim
+endif
+
 " Autocompletion {{{3
-" Plug 'prabirshrestha/'  . 'asyncomplete.vim'        " Functional: Autocompletion
-" Plug 'prabirshrestha/'  . 'async.vim'               " Functional: Async API
-" Plug 'prabirshrestha/'  . 'vim-lsp'                 " Functional: LSP
-" Plug 'prabirshrestha/'  . 'asyncomplete-lsp.vim'    " Functional: Autocompletion and LSP
-
-" Plug 'roxma/'           . 'nvim-yarp'               " Functional: Update framework
-" Plug 'ncm2/'            . 'ncm2'                    " Functional: Autocompletion
-" Plug 'ncm2/'            . 'ncm2-vim-lsp'            " Functional: Autocompletion and LSP
-" Plug 'ncm2/'            . 'ncm2-jedi'               " Autocompletion: Python
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-" set completeopt=noinsert,menuone,noselect
-" call ncm2#override_source('LanguageClient_python', {'enable': 0})
-
 " Plug 'autozimu/'        . 'LanguageClient-neovim', {
 "     \ 'branch': 'next',
 "     \ 'do': 'bash install.sh',
-"     \ }  " Functional: LSP
+"     \ }                                           " Functional: LSP
 
-Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}  " Functional: LSP
+Plug 'neoclide/'        . 'coc.nvim', {
+    \ 'tag': '*',
+    \ 'do': { -> coc#util#install()}
+    \ }                                             " Functional: LSP
 
 " Extensions:
 " coc-css
@@ -86,19 +82,6 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 " Clojure: clojure-lsp
 " Haskell: haskell-ide-engine
 " Rust: rls, racer
-
-" if has('nvim')
-"    Plug 'Shougo/'       . 'deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"    Plug 'Shougo/'       . 'deoplete.nvim'
-"    Plug 'roxma/'        . 'nvim-yarp'
-"    Plug 'roxma/'        . 'vim-hug-neovim-rpc'
-" endif
-
-"Plug 'eagletmt/'        . 'neco-ghc'                " Autocompletion: Haskell
-"Plug 'zchee/'           . 'deoplete-jedi'           " Autocompletion: Python
-"Plug 'sebastianmarkow/' . 'deoplete-rust'           " Autocompletion: Rust
-"Plug 'fs111/'           . 'pydoc.vim'               " Documentation: Python
 
 " Disabled {{{2
 " Sometimes useful {{{3
@@ -134,15 +117,6 @@ Plug 'neoclide/'        . 'coc.nvim', {'tag': '*', 'do': { -> coc#util#install()
 "Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 "Plug 'yuttie/'          . 'comfortable-motion.vim'  " Visual: Smooth scrolling
 "Plug 'terryma/'         . 'vim-smooth-scroll'       " Visual: Smooth scrolling
-
-" Autocompletion {{{3
-"Plug 'Shougo/'          . 'echodoc.vim'             " Documentation: Hint in command line
-"Plug 'ajh17/'           . 'VimCompletesMe'          " Autocompletion: General
-"Plug 'lifepillar/'      . 'vim-mucomplete'          " Autocompletion: General
-"Plug 'Valloric/'        . 'YouCompleteMe'           " Autocompletion: General
-"Plug 'davidhalter/'     . 'jedi-vim'                " Autocompletion: Python
-"Plug 'SirVer/'          . 'ultisnips'               " Autocompletion: Snippet completion
-"Plug 'ervandew/'        . 'supertab'                " Autocompletion: Tab
 
 " Colorscheme {{{3
 "Plug 'sjl/              . 'badwolf'                 " Visual: Colorscheme
