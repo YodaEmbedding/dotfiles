@@ -159,34 +159,6 @@ call plug#end()
 
 " PLUGIN SETTINGS {{{1
 
-" ALE {{{2
-" let g:ale_completion_enabled = 1
-" let g:ale_linters = {
-"     \ 'python': ['flake8', 'mypy', 'pylint', 'pyls'],
-"     \ 'rust': ['cargo', 'rls'],
-" \}
-
-" deoplete {{{2
-let g:deoplete#enable_at_startup = 1
-
-" deoplete-jedi {{{2
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.terraform = '[^ *\t"{=$]\w*'
-let g:deoplete#sources#jedi#ignore_errors = v:true
-let g:deoplete#sources#jedi#server_timeout = 60
-
-" deoplete-rust {{{2
-let g:deoplete#sources#rust#racer_binary=expand('$HOME/.cargo/bin/racer')
-"let g:deoplete#sources#rust#rust_source_path=systemlist('echo "$(rustc --print sysroot)/lib/rustlib/src/rust/src"')[0]
-let g:deoplete#sources#rust#rust_source_path=expand('$RUST_SRC_PATH')
-
-" indentguides {{{2
-let g:indentguides_ignorelist = ['haskell']
-let g:indentguides_spacechar = '│'
-
-" jedi-vim {{{2
-let g:jedi#smart_auto_mappings = 0
-
 " LanguageClient-neovim {{{2
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_settingsPath = expand('~/.local/share/nvim/settings.json')
@@ -198,9 +170,9 @@ let g:LanguageClient_serverCommands = {
     \ }
     " \ 'python': ['dotnet', 'exec', '~/.local/share/microsoft-python-language-server/Microsoft.Python.LanguageServer.dll'],
 
-" nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
-" nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F5> :call LanguageClient_contextMenu()<CR>
+" nnoremap <silent> K    :call LanguageClient#textDocument_hover()<CR>
+" nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " tcomment_vim {{{2
@@ -210,41 +182,18 @@ let g:tcomment_types = {'c': '// %s'}
 " vim-gutentags {{{2
 let g:gutentags_file_list_command = 'rg --files'
 
-" vim-hardtime {{{2
-let g:hardtime_allow_different_key = 1
-let g:hardtime_default_on = 1
-let g:hardtime_timeout = 250
-let g:hardtime_maxcount = 2
-
-" vim-lsp {{{2
-if executable('pyls')
-    au User lsp_setup call lsp#register_server({
-        \ 'name': 'pyls',
-        \ 'cmd': {server_info->['pyls']},
-        \ 'whitelist': ['python'],
-        \ })
-endif
-
 " vim-polyglot {{{2
 let g:polyglot_disabled = ['python-ident']
-
-" vim-sleuth {{{2
-let b:sleuth_mixed_tabstop = 4
 
 " vim-slime {{{2
 let g:slime_target = "tmux"
 " let g:slime_python_ipython = 1
-
-" vim2hs {{{2
-let g:haskell_conceal_enumerations = 0
 
 " THEMING {{{1
 
 " Colorscheme {{{2
 " Favorites: cobalt, desert, hybrid_reverse, hybrid_material, quantum, solarized
 let g:quantum_black=1
-" colorscheme colibri
-" colorscheme hybrid_material
 colorscheme quantum
 
 " Colors {{{2
@@ -592,9 +541,6 @@ endfunction
 
 " Plugin bindings {{{2
 
-" ctags {{{3
-noremap <Leader>t :TagbarToggle<CR><C-w><C-w>
-
 " Denite {{{3
 if match(&runtimepath, 'denite') != -1
     " <Tab>         List buffers
@@ -625,9 +571,6 @@ if match(&runtimepath, 'denite') != -1
     call s:denite_profile(s:denite_options)
 endif
 
-" deoplete {{{3
-" inoremap <silent> <CR> <C-r>=deoplete#close_popup()<CR><CR>
-
 " fzf {{{3
 if match(&runtimepath, 'fzf.vim') != -1
     nnoremap <Tab>     :Buffers<CR>
@@ -642,20 +585,6 @@ if match(&runtimepath, 'fzf.vim') != -1
     nnoremap <Leader>m :Marks<CR>
     nnoremap <Leader>t :Tags<CR>
 endif
-
-" vim-easy-align {{{3
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
-" vim-smooth-scroll {{{3
-let g:smooth_scroll_speed=5
-" noremap <silent> <c-u> :call smooth_scroll#up(&scroll, g:smooth_scroll_speed, 2)<CR>
-" noremap <silent> <c-d> :call smooth_scroll#down(&scroll, g:smooth_scroll_speed, 2)<CR>
-" noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, g:smooth_scroll_speed, 4)<CR>
-" noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, g:smooth_scroll_speed, 4)<CR>
 
 " Leader {{{2
 
