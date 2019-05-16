@@ -41,6 +41,7 @@ set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data | \
 # Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
 set $rofi_dir       ~/code/frequency-index-scripts/examples/rofi_dir.sh
 set $rofi_emoji     ~/code/frequency-index-scripts/examples/rofi_emoji.sh
+set $rofi_file      ~/code/frequency-index-scripts/examples/rofi_file.sh
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
@@ -231,7 +232,7 @@ bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-mo
 bindsym $mod+ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
 bindsym $mod+ctrl+d             exec eval "$rofi_dir   $rofi_style -p 'folders' -i -levenshtein-sort"
 bindsym $mod+ctrl+e             exec eval "$rofi_emoji $rofi_style -p 'emojis'  -i -levenshtein-sort"
-bindsym $mod+d                  exec "$list_files | rofi $rofi_style -p 'files'  -dmenu -i -levenshtein-sort | xargs -0 -I {} xdg-open {}"
+bindsym $mod+d                  exec eval "$rofi_file  $rofi_style -p 'files'   -i -levenshtein-sort"
 bindsym $mod+shift+d            exec "wmctrl -l   | rofi $rofi_style -p 'window' -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Lock screen

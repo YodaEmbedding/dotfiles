@@ -1,0 +1,11 @@
+[Unit]
+Description=Updates locate database
+After=default.target
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1h
+AccuracySec=20min
+
+[Install]
+WantedBy=default.target

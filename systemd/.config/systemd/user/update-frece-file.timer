@@ -1,5 +1,5 @@
 [Unit]
-Description=Updates directory index
+Description=Updates file index
 After=default.target
 
 [Timer]
@@ -9,4 +9,3 @@ AccuracySec=20min
 
 [Install]
 WantedBy=default.target
-

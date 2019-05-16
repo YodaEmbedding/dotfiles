@@ -1,5 +1,5 @@
 [Unit]
-Description=Updates locate database
+Description=Updates directory index
 After=default.target
 
 [Timer]
@@ -9,4 +9,3 @@ AccuracySec=20min
 
 [Install]
 WantedBy=default.target
-
