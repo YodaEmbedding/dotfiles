@@ -38,10 +38,10 @@ set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data | \
                     grep -vP '^/mnt/data2/((ProgFiles/)).*$' | \
                     grep -vP '/\.'
 
-# Download scripts from https://github.com/SicariusNoctis/frequency-index-scripts
-set $rofi_dir       ~/code/frequency-index-scripts/examples/rofi_dir.sh
-set $rofi_emoji     ~/code/frequency-index-scripts/examples/rofi_emoji.sh
-set $rofi_file      ~/code/frequency-index-scripts/examples/rofi_file.sh
+# Download scripts from https://github.com/SicariusNoctis/frece
+set $rofi_dir       ~/code/frece/examples/dir_rofi.sh
+set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh
+set $rofi_file      ~/code/frece/examples/file_rofi.sh
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master

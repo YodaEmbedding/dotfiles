@@ -3,7 +3,7 @@ Description=Updates file index
 
 [Service]
 Type=oneshot
-ExecStart=/home/mulhaq/code/frequency-index-scripts/examples/refresh_file_index.sh "$HOME" "/mnt/data"
+ExecStart=/home/mulhaq/code/frece/examples/file_update.sh "$HOME" "/mnt/data"
 CPUSchedulingPolicy=idle
 CPUSchedulingPriority=1
 IOSchedulingClass=idle
