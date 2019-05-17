@@ -41,5 +41,3 @@ source /etc/profile.d/autojump.bash
 # Other options
 shopt -s extglob  # extended glob functionality
 
-# Travis CI completions
-[ -f /home/mulhaq/.travis/travis.sh ] && source /home/mulhaq/.travis/travis.sh

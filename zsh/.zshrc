@@ -82,9 +82,6 @@ eval "$(fasd --init posix-alias zsh-hook)"
 # Rename files using zmv 'test(*).png' '$1.png'
 # autoload zmv
 
-# Travis CI completions
-[ -f /home/mulhaq/.travis/travis.sh ] && source /home/mulhaq/.travis/travis.sh
-
 # THEME {{{1
 
 setopt promptsubst
