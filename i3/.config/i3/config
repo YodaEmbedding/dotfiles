@@ -48,6 +48,7 @@ set $amixer         amixer -q -D pulse set Master
 set $vol_change     pkill -SIGRTMIN+1 i3blocks
 
 # Screenshot path
+set $screen_base    $HOME/Downloads
 set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 
 
@@ -248,6 +249,9 @@ bindsym       ctrl+Print        exec maim -u "$screen_path"
 bindsym  $mod+ctrl+Print        exec maim    "$screen_path"
 bindsym      shift+Print        exec maim -u -i $(xdotool getactivewindow) "$screen_path"
 bindsym $mod+shift+Print        exec maim    -i $(xdotool getactivewindow) "$screen_path"
+
+# Screenshot: open latest
+bindsym       $mod+Print        exec xdg-open "$(ls -t $screen_base/*.png | head -1)"
 
 # Screencapture
 # TODO
