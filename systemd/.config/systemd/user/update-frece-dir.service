@@ -5,7 +5,6 @@ Description=Updates directory index
 Type=oneshot
 ExecStart=/home/mulhaq/code/frece/examples/dir_update.sh "$HOME" "/mnt/data"
 CPUSchedulingPolicy=idle
-CPUSchedulingPriority=1
 IOSchedulingClass=idle
 IOSchedulingPriority=7
 Nice=19
