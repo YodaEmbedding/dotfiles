@@ -4,8 +4,8 @@ After=default.target
 
 [Timer]
 OnBootSec=1min
-OnUnitActiveSec=1h
-AccuracySec=20min
+OnUnitActiveSec=15min
+AccuracySec=5min
 
 [Install]
 WantedBy=default.target
