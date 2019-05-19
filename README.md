@@ -45,6 +45,7 @@ List of configs, which directories these belong in, and other details.
 | mpv            | `$HOME`  |                                                      | Video player                                     |
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
+| rofi           | `$HOME`  | rofi                                                 | GUI app/command launcher                         |
 | root           | `/`      |                                                      | PYTHONSTARTUP                                    |
 | scripts        | `$HOME`  |                                                      | Personal (e.g. `emoji` clipboard copier)         |
 | systemd        | `$HOME`  |                                                      | Services                                         |

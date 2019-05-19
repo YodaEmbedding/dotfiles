@@ -28,20 +28,12 @@ set $nsi            --no-startup-id
 set $wallpaper      /usr/share/backgrounds/000current.jpg
 set $lock_wallpaper /usr/share/backgrounds/001current.png
 
-# Common style options
-set $rofi_style     -lines 10 -hide-scrollbar -separator-style none -line-padding 4 -bw 2 -font 'Roboto Mono 14' -kb-row-select 'Tab' -kb-row-tab ''
-
-# File search
-# Create database:  updatedb --require-visibility 0 -o ~/.locate.db
-set $list_files     locate -d ~/.locate.db $HOME/Downloads /mnt/data | \
-                    grep -vP '^/mnt/data/((code/OpenCV-android-sdk)|(Dropbox/((Apps/)|(Backup/Android/)|(Camera Uploads/.*\..*$)))|(Games/)|(matlab_install/)).*$' | \
-                    grep -vP '^/mnt/data2/((ProgFiles/)).*$' | \
-                    grep -vP '/\.'
-
-# Download scripts from https://github.com/SicariusNoctis/frece
-set $rofi_dir       ~/code/frece/examples/dir_rofi.sh
-set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh
-set $rofi_file      ~/code/frece/examples/file_rofi.sh
+# Download frece scripts from https://github.com/SicariusNoctis/frece
+set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi
+set $rofi_dir       ~/code/frece/examples/dir_rofi.sh   -i
+set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh -i
+set $rofi_file      ~/code/frece/examples/file_rofi.sh  -i -width 70 -lines 16
+set $rofi_win       wmctrl -l | rofi -dmenu -i
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
@@ -228,13 +220,13 @@ bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 # Lyrics
 bindsym $mod+$mod_+shift+x      exec $nsi alacritty -e="lyvi" -t="lyvi"
 
-# rofi (app launcher, sudo app launcher, file search, folder search, window jumper)
-bindsym $mod+q                  exec "rofi $rofi_style -p 'run'        -combi-modi drun,run -show combi -modi combi"
-bindsym $mod+ctrl+q             exec "rofi $rofi_style -p 'run (sudo)' -combi-modi drun,run -show combi -modi combi -run-command 'gksudo {cmd}'"
-bindsym $mod+ctrl+d             exec eval "$rofi_dir   $rofi_style -p 'folders' -i -levenshtein-sort"
-bindsym $mod+ctrl+e             exec eval "$rofi_emoji $rofi_style -p 'emojis'  -i -levenshtein-sort"
-bindsym $mod+d                  exec eval "$rofi_file  $rofi_style -p 'files'   -i -levenshtein-sort"
-bindsym $mod+shift+d            exec "wmctrl -l   | rofi $rofi_style -p 'window' -dmenu -i -levenshtein-sort | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
+# rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
+bindsym $mod+q                  exec      "$rofi_app   -p 'run'"
+bindsym $mod+ctrl+q             exec      "$rofi_app   -p 'run (sudo)' -run-command 'gksudo {cmd}'"
+bindsym $mod+ctrl+d             exec eval "$rofi_dir   -p 'folders'"
+bindsym $mod+d                  exec eval "$rofi_file  -p 'files'"
+bindsym $mod+ctrl+e             exec eval "$rofi_emoji -p 'emojis'"
+bindsym $mod+shift+d            exec eval "$rofi_win   -p 'window' | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Lock screen
 bindsym $mod+$mod_+z            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
