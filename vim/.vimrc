@@ -354,6 +354,13 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 " Check up to date plugins {{{2
 autocmd VimEnter * call CheckForUpdates()
 
+" coc.nvim {{{2
+if PlugLoaded('coc.nvim')
+    set updatetime=300
+    autocmd CursorHold * silent     call CocActionAsync('highlight')
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+endif
+
 " Conceal level {{{2
 autocmd FileType markdown setlocal conceallevel=0
 
@@ -467,6 +474,15 @@ function! CheckForUpdates()
     endif
 endfunction
 
+" coc.nvim {{{2
+function! s:CocDocumentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
+endfunction
+
 " Copy search matches {{{2
 function! s:CopyMatches(reg)
     let hits = []
@@ -548,6 +564,28 @@ endfunction
 " KEYBOARD MAPPINGS {{{1
 
 " Plugin bindings {{{2
+
+" coc.nvim {{{3
+if PlugLoaded('coc.nvim')
+    inoremap <silent><expr> <c-space> coc#refresh()
+    inoremap <silent><expr> <c-k> CocActionAsync('showSignatureHelp')
+    nnoremap <silent> K :call <SID>CocDocumentation()<CR>
+    nmap <silent> [c <Plug>(coc-diagnostic-prev)
+    nmap <silent> ]c <Plug>(coc-diagnostic-next)
+    nmap <silent> gd <Plug>(coc-definition)
+    nmap <silent> gi <Plug>(coc-implementation)
+    nmap <silent> gr <Plug>(coc-references)
+    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <leader>=  <Plug>(coc-format-selected)
+    xmap <leader>=  <Plug>(coc-format-selected)
+    nmap <leader>a  <Plug>(coc-codeaction-selected)
+    xmap <leader>a  <Plug>(coc-codeaction-selected)
+    nmap <leader>ac <Plug>(coc-codeaction)
+    nmap <leader>qf <Plug>(coc-fix-current)
+    nmap <leader>rn <Plug>(coc-rename)
+
+    " TODO CocList?
+endif
 
 " Denite {{{3
 if PlugLoaded('denite.nvim')
