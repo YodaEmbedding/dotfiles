@@ -29,6 +29,14 @@ else
     call plug#begin('~/.vim/plugged')
 endif
 
+" Check if plugin loaded {{{2
+function! PlugLoaded(name)
+    return (
+        \ has_key(g:plugs, a:name) &&
+        \ isdirectory(g:plugs[a:name].dir) &&
+        \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
+endfunction
+
 " Enabled {{{2
 Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
@@ -542,7 +550,7 @@ endfunction
 " Plugin bindings {{{2
 
 " Denite {{{3
-if match(&runtimepath, 'denite') != -1
+if PlugLoaded('denite.nvim')
     " <Tab>         List buffers
     " ,             List files in current directory recursively (using fd)
     " <Leader>f     List files in current directory recursively
@@ -572,7 +580,7 @@ if match(&runtimepath, 'denite') != -1
 endif
 
 " fzf {{{3
-if match(&runtimepath, 'fzf.vim') != -1
+if PlugLoaded('fzf.vim')
     nnoremap <Tab>     :Buffers<CR>
     nnoremap ,         :GFiles<CR>
     nnoremap <Leader>s :LocateFiles .<CR>
