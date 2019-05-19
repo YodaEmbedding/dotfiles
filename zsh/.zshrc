@@ -72,6 +72,10 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ls colors
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
 
+# vim edit-command-line
+autoload edit-command-line
+zle -N edit-command-line
+
 # cdr (for searching/jumping to frequent directories using anyframe-widget-cdr)
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
