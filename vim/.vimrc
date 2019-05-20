@@ -15,9 +15,8 @@ else
     endif
 endif
 
-let plug_remote = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-
 if empty(glob(plug_path))
+    let plug_remote = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     silent execute "!curl -fLo " . plug_path . " --create-dirs " . plug_remote
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
@@ -100,12 +99,14 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
+"Plug 'kana/'            . 'vim-submode'             " Functional: New modes
 "Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 "Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Possibly useful {{{3
 "Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
+"Plug 'msuperdock/'      . 'vim-foldout'             " Folding: Fold navigation mode (currently broken?)
 "Plug 'Twinside/'        . 'vim-haskellFold'         " Folding: Haskell
 "Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 "Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
@@ -356,7 +357,7 @@ autocmd VimEnter * call CheckForUpdates()
 
 " coc.nvim {{{2
 if PlugLoaded('coc.nvim')
-    set updatetime=300
+    set updatetime=500
     autocmd CursorHold * silent     call CocActionAsync('highlight')
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 endif
@@ -407,30 +408,32 @@ autocmd BufRead,BufNewFile *.nxc set filetype=cpp
 command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 
 " fzf {{{2
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%'),
-  \                 <bang>0)
+if PlugLoaded('fzf.vim')
+    command! -bang -nargs=* Ag
+        \ call fzf#vim#ag(<q-args>,
+        \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+        \                         : fzf#vim#with_preview('right:50%'),
+        \                 <bang>0)
 
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%'),
-  \   <bang>0)
+    command! -bang -nargs=* Rg
+        \ call fzf#vim#grep(
+        \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+        \   <bang>0 ? fzf#vim#with_preview('up:60%')
+        \           : fzf#vim#with_preview('right:50%'),
+        \   <bang>0)
 
-command! -bang -nargs=? -complete=dir Files
-  \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+    command! -bang -nargs=? -complete=dir Files
+        \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-command! -bang -nargs=? -complete=dir GFiles
-  \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
+    command! -bang -nargs=? -complete=dir GFiles
+        \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
 
-command! -bang -nargs=? -complete=dir LocateFiles
-  \ call fzf#run(fzf#wrap({
-  \     'source': 'locate --database=./.locate.db <q-args>',
-  \     'options': '-m' },
-  \   <bang>0))
+    command! -bang -nargs=? -complete=dir LocateFiles
+        \ call fzf#run(fzf#wrap({
+        \     'source': 'locate --database=./.locate.db <q-args>',
+        \     'options': '-m' },
+        \   <bang>0))
+endif
 
 " FUNCTIONS {{{1
 
@@ -456,22 +459,19 @@ function! s:JobHandlerNeovim(job_id, data, event) dict
     endif
 endfunction
 
+" TODO check only activated plugins and not all downloaded
 function! CheckForUpdates()
     let g:needToUpDate = 0
     let g:pluginUpdateStatus = ''
-    let s:callbacksNeovim = {'on_stdout': function('s:JobHandlerNeovim')}
-    let s:callbacksVim    = {'out_cb':    function('s:JobHandlerVim')}
+    let Jobstart = has('nvim') ? function("jobstart") : function("job_start")
+    let callbacks = has('nvim') ?
+        \ {'on_stdout': function('s:JobHandlerNeovim')} :
+        \ {'out_cb':    function('s:JobHandlerVim')}
 
-    " TODO check only activated plugins and not all downloaded
-    if has('nvim')
-        for key in keys(g:plugs)
-            let job2 = jobstart( ['bash', '-c', "cd " . g:plugs[key].dir ." && git remote update && git status -uno"], s:callbacksNeovim)
-        endfor
-    else
-        for key in keys(g:plugs)
-            let job2 = job_start(['bash', '-c', "cd " . g:plugs[key].dir ." && git remote update && git status -uno"], s:callbacksVim)
-        endfor
-    endif
+    for key in keys(g:plugs)
+        let cmd = "cd " . g:plugs[key].dir ." && git remote update && git status -uno"
+        let _ = Jobstart(['bash', '-c', cmd], callbacks)
+    endfor
 endfunction
 
 " coc.nvim {{{2
