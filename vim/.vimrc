@@ -44,7 +44,7 @@ Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
-Plug 'rhysd/'           . 'git-messenger.vim'       " Tools: Git commit history
+Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
@@ -118,7 +118,7 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'Houl/'            . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
-"Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
+"Plug 'rhysd/'           . 'git-messenger.vim'       " Tools: Git commit history
 "Plug 'buztard/'         . 'vim-rel-jump'            " Tweak: Add to relative jk motions to jumpstack
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
@@ -192,11 +192,16 @@ let g:tcomment_types = {'c': '// %s'}
 let g:gutentags_file_list_command = 'rg --files'
 
 " vim-polyglot {{{2
-let g:polyglot_disabled = ['python-ident']
+let g:polyglot_disabled = ['latex', 'python-ident', 'tex']
 
 " vim-slime {{{2
 let g:slime_target = "tmux"
 " let g:slime_python_ipython = 1
+
+" vimtex {{{2
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir': 'out'
+    \ }
 
 " THEMING {{{1
 
@@ -298,8 +303,9 @@ if has("gui_running")
     set guioptions -=T  " Remove toolbar
 endif
 
-" Indenting and Tabs {{{2
+" Indenting, Tabs, Spacing {{{2
 set expandtab
+set nojoinspaces        " Single spaces joining when e.g. `gqip`
 set shiftwidth=4        " Spaces [>>]  key is equivalent to
 set softtabstop=4       " Spaces [tab] key is equivalent to
 set tabstop=4           " Tab display width
@@ -357,7 +363,7 @@ autocmd VimEnter * call CheckForUpdates()
 
 " coc.nvim {{{2
 if PlugLoaded('coc.nvim')
-    set updatetime=500
+    set updatetime=50
     autocmd CursorHold * silent     call CocActionAsync('highlight')
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 endif
