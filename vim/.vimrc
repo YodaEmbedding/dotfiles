@@ -643,8 +643,6 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 " Navigate buffers {{{3
 nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
-nnoremap gn      :bn<CR>
-nnoremap gp      :bp<CR>
 
 " Miscellaneous {{{2
 
