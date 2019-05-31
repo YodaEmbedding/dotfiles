@@ -294,7 +294,7 @@ let g:vim_json_syntax_conceal = 0
 
 " Folding {{{2
 set fillchars=fold:\ 
-"set foldlevelstart=20
+set foldlevelstart=20
 set foldnestmax=4
 set foldtext=FoldTextStyle()
 
@@ -652,11 +652,11 @@ inoremap <C-v> <C-o>"+p
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
 
 " Folding {{{3
-nnoremap <Space> zA
-vnoremap <Space> zA
+" nnoremap <Space> zA
+" vnoremap <Space> zA
 
-nnoremap <C-Space> za
-vnoremap <C-Space> za
+" nnoremap <C-Space> za
+" vnoremap <C-Space> za
 
 " Macro {{{3
 nnoremap <silent> <F2> @q
