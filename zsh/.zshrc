@@ -69,6 +69,9 @@ zplug load
 # Fish-like autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# FZF
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # ls colors
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
 

@@ -40,7 +40,8 @@ endfunction
 Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
-Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
+Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
+Plug 'junegunn/'        . 'fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
@@ -100,7 +101,7 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
 "Plug 'kana/'            . 'vim-submode'             " Functional: New modes
-"Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
+"Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 "Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
@@ -415,25 +416,6 @@ command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 
 " fzf {{{2
 if PlugLoaded('fzf.vim')
-    command! -bang -nargs=* Ag
-        \ call fzf#vim#ag(<q-args>,
-        \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-        \                         : fzf#vim#with_preview('right:50%'),
-        \                 <bang>0)
-
-    command! -bang -nargs=* Rg
-        \ call fzf#vim#grep(
-        \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
-        \   <bang>0 ? fzf#vim#with_preview('up:60%')
-        \           : fzf#vim#with_preview('right:50%'),
-        \   <bang>0)
-
-    command! -bang -nargs=? -complete=dir Files
-        \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
-    command! -bang -nargs=? -complete=dir GFiles
-        \ call fzf#vim#gitfiles(<q-args>, fzf#vim#with_preview(), <bang>0)
-
     command! -bang -nargs=? -complete=dir LocateFiles
         \ call fzf#run(fzf#wrap({
         \     'source': 'locate --database=./.locate.db <q-args>',
