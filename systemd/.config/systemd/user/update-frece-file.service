@@ -9,7 +9,13 @@ ExecStart=/home/mulhaq/code/frece/examples/file_update.sh "$HOME" "/mnt/data" \
     -not ( -path /mnt/data/Documents -prune ) \
     -not ( -path /mnt/data/Games -prune ) \
     -not ( -path /mnt/data/ProgData/MATLAB -prune ) \
-    -not ( -path /mnt/data/tmp -prune )
+    -not ( -path /mnt/data/tmp -prune ) \
+    -not ( -path "/mnt/data/Dropbox/Camera Uploads" -prune ) \
+    -not ( -path "/mnt/data/Dropbox/Pics and Videos" -prune ) \
+    -path '*/build/*' -prune -o \
+    -path '*/debug/*' -prune -o \
+    -path '*/release/*' -prune -o \
+    -path '*/target/*' -prune -o
 CPUSchedulingPolicy=idle
 IOSchedulingClass=idle
 IOSchedulingPriority=7
