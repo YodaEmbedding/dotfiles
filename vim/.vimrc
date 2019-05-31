@@ -572,7 +572,17 @@ if PlugLoaded('coc.nvim')
     nmap <leader>qf <Plug>(coc-fix-current)
     nmap <leader>rn <Plug>(coc-rename)
 
-    " TODO CocList?
+    nnoremap <silent> <space><space> :<C-u>CocList<CR>
+    nnoremap <silent> <C-space>      :<C-u>CocListResume<CR>
+
+    nnoremap <silent> <space>c  :<C-u>CocList commands<CR>
+    nnoremap <silent> <space>d  :<C-u>CocList diagnostics<CR>
+    nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+    nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+    nnoremap <silent> <space>m  :<C-u>CocList marks<CR>
+    nnoremap <silent> <space>o  :<C-u>CocList outline<CR>
+    nnoremap <silent> <space>q  :<C-u>CocList quickfix<CR>
+    nnoremap <silent> <space>s  :<C-u>CocList -I symbols<CR>
 endif
 
 " Denite {{{3
