@@ -1,5 +1,4 @@
 {
-    "codeLens.enable": true,
     "diagnostic.virtualText": true,
     "python.jediEnabled": false,
     "python.linting.flake8Enabled": false,
