@@ -577,12 +577,11 @@ if PlugLoaded('coc.nvim')
 
     nnoremap <silent> <space>c  :<C-u>CocList commands<CR>
     nnoremap <silent> <space>d  :<C-u>CocList diagnostics<CR>
-    nnoremap <silent> <space>j  :<C-u>CocNext<CR>
-    nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
     nnoremap <silent> <space>m  :<C-u>CocList marks<CR>
     nnoremap <silent> <space>o  :<C-u>CocList outline<CR>
     nnoremap <silent> <space>q  :<C-u>CocList quickfix<CR>
     nnoremap <silent> <space>s  :<C-u>CocList -I symbols<CR>
+    nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 endif
 
 " Denite {{{3
