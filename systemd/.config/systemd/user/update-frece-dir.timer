@@ -1,6 +1,5 @@
 [Unit]
 Description=Updates directory index
-After=timers.target
 
 [Timer]
 OnBootSec=1min
@@ -8,4 +7,4 @@ OnUnitActiveSec=15min
 AccuracySec=5min
 
 [Install]
-WantedBy=timers.target
+WantedBy=default.target
