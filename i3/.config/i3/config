@@ -269,7 +269,12 @@ bindsym $mod+$mod_+s            exec $scripts/switchto "subl"                 "s
 bindsym $mod+$mod_+x            exec $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
 
 # Thunar > Downloads
-bindsym $mod+shift+t            exec thunar ~/Downloads
+bindsym $mod+t                  exec thunar ~/Downloads
+
+# Refresh search index
+bindsym $mod+shift+t            exec \
+                                    systemctl --user --no-block start update-frece-dir.service && \
+                                    systemctl --user --no-block start update-frece-file.service
 
 # Python terminal (i.e. calculator)
 bindsym $mod+c                  exec $nsi alacritty -e=ptpython  -t="python scratchpad"
