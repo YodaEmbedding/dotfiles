@@ -132,6 +132,9 @@ bindsym $mod+grave              workspace back_and_forth
 # Workspace switch back/forth and move
 bindsym $mod+shift+grave        move container to workspace back_and_forth; workspace back_and_forth
 
+# Window switch back/forth
+bindsym $mod_+grave             exec $scripts/focus_last --switch
+
 # Next/previous windows
 bindsym $mod_+Tab               focus right
 bindsym $mod_+shift+Tab         focus left
@@ -421,6 +424,7 @@ exec_always $nsi    xinput --set-prop $(xinput list --short | grep "Razer Abyssu
 exec        $nsi    /usr/local/bin/lightsOn/lightsOn.sh 300
 exec_always $nsi    feh --bg-scale $wallpaper
 exec_always $nsi    ~/.config/polybar/polybar.sh
+exec_always $nsi    $(eval "pgrep -f '^python.*focus_last$' | xargs kill; $scripts/focus_last")
 
 # Medium startup
 exec        $nsi    "sleep 20 && copyq"
