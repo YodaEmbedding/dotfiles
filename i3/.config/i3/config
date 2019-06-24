@@ -268,9 +268,19 @@ bindsym $mod+shift+t            exec thunar ~/Downloads
 bindsym $mod+c                  exec $nsi alacritty -e=ptpython  -t="python scratchpad"
 bindsym $mod+shift+c            exec $nsi alacritty -e=ptipython -t="ipython scratchpad"
 
-# termite transparency
-# bindsym $mod+semicolon          exec $nsi ~/.config/i3/scripts/termite_transparency ' + 0.01'
-# bindsym $mod+shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
+# Transparency
+bindsym $mod+ctrl+o             exec $nsi transset-df -a -t
+bindsym $mod+o                  exec $nsi transset-df -a --inc 0.05
+bindsym $mod+shift+o            exec $nsi transset-df -a --dec 0.05
+bindsym $mod+$mod_+o            exec $nsi transset-df -a --inc 0.01
+bindsym $mod+$mod_+shift+o      exec $nsi transset-df -a --dec 0.01
+bindsym $mod+$mod_+ctrl+o       exec $nsi transset-df -a $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity" | awk '{print $1 / 100}')
+
+# Transparency (via compton)
+# bindsym $mod+o                  exec $nsi compton-trans -c --delete
+# bindsym $mod+o                  exec $nsi compton-trans -c +5
+# bindsym $mod+shift+o            exec $nsi compton-trans -c -- -5
+# bindsym $mod+$mod_+o            exec $nsi compton-trans -c -o $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity")
 
 # Redshift control
 bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.rshift) + 200))
