@@ -24,6 +24,9 @@ set $ws666 "666:"
 # Flags
 set $nsi            --no-startup-id
 
+# Scripts paths
+ set $scripts       ~/.config/i3/scripts
+
 # Wallpaper paths
 set $wallpaper      /usr/share/backgrounds/000current.jpg
 set $lock_wallpaper /usr/share/backgrounds/001current.png
@@ -181,19 +184,19 @@ bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
 bindsym $mod+minus              scratchpad show
 bindsym $mod+g                  sticky toggle
-bindsym $mod+shift+g            floating toggle, sticky toggle, resize set 1000 600, exec $nsi ~/.config/i3/scripts/move bottom right
+bindsym $mod+shift+g            floating toggle, sticky toggle, resize set 1000 600, exec $nsi $scripts/move bottom right
 bindsym $mod+$mod_+c            move position center
 
 # Window snap floating to edge
-bindcode $mod+87                exec $nsi ~/.config/i3/scripts/move bottom left
-bindcode $mod+88                exec $nsi ~/.config/i3/scripts/move bottom center
-bindcode $mod+89                exec $nsi ~/.config/i3/scripts/move bottom right
-bindcode $mod+83                exec $nsi ~/.config/i3/scripts/move middle left
-bindcode $mod+84                exec $nsi ~/.config/i3/scripts/move middle center
-bindcode $mod+85                exec $nsi ~/.config/i3/scripts/move middle right
-bindcode $mod+79                exec $nsi ~/.config/i3/scripts/move top left
-bindcode $mod+80                exec $nsi ~/.config/i3/scripts/move top center
-bindcode $mod+81                exec $nsi ~/.config/i3/scripts/move top right
+bindcode $mod+87                exec $nsi $scripts/move bottom left
+bindcode $mod+88                exec $nsi $scripts/move bottom center
+bindcode $mod+89                exec $nsi $scripts/move bottom right
+bindcode $mod+83                exec $nsi $scripts/move middle left
+bindcode $mod+84                exec $nsi $scripts/move middle center
+bindcode $mod+85                exec $nsi $scripts/move middle right
+bindcode $mod+79                exec $nsi $scripts/move top left
+bindcode $mod+80                exec $nsi $scripts/move top center
+bindcode $mod+81                exec $nsi $scripts/move top right
 
 # Volume control
 bindsym XF86AudioLowerVolume    exec $nsi $amixer 5%-    && $vol_change
@@ -229,7 +232,7 @@ bindsym $mod+ctrl+e             exec eval "$rofi_emoji -p 'emojis'"
 bindsym $mod+shift+d            exec eval "$rofi_win   -p 'window' | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
 
 # Lock screen
-bindsym $mod+$mod_+z            exec $nsi ~/.config/i3/scripts/lock $ws666 $lock_wallpaper
+bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
 
 # Jump to urgent window
 bindsym $mod+u                  [urgent=latest] focus
@@ -252,15 +255,11 @@ bindsym       $mod+Print        exec xdg-open "$(ls -t $screen_base/*.png | head
 bindsym $mod+p                  exec gcolor2
 
 # Shortcuts: open/switch to
-bindsym $mod+$mod_+f            exec ~/.config/i3/scripts/switchto "firefox"              "Firefox"
-bindsym $mod+$mod_+g            exec ~/.config/i3/scripts/switchto "google-chrome-stable" "Chrome"
-bindsym $mod+$mod_+o            exec ~/.config/i3/scripts/switchto "okular"               "Okular"
-bindsym $mod+$mod_+b            exec ~/.config/i3/scripts/switchto "qbittorrent"          "qBittorrent"
-bindsym $mod+$mod_+s            exec ~/.config/i3/scripts/switchto "subl"                 "subl"
-bindsym $mod+$mod_+x            exec ~/.config/i3/scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
-
-# Thunar
-bindsym $mod+t                  exec thunar
+bindsym $mod+$mod_+f            exec $scripts/switchto "firefox"              "Firefox"
+bindsym $mod+$mod_+g            exec $scripts/switchto "google-chrome-stable" "Chrome"
+bindsym $mod+$mod_+b            exec $scripts/switchto "qbittorrent"          "qBittorrent"
+bindsym $mod+$mod_+s            exec $scripts/switchto "subl"                 "subl"
+bindsym $mod+$mod_+x            exec $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
 
 # Thunar > Downloads
 bindsym $mod+shift+t            exec thunar ~/Downloads
@@ -274,41 +273,41 @@ bindsym $mod+shift+c            exec $nsi alacritty -e=ptipython -t="ipython scr
 # bindsym $mod+shift+semicolon    exec $nsi ~/.config/i3/scripts/termite_transparency ' - 0.01'
 
 # Redshift control
-bindsym $mod+m                  exec $nsi ~/.config/i3/scripts/rs $(($(cat ~/.rshift) + 200))
-bindsym $mod+shift+m            exec $nsi ~/.config/i3/scripts/rs $(($(cat ~/.rshift) - 200))
-bindsym $mod+ctrl+m             exec $nsi ~/.config/i3/scripts/rs 4000
-bindsym $mod+ctrl+shift+m       exec $nsi ~/.config/i3/scripts/rs 6500
+bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.rshift) + 200))
+bindsym $mod+shift+m            exec $nsi $scripts/rs $(($(cat ~/.rshift) - 200))
+bindsym $mod+ctrl+m             exec $nsi $scripts/rs 4000
+bindsym $mod+ctrl+shift+m       exec $nsi $scripts/rs 6500
 
 # Resize window
-bindsym $mod+$mod_+h            exec $nsi ~/.config/i3/scripts/resize shrink width  5
-bindsym $mod+$mod_+j            exec $nsi ~/.config/i3/scripts/resize grow   height 5
-bindsym $mod+$mod_+k            exec $nsi ~/.config/i3/scripts/resize shrink height 5
-bindsym $mod+$mod_+l            exec $nsi ~/.config/i3/scripts/resize grow   width  5
+bindsym $mod+$mod_+h            exec $nsi $scripts/resize shrink width  5
+bindsym $mod+$mod_+j            exec $nsi $scripts/resize grow   height 5
+bindsym $mod+$mod_+k            exec $nsi $scripts/resize shrink height 5
+bindsym $mod+$mod_+l            exec $nsi $scripts/resize grow   width  5
 
-bindsym $mod+$mod_+Left         exec $nsi ~/.config/i3/scripts/resize shrink width  5
-bindsym $mod+$mod_+Down         exec $nsi ~/.config/i3/scripts/resize grow   height 5
-bindsym $mod+$mod_+Up           exec $nsi ~/.config/i3/scripts/resize shrink height 5
-bindsym $mod+$mod_+Right        exec $nsi ~/.config/i3/scripts/resize grow   width  5
+bindsym $mod+$mod_+Left         exec $nsi $scripts/resize shrink width  5
+bindsym $mod+$mod_+Down         exec $nsi $scripts/resize grow   height 5
+bindsym $mod+$mod_+Up           exec $nsi $scripts/resize shrink height 5
+bindsym $mod+$mod_+Right        exec $nsi $scripts/resize grow   width  5
 
-bindsym $mod+$mod_+shift+h      exec $nsi ~/.config/i3/scripts/resize shrink width  1
-bindsym $mod+$mod_+shift+j      exec $nsi ~/.config/i3/scripts/resize grow   height 1
-bindsym $mod+$mod_+shift+k      exec $nsi ~/.config/i3/scripts/resize shrink height 1
-bindsym $mod+$mod_+shift+l      exec $nsi ~/.config/i3/scripts/resize grow   width  1
+bindsym $mod+$mod_+shift+h      exec $nsi $scripts/resize shrink width  1
+bindsym $mod+$mod_+shift+j      exec $nsi $scripts/resize grow   height 1
+bindsym $mod+$mod_+shift+k      exec $nsi $scripts/resize shrink height 1
+bindsym $mod+$mod_+shift+l      exec $nsi $scripts/resize grow   width  1
 
-bindsym $mod+$mod_+shift+Left   exec $nsi ~/.config/i3/scripts/resize shrink width  1
-bindsym $mod+$mod_+shift+Down   exec $nsi ~/.config/i3/scripts/resize grow   height 1
-bindsym $mod+$mod_+shift+Up     exec $nsi ~/.config/i3/scripts/resize shrink height 1
-bindsym $mod+$mod_+shift+Right  exec $nsi ~/.config/i3/scripts/resize grow   width  1
+bindsym $mod+$mod_+shift+Left   exec $nsi $scripts/resize shrink width  1
+bindsym $mod+$mod_+shift+Down   exec $nsi $scripts/resize grow   height 1
+bindsym $mod+$mod_+shift+Up     exec $nsi $scripts/resize shrink height 1
+bindsym $mod+$mod_+shift+Right  exec $nsi $scripts/resize grow   width  1
 
-bindsym $mod+$mod_+ctrl+h       exec $nsi ~/.config/i3/scripts/resize shrink width  20
-bindsym $mod+$mod_+ctrl+j       exec $nsi ~/.config/i3/scripts/resize grow   height 20
-bindsym $mod+$mod_+ctrl+k       exec $nsi ~/.config/i3/scripts/resize shrink height 20
-bindsym $mod+$mod_+ctrl+l       exec $nsi ~/.config/i3/scripts/resize grow   width  20
+bindsym $mod+$mod_+ctrl+h       exec $nsi $scripts/resize shrink width  20
+bindsym $mod+$mod_+ctrl+j       exec $nsi $scripts/resize grow   height 20
+bindsym $mod+$mod_+ctrl+k       exec $nsi $scripts/resize shrink height 20
+bindsym $mod+$mod_+ctrl+l       exec $nsi $scripts/resize grow   width  20
 
-bindsym $mod+$mod_+ctrl+Left    exec $nsi ~/.config/i3/scripts/resize shrink width  20
-bindsym $mod+$mod_+ctrl+Down    exec $nsi ~/.config/i3/scripts/resize grow   height 20
-bindsym $mod+$mod_+ctrl+Up      exec $nsi ~/.config/i3/scripts/resize shrink height 20
-bindsym $mod+$mod_+ctrl+Right   exec $nsi ~/.config/i3/scripts/resize grow   width  20
+bindsym $mod+$mod_+ctrl+Left    exec $nsi $scripts/resize shrink width  20
+bindsym $mod+$mod_+ctrl+Down    exec $nsi $scripts/resize grow   height 20
+bindsym $mod+$mod_+ctrl+Up      exec $nsi $scripts/resize shrink height 20
+bindsym $mod+$mod_+ctrl+Right   exec $nsi $scripts/resize grow   width  20
 
 
 ### USER CUSTOMIZATIONS ###
@@ -351,7 +350,7 @@ for_window [title="^Guitarix: gx_head$"] \
 
 for_window [title="^lyvi$"] \
     floating enable, \
-    exec $nsi ~/.config/i3/scripts/move bottom right, \
+    exec $nsi $scripts/move bottom right, \
     move scratchpad, scratchpad show
 
 for_window [title="Mozilla Firefox"] \
