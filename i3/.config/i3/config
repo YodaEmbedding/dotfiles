@@ -126,6 +126,9 @@ bindsym --whole-window --border $mod+ctrl+Button4   exec $nsi $amixer 1%+ && $vo
 bindsym --whole-window --border $mod+ctrl+Button5   exec $nsi $amixer 1%- && $vol_change
 bindsym --border                Button2             kill
 
+# Window switch
+bindsym $mod+space              exec wmfocus --halign center --valign center
+
 # Workspace switch back/forth
 bindsym $mod+grave              workspace back_and_forth
 
