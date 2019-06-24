@@ -68,9 +68,10 @@ bindsym $mod+Up                 focus up
 bindsym $mod+Right              focus right
 
 # Layout
-bindsym $mod+w layout           tabbed
-#bindsym $mod+s layout           stacking
-#bindsym $mod+e layout           toggle split
+bindsym $mod+y                  layout tabbed
+#bindsym $mod+w                  layout tabbed
+#bindsym $mod+s                  layout stacking
+#bindsym $mod+e                  layout toggle split
 
 # Split
 bindsym $mod+v                  split v
@@ -456,26 +457,23 @@ exec        $nsi    dropbox
 # Unused bindings:
 # $mod+space
 # $mod+shift+space
-# $mod+g
 # $mod+i
 # $mod+n
-# $mod+o
 # $mod+p
 # $mod+r
-# $mod+u
-# $mod+y
+# $mod+w
 # $mod+shift+f
-# $mod+shift+g
 # $mod+shift+v
 # $mod+shift+y
 
 # Rarely used bindings:
 # $mod+a
-# $mod+t
 # $mod+s
+# $mod+u
+# $mod+y
 
 # Highly used bindings (that are hard to reach):
-# $mod+shift+t
+# $mod+t
 
 # vim-like mark window with keybind
 
