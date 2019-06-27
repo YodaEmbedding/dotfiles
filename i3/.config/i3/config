@@ -400,10 +400,9 @@ assign [class="Google Play Music Desktop Player"] → $ws9
 
 ### USER BAR ###
 
-#bar {
-#    font pango:Noto Sans Regular, FontAwesome 9
-#    # font pango:Roboto Mono, FontAwesome 9
-#    # font pango:Dejavu Sans Mono, FontAwesome 9
+# bar {
+#    font pango:DejavuSansMono, FontAwesome5Free, FontAwesome5Brands, MaterialIcons, RobotoMono 10.5
+#    # pango:NotoSans-Regular
 #    position top
 #    status_command i3status-rs ~/.config/i3/status.toml
 #    strip_workspace_numbers yes
@@ -412,12 +411,12 @@ assign [class="Google Play Music Desktop Player"] → $ws9
 #        background          #221133
 #        statusline          #dddddd
 #        # class             border  backgr. text
-#        focused_workspace   #aa3366 #aa3366 #ffffff
-#        active_workspace    #333333 #333333 #ffffff
-#        inactive_workspace  #552244 #662255 #888888
-#        urgent_workspace    #cc3399 #cc3399 #ffffff
+#        focused_workspace   #aa3366 #aa3366 #eeccdd
+#        active_workspace    #333333 #333333 #eeccdd
+#        inactive_workspace  #552244 #662255 #88777f
+#        urgent_workspace    #cc3399 #cc3399 #eeccdd
 #    }
-#}
+# }
 
 
 ### USER STARTUP ###
