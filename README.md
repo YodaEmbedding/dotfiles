@@ -54,5 +54,6 @@ List of configs, which directories these belong in, and other details.
 | tmux           | `$HOME`  | tmux                                                 | Terminal multiplexer                             |
 | vim            | `$HOME`  | neovim, neovim-plug, python-neovim                   | Better than emacs                                |
 | xmodmap        | `$HOME`  |                                                      | Keyboard remappings (e.g. Caps Lock -> Escape)   |
+| zathura        | `$HOME`  | zathura                                              | PDF reader                                       |
 | zsh            | `$HOME`  | zplug                                                | Shell                                            |
 

@@ -1,0 +1,8 @@
+set adjust-open             width
+set guioptions              chsv
+set recolor                 true
+set recolor-keephue         true
+set scroll-step             150
+set window-title-basename   true
+unmap q
+map C-j scroll up 3
