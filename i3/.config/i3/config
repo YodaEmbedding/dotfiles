@@ -113,6 +113,7 @@ bindsym $mod+shift+9            move container to workspace $ws9;  workspace $ws
 bindsym $mod+shift+0            move container to workspace $ws10; workspace $ws10
 
 # Restart/reload i3
+bindsym $mod+r                  reload
 bindsym $mod+shift+r            restart
 
 
