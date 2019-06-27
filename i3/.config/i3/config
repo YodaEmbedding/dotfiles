@@ -228,11 +228,14 @@ bindsym $mod+x                  exec $nsi playerctl volume 0.05+
 bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 
 # Lyrics
-bindsym $mod+$mod_+shift+x      exec $nsi alacritty -e="lyvi" -t="lyvi"
+bindsym $mod+$mod_+shift+x      exec $nsi alacritty -t lyvi -e lyvi
+
+# Dropdown terminal
+bindsym $mod+q                  [instance="dropdown"] scratchpad show
 
 # rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
-bindsym $mod+q                  exec      "$rofi_app   -p 'run'"
-bindsym $mod+ctrl+q             exec      "$rofi_app   -p 'run (sudo)' -run-command 'gksudo {cmd}'"
+bindsym $mod+w                  exec      "$rofi_app   -p 'run'"
+bindsym $mod+ctrl+w             exec      "$rofi_app   -p 'run (sudo)' -run-command 'gksudo {cmd}'"
 bindsym $mod+ctrl+d             exec eval "$rofi_dir   -p 'folders'"
 bindsym $mod+d                  exec eval "$rofi_file  -p 'files'"
 bindsym $mod+ctrl+e             exec eval "$rofi_emoji -p 'emojis'"
@@ -353,6 +356,11 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #333333
 
 # Default window settings
+for_window [instance="dropdown"] \
+    floating enable, border none, \
+    resize set 100 ppt 50 ppt, move position 0 24, \
+    move scratchpad, scratchpad show
+
 for_window [title="^i?python scratchpad$"] \
     floating enable, border none, \
     resize set 600 255, move position 0 20, \
@@ -435,8 +443,8 @@ exec_always $nsi    ~/.config/polybar/polybar.sh
 exec_always $nsi    $(eval "pgrep -f '^python.*focus_last$' | xargs kill; $scripts/focus_last")
 
 # Medium startup
+exec        $nsi    alacritty --class dropdown -e tmux
 exec        $nsi    "sleep 20 && copyq"
-exec        $nsi    tilda
 
 # Slow startup
 exec        $nsi    "sleep 10 && cadence-session-start --system-start"
