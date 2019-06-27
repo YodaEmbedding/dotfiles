@@ -36,6 +36,7 @@ List of configs, which directories these belong in, and other details.
 | bash           | `$HOME`  |                                                      | Shell                                            |
 | colors         | `$HOME`  |                                                      | Terminal and rofi colors                         |
 | compton        | `$HOME`  |                                                      | Compositor                                       |
+| devilspie      | `$HOME`  | devilspie, devilspie2                                | Window tweaker                                   |
 | dunst          | `$HOME`  |                                                      | Notification manager                             |
 | git            | `$HOME`  |                                                      | Personal                                         |
 | i3             | `$HOME`  | feh, i3lock-color, jq, maim, mlocate, rofi, ttf-noto, wmctrl | Window manager                           |
