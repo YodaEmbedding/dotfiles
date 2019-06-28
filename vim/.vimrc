@@ -621,6 +621,7 @@ if PlugLoaded('fzf.vim')
     nnoremap ,         :GFiles<CR>
     nnoremap <Leader>s :LocateFiles .<CR>
     nnoremap <Leader>f :Files<CR>
+    nnoremap <Leader>F :Files %:h<CR>
     nnoremap <Leader>g :GFiles<CR>
     nnoremap <Leader>h :History<CR>
     nnoremap <Leader>l :Lines<CR>

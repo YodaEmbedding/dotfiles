@@ -138,7 +138,7 @@ bindsym $mod+grave              workspace back_and_forth
 bindsym $mod+shift+grave        move container to workspace back_and_forth; workspace back_and_forth
 
 # Window switch back/forth
-bindsym $mod_+grave             exec $scripts/focus_last --switch
+bindsym $mod+$mod_+grave        exec $scripts/focus_last --switch
 
 # Next/previous windows
 bindsym $mod_+Tab               focus right
@@ -229,10 +229,10 @@ bindsym $mod+x                  exec $nsi playerctl volume 0.05+
 bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 
 # Lyrics
-bindsym $mod+$mod_+shift+x      exec $nsi alacritty -t lyvi -e lyvi
+bindsym $mod+$mod_+shift+x      exec $nsi alacritty --class lyvi -t lyvi -e lyvi
 
 # Dropdown terminal
-bindsym $mod+q                  [instance="dropdown"] scratchpad show
+bindsym $mod+q                  [instance="^dropdown$"] scratchpad show
 
 # rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
 bindsym $mod+w                  exec      "$rofi_app   -p 'run'"
@@ -357,10 +357,10 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #333333
 
 # Default window settings
-for_window [instance="dropdown"] \
+for_window [instance="^dropdown$"] \
     floating enable, border none, \
     resize set 100 ppt 50 ppt, move position 0 24, \
-    move scratchpad, scratchpad show
+    move scratchpad
 
 for_window [title="^i?python scratchpad$"] \
     floating enable, border none, \
@@ -379,7 +379,7 @@ for_window [title="^Guitarix: gx_head$"] \
     floating enable, border none, \
     move position center
 
-for_window [title="^lyvi$"] \
+for_window [instance="^lyvi$"] \
     floating enable, \
     exec $nsi $scripts/move bottom right, \
     move scratchpad, scratchpad show
