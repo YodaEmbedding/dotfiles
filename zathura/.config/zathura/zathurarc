@@ -1,5 +1,5 @@
 set adjust-open             width
-set guioptions              chsv
+set guioptions              hsv
 set recolor                 true
 set recolor-keephue         true
 set scroll-step             150
