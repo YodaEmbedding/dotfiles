@@ -1,0 +1,1 @@
+-- os.execute("xprop -remove _NET_WM_WINDOW_OPACITY -id " .. get_window_xid());

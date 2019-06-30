@@ -1,3 +1,3 @@
 -- scripts_window_focus = {
---     "dropdown.lua"
+--     "opacity_fix.lua"
 -- }
