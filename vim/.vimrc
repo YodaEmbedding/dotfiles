@@ -261,13 +261,9 @@ set statusline+=%{&expandtab?\"sp\":\"tab\"}\   " Indent settings
 set statusline+=%{&shiftwidth}                  " Indent settings
 set statusline+=]                               " Indent settings: end
 set statusline+=\ \ \ \                         " ----
-set statusline+=%2c                             " Cursor column
-set statusline+=\ \                             " --
 set statusline+=%2v                             " Cursor column (virtual)
 set statusline+=\ \                             " --
 set statusline+=(%l\ /\ %L)                     " Cursor line/total lines
-" set statusline+=\ \                             " --
-" set statusline+=%P                              " Percent through file
 
 " Statusline colors {{{3
 hi StatusLine guibg=NONE ctermbg=NONE
