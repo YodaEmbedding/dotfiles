@@ -214,7 +214,13 @@ colorscheme quantum
 
 " Colors {{{2
 set background=dark
-set termguicolors
+if exists('+termguicolors')
+    if !has('nvim')
+        let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+        let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    endif
+    set termguicolors
+endif
 
 hi Normal       guibg=NONE    ctermbg=NONE
 hi Normal       guifg=Grey70  ctermfg=249
