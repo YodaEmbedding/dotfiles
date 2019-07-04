@@ -1,8 +1,10 @@
 set adjust-open             width
 set guioptions              hsv
+set notification-bg         "#131313"
+set notification-fg         "#ffffff"
 set recolor                 true
 set recolor-keephue         true
 set scroll-step             150
 set window-title-basename   true
-unmap q
 map C-j scroll up 3
+unmap q
