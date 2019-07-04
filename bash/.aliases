@@ -168,7 +168,11 @@ alias diskusage='du -sh'
 alias perm='stat -c "%a %n"'
 
 # Update ~/.locate.db
-alias updatelocate='updatedb --require-visibility 0 -o ~/.locate.db'
+alias updatelocate='systemctl --user --no-block start update-locate.service'
 
 # Update blocklists
 alias updateblocklist='wget http://john.bitsurge.net/public/biglist.p2p.gz -NP ~/.config/qBittorrent && gunzip -kf ~/.config/qBittorrent/biglist.p2p.gz'
+
+# Update frece databases
+alias updatefrece='systemctl --user --no-block start update-frece-dir.service; systemctl --user --no-block start update-frece-file.service'
+
