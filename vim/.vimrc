@@ -233,6 +233,8 @@ hi LineNr       guifg=#6f6f6f
 hi MatchParen   guibg=#446677
 hi MatchParen   guifg=#dddddd
 
+hi CocWarningVirtualText guifg=#666666
+
 if has('gui_running')
     hi Normal guibg=DarkSlateGrey
     hi Normal guifg=PapayaWhip
