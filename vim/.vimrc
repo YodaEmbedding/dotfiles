@@ -573,6 +573,9 @@ if PlugLoaded('coc.nvim')
     nmap <leader>qf <Plug>(coc-fix-current)
     nmap <leader>rn <Plug>(coc-rename)
 
+    nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
+	nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
+
     nnoremap <silent> <space><space> :<C-u>CocList<CR>
     nnoremap <silent> <C-space>      :<C-u>CocListResume<CR>
 
