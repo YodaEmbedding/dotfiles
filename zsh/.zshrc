@@ -70,7 +70,7 @@ zplug load
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # FZF
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ls colors
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
@@ -126,6 +126,9 @@ esac
 
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
+# Plugin: anyframe
+zstyle ":anyframe:selector:" use fzf
+
 # History sizes
 HISTSIZE=2000000
 SAVEHIST=1000000
@@ -147,6 +150,46 @@ setopt extended_glob
 # Style
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS to autocomplete
 
+# FUNCTIONS {{{1
+
+# Copy paths {{{2
+
+# Copy directory path
+cpdp() { pwd | pbcopy }
+
+# Copy file path
+cpfp() { echo "$PWD/$@" | pbcopy }
+
+# Paste from file path
+pfp() { cp "$(pbpaste)" . }
+
+# anyframe {{{2
+anyframe-widget-fasd() {
+    fasd -Rdl "$LBUFFER" \
+        | anyframe-selector-auto \
+        | anyframe-action-execute cd --
+}
+
+anyframe-widget-frece() {
+    local DB_FILE="$HOME/.frece_dir.db"
+    local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
+    [[ -z $item ]] && return
+    frece increment "$DB_FILE" "$item"
+    echo "$item" | anyframe-action-execute cd --
+}
+
+# Run process in background {{{2
+# https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
+bgrnd() {
+	nohup "$@" </dev/null >/dev/null 2>&1 &
+	disown
+}
+
+# WIDGETS {{{1
+
+zle -N -- anyframe-widget-fasd
+zle -N -- anyframe-widget-frece
+
 # KEYBINDINGS {{{1
 
 # Use showkey -a to detect terminal keycodes
@@ -161,35 +204,16 @@ bindkey '^[^M' autosuggest-execute                      # Fill and run suggestio
 #bindkey '^?' backward-delete-char                      # Backspace (doesn't work after hitting <esc>i)
 
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
-bindkey '^f' anyframe-widget-insert-filename            #
+# bindkey '^f' anyframe-widget-insert-filename            #
+bindkey '^f' anyframe-widget-frece                      # cd to folder using frece
 bindkey '^k' anyframe-widget-kill                       # Kill process
 bindkey '^r' anyframe-widget-put-history                # Recall history command
+bindkey '^z' anyframe-widget-fasd                       # cd to folder using fasd
 #bindkey '^x^b' anyframe-widget-checkout-git-branch     #
-#bindkey '^r'   anyframe-widget-execute-history         # Execute history command
 #bindkey '^xe'  anyframe-widget-insert-git-branch       #
 
 #bindkey '^-r' percol_select_history                    #
 #bindkey '^-b' percol_select_marks                      #
-
-# FUNCTIONS {{{1
-
-# Copy paths {{{2
-
-# Copy directory path
-cpdp() { pwd | pbcopy }
-
-# Copy file path
-cpfp() { echo "$PWD/$@" | pbcopy }
-
-# Paste from file path
-pfp() { cp "$(pbpaste)" . }
-
-# Run process in background {{{2
-# https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
-bgrnd() {
-	nohup "$@" </dev/null >/dev/null 2>&1 &
-	disown
-}
 
 # TODO {{{1
 
