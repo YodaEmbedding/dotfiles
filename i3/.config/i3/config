@@ -54,7 +54,7 @@ bindsym $mod+shift+q            kill
 
 # Terminal
 bindsym $mod+Return             exec alacritty
-bindsym $mod+Shift+Return       exec alacritty -e tmux
+bindsym $mod+shift+Return       exec alacritty -e tmux
 
 # Focus window
 bindsym $mod+h                  focus left
@@ -192,7 +192,7 @@ bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
 bindsym $mod+minus              [instance="^(?!dropdown$).*$"] scratchpad show
 bindsym $mod+g                  sticky toggle
-bindsym $mod+shift+g            floating toggle, sticky toggle, resize set 1000 600, exec $nsi $scripts/move bottom right
+bindsym $mod+shift+g            floating toggle, sticky enable, resize set 1000 600, exec $nsi $scripts/move bottom right
 bindsym $mod+$mod_+c            move position center
 
 # Window property control: multiple scratchpads
@@ -404,7 +404,7 @@ for_window [instance="^lyvi$"] \
     exec $nsi $scripts/move bottom right, \
     move scratchpad, scratchpad show
 
-for_window [title="Mozilla Firefox"] \
+for_window [class="^Firefox|Nightly$"] \
     border none
 
 for_window [class="matplotlib"] \
