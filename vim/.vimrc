@@ -323,7 +323,8 @@ let g:vhdl_indent_genportmap = 0
 " Miscellaneous {{{2
 set hidden              " Allow switching buffers with unwritten changes
 set wildignore+=*.pdf,*.o,*.obj,*.jpg,*.png,*.pyc  " Do not list
-set wildmode=list:longest
+set wildmenu
+set wildmode=longest,list,full
 
 " Search {{{2
 set hlsearch            " Highlight search results
