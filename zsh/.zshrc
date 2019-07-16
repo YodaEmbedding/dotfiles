@@ -155,10 +155,10 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS t
 # Copy paths {{{2
 
 # Copy directory path
-cpdp() { pwd | pbcopy }
+cpdp() { pwd | xargs echo -n | pbcopy }
 
 # Copy file path
-cpfp() { echo "$PWD/$@" | pbcopy }
+cpfp() { echo -n "$PWD/$@" | pbcopy }
 
 # Paste from file path
 pfp() { cp "$(pbpaste)" . }
