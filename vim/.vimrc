@@ -648,6 +648,9 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
 
+" Navigate jumpstack {{{3
+nnoremap <C-P> <C-I>
+
 " Miscellaneous {{{2
 
 " Black hole delete {{{3
