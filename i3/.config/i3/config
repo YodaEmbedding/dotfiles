@@ -190,10 +190,30 @@ bindsym $mod+shift+slash        gaps outer all minus 5
 bindsym $mod+b                  border toggle
 bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
-bindsym $mod+minus              scratchpad show
+bindsym $mod+minus              [instance="^(?!dropdown$).*$"] scratchpad show
 bindsym $mod+g                  sticky toggle
 bindsym $mod+shift+g            floating toggle, sticky toggle, resize set 1000 600, exec $nsi $scripts/move bottom right
 bindsym $mod+$mod_+c            move position center
+
+# Window property control: multiple scratchpads
+bindcode $mod+$mod_+shift+87    mark "scratchpad1", move scratchpad
+bindcode $mod+$mod_+shift+88    mark "scratchpad2", move scratchpad
+bindcode $mod+$mod_+shift+89    mark "scratchpad3", move scratchpad
+bindcode $mod+$mod_+shift+83    mark "scratchpad4", move scratchpad
+bindcode $mod+$mod_+shift+84    mark "scratchpad5", move scratchpad
+bindcode $mod+$mod_+shift+85    mark "scratchpad6", move scratchpad
+bindcode $mod+$mod_+shift+79    mark "scratchpad7", move scratchpad
+bindcode $mod+$mod_+shift+80    mark "scratchpad8", move scratchpad
+bindcode $mod+$mod_+shift+81    mark "scratchpad9", move scratchpad
+bindcode $mod+$mod_+87          [con_mark="scratchpad1"] scratchpad show
+bindcode $mod+$mod_+88          [con_mark="scratchpad2"] scratchpad show
+bindcode $mod+$mod_+89          [con_mark="scratchpad3"] scratchpad show
+bindcode $mod+$mod_+83          [con_mark="scratchpad4"] scratchpad show
+bindcode $mod+$mod_+84          [con_mark="scratchpad5"] scratchpad show
+bindcode $mod+$mod_+85          [con_mark="scratchpad6"] scratchpad show
+bindcode $mod+$mod_+79          [con_mark="scratchpad7"] scratchpad show
+bindcode $mod+$mod_+80          [con_mark="scratchpad8"] scratchpad show
+bindcode $mod+$mod_+81          [con_mark="scratchpad9"] scratchpad show
 
 # Window snap floating to edge
 bindcode $mod+87                exec $nsi $scripts/move bottom left
