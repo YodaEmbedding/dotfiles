@@ -269,34 +269,34 @@ bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
 bindsym $mod+u                  [urgent=latest] focus
 
 # Screenshot (cropped, cropped + edit, full, full + cursor, active, active + cursor)
-bindsym            Print        exec maim -u -s "$screen_path"
-bindsym ctrl+shift+Print        exec "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
-bindsym       ctrl+Print        exec maim -u "$screen_path"
-bindsym  $mod+ctrl+Print        exec maim    "$screen_path"
-bindsym      shift+Print        exec maim -u -i $(xdotool getactivewindow) "$screen_path"
-bindsym $mod+shift+Print        exec maim    -i $(xdotool getactivewindow) "$screen_path"
+bindsym            Print        exec $nsi maim -u -s "$screen_path"
+bindsym ctrl+shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
+bindsym       ctrl+Print        exec $nsi maim -u "$screen_path"
+bindsym  $mod+ctrl+Print        exec $nsi maim    "$screen_path"
+bindsym      shift+Print        exec $nsi maim -u -i $(xdotool getactivewindow) "$screen_path"
+bindsym $mod+shift+Print        exec $nsi maim    -i $(xdotool getactivewindow) "$screen_path"
 
 # Screenshot: open latest
-bindsym       $mod+Print        exec xdg-open "$(ls -t $screen_base/*.png | head -1)"
+bindsym       $mod+Print        exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
 
 # Screencapture
 # TODO
 
 # Color picker
-bindsym $mod+p                  exec gcolor2
+bindsym $mod+p                  exec $nsi gcolor2
 
 # Shortcuts: open/switch to
-bindsym $mod+$mod_+f            exec $scripts/switchto "firefox"              "Firefox"
-bindsym $mod+$mod_+g            exec $scripts/switchto "google-chrome-stable" "Chrome"
-bindsym $mod+$mod_+b            exec $scripts/switchto "qbittorrent"          "qBittorrent"
-bindsym $mod+$mod_+s            exec $scripts/switchto "subl"                 "subl"
-bindsym $mod+$mod_+x            exec $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
+bindsym $mod+$mod_+f            exec $nsi $scripts/switchto "firefox-nightly"      "Nightly"
+bindsym $mod+$mod_+g            exec $nsi $scripts/switchto "google-chrome-stable" "Chrome"
+bindsym $mod+$mod_+b            exec $nsi $scripts/switchto "qbittorrent"          "qBittorrent"
+bindsym $mod+$mod_+s            exec $nsi $scripts/switchto "subl"                 "subl"
+bindsym $mod+$mod_+x            exec $nsi $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
 
 # Thunar > Downloads
 bindsym $mod+t                  exec thunar ~/Downloads
 
 # Refresh search index
-bindsym $mod+shift+t            exec \
+bindsym $mod+shift+t            exec $nsi \
                                     systemctl --user --no-block start update-frece-dir.service && \
                                     systemctl --user --no-block start update-frece-file.service
 
