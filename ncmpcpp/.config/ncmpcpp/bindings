@@ -1,0 +1,29 @@
+def_key "j"
+  scroll_down
+def_key "k"
+  scroll_up
+
+def_key "h"
+  jump_to_parent_directory
+def_key "l"
+  enter_directory
+
+# def_key "h"
+#   previous_column
+# def_key "l"
+#   next_column
+
+def_key "d"
+  delete_playlist_items
+def_key "d"
+  delete_stored_playlist
+
+def_key "ctrl-u"
+  page_up
+def_key "ctrl-d"
+  page_down
+
+# TODO lyrics
+# gg, G?
+# ctrl d, ctrl u
+# ctrl f, ctrl b
