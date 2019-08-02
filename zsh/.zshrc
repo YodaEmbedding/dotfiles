@@ -102,9 +102,12 @@ setopt promptsubst
 # 234 , 217
 # for ((i=0;i<256;i++)); do echo "$(tput setab $i)$(tput setaf 4)$(tput bold)$i$(tput sgr0)"; done
 
+[[ ! -z  "$PROMPT_NAME" ]] && PROMPT_NAME="· $PROMPT_NAME "
+
 PS1=$'\n'
 PS1+="%}%K{96}%F{217}%B"
 PS1+='· %D{%H:%M:%S} '
+PS1+="$PROMPT_NAME"
 PS1+='· %~ '
 PS1+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
 PS1+="%b%f%k"
