@@ -44,6 +44,7 @@ List of configs, which directories these belong in, and other details.
 | lint           | `$HOME`  |                                                      | Linting config                                   |
 | mimeapps       | `$HOME`  |                                                      | Choose default app used to open files            |
 | mpv            | `$HOME`  |                                                      | Video player                                     |
+| ncmpcpp        | `$HOME`  |                                                      | Music player (MPD client)                        |
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | ranger         | `$HOME`  | ranger                                               | CLI file manager                                 |
