@@ -185,6 +185,43 @@ anyframe-widget-frece() {
     echo "$item" | anyframe-action-execute cd --
 }
 
+# fzf {{{2
+run_fzf() {
+    setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
+    local bind_key="$1"
+    local src_cmd="$2"
+    local fzf_opts="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.."
+    fzf_opts+=" --tiebreak=index --bind=${bind_key}:toggle-sort"
+    fzf_opts+=" $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m"
+    local selected=( $(eval "$src_cmd" | FZF_DEFAULT_OPTS="$fzf_opts" $(__fzfcmd)) )
+    local ret=$?
+    if [ -n "$selected" ]; then
+        local item="${selected[@]:1}"
+        if [ -n "$item" ]; then
+            echo "$item"
+        fi
+    fi
+    return $ret
+}
+
+fzf-fasddir-widget() {
+    local item="$(run_fzf 'ctrl-z' 'fasd -Rd')"
+    local ret=$?
+    cd "$item"
+    zle reset-prompt
+    return ret
+}
+
+fzf-fasdfile-widget() {
+    local item="$(run_fzf 'ctrl-f' 'fasd -R')"
+    local ret=$?
+    LBUFFER="${LBUFFER}${item}"
+    # LBUFFER="vim"
+    # RBUFFER=" ${item}"
+    zle reset-prompt
+    return ret
+}
+
 # Run process in background {{{2
 # https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
 bgrnd() {
@@ -196,6 +233,8 @@ bgrnd() {
 
 zle -N -- anyframe-widget-fasd
 zle -N -- anyframe-widget-frece
+zle -N -- fzf-fasddir-widget
+zle -N -- fzf-fasdfile-widget
 
 # KEYBINDINGS {{{1
 
@@ -211,14 +250,15 @@ bindkey '^[^M' autosuggest-execute                      # Fill and run suggestio
 #bindkey '^?' backward-delete-char                      # Backspace (doesn't work after hitting <esc>i)
 
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
-# bindkey '^f' anyframe-widget-insert-filename            #
-bindkey '^f' anyframe-widget-frece                      # cd to folder using frece
+bindkey '^f' fzf-fasdfile-widget                        # 
 bindkey '^k' anyframe-widget-kill                       # Kill process
-bindkey '^r' anyframe-widget-put-history                # Recall history command
-bindkey '^z' anyframe-widget-fasd                       # cd to folder using fasd
+bindkey '^z' fzf-fasddir-widget                         # cd to folder using fasd
+#bindkey '^f' anyframe-widget-insert-filename           #
+#bindkey '^f' anyframe-widget-frece                     # cd to folder using frece
+#bindkey '^r' anyframe-widget-put-history               # Recall history command
+#bindkey '^z' anyframe-widget-fasd                      # cd to folder using fasd
 #bindkey '^x^b' anyframe-widget-checkout-git-branch     #
 #bindkey '^xe'  anyframe-widget-insert-git-branch       #
-
 #bindkey '^-r' percol_select_history                    #
 #bindkey '^-b' percol_select_marks                      #
 
