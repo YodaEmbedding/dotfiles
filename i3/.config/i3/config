@@ -247,15 +247,25 @@ bindsym $mod+ctrl+z             exec $nsi $amixer toggle && $vol_change
 bindsym $mod+comma              exec $nsi $amixer 1%+    && $vol_change
 bindsym $mod+shift+comma        exec $nsi $amixer 1%-    && $vol_change
 
-# Media control
-bindsym XF86AudioPlay           exec $nsi playerctl play-pause
-bindsym XF86AudioPause          exec $nsi playerctl pause
-bindsym XF86AudioNext           exec $nsi playerctl next
-bindsym XF86AudioPrev           exec $nsi playerctl prev
+# Media control (mpd)
+bindsym XF86AudioPlay           exec $nsi mpc toggle
+bindsym XF86AudioPause          exec $nsi mpc pause
+bindsym XF86AudioNext           exec $nsi mpc next
+bindsym XF86AudioPrev           exec $nsi mpc prev
 
-bindsym $mod+ctrl+x             exec $nsi playerctl play-pause
-bindsym $mod+x                  exec $nsi playerctl volume 0.05+
-bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
+bindsym $mod+ctrl+x             exec $nsi mpc toggle
+bindsym $mod+x                  exec $nsi mpc volume +10
+bindsym $mod+shift+x            exec $nsi mpc volume -10
+
+# Media control (mpris)
+# bindsym XF86AudioPlay           exec $nsi playerctl play-pause
+# bindsym XF86AudioPause          exec $nsi playerctl pause
+# bindsym XF86AudioNext           exec $nsi playerctl next
+# bindsym XF86AudioPrev           exec $nsi playerctl prev
+#
+# bindsym $mod+ctrl+x             exec $nsi playerctl play-pause
+# bindsym $mod+x                  exec $nsi playerctl volume 0.05+
+# bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 
 # Lyrics
 bindsym $mod+$mod_+shift+x      exec $nsi alacritty --class lyvi -t lyvi -e lyvi

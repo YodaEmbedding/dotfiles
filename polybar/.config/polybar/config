@@ -21,7 +21,7 @@ font-4 = Roboto:size=10;0
 tray-background = #221133
 tray-position = right
 
-modules-left = i3 gpmdp
+modules-left = i3 mpd
 modules-center = title
 modules-right = updates bandwidth ping cpu temperature pulseaudio date
 
@@ -46,11 +46,25 @@ wrapping-scroll = false
 ;exec = ~/.config/polybar/scripts/progress
 ;interval = 5
 
-[module/gpmdp]
-type = custom/script
-exec = ~/.config/i3blocks/scripts/gpmdp --layout A-t-p
+; [module/gpmdp]
+; type = custom/script
+; exec = ~/.config/i3blocks/scripts/gpmdp --layout A-t-p
+; interval = 10
+; format-foreground = #8CE000
+
+[module/mpd]
+type = internal/mpd
+host = localhost
+port = 6600
 interval = 10
-format-foreground = #8CE000
+format-online = <label-time> <label-song>
+format-online-foreground = #CCAADD
+; format-online-foreground = #AA88BB
+; format-online-foreground = #9988AA
+label-song = %artist:0:20% - %title%
+label-song-maxlen = 70
+label-time = (%elapsed%/%total%)
+format-online-font = 5
 
 [module/title]
 type = internal/xwindow
