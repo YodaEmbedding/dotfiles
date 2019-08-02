@@ -171,10 +171,10 @@ dynamic_title: true
 
 live_config_reload: true
 
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+  program: /bin/zsh
+  args:
+    - --login
 
 # Key bindings
 #
