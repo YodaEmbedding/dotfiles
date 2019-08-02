@@ -33,10 +33,10 @@ set $lock_wallpaper /usr/share/backgrounds/current_lock.png
 
 # Download frece scripts from https://github.com/SicariusNoctis/frece
 set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi
-set $rofi_dir       ~/code/frece/examples/dir_rofi.sh   -i
-set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh -i
-set $rofi_file      ~/code/frece/examples/file_rofi.sh  -i -width 70 -lines 16
-set $rofi_win       wmctrl -l | rofi -dmenu -i
+set $rofi_command   ~/code/frece/examples/command_rofi.sh -i
+set $rofi_dir       ~/code/frece/examples/dir_rofi.sh     -i
+set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh   -i
+set $rofi_file      ~/code/frece/examples/file_rofi.sh    -i -width 70 -lines 16
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
@@ -255,12 +255,13 @@ bindsym $mod+$mod_+shift+x      exec $nsi alacritty --class lyvi -t lyvi -e lyvi
 bindsym $mod+q                  [instance="^dropdown$"] scratchpad show
 
 # rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
-bindsym $mod+w                  exec      "$rofi_app   -p 'run'"
-bindsym $mod+ctrl+w             exec      "$rofi_app   -p 'run (sudo)' -run-command 'gksudo {cmd}'"
-bindsym $mod+ctrl+d             exec eval "$rofi_dir   -p 'folders'"
-bindsym $mod+d                  exec eval "$rofi_file  -p 'files'"
-bindsym $mod+ctrl+e             exec eval "$rofi_emoji -p 'emojis'"
-bindsym $mod+shift+d            exec eval "$rofi_win   -p 'window' | cut -d ' ' -f1 | xargs -I {} i3-msg '[id=\\"{}\\"] focus'"
+bindsym $mod+w                  exec "$rofi_app     -p 'run'"
+bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
+bindsym $mod+e                  exec "$rofi_command -p 'command'"
+bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
+bindsym $mod+ctrl+e             exec "$rofi_emoji   -p 'emojis'"
+bindsym $mod+d                  exec "$rofi_file    -p 'files'"
+bindsym $mod+shift+d            exec "rofi -show window"
 
 # Lock screen
 bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
