@@ -121,6 +121,11 @@ alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
 # thunar
 alias th='bgrnd thunar'
 
+# wtwitch
+alias tw='wtwitch'
+alias twc='wtwitch -c'
+alias tws='wtwitch -s'
+
 ### FILE PATHS ###
 
 # File common
