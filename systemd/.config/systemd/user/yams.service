@@ -1,0 +1,10 @@
+[Unit]
+Description=yams
+After=mopidy.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/yams -N
+
+[Install]
+WantedBy=default.target
