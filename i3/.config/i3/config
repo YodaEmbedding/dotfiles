@@ -129,7 +129,7 @@ bindsym --whole-window --border $mod+ctrl+Button5   exec $nsi $amixer 1%- && $vo
 bindsym --border                Button2             kill
 
 # Window switch
-bindsym $mod+space              exec wmfocus --halign center --valign center
+bindsym $mod+space              exec "wmfocus -c asdfghjkl -o 0,20 --bgcolor 'rgba(30, 30, 30, 0.9)'"
 
 # Workspace switch back/forth
 bindsym $mod+grave              workspace back_and_forth
@@ -217,14 +217,23 @@ bindcode $mod+$mod_+81          [con_mark="scratchpad9"] scratchpad show
 
 # Window snap floating to edge
 bindcode $mod+87                exec $nsi $scripts/move bottom left
-bindcode $mod+88                exec $nsi $scripts/move bottom center
+bindcode $mod+88                exec $nsi $scripts/move bottom
 bindcode $mod+89                exec $nsi $scripts/move bottom right
-bindcode $mod+83                exec $nsi $scripts/move middle left
+bindcode $mod+83                exec $nsi $scripts/move left
 bindcode $mod+84                exec $nsi $scripts/move middle center
-bindcode $mod+85                exec $nsi $scripts/move middle right
+bindcode $mod+85                exec $nsi $scripts/move right
 bindcode $mod+79                exec $nsi $scripts/move top left
-bindcode $mod+80                exec $nsi $scripts/move top center
+bindcode $mod+80                exec $nsi $scripts/move top
 bindcode $mod+81                exec $nsi $scripts/move top right
+bindcode $mod+shift+87          exec $nsi $scripts/move bottom left
+bindcode $mod+shift+88          exec $nsi $scripts/move bottom center
+bindcode $mod+shift+89          exec $nsi $scripts/move bottom right
+bindcode $mod+shift+83          exec $nsi $scripts/move middle left
+bindcode $mod+shift+84          exec $nsi $scripts/move middle center
+bindcode $mod+shift+85          exec $nsi $scripts/move middle right
+bindcode $mod+shift+79          exec $nsi $scripts/move top left
+bindcode $mod+shift+80          exec $nsi $scripts/move top center
+bindcode $mod+shift+81          exec $nsi $scripts/move top right
 
 # Volume control
 bindsym XF86AudioLowerVolume    exec $nsi $amixer 5%-    && $vol_change
