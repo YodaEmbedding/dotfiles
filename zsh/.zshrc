@@ -60,6 +60,10 @@ zplug load
 
 # SOURCING {{{1
 
+# GNU Parallel
+source $(which env_parallel.zsh)
+env_parallel --session
+
 # Aliases
 [ -f ~/.aliases ] && source ~/.aliases
 
