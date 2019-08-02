@@ -48,9 +48,9 @@ _Z_CMD=j
 
 # LOAD {{{2
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-	zplug install
-fi
+# if ! zplug check --verbose; then
+# 	zplug install
+# fi
 
 # Consider updating
 # zplug update
