@@ -1,9 +1,11 @@
 [Unit]
 Description=yams
 After=mopidy.service
+Requires=mopidy.service
 
 [Service]
 Type=simple
+ExecStartPre=/bin/sleep 15
 ExecStart=/usr/bin/yams -N
 
 [Install]
