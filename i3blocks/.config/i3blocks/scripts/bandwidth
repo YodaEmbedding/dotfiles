@@ -87,11 +87,11 @@ print_speed() {
   fi
 
   len=${#str}
-  print_leading_spaces $((3 - "$len"))
+  print_leading_spaces $((4 - "$len"))
   printf "$format" "$str"
 }
 
-echo -n " "
+echo -n ""
 print_speed "$rx_rate"
-echo -n "   "
+echo -n " "
 print_speed "$tx_rate"
