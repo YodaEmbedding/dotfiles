@@ -16,14 +16,15 @@ font-0 = NotoSans-Regular:size=10.5;3
 font-1 = FontAwesome5Free:style=Solid:size=10;2
 font-2 = FontAwesome5Brands:style=Solid:size=10;2
 font-3 = MaterialIcons:size=10;3
-font-4 = Roboto:size=10;0
+font-4 = NotoSansMono-Regular:size=10.5;3
+font-5 = NotoSans-Regular:size=10.0;0
 
 tray-background = #221133
 tray-position = right
 
 modules-left = i3 mpd
 modules-center = title
-modules-right = updates bandwidth ping cpu temperature pulseaudio date
+modules-right = network ping updates cpu temperature pulseaudio date
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -64,7 +65,7 @@ format-online-foreground = #CCAADD
 label-song = %artist:0:20% - %title%
 label-song-maxlen = 70
 label-time = (%elapsed%/%total%)
-format-online-font = 5
+format-online-font = 6
 
 [module/title]
 type = internal/xwindow
@@ -81,6 +82,14 @@ type = custom/script
 exec = ~/.config/i3blocks/scripts/bandwidth
 interval = 1
 format-foreground = #66cc00
+format-font = 5
+
+[module/network]
+type = internal/network
+interface = enp2s0
+label-connected =  %downspeed:8%  %upspeed:8%
+format-connected-foreground = #66cc00
+format-connected-font = 5
 
 [module/ping]
 type = custom/script
@@ -106,6 +115,7 @@ fixed-values = true
 type = internal/cpu
 interval = 5
 format-prefix = " "
+label = %percentage:02%%
 
 [module/temperature]
 type = internal/temperature
