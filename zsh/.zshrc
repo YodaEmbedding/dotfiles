@@ -222,6 +222,18 @@ fzf-fasdfile-widget() {
     return ret
 }
 
+fzf-fasdvim-widget() {
+    local item="$(run_fzf 'ctrl-v' 'fasd -R')"
+    local ret=$?
+    if [ -n "$item" ]; then
+        LBUFFER="vim "
+        RBUFFER="$item"
+        zle reset-prompt
+        zle accept-line
+    fi
+    return ret
+}
+
 # Run process in background {{{2
 # https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
 bgrnd() {
@@ -235,6 +247,7 @@ zle -N -- anyframe-widget-fasd
 zle -N -- anyframe-widget-frece
 zle -N -- fzf-fasddir-widget
 zle -N -- fzf-fasdfile-widget
+zle -N -- fzf-fasdvim-widget
 
 # KEYBINDINGS {{{1
 
@@ -252,6 +265,7 @@ bindkey '^[^M' autosuggest-execute                      # Fill and run suggestio
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
 bindkey '^f' fzf-fasdfile-widget                        # 
 bindkey '^k' anyframe-widget-kill                       # Kill process
+bindkey '^v' fzf-fasdvim-widget                         # 
 bindkey '^z' fzf-fasddir-widget                         # cd to folder using fasd
 #bindkey '^f' anyframe-widget-insert-filename           #
 #bindkey '^f' anyframe-widget-frece                     # cd to folder using frece
