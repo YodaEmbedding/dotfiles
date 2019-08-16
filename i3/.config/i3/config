@@ -424,6 +424,11 @@ for_window [instance="^lyvi$"] \
     exec $nsi $scripts/move bottom right, \
     move scratchpad, scratchpad show
 
+for_window [instance="^mpv popup$"] \
+    floating toggle, sticky enable, \
+    resize set 864 486, \
+    exec $nsi $scripts/move bottom right
+
 for_window [class="^(Firefox|Nightly)$"] \
     border none
 
