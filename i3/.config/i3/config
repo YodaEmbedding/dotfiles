@@ -25,7 +25,7 @@ set $ws666 "666:"
 set $nsi            --no-startup-id
 
 # Scripts paths
- set $scripts       ~/.config/i3/scripts
+set $scripts        ~/.config/i3/scripts
 
 # Wallpaper paths
 set $wallpaper      /usr/share/backgrounds/current_desktop.png
@@ -415,16 +415,16 @@ for_window [title="^gcolor2$"] \
     floating enable, border none, sticky enable, \
     move position 1381 800
 
-for_window [title="^Guitarix: gx_head$"] \
+for_window [class="^Guitarix$"] \
     floating enable, border none, \
-    move position center
+    exec $nsi $scripts/move bottom center
 
 for_window [instance="^lyvi$"] \
     floating enable, \
     exec $nsi $scripts/move bottom right, \
     move scratchpad, scratchpad show
 
-for_window [class="^Firefox|Nightly$"] \
+for_window [class="^(Firefox|Nightly)$"] \
     border none
 
 for_window [class="matplotlib"] \
@@ -433,6 +433,7 @@ for_window [class="matplotlib"] \
 # Default workspace locations
 assign [class="discord"]                          → $ws1
 assign [class="Firefox"]                          → $ws1
+assign [class="Nightly"]                          → $ws1
 assign [class="Guitarix"]                         → $ws3
 assign [class="GalaxyClient.exe"]                 → $ws4
 assign [class="Gwent.exe"]                        → $ws4
