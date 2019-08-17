@@ -23,7 +23,17 @@ def_key "ctrl-u"
 def_key "ctrl-d"
   page_down
 
+def_key "L"
+  show_lyrics
+
+def_key "J"
+  jump_to_position_in_song
+
+def_key "g"
+  move_home
+def_key "G"
+  move_end
+
 # TODO lyrics
-# gg, G?
 # ctrl d, ctrl u
 # ctrl f, ctrl b
