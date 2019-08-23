@@ -225,13 +225,14 @@ endif
 hi Normal       guibg=NONE    ctermbg=NONE
 hi Normal       guifg=Grey70  ctermfg=249
 
-hi ColorColumn  guibg=#372735
-hi CursorLine   guibg=#402B3D
-hi Folded       guibg=#1E161F
-hi Folded       guifg=#6f6f6f
-hi LineNr       guifg=#6f6f6f
-hi MatchParen   guibg=#446677
-hi MatchParen   guifg=#dddddd
+hi ColorColumn      guibg=#372735
+hi CursorLine       guibg=#402B3D
+hi Folded           guibg=#1E161F
+hi Folded           guifg=#6f6f6f
+hi LineNr           guifg=#6f6f6f
+hi MatchParen       guibg=#446677
+hi MatchParen       guifg=#dddddd
+hi ExtraWhitespace  guibg=#473745
 
 hi CocWarningVirtualText guifg=#666666
 
