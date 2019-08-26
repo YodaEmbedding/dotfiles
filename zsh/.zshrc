@@ -256,6 +256,7 @@ zle -N -- fzf-fasdvim-widget
 bindkey -v                                              # vim
 bindkey -v '^?' backward-delete-char                    # vim backspace
 bindkey -M vicmd V edit-command-line                    # vim edit command
+bindkey -M vicmd '^[[3~' ''                             # vim disable DEL key
 
 bindkey '^ '   autosuggest-accept                       # Fill suggestion
 bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
