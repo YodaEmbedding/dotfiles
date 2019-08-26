@@ -424,6 +424,8 @@ if PlugLoaded('fzf.vim')
         \     'source': 'locate --database=./.locate.db <q-args>',
         \     'options': '-m' },
         \   <bang>0))
+
+    command! -bang -nargs=* -complete=dir SmartFiles call <SID>SmartFiles(<q-args>)
 endif
 
 " FUNCTIONS {{{1
@@ -543,6 +545,21 @@ function! FoldTextStyle()
     return line . filltext . posttext
 endfunction
 
+" fzf.vim {{{2
+function! s:get_git_root()
+    let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
+    return v:shell_error ? '' : root
+endfunction
+
+function! s:SmartFiles(...)
+    let root = s:get_git_root()
+    if empty(root)
+        return call("fzf#vim#files", a:000)
+    else
+        return call("fzf#vim#gitfiles", a:000)
+    endif
+endfunction
+
 " Word wrap {{{2
 function! s:ToggleWrap()
     setlocal wrap linebreak nolist
@@ -623,7 +640,7 @@ endif
 " fzf {{{3
 if PlugLoaded('fzf.vim')
     nnoremap <Tab>     :Buffers<CR>
-    nnoremap ,         :GFiles<CR>
+    nnoremap ,         :SmartFiles<CR>
     nnoremap <Leader>s :LocateFiles .<CR>
     nnoremap <Leader>f :Files<CR>
     nnoremap <Leader>F :Files %:h<CR>
