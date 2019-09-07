@@ -425,8 +425,13 @@ for_window [instance="^lyvi$"] \
     move scratchpad, scratchpad show
 
 for_window [instance="^mpv popup$"] \
-    floating toggle, sticky enable, \
+    floating enable, sticky enable, \
     resize set 864 486, \
+    exec $nsi $scripts/move bottom right
+
+for_window [title="^Preview$"] \
+    floating enable, \
+    resize set 400 300, \
     exec $nsi $scripts/move bottom right
 
 for_window [class="^(Firefox|Nightly)$"] \
@@ -439,6 +444,7 @@ for_window [class="matplotlib"] \
 assign [class="discord"]                          → $ws1
 assign [class="Firefox"]                          → $ws1
 assign [class="Nightly"]                          → $ws1
+assign [class="jetbrains-studio"]                 → $ws2
 assign [class="Guitarix"]                         → $ws3
 assign [class="GalaxyClient.exe"]                 → $ws4
 assign [class="Gwent.exe"]                        → $ws4
