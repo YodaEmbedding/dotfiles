@@ -32,7 +32,10 @@ def_key "N"
 def_key "v"
   select_item
 def_key "V"
+  select_item
   select_range
+def_key "ctrl-v"
+  remove_selection
 def_key "J"
   select_item
   scroll_down
@@ -40,6 +43,11 @@ def_key "K"
   select_item
   scroll_up
 
+# Move
+def_key "ctrl-j"
+    move_selected_items_down
+def_key "ctrl-k"
+    move_selected_items_up
 # TODO move_selected_items_to
 
 # Playlist
@@ -57,7 +65,6 @@ def_key "F"
   jump_to_position_in_song
 
 # Miscellaneous
-
 def_key "L"
   show_lyrics
 def_key "f4"
