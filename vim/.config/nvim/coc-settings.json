@@ -35,6 +35,10 @@
             "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
             "filetypes": ["hs", "lhs", "haskell"],
             "initializationOptions": {}
+        },
+        "kotlin": {
+            "command": "/usr/bin/kotlin-language-server",
+            "filetypes": ["kotlin"]
         }
     }
 }
