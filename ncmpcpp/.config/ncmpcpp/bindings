@@ -27,6 +27,8 @@ def_key "n"
   next_found_item
 def_key "N"
   previous_found_item
+def_key "space"
+  jump_to_playing_song
 
 # Selection
 def_key "v"
@@ -69,3 +71,5 @@ def_key "L"
   show_lyrics
 def_key "f4"
   apply_filter
+def_key "b"
+  set_volume
