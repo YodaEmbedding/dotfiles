@@ -54,6 +54,7 @@ Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last po
 Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
 Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
+Plug 'unblevable/'      . 'quick-scope'             " Visual: Highlight unique characters per word in line (for find)
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
