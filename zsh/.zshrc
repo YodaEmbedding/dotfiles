@@ -234,13 +234,6 @@ fzf-fasdvim-widget() {
     return ret
 }
 
-# Run process in background {{{2
-# https://stackoverflow.com/questions/10408816/how-do-i-use-the-nohup-command-without-getting-nohup-out
-bgrnd() {
-	nohup "$@" </dev/null >/dev/null 2>&1 &
-	disown
-}
-
 # WIDGETS {{{1
 
 zle -N -- anyframe-widget-fasd

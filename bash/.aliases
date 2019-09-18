@@ -151,7 +151,12 @@ alias buildlogcat='buildozer android adb -- logcat -s python'
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'
 
-# File opening
+# File opening (in background)
+bgrnd() {
+    nohup "$@" </dev/null >/dev/null 2>&1 &
+    disown
+}
+
 alias b='bgrnd'
 alias o='bgrnd xdg-open'
 
