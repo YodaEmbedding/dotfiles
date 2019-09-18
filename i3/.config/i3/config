@@ -37,6 +37,7 @@ set $rofi_command   ~/code/frece/examples/command_rofi.sh -i
 set $rofi_dir       ~/code/frece/examples/dir_rofi.sh     -i
 set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh   -i
 set $rofi_file      ~/code/frece/examples/file_rofi.sh    -i -width 70 -lines 16
+set $command_last   ~/code/frece/examples/command_latest.sh
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
@@ -277,6 +278,7 @@ bindsym $mod+q                  [instance="^dropdown$"] scratchpad show
 bindsym $mod+w                  exec "$rofi_app     -p 'run'"
 bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
 bindsym $mod+e                  exec "$rofi_command -p 'command'"
+bindsym $mod+shift+e            exec "$command_last"
 bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
 bindsym $mod+ctrl+e             exec "$rofi_emoji   -p 'emojis'"
 bindsym $mod+d                  exec "$rofi_file    -p 'files'"
