@@ -268,6 +268,9 @@ bindsym $mod+shift+x            exec $nsi mpc volume -10
 # bindsym $mod+x                  exec $nsi playerctl volume 0.05+
 # bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
 
+# ncmpcpp
+bindsym $mod+$mod_+x            exec $nsi alacritty --class ncmpcpp -t ncmpcpp -e ncmpcpp
+
 # Lyrics
 bindsym $mod+$mod_+shift+x      exec $nsi alacritty --class lyvi -t lyvi -e lyvi
 
@@ -312,7 +315,7 @@ bindsym $mod+$mod_+f            exec $nsi $scripts/switchto "firefox-nightly"   
 bindsym $mod+$mod_+g            exec $nsi $scripts/switchto "google-chrome-stable" "Chrome"
 bindsym $mod+$mod_+b            exec $nsi $scripts/switchto "qbittorrent"          "qBittorrent"
 bindsym $mod+$mod_+s            exec $nsi $scripts/switchto "subl"                 "subl"
-bindsym $mod+$mod_+x            exec $nsi $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
+bindsym $mod+$mod_+p            exec $nsi $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
 
 # Thunar > Downloads
 bindsym $mod+t                  exec thunar ~/Downloads
@@ -430,6 +433,11 @@ for_window [instance="^mpv popup$"] \
     floating enable, sticky enable, \
     resize set 864 486, \
     exec $nsi $scripts/move bottom right
+
+for_window [instance="^ncmpcpp$"] \
+    floating enable, \
+    exec $nsi $scripts/move bottom right, \
+    move scratchpad, scratchpad show
 
 for_window [title="^Preview$"] \
     floating enable, \
