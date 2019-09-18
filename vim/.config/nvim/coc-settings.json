@@ -40,5 +40,6 @@
             "command": "/usr/bin/kotlin-language-server",
             "filetypes": ["kotlin"]
         }
-    }
+    },
+    "java.errors.incompleteClasspath.severity": "ignore"
 }

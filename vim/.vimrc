@@ -309,6 +309,7 @@ endif
 " Indenting, Tabs, Spacing {{{2
 set expandtab
 set nojoinspaces        " Single spaces joining when e.g. `gqip`
+set shiftround          " Round [>>] to nearest multiple of shiftwidth
 set shiftwidth=4        " Spaces [>>]  key is equivalent to
 set softtabstop=4       " Spaces [tab] key is equivalent to
 set tabstop=4           " Tab display width
@@ -717,6 +718,10 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Search for whole word {{{3
 nnoremap <C-_> /\<\><Left><Left>
+
+" Sort {{{3
+nnoremap gs vip:sort<CR>
+vnoremap gs :sort<CR>
 
 " Visual selection apply dot {{{3
 vnoremap <silent> . :normal .<CR>

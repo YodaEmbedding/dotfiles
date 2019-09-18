@@ -526,19 +526,15 @@ exec        $nsi    dropbox
 ### TODO ###
 
 # High real-estate:
-# $mod+e
-# $mod+w
 # $mod+shift+e
 # $mod+shift+w
 
 # Unused bindings:
-# $mod+space
 # $mod+shift+space
 # $mod+i
 # $mod+n
 # $mod+p
 # $mod+r
-# $mod+w
 # $mod+shift+f
 # $mod+shift+v
 # $mod+shift+y
@@ -548,6 +544,7 @@ exec        $nsi    dropbox
 # $mod+s
 # $mod+u
 # $mod+y
+# $mod+space
 
 # Highly used bindings (that are hard to reach):
 # $mod+t
