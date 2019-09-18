@@ -24,7 +24,7 @@ tray-position = right
 
 modules-left = i3 mpd
 modules-center = title
-modules-right = network ping updates cpu temperature pulseaudio date
+modules-right = network ping updates memory cpu temperature pulseaudio date
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -87,7 +87,7 @@ format-font = 5
 [module/network]
 type = internal/network
 interface = enp2s0
-label-connected =  %downspeed:8%  %upspeed:8%
+label-connected =  %downspeed:6:6%  %upspeed:6:6%
 format-connected-foreground = #66cc00
 format-connected-font = 5
 
@@ -106,29 +106,31 @@ mount-0 = /
 
 [module/memory]
 type = internal/memory
-interval = 15
+interval = 5
 format-prefix = " "
-label = %gb_used%
+label = %gb_used:1:2%
 fixed-values = true
 
 [module/cpu]
 type = internal/cpu
 interval = 5
 format-prefix = " "
-label = %percentage:02%%
+label = %percentage:02%
 
 [module/temperature]
 type = internal/temperature
 interval = 5
 format-prefix = " "
+label = %temperature:0:3%
 label-warn-foreground = #ff7777
 warn-temperature = 60
 
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
-label-muted =   muted
-label-muted-foreground = #66
+label-volume = %percentage%
+label-muted =   M
+label-muted-foreground = #666666
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
