@@ -167,6 +167,26 @@ alias o='bgrnd xdg-open'
 # File templates
 alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '
 
+# git diff browser
+gbd() {
+  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local sha=$(awk '{ print $1 }' <<< "$out")
+  [ -n "$sha" ] && git diff "$sha~" "$sha"
+}
+
+# git history browser
+gb() {
+  local out sha q
+  while out=$(
+      git log --graph --color=always \
+          --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" |
+      fzf --ansi --multi --reverse --query="$q" --print-query); do
+    q=$(head -1 <<< "$out")
+    while read sha; do
+      [ -n "$sha" ] && git show --color=always $sha | less -R
+    done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
+  done
+}
 
 # List available commands
 #alias commands='compgen -c'
