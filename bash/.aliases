@@ -151,6 +151,10 @@ alias buildlogcat='buildozer android adb -- logcat -s python'
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'
 
+# emoji
+alias lenny='emoji -lc'
+alias shruggie='emoji -sc'
+
 # File opening (in background)
 bgrnd() {
     nohup "$@" </dev/null >/dev/null 2>&1 &
@@ -163,9 +167,6 @@ alias o='bgrnd xdg-open'
 # File templates
 alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '
 
-# emoji
-alias lenny='emoji -lc'
-alias shruggie='emoji -sc'
 
 # List available commands
 #alias commands='compgen -c'
