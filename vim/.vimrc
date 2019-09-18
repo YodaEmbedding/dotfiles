@@ -223,19 +223,30 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
-hi Normal       guibg=NONE    ctermbg=NONE
-hi Normal       guifg=Grey70  ctermfg=249
+"hi Normal          guibg=#332331
+hi Normal           guibg=NONE    ctermbg=NONE
+hi Normal           guifg=Grey70  ctermfg=249
 
 hi ColorColumn      guibg=#372735
 hi CursorLine       guibg=#402B3D
+hi ExtraWhitespace  guibg=#473745
 hi Folded           guibg=#1E161F
 hi Folded           guifg=#6f6f6f
 hi LineNr           guifg=#6f6f6f
 hi MatchParen       guibg=#446677
 hi MatchParen       guifg=#dddddd
-hi ExtraWhitespace  guibg=#473745
+hi Pmenu            guibg=#473745
 
-hi CocWarningVirtualText guifg=#666666
+hi CocErrorFloat            guifg=#cc6666
+hi CocErrorVirtualText      guifg=#503B4D
+hi CocWarningVirtualText    guifg=#503B4D
+hi CocInfoVirtualText       guifg=#503B4D
+
+" NOTE Temporary fix
+autocmd User CocOpenFloat
+    \   if exists('w:float')
+    \ |     setl colorcolumn=
+    \ | endif
 
 if has('gui_running')
     hi Normal guibg=DarkSlateGrey
