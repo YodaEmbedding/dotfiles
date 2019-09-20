@@ -157,8 +157,8 @@ alias shruggie='emoji -sc'
 
 # File opening (in background)
 bgrnd() {
-    nohup "$@" </dev/null >/dev/null 2>&1 &
-    disown
+  nohup "$@" </dev/null >/dev/null 2>&1 &
+  disown
 }
 
 alias b='bgrnd'
