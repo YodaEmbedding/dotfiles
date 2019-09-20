@@ -193,12 +193,16 @@ gb() {
 alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k)builtins} ${(k)commands} | percol'
 
 # Monitor control
+mbc() {
+  sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 && ddccontrol -p -r 0x12 -w $1 >/dev/null 2>&1 &' "$1" "$2"
+}
+
 brightness() {
-    sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 &' "$1"
+  sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 &' "$1"
 }
 
 contrast() {
-    sudo bash -c 'ddccontrol -p -r 0x12 -w $0 >/dev/null 2>&1 &' "$1"
+  sudo bash -c 'ddccontrol -p -r 0x12 -w $0 >/dev/null 2>&1 &' "$1"
 }
 
 # Music
