@@ -383,6 +383,7 @@ if PlugLoaded('coc.nvim')
     set updatetime=50
     autocmd CursorHold * silent     call CocActionAsync('highlight')
     autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd FileType python let b:coc_root_patterns = ['.env', '.git']
 endif
 
 " Conceal level {{{2
@@ -605,8 +606,11 @@ if PlugLoaded('coc.nvim')
     nmap <leader>qf <Plug>(coc-fix-current)
     nmap <leader>rn <Plug>(coc-rename)
 
-    nnoremap <expr><C-f> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-f>"
-	nnoremap <expr><C-b> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-b>"
+    nnoremap <expr><C-h> (exists('w:float') ?
+        \ ":call coc#util#float_hide()<CR>" :
+        \ coc#util#has_float() ?
+        \     ":call coc#util#float_jump()<CR>" :
+        \     ":call CocAction('doHover')<CR>")
 
     nnoremap <silent> <space><space> :<C-u>CocList<CR>
     nnoremap <silent> <C-space>      :<C-u>CocListResume<CR>
@@ -682,6 +686,10 @@ nnoremap gb      :ls<CR>:b<Space>
 
 " Navigate jumpstack {{{3
 nnoremap <C-P> <C-I>
+
+" Scroll {{{3
+nnoremap <C-j> <C-f>
+nnoremap <C-k> <C-b>
 
 " Miscellaneous {{{2
 
