@@ -135,13 +135,14 @@ disable=print-statement,
         exception-escape,
         comprehension-escape,
 # Custom
-        bad-whitespace,
         bad-continuation,
-        trailing-newlines,
+        bad-whitespace,
+        invalid-name,
+        len-as-condition,
         missing-docstring,
+        trailing-newlines,
         unused-wildcard-import,
         wildcard-import,
-        invalid-name,
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option

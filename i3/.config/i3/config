@@ -335,8 +335,8 @@ bindsym $mod+shift+c            exec $nsi alacritty -e=ptipython -t="ipython scr
 # Transparency
 bindsym $mod+ctrl+shift+o       exec $nsi transset-df -a -t
 bindsym $mod+ctrl+o             exec $nsi transset-df -a --dec 0.05
-bindsym $mod+o                  exec $nsi transset-df -a --inc 0.10
-bindsym $mod+shift+o            exec $nsi transset-df -a --dec 0.10
+bindsym $mod+o                  exec $nsi transset-df -a --inc 0.15
+bindsym $mod+shift+o            exec $nsi transset-df -a --dec 0.15
 bindsym $mod+$mod_+o            exec $nsi transset-df -a --inc 0.01
 bindsym $mod+$mod_+shift+o      exec $nsi transset-df -a --dec 0.01
 bindsym $mod+$mod_+ctrl+o       exec $nsi transset-df -a $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity" | awk '{print $1 / 100}')
@@ -446,6 +446,13 @@ for_window [instance="^ncmpcpp$"] \
 for_window [title="^Preview$"] \
     floating enable, \
     resize set 400 300, \
+    exec $nsi $scripts/move bottom right
+
+for_window [title="^floating$"] \
+    floating enable
+
+for_window [title="^floating, bottom right$"] \
+    floating enable, \
     exec $nsi $scripts/move bottom right
 
 for_window [class="^(Firefox|Nightly)$"] \
