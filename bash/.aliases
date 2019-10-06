@@ -45,6 +45,7 @@ alias gc='git commit'
 alias gca='git commit -a'
 alias gcam='git commit -am'
 alias gcm='git commit -m'
+alias gco='git checkout'
 alias gd='git diff'
 alias gl='git log --graph --full-history --all --color --oneline'
 alias gla='git log --graph --decorate $(git rev-list -g --all)'
@@ -167,15 +168,22 @@ alias o='bgrnd xdg-open'
 # File templates
 alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '
 
+# git commit selector
+gitc() {
+  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local sha=$(awk '{ print $1 }' <<< "$out")
+  echo "$sha"
+}
+
 # git diff browser
-gbd() {
+gitd() {
   local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
   local sha=$(awk '{ print $1 }' <<< "$out")
   [ -n "$sha" ] && git diff "$sha~" "$sha"
 }
 
 # git history browser
-gb() {
+gith() {
   local out sha q
   while out=$(
       git log --graph --color=always \
