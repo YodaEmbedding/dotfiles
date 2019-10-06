@@ -45,6 +45,8 @@ Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'junegunn/'        . 'fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'wellle/'          . 'targets.vim'             " Functional: Text objects
+Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
+Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
 Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
