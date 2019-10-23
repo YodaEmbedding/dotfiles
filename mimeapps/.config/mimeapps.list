@@ -129,6 +129,7 @@ audio/mp4=mpv.desktop
 audio/mpeg=mpv.desktop
 audio/x-gtp=mscore.desktop
 audio/x-wav=mpv.desktop
+image/gif=qimgv.desktop
 image/jpeg=viewnior.desktop
 image/png=viewnior.desktop
 image/vnd.djvu+multipage=org.pwmt.zathura-djvu.desktop
