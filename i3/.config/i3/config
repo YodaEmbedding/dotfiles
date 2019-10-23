@@ -414,6 +414,7 @@ for_window [instance="^dropdown$"] \
 for_window [title="^i?python scratchpad$"] \
     floating enable, border none, \
     resize set 600 255, move position 0 20, \
+    exec $nsi transset-df -a 0.90, \
     move scratchpad, scratchpad show
 
 for_window [title="^Cadence$"] \
@@ -441,6 +442,7 @@ for_window [instance="^mpv popup$"] \
 for_window [instance="^ncmpcpp$"] \
     floating enable, \
     exec $nsi $scripts/move bottom right, \
+    exec $nsi transset-df -a 0.90, \
     move scratchpad, scratchpad show
 
 for_window [title="^Preview$"] \
