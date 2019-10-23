@@ -37,7 +37,6 @@ function! PlugLoaded(name)
 endfunction
 
 " Enabled {{{2
-Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
@@ -47,8 +46,8 @@ Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visuall
 Plug 'wellle/'          . 'targets.vim'             " Functional: Text objects
 Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
 Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
-Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
+Plug 'tpope/'           . 'vim-fugitive'            " Tools: Git [RARELYUSED]
 Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
@@ -100,12 +99,14 @@ Plug 'neoclide/'        . 'coc.nvim', {
 " Sometimes useful {{{3
 "Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 "Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
+"Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 "Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
 "Plug 'kana/'            . 'vim-submode'             " Functional: New modes
 "Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
+"Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 "Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
@@ -127,6 +128,7 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'buztard/'         . 'vim-rel-jump'            " Tweak: Add to relative jk motions to jumpstack
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
+"Plug 'gillyb/'          . 'stable-windows'          " Visual: Disable centering when buffer switches
 "Plug 'thaerkh/'         . 'vim-indentguides'        " Visual: Indent guides
 "Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 "Plug 'yuttie/'          . 'comfortable-motion.vim'  " Visual: Smooth scrolling
