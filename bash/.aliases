@@ -124,7 +124,7 @@ alias th='bgrnd thunar'
 
 # wtwitch
 alias tw='wtwitch'
-alias twc='wtwitch -c'
+alias twc="wtwitch -c | sed '/^ Streamers offline:\$/,\$d'"
 alias tws='wtwitch -s'
 
 ### FILE PATHS ###
@@ -151,6 +151,10 @@ alias buildlogcat='buildozer android adb -- logcat -s python'
 # TODO rename these to something more accessible?
 alias pbcopy='xclip -selection c'
 alias pbpaste='xclip -selection clipboard -o'
+
+# Dropdown terminal
+alias dropdown='b alacritty --class dropdown -e tmux -t 0 &'
+alias dropdowna='b alacritty --class dropdown -e tmux attach -t 0 &'
 
 # emoji
 alias lenny='emoji -lc'
