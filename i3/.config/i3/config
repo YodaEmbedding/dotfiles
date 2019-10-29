@@ -281,14 +281,14 @@ bindsym $mod+q                  [instance="^dropdown$"] scratchpad show
 bindsym $mod+w                  exec "$rofi_app     -p 'run'"
 bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
 bindsym $mod+e                  exec "$rofi_command -p 'command'"
-bindsym $mod+ctrl+e             exec "$command_last"
+bindsym $mod+shift+e            exec "$command_last"
 bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
 bindsym $mod+ctrl+shift+e       exec "$rofi_emoji   -p 'emojis'"
 bindsym $mod+d                  exec "$rofi_file    -p 'files'"
 bindsym $mod+shift+d            exec "rofi -show window"
 
 # mpv popup
-bindsym $mod+shift+e            exec "mpv \\"$(xclip -selection clipboard -o)\\" --x11-name \\"mpv popup\\""
+bindsym $mod+ctrl+e             exec "mpv \\"$(xclip -selection clipboard -o)\\" --x11-name \\"mpv popup\\""
 
 # Lock screen
 bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
