@@ -506,7 +506,7 @@ assign [class="Google Play Music Desktop Player"] → $ws9
 ### USER STARTUP ###
 
 # System
-exec        $nsi    compton
+exec        $nsi    compton --experimental-backend
 exec        $nsi    xmodmap ~/.Xmodmap
 exec        $nsi    xset led on
 exec_always $nsi    xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
