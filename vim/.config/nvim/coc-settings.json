@@ -12,8 +12,7 @@
         "bash": {
             "command": "bash-language-server",
             "args": ["start"],
-            "filetypes": ["sh"],
-            "ignoredRootPaths": ["~"]
+            "filetypes": ["sh"]
         },
         "clangd": {
             "command": "clangd",
@@ -28,7 +27,6 @@
         },
         "haskell": {
             "command": "hie-wrapper",
-            "rootPatterns": [".stack.yaml", "cabal.config", "package.yaml"],
             "filetypes": ["hs", "lhs", "haskell"],
             "initializationOptions": {}
         },

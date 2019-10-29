@@ -4,6 +4,7 @@ import math
 import os
 import sys
 from functools import partial
+from itertools import *
 from pprint import pprint
 from time import time, sleep
 from timeit import timeit
