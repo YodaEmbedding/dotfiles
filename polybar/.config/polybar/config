@@ -22,7 +22,7 @@ font-5 = NotoSans-Regular:size=10.0;0
 tray-background = #221133
 tray-position = right
 
-modules-left = i3 mpd
+modules-left = i3 mpd preview
 modules-center = title
 modules-right = network ping updates memory cpu temperature pulseaudio date
 
@@ -66,6 +66,14 @@ label-song = %artist:0:20% - %title%
 label-song-maxlen = 70
 label-time = (%elapsed%/%total%)
 format-online-font = 6
+
+[module/preview]
+type = custom/script
+exec = tmux capture-pane -p -t "0:1.1" | tac | egrep -m 1 . | sed -e 's/^[ \t]*//'
+interval = 1
+label = %output:0:16:...%
+format-foreground = #9977AA
+label-font = 6
 
 [module/title]
 type = internal/xwindow
