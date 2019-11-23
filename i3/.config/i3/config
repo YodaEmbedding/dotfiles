@@ -47,6 +47,9 @@ set $vol_change     pkill -SIGRTMIN+1 i3blocks
 set $screen_base    $HOME/Downloads
 set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 
+# Window size
+set $video_size     752 423
+
 
 ### DEFAULT BINDINGS ###
 
@@ -193,7 +196,7 @@ bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
 bindsym $mod+minus              [instance="^(?!dropdown$).*$"] scratchpad show
 bindsym $mod+g                  sticky toggle
-bindsym $mod+shift+g            floating toggle, sticky enable, resize set 864 486, exec $nsi $scripts/move bottom right
+bindsym $mod+shift+g            floating toggle, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
 bindsym $mod+$mod_+c            move position center
 
 # Window property control: multiple scratchpads
@@ -436,7 +439,12 @@ for_window [instance="^lyvi$"] \
 
 for_window [instance="^mpv popup$"] \
     floating enable, sticky enable, \
-    resize set 864 486, \
+    resize set $video_size, \
+    exec $nsi $scripts/move bottom right
+
+for_window [title="^Picture-in-Picture$"] \
+    floating enable, sticky enable, \
+    resize set $video_size, \
     exec $nsi $scripts/move bottom right
 
 for_window [instance="^ncmpcpp$"] \
