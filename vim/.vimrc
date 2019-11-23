@@ -37,6 +37,7 @@ function! PlugLoaded(name)
 endfunction
 
 " Enabled {{{2
+Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
@@ -100,7 +101,6 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 "Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 "Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
-"Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
@@ -619,6 +619,7 @@ if PlugLoaded('coc.nvim')
     nnoremap <silent> <space><space> :<C-u>CocList<CR>
     nnoremap <silent> <C-space>      :<C-u>CocListResume<CR>
 
+    nnoremap <silent> <space>a  :<C-u>CocList actions<CR>
     nnoremap <silent> <space>c  :<C-u>CocList commands<CR>
     nnoremap <silent> <space>d  :<C-u>CocList diagnostics<CR>
     nnoremap <silent> <space>m  :<C-u>CocList marks<CR>
@@ -674,6 +675,10 @@ if PlugLoaded('fzf.vim')
     nnoremap <Leader>t :Tags<CR>
 endif
 
+" vim-easy-align {{{3
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 " Leader {{{2
 
 " Strip trailing whitespace {{{3
@@ -716,6 +721,9 @@ autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
 
 " nnoremap <C-Space> za
 " vnoremap <C-Space> za
+
+" Kill buffer {{{3
+nnoremap <C-x> :bd<CR>
 
 " Macro {{{3
 nnoremap <silent> <F2> @q
