@@ -148,11 +148,11 @@ HISTORY_IGNORE="(kill <->|kill -<-> <->)"
 setopt hist_ignore_space
 
 # Ignore duplicate commands when searching
-setopt hist_find_no_dups
+# setopt hist_find_no_dups
 
 # Remove duplicate commands from history on exit
-# setopt hist_ignore_all_dups
-# setopt hist_save_no_dups
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
 
 # Better globbing
 setopt extended_glob
