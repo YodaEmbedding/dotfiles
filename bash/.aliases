@@ -136,6 +136,11 @@ alias tw='wtwitch'
 alias twc="wtwitch -c | sed '/^ Streamers offline:\$/,\$d'"
 alias tws='wtwitch -s'
 
+# zip
+zipf() {
+  zip -r "$1.zip" "$1"
+}
+
 ### FILE PATHS ###
 
 # File common
