@@ -242,9 +242,9 @@ hi MatchParen       guifg=#dddddd
 hi Pmenu            guibg=#473745
 
 hi CocErrorFloat            guifg=#cc6666
-hi CocErrorVirtualText      guifg=#503B4D
-hi CocWarningVirtualText    guifg=#503B4D
-hi CocInfoVirtualText       guifg=#503B4D
+hi CocErrorVirtualText      guifg=#5C4459
+hi CocWarningVirtualText    guifg=#5C4459
+hi CocInfoVirtualText       guifg=#5C4459
 
 " NOTE Temporary fix
 autocmd User CocOpenFloat
