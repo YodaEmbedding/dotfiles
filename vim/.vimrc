@@ -412,12 +412,16 @@ autocmd FileType rust     setlocal foldmethod=syntax foldnestmax=2
 autocmd FileType python   setlocal foldtext=FoldTextStyle()
 
 " Indenting and Tabs {{{2
-autocmd FileType fortran  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType haskell  setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType lisp     setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
-autocmd FileType markdown setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
-autocmd FileType python   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
-autocmd FileType tex      setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
+autocmd FileType css        setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
+autocmd FileType fortran    setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType haskell    setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType html       setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
+autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
+autocmd FileType lisp       setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType markdown   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType python     setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+autocmd FileType tex        setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
+autocmd FileType typescript setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
 
 let fortran_do_enddo=1
 let fortran_free_source=1
