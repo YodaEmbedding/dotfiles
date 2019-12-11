@@ -600,7 +600,7 @@ endfunction
 if PlugLoaded('coc.nvim')
     inoremap <silent><expr> <c-space> coc#refresh()
     inoremap <silent><expr> <c-k> CocActionAsync('showSignatureHelp')
-    nnoremap <silent> K :call <SID>CocDocumentation()<CR>
+    " nnoremap <silent> K :call <SID>CocDocumentation()<CR>
     nmap <silent> [c <Plug>(coc-diagnostic-prev)
     nmap <silent> ]c <Plug>(coc-diagnostic-next)
     nmap <silent> gd <Plug>(coc-definition)
@@ -615,11 +615,11 @@ if PlugLoaded('coc.nvim')
     nmap <leader>qf <Plug>(coc-fix-current)
     nmap <leader>rn <Plug>(coc-rename)
 
-    nnoremap <expr><C-h> (exists('w:float') ?
+    nnoremap <silent> <expr> K (exists('w:float') ?
         \ ":call coc#util#float_hide()<CR>" :
         \ coc#util#has_float() ?
         \     ":call coc#util#float_jump()<CR>" :
-        \     ":call CocAction('doHover')<CR>")
+        \     ":call <SID>CocDocumentation()<CR>")
 
     nnoremap <silent> <space><space> :<C-u>CocList<CR>
     nnoremap <silent> <C-space>      :<C-u>CocListResume<CR>
