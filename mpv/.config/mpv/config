@@ -1,6 +1,22 @@
+profile=svp
 
+# Subtitle fonts
 sub-ass-force-style=FontName=OpenSans,Default
 #sub-ass-force-style=FontName=NotoSans,Default
 ass-force-style=Kerning=yes
 #sub-font-size=32
 
+# Keep within screen bounds; if window larger than W%xH% of screen, resize to W%xH%
+autofit-larger=100%x100%
+
+[none]
+
+[svp]
+input-ipc-server=/tmp/mpvsocket     # Receives input from SVP
+hr-seek-framedrop=no                # Fixes audio desync
+resume-playback=no                  # Not compatible with SVP
+hwdec=auto-copy
+hwdec-codecs=all
+
+# Can fix stuttering in some cases, in other cases probably causes it. Try it if you experience stuttering.
+#opengl-early-flush=yes
