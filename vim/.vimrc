@@ -578,7 +578,8 @@ function! s:SmartFiles(...)
     if empty(root)
         return call("fzf#vim#files", a:000)
     else
-        return call("fzf#vim#gitfiles", a:000)
+        let args = ["--cached --exclude-standard --others"]
+        return call("fzf#vim#gitfiles", args)
     endif
 endfunction
 
@@ -670,7 +671,7 @@ if PlugLoaded('fzf.vim')
     nnoremap <Leader>s :LocateFiles .<CR>
     nnoremap <Leader>f :Files<CR>
     nnoremap <Leader>F :Files %:h<CR>
-    nnoremap <Leader>g :GFiles<CR>
+    nnoremap <Leader>g :GFiles --cached --others --exclude-standard<CR>
     nnoremap <Leader>h :History<CR>
     nnoremap <Leader>l :Lines<CR>
     nnoremap <Leader>a :Ag!<CR>
