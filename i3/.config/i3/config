@@ -465,6 +465,10 @@ for_window [title="^floating, bottom right$"] \
     floating enable, \
     exec $nsi $scripts/move bottom right
 
+for_window [title="^Server Monitor$"] \
+    floating enable, \
+    exec $nsi $scripts/move top right
+
 for_window [class="^(Firefox|Nightly)$"] \
     border none
 
