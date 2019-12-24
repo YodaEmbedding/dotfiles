@@ -107,6 +107,9 @@ alias goo="googler -n 5"
 alias gpgaddkey="gpg --recv-keys"
 alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
 
+# nnn
+alias n='nnn'
+
 # parallel
 alias parallel='parallel --will-cite'
 
@@ -145,6 +148,7 @@ zipf() {
 
 # File common
 alias todo='vim ~/Dropbox/Misc/Notepad/todo.md'
+alias todot='tmux rename-window "todo"; todo'
 
 # File config
 alias aliases='vim ~/.aliases'
@@ -270,7 +274,7 @@ alias ushinau='rm'                      # lose/part with
 alias shimau='shutdown -P 0'            # finish/end/put away
 alias meirei='sudo'                     # order/command
 alias waru='tmux'                       # split/divide
-alias suru='todo'                       # to do
+alias suru='todot'                      # to do
 alias kawaru='vim'                      # change/modify
 alias koushin='yay'                     # update
 # alias tanomu=''                       # ask
