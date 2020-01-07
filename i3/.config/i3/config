@@ -50,6 +50,11 @@ set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 # Window size
 set $video_size     752 423
 
+# mpc volume control
+set $mpc_volume mpc volume | \
+    python -c 'import re; import math; n = int(re.findall(\\"\\d+\\", input())[0]); print(1 + int(n / 5))' | \
+    xargs -I {} mpc volume
+
 
 ### DEFAULT BINDINGS ###
 
@@ -258,8 +263,8 @@ bindsym XF86AudioNext           exec $nsi mpc next
 bindsym XF86AudioPrev           exec $nsi mpc prev
 
 bindsym $mod+ctrl+x             exec $nsi mpc toggle
-bindsym $mod+x                  exec $nsi mpc volume +10
-bindsym $mod+shift+x            exec $nsi mpc volume -10
+bindsym $mod+x                  exec $nsi "$mpc_volume +{}"
+bindsym $mod+shift+x            exec $nsi "$mpc_volume -{}"
 
 # Media control (mpris)
 # bindsym XF86AudioPlay           exec $nsi playerctl play-pause
