@@ -225,6 +225,10 @@ alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k
 
 # Monitor control
 mbc() {
+  sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 && ddccontrol -p -r 0x12 -w $0 >/dev/null 2>&1 &' "$1"
+}
+
+mbc2() {
   sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 && ddccontrol -p -r 0x12 -w $1 >/dev/null 2>&1 &' "$1" "$2"
 }
 
