@@ -10,7 +10,7 @@ fi
 updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ "$updates" -gt 0 ]; then
-    echo "$updates_arch:$updates_aur"
+    echo "$updates_arch"
 else
     echo ""
 fi
