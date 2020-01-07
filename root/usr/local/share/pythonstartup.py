@@ -2,6 +2,7 @@ import functools
 import itertools
 import math
 import os
+import re
 import sys
 from functools import partial
 from itertools import *
@@ -14,6 +15,6 @@ from numpy import array, arange, concatenate, ones, ones_like, zeros, zeros_like
 from numpy import exp, log, log2, log10, sqrt, ceil, floor
 from numpy import pi, sin, cos, tan, arcsin, arccos, arctan, arctan2, degrees, radians
 
-j = 1.j
-
 np.set_printoptions(precision=3)
+
+j = 1.j
