@@ -75,7 +75,7 @@ new_height = old_height
 
 for cmd in sys.argv[1:]:
     if cmd == "left":   new_x = 0
-    if cmd == "top":    new_y = 0
+    if cmd == "top":    new_y = 24
     if cmd == "right":  new_x = ws_width  - old_width
     if cmd == "bottom": new_y = ws_height - old_height
     if cmd == "center": new_x = (ws_width  - old_width) / 2
