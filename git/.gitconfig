@@ -6,7 +6,7 @@
 [credential]
 	helper = cache --timeout=86400
 
-# [url "https://sicariusnoctis@github.com"]
+# [url "https://yodaembedding@github.com"]
 # 	insteadOf = https://github.com
 
 [url "ssh://git@github.com"]
