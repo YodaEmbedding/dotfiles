@@ -737,6 +737,13 @@ nnoremap <silent> <F3> @@
 " Paste mode toggle {{{3
 set pastetoggle=<F4>
 
+" Quit {{{3
+nnoremap zq :qa<CR>
+nnoremap zQ :qa!<CR>
+
+" Save {{{3
+nnoremap <C-s> :w<CR>
+
 " Save as sudo {{{3
 " TODO RARELYUSED
 cmap w!! w !sudo tee > /dev/null %
