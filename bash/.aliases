@@ -61,6 +61,9 @@ alias less='less -r'
 # python
 alias py="python3"
 
+# rsync
+alias rscp="rsync -a --info=progress2 --partial"
+
 # tmux
 alias t="tmux"
 
@@ -98,6 +101,10 @@ alias yayq='yay -Qs'
 alias yays='yay --noconfirm -S'
 alias yayu='yay --noconfirm -Syu'
 
+aururl() {
+  xdg-open "https://aur.archlinux.org/packages/$1"
+}
+
 ### OTHER UTILITIES ###
 
 # googler
@@ -106,6 +113,10 @@ alias goo="googler -n 5"
 # gpg
 alias gpgaddkey="gpg --recv-keys"
 alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
+
+# htop
+alias htop_cpu="htop --sort-key=PERCENT_CPU"
+alias htop_mem="htop --sort-key=PERCENT_MEM"
 
 # nnn
 alias n='nnn'
@@ -129,6 +140,10 @@ alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
 # tar
 tarf() {
   tar czf "$1.tar.gz" "$1"
+}
+
+tarfprog() {
+  tar cf - "$1" -P | pv -s $(du -sb "$1" | awk '{print $1}') | gzip > "$1.tar.gz"
 }
 
 # thunar
@@ -269,6 +284,8 @@ alias fuku='cp'                         # copy
 alias iu='echo'                         # say
 alias baka='git'                        # idiot
 alias morau='git'                       # get
+alias shigoto='htop_cpu'                # work
+alias kioku='htop_mem'                  # memory
 alias hyou='ls'                         # list
 alias hebi='python'                     # snake
 alias saikido='reboot'                  # restart
