@@ -421,7 +421,7 @@ for_window [instance="^dropdown$"] \
 
 for_window [title="^i?python scratchpad$"] \
     floating enable, border none, \
-    resize set 600 255, move position 0 20, \
+    resize set 600 255, move position 0 24, \
     exec $nsi transset-df -a 0.90, \
     move scratchpad, scratchpad show
 
