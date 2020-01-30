@@ -20,15 +20,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # The `faux_multiplier` setting controls the number of lines the terminal
-  # should scroll when the alternate screen buffer is active. This is used
-  # to allow mouse scrolling for applications like `man`.
-  #
-  # Specifying `0` will disable faux scrolling.
-  faux_multiplier: 3
-
-  auto_scroll: false
-
 tabspaces: 8
 
 # Important font attributes like antialiasing, subpixel aa, and hinting can be
