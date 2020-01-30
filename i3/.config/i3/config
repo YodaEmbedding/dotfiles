@@ -337,8 +337,10 @@ bindsym $mod+shift+t            exec $nsi \
                                     systemctl --user --no-block start update-frece-file.service
 
 # Python terminal (i.e. calculator)
-bindsym $mod+c                  exec $nsi alacritty -e=ptpython  -t="python scratchpad"
-bindsym $mod+shift+c            exec $nsi alacritty -e=ptipython -t="ipython scratchpad"
+# bindsym $mod+c                  exec $nsi alacritty -e=ptpython  -t="python scratchpad"
+# bindsym $mod+shift+c            exec $nsi alacritty -e=ptipython -t="ipython scratchpad"
+bindsym $mod+c                  exec $nsi alacritty -e=$HOME/.local/bin/ptpython  -t="python scratchpad"
+bindsym $mod+shift+c            exec $nsi alacritty -e=$HOME/.local/bin/ptipython -t="ipython scratchpad"
 
 # Transparency
 bindsym $mod+ctrl+shift+o       exec $nsi transset-df -a -t
