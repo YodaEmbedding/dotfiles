@@ -127,6 +127,9 @@ alias parallel='parallel --will-cite'
 # percol
 alias p='percol'
 
+# ptpython
+alias ptpy='tmux rename-window "py"; ptpython'
+
 # ranger (open navigated folder in terminal on exit)
 alias r='ranger'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
@@ -287,7 +290,7 @@ alias morau='git'                       # get
 alias shigoto='htop_cpu'                # work
 alias kioku='htop_mem'                  # memory
 alias hyou='ls'                         # list
-alias hebi='python'                     # snake
+alias hebi='ptpy'                       # snake
 alias saikido='reboot'                  # restart
 alias sagasu='rgi'                      # search
 alias mitsukeru='rgi'                   # find
