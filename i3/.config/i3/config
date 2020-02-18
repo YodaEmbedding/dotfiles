@@ -351,11 +351,11 @@ bindsym $mod+$mod_+o            exec $nsi transset-df -a --inc 0.01
 bindsym $mod+$mod_+shift+o      exec $nsi transset-df -a --dec 0.01
 bindsym $mod+$mod_+ctrl+o       exec $nsi transset-df -a $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity" | awk '{print $1 / 100}')
 
-# Transparency (via compton)
-# bindsym $mod+o                  exec $nsi compton-trans -c --delete
-# bindsym $mod+o                  exec $nsi compton-trans -c +5
-# bindsym $mod+shift+o            exec $nsi compton-trans -c -- -5
-# bindsym $mod+$mod_+o            exec $nsi compton-trans -c -o $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity")
+# Transparency (via picom)
+# bindsym $mod+o                  exec $nsi picom-trans -c --delete
+# bindsym $mod+o                  exec $nsi picom-trans -c +5
+# bindsym $mod+shift+o            exec $nsi picom-trans -c -- -5
+# bindsym $mod+$mod_+o            exec $nsi picom-trans -c -o $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity")
 
 # Redshift control
 bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.rshift) + 200))
@@ -525,7 +525,7 @@ assign [class="Google Play Music Desktop Player"] → $ws9
 ### USER STARTUP ###
 
 # System
-exec        $nsi    compton --experimental-backend
+exec        $nsi    picom --experimental-backend
 exec        $nsi    xmodmap ~/.Xmodmap
 exec        $nsi    xset led on
 exec_always $nsi    xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
