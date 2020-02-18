@@ -28,7 +28,8 @@ set $nsi            --no-startup-id
 set $scripts        ~/.config/i3/scripts
 
 # Wallpaper paths
-set $wallpaper      /usr/share/backgrounds/current_desktop.png
+# set $wallpaper      /usr/share/backgrounds/current_desktop.png
+set $wallpaper      --no-fehbg --randomize /usr/share/backgrounds/desktop
 set $lock_wallpaper /usr/share/backgrounds/current_lock.png
 
 # Download frece scripts from https://github.com/SicariusNoctis/frece
@@ -300,6 +301,9 @@ bindsym $mod+ctrl+e             exec "mpv \\"$(xclip -selection clipboard -o)\\"
 
 # Lock screen
 bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
+
+# Wallpaper
+bindsym $mod+$mod_+w            exec feh --bg-scale $wallpaper
 
 # Jump to urgent window
 bindsym $mod+u                  [urgent=latest] focus
