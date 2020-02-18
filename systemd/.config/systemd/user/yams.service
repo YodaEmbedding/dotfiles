@@ -6,7 +6,7 @@ Requires=mopidy.service
 [Service]
 Type=simple
 ExecStartPre=/bin/rm -f ~/.config/yams/yams.pid
-ExecStartPre=/bin/sleep 30
+ExecStartPre=/bin/sleep 5
 ExecStart=/usr/bin/yams -N
 
 [Install]
