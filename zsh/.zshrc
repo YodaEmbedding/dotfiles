@@ -88,7 +88,7 @@ autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 
 # fasd
-eval "$(fasd --init posix-alias zsh-hook)"
+eval "$(fasd --init zsh-hook)"
 
 # Rename files using zmv 'test(*).png' '$1.png'
 # autoload zmv
