@@ -699,6 +699,10 @@ noremap <Leader>w :call <SID>ToggleWrap()<CR>
 
 " Navigation {{{2
 
+" Motion overrides {{{3
+nnoremap <silent> } :<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>
+nnoremap <silent> { :<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>
+
 " Navigate buffers {{{3
 nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
