@@ -747,8 +747,8 @@ nnoremap <silent> <F3> @@
 set pastetoggle=<F4>
 
 " Quit {{{3
-nnoremap zq :qa<CR>
-nnoremap zQ :qa!<CR>
+nnoremap zx :qa<CR>
+nnoremap zX :qa!<CR>
 
 " Save {{{3
 nnoremap <C-s> :w<CR>
