@@ -40,6 +40,7 @@ endfunction
 Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
+Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])' abc def ghi
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
 Plug 'junegunn/'        . 'fzf', { 'dir': '~/.fzf', 'do': './install --all' }
