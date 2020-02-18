@@ -43,7 +43,7 @@ Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])' abc def ghi
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
-Plug 'junegunn/'        . 'fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/'        . 'fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'wellle/'          . 'targets.vim'             " Functional: Text objects
 Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
@@ -611,7 +611,7 @@ if PlugLoaded('coc.nvim')
     nmap <silent> gd <Plug>(coc-definition)
     nmap <silent> gi <Plug>(coc-implementation)
     nmap <silent> gr <Plug>(coc-references)
-    nmap <silent> gy <Plug>(coc-type-definition)
+    nmap <silent> gt <Plug>(coc-type-definition)
     nmap <leader>=  <Plug>(coc-format-selected)
     xmap <leader>=  <Plug>(coc-format-selected)
     nmap <leader>a  <Plug>(coc-codeaction-selected)
