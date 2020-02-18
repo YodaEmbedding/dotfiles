@@ -60,6 +60,7 @@ Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing
 Plug 'unblevable/'      . 'quick-scope'             " Visual: Highlight unique characters per word in line (for find)
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
+Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 if !has('nvim')
     Plug 'roxma/'       . 'nvim-yarp'               " Functional: Update framework
@@ -106,10 +107,10 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
 "Plug 'kana/'            . 'vim-submode'             " Functional: New modes
+"Plug 'svermeulen/'      . 'vim-yoink'               " Functional: Registers
 "Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
 "Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
-"Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Possibly useful {{{3
 "Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
