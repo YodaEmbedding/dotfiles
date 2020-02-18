@@ -438,6 +438,9 @@ autocmd BufRead,BufNewFile *.nxc set filetype=cpp
 
 " COMMANDS {{{1
 
+" Clear registers {{{2
+command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), " ") | endfor
+
 " Copy search matches {{{2
 command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 
