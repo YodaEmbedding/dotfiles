@@ -279,28 +279,5 @@ alias updateblocklist='wget http://john.bitsurge.net/public/biglist.p2p.gz -NP ~
 # Update frece databases
 alias updatefrece='systemctl --user --no-block start update-frece-dir.service; systemctl --user --no-block start update-frece-file.service'
 
-# Japanese aliases
-alias namae='aliases'                   # name
-alias haikei='b'                        # background
-alias hinokitsune='b firefox-nightly'   # fire's fox
-alias fuku='cp'                         # copy
-alias iu='echo'                         # say
-alias baka='git'                        # idiot
-alias morau='git'                       # get
-alias shigoto='htop_cpu'                # work
-alias kioku='htop_mem'                  # memory
-alias hyou='ls'                         # list
-alias hebi='ptpy'                       # snake
-alias saikido='reboot'                  # restart
-alias sagasu='rgi'                      # search
-alias mitsukeru='rgi'                   # find
-alias ushinau='rm'                      # lose/part with
-alias shimau='shutdown -P 0'            # finish/end/put away
-alias meirei='sudo'                     # order/command
-alias waru='tmux'                       # split/divide
-alias suru='todot'                      # to do
-alias kawaru='vim'                      # change/modify
-alias koushin='yay'                     # update
-# alias tanomu=''                       # ask
-
-# TODO add more words. e.g. todo_books, cd Dropbox/Current, frece commands, ...
+### JAPANESE ALIASES ###
+source "$HOME/.aliases_jp"
