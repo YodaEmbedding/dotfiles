@@ -201,6 +201,9 @@ let g:tcomment_types = {'c': '// %s'}
 " vim-gutentags {{{2
 let g:gutentags_file_list_command = 'rg --files'
 
+" vim-peekaboo {{{2
+" let g:peekaboo_window = 'vertical botright 60new'
+
 " vim-polyglot {{{2
 let g:polyglot_disabled = ['latex', 'python-ident', 'tex']
 
