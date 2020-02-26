@@ -49,7 +49,6 @@ Plug 'wellle/'          . 'targets.vim'             " Functional: Text objects
 Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
 Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
-Plug 'tpope/'           . 'vim-fugitive'            " Tools: Git [RARELYUSED]
 Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
@@ -126,6 +125,7 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'Houl/'            . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
+"Plug 'tpope/'           . 'vim-fugitive'            " Tools: Git [RARELYUSED]
 "Plug 'rhysd/'           . 'git-messenger.vim'       " Tools: Git commit history
 "Plug 'buztard/'         . 'vim-rel-jump'            " Tweak: Add to relative jk motions to jumpstack
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
