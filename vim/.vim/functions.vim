@@ -1,5 +1,5 @@
 " Check backspace {{{1
-function! s:CheckBackspace() abort
+function! CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
@@ -36,7 +36,7 @@ function! CheckForUpdates()
 endfunction
 
 " coc.nvim {{{1
-function! s:CocDocumentation()
+function! CocDocumentation()
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
     else
@@ -45,7 +45,7 @@ function! s:CocDocumentation()
 endfunction
 
 " Copy search matches {{{1
-function! s:CopyMatches(reg)
+function! CopyMatches(reg)
     let hits = []
     %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
     let reg = empty(a:reg) ? '+' : a:reg
@@ -53,7 +53,7 @@ function! s:CopyMatches(reg)
 endfunction
 
 " Denite configure options {{{1
-function! s:denite_profile(opts) abort
+function! DeniteProfile(opts) abort
   for l:fname in keys(a:opts)
     for l:dopt in keys(a:opts[l:fname])
       call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
@@ -119,7 +119,7 @@ function! s:get_git_root()
     return v:shell_error ? '' : root
 endfunction
 
-function! s:SmartFiles(...)
+function! SmartFiles(...)
     let root = s:get_git_root()
     if empty(root)
         return call("fzf#vim#files", a:000)
@@ -130,7 +130,7 @@ function! s:SmartFiles(...)
 endfunction
 
 " Word wrap {{{1
-function! s:ToggleWrap()
+function! ToggleWrap()
     setlocal wrap linebreak nolist
     set virtualedit=
     setlocal display+=lastline

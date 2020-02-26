@@ -2,7 +2,7 @@
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), " ") | endfor
 
 " Copy search matches {{{1
-command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
+command! -register CopyMatches call CopyMatches(<q-reg>)
 
 " fzf {{{1
 if PlugLoaded('fzf.vim')
@@ -12,5 +12,5 @@ if PlugLoaded('fzf.vim')
         \     'options': '-m' },
         \   <bang>0))
 
-    command! -bang -nargs=* -complete=dir SmartFiles call <SID>SmartFiles(<q-args>)
+    command! -bang -nargs=* -complete=dir SmartFiles call SmartFiles(<q-args>)
 endif

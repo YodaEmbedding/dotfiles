@@ -4,7 +4,7 @@
 if PlugLoaded('coc.nvim')
     inoremap <silent><expr> <c-space> coc#refresh()
     inoremap <silent><expr> <c-k> CocActionAsync('showSignatureHelp')
-    " nnoremap <silent> K :call <SID>CocDocumentation()<CR>
+    " nnoremap <silent> K :call CocDocumentation()<CR>
     nmap <silent> [c <Plug>(coc-diagnostic-prev)
     nmap <silent> ]c <Plug>(coc-diagnostic-next)
     nmap <silent> gd <Plug>(coc-definition)
@@ -23,7 +23,7 @@ if PlugLoaded('coc.nvim')
         \ ":call coc#util#float_hide()<CR>" :
         \ coc#util#has_float() ?
         \     ":call coc#util#float_jump()<CR>" :
-        \     ":call <SID>CocDocumentation()<CR>")
+        \     ":call CocDocumentation()<CR>")
 
     nnoremap <silent> <space><space> :<C-u>CocList<CR>
     nnoremap <silent> <C-space>      :<C-u>CocListResume<CR>
@@ -65,7 +65,7 @@ if PlugLoaded('denite.nvim')
         \ 'prompt_highlight': 'Function',
         \ }}
 
-    call s:denite_profile(s:denite_options)
+    call denite_profile(s:denite_options)
 endif
 
 " fzf {{{2
@@ -94,7 +94,7 @@ nmap ga <Plug>(EasyAlign)
 nnoremap <Leader><Space> :FixWhitespace<CR>
 
 " Word wrap, up/down visually {{{2
-noremap <Leader>w :call <SID>ToggleWrap()<CR>
+noremap <Leader>w :call ToggleWrap()<CR>
 
 " Navigation {{{1
 
