@@ -51,6 +51,7 @@ Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
+Plug 'tpope/'           . 'vim-eunuch'              " Tools: UNIX sugars on mv, rm, rename, ...
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
 Plug 'tyrannicaltoucan/'. 'vim-quantum'             " Visual: Colorscheme
