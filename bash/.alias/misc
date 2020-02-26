@@ -84,6 +84,9 @@ alias  album="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xes
 alias artist="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:artist: ' | sed 's/^xesam:artist: //'"
 alias  title="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:title: '  | sed 's/^xesam:title: //'"
 
+# Power
+alias windows='sudo grub-reboot "Windows 10 (on /dev/sda1)" && reboot'
+
 # Statistics
 alias class='xprop WM_CLASS'
 alias count='ls -1 | wc -l'

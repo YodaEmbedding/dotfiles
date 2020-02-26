@@ -19,6 +19,7 @@ alias meirei='sudo'                     # order/command
 alias waru='tmux'                       # split/divide
 alias suru='todot'                      # to do
 alias kawaru='vim'                      # change/modify
+alias mado='windows'                    # window
 alias koushin='yay'                     # update
 
 # git
