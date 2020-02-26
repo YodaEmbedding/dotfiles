@@ -1,0 +1,34 @@
+### IMPORTANT UTILITIES ###
+
+# git
+alias ga='git add'
+alias gc='git commit'
+alias gca='git commit -a'
+alias gcam='git commit -am'
+alias gcm='git commit -m'
+alias gco='git checkout'
+alias gcl='git clone'
+alias gd='git diff'
+alias gl='git log --graph --full-history --all --color --oneline'
+alias gla='git log --graph --decorate $(git rev-list -g --all)'
+alias gst='git status'
+
+# grep
+alias g='grep --color=never -i'
+
+# less
+alias less='less -r'
+
+# python
+alias py="python3"
+
+# rsync
+alias rscp="rsync -a --info=progress2 --partial"
+
+# tmux
+alias t="tmux"
+
+# vim
+# alias v='nvim'
+alias vim='nvim'
+alias vimprivate='vim -c "setlocal history=0 nobackup nomodeline noshelltemp noswapfile noundofile nowritebackup secure viminfo=\"\""'

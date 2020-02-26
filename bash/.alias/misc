@@ -1,0 +1,100 @@
+### MISCELLANEOUS ###
+
+# Buildozer
+alias builddebug='buildozer android debug deploy run'
+alias buildlogcat='buildozer android adb -- logcat -s python'
+
+# Copy paste
+# TODO rename these to something more accessible?
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection clipboard -o'
+
+# Dropdown terminal
+alias dropdown='b alacritty --class dropdown -e tmux new-session -s 0 &'
+alias dropdowna='b alacritty --class dropdown -e tmux attach -t 0 &'
+
+# emoji
+alias lenny='emoji -lc'
+alias shruggie='emoji -sc'
+
+# File opening (in background)
+bgrnd() {
+  nohup "$@" </dev/null >/dev/null 2>&1 &
+  disown
+}
+
+alias b='bgrnd'
+alias o='bgrnd xdg-open'
+
+# File templates
+alias newpy='echo "#!/usr/bin/env python3\n\nimport numpy as np" > '
+
+# git commit selector
+gitc() {
+  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local sha=$(awk '{ print $1 }' <<< "$out")
+  echo "$sha"
+}
+
+# git diff browser
+gitd() {
+  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local sha=$(awk '{ print $1 }' <<< "$out")
+  [ -n "$sha" ] && git diff "$sha~" "$sha"
+}
+
+# git history browser
+gith() {
+  local out sha q
+  while out=$(
+      git log --graph --color=always \
+          --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" |
+      fzf --ansi --multi --reverse --query="$q" --print-query); do
+    q=$(head -1 <<< "$out")
+    while read sha; do
+      [ -n "$sha" ] && git show --color=always $sha | less -R
+    done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
+  done
+}
+
+# List available commands
+#alias commands='compgen -c'
+alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k)builtins} ${(k)commands} | fzf'
+
+# Monitor control
+mbc() {
+  sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 && ddccontrol -p -r 0x12 -w $0 >/dev/null 2>&1 &' "$1"
+}
+
+mbc2() {
+  sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 && ddccontrol -p -r 0x12 -w $1 >/dev/null 2>&1 &' "$1" "$2"
+}
+
+brightness() {
+  sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 &' "$1"
+}
+
+contrast() {
+  sudo bash -c 'ddccontrol -p -r 0x12 -w $0 >/dev/null 2>&1 &' "$1"
+}
+
+# Music
+alias qdbus_gpmdp="qdbus org.mpris.MediaPlayer2.google-play-music-desktop-player /org/mpris/MediaPlayer2"
+alias  album="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:album: '  | sed 's/^xesam:album: //'"
+alias artist="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:artist: ' | sed 's/^xesam:artist: //'"
+alias  title="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xesam:title: '  | sed 's/^xesam:title: //'"
+
+# Statistics
+alias class='xprop WM_CLASS'
+alias count='ls -1 | wc -l'
+alias diskusage='du -sh'
+alias perm='stat -c "%a %n"'
+
+# Update ~/.locate.db
+alias updatelocate='systemctl --user --no-block start update-locate.service'
+
+# Update blocklists
+alias updateblocklist='wget http://john.bitsurge.net/public/biglist.p2p.gz -NP ~/.config/qBittorrent && gunzip -kf ~/.config/qBittorrent/biglist.p2p.gz'
+
+# Update frece databases
+alias updatefrece='systemctl --user --no-block start update-frece-dir.service; systemctl --user --no-block start update-frece-file.service'

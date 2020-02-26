@@ -1,0 +1,14 @@
+### FILE PATHS ###
+
+# File common
+alias todo='vim ~/Dropbox/Misc/Notepad/todo.md'
+alias todot='tmux rename-window "todo"; todo'
+
+# File config
+alias aliases='vim ~/.aliases'
+alias bashrc='vim ~/.bashrc'
+alias vimrc='vim ~/.vimrc'
+alias zshrc='vim ~/.zshrc'
+alias i3config='vim ~/.config/i3/config'
+alias i3bconfig='vim ~/.config/i3blocks/config'
+alias pythonstartup='sudo -e /usr/local/share/pythonstartup.py'

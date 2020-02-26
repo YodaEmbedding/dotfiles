@@ -1,10 +1,11 @@
+### JAPANESE ###
+
+# Misc
 alias namae='aliases'                   # name
 alias hinokitsune='b firefox-nightly'   # fire's fox
 alias haikei='b'                        # background
 alias fuku='cp'                         # copy
 alias iu='echo'                         # say
-alias baka='git'                        # idiot
-alias morau='git'                       # get
 alias shigoto='htop_cpu'                # work
 alias kioku='htop_mem'                  # memory
 alias hyou='ls'                         # list
@@ -19,6 +20,10 @@ alias waru='tmux'                       # split/divide
 alias suru='todot'                      # to do
 alias kawaru='vim'                      # change/modify
 alias koushin='yay'                     # update
+
+# git
+alias baka='git'                        # idiot
+alias morau='git'                       # get
 
 # alias tanomu=''                       # ask
 # TODO add more words. e.g. todo_books, cd Dropbox/Current, frece commands, ...

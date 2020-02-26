@@ -1,0 +1,56 @@
+### OTHER UTILITIES ###
+
+# googler
+alias goo="googler -n 5"
+
+# gpg
+alias gpgaddkey="gpg --recv-keys"
+alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
+
+# htop
+alias htop_cpu="htop --sort-key=PERCENT_CPU"
+alias htop_mem="htop --sort-key=PERCENT_MEM"
+
+# nnn
+alias n='nnn'
+
+# parallel
+alias parallel='parallel --will-cite'
+
+# percol
+alias p='percol'
+
+# ptpython
+alias ptpy='tmux rename-window "py"; ptpython'
+
+# ranger (open navigated folder in terminal on exit)
+alias r='ranger'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# ripgrep
+alias rgi='rg -i'
+
+# selfspy
+alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
+
+# tar
+tarf() {
+  tar czf "$1.tar.gz" "$1"
+}
+
+tarfprog() {
+  tar cf - "$1" -P | pv -s $(du -sb "$1" | awk '{print $1}') | gzip > "$1.tar.gz"
+}
+
+# thunar
+alias th='bgrnd thunar'
+
+# wtwitch
+alias tw='wtwitch'
+alias twc="wtwitch -c | sed '/^ Streamers offline:\$/,\$d'"
+alias tws='wtwitch -s'
+
+# zip
+zipf() {
+  zip -r "$1.zip" "$1"
+}
