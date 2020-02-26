@@ -29,6 +29,7 @@ modules-right = network ping updates memory cpu temperature pulseaudio date
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
 click-middle = i3-msg "kill"
+click-right = i3-msg "kill"
 
 [module/i3]
 type = internal/i3
