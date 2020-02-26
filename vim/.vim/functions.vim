@@ -1,12 +1,10 @@
-" FUNCTIONS {{{1
-
-" Check backspace {{{2
+" Check backspace {{{1
 function! s:CheckBackspace() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
-" Check for plugin updates {{{2
+" Check for plugin updates {{{1
 " Modified from https://gitbub.com/semanser/vim-outdated-plugins
 function! s:JobHandlerVim(chanell, msg)
     if (a:msg =~ "is behind")
@@ -37,7 +35,7 @@ function! CheckForUpdates()
     endfor
 endfunction
 
-" coc.nvim {{{2
+" coc.nvim {{{1
 function! s:CocDocumentation()
     if (index(['vim','help'], &filetype) >= 0)
         execute 'h '.expand('<cword>')
@@ -46,7 +44,7 @@ function! s:CocDocumentation()
     endif
 endfunction
 
-" Copy search matches {{{2
+" Copy search matches {{{1
 function! s:CopyMatches(reg)
     let hits = []
     %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
@@ -54,7 +52,7 @@ function! s:CopyMatches(reg)
     execute 'let @'.reg.' = join(hits, "\n") . "\n"'
 endfunction
 
-" Denite configure options {{{2
+" Denite configure options {{{1
 function! s:denite_profile(opts) abort
   for l:fname in keys(a:opts)
     for l:dopt in keys(a:opts[l:fname])
@@ -63,8 +61,8 @@ function! s:denite_profile(opts) abort
   endfor
 endfunction
 
-" Folding {{{2
-" Fold config files {{{3
+" Folding {{{1
+" Fold config files {{{2
 function! FoldConfig()
     let thisline = getline(v:lnum)
     let matchline = matchstr(thisline, '^#\+.\+#\+$')
@@ -75,7 +73,7 @@ function! FoldConfig()
     return "="
 endfunction
 
-" Fold Fortran files {{{3
+" Fold Fortran files {{{2
 function! FoldFortran()
     let thisline = getline(v:lnum)
     let match_start = match(thisline, '^\s*\(subroutine\|function\|pure function\|elemental function\)')       != -1
@@ -86,7 +84,7 @@ function! FoldFortran()
     return "="
 endfunction
 
-" Fold markdown files {{{3
+" Fold markdown files {{{2
 function! FoldMarkdown()
     let thisline = getline(v:lnum)
     let match = matchstr(thisline, '^#*')
@@ -96,7 +94,7 @@ function! FoldMarkdown()
     return "="
 endfunction
 
-" Fold text style {{{3
+" Fold text style {{{2
 function! FoldTextStyle()
     let line = getline(v:foldstart)
 
@@ -115,7 +113,7 @@ function! FoldTextStyle()
     return line . filltext . posttext
 endfunction
 
-" fzf.vim {{{2
+" fzf.vim {{{1
 function! s:get_git_root()
     let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
     return v:shell_error ? '' : root
@@ -131,7 +129,7 @@ function! s:SmartFiles(...)
     endif
 endfunction
 
-" Word wrap {{{2
+" Word wrap {{{1
 function! s:ToggleWrap()
     setlocal wrap linebreak nolist
     set virtualedit=

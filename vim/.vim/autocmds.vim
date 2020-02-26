@@ -1,16 +1,14 @@
-" AUTOCMDS {{{1
-
-" Auto close preview {{{2
+" Auto close preview {{{1
 autocmd InsertLeave * silent! pclose!
 
-" Autocompletion {{{2
+" Autocompletion {{{1
 let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
-" Check up to date plugins {{{2
+" Check up to date plugins {{{1
 autocmd VimEnter * call CheckForUpdates()
 
-" coc.nvim {{{2
+" coc.nvim {{{1
 if PlugLoaded('coc.nvim')
     set updatetime=50
     autocmd CursorHold * silent     call CocActionAsync('highlight')
@@ -18,13 +16,13 @@ if PlugLoaded('coc.nvim')
     autocmd FileType python let b:coc_root_patterns = ['.env', '.git']
 endif
 
-" Conceal level {{{2
+" Conceal level {{{1
 autocmd FileType markdown setlocal conceallevel=0
 
-" Disable continue comment on new line {{{2
+" Disable continue comment on new line {{{1
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
-" Folding {{{2
+" Folding {{{1
 autocmd FileType conf,markdown,python,vim,zsh let anyfold_activate=0
 autocmd FileType conf,markdown,python,vim,zsh setlocal foldminlines=1
 
@@ -39,7 +37,7 @@ autocmd FileType java     setlocal foldmethod=syntax
 autocmd FileType rust     setlocal foldmethod=syntax foldnestmax=2
 autocmd FileType python   setlocal foldtext=FoldTextStyle()
 
-" Indenting and Tabs {{{2
+" Indenting and Tabs {{{1
 autocmd FileType css        setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
 autocmd FileType fortran    setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType haskell    setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
@@ -55,12 +53,12 @@ let fortran_do_enddo=1
 let fortran_free_source=1
 let fortran_fold=1
 
-" Line wrapping {{{2
+" Line wrapping {{{1
 autocmd FileType tex        setlocal textwidth=79
 
-" Remove trailing whitespace on file save {{{2
+" Remove trailing whitespace on file save {{{1
 "autocmd FileType c,cpp,python autocmd BufWritePre <buffer> :FixWhitespace
 
-" Syntax highlighting {{{2
+" Syntax highlighting {{{1
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 autocmd BufRead,BufNewFile *.nxc set filetype=cpp

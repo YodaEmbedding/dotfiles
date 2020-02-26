@@ -1,12 +1,10 @@
-" COMMANDS {{{1
-
-" Clear registers {{{2
+" Clear registers {{{1
 command! WipeReg for i in range(34,122) | silent! call setreg(nr2char(i), " ") | endfor
 
-" Copy search matches {{{2
+" Copy search matches {{{1
 command! -register CopyMatches call <SID>CopyMatches(<q-reg>)
 
-" fzf {{{2
+" fzf {{{1
 if PlugLoaded('fzf.vim')
     command! -bang -nargs=? -complete=dir LocateFiles
         \ call fzf#run(fzf#wrap({

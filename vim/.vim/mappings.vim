@@ -1,8 +1,6 @@
-" KEYBOARD MAPPINGS {{{1
+" Plugin bindings {{{1
 
-" Plugin bindings {{{2
-
-" coc.nvim {{{3
+" coc.nvim {{{2
 if PlugLoaded('coc.nvim')
     inoremap <silent><expr> <c-space> coc#refresh()
     inoremap <silent><expr> <c-k> CocActionAsync('showSignatureHelp')
@@ -40,7 +38,7 @@ if PlugLoaded('coc.nvim')
     nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 endif
 
-" Denite {{{3
+" Denite {{{2
 if PlugLoaded('denite.nvim')
     " <Tab>         List buffers
     " ,             List files in current directory recursively (using fd)
@@ -70,7 +68,7 @@ if PlugLoaded('denite.nvim')
     call s:denite_profile(s:denite_options)
 endif
 
-" fzf {{{3
+" fzf {{{2
 if PlugLoaded('fzf.vim')
     nnoremap <Tab>     :Buffers<CR>
     nnoremap ,         :SmartFiles<CR>
@@ -86,100 +84,100 @@ if PlugLoaded('fzf.vim')
     nnoremap <Leader>t :Tags<CR>
 endif
 
-" vim-easy-align {{{3
+" vim-easy-align {{{2
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" Leader {{{2
+" Leader {{{1
 
-" Strip trailing whitespace {{{3
+" Strip trailing whitespace {{{2
 nnoremap <Leader><Space> :FixWhitespace<CR>
 
-" Word wrap, up/down visually {{{3
+" Word wrap, up/down visually {{{2
 noremap <Leader>w :call <SID>ToggleWrap()<CR>
 
-" Navigation {{{2
+" Navigation {{{1
 
-" Motion overrides {{{3
+" Motion overrides {{{2
 nnoremap <silent> } :<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>
 nnoremap <silent> { :<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>
 
-" Navigate buffers {{{3
+" Navigate buffers {{{2
 nnoremap <S-Tab> :b#<CR>
 nnoremap gb      :ls<CR>:b<Space>
 
-" Navigate jumpstack {{{3
+" Navigate jumpstack {{{2
 nnoremap <C-P> <C-I>
 
-" Scroll {{{3
+" Scroll {{{2
 nnoremap <C-j> <C-f>
 nnoremap <C-k> <C-b>
 
-" Miscellaneous {{{2
+" Miscellaneous {{{1
 
-" Black hole delete {{{3
+" Black hole delete {{{2
 nnoremap <Backspace> "_dd
 vnoremap <Backspace> "_dd
 
-" Black hole paste (in visual mode) {{{3
+" Black hole paste (in visual mode) {{{2
 xnoremap <silent> p p:let @"=@0<CR>
 
-" Clipboard paste {{{3
+" Clipboard paste {{{2
 inoremap <C-v> <C-o>"+p
 
-" Close location list {{{3
+" Close location list {{{2
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
 
-" Folding {{{3
+" Folding {{{2
 " nnoremap <Space> zA
 " vnoremap <Space> zA
 
 " nnoremap <C-Space> za
 " vnoremap <C-Space> za
 
-" Kill buffer {{{3
+" Kill buffer {{{2
 nnoremap <C-x> :bd<CR>
 
-" Macro {{{3
+" Macro {{{2
 nnoremap <silent> <F2> @q
 nnoremap <silent> <F3> @@
 
-" Paste mode toggle {{{3
+" Paste mode toggle {{{2
 set pastetoggle=<F4>
 
-" Quit {{{3
+" Quit {{{2
 nnoremap zx :qa<CR>
 nnoremap zX :qa!<CR>
 
-" Save {{{3
+" Save {{{2
 nnoremap <C-s> :w<CR>
 
-" Save as sudo {{{3
+" Save as sudo {{{2
 " TODO RARELYUSED
 cmap w!! w !sudo tee > /dev/null %
 cmap x!! x !sudo tee > /dev/null %
 
-" Save jump for up/down {{{3
+" Save jump for up/down {{{2
 nnoremap <expr> j (v:count >= 1 ? "m`" . v:count : '') . 'j'
 vnoremap <expr> j (v:count >= 1 ? "m`" . v:count : '') . 'j'
 
 nnoremap <expr> k (v:count >= 1 ? "m`" . v:count : '') . 'k'
 vnoremap <expr> k (v:count >= 1 ? "m`" . v:count : '') . 'k'
 
-" Search for visually selected text {{{3
+" Search for visually selected text {{{2
 " TODO RARELYUSED
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
-" Search for whole word {{{3
+" Search for whole word {{{2
 nnoremap <C-_> /\<\><Left><Left>
 
-" Sort {{{3
+" Sort {{{2
 nnoremap gs vip:sort<CR>
 vnoremap gs :sort<CR>
 
-" Visual selection apply dot {{{3
+" Visual selection apply dot {{{2
 vnoremap <silent> . :normal .<CR>
 
-" Visual selection apply macro {{{3
+" Visual selection apply macro {{{2
 vnoremap <silent> <F2> :normal @q<CR>
 vnoremap <silent> <F3> :normal @@<CR>

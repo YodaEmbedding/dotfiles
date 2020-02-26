@@ -1,11 +1,9 @@
-" THEMING {{{1
-
-" Colorscheme {{{2
+" Colorscheme {{{1
 " Favorites: cobalt, desert, hybrid_reverse, hybrid_material, quantum, solarized
 let g:quantum_black=1
 colorscheme quantum
 
-" Colors {{{2
+" Colors {{{1
 set background=dark
 if exists('+termguicolors')
     if !has('nvim')
@@ -45,16 +43,16 @@ if has('gui_running')
     hi Normal guifg=PapayaWhip
 endif
 
-" Font {{{2
+" Font {{{1
 if has("gui_running")
     set guifont=Roboto\ Mono\ 16
 endif
 
 let g:enable_bold_font = 1
 
-" Statusline {{{2
+" Statusline {{{1
 
-" Statusline definition {{{3
+" Statusline definition {{{2
 set statusline=                                 " Clear
 set statusline+=\                               " -
 set statusline+=%t                              " Tail of the filename
@@ -78,15 +76,15 @@ set statusline+=%2v                             " Cursor column (virtual)
 set statusline+=\ \                             " --
 set statusline+=(%l\ /\ %L)                     " Cursor line/total lines
 
-" Statusline colors {{{3
+" Statusline colors {{{2
 hi StatusLine guibg=NONE ctermbg=NONE
 hi StatusLine guifg=NONE ctermfg=NONE
 hi StatusLine gui=NONE   cterm=NONE
 
-" Window title {{{2
+" Window title {{{1
 set title               " Change window title to current buffer
 set titlestring=%t      " Change window title
 
-" Highlight groups {{{2
+" Highlight groups {{{1
 autocmd BufEnter * syn keyword Todo NOTE  containedin=.*Comment
 autocmd BufEnter * syn keyword Todo DEBUG containedin=.*Comment

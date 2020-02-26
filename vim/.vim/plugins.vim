@@ -1,6 +1,4 @@
-" VIM-PLUG {{{1
-
-" Installation {{{2
+" Installation {{{1
 if has('nvim')
     if has('win32') | let plug_path = expand('~/AppData/Local/nvim/autoload/plug.vim')
     else            | let plug_path = expand('~/.local/share/nvim/site/autoload/plug.vim')
@@ -17,14 +15,14 @@ if empty(glob(plug_path))
     autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-" Begin {{{2
+" Begin {{{1
 if has('nvim')
     call plug#begin('~/.local/share/nvim/plugged')
 else
     call plug#begin('~/.vim/plugged')
 endif
 
-" Check if plugin loaded {{{2
+" Check if plugin loaded {{{1
 function! PlugLoaded(name)
     return (
         \ has_key(g:plugs, a:name) &&
@@ -32,7 +30,7 @@ function! PlugLoaded(name)
         \ stridx(&runtimepath, trim(g:plugs[a:name].dir, "/")) >= 0)
 endfunction
 
-" Enabled {{{2
+" Enabled {{{1
 Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
@@ -64,7 +62,7 @@ if !has('nvim')
     " Also, run: pip3 install --user pynvim
 endif
 
-" Autocompletion {{{3
+" Autocompletion {{{2
 " Plug 'autozimu/'        . 'LanguageClient-neovim', {
 "     \ 'branch': 'next',
 "     \ 'do': 'bash install.sh',
@@ -94,8 +92,8 @@ Plug 'neoclide/'        . 'coc.nvim', {
 " Haskell: haskell-ide-engine
 " Rust: rls, racer
 
-" Disabled {{{2
-" Sometimes useful {{{3
+" Disabled {{{1
+" Sometimes useful {{{2
 "Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 "Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 "Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
@@ -108,7 +106,7 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 
-" Possibly useful {{{3
+" Possibly useful {{{2
 "Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
 "Plug 'msuperdock/'      . 'vim-foldout'             " Folding: Fold navigation mode (currently broken?)
 "Plug 'Twinside/'        . 'vim-haskellFold'         " Folding: Haskell
@@ -133,7 +131,7 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'yuttie/'          . 'comfortable-motion.vim'  " Visual: Smooth scrolling
 "Plug 'terryma/'         . 'vim-smooth-scroll'       " Visual: Smooth scrolling
 
-" Colorscheme {{{3
+" Colorscheme {{{2
 "Plug 'sjl/              . 'badwolf'                 " Visual: Colorscheme
 "Plug 'gkjgh/            . 'cobalt'                  " Visual: Colorscheme
 "Plug 'archSeer/'        . 'colibri.vim'             " Visual: Colorscheme (purple, cloudy)
@@ -142,14 +140,14 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
 "Plug 'noahfrederick/    . 'vim-noctu'               " Visual: Colorscheme
 
-" Untried {{{2
+" Untried {{{1
 
-" Evaluate next {{{3
+" Evaluate next {{{2
 "Plug 'maralla/'         . 'completor.vim'           " Autocompletion: General
 "Plug 'tommcdo/'         . 'vim-lion'                " Functional: Alignment
 "Plug 'nhooyr/'          . 'neoman.vim'              " Tools: Pager (manpages)
 
-" Other {{{3
+" Other {{{2
 "Plug 'LucHermitte/'     . 'VimFold4C'               " Folding: C++
 "Plug 'LucHermitte/'     . 'lh-vim-lib'              " Folding: Library of functions for LucHermitte's scripts
 "Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Auto-insert parens/quotes
@@ -169,5 +167,5 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'thaerkh/'         . 'vim-workspace'           "
 "Plug 'jreybert/'        . 'vimagit'                 " vim git magic!!!
 
-" End {{{2
+" End {{{1
 call plug#end()
