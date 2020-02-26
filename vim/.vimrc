@@ -433,6 +433,9 @@ let fortran_do_enddo=1
 let fortran_free_source=1
 let fortran_fold=1
 
+" Line wrapping {{{2
+autocmd FileType tex        setlocal textwidth=79
+
 " Remove trailing whitespace on file save {{{2
 "autocmd FileType c,cpp,python autocmd BufWritePre <buffer> :FixWhitespace
 
