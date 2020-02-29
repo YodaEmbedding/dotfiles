@@ -1,0 +1,54 @@
+# Main modifier keys
+set $mod  Mod4
+set $mod_ Mod1
+
+# Named workspaces
+#               
+#  
+set $ws1   "1:"
+set $ws2   "2:"
+set $ws3   "3:"
+set $ws4   "4:"
+set $ws5   "5:5"
+set $ws6   "6:6"
+set $ws7   "7:7"
+set $ws8   "8:"
+set $ws9   "9:"
+set $ws10  "10:10"
+set $ws666 "666:"
+
+# Flags
+set $nsi            --no-startup-id
+
+# Scripts paths
+set $scripts        ~/.config/i3/scripts
+
+# Wallpaper paths
+# set $wallpaper      /usr/share/backgrounds/current_desktop.png
+set $wallpaper      --no-fehbg --randomize /usr/share/backgrounds/desktop
+set $lock_wallpaper /usr/share/backgrounds/current_lock.png
+
+# Download frece scripts from https://github.com/SicariusNoctis/frece
+set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi
+set $rofi_command   ~/code/frece/examples/command_rofi.sh -i
+set $rofi_dir       ~/code/frece/examples/dir_rofi.sh     -i
+set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh   -i
+set $rofi_file      ~/code/frece/examples/file_rofi.sh    -i -width 70 -lines 16
+set $command_last   ~/code/frece/examples/command_latest.sh
+
+# Sound control
+set $amixer         amixer -q -D pulse set Master
+set $vol_change     pkill -SIGRTMIN+1 i3blocks
+
+# Screenshot path
+set $screen_base    $HOME/Downloads
+set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
+
+# Window size
+set $video_size     752 423
+
+# mpc volume control
+set $mpc_volume mpc volume | \
+    python -c 'import re; import math; n = int(re.findall(\\"\\d+\\", input())[0]); print(1 + int(n / 5))' | \
+    xargs -I {} mpc volume
+

@@ -1,0 +1,18 @@
+font                          pango:Noto Mono Regular, Awesome 8
+floating_modifier             $mod
+focus_follows_mouse           no
+hide_edge_borders             both
+new_window                    none
+workspace_auto_back_and_forth yes
+workspace_layout              tabbed
+
+# Colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #332331 #332331 #ffffff #332331   #332331
+client.focused_inactive #221321 #221321 #888888 #221321   #221321
+client.unfocused        #221321 #221321 #888888 #221321   #221321
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #333333
+

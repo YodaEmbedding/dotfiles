@@ -1,0 +1,30 @@
+# System
+exec        $nsi    picom --experimental-backend
+exec        $nsi    xmodmap ~/.Xmodmap
+exec        $nsi    xset led on
+exec_always $nsi    xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
+exec_always $nsi    for id in $(xprop -root _NET_CLIENT_LIST_STACKING | cut -d "#" -f2 | tr -d " " | sed "s/,/ /g"); do xprop -id "$id" -remove _NET_WM_WINDOW_OPACITY; done
+# exec_always $nsi    xprop -root -f _NET_SUPPORTED 32a -set _NET_SUPPORTED "$(xprop -root | grep '^_NET_SUPPORTED(ATOM)' | sed 's/^.*= //' | tr -d ' '),_NET_WM_WINDOW_OPACITY"
+
+# Fast startup
+exec        $nsi    /usr/local/bin/lightsOn/lightsOn.sh 300
+exec_always $nsi    feh --bg-scale $wallpaper
+exec_always $nsi    ~/.config/polybar/polybar.sh
+exec_always $nsi    $(eval "pgrep -f '^python.*focus_last$' | xargs kill; $scripts/focus_last")
+
+# Medium startup
+exec        $nsi    alacritty --class dropdown -e tmux
+exec        $nsi    devilspie2
+exec        $nsi    "sleep 20 && copyq"
+
+# Slow startup
+exec        $nsi    "sleep 10 && cadence-session-start --system-start"
+# exec        $nsi    "sleep 30 && alsa_in  -j 'scarlett' -d hw:2 -p 256 -n 2 -q 0"
+exec        $nsi    "sleep 30 && alsa_out -j 'speakers' -d hw:0,0"
+exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
+exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
+exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
+exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
+
+exec        $nsi    "sleep 30 && dropbox"
+

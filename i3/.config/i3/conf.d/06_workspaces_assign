@@ -1,0 +1,17 @@
+assign [class="discord"]                          → $ws1
+assign [class="Firefox"]                          → $ws1
+assign [class="Nightly"]                          → $ws1
+assign [class="jetbrains-studio"]                 → $ws2
+assign [class="Guitarix"]                         → $ws3
+assign [class="GalaxyClient.exe"]                 → $ws4
+assign [class="Gwent.exe"]                        → $ws4
+assign [class="League of Legends.exe"]            → $ws4
+assign [class="leagueclientux.exe"]               → $ws4
+assign [class="LeagueClientUx.exe"]               → $ws4
+assign [class="Lutris"]                           → $ws4
+assign [class="Steam"]                            → $ws4
+#assign [class="mpv"]                              → $ws4
+#assign [class="Vlc"]                              → $ws4
+assign [class="qBittorrent"]                      → $ws8
+assign [class="Google Play Music Desktop Player"] → $ws9
+

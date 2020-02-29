@@ -1,0 +1,18 @@
+# bar {
+#    font pango:DejavuSansMono, FontAwesome5Free, FontAwesome5Brands, MaterialIcons, RobotoMono 10.5
+#    # pango:NotoSans-Regular
+#    position top
+#    status_command i3status-rs ~/.config/i3/status.toml
+#    strip_workspace_numbers yes
+#    colors {
+#        separator           #666666
+#        background          #221133
+#        statusline          #dddddd
+#        # class             border  backgr. text
+#        focused_workspace   #aa3366 #aa3366 #eeccdd
+#        active_workspace    #333333 #333333 #eeccdd
+#        inactive_workspace  #552244 #662255 #88777f
+#        urgent_workspace    #cc3399 #cc3399 #eeccdd
+#    }
+# }
+
