@@ -95,6 +95,10 @@ bindcode $mod+$mod_+80          [con_mark="scratchpad8"] scratchpad show
 bindcode $mod+$mod_+81          [con_mark="scratchpad9"] scratchpad show
 
 # Window snap floating to edge
+bindsym $mod+Left               exec $nsi $scripts/move left
+bindsym $mod+Down               exec $nsi $scripts/move bottom
+bindsym $mod+Up                 exec $nsi $scripts/move top
+bindsym $mod+Right              exec $nsi $scripts/move right
 bindcode $mod+87                exec $nsi $scripts/move bottom left
 bindcode $mod+88                exec $nsi $scripts/move bottom
 bindcode $mod+89                exec $nsi $scripts/move bottom right
