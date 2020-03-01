@@ -15,7 +15,7 @@ bindsym $mod+shift+d            exec "rofi -show window"
 bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
 
 # Wallpaper
-bindsym $mod+$mod_+w            exec feh --bg-scale $wallpaper
+bindsym $mod+$mod_+w            exec $nsi feh --bg-scale $wallpaper
 
 # Screenshot (cropped, cropped + edit, full, full + cursor, active, active + cursor)
 bindsym            Print        exec $nsi maim -u -s "$screen_path"

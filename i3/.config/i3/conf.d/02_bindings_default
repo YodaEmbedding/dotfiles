@@ -2,8 +2,8 @@
 bindsym $mod+shift+q            kill
 
 # Terminal
-bindsym $mod+Return             exec alacritty
-bindsym $mod+shift+Return       exec alacritty -e tmux
+bindsym $mod+Return             exec $nsi alacritty
+bindsym $mod+shift+Return       exec $nsi alacritty -e tmux
 
 # Focus window
 bindsym $mod+h                  focus left

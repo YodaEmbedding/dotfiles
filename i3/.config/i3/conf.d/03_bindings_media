@@ -41,5 +41,5 @@ bindsym $mod+$mod_+x            exec $nsi alacritty --class ncmpcpp -t ncmpcpp -
 bindsym $mod+$mod_+shift+x      exec $nsi alacritty --class lyvi -t lyvi -e lyvi
 
 # mpv popup
-bindsym $mod+ctrl+e             exec "mpv \\"$(xclip -selection clipboard -o)\\" --x11-name \\"mpv popup\\""
+bindsym $mod+ctrl+e             exec $nsi "mpv \\"$(xclip -selection clipboard -o)\\" --x11-name=\\"mpv popup\\""
 
