@@ -18,6 +18,10 @@ autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
 " nnoremap <C-Space> za
 " vnoremap <C-Space> za
 
+" Format width {{{1
+nnoremap <F6> :set textwidth=72<CR>
+nnoremap <F7> :set textwidth=79<CR>
+
 " Kill buffer {{{1
 nnoremap <C-x> :bd<CR>
 
