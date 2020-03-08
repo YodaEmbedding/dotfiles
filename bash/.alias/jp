@@ -4,6 +4,7 @@
 alias namae='aliases'                   # name
 alias hinokitsune='b firefox-nightly'   # fire's fox
 alias haikei='b'                        # background
+alias kuro='black -l 79'                # black
 alias fuku='cp'                         # copy
 alias iu='echo'                         # say
 alias shigoto='htop_cpu'                # work
