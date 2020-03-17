@@ -90,6 +90,9 @@ alias  title="qdbus_gpmdp org.mpris.MediaPlayer2.Player.Metadata | grep -P '^xes
 # Power
 alias windows='sudo grub-reboot "Windows 10 (on /dev/sda1)" && reboot'
 
+# Processes
+alias pid='ps -eo user,pid,%mem,command --sort=%mem | fzf --tac | sed "s/^[^ ]* *\([0-9]\+\) .*$/\1/"'
+
 # Statistics
 alias class='xprop WM_CLASS'
 alias count='ls -1 | wc -l'
