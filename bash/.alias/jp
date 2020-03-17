@@ -29,3 +29,6 @@ alias morau='git'                       # get
 
 # alias tanomu=''                       # ask
 # TODO add more words. e.g. todo_books, cd Dropbox/Current, frece commands, ...
+
+# this
+alias jp='grep -e "^alias" ~/.alias/jp | fzf'
