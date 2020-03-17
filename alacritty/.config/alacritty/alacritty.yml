@@ -20,8 +20,6 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-tabspaces: 8
-
 # Important font attributes like antialiasing, subpixel aa, and hinting can be
 # controlled through fontconfig. Specifically, the following attributes should
 # have an effect:
