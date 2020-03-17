@@ -24,8 +24,9 @@ alias tzu='trizen --noedit -Syu'
 
 # AUR package managers: yay
 alias yayq='yay -Qs'
-alias yays='yay --noconfirm -S'
-alias yayu='yay --noconfirm -Syu'
+alias yays='yay -S --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed'
+alias yayu='yay -Syu --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed --ignore="$(tr "\n" "," < ~/.pkgignorelist)"'
+alias yaya='yay -aSyu --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed --ignore="$(tr "\n" "," < ~/.pkgignorelist)"'
 
 aururl() {
   xdg-open "https://aur.archlinux.org/packages/$1"
