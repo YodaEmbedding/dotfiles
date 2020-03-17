@@ -5,7 +5,7 @@ alias todo='vim ~/Dropbox/Misc/Notepad/todo.md'
 alias todot='tmux rename-window "todo"; todo'
 
 # File config
-alias aliases='vim ~/.aliases'
+alias aliases='f="$(fd . ~/dotfiles/bash/.alias | fzf)" && vim "$f"'
 alias bashrc='vim ~/.bashrc'
 alias vimrc='f="$(fd -e vim . ~/dotfiles/vim/.vim | fzf)" && vim "$f"'
 alias zshrc='vim ~/.zshrc'
