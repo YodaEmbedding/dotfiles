@@ -50,7 +50,9 @@ def_key "ctrl-j"
     move_selected_items_down
 def_key "ctrl-k"
     move_selected_items_up
-# TODO move_selected_items_to
+def_key "m"
+    move_selected_items_to
+    move_selected_items_down
 
 # Playlist
 def_key "d"
