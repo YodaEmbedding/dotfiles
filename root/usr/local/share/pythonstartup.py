@@ -44,6 +44,10 @@ def lazy_callable(alias, path):
     globals()[alias] = inner
 
 
+def arange(*shape, dtype=None):
+    return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
+
+
 LazyModule("mpl", "matplotlib")
 LazyModule("plt", "matplotlib.pyplot")
 LazyModule("pd", "pandas")
