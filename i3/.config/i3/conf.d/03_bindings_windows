@@ -50,7 +50,8 @@ bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
 bindsym $mod+minus              [instance="^(?!dropdown$).*$"] scratchpad show
 bindsym $mod+g                  sticky toggle
-bindsym $mod+shift+g            floating toggle, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
+bindsym $mod+shift+g            fullscreen disable, floating enable, \
+    sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
 bindsym $mod+$mod_+c            move position center
 
 # Window property control: multiple scratchpads
