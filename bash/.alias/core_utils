@@ -32,3 +32,4 @@ alias mv='mv -i'
 alias sudo='sudo '   # make sudo work with aliases
 alias s='sudo'
 alias se='sudo -e'
+alias sudoloop='sudo true; while true; do sudo -v; sleep 60; done &'
