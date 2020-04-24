@@ -53,6 +53,15 @@ def_key "ctrl-k"
 def_key "m"
     move_selected_items_to
     move_selected_items_down
+def_key "p"
+    move_selected_items_to
+    move_selected_items_down
+def_key "P"
+    move_selected_items_to
+
+# Playback
+def_key "x"
+    pause
 
 # Playlist
 def_key "d"
