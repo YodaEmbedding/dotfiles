@@ -11,6 +11,7 @@ from itertools import *
 from pprint import pprint
 from time import time, sleep
 from timeit import timeit
+from typing import *
 
 import numpy as np
 from numpy import array, arange, concatenate, ones, ones_like, zeros, zeros_like
@@ -44,10 +45,6 @@ def lazy_callable(alias, path):
     globals()[alias] = inner
 
 
-def arange(*shape, dtype=None):
-    return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
-
-
 LazyModule("mpl", "matplotlib")
 LazyModule("plt", "matplotlib.pyplot")
 LazyModule("pd", "pandas")
@@ -55,3 +52,28 @@ LazyModule("sns", "seaborn")
 LazyModule("tf", "tensorflow")
 
 lazy_callable("DataFrame", "pandas")
+
+
+def arange(*shape, dtype=None):
+    return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
+
+
+def json_load(filename: str):
+    with open(filename) as f:
+        return json.load(f)
+
+
+def json_dump(data: dict, filename: str):
+    with open(filename, "w") as f:
+        json.dump(data, f, indent=4)
+
+
+def read_fwf(s: str):
+    from io import StringIO
+    df = pd.read_fwf(StringIO(s))
+    df = df.drop(df.columns[0], axis=1)
+    return df
+
+
+def h(x):
+    help(x)
