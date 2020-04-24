@@ -11,5 +11,14 @@ set notification-fg         "#ffffff"
 set recolor-darkcolor       "#f7f7f7"
 set recolor-lightcolor      "#111111"
 
-map C-j scroll up 3
 unmap q
+# map <C-k> scroll up 3
+# map <C-j> scroll down 3
+# map <PageUp> scroll full-up
+# map <PageDown> scroll full-down
+# map <Left> feedkeys "<PageUp>"
+# map <Right> feedkeys "<PageDown>"
+map <C-k> scroll half-up
+map <C-j> scroll half-down
+map <Left> feedkeys "j<S- >"
+map <Right> feedkeys "k "
