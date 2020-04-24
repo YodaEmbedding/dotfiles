@@ -62,8 +62,14 @@ alias th='bgrnd thunar'
 
 # wtwitch
 alias tw='wtwitch'
-alias twc="wtwitch -c | sed '/^ Streamers offline:\$/,\$d'"
+alias twc="wtwitch -c | sed '/^ Offline:\$/,\$d'"
 alias tws='wtwitch -s'
+
+twcc() {
+  stream="$(twc | grep '^   ' | fzf --ansi | sed 's/^   \([^:]\+\).*/\1/')"
+  [ ! -z "$stream" ] && tw "$stream"
+}
+
 
 # zip
 zipf() {
