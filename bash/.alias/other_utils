@@ -1,5 +1,19 @@
 ### OTHER UTILITIES ###
 
+# biber
+biber_fix() {
+  file="$1"
+  tmpfile="$(mktemp /tmp/biber.bib.XXXXXX)"
+  biber \
+    --tool \
+    --output_align \
+    --output_indent=2 \
+    --output_fieldcase=lower \
+    --output-file="$tmpfile" \
+    "$file" || return 1
+  /bin/mv "$tmpfile" "$file"
+}
+
 # googler
 alias goo="googler -n 5"
 
