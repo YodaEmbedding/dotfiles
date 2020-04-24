@@ -1,6 +1,9 @@
 {
-    "diagnostic.virtualTextPrefix": "    ",
     "diagnostic.virtualText": true,
+    "diagnostic.virtualTextPrefix": "    ",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "python.formatting.blackArgs": ["-l", "79"],
+    "python.formatting.provider": "black",
     "python.jediEnabled": false,
     "python.linting.flake8Enabled": false,
     "python.linting.pylintEnabled": true,
@@ -34,6 +37,5 @@
             "command": "/usr/bin/kotlin-language-server",
             "filetypes": ["kotlin"]
         }
-    },
-    "java.errors.incompleteClasspath.severity": "ignore"
+    }
 }
