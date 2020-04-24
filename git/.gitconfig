@@ -12,5 +12,8 @@
 [url "git@github.com:"]
     insteadOf = https://github.com
 
+[credential "https://git.overleaf.com"]
+	username = mulhaq2005@gmail.com
+
 [core]
-	filemode = false
+    filemode = false
