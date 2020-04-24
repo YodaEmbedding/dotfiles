@@ -43,6 +43,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 
 # ripgrep
 alias rgi='rg -i'
+alias rgpy='rg -t py'
 
 # selfspy
 alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
