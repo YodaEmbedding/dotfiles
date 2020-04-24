@@ -136,7 +136,8 @@ bindsym $mod+o                  exec $nsi transset-df -a --inc 0.15
 bindsym $mod+shift+o            exec $nsi transset-df -a --dec 0.15
 bindsym $mod+$mod_+o            exec $nsi transset-df -a --inc 0.01
 bindsym $mod+$mod_+shift+o      exec $nsi transset-df -a --dec 0.01
-bindsym $mod+$mod_+ctrl+o       exec $nsi transset-df -a $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity" | awk '{print $1 / 100}')
+bindsym $mod+$mod_+ctrl+o       exec $nsi transset-df -a \
+    $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity" | awk '{print $1 / 100}')
 
 # Transparency (via picom)
 # bindsym $mod+o                  exec $nsi picom-trans -c --delete

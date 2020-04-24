@@ -2,8 +2,12 @@
 exec        $nsi    picom --experimental-backend
 exec        $nsi    xmodmap ~/.Xmodmap
 exec        $nsi    xset led on
-exec_always $nsi    xinput --set-prop $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') 'libinput Accel Speed' -0.6
-exec_always $nsi    for id in $(xprop -root _NET_CLIENT_LIST_STACKING | cut -d "#" -f2 | tr -d " " | sed "s/,/ /g"); do xprop -id "$id" -remove _NET_WM_WINDOW_OPACITY; done
+exec_always $nsi    xinput --set-prop \
+    $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') \
+    'libinput Accel Speed' -0.6
+exec_always $nsi    for id in $(xprop -root _NET_CLIENT_LIST_STACKING | cut -d "#" -f2 | tr -d " " | sed "s/,/ /g"); \
+    do xprop -id "$id" -remove _NET_WM_WINDOW_OPACITY; \
+    done
 # exec_always $nsi    xprop -root -f _NET_SUPPORTED 32a -set _NET_SUPPORTED "$(xprop -root | grep '^_NET_SUPPORTED(ATOM)' | sed 's/^.*= //' | tr -d ' '),_NET_WM_WINDOW_OPACITY"
 
 # Fast startup

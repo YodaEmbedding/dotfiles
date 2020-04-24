@@ -6,7 +6,8 @@ bindsym --whole-window --border $mod+Button5        workspace next
 bindsym $mod+grave              workspace back_and_forth
 
 # Workspace switch back/forth and move
-bindsym $mod+shift+grave        move container to workspace back_and_forth; workspace back_and_forth
+bindsym $mod+shift+grave        move container to workspace back_and_forth; \
+    workspace back_and_forth
 
 # Workspace cycling
 bindsym $mod+shift+Tab          workspace prev
