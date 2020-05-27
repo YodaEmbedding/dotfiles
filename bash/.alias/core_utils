@@ -19,10 +19,9 @@ alias cp='cp -i'
 alias l='ll'
 alias ll='ls -l -gG --time-style="+%Y-%m-%d %H:%M:%S"'
 alias ls='ls --color=auto -h --group-directories-first'
+alias lsa='ls -a'
 alias lsd='ls -d */'
-alias lsg='ll -al | g'
 alias lsl='ll -al'
-alias lsp='ll -al | p'
 alias lss='ll -al --color=always | grep "\->"'
 
 # mv
