@@ -22,13 +22,15 @@ exec        $nsi    devilspie2
 exec        $nsi    "sleep 20 && copyq"
 
 # Slow startup
-exec        $nsi    "sleep 10 && cadence-session-start --system-start"
+# exec        $nsi    "sleep 10 && cadence-session-start --system-start"
+# exec        $nsi    "sleep 30 && alsa_out -j 'speakers' -d hw:0,0"
+# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
+# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
+# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
+# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
+#
+# probably not needed:
 # exec        $nsi    "sleep 30 && alsa_in  -j 'scarlett' -d hw:2 -p 256 -n 2 -q 0"
-exec        $nsi    "sleep 30 && alsa_out -j 'speakers' -d hw:0,0"
-exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
-exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
-exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
-exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
 
 exec        $nsi    "sleep 30 && dropbox"
 
