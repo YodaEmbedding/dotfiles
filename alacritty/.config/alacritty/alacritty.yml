@@ -130,7 +130,7 @@ visual_bell:
   animation: EaseOutExpo
   duration: 0
 
-background_opacity: 0.85
+background_opacity: 0.92
 
 # Available fields:
 #   - mouse
