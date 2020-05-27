@@ -35,7 +35,6 @@ List of configs, which directories these belong in, and other details.
 | alacritty      | `$HOME`  | alacritty                                            | Terminal emulator                                |
 | bash           | `$HOME`  |                                                      | Shell                                            |
 | colors         | `$HOME`  |                                                      | Terminal and rofi colors                         |
-| compton        | `$HOME`  |                                                      | Compositor                                       |
 | devilspie      | `$HOME`  | devilspie, devilspie2                                | Window tweaker                                   |
 | dunst          | `$HOME`  |                                                      | Notification manager                             |
 | git            | `$HOME`  |                                                      | Personal                                         |
@@ -47,6 +46,7 @@ List of configs, which directories these belong in, and other details.
 | mpv            | `$HOME`  |                                                      | Video player                                     |
 | ncmpcpp        | `$HOME`  |                                                      | Music player (MPD client)                        |
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
+| picom          | `$HOME`  |                                                      | Compositor                                       |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | ranger         | `$HOME`  | ranger                                               | CLI file manager                                 |
 | rofi           | `$HOME`  | rofi                                                 | GUI app/command launcher                         |
