@@ -62,3 +62,7 @@ for_window [class="^(Firefox|Nightly)$"] \
 for_window [class="matplotlib"] \
     floating enable
 
+for_window [class="zoom"] \
+    floating enable, \
+    move position center
+
