@@ -48,6 +48,10 @@ alias rgpy='rg -t py'
 # selfspy
 alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
 
+# stat
+alias filesize="stat -c '%s'"
+alias filedate="stat -c '%y'"
+
 # tar
 tarf() {
   tar czf "$1.tar.gz" "$1"
