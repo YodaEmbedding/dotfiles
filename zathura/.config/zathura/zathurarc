@@ -6,12 +6,25 @@ set scroll-step             150
 set selection-clipboard     clipboard
 set window-title-basename   true
 
+set default-bg              rgba(0,0,0,0.6)
 set notification-bg         "#171717"
 set notification-fg         "#ffffff"
-set recolor-darkcolor       "#f7f7f7"
-set recolor-lightcolor      "#111111"
+set recolor-darkcolor       rgba(247,247,247,1.0)
+set recolor-lightcolor      rgba(7,7,7,0.8)
 
 unmap q
+
+map <F1> feedkeys ":set recolor-lightcolor rgba(3,3,3,0.7)<Return>"
+map <F2> feedkeys ":set recolor-lightcolor rgba(7,7,7,0.8)<Return>"
+map <F3> feedkeys ":set recolor-lightcolor rgba(10,10,10,0.9)<Return>"
+map <F4> feedkeys ":set recolor-lightcolor rgba(14,14,14,1)<Return>"
+map <S-F1> feedkeys ":set default-bg rgba(0,0,0,0.5)<Return>"
+map <S-F2> feedkeys ":set default-bg rgba(0,0,0,0.6)<Return>"
+map <S-F3> feedkeys ":set default-bg rgba(0,0,0,0.7)<Return>"
+map <S-F4> feedkeys ":set default-bg rgba(0,0,0,0.8)<Return>"
+map <S-F5> feedkeys ":set default-bg rgba(0,0,0,0.9)<Return>"
+map <S-F6> feedkeys ":set default-bg rgba(0,0,0,1.0)<Return>"
+
 # map <C-k> scroll up 3
 # map <C-j> scroll down 3
 # map <PageUp> scroll full-up
