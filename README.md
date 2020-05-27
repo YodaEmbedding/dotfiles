@@ -41,6 +41,7 @@ List of configs, which directories these belong in, and other details.
 | git            | `$HOME`  |                                                      | Personal                                         |
 | i3             | `$HOME`  | feh, i3lock-color, jq, maim, mlocate, rofi, ttf-noto, wmctrl | Window manager                           |
 | i3blocks       | `$HOME`  | fping, gsimplecal, tff-font-awesome                  | Better system bar                                |
+| latexmk        | `$HOME`  |                                                      | Latexmk config                                   |
 | lint           | `$HOME`  |                                                      | Linting config                                   |
 | mimeapps       | `$HOME`  |                                                      | Choose default app used to open files            |
 | mpv            | `$HOME`  |                                                      | Video player                                     |
