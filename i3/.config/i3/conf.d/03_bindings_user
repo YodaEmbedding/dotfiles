@@ -9,6 +9,7 @@ bindsym $mod+shift+e            exec "$command_last"
 bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
 bindsym $mod+ctrl+shift+e       exec "$rofi_emoji   -p 'emojis'"
 bindsym $mod+d                  exec "$rofi_file    -p 'files'"
+bindsym $mod+shift+w            exec "$rofi_bground -p 'wallpapers'"
 bindsym $mod+shift+d            exec "rofi -show window"
 
 # Lock screen
@@ -18,7 +19,7 @@ bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
 bindsym $mod+ctrl+r             exec $nsi ~/.config/polybar/polybar.sh
 
 # Wallpaper
-bindsym $mod+$mod_+w            exec $nsi feh --bg-scale $wallpaper
+bindsym $mod+$mod_+w            exec $nsi feh --bg-fill $wallpaper
 
 # Screenshot (cropped, cropped + edit, full, full + cursor, active, active + cursor)
 bindsym            Print        exec $nsi maim -u -s "$screen_path"
