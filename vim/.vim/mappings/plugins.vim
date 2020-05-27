@@ -80,6 +80,7 @@ if PlugLoaded('fzf.vim')
     nnoremap <Leader>r :Rg!<CR>
     nnoremap <Leader>m :Marks<CR>
     nnoremap <Leader>t :Tags<CR>
+    nnoremap gl :Rg<CR>
 endif
 
 " vim-easy-align {{{1
