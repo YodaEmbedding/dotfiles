@@ -1,0 +1,18 @@
+#!/bin/bash
+
+ROFI_ARGS="$@"
+
+{
+    sinks="$(pactl list sinks | rg 'Name|Description')"
+    echo "$sinks" | sed 's/.*: //'
+    result="$(echo "$sinks" | rg 'Description' | sed 's/.*: //' | rofi -dmenu "$ROFI_ARGS")"
+    echo "$result"
+} | python -c '
+import sys
+d = {}
+lines = [x.strip() for x in sys.stdin.readlines()]
+names, descs = lines[:-1:2], lines[1::2]
+for name, desc in zip(names, descs):
+    d[desc] = name
+print(d[lines[-1]])
+' | xargs pactl set-default-sink

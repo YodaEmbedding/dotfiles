@@ -36,6 +36,7 @@ set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh   -i
 set $rofi_file      ~/code/frece/examples/file_rofi.sh    -i -width 80 -lines 16
 set $command_last   ~/code/frece/examples/command_latest.sh
 set $rofi_bground   ~/code/frece/examples/bground_rofi.sh -i
+set $rofi_pa_sink   ~/dotfiles/i3/.config/i3/scripts/pa_set_default_sink -i
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
