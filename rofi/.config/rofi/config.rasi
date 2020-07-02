@@ -1,0 +1,16 @@
+configuration {
+	lines: 10;
+	font: "Roboto Mono 12";
+	bw: 2;
+	terminal: "termite";
+	case-sensitive: false;
+	line-padding: 4;
+	separator-style: "none";
+	hide-scrollbar: true;
+	color-normal: "#65485f, #faebbc, #5d3f57, #00bcd4, #fafbfc";
+	color-urgent: "#5a3c54, #ff5252, #5a3c54, #ff5252, #fde6d3";
+	color-active: "#5a3c54, #fafbfc, #5a3c54, #009688, #fde6d3";
+	color-window: "#5a3c54, #5a3c54, #c3c6c8";
+	kb-row-tab: "";
+	kb-row-select: "Tab";
+}
