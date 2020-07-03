@@ -14,6 +14,9 @@ bindsym $mod+ctrl+z             exec $nsi $amixer toggle && $vol_change
 bindsym $mod+comma              exec $nsi $amixer 1%+    && $vol_change
 bindsym $mod+shift+comma        exec $nsi $amixer 1%-    && $vol_change
 
+# Default sink control
+bindsym $mod+ctrl+shift+z       exec $nsi $cycle_pa_sink
+
 # Media control (mpd)
 bindsym XF86AudioPlay           exec $nsi mpc toggle
 bindsym XF86AudioPause          exec $nsi mpc pause
