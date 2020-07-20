@@ -253,6 +253,8 @@ bindkey -v                                              # vim
 bindkey -v '^?' backward-delete-char                    # vim backspace
 bindkey -M vicmd V edit-command-line                    # vim edit command
 bindkey -M vicmd '^[[3~' ''                             # vim disable DEL key
+bindkey -M vicmd "^[[5~" up-history                     # vim page up
+bindkey -M vicmd "^[[6~" down-history                   # vim page down
 
 bindkey '^ '   autosuggest-accept                       # Fill suggestion
 bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
