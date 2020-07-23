@@ -1,34 +1,37 @@
 ### JAPANESE ###
 
 # Misc
-alias namae='aliases'                   # name
-alias hinokitsune='b firefox-nightly'   # fire's fox
-alias haikei='b'                        # background
-alias kuro='black -l 79'                # black
-alias fuku='cp'                         # copy
-alias iu='echo'                         # say
-alias shigoto='htop_cpu'                # work
-alias kioku='htop_mem'                  # memory
-alias hyou='ls'                         # list
-alias hebi='ptpy'                       # snake
-alias saikido='reboot'                  # restart
-alias sagasu='rgi'                      # search
-alias mitsukeru='rgi'                   # find
-alias ushinau='rm'                      # lose/part with
-alias shimau='shutdown -P 0'            # finish/end/put away
-alias meirei='sudo'                     # order/command
-alias waru='tmux'                       # split/divide
-alias suru='todot'                      # to do
-alias kawaru='vim'                      # change/modify
-alias mado='windows'                    # window
-alias koushin='yay'                     # update
+alias namae='aliases'                   # 名前      # name
+alias kitsunenohi='b firefox-nightly'   # 狐の費    # fox of fire
+alias haikei='b'                        # 背景      # background
+alias kuro='black -l 79'                # 黒        # black
+alias fukusha='cp'                      # 複写      # copy
+alias iu='echo'                         # 言う      # to say
+alias shigoto='htop_cpu'                # 仕事      # work
+alias kioku='htop_mem'                  # 記憶      # memory
+alias hebi='ptpy'                       # 蛇        # snake
+alias hajimeru='reboot'                 # 始める    # to start
+alias mitsukeru='rgi'                   # 見つける  # to locate
+alias sagasu='rgi'                      # 探す      # to search
+alias ushinau='rm'                      # 失う      # to lose/part with
+alias tomeru='shutdown -P 0'            # 止める    # to stop
+alias meirei='sudo'                     # 命令      # to order/command
+alias sakeru='tmux'                     # 裂ける    # to split/tear
+alias suru='todot'                      # する      # to do
+alias kawaru='vim'                      # 変わる    # to change
+alias mado='windows'                    # 窓        # window
 
 # git
-alias baka='git'                        # idiot
-alias morau='git'                       # get
+alias baka='git'                        # バカ      # idiot
 
-# alias tanomu=''                       # ask
+# Unassigned
+# alias ukueru=''                       # 受ける    # to get
+
 # TODO add more words. e.g. todo_books, cd Dropbox/Current, frece commands, ...
 
-# this
-alias jp='grep -e "^alias" ~/.alias/jp | fzf'
+# List of japanese aliases
+jp() {
+  grep -e "^alias" ~/.alias/jp | \
+    sed -ne "s/^alias \(\w\+\)='\(.*\)'\s\+# \([^# ]\+\)\s\+# \([^#]\+\)$/\2#\1#\3#\4/p" \
+    | sort | column -t -s '#' | fzf
+}
