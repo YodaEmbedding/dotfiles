@@ -1,31 +1,43 @@
 ### JAPANESE ###
 
-# Misc
-alias namae='aliases'                   # 名前      # name
-alias kitsunenohi='b firefox-nightly'   # 狐の費    # fox of fire
-alias haikei='b'                        # 背景      # background
-alias kuro='black -l 79'                # 黒        # black
-alias fukusha='cp'                      # 複写      # copy
-alias iu='echo'                         # 言う      # to say
-alias shigoto='htop_cpu'                # 仕事      # work
-alias kioku='htop_mem'                  # 記憶      # memory
-alias hebi='ptpy'                       # 蛇        # snake
-alias hajimeru='reboot'                 # 始める    # to start
-alias mitsukeru='rgi'                   # 見つける  # to locate
-alias sagasu='rgi'                      # 探す      # to search
-alias ushinau='rm'                      # 失う      # to lose/part with
-alias tomeru='shutdown -P 0'            # 止める    # to stop
-alias meirei='sudo'                     # 命令      # to order/command
-alias sakeru='tmux'                     # 裂ける    # to split/tear
-alias suru='todot'                      # する      # to do
-alias kawaru='vim'                      # 変わる    # to change
-alias mado='windows'                    # 窓        # window
+alias namae='aliases'                   # 名前          # name
+alias haikei='b'                        # 背景          # background
+alias kuro='black -l 79'                # 黒            # black
+alias fukusha='cp'                      # 複写          # copy
+alias iu='echo'                         # 言う          # to say
+alias shigoto='htop_cpu'                # 仕事          # work
+alias kioku='htop_mem'                  # 記憶          # memory
+alias hebi='ptpy'                       # 蛇            # snake
+alias hajimeru='reboot'                 # 始める        # to start
+alias mitsukeru='rgi'                   # 見つける      # to locate
+alias sagasu='rgi'                      # 探す          # to search
+alias ushinau='rm'                      # 失う          # to lose/part with
+alias tomeru='shutdown -P 0'            # 止める        # to stop
+alias meirei='sudo'                     # 命令          # to order/command
+alias sakeru='tmux'                     # 裂ける        # to split/tear
+alias suru='todot'                      # する          # to do
+alias kawaru='vim'                      # 変わる        # to change
+alias mado='windows'                    # 窓            # window
+
+alias jikan='date'                      # 時間          # time
+alias kaeru='cd ~'                      # 帰る          # to return home
+alias korosu='killall'                  # 殺す          # to kill
+alias kyou='cal'                        # 今日          # today
+alias matsu='sleep'                     # 待つ          # to wait
+alias miru='bat'                        # 見る          # to see
+alias oku='mv'                          # 置く          # to put
+alias okuru='rscp'                      # 送る          # to send
+alias tsukuru='make'                    # 作る          # to make
 
 # git
-alias baka='git'                        # バカ      # idiot
+alias baka='git'                        # バカ          # idiot
+# TODO git branch, commit, add, diff, status, rebase, ...
+
+# Disabled
+# alias kitsunenohi='b firefox-nightly'   # 狐の費        # fox of fire
 
 # Unassigned
-# alias ukueru=''                       # 受ける    # to get
+# alias ukueru=''                         # 受ける        # to get
 
 # TODO add more words. e.g. todo_books, cd Dropbox/Current, frece commands, ...
 
