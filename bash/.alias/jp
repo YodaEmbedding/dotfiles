@@ -30,8 +30,12 @@ alias baka='git'                        # バカ      # idiot
 # TODO add more words. e.g. todo_books, cd Dropbox/Current, frece commands, ...
 
 # List of japanese aliases
-jp() {
+nihon() {
   grep -e "^alias" ~/.alias/jp | \
     sed -ne "s/^alias \(\w\+\)='\(.*\)'\s\+# \([^# ]\+\)\s\+# \([^#]\+\)$/\2#\1#\3#\4/p" \
-    | sort | column -t -s '#' | fzf
+    | sort | column -t -s '#'
+}
+
+jp() {
+  nihon | fzf
 }
