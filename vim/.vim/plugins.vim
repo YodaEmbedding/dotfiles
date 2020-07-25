@@ -31,7 +31,6 @@ function! PlugLoaded(name)
 endfunction
 
 " Enabled {{{1
-Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])' abc def ghi
@@ -44,7 +43,6 @@ Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
 Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
-Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 Plug 'tpope/'           . 'vim-eunuch'              " Tools: UNIX sugars on mv, rm, rename, ...
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
@@ -53,7 +51,6 @@ Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'unblevable/'      . 'quick-scope'             " Visual: Highlight unique characters per word in line (for find)
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
-Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 if !has('nvim')
@@ -63,10 +60,6 @@ if !has('nvim')
 endif
 
 " Autocompletion {{{2
-" Plug 'autozimu/'        . 'LanguageClient-neovim', {
-"     \ 'branch': 'next',
-"     \ 'do': 'bash install.sh',
-"     \ }                                           " Functional: LSP
 
 Plug 'neoclide/'        . 'coc.nvim', {
     \ 'tag': '*',
@@ -74,16 +67,22 @@ Plug 'neoclide/'        . 'coc.nvim', {
     \ }                                             " Functional: LSP
 
 " Extensions:
-" coc-css
-" coc-git
-" coc-highlight
-" coc-html
-" coc-json
-" coc-lists
-" coc-python
-" coc-rls
-" coc-vimlsp
-" coc-yaml
+let g:coc_global_extensions = [
+    \ 'coc-css',
+    \ 'coc-git',
+    \ 'coc-highlight',
+    \ 'coc-html',
+    \ 'coc-java',
+    \ 'coc-json',
+    \ 'coc-lists',
+    \ 'coc-python',
+    \ 'coc-rls',
+    \ 'coc-tsserver',
+    \ 'coc-vimlsp',
+    \ 'coc-vimtex',
+    \ 'coc-yaml',
+    \ 'coc-yank',
+    \ ]
 
 " Language servers:
 " Bash: bash-language-server
@@ -97,6 +96,7 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 "Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
 "Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
+"Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
@@ -105,6 +105,8 @@ Plug 'neoclide/'        . 'coc.nvim', {
 "Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
 "Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
+"Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
+"Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
 " Possibly useful {{{2
 "Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
