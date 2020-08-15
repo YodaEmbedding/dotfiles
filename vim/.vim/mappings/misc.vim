@@ -18,6 +18,9 @@ autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
 " nnoremap <C-Space> za
 " vnoremap <C-Space> za
 
+" Format 72-character width docstring {{{1
+vnoremap gq <Esc>:let tw=&tw<CR>:set tw=72<CR>gvgq:let &tw=tw<CR>
+
 " Format width {{{1
 nnoremap <F6> :set textwidth=72<CR>
 nnoremap <F7> :set textwidth=79<CR>
