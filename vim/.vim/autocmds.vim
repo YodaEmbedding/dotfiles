@@ -16,6 +16,9 @@ if PlugLoaded('coc.nvim')
     autocmd FileType python let b:coc_root_patterns = ['.env', '.git']
 endif
 
+" Color column {{{1
+autocmd FileType python   setlocal colorcolumn=79
+
 " Conceal level {{{1
 autocmd FileType markdown setlocal conceallevel=0
 
