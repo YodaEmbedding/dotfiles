@@ -55,7 +55,7 @@ set undoreload=10000        " Number of lines to save for undo
 
 " Visual {{{1
 set colorcolumn=80      " Column guide
-let &colorcolumn=join(range(80,999), ",") " Column guide
+" let &colorcolumn=join(range(80,999), ",") " Column guide
 set cursorline          " Highlight current line
 set laststatus=2        " Show status line
 set mouse=a             " Mouse interactivity
