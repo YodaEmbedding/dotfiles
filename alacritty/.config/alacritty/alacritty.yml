@@ -13,6 +13,8 @@ window:
 
   decorations: none
 
+  dynamic_title: true
+
 scrolling:
   history: 100000
 
@@ -126,7 +128,7 @@ colors:
 #   - Linear
 #
 # Specifying a `duration` of `0` will disable the visual bell.
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -155,8 +157,6 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
-
-dynamic_title: true
 
 live_config_reload: true
 
