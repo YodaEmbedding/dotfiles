@@ -39,8 +39,8 @@ autocmd User CocOpenFloat
     \ | endif
 
 if has('gui_running')
-    hi Normal guibg=DarkSlateGrey
-    hi Normal guifg=PapayaWhip
+    hi Normal guibg=#332331
+    hi Normal guifg=#EAEAEA
 endif
 
 " Font {{{1
