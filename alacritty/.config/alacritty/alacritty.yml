@@ -132,7 +132,7 @@ bell:
   animation: EaseOutExpo
   duration: 0
 
-background_opacity: 0.92
+background_opacity: 0.95
 
 # Available fields:
 #   - mouse
