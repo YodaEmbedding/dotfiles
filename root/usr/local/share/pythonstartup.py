@@ -69,9 +69,9 @@ def json_dump(data: dict, filename: str):
         json.dump(data, f, indent=4)
 
 
-def read_fwf(s: str, drop_first=True):
+def read_fwf(s: str, drop_first=True, **kwargs):
     from io import StringIO
-    df = pd.read_fwf(StringIO(s))
+    df = pd.read_fwf(StringIO(s), **kwargs)
     if drop_first:
         df.drop(df.columns[0], axis=1, inplace=True)
     return df
