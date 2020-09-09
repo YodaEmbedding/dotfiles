@@ -17,6 +17,9 @@ set $ws9   "9:"
 set $ws10  "10:10"
 set $ws666 "666:"
 
+# Key codes
+set $kp_ins 118
+
 # Flags
 set $nsi            --no-startup-id
 
