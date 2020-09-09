@@ -52,8 +52,18 @@ set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 # Window size
 set $video_size     752 423
 
-# mpc volume control
-set $mpc_volume mpc volume | \
-    python -c 'import re; import math; n = int(re.findall(\\"\\d+\\", input())[0]); print(1 + int(n / 5))' | \
-    xargs -I {} mpc volume
+# Media control (mpd)
+# set $media_playpause            mpc toggle
+# set $media_pause                mpc pause
+# set $media_next                 mpc next
+# set $media_prev                 mpc prev
+# set $media_vol_up               ~/.config/i3/scripts/mpc_volume +
+# set $media_vol_down             ~/.config/i3/scripts/mpc_volume -
 
+# Media control (mpris)
+set $media_playpause            playerctl play-pause
+set $media_pause                playerctl pause
+set $media_next                 playerctl next
+set $media_prev                 playerctl prev
+set $media_vol_up               playerctl volume 0.05+
+set $media_vol_down             playerctl volume 0.05-

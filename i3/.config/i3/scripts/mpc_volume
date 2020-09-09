@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Direction is either + or -
+DIRECTION="$1"
+
+PYTHON_CODE=$(cat <<EOF
+import re
+import math
+n = int(re.findall("\\d+", input())[0])
+print(1 + int(n / 5))
+EOF
+)
+
+mpc volume | \
+    python -c "$PYTHON_CODE" | \
+    xargs -I {} mpc volume "$DIRECTION"{}

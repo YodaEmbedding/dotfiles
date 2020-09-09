@@ -17,25 +17,14 @@ bindsym $mod+shift+comma        exec $nsi $amixer 1%-    && $vol_change
 # Default sink control
 bindsym $mod+ctrl+shift+z       exec $nsi $cycle_pa_sink
 
-# Media control (mpd)
-bindsym XF86AudioPlay           exec $nsi mpc toggle
-bindsym XF86AudioPause          exec $nsi mpc pause
-bindsym XF86AudioNext           exec $nsi mpc next
-bindsym XF86AudioPrev           exec $nsi mpc prev
-
-bindsym $mod+ctrl+x             exec $nsi mpc toggle
-bindsym $mod+x                  exec $nsi "$mpc_volume +{}"
-bindsym $mod+shift+x            exec $nsi "$mpc_volume -{}"
-
-# Media control (mpris)
-# bindsym XF86AudioPlay           exec $nsi playerctl play-pause
-# bindsym XF86AudioPause          exec $nsi playerctl pause
-# bindsym XF86AudioNext           exec $nsi playerctl next
-# bindsym XF86AudioPrev           exec $nsi playerctl prev
-#
-# bindsym $mod+ctrl+x             exec $nsi playerctl play-pause
-# bindsym $mod+x                  exec $nsi playerctl volume 0.05+
-# bindsym $mod+shift+x            exec $nsi playerctl volume 0.05-
+# Media control
+bindsym XF86AudioPlay           exec $nsi "$media_playpause"
+bindsym XF86AudioPause          exec $nsi "$media_pause"
+bindsym XF86AudioNext           exec $nsi "$media_next"
+bindsym XF86AudioPrev           exec $nsi "$media_prev"
+bindsym $mod+ctrl+x             exec $nsi "$media_playpause"
+bindsym $mod+x                  exec $nsi "$media_vol_up"
+bindsym $mod+shift+x            exec $nsi "$media_vol_down"
 
 # ncmpcpp
 bindsym $mod+$mod_+x            exec $nsi alacritty --class ncmpcpp -t ncmpcpp -e ncmpcpp
