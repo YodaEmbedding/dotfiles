@@ -22,7 +22,7 @@ font-5 = NotoSans-Regular:size=10.0;0
 tray-background = #221133
 tray-position = right
 
-modules-left = i3 mpd preview
+modules-left = i3 mpris preview
 modules-center = title
 modules-right = network ping updates memory cpu temperature pulseaudio date
 
@@ -67,6 +67,14 @@ label-song = %artist:0:20% - %title%
 label-song-maxlen = 70
 label-time = (%elapsed%/%total%)
 format-online-font = 6
+
+[module/mpris]
+type = custom/script
+exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{:t20:{artist}:} - {:t70:{title}:}'
+tail = true
+format-foreground = #CCAADD
+format-font = 6
+click-left = playerctl play-pause
 
 [module/preview]
 type = custom/script
