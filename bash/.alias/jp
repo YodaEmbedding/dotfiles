@@ -3,7 +3,7 @@
 alias namae='aliases'                   # 名前          # name
 alias haikei='b'                        # 背景          # background
 alias kuro='black -l 79'                # 黒            # black
-alias fukusha='cp'                      # 複写          # copy
+alias fukusha='/bin/cp'                 # 複写          # copy
 alias iu='echo'                         # 言う          # to say
 alias shigoto='htop_cpu'                # 仕事          # work
 alias kioku='htop_mem'                  # 記憶          # memory
@@ -25,7 +25,7 @@ alias korosu='killall'                  # 殺す          # to kill
 alias kyou='cal'                        # 今日          # today
 alias matsu='sleep'                     # 待つ          # to wait
 alias miru='bat'                        # 見る          # to see
-alias oku='mv'                          # 置く          # to put
+alias oku='/bin/mv'                     # 置く          # to put
 alias okuru='rscp'                      # 送る          # to send
 alias tsukuru='make'                    # 作る          # to make
 
