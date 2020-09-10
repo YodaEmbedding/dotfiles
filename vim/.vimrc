@@ -1,5 +1,5 @@
-source ~/.vim/plugins.vim
 source ~/.vim/plugin_settings.vim
+source ~/.vim/plugins.vim
 source ~/.vim/theming.vim
 source ~/.vim/options.vim
 source ~/.vim/autocmds.vim
