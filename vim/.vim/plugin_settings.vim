@@ -36,4 +36,5 @@ let g:slime_target = "tmux"
 "     \ 'build_dir': 'out'
 "     \ }
 
+let g:tex_flavor = 'latex'
 let g:vimtex_quickfix_method = 'pplatex'
