@@ -50,6 +50,7 @@ set $screen_base    $HOME/Downloads
 set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 
 # Window size
+set $screen_size    1920 1080
 set $video_size     752 423
 
 # Media control (mpd)
