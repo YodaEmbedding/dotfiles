@@ -25,13 +25,14 @@ map <S-F4> feedkeys ":set default-bg rgba(0,0,0,0.8)<Return>"
 map <S-F5> feedkeys ":set default-bg rgba(0,0,0,0.9)<Return>"
 map <S-F6> feedkeys ":set default-bg rgba(0,0,0,1.0)<Return>"
 
-# map <C-k> scroll up 3
-# map <C-j> scroll down 3
-# map <PageUp> scroll full-up
-# map <PageDown> scroll full-down
-# map <Left> feedkeys "<PageUp>"
-# map <Right> feedkeys "<PageDown>"
-map <C-k> scroll half-up
-map <C-j> scroll half-down
-map <Left> feedkeys "j<S- >"
-map <Right> feedkeys "k "
+map <PageUp> feedkeys "j<S- >"
+map <PageDown> feedkeys "k "
+map <Left> feedkeys "<S-k>"
+map <Right> feedkeys "<S-j>"
+
+# Scrolling:
+# scroll full-up/down
+# scroll half-up/down
+# scroll up/down N
+# feedkeys "<S-k>"  or  "<S-j>"
+# feedkeys "<S- >"  or  " "
