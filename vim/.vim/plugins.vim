@@ -35,8 +35,8 @@ Plug 'tpope/'           . 'vim-surround'            " Functional: Change surroun
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])' abc def ghi
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
-Plug 'junegunn/'        . 'fzf.vim'                 " Functional: Search
-Plug 'junegunn/'        . 'fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Functional: Search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Functional: Search
+Plug 'junegunn/fzf.vim'                             " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'wellle/'          . 'targets.vim'             " Functional: Text objects
 Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
@@ -61,10 +61,7 @@ endif
 
 " Autocompletion {{{2
 
-Plug 'neoclide/'        . 'coc.nvim', {
-    \ 'tag': '*',
-    \ 'do': { -> coc#util#install()}
-    \ }                                             " Functional: LSP
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Functional: LSP
 
 " Extensions:
 let g:coc_global_extensions = [
