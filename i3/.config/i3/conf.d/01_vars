@@ -62,9 +62,9 @@ set $video_size     752 423
 # set $media_vol_down             ~/.config/i3/scripts/mpc_volume -
 
 # Media control (mpris)
-set $media_playpause            playerctl play-pause
-set $media_pause                playerctl pause
-set $media_next                 playerctl next
-set $media_prev                 playerctl prev
-set $media_vol_up               playerctl volume 0.05+
-set $media_vol_down             playerctl volume 0.05-
+set $media_playpause            playerctl -p spotify play-pause
+set $media_pause                playerctl -p spotify pause
+set $media_next                 playerctl -p spotify next
+set $media_prev                 playerctl -p spotify prev
+set $media_vol_up               playerctl -p spotify volume 0.05+
+set $media_vol_down             playerctl -p spotify volume 0.05-
