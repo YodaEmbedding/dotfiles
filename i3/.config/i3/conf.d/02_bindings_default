@@ -18,8 +18,8 @@ bindsym $mod+y                  layout tabbed
 #bindsym $mod+e                  layout toggle split
 
 # Split
-bindsym $mod+v                  split v
-bindsym $mod+shift+v            split h
+bindsym $mod+v                  split h
+bindsym $mod+shift+v            split v
 
 # Fullscreen
 bindsym $mod+f                  fullscreen toggle
