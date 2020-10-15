@@ -38,6 +38,8 @@ Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot ke
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Functional: Search
 Plug 'junegunn/fzf.vim'                             " Functional: Search
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
+Plug 'SirVer/'          . 'ultisnips'               " Functional: Snippets (engine)
+Plug 'honza/'           . 'vim-snippets'            " Functional: Snippets (snippets)
 Plug 'wellle/'          . 'targets.vim'             " Functional: Text objects
 Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
 Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects

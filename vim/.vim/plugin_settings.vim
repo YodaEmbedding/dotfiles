@@ -18,6 +18,11 @@ let g:LanguageClient_serverCommands = {
 let g:tcomment_mapleader1 = ''
 let g:tcomment_types = {'c': '// %s'}
 
+" utilsnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 " vim-gutentags {{{1
 let g:gutentags_file_list_command = 'rg --files'
 
