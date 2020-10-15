@@ -33,7 +33,6 @@ endfunction
 " Enabled {{{1
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
-Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])' abc def ghi
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Functional: Search
 Plug 'junegunn/fzf.vim'                             " Functional: Search
@@ -100,6 +99,7 @@ let g:coc_global_extensions = [
 "Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
 "Plug 'kana/'            . 'vim-submode'             " Functional: New modes
+"Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])' abc def ghi
 "Plug 'svermeulen/'      . 'vim-yoink'               " Functional: Registers
 "Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
 "Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
