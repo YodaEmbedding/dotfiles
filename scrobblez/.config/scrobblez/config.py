@@ -20,6 +20,7 @@ RULES = (
 
 # fmt: off
 _composers = [
+
     ("Abril", "Antón García"),
     ("Bach", "Johann Sebastian"),
     ("Barber", "Samuel"),
@@ -31,19 +32,26 @@ _composers = [
     ("Bruckner", "Anton"),
     ("Chopin", "Frédéric"),
     ("Copland", "Aaron"),
+    ("Corelli", "Arcangelo"),
     ("Debussy", "Claude"),
+    ("Dvořák", "Antonín"),
     ("Elgar", "Edward"),
     ("Glass", "Philip"),
     ("Glazunov", "Alexander"),
     ("Higdon", "Jennifer"),
+    ("Händel", "Georg Friedrich"),
     ("Khachaturian", "Aram"),
     ("Liszt", "Franz"),
+    ("Mahler", "Gustav"),
     ("Mendelssohn", "Felix"),
     ("Meyer", "Edgar"),
     ("Mozart", "Wolfgang Amadeus"),
+    ("Mussorgsky", "Modest"),
     ("Paganini", "Niccolò"),
     ("Prokofiev", "Sergei"),
     ("Rachmaninoff", "Sergei"),
+    ("Ravel", "Maurice"),
+    ("Saint-Saëns", "Camille"),
     ("Schnittke", "Alfred"),
     ("Schoenberg", "Arnold"),
     ("Schubert", "Franz"),
@@ -57,6 +65,7 @@ _composers = [
     ("Vaughan Williams", "Ralph"),
     ("Vieuxtemps", "Henri"),
     ("Vivaldi", "Antonio"),
+
 ]
 
 composers = [" ".join(x[::-1]) for x in _composers]
