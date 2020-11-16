@@ -1,12 +1,9 @@
-" Black hole delete {{{1
-nnoremap <Backspace> "_dd
-vnoremap <Backspace> "_dd
-
 " Black hole paste (in visual mode) {{{1
 xnoremap <silent> p p:let @"=@0<CR>
 
 " Clipboard paste {{{1
 inoremap <C-v> <C-o>"+p
+nnoremap <Backspace> "+p
 
 " Close location list {{{1
 autocmd FileType qf nnoremap <buffer> <CR> <CR>:lclose<CR>
