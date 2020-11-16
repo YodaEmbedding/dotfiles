@@ -18,6 +18,8 @@ hi Normal           guibg=NONE    ctermbg=NONE
 hi Normal           guifg=Grey70  ctermfg=249
 
 hi ColorColumn      guibg=#372735
+hi Conceal          guibg=NONE
+hi Conceal          guifg=#555555
 hi CursorLine       guibg=#402B3D
 hi ExtraWhitespace  guibg=#473745
 hi Folded           guibg=#1E161F
