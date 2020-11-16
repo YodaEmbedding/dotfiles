@@ -49,8 +49,6 @@ endif
 
 " Other {{{2
 "Plug 'maralla/'         . 'completor.vim'           " Autocompletion: General
-"Plug 'LucHermitte/'     . 'VimFold4C'               " Folding: C++
-"Plug 'LucHermitte/'     . 'lh-vim-lib'              " Folding: Library of functions for LucHermitte's scripts
 "Plug 'tommcdo/'         . 'vim-lion'                " Functional: Alignment
 "Plug 'svermeulen/'      . 'vim-easyclip'            " Functional: Blackhole delete, smart yanking, etc
 "Plug 'chrisbra/'        . 'NrrwRgn'                 " Functional: Extract buffer (oooh this is cool)
@@ -72,9 +70,6 @@ endif
 " Disabled {{{1
 
 " Sometimes useful {{{2
-"Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
-"Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
-"Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 "Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
 "Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }   " Functional: Firefox
@@ -90,11 +85,6 @@ endif
 "Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
 " Possibly useful {{{2
-"Plug 'msuperdock/'      . 'vim-foldout'             " Folding: Fold navigation mode (currently broken?)
-"Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
-"Plug 'Twinside/'        . 'vim-haskellFold'         " Folding: Haskell
-"Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
-"Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
 "Plug 'tpope/'           . 'vim-commentary'          " Functional: Commenting
 "Plug 'takac/'           . 'vim-hardtime'            " Functional: Disable repeat hjkl movements
 "Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
