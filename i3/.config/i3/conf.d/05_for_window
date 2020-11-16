@@ -1,3 +1,6 @@
+for_window [class="^.*"] \
+    border pixel 1
+
 for_window [instance="^dropdown$"] \
     floating enable, border none, \
     resize set 100 ppt 50 ppt, move position 0 24, \
