@@ -2,7 +2,6 @@
 
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Functional: LSP
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Functional: Search
 Plug 'junegunn/fzf.vim'                             " Functional: Search
@@ -13,6 +12,7 @@ Plug 'wellle/'          . 'targets.vim'             " Functional: Text objects
 Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
 Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Tools: LSP
 Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 Plug 'tpope/'           . 'vim-eunuch'              " Tools: UNIX sugars on mv, rm, rename, ...
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
@@ -37,15 +37,12 @@ endif
 "Plug 'tmsvg/'           . 'pear-tree'               " Functional: Pairs of '([])'
 "Plug 'liuchengxu/'      . 'vim-clap'                " Functional: Search
 "Plug 'nvim-telescope/'  . 'telescope.nvim'          " Functional: Search
-"Plug 'reedes/'          . 'vim-wordy'               " Functional: Writing: find usage problems
 "Plug 'puremourning/'    . 'vimspector'              " Tools: Debugger
 "Plug 'lambdalisue/'     . 'gina.vim'                " Tools: Git
 "Plug 'metakirby5/'      . 'codi.vim'                " Tools: Real-time REPL evaluation
 "Plug 'wadackel/'        . 'vim-dogrun'              " Visual: Colorscheme
-"Plug 'ayu-theme/'       . 'ayu-vim'                 " Visual: Colorscheme
-"Plug 'artanikin/'       . 'vim-synthwave84'         " Visual: Colorscheme
-"Plug 'ntk148v/'         . 'vim-horizon'             " Visual: Colorscheme
 "Plug 'danth/'           . 'pathfinder.vim'          " Visual: Show optimal path
+"Plug 'reedes/'          . 'vim-wordy'               " Writing: Find usage problems
 
 " Other {{{2
 "Plug 'maralla/'         . 'completor.vim'           " Autocompletion: General
@@ -71,33 +68,32 @@ endif
 
 " Sometimes useful {{{2
 "Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
-"Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
-"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }   " Functional: Firefox
-"Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
-"Plug 'kana/'            . 'vim-submode'             " Functional: New modes
-"Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])'
-"Plug 'svermeulen/'      . 'vim-yoink'               " Functional: Registers
-"Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
-"Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
-"Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
-"Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
+"Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL
 "Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
 " Possibly useful {{{2
+"Plug 'buztard/'         . 'vim-rel-jump'            " Functional: Add to relative jk motions to jumpstack
 "Plug 'tpope/'           . 'vim-commentary'          " Functional: Commenting
 "Plug 'takac/'           . 'vim-hardtime'            " Functional: Disable repeat hjkl movements
 "Plug 'Yggdroot/'        . 'LeaderF', { 'on': 'LeaderfFile' }  " Functional: Fuzzy search/open files within directory
 "Plug 'terryma/'         . 'vim-multiple-cursors'    " Functional: Multiple cursors (using regexes... cool)
+"Plug 'kana/'            . 'vim-submode'             " Functional: New modes
 "Plug 'othree/'          . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
+"Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])'
 "Plug 'Houl/'            . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
+"Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
+"Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Text objects (e.g. cia)
 "Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
 "Plug 'machakann/'       . 'vim-highlightedyank'     " Functional: Yank highlight
 "Plug 'svermeulen/'      . 'vim-yoink'               " Functional: Yank history
 "Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
+"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }   " Tools: Firefox
 "Plug 'tpope/'           . 'vim-fugitive'            " Tools: Git [RARELYUSED]
 "Plug 'rhysd/'           . 'git-messenger.vim'       " Tools: Git commit history
-"Plug 'buztard/'         . 'vim-rel-jump'            " Tweak: Add to relative jk motions to jumpstack
+"Plug 'w0rp/'            . 'ale'                     " Tools: LSP, Linting
+"Plug 'ludovicchabant/'  . 'vim-gutentags'           " Tools: ctags
+"Plug 'majutsushi/'      . 'tagbar'                  " Tools: ctags; bound to \t
 "Plug 'tpope/'           . 'vim-sleuth'              " Tweak: Automatically detect indent settings from file
 "Plug 'justinmk/'        . 'vim-dirvish'             " Visual: Directory viewer
 "Plug 'gillyb/'          . 'stable-windows'          " Visual: Disable centering when buffer switches
@@ -109,11 +105,14 @@ endif
 "Plug 'kyazdani42/'      . 'nvim-web-devicons'       " Visual: Tab line icons
 
 " Colorscheme {{{2
+"Plug 'ayu-theme/'       . 'ayu-vim'                 " Visual: Colorscheme
 "Plug 'sjl/              . 'badwolf'                 " Visual: Colorscheme
 "Plug 'gkjgh/            . 'cobalt'                  " Visual: Colorscheme
 "Plug 'archSeer/'        . 'colibri.vim'             " Visual: Colorscheme (purple, cloudy)
 "Plug 'romgrk/'          . 'doom-one.vim'            " Visual: Colorscheme
 "Plug 'junegunn/         . 'seoul256.vim'            " Visual: Colorscheme
 "Plug 'altercation/      . 'vim-colors-solarized'    " Visual: Colorscheme
+"Plug 'ntk148v/'         . 'vim-horizon'             " Visual: Colorscheme
 "Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
 "Plug 'noahfrederick/    . 'vim-noctu'               " Visual: Colorscheme
+"Plug 'artanikin/'       . 'vim-synthwave84'         " Visual: Colorscheme
