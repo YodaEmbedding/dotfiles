@@ -82,12 +82,31 @@ let g:coc_global_extensions = [
     \ 'coc-yank',
     \ ]
 
-" Language servers:
-" Bash: bash-language-server
-" C++: ccls
-" Clojure: clojure-lsp
-" Haskell: haskell-ide-engine
-" Rust: rls, racer
+" Untried {{{1
+
+" Evaluate next {{{2
+
+" Other {{{2
+"Plug 'maralla/'         . 'completor.vim'           " Autocompletion: General
+"Plug 'LucHermitte/'     . 'VimFold4C'               " Folding: C++
+"Plug 'LucHermitte/'     . 'lh-vim-lib'              " Folding: Library of functions for LucHermitte's scripts
+"Plug 'tommcdo/'         . 'vim-lion'                " Functional: Alignment
+"Plug 'svermeulen/'      . 'vim-easyclip'            " Functional: Blackhole delete, smart yanking, etc
+"Plug 'chrisbra/'        . 'NrrwRgn'                 " Functional: Extract buffer (oooh this is cool)
+"Plug 'kana/'            . 'vim-submode'             " Functional: More modes
+"Plug 'AndrewRadev/'     . 'sideways.vim'            " Functional: Parameter swapping
+"Plug 'romainl/'         . 'vim-qf'                  " Functional: Quickfix
+"Plug 'romainl/'         . 'vim-qlist'               " Functional: Quickfix - Definition search
+"Plug 'wincent/'         . 'scalpel'                 " Functional: Sublime Text-like word replace? (Ctrl+D)
+"Plug 'mbbill/'          . 'undotree'                " Functional: Undo tree
+"Plug 'ivanov/'          . 'vim-ipython'             " Tools:
+"Plug 'nhooyr/'          . 'neoman.vim'              " Tools: Pager (manpages)
+"Plug 'idbrii/'          . 'vim-ripple'              " Tools: REPL within vim
+"Plug 'vim-syntastic/'   . 'syntastic'               " Tools: Syntax (compile) checking
+"Plug 'jreybert/'        . 'vimagit'                 " Tools: vim git magic!!!
+"Plug 'kkoenig/'         . 'wimproved.vim'           " Tweak: Windows systems
+"Plug 'justinmk/'        . 'vim-syntax-extra'        " Visual: More syntax highlighting
+
 
 " Disabled {{{1
 " Sometimes useful {{{2
@@ -131,42 +150,18 @@ let g:coc_global_extensions = [
 "Plug 'semanser/'        . 'vim-outdated-plugins'    " Visual: Show number of outdated plugins under statusline
 "Plug 'yuttie/'          . 'comfortable-motion.vim'  " Visual: Smooth scrolling
 "Plug 'terryma/'         . 'vim-smooth-scroll'       " Visual: Smooth scrolling
+"Plug 'romgrk/'          . 'barbar.nvim'             " Visual: Tab line
+"Plug 'kyazdani42/'      . 'nvim-web-devicons'       " Visual: Tab line icons
 
 " Colorscheme {{{2
 "Plug 'sjl/              . 'badwolf'                 " Visual: Colorscheme
 "Plug 'gkjgh/            . 'cobalt'                  " Visual: Colorscheme
 "Plug 'archSeer/'        . 'colibri.vim'             " Visual: Colorscheme (purple, cloudy)
+"Plug 'romgrk/'          . 'doom-one.vim'            " Visual: Colorscheme
 "Plug 'junegunn/         . 'seoul256.vim'            " Visual: Colorscheme
 "Plug 'altercation/      . 'vim-colors-solarized'    " Visual: Colorscheme
 "Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
 "Plug 'noahfrederick/    . 'vim-noctu'               " Visual: Colorscheme
-
-" Untried {{{1
-
-" Evaluate next {{{2
-"Plug 'maralla/'         . 'completor.vim'           " Autocompletion: General
-"Plug 'tommcdo/'         . 'vim-lion'                " Functional: Alignment
-"Plug 'nhooyr/'          . 'neoman.vim'              " Tools: Pager (manpages)
-
-" Other {{{2
-"Plug 'LucHermitte/'     . 'VimFold4C'               " Folding: C++
-"Plug 'LucHermitte/'     . 'lh-vim-lib'              " Folding: Library of functions for LucHermitte's scripts
-"Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Auto-insert parens/quotes
-"Plug 'svermeulen/'      . 'vim-easyclip'            " Functional: Blackhole delete, smart yanking, etc
-"Plug 'chrisbra/'        . 'NrrwRgn'                 " Functional: Extract buffer (oooh this is cool)
-"Plug 'kana/'            . 'vim-submode'             " Functional: More modes
-"Plug 'AndrewRadev/'     . 'sideways.vim'            " Functional: Parameter swapping
-"Plug 'romainl/'         . 'vim-qf'                  " Functional: Quickfix
-"Plug 'romainl/'         . 'vim-qlist'               " Functional: Quickfix - Definition search
-"Plug 'wincent/'         . 'scalpel'                 " Functional: Sublime Text-like word replace? (Ctrl+D)
-"Plug 'mbbill/'          . 'undotree'                " Functional: Undo tree
-"Plug 'ivanov/'          . 'vim-ipython'             " Tools:
-"Plug 'idbrii/'          . 'vim-ripple'              " Tools: REPL within vim
-"Plug 'vim-syntastic/'   . 'syntastic'               " Tools: Syntax (compile) checking
-"Plug 'kkoenig/'         . 'wimproved.vim'           " Tweak: Windows systems
-"Plug 'justinmk/'        . 'vim-syntax-extra'        " Visual: More syntax highlighting
-"Plug 'thaerkh/'         . 'vim-workspace'           "
-"Plug 'jreybert/'        . 'vimagit'                 " vim git magic!!!
 
 " End {{{1
 call plug#end()
