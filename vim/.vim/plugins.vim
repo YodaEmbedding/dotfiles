@@ -85,6 +85,18 @@ let g:coc_global_extensions = [
 " Untried {{{1
 
 " Evaluate next {{{2
+"Plug 'tmsvg/'           . 'pear-tree'               " Functional: Pairs of '([])'
+"Plug 'liuchengxu/'      . 'vim-clap'                " Functional: Search
+"Plug 'nvim-telescope/'  . 'telescope.nvim'          " Functional: Search
+"Plug 'reedes/'          . 'vim-wordy'               " Functional: Writing: find usage problems
+"Plug 'puremourning/'    . 'vimspector'              " Tools: Debugger
+"Plug 'lambdalisue/'     . 'gina.vim'                " Tools: Git
+"Plug 'metakirby5/'      . 'codi.vim'                " Tools: Real-time REPL evaluation
+"Plug 'wadackel/'        . 'vim-dogrun'              " Visual: Colorscheme
+"Plug 'ayu-theme/'       . 'ayu-vim'                 " Visual: Colorscheme
+"Plug 'artanikin/'       . 'vim-synthwave84'         " Visual: Colorscheme
+"Plug 'ntk148v/'         . 'vim-horizon'             " Visual: Colorscheme
+"Plug 'danth/'           . 'pathfinder.vim'          " Visual: Show optimal path
 
 " Other {{{2
 "Plug 'maralla/'         . 'completor.vim'           " Autocompletion: General
