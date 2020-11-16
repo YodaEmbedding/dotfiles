@@ -19,6 +19,7 @@ application/vnd.rar=xarchiver.desktop;7zFM.desktop;peazip.desktop;
 application/vnd.stardivision.calc=libreoffice-calc.desktop;
 application/x-7z-compressed=org.gnome.FileRoller.desktop;7zFM.desktop;
 application/x-arj=7zFM.desktop;xarchiver.desktop;
+application/x-bibtex=neovim.desktop;
 application/x-bittorrent=qbittorrent.desktop;
 application/x-cbr=okularApplication_comicbook.desktop;evince.desktop;
 application/x-cd-image=7zFM.desktop;
