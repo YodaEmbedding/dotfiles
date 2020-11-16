@@ -89,6 +89,7 @@ text/x-lua=neovim.desktop;sublime_text.desktop;
 text/x-makefile=neovim.desktop;sublime_text.desktop;
 text/x-matlab=neovim.desktop;sublime_text.desktop;
 text/x-maxima-out=neovim.desktop;sublime_text.desktop;
+text/x-patch=neovim.desktop;sublime_text.desktop;visual-studio-code.desktop;
 text/x-python=neovim.desktop;sublime_text.desktop;
 text/x-python3=neovim.desktop;sublime_text.desktop;
 text/x-readme=neovim.desktop;sublime_text.desktop;
