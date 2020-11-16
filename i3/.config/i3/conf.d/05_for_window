@@ -28,8 +28,11 @@ for_window [instance="^lyvi$"] \
     exec $nsi $scripts/move bottom right, \
     move scratchpad, scratchpad show
 
+for_window [class="^mpv$"] \
+    border none
+
 for_window [instance="^mpv popup$"] \
-    floating enable, sticky enable, \
+    floating enable, border none, sticky enable, \
     resize set $video_size, \
     exec $nsi $scripts/move bottom right
 
@@ -66,6 +69,6 @@ for_window [class="matplotlib"] \
     floating enable
 
 for_window [class="zoom"] \
-    floating enable, \
+    floating enable, border none, \
     move position center
 
