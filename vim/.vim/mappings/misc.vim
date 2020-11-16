@@ -39,6 +39,12 @@ set pastetoggle=<F4>
 nnoremap zx :qa<CR>
 nnoremap zX :qa!<CR>
 
+" Regex very magic {{{1
+nnoremap / /\v
+cnoremap %s/ %s/\v
+" cnoremap s/ s/\v
+" vnoremap s/ :s/\v
+
 " Save {{{1
 nnoremap <C-s> :w<CR>
 
