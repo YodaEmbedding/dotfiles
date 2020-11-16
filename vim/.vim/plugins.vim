@@ -1,38 +1,8 @@
-" Installation {{{1
-if has('nvim')
-    if has('win32') | let plug_path = expand('~/AppData/Local/nvim/autoload/plug.vim')
-    else            | let plug_path = expand('~/.local/share/nvim/site/autoload/plug.vim')
-    endif
-else
-    if has('win32') | let plug_path = expand('~/vimfiles/autoload/plug.vim')
-    else            | let plug_path = expand('~/.vim/autoload/plug.vim')
-    endif
-endif
-
-if empty(glob(plug_path))
-    let plug_remote = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-    silent execute "!curl -fLo " . plug_path . " --create-dirs " . plug_remote
-    autocmd VimEnter * PlugInstall | source $MYVIMRC
-endif
-
-" Begin {{{1
-if has('nvim')
-    call plug#begin('~/.local/share/nvim/plugged')
-else
-    call plug#begin('~/.vim/plugged')
-endif
-
-" Check if plugin loaded {{{1
-function! PlugLoaded(name)
-    return (
-        \ has_key(g:plugs, a:name) &&
-        \ isdirectory(g:plugs[a:name].dir) &&
-        \ stridx(&runtimepath, trim(g:plugs[a:name].dir, "/")) >= 0)
-endfunction
-
 " Enabled {{{1
+
 Plug 'tpope/'           . 'vim-surround'            " Functional: Change surrounding parenthesis, e.g. cs([
 Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Functional: LSP
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Functional: Search
 Plug 'junegunn/fzf.vim'                             " Functional: Search
@@ -60,27 +30,6 @@ if !has('nvim')
     " Also, run: pip3 install --user pynvim
 endif
 
-" Autocompletion {{{2
-
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Functional: LSP
-
-" Extensions:
-let g:coc_global_extensions = [
-    \ 'coc-css',
-    \ 'coc-git',
-    \ 'coc-highlight',
-    \ 'coc-html',
-    \ 'coc-java',
-    \ 'coc-json',
-    \ 'coc-lists',
-    \ 'coc-python',
-    \ 'coc-rls',
-    \ 'coc-tsserver',
-    \ 'coc-vimlsp',
-    \ 'coc-vimtex',
-    \ 'coc-yaml',
-    \ 'coc-yank',
-    \ ]
 
 " Untried {{{1
 
@@ -121,6 +70,7 @@ let g:coc_global_extensions = [
 
 
 " Disabled {{{1
+
 " Sometimes useful {{{2
 "Plug 'Konfekt/'         . 'FastFold'                " Folding: Eliminate foldexpr evaluation lag
 "Plug 'matze/'           . 'vim-tex-fold'            " Folding: LaTeX
@@ -177,6 +127,3 @@ let g:coc_global_extensions = [
 "Plug 'altercation/      . 'vim-colors-solarized'    " Visual: Colorscheme
 "Plug 'kristijanhusak/'  . 'vim-hybrid-material'     " Visual: Colorscheme
 "Plug 'noahfrederick/    . 'vim-noctu'               " Visual: Colorscheme
-
-" End {{{1
-call plug#end()

@@ -1,3 +1,21 @@
+" coc.nvim {{{1
+let g:coc_global_extensions = [
+    \ 'coc-css',
+    \ 'coc-git',
+    \ 'coc-highlight',
+    \ 'coc-html',
+    \ 'coc-java',
+    \ 'coc-json',
+    \ 'coc-lists',
+    \ 'coc-python',
+    \ 'coc-rls',
+    \ 'coc-tsserver',
+    \ 'coc-vimlsp',
+    \ 'coc-vimtex',
+    \ 'coc-yaml',
+    \ 'coc-yank',
+    \ ]
+
 " LanguageClient-neovim {{{1
 let g:LanguageClient_autoStart = 1
 let g:LanguageClient_settingsPath = expand('~/.local/share/nvim/settings.json')
