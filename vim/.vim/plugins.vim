@@ -127,20 +127,21 @@ let g:coc_global_extensions = [
 "Plug 'ryankuczka/'      . 'vim-pyfold'              " Folding: Python
 "Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'vim-scripts/'     . 'argtextobj.vim'          " Functional: Change function argument, e.g. cia
-"Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
+"Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }   " Functional: Firefox
 "Plug 'w0rp/'            . 'ale'                     " Functional: LSP, Linting
 "Plug 'kana/'            . 'vim-submode'             " Functional: New modes
-"Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])' abc def ghi
+"Plug 'jiangmiao/'       . 'auto-pairs'              " Functional: Pairs of '([])'
 "Plug 'svermeulen/'      . 'vim-yoink'               " Functional: Registers
 "Plug 'Shougo/'          . 'denite.nvim'             " Functional: Search
+"Plug 'majutsushi/'      . 'tagbar'                  " Functional: ctags; bound to \t
 "Plug 'ludovicchabant/'  . 'vim-gutentags'           " Miscellaneous: Ctags
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 "Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL Emacs-like
 "Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
 " Possibly useful {{{2
-"Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
 "Plug 'msuperdock/'      . 'vim-foldout'             " Folding: Fold navigation mode (currently broken?)
+"Plug 'pseewald/'        . 'vim-anyfold'             " Folding: Fold on indent
 "Plug 'Twinside/'        . 'vim-haskellFold'         " Folding: Haskell
 "Plug 'tmhedberg/'       . 'SimpylFold'              " Folding: Python
 "Plug 'sicariusnoctis/'  . 'VimpyFold'               " Folding: Python
@@ -151,6 +152,8 @@ let g:coc_global_extensions = [
 "Plug 'othree/'          . 'eregex.vim'              " Functional: PCRE style regex (use :%S// to search and \/ to toggle / replacement on/off)
 "Plug 'Houl/'            . 'repmo-vim'               " Functional: Repeat last motion using ; or ,
 "Plug 'justinmk/'        . 'vim-sneak'               " Functional: Use two character find (mapped to 's')
+"Plug 'machakann/'       . 'vim-highlightedyank'     " Functional: Yank highlight
+"Plug 'svermeulen/'      . 'vim-yoink'               " Functional: Yank history
 "Plug 'dag/'             . 'vim2hs'                  " Miscellaneous: Haskell  (DOUBLE INDENTS :()
 "Plug 'tpope/'           . 'vim-fugitive'            " Tools: Git [RARELYUSED]
 "Plug 'rhysd/'           . 'git-messenger.vim'       " Tools: Git commit history
