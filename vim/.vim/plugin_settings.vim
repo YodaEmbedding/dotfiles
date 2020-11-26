@@ -46,6 +46,7 @@ let g:gutentags_file_list_command = 'rg --files'
 
 " vim-peekaboo {{{1
 " let g:peekaboo_window = 'vertical botright 60new'
+let g:peekaboo_window = 'call CreateCenteredFloatingWindow()'
 
 " vim-polyglot {{{1
 let g:polyglot_disabled = ['latex', 'python-ident', 'tex']
