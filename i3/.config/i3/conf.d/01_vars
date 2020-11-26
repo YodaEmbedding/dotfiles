@@ -65,6 +65,6 @@ set $video_size     752 423
 set $media_playpause            playerctl -p spotify play-pause
 set $media_pause                playerctl -p spotify pause
 set $media_next                 playerctl -p spotify next
-set $media_prev                 playerctl -p spotify prev
+set $media_prev                 playerctl -p spotify previous
 set $media_vol_up               playerctl -p spotify volume 0.05+
 set $media_vol_down             playerctl -p spotify volume 0.05-
