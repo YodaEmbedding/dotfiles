@@ -39,10 +39,10 @@ bindsym $mod+shift+ctrl+Up      move up    100px
 bindsym $mod+shift+ctrl+Right   move right 100px
 
 # Gaps
-bindsym $mod+period             gaps inner all plus  5
-bindsym $mod+shift+period       gaps inner all minus 5
-bindsym $mod+slash              gaps outer all plus  5
-bindsym $mod+shift+slash        gaps outer all minus 5
+# bindsym $mod+period             gaps inner all plus  5
+# bindsym $mod+shift+period       gaps inner all minus 5
+# bindsym $mod+slash              gaps outer all plus  5
+# bindsym $mod+shift+slash        gaps outer all minus 5
 
 # Window property control
 bindsym $mod+b                  border toggle
