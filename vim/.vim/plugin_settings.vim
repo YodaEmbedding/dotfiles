@@ -7,7 +7,6 @@ let g:coc_global_extensions = [
     \ 'coc-java',
     \ 'coc-json',
     \ 'coc-lists',
-    \ 'coc-python',
     \ 'coc-rls',
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
@@ -15,6 +14,7 @@ let g:coc_global_extensions = [
     \ 'coc-yaml',
     \ 'coc-yank',
     \ ]
+    " \ 'coc-python',
 
 " LanguageClient-neovim {{{1
 let g:LanguageClient_autoStart = 1
