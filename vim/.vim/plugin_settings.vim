@@ -8,13 +8,14 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-lists',
     \ 'coc-rls',
+    \ 'coc-texlab',
     \ 'coc-tsserver',
     \ 'coc-vimlsp',
-    \ 'coc-vimtex',
     \ 'coc-yaml',
     \ 'coc-yank',
     \ ]
     " \ 'coc-python',
+    " \ 'coc-vimtex',
 
 " LanguageClient-neovim {{{1
 let g:LanguageClient_autoStart = 1
