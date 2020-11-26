@@ -10,7 +10,7 @@ bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
 bindsym $mod+ctrl+shift+e       exec "$rofi_emoji   -p 'emojis'"
 bindsym $mod+d                  exec "$rofi_file    -p 'files'"
 bindsym $mod+shift+w            exec "$rofi_bground -p 'wallpapers'"
-bindsym $mod+shift+d            exec "rofi -show window"
+bindsym $mod+shift+d            exec "$rofi_torr    -p 'torr'"
 
 # Lock screen
 bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper

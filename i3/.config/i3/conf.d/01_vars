@@ -37,6 +37,7 @@ set $rofi_command   ~/code/frece/examples/command_rofi.sh -i
 set $rofi_dir       ~/code/frece/examples/dir_rofi.sh     -i -width 70 -lines 16
 set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh   -i
 set $rofi_file      ~/code/frece/examples/file_rofi.sh    -i -width 80 -lines 16
+set $rofi_torr      ~/code/frece/examples/torr_rofi.sh    -i -width 80 -lines 16
 set $command_last   ~/code/frece/examples/command_latest.sh
 set $rofi_bground   ~/code/frece/examples/bground_rofi.sh -i
 
