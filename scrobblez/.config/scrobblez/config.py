@@ -38,6 +38,7 @@ _composers = [
     ("Elgar", "Edward"),
     ("Glass", "Philip"),
     ("Glazunov", "Alexander"),
+    ("Haydn", "Franz Joseph"),
     ("Higdon", "Jennifer"),
     ("Händel", "Georg Friedrich"),
     ("Khachaturian", "Aram"),
