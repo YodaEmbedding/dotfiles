@@ -10,18 +10,41 @@ from functools import partial
 from importlib import import_module
 from itertools import *
 from pprint import pprint
-from time import time, sleep
+from time import sleep, time
 from timeit import timeit
 from typing import *
 
 import numpy as np
-from numpy import array, arange, concatenate, ones, ones_like, zeros, zeros_like
-from numpy import exp, log, log2, log10, sqrt, ceil, floor
-from numpy import pi, sin, cos, tan, arcsin, arccos, arctan, arctan2, degrees, radians
+from numpy import (
+    arange,
+    arccos,
+    arcsin,
+    arctan,
+    arctan2,
+    array,
+    ceil,
+    concatenate,
+    cos,
+    degrees,
+    exp,
+    floor,
+    log,
+    log2,
+    log10,
+    ones,
+    ones_like,
+    pi,
+    radians,
+    sin,
+    sqrt,
+    tan,
+    zeros,
+    zeros_like,
+)
 
 np.set_printoptions(precision=3)
 
-j = 1.j
+j = 1.0j
 
 
 class LazyModule:
@@ -71,6 +94,7 @@ def json_dump(data: dict, filename: str):
 
 def read_fwf(s: str, drop_first=True, **kwargs):
     from io import StringIO
+
     df = pd.read_fwf(StringIO(s), **kwargs)
     if drop_first:
         df.drop(df.columns[0], axis=1, inplace=True)
