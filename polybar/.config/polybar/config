@@ -110,9 +110,9 @@ format-connected-font = 5
 
 [module/ping]
 type = custom/script
-;exec = ~/.config/polybar/scripts/ping 1.1.1.1
+exec = ~/.config/polybar/scripts/ping 1.1.1.1
 ;exec = ~/.config/polybar/scripts/ping 8.8.8.8
-exec = ~/.config/polybar/scripts/ping 104.160.131.3
+;exec = ~/.config/polybar/scripts/ping 104.160.131.3
 interval = 60
 
 [module/filesystem]
