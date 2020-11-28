@@ -82,6 +82,14 @@ def arange(*shape, dtype=None):
     return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
 
 
+def array(*args, **kwargs):
+    return np.array(args, **kwargs)
+
+
+A = array
+R = arange
+
+
 def json_load(filename: str):
     with open(filename) as f:
         return json.load(f)
