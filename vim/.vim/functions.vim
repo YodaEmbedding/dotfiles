@@ -131,7 +131,7 @@ endfunction
 
 " vim-peekaboo float {{{1
 function! CreateCenteredFloatingWindow()
-    call coc#util#float_hide()
+    call coc#float#close_all()
     " let orig_height = winheight(0)
     let width = float2nr(&columns * 0.8)
     let height = float2nr(&lines * 0.8)

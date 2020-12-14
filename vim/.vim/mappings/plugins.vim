@@ -18,9 +18,9 @@ if PlugLoaded('coc.nvim')
     nmap <leader>rn <Plug>(coc-rename)
 
     nnoremap <silent> <expr> K (exists('w:float') ?
-        \ ":call coc#util#float_hide()<CR>" :
-        \ coc#util#has_float() ?
-        \     ":call coc#util#float_jump()<CR>" :
+        \ ":call coc#float#close_all()<CR>" :
+        \ coc#float#has_float() ?
+        \     ":call coc#float#jump()<CR>" :
         \     ":call CocDocumentation()<CR>")
 
     " Use tab for trigger completion with characters ahead and navigate.
