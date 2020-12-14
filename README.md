@@ -55,6 +55,7 @@ List of configs, which directories these belong in, and other details.
 | systemd        | `$HOME`  |                                                      | Services                                         |
 | termite        | `$HOME`  |                                                      | Terminal emulator                                |
 | tmux           | `$HOME`  | tmux                                                 | Terminal multiplexer                             |
+| tridactyl      | `$HOME`  | firefox                                              | Firefox vim-like browsing                        |
 | vim            | `$HOME`  | neovim, neovim-plug, python-neovim                   | Better than emacs                                |
 | xmodmap        | `$HOME`  |                                                      | Keyboard remappings (e.g. Caps Lock -> Escape)   |
 | zathura        | `$HOME`  | zathura                                              | PDF reader                                       |

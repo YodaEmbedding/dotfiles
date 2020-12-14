@@ -1,0 +1,42 @@
+# vi: ft=config
+
+sanitise tridactyllocal tridactylsync
+
+colors dark
+
+set hintchars dsafrewqgvcxz
+# set editorcmd terminator -u -e "vim %f '+normal!%lGzv%c|'"
+
+unbind --mode=hint <Space>
+unbind <C-a>
+unbind <C-f>
+unbind <C-x>
+unbind J
+unbind K
+unbind zI
+unbind zM
+unbind zO
+unbind zR
+unbind zi
+unbind zm
+unbind zo
+unbind zr
+unbind zz
+
+bind d scrollpage 0.5
+bind f hint
+bind s source
+bind u scrollpage -0.5
+bind ~ tab #
+
+bindurl www.google.com f hint -Jc .rc > div > a
+bindurl www.google.com F hint -Jbc .rc > div > a
+bindurl www.google.com F hint -Jbc .rc > div > a
+
+unbindurl reddit.com a
+unbindurl reddit.com j
+unbindurl reddit.com k
+unbindurl reddit.com s
+unbindurl reddit.com x
+unbindurl reddit.com z
+
