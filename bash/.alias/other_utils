@@ -25,6 +25,9 @@ alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
 alias htop_cpu="htop --sort-key=PERCENT_CPU"
 alias htop_mem="htop --sort-key=PERCENT_MEM"
 
+# lf
+alias l="lf"
+
 # nnn
 alias n='nnn'
 
