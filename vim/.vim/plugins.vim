@@ -22,6 +22,7 @@ Plug 'airblade/'        . 'vim-gitgutter'           " Visual: Git gutter
 Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing and :FixWhitespace
 Plug 'unblevable/'      . 'quick-scope'             " Visual: Highlight unique characters per word in line (for find)
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
+Plug 'dstein64/'        . 'nvim-scrollview'         " Visual: Scrollbar
 Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 if !has('nvim')

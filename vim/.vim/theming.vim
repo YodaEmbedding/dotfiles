@@ -29,6 +29,8 @@ hi MatchParen       guibg=#446677
 hi MatchParen       guifg=#dddddd
 hi Pmenu            guibg=#473745
 
+hi ScrollView       guibg=#9977aa
+
 hi CocErrorFloat            guifg=#cc6666
 hi CocErrorVirtualText      guifg=#5C4459
 hi CocWarningVirtualText    guifg=#5C4459
