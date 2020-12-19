@@ -12,5 +12,14 @@ if PlugLoaded('fzf.vim')
         \     'options': '-m' },
         \   <bang>0))
 
-    command! -bang -nargs=* -complete=dir SmartFiles call SmartFiles(<q-args>)
+    command! -bang -nargs=* -complete=dir SmartFiles
+        \ call SmartFiles(<q-args>)
+
+    command! -bang -nargs=? -complete=dir Files
+        \ call fzf#vim#files(<q-args>, &columns > 120 ?
+        \ fzf#vim#with_preview() : {}, <bang>0)
+
+    command! -bang -nargs=? -complete=dir Buffers
+        \ call fzf#vim#buffers(<q-args>, &columns > 120 ?
+        \ fzf#vim#with_preview() : {}, <bang>0)
 endif
