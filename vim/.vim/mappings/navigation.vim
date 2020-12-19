@@ -3,7 +3,7 @@ nnoremap <silent> } :<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>
 nnoremap <silent> { :<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>
 
 " Navigate buffers {{{1
-nnoremap <S-Tab> :b#<CR>
+nnoremap <S-Tab> :e#<CR>
 nnoremap gb      :ls<CR>:b<Space>
 
 " Navigate jumpstack {{{1
