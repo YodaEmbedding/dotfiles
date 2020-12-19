@@ -3,9 +3,7 @@
 sanitise tridactyllocal tridactylsync
 
 colors dark
-
 set hintchars dsafrewqgvcxz
-# set editorcmd terminator -u -e "vim %f '+normal!%lGzv%c|'"
 
 unbind --mode=hint <Space>
 unbind <C-a>
@@ -13,6 +11,7 @@ unbind <C-f>
 unbind <C-x>
 unbind J
 unbind K
+unbind gf
 unbind zI
 unbind zM
 unbind zO
@@ -23,20 +22,29 @@ unbind zo
 unbind zr
 unbind zz
 
+bind C hint -b
+bind c hint
 bind d scrollpage 0.5
-bind f hint
-bind s source
 bind u scrollpage -0.5
+bind zs source
 bind ~ tab #
-
-bindurl www.google.com f hint -Jc .rc > div > a
-bindurl www.google.com F hint -Jbc .rc > div > a
-bindurl www.google.com F hint -Jbc .rc > div > a
 
 unbindurl reddit.com a
 unbindurl reddit.com j
 unbindurl reddit.com k
+unbindurl reddit.com p
+unbindurl reddit.com r
 unbindurl reddit.com s
 unbindurl reddit.com x
 unbindurl reddit.com z
+unbindurl reddit.com zs
+unbindurl youtube.com <<
+unbindurl youtube.com >>
 
+bindurl github.com/notifications F hint -Jbc li.notifications-list-item div a
+bindurl github.com/notifications f hint -Jc li.notifications-list-item div a
+bindurl www.google.com F hint -Jbc .rc div a
+bindurl www.google.com f hint -Jc .rc div a
+bindurl youtube.com c hint -Jc .ytp-fullscreen-button
+
+seturl youtube.com modeindicator false
