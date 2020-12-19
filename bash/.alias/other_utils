@@ -26,7 +26,17 @@ alias htop_cpu="htop --sort-key=PERCENT_CPU"
 alias htop_mem="htop --sort-key=PERCENT_MEM"
 
 # lf
-alias l="lf"
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    [ -f "$tmp" ] || return
+    dir="$(cat "$tmp")"
+    rm -f "$tmp"
+    [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] || return
+    cd "$dir"
+}
+
+alias l="lfcd"
 
 # nnn
 alias n='nnn'
