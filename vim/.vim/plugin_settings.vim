@@ -33,6 +33,10 @@ let g:LanguageClient_serverCommands = {
 " nnoremap <silent> gd   :call LanguageClient#textDocument_definition()<CR>
 " nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
+" nvim-scrollview {{{1
+let g:scrollview_base = 'buffer'
+let g:scrollview_column = 79
+
 " tcomment_vim {{{1
 let g:tcomment_mapleader1 = ''
 let g:tcomment_types = {'c': '// %s'}
