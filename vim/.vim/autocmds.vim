@@ -65,3 +65,8 @@ autocmd FileType tex        setlocal textwidth=79
 " Syntax highlighting {{{1
 autocmd BufRead,BufNewFile *.cls set filetype=tex
 autocmd BufRead,BufNewFile *.nxc set filetype=cpp
+autocmd BufRead,BufNewFile *rc set filetype=config
+autocmd BufRead,BufNewFile ~/.config/* set filetype=config
+autocmd BufRead,BufNewFile ~/dotfiles/*/.config/* set filetype=config
+autocmd BufRead,BufNewFile ~/dotfiles/bash/* set filetype=zsh
+autocmd BufRead,BufNewFile ~/dotfiles/zsh/* set filetype=zsh
