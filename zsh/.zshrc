@@ -275,6 +275,8 @@ bindkey '^z' fzf-fasddir-widget                         # cd to folder using fas
 #bindkey '^-r' percol_select_history                    #
 #bindkey '^-b' percol_select_marks                      #
 
+bindkey -s '^o' 'lfcd\n'
+
 # TODO {{{1
 
 # Use Ctrl+Enter to fill fish command then execute
