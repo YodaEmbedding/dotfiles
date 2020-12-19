@@ -26,8 +26,8 @@ modules-left = i3 mpris preview
 modules-center = title
 modules-right = network ping updates memory cpu temperature pulseaudio date
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+scroll-up = i3wm-wsprev
+scroll-down = i3wm-wsnext
 click-middle = i3-msg "kill"
 click-right = i3-msg "kill"
 
