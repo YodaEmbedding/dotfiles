@@ -2,7 +2,6 @@
 autocmd InsertLeave * silent! pclose!
 
 " Autocompletion {{{1
-let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
 " Check up to date plugins {{{1
