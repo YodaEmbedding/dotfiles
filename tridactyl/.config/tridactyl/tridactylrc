@@ -4,6 +4,7 @@ sanitise tridactyllocal tridactylsync
 
 colors dark
 set hintchars dsafrewqgvcxz
+set modeindicator false
 
 unbind --mode=hint <Space>
 unbind <C-a>
@@ -29,7 +30,9 @@ bind u scrollpage -0.5
 bind zs source
 bind ~ tab #
 
+unbindurl reddit.com C
 unbindurl reddit.com a
+unbindurl reddit.com c
 unbindurl reddit.com j
 unbindurl reddit.com k
 unbindurl reddit.com p
@@ -40,6 +43,7 @@ unbindurl reddit.com z
 unbindurl reddit.com zs
 unbindurl youtube.com <<
 unbindurl youtube.com >>
+unbindurl youtube.com f
 
 bindurl github.com/notifications F hint -Jbc li.notifications-list-item div a
 bindurl github.com/notifications f hint -Jc li.notifications-list-item div a
@@ -48,3 +52,6 @@ bindurl www.google.com f hint -Jc .rc div a
 bindurl youtube.com c hint -Jc .ytp-fullscreen-button
 
 seturl youtube.com modeindicator false
+
+blacklistadd lichess.org
+
