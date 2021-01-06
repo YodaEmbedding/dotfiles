@@ -35,7 +35,7 @@ let g:LanguageClient_serverCommands = {
 
 " nvim-scrollview {{{1
 let g:scrollview_base = 'buffer'
-let g:scrollview_column = 79
+let g:scrollview_column = 80
 
 " tcomment_vim {{{1
 let g:tcomment_mapleader1 = ''
