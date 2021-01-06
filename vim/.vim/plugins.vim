@@ -5,6 +5,7 @@ Plug 'tomtom/'          . 'tcomment_vim'            " Functional: Commenting
 Plug 'tpope/'           . 'vim-repeat'              " Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } " Functional: Search
 Plug 'junegunn/fzf.vim'                             " Functional: Search
+Plug 'tweekmonster/'    . 'fzf-filemru'             " Functional: Search (MRU)
 Plug 'nelstrom/'        . 'vim-visual-star-search'  " Functional: Select visually then *
 Plug 'SirVer/'          . 'ultisnips'               " Functional: Snippets (engine)
 Plug 'honza/'           . 'vim-snippets'            " Functional: Snippets (snippets)

@@ -122,10 +122,12 @@ endfunction
 function! SmartFiles(...)
     let root = s:get_git_root()
     if empty(root)
-        return call("fzf#vim#files", a:000)
+        " return call("fzf#vim#files", a:000)
+        execute ":FilesMru"
     else
-        let args = ["--cached --exclude-standard --others"]
-        return call("fzf#vim#gitfiles", args)
+        " let args = ["--cached --exclude-standard --others"]
+        " return call("fzf#vim#gitfiles", args)
+        execute ":ProjectMru"
     endif
 endfunction
 

@@ -87,7 +87,7 @@ if PlugLoaded('fzf.vim')
     nnoremap <Tab>     :Buffers<CR>
     nnoremap ,         :SmartFiles<CR>
     nnoremap <Leader>s :LocateFiles .<CR>
-    nnoremap <Leader>f :Files<CR>
+    nnoremap <Leader>f :FilesMru<CR>
     nnoremap <Leader>F :Files %:h<CR>
     nnoremap <Leader>g :GFiles --cached --others --exclude-standard<CR>
     nnoremap <Leader>h :History<CR>
