@@ -37,8 +37,8 @@ nnoremap zx :qa<CR>
 nnoremap zX :qa!<CR>
 
 " Regex very magic {{{1
-nnoremap / /\v
-cnoremap %s/ %s/\v
+" nnoremap / /\v
+" cnoremap %s/ %s/\v
 " cnoremap s/ s/\v
 " vnoremap s/ :s/\v
 
