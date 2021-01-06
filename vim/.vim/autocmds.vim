@@ -58,6 +58,9 @@ let fortran_fold=1
 " Line wrapping {{{1
 autocmd FileType tex        setlocal textwidth=79
 
+" nvim-scrollview {{{1
+autocmd FileType python let b:scrollview_column=79
+
 " Remove trailing whitespace on file save {{{1
 "autocmd FileType c,cpp,python autocmd BufWritePre <buffer> :FixWhitespace
 
