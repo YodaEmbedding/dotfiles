@@ -9,8 +9,8 @@ alias gcm='git commit -m'
 alias gco='git checkout'
 alias gcl='git clone'
 alias gd='git diff'
-alias gl='git log --graph --full-history --all --color --oneline'
-alias gla='git log --graph --decorate $(git rev-list -g --all)'
+alias gl='git log --graph --full-history --color --oneline --branches --remotes --tags'
+alias gla='git log --graph --decorate $(git rev-list -g --branches --remotes --tags)'
 alias gst='git status'
 
 # grep
