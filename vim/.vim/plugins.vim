@@ -71,6 +71,7 @@ endif
 " Sometimes useful {{{2
 "Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
+"Plug 'dstein64/'        . 'vim-startuptime'         " Miscellaneous: Startup breakdown
 "Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL
 "Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
 
