@@ -18,7 +18,6 @@ exec_always $nsi    $(eval "pgrep -f '^python.*focus_last$' | xargs kill; $scrip
 
 # Medium startup
 exec        $nsi    alacritty --class dropdown -e tmux
-exec        $nsi    devilspie2
 exec        $nsi    "sleep 20 && copyq"
 exec        $nsi    scrobblez
 
