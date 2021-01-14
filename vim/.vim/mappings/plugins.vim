@@ -17,7 +17,11 @@ if PlugLoaded('coc.nvim')
     nmap <leader>qf <Plug>(coc-fix-current)
     nmap <leader>rn <Plug>(coc-rename)
 
-    nnoremap <silent> <expr> K (exists('w:float') ?
+    nnoremap <silent> <expr> K (coc#float#has_float() ?
+        \ ":call coc#float#close_all()<CR>" :
+        \     ":call CocDocumentation()<CR>")
+
+    nnoremap <silent> <expr> <C-k> (exists('w:float') ?
         \ ":call coc#float#close_all()<CR>" :
         \ coc#float#has_float() ?
         \     ":call coc#float#jump()<CR>" :
