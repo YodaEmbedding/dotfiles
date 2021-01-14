@@ -45,6 +45,7 @@ List of configs, which directories these belong in, and other details.
 | mimeapps       | `$HOME`  |                                                      | Choose default app used to open files            |
 | mpv            | `$HOME`  |                                                      | Video player                                     |
 | ncmpcpp        | `$HOME`  |                                                      | Music player (MPD client)                        |
+| neovim         | `$HOME`  | neovim, python-neovim                                | Better than emacs                                |
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
 | picom          | `$HOME`  |                                                      | Compositor                                       |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
@@ -56,7 +57,7 @@ List of configs, which directories these belong in, and other details.
 | termite        | `$HOME`  |                                                      | Terminal emulator                                |
 | tmux           | `$HOME`  | tmux                                                 | Terminal multiplexer                             |
 | tridactyl      | `$HOME`  | firefox                                              | Firefox vim-like browsing                        |
-| vim            | `$HOME`  | neovim, neovim-plug, python-neovim                   | Better than emacs                                |
+| vim            | `$HOME`  | vim                                                  | Better than emacs                                |
 | xmodmap        | `$HOME`  |                                                      | Keyboard remappings (e.g. Caps Lock -> Escape)   |
 | zathura        | `$HOME`  | zathura                                              | PDF reader                                       |
 | zsh            | `$HOME`  | zplug                                                | Shell                                            |
