@@ -15,6 +15,7 @@ Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Tools: LSP
 Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
+Plug 'rafcamlet/'       . 'coc-nvim-lua'            " Tools: Neovim Lua
 Plug 'tpope/'           . 'vim-eunuch'              " Tools: UNIX sugars on mv, rm, rename, ...
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
 Plug 'farmergreg/'      . 'vim-lastplace'           " Tweak: Reopen file last position
