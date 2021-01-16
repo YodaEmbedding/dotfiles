@@ -20,7 +20,6 @@ function! s:JobHandlerNeovim(job_id, data, event) dict
     endif
 endfunction
 
-" TODO check only activated plugins and not all downloaded
 function! CheckForUpdates()
     let g:needToUpDate = 0
     let g:pluginUpdateStatus = ''
@@ -52,67 +51,6 @@ function! CopyMatches(reg)
     execute 'let @'.reg.' = join(hits, "\n") . "\n"'
 endfunction
 
-" Denite configure options {{{1
-function! DeniteProfile(opts) abort
-  for l:fname in keys(a:opts)
-    for l:dopt in keys(a:opts[l:fname])
-      call denite#custom#option(l:fname, l:dopt, a:opts[l:fname][l:dopt])
-    endfor
-  endfor
-endfunction
-
-" Folding {{{1
-" Fold config files {{{2
-function! FoldConfig()
-    let thisline = getline(v:lnum)
-    let matchline = matchstr(thisline, '^#\+.\+#\+$')
-    let match = matchstr(matchline, '^#*')
-    let level = strlen(match)
-
-    if level > 0 | return ">1" | endif
-    return "="
-endfunction
-
-" Fold Fortran files {{{2
-function! FoldFortran()
-    let thisline = getline(v:lnum)
-    let match_start = match(thisline, '^\s*\(subroutine\|function\|pure function\|elemental function\)')       != -1
-    let match_end   = match(thisline, '^\s*end program') != -1
-
-    if match_start | return ">1" | endif
-    if match_end   | return ">0" | endif
-    return "="
-endfunction
-
-" Fold markdown files {{{2
-function! FoldMarkdown()
-    let thisline = getline(v:lnum)
-    let match = matchstr(thisline, '^#*')
-    let level = strlen(match)
-
-    if level > 0 | return ">" . string(level) | endif
-    return "="
-endfunction
-
-" Fold text style {{{2
-function! FoldTextStyle()
-    let line = getline(v:foldstart)
-
-    let nucolwidth = &fdc + &number * &numberwidth
-    let windowwidth = winwidth(0) - nucolwidth - 2
-
-    let foldlinecount = v:foldend - v:foldstart
-    let posttext = "  " . foldlinecount . " lines   +  ----"
-
-    let spacetab = strpart('         ', 0, &tabstop)
-    let line = substitute(line, '\t', spacetab, 'g')
-    let line = strpart(line, 0, windowwidth - len(posttext))
-
-    let filltext = repeat(" ", windowwidth - len(line) - len(posttext))
-
-    return line . filltext . posttext
-endfunction
-
 " fzf.vim {{{1
 function! s:get_git_root()
     let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
@@ -122,19 +60,14 @@ endfunction
 function! SmartFiles(...)
     let root = s:get_git_root()
     if empty(root)
-        " return call("fzf#vim#files", a:000)
         execute ":FilesMru"
     else
-        " let args = ["--cached --exclude-standard --others"]
-        " return call("fzf#vim#gitfiles", args)
         execute ":ProjectMru"
     endif
 endfunction
 
 " vim-peekaboo float {{{1
 function! CreateCenteredFloatingWindow()
-    call coc#float#close_all()
-    " let orig_height = winheight(0)
     let width = float2nr(&columns * 0.8)
     let height = float2nr(&lines * 0.8)
     let top = ((&lines - height) / 2) - 1

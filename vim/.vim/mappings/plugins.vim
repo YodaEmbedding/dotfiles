@@ -1,8 +1,7 @@
-" coc.nvim {{{1
+" coc.nvim
 if PlugLoaded('coc.nvim')
-    inoremap <silent><expr> <c-space> coc#refresh()
-    inoremap <silent><expr> <c-k> CocActionAsync('showSignatureHelp')
-    " nnoremap <silent> K :call CocDocumentation()<CR>
+    inoremap <silent><expr> <C-space> coc#refresh()
+    inoremap <silent><expr> <C-k> CocActionAsync('showSignatureHelp')
     nmap <silent> [c <Plug>(coc-diagnostic-prev)
     nmap <silent> ]c <Plug>(coc-diagnostic-next)
     nmap <silent> gd <Plug>(coc-definition)
@@ -11,8 +10,8 @@ if PlugLoaded('coc.nvim')
     nmap <silent> gt <Plug>(coc-type-definition)
     nmap <leader>=  <Plug>(coc-format-selected)
     xmap <leader>=  <Plug>(coc-format-selected)
-    nmap <leader>a  <Plug>(coc-codeaction-selected)
-    xmap <leader>a  <Plug>(coc-codeaction-selected)
+    nmap <leader>aa <Plug>(coc-codeaction-selected)
+    xmap <leader>aa <Plug>(coc-codeaction-selected)
     nmap <leader>ac <Plug>(coc-codeaction)
     nmap <leader>qf <Plug>(coc-fix-current)
     nmap <leader>rn <Plug>(coc-rename)
@@ -36,8 +35,6 @@ if PlugLoaded('coc.nvim')
         \ coc#refresh()
     inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-    " inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
     function! s:check_back_space() abort
         let col = col('.') - 1
         return !col || getline('.')[col - 1]  =~# '\s'
@@ -56,37 +53,7 @@ if PlugLoaded('coc.nvim')
     nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
 endif
 
-" Denite {{{1
-if PlugLoaded('denite.nvim')
-    " <Tab>         List buffers
-    " ,             List files in current directory recursively (using fd)
-    " <Leader>f     List files in current directory recursively
-    " <Leader>d     List files in current directory
-    " <Leader>s     Search current directory
-    " <Leader>j     Search current directory for occurences of word under cursor
-    nnoremap <Tab>     :Denite buffer     <CR>
-    nnoremap ,         :Denite file/rec/fd<CR>
-    nnoremap <Leader>f :Denite file/rec   <CR>
-    nnoremap <Leader>d :Denite file       <CR>
-    nnoremap <Leader>s :<C-u>Denite grep:. -no-empty -mode=normal<CR>
-    nnoremap <Leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-
-    call denite#custom#alias('source', 'file/rec/fd', 'file/rec')
-    call denite#custom#var('file/rec/fd', 'command',
-        \ ['fd', '--type=f', '--follow', '--hidden', '--full-path', '--color=never', '--exclude=.git', ''])
-
-    let s:denite_options = {'default' : {
-        \ 'auto_resize': 1,
-        \ 'highlight_matched_char': 'Function',
-        \ 'highlight_matched_range': 'Normal',
-        \ 'prompt': 'λ:',
-        \ 'prompt_highlight': 'Function',
-        \ }}
-
-    call denite_profile(s:denite_options)
-endif
-
-" fzf {{{1
+" fzf
 if PlugLoaded('fzf.vim')
     nnoremap <Tab>     :Buffers<CR>
     nnoremap ,         :SmartFiles<CR>
@@ -96,13 +63,13 @@ if PlugLoaded('fzf.vim')
     nnoremap <Leader>g :GFiles --cached --others --exclude-standard<CR>
     nnoremap <Leader>h :History<CR>
     nnoremap <Leader>l :Lines<CR>
-    nnoremap <Leader>a :Ag!<CR>
-    nnoremap <Leader>r :Rg!<CR>
+    nnoremap <Leader>ag :Ag!<CR>
+    nnoremap <Leader>rg :Rg!<CR>
     nnoremap <Leader>m :Marks<CR>
     nnoremap <Leader>t :Tags<CR>
     nnoremap gl :Rg<CR>
 endif
 
-" vim-easy-align {{{1
+" vim-easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
