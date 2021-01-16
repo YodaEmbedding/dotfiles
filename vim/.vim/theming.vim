@@ -56,6 +56,10 @@ let g:enable_bold_font = 1
 
 " Statusline {{{1
 
+if !exists("g:pluginUpdateStatus")
+    let g:pluginUpdateStatus = ""
+endif
+
 " Statusline definition {{{2
 set statusline=                                 " Clear
 set statusline+=\                               " -
