@@ -11,6 +11,7 @@ autocmd FileType haskell    setlocal expandtab shiftwidth=2 softtabstop=2 tabsto
 autocmd FileType html       setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
 autocmd FileType javascript setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
 autocmd FileType lisp       setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
+autocmd FileType lua        setlocal expandtab shiftwidth=2 softtabstop=2 tabstop=2
 autocmd FileType markdown   setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType python     setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
 autocmd FileType tex        setlocal expandtab shiftwidth=2 softtabstop=4 tabstop=4
