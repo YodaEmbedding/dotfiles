@@ -7,6 +7,7 @@ let g:coc_global_extensions = [
     \ 'coc-java',
     \ 'coc-json',
     \ 'coc-lists',
+    \ 'coc-lua',
     \ 'coc-rls',
     \ 'coc-texlab',
     \ 'coc-tsserver',
