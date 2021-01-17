@@ -16,11 +16,11 @@ end
 function utils.coc_documentation()
   local filetype = vim.bo.filetype
   if filetype == "vim" or filetype == "help" then
-    api.nvim_command("h " .. api.expand("<cword>"))
+    api.nvim_command("h " .. fn.expand("<cword>"))
   elseif fn["coc#rpc#ready"]() then
     fn.CocActionAsync("doHover")
   else
-    api.nvim_command("!" .. vim.bo.keywordprg .. " " .. api.expand("<cword>"))
+    api.nvim_command("!" .. vim.bo.keywordprg .. " " .. fn.expand("<cword>"))
   end
 end
 
