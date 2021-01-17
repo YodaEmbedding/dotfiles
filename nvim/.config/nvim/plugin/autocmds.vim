@@ -13,6 +13,9 @@ autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
 " Miscellaneous: Auto close preview
 autocmd InsertLeave * silent! pclose!
 
+" Miscellaneous: Highlight on yank
+autocmd TextYankPost * lua vim.highlight.on_yank {timeout=500}
+
 " Plugin: coc.nvim
 set updatetime=50
 autocmd CursorHold * silent     call CocActionAsync('highlight')
