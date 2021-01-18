@@ -1,4 +1,5 @@
 local vimp = require("vimp")
+local utils = require("utils")
 
 local inoremap = vimp.inoremap
 local nnoremap = vimp.nnoremap
@@ -17,19 +18,8 @@ nmap("gw",  "<Plug>(coc-action-getWorkspaceSymbols)")
 
 -- Documentation
 inoremap({"silent", "expr"}, "<C-k>", "CocActionAsync('showSignatureHelp')")
--- TODO use lua functions rather than weird vimscript
-nnoremap({"silent", "expr"}, "K",
-  "(coc#float#has_float() "
-  .. "? ':call coc#float#close_all()<CR>' "
-  .. ": ':lua require(\"utils\").coc_documentation()<CR>')"
-)
-nnoremap({"silent", "expr"}, "<C-k>",
-  "(exists('w:float') "
-  .. "? ':call coc#float#close_all()<CR>' "
-  .. ": coc#float#has_float() "
-  .. "? ':call coc#float#jump()<CR>' "
-  .. ": ':lua require(\"utils\").coc_documentation()<CR>')"
-)
+nnoremap("K",     utils.coc_documentation_openclose)
+nnoremap("<C-k>", utils.coc_documentation_openjumpclose)
 
   -- Diagnostics
 nmap("[c", "<Plug>(coc-diagnostic-prev)")

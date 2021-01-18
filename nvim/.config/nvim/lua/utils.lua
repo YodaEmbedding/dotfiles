@@ -24,6 +24,26 @@ function utils.coc_documentation()
   end
 end
 
+function utils.coc_documentation_openclose()
+  if vim.fn["coc#float#has_float"]() == 1 then
+    return vim.fn["coc#float#close_all"]()
+  end
+
+  return utils.coc_documentation()
+end
+
+function utils.coc_documentation_openjumpclose()
+  if vim.fn.exists("w:float") == 1 then
+    return vim.fn["coc#float#close_all"]()
+  end
+
+  if vim.fn["coc#float#has_float"]() == 1 then
+    return vim.fn["coc#float#jump"]()
+  end
+
+  return utils.coc_documentation()
+end
+
 -- vim-peekaboo float
 function utils.create_centered_floating_window()
   local width = math.floor(vim.o.columns * 0.8)
