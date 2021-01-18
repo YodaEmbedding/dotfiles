@@ -30,19 +30,24 @@ return require("packer").startup(function()
   use {"dstein64/"          .. "nvim-scrollview"        } -- Visual: Scrollbar
   use {"junegunn/"          .. "vim-peekaboo"           } -- Visual: Show registers during \", @, and <C-R>
 
-  use {"svermeulen/"        .. "vimpeccable"            } -- Miscellaneous: nvim lua config
-
   use {"neoclide/"          .. "coc.nvim",                -- Tools: LSP
     branch = "release",
   }
 
-  -- use {"nvim-treesitter/"   .. "nvim-treesitter"        } -- Tools: Language
+  use {"svermeulen/"        .. "vimpeccable"            } -- Miscellaneous: nvim lua config
+
+  -- use {"nvim-lua/"          .. "completion-nvim"        } -- Tools: LSP completion
   -- use {"neovim/"            .. "nvim-lspconfig"         } -- Tools: LSP
+  -- use {"ojroques/"          .. "nvim-lspfuzzy"          } -- Tools: LSP FZF
+
+  -- use {"nvim-telescope/"    .. "telescope.nvim"         } -- Functional: Search
+  -- use {"vijaymarupudi/"     .. "nvim-fzf"               } -- Functional: Search
+
+  -- use {"nvim-treesitter/"   .. "nvim-treesitter"        } -- Tools: Language
   -- use {"shougo/"            .. "deoplete-lsp"           }
   -- use {"shougo/"            .. "deoplete.nvim",
   --   run = fn["remote#host#UpdateRemotePlugins"],
   -- }
-  -- use {"ojroques/"          .. "nvim-lspfuzzy"          }
 
   -- use "9mm/vim-closer"
 end)
