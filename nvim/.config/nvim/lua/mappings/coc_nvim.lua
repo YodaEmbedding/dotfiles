@@ -3,34 +3,20 @@ local vimp = require("vimp")
 local inoremap = vimp.inoremap
 local nnoremap = vimp.nnoremap
 local xnoremap = vimp.xnoremap
+local nmap = vimp.nmap
+local xmap = vimp.xmap
 
-inoremap({"silent", "expr"}, "<C-space>", "coc#refresh()")
+-- Navigation
+nmap("gd",  "<Plug>(coc-definition)")
+nmap("gD",  "<Plug>(coc-declaration)")
+nmap("gi",  "<Plug>(coc-implementation)")
+nmap("gr",  "<Plug>(coc-references)")
+nmap("gS",  "<Plug>(coc-list-symbols)")
+nmap("gt",  "<Plug>(coc-type-definition)")
+nmap("gw",  "<Plug>(coc-action-getWorkspaceSymbols)")
+
+-- Documentation
 inoremap({"silent", "expr"}, "<C-k>", "CocActionAsync('showSignatureHelp')")
-nnoremap({"silent"}, "[c", "<Plug>(coc-diagnostic-prev)")
-nnoremap({"silent"}, "]c", "<Plug>(coc-diagnostic-next)")
-nnoremap({"silent"}, "gd", "<Plug>(coc-definition)")
-nnoremap({"silent"}, "gi", "<Plug>(coc-implementation)")
-nnoremap({"silent"}, "gr", "<Plug>(coc-references)")
-nnoremap({"silent"}, "gt", "<Plug>(coc-type-definition)")
-nnoremap("<Leader>=", "<Plug>(coc-format-selected)")
-xnoremap("<Leader>=", "<Plug>(coc-format-selected)")
-nnoremap("<Leader>aa", "<Plug>(coc-codeaction-selected)")
-xnoremap("<Leader>aa", "<Plug>(coc-codeaction-selected)")
-nnoremap("<Leader>ac", "<Plug>(coc-codeaction)")
-nnoremap("<Leader>qf", "<Plug>(coc-fix-current)")
-nnoremap("<Leader>rn", "<Plug>(coc-rename)")
-
-nnoremap({"silent"}, "<space><space>", ":<C-u>CocList<CR>")
-nnoremap({"silent"}, "<C-space>", ":<C-u>CocListResume<CR>")
-nnoremap({"silent"}, "<space>a", ":<C-u>CocList actions<CR>")
-nnoremap({"silent"}, "<space>c", ":<C-u>CocList commands<CR>")
-nnoremap({"silent"}, "<space>d", ":<C-u>CocList diagnostics<CR>")
-nnoremap({"silent"}, "<space>m", ":<C-u>CocList marks<CR>")
-nnoremap({"silent"}, "<space>o", ":<C-u>CocList outline<CR>")
-nnoremap({"silent"}, "<space>q", ":<C-u>CocList quickfix<CR>")
-nnoremap({"silent"}, "<space>s", ":<C-u>CocList -I symbols<CR>")
-nnoremap({"silent"}, "<space>y", ":<C-u>CocList -A --normal yank<CR>")
-
 -- TODO use lua functions rather than weird vimscript
 nnoremap({"silent", "expr"}, "K",
   "(coc#float#has_float() "
@@ -45,6 +31,34 @@ nnoremap({"silent", "expr"}, "<C-k>",
   .. ": ':lua require(\"utils\").coc_documentation()<CR>')"
 )
 
+  -- Diagnostics
+nmap("[c", "<Plug>(coc-diagnostic-prev)")
+nmap("]c", "<Plug>(coc-diagnostic-next)")
+nnoremap("<space>d", ":<C-u>CocList diagnostics<CR>")
+
+  -- Refactoring
+nmap("<space>a",  "<Plug>(coc-codeaction)")
+nmap("<space>A",  "<Plug>(coc-codeaction-selected)")
+xmap("<space>a",  "<Plug>(coc-codeaction-selected)")
+nmap("<space>f",  "<Plug>(coc-format)")
+nmap("<space>F",  "<Plug>(coc-format-selected)")
+xmap("<space>f",  "<Plug>(coc-format-selected)")
+nmap("<space>qf", "<Plug>(coc-fix-current)")
+nmap("<space>rn", "<Plug>(coc-rename)")
+
+-- CocList
+inoremap({"silent", "expr"}, "<C-space>", "coc#refresh()")
+nnoremap("<space><space>", ":<C-u>CocList<CR>")
+nnoremap("<C-space>", ":<C-u>CocListResume<CR>")
+-- nnoremap("<space>a", ":<C-u>CocList actions<CR>")
+nnoremap("<space>c",  ":<C-u>CocList commands<CR>")
+nnoremap("<space>m",  ":<C-u>CocList marks<CR>")
+nnoremap("<space>o",  ":<C-u>CocList outline<CR>")
+nnoremap("<space>qq", ":<C-u>CocList quickfix<CR>")
+nnoremap("<space>s",  ":<C-u>CocList -I symbols<CR>")
+nnoremap("<space>y",  ":<C-u>CocList -A --normal yank<CR>")
+
+-- Miscellaneous
 inoremap({"silent", "expr"}, "<Tab>",
   [[pumvisible() ? '\<C-n>' : ]] ..
   [[luaeval('require("utils").check_backspace()') ? '\<Tab>' : ]] ..
