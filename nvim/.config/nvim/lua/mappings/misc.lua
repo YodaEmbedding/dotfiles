@@ -12,7 +12,7 @@ nnoremap("<F7>", ":set textwidth=79<CR>")           -- Format width
 xnoremap(
   "gq", "<Esc>:let tw=&tw<CR>:set tw=72<CR>gvgq:let &tw=tw<CR>"
 )                                                   -- Format width (72-char)
-nnoremap("<C-x>", ":bd<CR>")                        -- Kill buffer
+nnoremap("<C-x>", ":ScrollViewDisable | bd<CR>")    -- Kill buffer
 nnoremap({"silent"}, "<F2>", "@q")                  -- Macro
 nnoremap({"silent"}, "<F3>", "@@")                  -- Macro
 xnoremap({"silent"}, "<F2>", ":normal @q<CR>")      -- Macro
