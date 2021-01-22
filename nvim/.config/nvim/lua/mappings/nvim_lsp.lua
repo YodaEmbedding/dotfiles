@@ -6,28 +6,32 @@ local inoremap = vimp.inoremap
 local nnoremap = vimp.nnoremap
 local lsp = vim.lsp
 
+function n_silent(...)
+  nnoremap({"silent"}, ...)
+end
+
 function mappings_nvim_lsp.load()
   -- Navigation
-  nnoremap("gci",       lsp.buf.incoming_calls)
-  nnoremap("gco",       lsp.buf.outgoing_calls)
-  nnoremap("gd",        lsp.buf.definition)
-  nnoremap("gD",        lsp.buf.declaration)
-  nnoremap("gi",        lsp.buf.implementation)
-  nnoremap("gr",        lsp.buf.references)
-  nnoremap("gS",        lsp.buf.document_symbol)
-  nnoremap("gt",        lsp.buf.type_definition)
-  nnoremap("gw",        lsp.buf.workspace_symbol)
+  n_silent("gci",       lsp.buf.incoming_calls)
+  n_silent("gco",       lsp.buf.outgoing_calls)
+  n_silent("gd",        lsp.buf.definition)
+  n_silent("gD",        lsp.buf.declaration)
+  n_silent("gi",        lsp.buf.implementation)
+  n_silent("gr",        lsp.buf.references)
+  n_silent("gS",        lsp.buf.document_symbol)
+  n_silent("gt",        lsp.buf.type_definition)
+  n_silent("gw",        lsp.buf.workspace_symbol)
 
   -- Documentation
   inoremap("<C-k>",     lsp.buf.signature_help)
-  nnoremap("<C-k>",     lsp.buf.signature_help)
-  nnoremap("K",         lsp.buf.hover)
+  n_silent("<C-k>",     lsp.buf.signature_help)
+  n_silent("K",         lsp.buf.hover)
 
   -- Diagnostics
-  nnoremap("[d",        lsp.diagnostic.goto_prev)
-  nnoremap("]d",        lsp.diagnostic.goto_next)
-  nnoremap("<space>d",  lsp.diagnostic.set_loclist)
-  nnoremap("<space>e",  lsp.diagnostic.show_line_diagnostics)
+  n_silent("[d",        lsp.diagnostic.goto_prev)
+  n_silent("]d",        lsp.diagnostic.goto_next)
+  n_silent("<space>d",  lsp.diagnostic.set_loclist)
+  n_silent("<space>e",  lsp.diagnostic.show_line_diagnostics)
 
   -- Refactoring
   nnoremap("<space>a",  lsp.buf.code_action)
