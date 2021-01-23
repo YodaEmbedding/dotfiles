@@ -17,6 +17,6 @@ autocmd InsertLeave * silent! pclose!
 autocmd TextYankPost * lua vim.highlight.on_yank {timeout=500}
 
 " Plugin: coc.nvim
-set updatetime=50
-autocmd CursorHold * silent     call CocActionAsync('highlight')
-autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+" set updatetime=50
+" autocmd CursorHold * silent     call CocActionAsync('highlight')
+" autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')

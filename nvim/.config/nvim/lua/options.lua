@@ -16,6 +16,10 @@ local function w(key, value)
   vim.o[key] = value
 end
 
+-- Completion
+o("completeopt", "menuone,noinsert,noselect")
+o("shortmess", vim.o.shortmess .. "c")
+
 -- Indenting, tabs, spacing
 b("expandtab", true)                  -- Spaces for indent
 o("joinspaces", false)                -- Join sentences with single space

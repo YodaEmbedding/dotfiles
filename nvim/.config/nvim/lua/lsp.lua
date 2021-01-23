@@ -1,12 +1,16 @@
 local nvim_lsp = require("lspconfig")
 local lspfuzzy = require("lspfuzzy")
 
-local function on_attach(_client, _bufnr)
+local function on_attach(client, bufnr)
   print("LSP started.")
 
-  -- require("completion").on_attach(client)
+  -- For built-in LSP omnifunc:
+  -- vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
+  -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
-  -- vim.api.nvim_buf_set_option(_bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- For completion-nvim:
+  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "")
+  require("completion").on_attach(client)
 
   require("mappings.nvim_lsp").load()
 end
