@@ -6,9 +6,6 @@ return require("packer").startup(function()
   use {"tpope/"             .. "vim-surround"           } -- Functional: Change surrounding parenthesis, e.g. cs([
   use {"tomtom/"            .. "tcomment_vim"           } -- Functional: Commenting
   use {"tpope/"             .. "vim-repeat"             } -- Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
-  use {"junegunn/"          .. "fzf",                     -- Functional: Search
-    run = vim.fn["fzf#install"],
-  }
   use {"junegunn/"          .. "fzf.vim"                } -- Functional: Search
   use {"tweekmonster/"      .. "fzf-filemru"            } -- Functional: Search (MRU)
   use {"nelstrom/"          .. "vim-visual-star-search" } -- Functional: Select visually then *
