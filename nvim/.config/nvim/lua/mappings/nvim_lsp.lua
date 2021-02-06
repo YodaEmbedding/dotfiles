@@ -12,8 +12,8 @@ end
 
 function mappings_nvim_lsp.load()
   -- Navigation
-  n_silent("gci",       lsp.buf.incoming_calls)
-  n_silent("gco",       lsp.buf.outgoing_calls)
+  n_silent("gCi",       lsp.buf.incoming_calls)
+  n_silent("gCo",       lsp.buf.outgoing_calls)
   n_silent("gd",        lsp.buf.definition)
   n_silent("gD",        lsp.buf.declaration)
   n_silent("gi",        lsp.buf.implementation)
