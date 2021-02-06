@@ -6,18 +6,26 @@ local inoremap = vimp.inoremap
 local nnoremap = vimp.nnoremap
 local xnoremap = vimp.xnoremap
 
-xnoremap({"silent"}, ". :normal .<CR>")             -- Dot repeat
+function n_silent(...)
+  nnoremap({"silent"}, ...)
+end
+
+function x_silent(...)
+  xnoremap({"silent"}, ...)
+end
+
+x_silent(".", ":normal .<CR>")                      -- Dot repeat
 nnoremap("<F6>", ":set textwidth=72<CR>")           -- Format width
 nnoremap("<F7>", ":set textwidth=79<CR>")           -- Format width
 xnoremap(
   "gq", "<Esc>:let tw=&tw<CR>:set tw=72<CR>gvgq:let &tw=tw<CR>"
 )                                                   -- Format width (72-char)
-nnoremap("<C-x>", ":ScrollViewDisable | bd<CR>")    -- Kill buffer
-nnoremap({"silent"}, "<F2>", "@q")                  -- Macro
-nnoremap({"silent"}, "<F3>", "@@")                  -- Macro
-xnoremap({"silent"}, "<F2>", ":normal @q<CR>")      -- Macro
-xnoremap({"silent"}, "<F3>", ":normal @@<CR>")      -- Macro
-xnoremap({"silent"}, "p", 'p:let @"=@0<CR>')        -- Paste blackhole
+n_silent("<C-x>", ":ScrollViewDisable | bd<CR>")    -- Kill buffer
+n_silent("<F2>", "@q")                              -- Macro
+n_silent("<F3>", "@@")                              -- Macro
+x_silent("<F2>", ":normal @q<CR>")                  -- Macro
+x_silent("<F3>", ":normal @@<CR>")                  -- Macro
+x_silent("p", 'p:let @"=@0<CR>')                    -- Paste blackhole
 inoremap("<C-v>", '<C-o>"+p')                       -- Paste clipboard
 nnoremap("<Backspace>", '"+p"')                     -- Paste clipboard
 nnoremap("<S-Tab>", ":e#<CR>")                      -- Previous buffer
@@ -42,5 +50,5 @@ nnoremap({"expr"}, "k", "(v:count >= 1 ? 'm`' . v:count : '') . 'k'")
 xnoremap({"expr"}, "k", "(v:count >= 1 ? 'm`' . v:count : '') . 'k'")
 
 -- Don't add {} motions to jumplist
-nnoremap({"silent"}, "}", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '}'<CR>")
-nnoremap({"silent"}, "{", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '{'<CR>")
+n_silent("}", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '}'<CR>")
+n_silent("{", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '{'<CR>")
