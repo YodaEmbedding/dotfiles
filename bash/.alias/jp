@@ -15,7 +15,7 @@ alias ushinau='rm'                      # 失う          # to lose/part with
 alias tomeru='shutdown -P 0'            # 止める        # to stop
 alias meirei='sudo'                     # 命令          # to order/command
 alias sakeru='tmux'                     # 裂ける        # to split/tear
-alias suru='todot'                      # する          # to do
+alias suru='todo'                       # する          # to do
 alias kawaru='vim'                      # 変わる        # to change
 alias mado='windows'                    # 窓            # window
 

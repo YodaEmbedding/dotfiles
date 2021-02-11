@@ -26,7 +26,7 @@ alias py="python3"
 alias rscp="rsync -a --info=progress2 --partial"
 
 # tmux
-alias t="tmux"
+alias tm="tmux"
 
 # vim
 # alias v='nvim'

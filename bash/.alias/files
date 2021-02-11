@@ -1,8 +1,7 @@
 ### FILE PATHS ###
 
 # File common
-alias todo='vim ~/Dropbox/misc/notepad/todo/main.md'
-alias todot='tmux rename-window "todo"; todo'
+alias todo='vim ~/Dropbox/misc/notepad/todo-txt/todo.txt'
 
 # File config
 alias aliases='f="$(fd . ~/dotfiles/bash/.alias | fzf)" && vim "$f"'
