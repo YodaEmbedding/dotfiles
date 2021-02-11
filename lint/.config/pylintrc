@@ -4,6 +4,7 @@
 # be loaded. Extensions are loading into the active Python interpreter and may
 # run arbitrary code.
 extension-pkg-whitelist=
+    cv2
 
 # Specify a score threshold to be exceeded before program exits with error.
 fail-under=10.0
@@ -138,7 +139,18 @@ disable=print-statement,
         xreadlines-attribute,
         deprecated-sys-function,
         exception-escape,
-        comprehension-escape
+        comprehension-escape,
+        # Custom
+        bad-continuation,
+        bad-whitespace,
+        invalid-name,
+        len-as-condition,
+        missing-docstring,
+        no-self-use,
+        too-few-public-methods,
+        trailing-newlines,
+        unused-wildcard-import,
+        wildcard-import,
 
 # Enable the message, report, category or checker with the given id(s). You can
 # either give multiple identifier separated by comma (,) or put this option
@@ -311,7 +323,7 @@ ignore-comments=yes
 ignore-docstrings=yes
 
 # Ignore imports when computing similarities.
-ignore-imports=no
+ignore-imports=yes
 
 # Minimum lines number of a similarity.
 min-similarity-lines=4
@@ -374,14 +386,14 @@ argument-naming-style=snake_case
 
 # Regular expression matching correct argument names. Overrides argument-
 # naming-style.
-#argument-rgx=
+argument-rgx=[a-zA-Z_][a-z0-9_]{0,30}$
 
 # Naming style matching correct attribute names.
 attr-naming-style=snake_case
 
 # Regular expression matching correct attribute names. Overrides attr-naming-
 # style.
-#attr-rgx=
+attr-rgx=[a-zA-Z_][a-z0-9_]{0,30}$
 
 # Bad variable names which should always be refused, separated by a comma.
 bad-names=foo,
@@ -418,7 +430,7 @@ const-naming-style=UPPER_CASE
 
 # Minimum line length for functions/classes that require docstrings, shorter
 # ones are exempt.
-docstring-min-length=-1
+docstring-min-length=5
 
 # Naming style matching correct function names.
 function-naming-style=snake_case
@@ -481,7 +493,7 @@ variable-naming-style=snake_case
 
 # Regular expression matching correct variable names. Overrides variable-
 # naming-style.
-#variable-rgx=
+variable-rgx=[a-zA-Z_][a-z0-9_]{0,30}$
 
 
 [IMPORTS]
