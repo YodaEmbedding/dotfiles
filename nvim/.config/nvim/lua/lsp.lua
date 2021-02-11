@@ -17,12 +17,14 @@ end
 
 lspfuzzy.setup {}
 
--- local status, lsp_py = pcall(require, "_lsp_py")
--- if status then
---   nvim_lsp.py_custom.setup { on_attach = on_attach }
--- else
---   nvim_lsp.pyright.setup { on_attach = on_attach }
--- end
+local status, _ = pcall(require, "_lsp_py")
+local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
+py_lsp.setup { on_attach = on_attach }
+
+local status, _ = pcall(require, "_lsp_matlab")
+if status then
+  nvim_lsp.matlab.setup { on_attach = on_attach }
+end
 
 local servers = {
   "bashls",
@@ -36,8 +38,9 @@ local servers = {
   "jsonls",
   "kotlin_language_server",
   "metals",
-  "pyright",
+  -- "pyright",
   "rust_analyzer",
+  -- "sumneko_lua",
   "texlab",
   "tsserver",
   "vimls",
