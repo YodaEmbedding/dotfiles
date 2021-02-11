@@ -1,5 +1,4 @@
 local nvim_lsp = require("lspconfig")
-local lspfuzzy = require("lspfuzzy")
 
 local function on_attach(client, bufnr)
   print("LSP started.")
@@ -15,13 +14,11 @@ local function on_attach(client, bufnr)
   require("mappings.nvim_lsp").load()
 end
 
-lspfuzzy.setup {}
-
-local status, _ = pcall(require, "_lsp_py")
+local status, _ = pcall(require, "_lspconfig_py")
 local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
 py_lsp.setup { on_attach = on_attach }
 
-local status, _ = pcall(require, "_lsp_matlab")
+local status, _ = pcall(require, "_lspconfig_matlab")
 if status then
   nvim_lsp.matlab.setup { on_attach = on_attach }
 end
