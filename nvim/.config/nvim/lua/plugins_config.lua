@@ -1,6 +1,7 @@
 require("plugins._coc_nvim")
 require("plugins._completion_nvim")
 require("plugins._gitsigns")
+require("plugins._kommentary")
 require("plugins._lspconfig")
 require("plugins._lspfuzzy")
 require("plugins._nvim_scrollview")

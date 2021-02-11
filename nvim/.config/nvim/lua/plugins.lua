@@ -4,7 +4,7 @@ return require("packer").startup(function()
   use {"wbthomason/"        .. "packer.nvim", opt = true} -- Plugin manager
 
   use {"tpope/"             .. "vim-surround"           } -- Functional: Change surrounding parenthesis, e.g. cs([
-  use {"tomtom/"            .. "tcomment_vim"           } -- Functional: Commenting
+  use {"b3nj5m1n/"          .. "kommentary"             } -- Functional: Commenting
   use {"tpope/"             .. "vim-repeat"             } -- Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
   use {"junegunn/"          .. "fzf.vim"                } -- Functional: Search
   use {"tweekmonster/"      .. "fzf-filemru"            } -- Functional: Search (MRU)
