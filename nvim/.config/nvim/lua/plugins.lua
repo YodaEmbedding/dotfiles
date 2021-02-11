@@ -3,6 +3,8 @@ vim.cmd [[packadd packer.nvim]]
 return require("packer").startup(function()
   use {"wbthomason/"        .. "packer.nvim", opt = true} -- Plugin manager
 
+  use {"nvim-lua/"          .. "plenary.nvim"           } -- Library
+
   use {"tpope/"             .. "vim-surround"           } -- Functional: Change surrounding parenthesis, e.g. cs([
   use {"b3nj5m1n/"          .. "kommentary"             } -- Functional: Commenting
   use {"tpope/"             .. "vim-repeat"             } -- Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
@@ -20,7 +22,7 @@ return require("packer").startup(function()
   use {"editorconfig/"      .. "editorconfig-vim"       } -- Tweak: Apply .editorconfig settings
   use {"farmergreg/"        .. "vim-lastplace"          } -- Tweak: Reopen file last position
   use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- Visual: Colorscheme
-  use {"airblade/"          .. "vim-gitgutter"          } -- Visual: Git gutter
+  use {"lewis6991/"         .. "gitsigns.nvim"          } -- Visual: Git gutter
   use {"bronson/"           .. "vim-trailing-whitespace"} -- Visual: Highlight trailing and :FixWhitespace
   use {"unblevable/"        .. "quick-scope"            } -- Visual: Highlight unique characters per word in line (for find)
   use {"kshenoy/"           .. "vim-signature"          } -- Visual: Mark navigation
