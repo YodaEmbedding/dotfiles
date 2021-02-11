@@ -1,3 +1,5 @@
+do return end
+
 local vimp = require("vimp")
 local utils = require("utils")
 
