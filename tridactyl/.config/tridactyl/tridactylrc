@@ -48,12 +48,12 @@ unbindurl reddit.com zs
 unbindurl youtube.com <<
 unbindurl youtube.com >>
 unbindurl youtube.com f
+unbindurl youtube.com .
 
 bindurl github.com/notifications F hint -Jbc li.notifications-list-item div a
 bindurl github.com/notifications f hint -Jc li.notifications-list-item div a
 bindurl www.google.com F hint -Jbc .yuRUbf > a
 bindurl www.google.com f hint -Jc .yuRUbf > a
-bindurl youtube.com c hint -Jc .ytp-fullscreen-button
 
 seturl youtube.com modeindicator false
 
