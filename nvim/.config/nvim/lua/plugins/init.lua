@@ -1,7 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
 
-return require("packer").startup(function()
+local result = require("packer").startup(function()
   use {"wbthomason/"        .. "packer.nvim", opt = true} -- Plugin manager
 
   use {"nvim-lua/"          .. "plenary.nvim"           } -- Library
@@ -41,3 +41,7 @@ return require("packer").startup(function()
 
   -- use "9mm/vim-closer"
 end)
+
+require("plugins.init_require")
+
+return result
