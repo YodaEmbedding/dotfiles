@@ -8,7 +8,6 @@ set modeindicator false
 
 unbind --mode=hint <Space>
 unbind <C-a>
-unbind <C-f>
 unbind <C-x>
 unbind J
 unbind K
@@ -29,6 +28,11 @@ bind d scrollpage 0.5
 bind u scrollpage -0.5
 bind zs source
 bind ~ tab #
+
+bind / fillcmdline find
+bind ? fillcmdline find -?
+bind n findnext 1
+bind N findnext -1
 
 unbindurl reddit.com C
 unbindurl reddit.com a
