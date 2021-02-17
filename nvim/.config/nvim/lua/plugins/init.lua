@@ -60,4 +60,9 @@ packer.startup {
 
 vim.cmd("source " .. compile_path)
 
+function _G.plugin_loaded(plugin_name)
+  local p = _G.packer_plugins
+  return p ~= nil and p[plugin_name] ~= nil and p[plugin_name].loaded
+end
+
 require("plugins.init_require")

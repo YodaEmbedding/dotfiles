@@ -1,3 +1,7 @@
+if not _G.plugin_loaded("coc.nvim") then
+  do return end
+end
+
 vim.g.coc_global_extensions = {
   "coc-css",
   "coc-git",

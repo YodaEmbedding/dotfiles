@@ -1,3 +1,7 @@
+if not _G.plugin_loaded("fzf.vim") then
+  do return end
+end
+
 local vimp = require("vimp")
 
 local nnoremap = vimp.nnoremap

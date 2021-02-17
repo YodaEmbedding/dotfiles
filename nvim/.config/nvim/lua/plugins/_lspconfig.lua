@@ -1,15 +1,21 @@
+if not _G.plugin_loaded("nvim-lspconfig") then
+  do return end
+end
+
 local nvim_lsp = require("lspconfig")
 
 local function on_attach(client, bufnr)
   print("LSP started.")
 
-  -- For built-in LSP omnifunc:
-  -- vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
-  -- vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-
-  -- For completion-nvim:
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "")
-  require("completion").on_attach(client)
+  if _G.plugin_loaded("completion-nvim") then
+    -- For completion-nvim:
+    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "")
+    require("completion").on_attach(client)
+  else
+    -- For built-in LSP omnifunc:
+    vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
+    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  end
 
   require("mappings.nvim_lsp").load()
 end

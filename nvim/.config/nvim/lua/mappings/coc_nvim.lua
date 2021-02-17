@@ -1,4 +1,6 @@
-do return end
+if not _G.plugin_loaded("coc.nvim") then
+  do return end
+end
 
 local vimp = require("vimp")
 local utils = require("utils")
