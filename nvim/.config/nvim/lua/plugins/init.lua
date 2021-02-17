@@ -2,6 +2,7 @@ vim.cmd [[packadd packer.nvim]]
 vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
 
 local packer = require("packer")
+local util = require("packer.util")
 
 function packer_spec()
   use {"wbthomason/"        .. "packer.nvim", opt = true} -- Plugin manager
@@ -44,12 +45,19 @@ function packer_spec()
   -- use "9mm/vim-closer"
 end
 
+local compile_path = util.join_paths(
+  vim.fn.stdpath("config"), "generated", "packer_compiled.vim"
+)
+
 local packer_config = {
+  compile_path = compile_path,
 }
 
 packer.startup {
   packer_spec,
   config = packer_config
 }
+
+vim.cmd("source " .. compile_path)
 
 require("plugins.init_require")
