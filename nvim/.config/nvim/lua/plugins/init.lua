@@ -5,44 +5,50 @@ local packer = require("packer")
 local util = require("packer.util")
 
 function packer_spec()
-  use {"wbthomason/"        .. "packer.nvim", opt = true} -- Plugin manager
+  -- Plugin manager
+  use {"wbthomason/"        .. "packer.nvim", opt = true}
 
-  use {"nvim-lua/"          .. "plenary.nvim"           } -- Library
+  -- Libraries
+  use {"nvim-lua/"          .. "plenary.nvim"           }
+  use {"svermeulen/"        .. "vimpeccable"            } -- nvim lua config
+  use {"tpope/"             .. "vim-repeat"             } -- repairs .
 
-  use {"tpope/"             .. "vim-surround"           } -- Functional: Change surrounding parenthesis, e.g. cs([
-  use {"b3nj5m1n/"          .. "kommentary"             } -- Functional: Commenting
-  use {"tpope/"             .. "vim-repeat"             } -- Functional: Repairs dot key for certain plugins (e.g. vim-sneak)
-  use {"junegunn/"          .. "fzf.vim"                } -- Functional: Search
-  use {"tweekmonster/"      .. "fzf-filemru"            } -- Functional: Search (MRU)
-  use {"nelstrom/"          .. "vim-visual-star-search" } -- Functional: Select visually then *
-  use {"SirVer/"            .. "ultisnips"              } -- Functional: Snippets (engine)
-  use {"honza/"             .. "vim-snippets"           } -- Functional: Snippets (snippets)
-  use {"wellle/"            .. "targets.vim"            } -- Functional: Text objects
-  use {"bps/"               .. "vim-textobj-python"     } -- Functional: Text objects
-  use {"kana/"              .. "vim-textobj-user"       } -- Functional: Text objects
-  use {"sheerun/"           .. "vim-polyglot"           } -- Miscellaneous: Language pack
-  use {"lervag/"            .. "vimtex"                 } -- Tools: LaTeX
-  use {"tpope/"             .. "vim-eunuch"             } -- Tools: UNIX sugars on mv, rm, rename, ...
-  use {"editorconfig/"      .. "editorconfig-vim"       } -- Tweak: Apply .editorconfig settings
-  use {"farmergreg/"        .. "vim-lastplace"          } -- Tweak: Reopen file last position
-  use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- Visual: Colorscheme
-  use {"lewis6991/"         .. "gitsigns.nvim"          } -- Visual: Git gutter
-  use {"bronson/"           .. "vim-trailing-whitespace"} -- Visual: Highlight trailing and :FixWhitespace
-  use {"unblevable/"        .. "quick-scope"            } -- Visual: Highlight unique characters per word in line (for find)
-  use {"kshenoy/"           .. "vim-signature"          } -- Visual: Mark navigation
-  use {"dstein64/"          .. "nvim-scrollview"        } -- Visual: Scrollbar
-  use {"junegunn/"          .. "vim-peekaboo"           } -- Visual: Show registers during \", @, and <C-R>
+  -- Functional
+  use {"tpope/"             .. "vim-surround"           } -- change surrounding
+--use {"9mm/"               .. "vim-closer"             } -- closes brackets
+  use {"b3nj5m1n/"          .. "kommentary"             } -- commenting
+  use {"junegunn/"          .. "fzf.vim"                } -- search
+  use {"tweekmonster/"      .. "fzf-filemru"            } -- search
+--use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
+--use {"nvim-telescope/"    .. "telescope.nvim"         } -- search
+  use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
+  use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
+  use {"wellle/"            .. "targets.vim"            } -- text objects
+  use {"bps/"               .. "vim-textobj-python"     } -- text objects
+  use {"kana/"              .. "vim-textobj-user"       } -- text objects
+  use {"tpope/"             .. "vim-eunuch"             } -- unix mv/rm/rename
+  use {"nelstrom/"          .. "vim-visual-star-search" } -- visual mode *
 
-  use {"svermeulen/"        .. "vimpeccable"            } -- Miscellaneous: nvim lua config
+  -- Tools
+--use {"nvim-treesitter/"   .. "nvim-treesitter"        } -- language
+  use {"sheerun/"           .. "vim-polyglot"           } -- language packs
+  use {"lervag/"            .. "vimtex"                 } -- LaTeX
+  use {"nvim-lua/"          .. "completion-nvim"        } -- LSP completion
+  use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
+  use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
 
-  use {"nvim-lua/"          .. "completion-nvim"        } -- Tools: LSP completion
-  use {"neovim/"            .. "nvim-lspconfig"         } -- Tools: LSP config
-  use {"ojroques/"          .. "nvim-lspfuzzy"          } -- Tools: LSP FZF
-  -- use {"nvim-treesitter/"   .. "nvim-treesitter"        } -- Tools: Language
-  -- use {"nvim-telescope/"    .. "telescope.nvim"         } -- Functional: Search
-  -- use {"vijaymarupudi/"     .. "nvim-fzf"               } -- Functional: Search
+  -- Tweaks
+  use {"editorconfig/"      .. "editorconfig-vim"       } -- editorconfig
+  use {"farmergreg/"        .. "vim-lastplace"          } -- remember cursor
 
-  -- use "9mm/vim-closer"
+  -- Visual
+  use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme
+  use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace
+  use {"unblevable/"        .. "quick-scope"            } -- hint unique chars
+  use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
+  use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
+  use {"lewis6991/"         .. "gitsigns.nvim"          } -- signs for git
+  use {"kshenoy/"           .. "vim-signature"          } -- signs for marks
 end
 
 local compile_path = util.join_paths(
