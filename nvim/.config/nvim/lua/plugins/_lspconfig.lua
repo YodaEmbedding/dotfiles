@@ -18,6 +18,9 @@ local function on_attach(client, bufnr)
   end
 
   require("mappings.nvim_lsp").load()
+
+  -- Hide latest message.
+  print(" ")
 end
 
 local status, _ = pcall(require, "_lspconfig_py")
