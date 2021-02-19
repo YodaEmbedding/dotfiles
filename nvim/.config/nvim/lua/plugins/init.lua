@@ -1,5 +1,5 @@
 vim.cmd [[packadd packer.nvim]]
-vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
+vim.cmd [[autocmd BufWritePost **/nvim/lua/plugins/init.lua PackerCompile]]
 
 local packer = require("packer")
 local util = require("packer.util")
