@@ -1,4 +1,5 @@
 require("plugins._coc_nvim")
+require("plugins._compe")
 require("plugins._completion_nvim")
 require("plugins._gitsigns")
 require("plugins._kommentary")

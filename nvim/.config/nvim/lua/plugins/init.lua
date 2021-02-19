@@ -30,7 +30,7 @@ function packer_spec()
   -- Tools
 --use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
-  use {"nvim-lua/"          .. "completion-nvim"        } -- LSP completion
+  use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
   use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
 
