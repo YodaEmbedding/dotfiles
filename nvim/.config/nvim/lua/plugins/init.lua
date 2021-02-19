@@ -24,18 +24,19 @@ function packer_spec()
   use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
   use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
   use {"wellle/"            .. "targets.vim"            } -- text objects
-  use {"bps/"               .. "vim-textobj-python"     } -- text objects
-  use {"kana/"              .. "vim-textobj-user"       } -- text objects
   use {"tpope/"             .. "vim-eunuch"             } -- unix mv/rm/rename
   use {"nelstrom/"          .. "vim-visual-star-search" } -- visual mode *
 
   -- Tools
---use {"nvim-treesitter/"   .. "nvim-treesitter"        } -- language
-  use {"sheerun/"           .. "vim-polyglot"           } -- language packs
+--use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
   use {"nvim-lua/"          .. "completion-nvim"        } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
   use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
+
+  -- Treesitter
+  use {"nvim-treesitter/"   .. "nvim-treesitter", run = ":TSUpdate"}
+  use {"nvim-treesitter/"   .. "nvim-treesitter-textobjects"}
 
   -- Tweaks
   use {"editorconfig/"      .. "editorconfig-vim"       } -- editorconfig
