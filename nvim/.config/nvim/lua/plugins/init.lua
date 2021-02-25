@@ -28,7 +28,7 @@ function packer_spec()
   use {"nelstrom/"          .. "vim-visual-star-search" } -- visual mode *
 
   -- Tools
---use {"sheerun/"           .. "vim-polyglot"           } -- language packs
+  use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
   use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
