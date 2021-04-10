@@ -4,7 +4,9 @@ vim.cmd [[autocmd BufWritePost **/nvim/lua/plugins/init.lua PackerCompile]]
 local packer = require("packer")
 local util = require("packer.util")
 
-function packer_spec()
+local function packer_spec()
+  local use = use;
+
   -- Plugin manager
   use {"wbthomason/"        .. "packer.nvim", opt = true}
 
