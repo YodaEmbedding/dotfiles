@@ -6,8 +6,16 @@ local inoremap = vimp.inoremap
 local nnoremap = vimp.nnoremap
 local lsp = vim.lsp
 
-function n_silent(...)
-  nnoremap({"silent"}, ...)
+local function n_buffer(...)
+  nnoremap({"buffer", "silent"}, ...)
+end
+
+local function n_silent(...)
+  nnoremap({"buffer", "silent"}, ...)
+end
+
+local function i_buffer(...)
+  inoremap({"buffer"}, ...)
 end
 
 function mappings_nvim_lsp.load()
@@ -23,25 +31,27 @@ function mappings_nvim_lsp.load()
   n_silent("gw",        lsp.buf.workspace_symbol)
 
   -- Documentation
-  inoremap("<C-k>",     lsp.buf.signature_help)
+  i_buffer("<C-k>",     lsp.buf.signature_help)
   n_silent("<C-k>",     lsp.buf.signature_help)
   n_silent("K",         lsp.buf.hover)
 
   -- Diagnostics
   n_silent("[d",        lsp.diagnostic.goto_prev)
   n_silent("]d",        lsp.diagnostic.goto_next)
-  n_silent("<space>d",  lsp.diagnostic.set_loclist)
+  n_silent("<space>l",  lsp.diagnostic.set_loclist)
   n_silent("<space>e",  lsp.diagnostic.show_line_diagnostics)
 
   -- Refactoring
-  nnoremap("<space>a",  lsp.buf.code_action)
-  nnoremap("<space>f",  lsp.buf.formatting)
-  nnoremap("<space>rn", lsp.buf.rename)
+  n_buffer("<space>a",  lsp.buf.code_action)
+  n_buffer("<space>f",  lsp.buf.formatting)
+  n_buffer("<space>rn", lsp.buf.rename)
 
   -- Workspaces
-  nnoremap("<space>wa", lsp.buf.add_workspace_folder)
-  nnoremap("<space>wl", function() print(vim.inspect(lsp.buf.list_workspace_folders())) end)
-  nnoremap("<space>wr", lsp.buf.remove_workspace_folder)
+  n_buffer("<space>wa", lsp.buf.add_workspace_folder)
+  n_buffer("<space>wl", function()
+    print(vim.inspect(lsp.buf.list_workspace_folders()))
+  end)
+  n_buffer("<space>wr", lsp.buf.remove_workspace_folder)
 end
 
 return mappings_nvim_lsp
