@@ -19,12 +19,15 @@
     filemode = false
     pager = "delta"
 
+[interactive]
+    diffFilter = delta --color-only
+
 [delta]
     dark
     # navigate = true  # wait: https://github.com/dandavison/delta/issues/237
     file-style                      = blue bold
-    minus-style                     = normal "#663B63"
-    minus-emph-style                = normal "#592F56"
+    minus-style                     = syntax "#663B63"
+    minus-emph-style                = syntax "#522B4F"
     minus-empty-line-marker-style   = normal "#663B63"
     plus-style                      = syntax "#313E52"
     plus-emph-style                 = syntax "#40516B"
