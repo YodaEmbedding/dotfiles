@@ -21,6 +21,7 @@ xnoremap(
   "gq", "<Esc>:let tw=&tw<CR>:set tw=72<CR>gvgq:let &tw=tw<CR>"
 )                                                   -- Format width (72-char)
 n_silent("<C-x>", ":ScrollViewDisable | bd<CR>")    -- Kill buffer
+n_silent("<Space>d", ":ScrollViewDisable | bd<CR>") -- Kill buffer
 n_silent("<F2>", "@q")                              -- Macro
 n_silent("<F3>", "@@")                              -- Macro
 x_silent("<F2>", ":normal @q<CR>")                  -- Macro
@@ -32,7 +33,8 @@ nnoremap("<S-Tab>", ":e#<CR>")                      -- Previous buffer
 nnoremap("<C-P>", "<C-I>")                          -- Previous jump in jumplist
 nnoremap("zx", ":qa<CR>")                           -- Quit
 nnoremap("zX", ":qa!<CR>")                          -- Quit
-nnoremap("<C-s>", ":w<CR>")                         -- Save
+nnoremap("<C-s>", ":up<CR>")                        -- Save
+nnoremap("<Space>s", ":up<CR>")                     -- Save
 cnoremap("w!!", "w !sudo tee > /dev/null %")        -- Save as sudo
 cnoremap("x!!", "x !sudo tee > /dev/null %")        -- Save as sudo
 xnoremap("<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>')    -- Search selection
