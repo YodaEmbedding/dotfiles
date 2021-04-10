@@ -10,29 +10,38 @@ function packer_spec()
 
   -- Libraries
   use {"nvim-lua/"          .. "plenary.nvim"           }
+  use {"nvim-lua/"          .. "popup.nvim"             }
   use {"svermeulen/"        .. "vimpeccable"            } -- nvim lua config
   use {"tpope/"             .. "vim-repeat"             } -- repairs .
+  use {"tami5/"             .. "sql.nvim"               } -- sql
 
   -- Functional
   use {"tpope/"             .. "vim-surround"           } -- change surrounding
 --use {"9mm/"               .. "vim-closer"             } -- closes brackets
   use {"b3nj5m1n/"          .. "kommentary"             } -- commenting
-  use {"junegunn/"          .. "fzf.vim"                } -- search
-  use {"tweekmonster/"      .. "fzf-filemru"            } -- search
+--use {"junegunn/"          .. "fzf.vim"                } -- search
+--use {"tweekmonster/"      .. "fzf-filemru"            } -- search
 --use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
---use {"nvim-telescope/"    .. "telescope.nvim"         } -- search
   use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
   use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
   use {"wellle/"            .. "targets.vim"            } -- text objects
   use {"tpope/"             .. "vim-eunuch"             } -- unix mv/rm/rename
   use {"nelstrom/"          .. "vim-visual-star-search" } -- visual mode *
 
+  -- Telescope
+  use {"nvim-telescope/"    .. "telescope.nvim"         }
+  use {"nvim-telescope/"    .. "telescope-frecency.nvim",
+    config = function()
+      require("telescope").load_extension("frecency")
+    end,
+  }
+
   -- Tools
   use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
   use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
-  use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
+--use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
 
   -- Treesitter
   use {"nvim-treesitter/"   .. "nvim-treesitter", run = ":TSUpdate"}
