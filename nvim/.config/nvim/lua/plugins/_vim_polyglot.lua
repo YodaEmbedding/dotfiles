@@ -4,6 +4,6 @@ end
 
 vim.g.polyglot_disabled = {
   "autoindent",
-  "python-indent",
+  -- "python-indent",
   "tex",
 }
