@@ -39,6 +39,7 @@ local function packer_spec()
   }
 
   -- Tools
+  use {"tpope/"             .. "vim-fugitive"           } -- git
   use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
   use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
