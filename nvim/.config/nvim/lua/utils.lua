@@ -44,6 +44,22 @@ function utils.coc_documentation_openjumpclose()
   return utils.coc_documentation()
 end
 
+-- Copies all search matches
+function utils.copy_matches(register)
+  if register == nil or string.len(register) ~= 1 then
+    return
+  end
+
+  vim.cmd([[
+    let register = ]] .. ("%q"):format(register) .. [[
+
+    let hits = []
+    %s//\=len(add(hits, submatch(0))) ? submatch(0) : ''/gne
+    let reg = empty(register) ? '+' : register
+    execute 'let @'.reg.' = join(hits, "\n") . "\n"'
+  ]])
+end
+
 -- vim-peekaboo float
 function utils.create_centered_floating_window()
   local width = math.floor(vim.o.columns * 0.8)
@@ -93,6 +109,14 @@ function utils.toggle_wrap()
   vim.o.virtualedit = ""
   bind_buf(0, "n", "j", "gj", {noremap = true, silent = true})
   bind_buf(0, "n", "k", "gk", {noremap = true, silent = true})
+end
+
+-- Wipes all registers
+function utils.wipe_registers()
+  for i = 34, 122 do
+    vim.cmd('silent! call setreg(nr2char(' .. tostring(i) .. '), " ")')
+    -- fn.setreg(string.char(i), buf, " ")
+  end
 end
 
 return utils
