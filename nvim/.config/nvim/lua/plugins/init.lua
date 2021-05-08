@@ -56,6 +56,7 @@ local function packer_spec()
 
   -- Visual
   use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme
+--use {"romainl/"           .. "vim-cool"               } -- highlight smarter
   use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace
   use {"unblevable/"        .. "quick-scope"            } -- hint unique chars
   use {"lukas-reineke/"     .. "indent-blankline.nvim",   -- indentation guides
