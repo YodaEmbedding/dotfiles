@@ -95,24 +95,4 @@ function utils.toggle_wrap()
   bind_buf(0, "n", "k", "gk", {noremap = true, silent = true})
 end
 
--- NOTE this can potentially be replaced with other FZF plugins for lua
--- " fzf.vim {{{1
---
--- function! s:get_git_root()
---     let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
---     return v:shell_error ? '' : root
--- endfunction
---
--- function! SmartFiles(...)
---     let root = s:get_git_root()
---     if empty(root)
---         " return call("fzf#vim#files", a:000)
---         execute ":FilesMru"
---     else
---         " let args = ["--cached --exclude-standard --others"]
---         " return call("fzf#vim#gitfiles", args)
---         execute ":ProjectMru"
---     endif
--- endfunction
-
 return utils
