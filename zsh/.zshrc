@@ -91,6 +91,11 @@ add-zsh-hook chpwd chpwd_recent_dirs
 export _FASD_MAX=100000
 eval "$(fasd --init zsh-hook)"
 
+# pyenv
+# if command -v pyenv 1>/dev/null 2>&1; then
+#   eval "$(pyenv init -)"
+# fi
+
 # Rename files using zmv 'test(*).png' '$1.png'
 # autoload zmv
 
