@@ -36,6 +36,8 @@ hi DiffChange       guibg=#43365C guifg=NONE
 hi DiffDelete       guibg=#663b63 guifg=NONE
 hi DiffText         guibg=#554575 guifg=NONE
 
+hi IndentBlanklineChar      guifg=#382935
+
 hi CocErrorFloat            guifg=#cc6666
 hi CocErrorVirtualText      guifg=#5C4459
 hi CocWarningVirtualText    guifg=#5C4459

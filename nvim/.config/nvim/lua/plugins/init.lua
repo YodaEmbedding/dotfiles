@@ -58,6 +58,9 @@ local function packer_spec()
   use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme
   use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace
   use {"unblevable/"        .. "quick-scope"            } -- hint unique chars
+  use {"lukas-reineke/"     .. "indent-blankline.nvim",   -- indentation guides
+    branch = "lua"
+  }
   use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
   use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
   use {"lewis6991/"         .. "gitsigns.nvim"          } -- signs for git
