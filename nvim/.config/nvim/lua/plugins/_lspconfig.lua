@@ -23,9 +23,9 @@ local function on_attach(client, bufnr)
   print(" ")
 end
 
-local status, _ = pcall(require, "plugins._lspconfig_py")
-local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
-py_lsp.setup { on_attach = on_attach }
+-- local status, _ = pcall(require, "plugins._lspconfig_py")
+-- local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
+-- py_lsp.setup { on_attach = on_attach }
 
 local status, _ = pcall(require, "plugins._lspconfig_matlab")
 if status then
@@ -49,7 +49,7 @@ local servers = {
   "jsonls",
   "kotlin_language_server",
   "metals",
-  -- "pyright",
+  "pyright",
   "rust_analyzer",
   -- "sumneko_lua",
   "texlab",
