@@ -21,6 +21,7 @@
 
 [interactive]
     diffFilter = delta --color-only
+    singleKey = true
 
 [delta]
     dark
