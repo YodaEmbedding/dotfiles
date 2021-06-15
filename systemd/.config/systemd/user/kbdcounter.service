@@ -1,0 +1,14 @@
+[Unit]
+Description=Counts keypresses on any X Window System desktop environment
+Documentation=https://github.com/forsberg/kbdcounter
+PartOf=graphical-session.target
+# Wants=graphical.target
+# After=graphical.target
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+ExecStart=%h/.local/bin/kbdcounter
+
+[Install]
+# WantedBy=default.target
+WantedBy=xsession.target

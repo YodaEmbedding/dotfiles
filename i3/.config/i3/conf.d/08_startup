@@ -1,4 +1,5 @@
 # System
+exec        $nsi    "systemctl --user import-environment PATH DBUS_SESSION_BUS_ADDRESS && systemctl --user start --no-block desktop-user.target"
 exec        $nsi    picom --experimental-backend
 exec        $nsi    xmodmap ~/.Xmodmap
 exec        $nsi    xset led on

@@ -1,0 +1,12 @@
+[Unit]
+Description=Customizable last.fm scrobbler via MPRIS 2
+Documentation=https://github.com/YodaEmbedding/scrobblez
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Environment=PYTHONUNBUFFERED=1
+ExecStart=%h/.local/bin/scrobblez
+
+[Install]
+WantedBy=default.target
