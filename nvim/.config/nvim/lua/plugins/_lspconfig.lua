@@ -37,6 +37,11 @@ if status then
   setup { on_attach = on_attach }
 end
 
+local status, setup = pcall(require, "plugins._lspconfig_diagnosticls")
+if status then
+  setup { on_attach = on_attach }
+end
+
 local servers = {
   "bashls",
   "ccls",
