@@ -21,6 +21,7 @@ local function packer_spec()
   use {"tpope/"             .. "vim-surround"           } -- change surrounding
 --use {"9mm/"               .. "vim-closer"             } -- closes brackets
   use {"b3nj5m1n/"          .. "kommentary"             } -- commenting
+  use {"ggandor/"           .. "lightspeed.nvim"        } -- motion
 --use {"junegunn/"          .. "fzf.vim"                } -- search
 --use {"tweekmonster/"      .. "fzf-filemru"            } -- search
 --use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
