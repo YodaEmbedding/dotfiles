@@ -46,3 +46,7 @@ telescope.setup{
 
   },
 }
+
+if _G.plugin_loaded("telescope-harpoon.nvim") then
+  telescope.load_extension("harpoon")
+end

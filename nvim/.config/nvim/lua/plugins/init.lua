@@ -18,6 +18,8 @@ local function packer_spec()
   use {"tami5/"             .. "sql.nvim"               } -- sql
 
   -- Functional
+  use {"ThePrimeagen/"      .. "harpoon"                } -- bookmarks
+  use {"brandoncc/"         .. "telescope-harpoon.nvim" } -- bookmarks
   use {"tpope/"             .. "vim-surround"           } -- change surrounding
 --use {"9mm/"               .. "vim-closer"             } -- closes brackets
   use {"b3nj5m1n/"          .. "kommentary"             } -- commenting
