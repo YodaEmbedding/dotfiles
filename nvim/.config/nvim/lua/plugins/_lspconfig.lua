@@ -17,6 +17,10 @@ local function on_attach(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   end
 
+  -- if _G.plugin_loaded("lspkind-nvim") then
+    require("lspkind").init({})
+  -- end
+
   require("mappings.nvim_lsp").load()
 
   -- Hide latest message.
