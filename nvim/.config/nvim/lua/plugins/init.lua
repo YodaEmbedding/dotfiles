@@ -65,6 +65,7 @@ local function packer_spec()
   use {"lukas-reineke/"     .. "indent-blankline.nvim",   -- indentation guides
     branch = "lua"
   }
+  use {"kosayoda/"          .. "nvim-lightbulb"         } -- LSP code actions
   use {"onsails/"           .. "lspkind-nvim"           } -- LSP pictograms
 --use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
   use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
