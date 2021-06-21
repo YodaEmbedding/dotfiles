@@ -96,6 +96,9 @@ eval "$(fasd --init zsh-hook)"
 #   eval "$(pyenv init -)"
 # fi
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # Rename files using zmv 'test(*).png' '$1.png'
 # autoload zmv
 
