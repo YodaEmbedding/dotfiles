@@ -10,37 +10,41 @@
 
 source ~/.zplug/init.zsh
 
+zp() {
+    zplug "$1$2", "${@:3}"
+}
+
 # PLUGINS {{{2
 
 # ENABLED {{{3
-zplug $(printf "%s%s" "lib/"         "completion"),        from:oh-my-zsh       # Suggests command completions
-zplug $(printf "%s%s" "lib/"         "git"),               from:oh-my-zsh       # Prompt
-zplug $(printf "%s%s" "lib/"         "history"),           from:oh-my-zsh       #
-zplug $(printf "%s%s" "lib/"         "vi-mode"),           from:oh-my-zsh       #
-zplug $(printf "%s%s" "mollifier/"   "anyframe")                                # Bindings for fuzzy commands
-zplug $(printf "%s%s" "plugins/"     "colored-man-pages"), from:oh-my-zsh       # Easier to read man pages
+zp "lib/"         "completion"          from:oh-my-zsh       # Suggests command completions
+zp "lib/"         "git"                 from:oh-my-zsh       # Prompt
+zp "lib/"         "history"             from:oh-my-zsh       #
+zp "lib/"         "vi-mode"             from:oh-my-zsh       #
+zp "mollifier/"   "anyframe"                                 # Bindings for fuzzy commands
+zp "plugins/"     "colored-man-pages"   from:oh-my-zsh       # Easier to read man pages
 
 # DISABLED {{{3
-#zplug $(printf "%s%s" "changyuheng/" "fz"),                defer:1              # Fuzzy tab completion for z
-#zplug $(printf "%s%s" "lib/"         "clipboard"),         from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-#zplug $(printf "%s%s" "lib/"         "colorize"),          from:oh-my-zsh       # Syntax highlight cat output
-#zplug $(printf "%s%s" "lib/"         "key-bindings"),      from:oh-my-zsh       # Useful keybindings
-#zplug $(printf "%s%s" "lib/"         "python"),            from:oh-my-zsh       #
-#zplug $(printf "%s%s" "lib/"         "themes"),            from:oh-my-zsh       #
-#zplug $(printf "%s%s" "mafredri/"    "zsh-async"),         defer:0              #
-#zplug $(printf "%s%s" "rupa/"        "z"),                 use:'*.sh'           # Navigate to most used directories
-#zplug $(printf "%s%s" "urbainvaes/"  "fzf-marks")                               #
-#zplug $(printf "%s%s" "zsh-users/"   "zsh-autosuggestions")                     #
-#zplug $(printf "%s%s" "zsh-users/"   "zsh-completions")                         #
-#zplug $(printf "%s%s" "zsh-users/"   "zsh-history-substring-search"), defer:3   #
-#zplug $(printf "%s%s" "zsh-users/"   "zsh-syntax-highlighting"),      defer:3   #
+# zp "changyuheng/" "fz"                  defer:1              # Fuzzy tab completion for z
+# zp "lib/"         "clipboard"           from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
+# zp "lib/"         "colorize"            from:oh-my-zsh       # Syntax highlight cat output
+# zp "lib/"         "key-bindings"        from:oh-my-zsh       # Useful keybindings
+# zp "lib/"         "python"              from:oh-my-zsh       #
+# zp "lib/"         "themes"              from:oh-my-zsh       #
+# zp "mafredri/"    "zsh-async"           defer:0              #
+# zp "rupa/"        "z"                   use:'*.sh'           # Navigate to most used directories
+# zp "urbainvaes/"  "fzf-marks"                                #
+# zp "zsh-users/"   "zsh-autosuggestions"                      #
+# zp "zsh-users/"   "zsh-completions"                          #
+# zp "zsh-users/"   "zsh-history-substring-search"   defer:3   #
+# zp "zsh-users/"   "zsh-syntax-highlighting"        defer:3   #
 
 # THEMES {{{2
-#zplug $(printf "%s%s" "agnoster/"     "agnoster-zsh-theme"),   as:theme, from:oh-my-zsh
-#zplug $(printf "%s%s" "halfo/"        "lambda-mod-zsh-theme"), as:theme
-#zplug $(printf "%s%s" "inanimate/"    "darkblood-modular"),    as:theme
-#zplug $(printf "%s%s" "marszall87/"   "lambda-pure"),          as:theme, use:lambda-pure.zsh
-#zplug $(printf "%s%s" "sindresorhus/" "pure"),                 as:theme, use:pure.zsh
+# zp "agnoster/"     "agnoster-zsh-theme"     as:theme, from:oh-my-zsh
+# zp "halfo/"        "lambda-mod-zsh-theme"   as:theme
+# zp "inanimate/"    "darkblood-modular"      as:theme
+# zp "marszall87/"   "lambda-pure"            as:theme, use:lambda-pure.zsh
+# zp "sindresorhus/" "pure"                   as:theme, use:pure.zsh
 
 # PLUGIN CONFIGURATION {{{2
 PURE_PROMPT_SYMBOL=λ
