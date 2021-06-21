@@ -1,6 +1,3 @@
-# Installation: Please install zplug then simply copy this to ~/.zshrc
-# Author: Mateen Ulhaq <mulhaq2005@gmail.com>
-
 # INITIAL {{{1
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
@@ -22,33 +19,6 @@ zp "lib/"         "git"                 from:oh-my-zsh       # Prompt
 zp "lib/"         "history"             from:oh-my-zsh       #
 zp "lib/"         "vi-mode"             from:oh-my-zsh       #
 zp "mollifier/"   "anyframe"                                 # Bindings for fuzzy commands
-zp "plugins/"     "colored-man-pages"   from:oh-my-zsh       # Easier to read man pages
-
-# DISABLED {{{3
-# zp "changyuheng/" "fz"                  defer:1              # Fuzzy tab completion for z
-# zp "lib/"         "clipboard"           from:oh-my-zsh, if:"[[ $OSTYPE == *darwin* ]]"
-# zp "lib/"         "colorize"            from:oh-my-zsh       # Syntax highlight cat output
-# zp "lib/"         "key-bindings"        from:oh-my-zsh       # Useful keybindings
-# zp "lib/"         "python"              from:oh-my-zsh       #
-# zp "lib/"         "themes"              from:oh-my-zsh       #
-# zp "mafredri/"    "zsh-async"           defer:0              #
-# zp "rupa/"        "z"                   use:'*.sh'           # Navigate to most used directories
-# zp "urbainvaes/"  "fzf-marks"                                #
-# zp "zsh-users/"   "zsh-autosuggestions"                      #
-# zp "zsh-users/"   "zsh-completions"                          #
-# zp "zsh-users/"   "zsh-history-substring-search"   defer:3   #
-# zp "zsh-users/"   "zsh-syntax-highlighting"        defer:3   #
-
-# THEMES {{{2
-# zp "agnoster/"     "agnoster-zsh-theme"     as:theme, from:oh-my-zsh
-# zp "halfo/"        "lambda-mod-zsh-theme"   as:theme
-# zp "inanimate/"    "darkblood-modular"      as:theme
-# zp "marszall87/"   "lambda-pure"            as:theme, use:lambda-pure.zsh
-# zp "sindresorhus/" "pure"                   as:theme, use:pure.zsh
-
-# PLUGIN CONFIGURATION {{{2
-PURE_PROMPT_SYMBOL=λ
-_Z_CMD=j
 
 # LOAD {{{2
 # Install plugins if there are plugins that have not been installed
@@ -103,23 +73,15 @@ eval "$(fasd --init zsh-hook)"
 # zoxide
 eval "$(zoxide init zsh)"
 
-# Rename files using zmv 'test(*).png' '$1.png'
-# autoload zmv
-
 # THEME {{{1
 
 setopt promptsubst
 
-# 54  , blue
-# blue, 178
-# 169 , 190
-# 59  , 217
-# 60  , 217
-# 96  , 217
-# 234 , 217
 # for ((i=0;i<256;i++)); do echo "$(tput setab $i)$(tput setaf 4)$(tput bold)$i$(tput sgr0)"; done
 
 [[ ! -z  "$PROMPT_NAME" ]] && PROMPT_NAME="· $PROMPT_NAME "
+
+PURE_PROMPT_SYMBOL=λ
 
 PS1=$'\n'
 PS1+="%}%K{96}%F{217}%B"
@@ -153,15 +115,11 @@ zstyle ":anyframe:selector:" use fzf
 HISTSIZE=20000000
 SAVEHIST=10000000
 
-# Do not save common commands to history
-# HISTORY_IGNORE="(ls|lsl|cd|cd ..|..|pwd|exit|vimrc|zshrc|i3config|gst|gd)"
+# Do not save certain commands to history
 HISTORY_IGNORE="(kill <->|kill -<-> <->)"
 
 # Do not save to history commands prefixed wtih space
 setopt hist_ignore_space
-
-# Ignore duplicate commands when searching
-# setopt hist_find_no_dups
 
 # Remove duplicate commands from history on exit
 setopt hist_ignore_all_dups
@@ -171,20 +129,10 @@ setopt hist_save_no_dups
 setopt extended_glob
 
 # Style
-zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}  # Use LS COLORS to autocomplete
+# Use LS COLORS to autocomplete
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # FUNCTIONS {{{1
-
-# Copy paths {{{2
-
-# Copy directory path
-cpdp() { pwd | xargs echo -n | pbcopy }
-
-# Copy file path
-cpfp() { echo -n "$PWD/$@" | pbcopy }
-
-# Paste from file path
-pfp() { cp "$(pbpaste)" . }
 
 # anyframe {{{2
 anyframe-widget-fasd() {
@@ -232,8 +180,6 @@ fzf-fasdfile-widget() {
     local item="$(run_fzf 'ctrl-f' 'fasd -R')"
     local ret=$?
     LBUFFER="${LBUFFER}${item}"
-    # LBUFFER="vim"
-    # RBUFFER=" ${item}"
     zle reset-prompt
     return ret
 }
@@ -272,27 +218,10 @@ bindkey -M vicmd "^[[6~" down-history                   # vim page down
 bindkey '^ '   autosuggest-accept                       # Fill suggestion
 bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 
-#bindkey '^?' backward-delete-char                      # Backspace (doesn't work after hitting <esc>i)
-
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
-bindkey '^f' fzf-fasdfile-widget                        # 
+bindkey '^f' fzf-fasdfile-widget                        #
 bindkey '^k' anyframe-widget-kill                       # Kill process
-bindkey '^v' fzf-fasdvim-widget                         # 
+bindkey '^v' fzf-fasdvim-widget                         #
 bindkey '^z' fzf-fasddir-widget                         # cd to folder using fasd
-#bindkey '^f' anyframe-widget-insert-filename           #
-#bindkey '^f' anyframe-widget-frece                     # cd to folder using frece
-#bindkey '^r' anyframe-widget-put-history               # Recall history command
-#bindkey '^z' anyframe-widget-fasd                      # cd to folder using fasd
-#bindkey '^x^b' anyframe-widget-checkout-git-branch     #
-#bindkey '^xe'  anyframe-widget-insert-git-branch       #
-#bindkey '^-r' percol_select_history                    #
-#bindkey '^-b' percol_select_marks                      #
 
 bindkey -s '^o' 'lfcd\n'
-
-# TODO {{{1
-
-# Use Ctrl+Enter to fill fish command then execute
-
-# fasd (similar to autojump but with shell commands): https://github.com/clvv/fasd
-# Update plugins every N days
