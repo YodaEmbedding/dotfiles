@@ -14,11 +14,12 @@ zp() {
 # PLUGINS {{{2
 
 # ENABLED {{{3
-zp "lib/"         "completion"          from:oh-my-zsh       # Suggests command completions
-zp "lib/"         "git"                 from:oh-my-zsh       # Prompt
-zp "lib/"         "history"             from:oh-my-zsh       #
-zp "lib/"         "vi-mode"             from:oh-my-zsh       #
-zp "mollifier/"   "anyframe"                                 # Bindings for fuzzy commands
+zp "lib/"         "completion"          from:oh-my-zsh      # Command completion
+zp "lib/"         "git"                 from:oh-my-zsh      # Prompt
+zp "lib/"         "history"             from:oh-my-zsh      #
+zp "lib/"         "vi-mode"             from:oh-my-zsh      #
+zp "mollifier/"   "anyframe"                                # Fuzzy keybinds
+zp "zsh-users/"   "zsh-autosuggestions"                     # Fish-like
 
 # LOAD {{{2
 # Install plugins if there are plugins that have not been installed
