@@ -216,6 +216,10 @@ fzf-fasdvim-widget() {
     return ret
 }
 
+zoxide-widget() {
+    zi
+}
+
 # WIDGETS {{{1
 
 zle -N -- anyframe-widget-fasd
@@ -223,6 +227,7 @@ zle -N -- anyframe-widget-frece
 zle -N -- fzf-fasddir-widget
 zle -N -- fzf-fasdfile-widget
 zle -N -- fzf-fasdvim-widget
+zle -N -- zoxide-widget
 
 # KEYBINDINGS {{{1
 
@@ -243,6 +248,7 @@ bindkey '^b' anyframe-widget-cdr                        # List and jump to frequ
 bindkey '^f' anyframe-widget-frece                      #
 bindkey '^k' anyframe-widget-kill                       # Kill process
 bindkey '^v' fzf-fasdvim-widget                         #
-bindkey '^z' fzf-fasddir-widget                         # cd to folder using fasd
+
+bindkey '^z' zoxide-widget                              # cd to folder using zoxide
 
 bindkey -s '^o' 'lfcd\n'
