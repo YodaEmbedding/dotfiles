@@ -9,6 +9,7 @@ set modeindicator false
 unbind --mode=hint <Space>
 unbind <C-a>
 unbind <C-e>
+unbind <C-f>
 unbind <C-x>
 unbind J
 unbind K
