@@ -240,7 +240,7 @@ bindkey -M vicmd "^[[6~" down-history                   # vim page down
 # bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
-bindkey '^f' fzf-fasdfile-widget                        #
+bindkey '^f' anyframe-widget-frece                      #
 bindkey '^k' anyframe-widget-kill                       # Kill process
 bindkey '^v' fzf-fasdvim-widget                         #
 bindkey '^z' fzf-fasddir-widget                         # cd to folder using fasd
