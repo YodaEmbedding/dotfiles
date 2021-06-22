@@ -2,36 +2,43 @@
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
 
+# ZINIT {{{1
 
-# ZPLUG {{{1
+### Added by Zinit's installer
 
-source ~/.zplug/init.zsh
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
 
-zp() {
-    zplug "$1$2", "${@:3}"
-}
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
 
-# PLUGINS {{{2
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-rust \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
 
-# ENABLED {{{3
-zp "lib/"         "completion"          from:oh-my-zsh      # Command completion
-zp "lib/"         "git"                 from:oh-my-zsh      # Prompt
-zp "lib/"         "history"             from:oh-my-zsh      #
-zp "lib/"         "vi-mode"             from:oh-my-zsh      #
-zp "mollifier/"   "anyframe"                                # Fuzzy keybinds
-zp "zsh-users/"   "zsh-autosuggestions"                     # Fish-like
+### End of Zinit's installer chunk
 
-# LOAD {{{2
-# Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-# 	zplug install
-# fi
+# PLUGINS {{{1
+zinit snippet OMZL::completion.zsh                  # Command completion
+zinit snippet OMZL::git.zsh                         # Git prompt
+zinit snippet OMZL::history.zsh
+zinit snippet OMZP::vi-mode
 
-# Consider updating
-# zplug update
-
-# Source plugins and add commands to $PATH
-zplug load
+zinit light mollifier/anyframe                      # Fuzzy keybinds
+zinit light wfxr/forgit                             # git fzf
+zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma/history-search-multi-word
+zinit light zsh-users/zsh-autosuggestions           # Fish-like autosuggestions
 
 # SOURCING {{{1
 
@@ -44,9 +51,6 @@ env_parallel --session
 
 # Profile
 [ -f ~/.profile ] && source ~/.profile
-
-# Fish-like autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
