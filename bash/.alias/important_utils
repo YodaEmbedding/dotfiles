@@ -1,20 +1,26 @@
 ### IMPORTANT UTILITIES ###
 
 # git
+alias g='git'
 alias ga='git add'
+alias gap='git add -p'
+alias gb='git checkout -B'
 alias gc='git commit'
 alias gca='git commit -a'
 alias gcam='git commit -am'
+alias gcl='git clone'
 alias gcm='git commit -m'
 alias gco='git checkout'
-alias gcl='git clone'
 alias gd='git diff'
+alias gds='git diff --staged'
 alias gl='git log --graph --full-history --color --oneline --branches --remotes --tags'
 alias gla='git log --graph --decorate $(git rev-list -g --branches --remotes --tags)'
-alias gst='git status'
-
-# grep
-alias g='grep --color=never -i'
+alias gp='git push'
+alias gpl='git pull'
+alias gplr='git pull --rebase'
+alias gr='git rebase'
+alias gs='git status'
+alias gsh='git show'
 
 # less
 alias less='less -r'
