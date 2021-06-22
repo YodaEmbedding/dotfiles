@@ -162,7 +162,7 @@ anyframe-widget-fasd() {
 }
 
 anyframe-widget-frece() {
-    local DB_FILE="$HOME/.frece_dir.db"
+    local DB_FILE="$HOME/.frece/db/dir.db"
     local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
     [[ -z $item ]] && return
     frece increment "$DB_FILE" "$item"
