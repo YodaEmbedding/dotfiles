@@ -29,16 +29,35 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 # PLUGINS {{{1
-zinit snippet OMZL::completion.zsh                  # Command completion
-zinit snippet OMZL::git.zsh                         # Git prompt
+
+zinit snippet OMZL::git.zsh
 zinit snippet OMZL::history.zsh
 zinit snippet OMZP::vi-mode
 
-zinit light mollifier/anyframe                      # Fuzzy keybinds
-zinit light wfxr/forgit                             # git fzf
-zinit light zdharma/fast-syntax-highlighting
-zinit light zdharma/history-search-multi-word
-zinit light zsh-users/zsh-autosuggestions           # Fish-like autosuggestions
+zinit light mollifier/anyframe
+
+# zinit wait lucid light-mode for \
+    # zdharma/history-search-multi-word \
+
+zinit wait lucid light-mode for \
+  atinit"forgit_diff=gdf" \
+    wfxr/forgit
+
+zinit wait lucid light-mode for \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
+    zdharma/fast-syntax-highlighting
+
+zinit wait lucid light-mode for \
+  atload"_zsh_autosuggest_start; bindkey '^[^M' autosuggest-execute" \
+    zsh-users/zsh-autosuggestions
+
+zinit wait lucid light-mode for \
+  blockf \
+    zsh-users/zsh-completions
+
+zinit wait lucid light-mode for \
+  atinit"zstyle ':autocomplete:*' insert-unambiguous yes" \
+    marlonrichert/zsh-autocomplete
 
 # SOURCING {{{1
 
@@ -220,8 +239,9 @@ bindkey -M vicmd '^[[3~' ''                             # vim disable DEL key
 bindkey -M vicmd "^[[5~" up-history                     # vim page up
 bindkey -M vicmd "^[[6~" down-history                   # vim page down
 
-bindkey '^ '   autosuggest-accept                       # Fill suggestion
-bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
+# NOTE: These are bound above.
+# bindkey '^ '   autosuggest-accept                       # Fill suggestion
+# bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 
 bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
 bindkey '^f' fzf-fasdfile-widget                        #
