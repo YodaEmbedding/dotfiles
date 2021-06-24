@@ -35,6 +35,6 @@ alias rscp="rsync -a --info=progress2 --partial"
 alias tm="tmux"
 
 # vim
-# alias v='nvim'
+alias v='nvim'
 alias vim='nvim'
 alias vimprivate='vim -u NONE -c "setlocal history=0 nobackup nomodeline noshelltemp noswapfile noundofile nowritebackup secure viminfo=\"\""'
