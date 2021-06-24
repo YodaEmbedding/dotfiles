@@ -32,12 +32,12 @@ zinit light-mode for \
 
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::history.zsh
-zinit snippet OMZP::vi-mode
+# zinit snippet OMZP::vi-mode
+
+ZVM_CURSOR_STYLE_ENABLED=false
+zinit light jeffreytse/zsh-vi-mode
 
 zinit light mollifier/anyframe
-
-# zinit wait lucid light-mode for \
-    # zdharma/history-search-multi-word \
 
 zinit wait lucid light-mode for \
   atinit"forgit_diff=gdf" \
@@ -74,8 +74,8 @@ zinit wait lucid light-mode for \
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
 
 # vim edit-command-line
-autoload edit-command-line
-zle -N edit-command-line
+# autoload edit-command-line
+# zle -N edit-command-line
 
 # cdr (for searching/jumping to frequent directories using anyframe-widget-cdr)
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
@@ -234,12 +234,12 @@ zle -N -- zoxide-widget
 
 # Use showkey -a to detect terminal keycodes
 
-bindkey -v                                              # vim
-bindkey -v '^?' backward-delete-char                    # vim backspace
-bindkey -M vicmd V edit-command-line                    # vim edit command
-bindkey -M vicmd '^[[3~' ''                             # vim disable DEL key
-bindkey -M vicmd "^[[5~" up-history                     # vim page up
-bindkey -M vicmd "^[[6~" down-history                   # vim page down
+# bindkey -v                                              # vim
+# bindkey -v '^?' backward-delete-char                    # vim backspace
+# bindkey -M vicmd V edit-command-line                    # vim edit command
+# bindkey -M vicmd '^[[3~' ''                             # vim disable DEL key
+# bindkey -M vicmd "^[[5~" up-history                     # vim page up
+# bindkey -M vicmd "^[[6~" down-history                   # vim page down
 
 # NOTE: These are bound above.
 # bindkey '^ '   autosuggest-accept                       # Fill suggestion
