@@ -218,6 +218,7 @@ fzf-fasdvim-widget() {
 
 zoxide-widget() {
     zi
+    zle reset-prompt
 }
 
 # WIDGETS {{{1
