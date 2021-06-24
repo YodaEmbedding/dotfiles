@@ -40,8 +40,8 @@ zinit light jeffreytse/zsh-vi-mode
 zinit light mollifier/anyframe
 
 zinit wait lucid light-mode for \
-  atinit"forgit_diff=gdf" \
-    wfxr/forgit
+    OMZP::fzf \
+    Aloxaf/fzf-tab \
 
 zinit wait lucid light-mode for \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
@@ -56,8 +56,16 @@ zinit wait lucid light-mode for \
     zsh-users/zsh-completions
 
 zinit wait lucid light-mode for \
-  atinit"zstyle ':autocomplete:*' insert-unambiguous yes" \
-    marlonrichert/zsh-autocomplete
+  atinit"forgit_diff=gdf" \
+    wfxr/forgit
+
+# zinit wait lucid light-mode for \
+#   atinit"
+#     zstyle ':autocomplete:*' insert-unambiguous yes;
+#     zstyle ':autocomplete:*' min-input 10;
+#     zstyle ':autocomplete:*' max-lines 100%;
+#   " \
+#     marlonrichert/zsh-autocomplete
 
 # SOURCING {{{1
 
@@ -66,9 +74,6 @@ zinit wait lucid light-mode for \
 
 # Profile
 [ -f ~/.profile ] && source ~/.profile
-
-# FZF
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # ls colors
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
