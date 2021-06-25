@@ -27,6 +27,7 @@ local function packer_spec()
 --use {"junegunn/"          .. "fzf.vim"                } -- search
 --use {"tweekmonster/"      .. "fzf-filemru"            } -- search
 --use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
+  use {"camspiers/"         .. "snap", rocks = {"fzy"}  } -- search
   use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
   use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
   use {"wellle/"            .. "targets.vim"            } -- text objects
