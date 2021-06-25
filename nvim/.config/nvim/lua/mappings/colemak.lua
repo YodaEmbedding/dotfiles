@@ -1,3 +1,5 @@
+do return end
+
 vim.cmd [[
 nnoremap h h|xnoremap h h|onoremap h h|
 nnoremap n j|xnoremap n j|onoremap n j|
