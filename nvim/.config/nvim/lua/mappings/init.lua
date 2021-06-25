@@ -1,4 +1,5 @@
 require("mappings.misc")
+require("mappings.colemak")
 require("mappings._coc_nvim")
 require("mappings._compe")
 require("mappings._fzf_vim")
