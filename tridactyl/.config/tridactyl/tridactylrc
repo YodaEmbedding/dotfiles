@@ -37,6 +37,8 @@ bind n findnext 1
 bind N findnext -1
 
 unbindurl reddit.com C
+unbindurl reddit.com J
+unbindurl reddit.com K
 unbindurl reddit.com a
 unbindurl reddit.com c
 unbindurl reddit.com j
@@ -47,10 +49,10 @@ unbindurl reddit.com s
 unbindurl reddit.com x
 unbindurl reddit.com z
 unbindurl reddit.com zs
+unbindurl youtube.com .
 unbindurl youtube.com <<
 unbindurl youtube.com >>
 unbindurl youtube.com f
-unbindurl youtube.com .
 
 bindurl github.com/notifications F hint -Jbc li.notifications-list-item div a
 bindurl github.com/notifications f hint -Jc li.notifications-list-item div a
