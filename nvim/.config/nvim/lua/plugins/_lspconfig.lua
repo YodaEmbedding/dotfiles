@@ -21,7 +21,7 @@ local function on_attach(client, bufnr)
     require("lspkind").init({})
   -- end
 
-  require("mappings.nvim_lsp").load()
+  require("mappings._nvim_lsp").load()
 
   -- Hide latest message.
   print(" ")
