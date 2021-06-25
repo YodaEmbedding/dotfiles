@@ -29,6 +29,7 @@ alias less='less -r'
 alias py="python3"
 
 # rsync
+alias rsync="rsync -h"
 alias rscp="rsync -a --info=progress2 --partial"
 
 # tmux
