@@ -28,7 +28,7 @@ snap.register.map("n", ",", create(function ()
 end))
 
 -- Files
-snap.register.map("n", "<f", create(function ()
+snap.register.map("n", "<Space>f", create(function ()
   return {
     producer = snap.get"consumer.fzy"(snap.get"producer.fd.file"),
     select = snap.get"select.file".select,
@@ -38,7 +38,7 @@ snap.register.map("n", "<f", create(function ()
 end))
 
 -- Git files
-snap.register.map("n", "<g", create(function ()
+snap.register.map("n", "<Space>g", create(function ()
   return {
     producer = snap.get"consumer.fzy"(
       snap.get"consumer.try"(
@@ -53,7 +53,7 @@ snap.register.map("n", "<g", create(function ()
 end))
 
 -- Old files
-snap.register.map("n", "<o", create(function ()
+snap.register.map("n", "<Space>o", create(function ()
   return {
     producer = snap.get"consumer.fzy"(snap.get"producer.vim.oldfile"),
     select = snap.get"select.file".select,
@@ -63,7 +63,7 @@ snap.register.map("n", "<o", create(function ()
 end))
 
 -- Grep
-snap.register.map("n", "<l", create(function ()
+snap.register.map("n", "<Space>l", create(function ()
   return {
     producer = snap.get"consumer.limit"(10000,
       snap.get"producer.ripgrep.vimgrep"
@@ -75,7 +75,7 @@ snap.register.map("n", "<l", create(function ()
 end))
 
 -- Grep with post-filtering
-snap.register.map("n", "<L", create(function ()
+snap.register.map("n", "<Space>L", create(function ()
   return {
     producer = snap.get"consumer.limit"(10000,
       snap.get"producer.ripgrep.vimgrep"
@@ -91,7 +91,7 @@ snap.register.map("n", "<L", create(function ()
 end))
 
 -- Vim help
-snap.register.map("n", "<h", create(function ()
+snap.register.map("n", "<Space>h", create(function ()
   return {
     prompt = "Help>",
     producer = snap.get"consumer.fzy"(snap.get"producer.vim.help"),
