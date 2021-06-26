@@ -59,6 +59,7 @@ local function packer_spec()
   use {"farmergreg/"        .. "vim-lastplace"          } -- remember cursor
 
   -- Visual
+  use {"folke/"             .. "tokyonight.nvim"        } -- colorscheme
   use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme
 --use {"romainl/"           .. "vim-cool"               } -- highlight smarter
   use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace

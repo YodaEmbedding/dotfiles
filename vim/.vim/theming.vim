@@ -1,7 +1,8 @@
 " Colorscheme {{{1
-" Favorites: cobalt, desert, hybrid_reverse, hybrid_material, quantum, solarized
-let g:quantum_black=1
-colorscheme quantum
+let g:quantum_black = 1
+let g:tokyonight_transparent = 1
+" colorscheme quantum
+colorscheme tokyonight
 
 " Colors {{{1
 set background=dark
