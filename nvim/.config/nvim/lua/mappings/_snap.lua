@@ -20,7 +20,12 @@ end
 -- Files
 snap.register.map("n", ",", create(function ()
   return {
-    producer = snap.get"consumer.fzy"(snap.get"producer.fd.file"),
+    producer = snap.get"consumer.fzy"(
+      snap.get"consumer.try"(
+        snap.get"producer.git.file",
+        snap.get"producer.fd.file"
+      )
+    ),
     select = snap.get"select.file".select,
     multiselect = snap.get"select.file".multiselect,
     views = {snap.get"preview.file"},
