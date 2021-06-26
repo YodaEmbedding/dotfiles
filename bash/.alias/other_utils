@@ -14,6 +14,9 @@ biber_fix() {
   /bin/mv "$tmpfile" "$file"
 }
 
+# fd
+alias fd="fd --hidden --exclude .git"
+
 # googler
 alias goo="googler -n 5"
 
@@ -55,6 +58,7 @@ alias r='ranger'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # ripgrep
+alias rg="rg --hidden --glob '!.git'"
 alias rgi='rg -i'
 alias rgpy='rg -t py'
 
