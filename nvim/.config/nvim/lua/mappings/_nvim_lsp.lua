@@ -38,12 +38,12 @@ function mappings_nvim_lsp.load()
   -- Diagnostics
   n_silent("[d",        lsp.diagnostic.goto_prev)
   n_silent("]d",        lsp.diagnostic.goto_next)
-  n_silent("<space>l",  lsp.diagnostic.set_loclist)
+  n_silent("<space>z",  lsp.diagnostic.set_loclist)
   n_silent("<space>e",  lsp.diagnostic.show_line_diagnostics)
 
   -- Refactoring
   n_buffer("<space>a",  lsp.buf.code_action)
-  n_buffer("<space>f",  lsp.buf.formatting)
+  n_buffer("<space>rf", lsp.buf.formatting)
   n_buffer("<space>rn", lsp.buf.rename)
 
   -- Workspaces
