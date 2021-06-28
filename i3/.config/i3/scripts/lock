@@ -31,7 +31,9 @@ radius=$((273 * $width / 1920))
 
 # Moon wallpaper
 i3lock \
-	-n --clock \
+	--nofork \
+    --pass-media-keys \
+    --clock \
 	--radius=$radius \
 	--indpos="x+(0.4741*w):y+(0.230*h)" \
 	--timepos="ix:iy"    --timesize=48 --timecolor=223377ff --timestr="%H:%M:%S" \
