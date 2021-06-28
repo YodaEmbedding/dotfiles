@@ -4,6 +4,10 @@ local snap = require("snap")
 local function create(config)
   return snap.create(config, {
     reverse = true,
+    mappings = {
+      ["next-page"] = {"<C-f>", "<PageDown>"},
+      ["prev-page"] = {"<C-b>", "<PageUp>"},
+    },
   })
 end
 
