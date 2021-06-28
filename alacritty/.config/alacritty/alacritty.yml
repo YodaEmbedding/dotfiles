@@ -39,15 +39,15 @@ scrolling:
 #   - file:///usr/share/doc/fontconfig/fontconfig-user.html
 font:
   normal:
-    family: Roboto Mono
+    family: Iosevka
 
   bold:
-    family: Roboto Mono
+    family: Iosevka
 
   italic:
-    family: Roboto Mono
+    family: Iosevka
 
-  size: 14.0
+  size: 15.0
 
   offset:
     x: 0
