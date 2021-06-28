@@ -1,5 +1,16 @@
 local snap = require("snap")
 
+local git_file = snap.get"producer.git.file".args {
+  "--cached",
+  "--others",
+  "--exclude-standard",
+}
+
+local smart_file = snap.get"consumer.try"(
+  git_file,
+  snap.get"producer.fd.file"
+)
+
 -- Defaults
 local function create(config)
   return snap.create(config, {
@@ -24,12 +35,7 @@ end
 -- Files
 snap.register.map("n", ",", create(function ()
   return {
-    producer = snap.get"consumer.fzy"(
-      snap.get"consumer.try"(
-        snap.get"producer.git.file",
-        snap.get"producer.fd.file"
-      )
-    ),
+    producer = snap.get"consumer.fzy"(smart_file),
     select = snap.get"select.file".select,
     multiselect = snap.get"select.file".multiselect,
     views = {snap.get"preview.file"},
@@ -49,12 +55,7 @@ end))
 -- Git files
 snap.register.map("n", "<Space>g", create(function ()
   return {
-    producer = snap.get"consumer.fzy"(
-      snap.get"consumer.try"(
-        snap.get"producer.git.file",
-        snap.get"producer.fd.file"
-      )
-    ),
+    producer = snap.get"consumer.fzy"(smart_file),
     select = snap.get"select.file".select,
     multiselect = snap.get"select.file".multiselect,
     views = {snap.get"preview.file"},
