@@ -21,6 +21,10 @@ local function on_attach(client, bufnr)
     require("lspkind").init({})
   -- end
 
+  -- if _G.plugin_loaded("lsp_signature.nvim") then
+  require("lsp_signature").on_attach()
+  -- end
+
   require("mappings._nvim_lsp").load()
 
   -- Hide latest message.

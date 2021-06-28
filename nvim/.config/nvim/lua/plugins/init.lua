@@ -68,6 +68,7 @@ local function packer_spec()
     branch = "lua"
   }
   use {"onsails/"           .. "lspkind-nvim"           } -- LSP pictograms
+  use {"ray-x/"             .. "lsp_signature.nvim"     } -- LSP signature
 --use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
   use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
   use {"lewis6991/"         .. "gitsigns.nvim"          } -- signs for git
