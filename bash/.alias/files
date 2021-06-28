@@ -4,11 +4,11 @@
 alias todo='vim ~/Dropbox/misc/notepad/todo-txt/todo.txt'
 
 # File config
-alias aliases='f="$(fd . ~/dotfiles/bash/.alias | fzf)" && vim "$f"'
+alias aliases='cd ~/dotfiles/bash/.alias; f="$(fd | fzf)" && vim "$f"'
 alias bashrc='vim ~/.bashrc'
-alias vimrc='f="$(fd -e vim . ~/dotfiles/vim/.vim | fzf)" && vim "$f"'
-alias vimrc='cd ~/dotfiles/vim/.vim; f="$(fd -e vim . | fzf)" && vim "$f"'
-alias zshrc='vim ~/.zshrc'
-alias i3config='f="$(fd . ~/dotfiles/i3/.config/i3/conf.d | fzf)" && vim "$f"'
-alias i3bconfig='vim ~/.config/i3blocks/config'
+alias dotfiles='cd ~/dotfiles; vim'
+alias i3config='cd ~/dotfiles/i3/.config/i3/conf.d; f="$(fd | fzf)" && vim "$f"'
+alias nvimrc='cd ~/dotfiles/nvim/.config/nvim/lua; vim'
 alias pythonstartup='sudo -e /usr/local/share/pythonstartup.py'
+alias vimrc='cd ~/dotfiles/vim/.vim; f="$(fd -e vim | fzf)" && vim "$f"'
+alias zshrc='vim ~/.zshrc'
