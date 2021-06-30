@@ -62,7 +62,7 @@ for_window [title="^Server Monitor$"] \
     floating enable, \
     exec $nsi $scripts/move top right
 
-for_window [class="^tridactyl_editor$"] \
+for_window [instance="^tridactyl_editor$"] \
     floating enable, \
     resize set 800 500, \
     exec $nsi $scripts/move bottom center, \

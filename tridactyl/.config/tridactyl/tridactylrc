@@ -6,6 +6,8 @@ colors dark
 set hintchars dsafrewqgvcxz
 set modeindicator false
 
+set editorcmd alacritty --class tridactyl_editor -e nvim
+
 unbind --mode=hint <Space>
 unbind <C-a>
 unbind <C-e>
