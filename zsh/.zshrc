@@ -37,7 +37,13 @@ zinit snippet OMZL::history.zsh
 ZVM_CURSOR_STYLE_ENABLED=false
 zinit light jeffreytse/zsh-vi-mode
 
-zinit light mollifier/anyframe
+zinit wait lucid light-mode for \
+  atload"
+    bindkey '^b' anyframe-widget-cdr
+    bindkey '^f' anyframe-widget-frece
+    bindkey '^k' anyframe-widget-kill
+  " \
+    mollifier/anyframe
 
 zinit wait lucid light-mode for \
     OMZP::fzf \
@@ -250,9 +256,11 @@ zle -N -- zoxide-widget
 # bindkey '^ '   autosuggest-accept                       # Fill suggestion
 # bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 
-bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
-bindkey '^f' anyframe-widget-frece                      #
-bindkey '^k' anyframe-widget-kill                       # Kill process
+# NOTE: These are bound above.
+# bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
+# bindkey '^f' anyframe-widget-frece                      #
+# bindkey '^k' anyframe-widget-kill                       # Kill process
+
 bindkey '^v' fzf-fasdvim-widget                         #
 
 bindkey '^z' zoxide-widget                              # cd to folder using zoxide
