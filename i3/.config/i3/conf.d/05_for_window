@@ -1,82 +1,22 @@
 for_window [class="^.*"] \
     border pixel 1
 
-for_window [instance="^dropdown$"] \
-    floating enable, border none, \
-    resize set 100 ppt 50 ppt, move position 0 24, \
-    move scratchpad
+for_window [class="^feh_floating$"] \
+    floating enable, \
+    exec $nsi $scripts/move top right
 
-for_window [title="^i?python scratchpad$"] \
-    floating enable, border none, \
-    resize set 600 255, move position 0 24, \
-    move scratchpad, scratchpad show
-
-for_window [title="^Cadence$"] \
-    floating enable, border normal, \
-    resize set 800 600, move position center
-
-for_window [title="^gcolor2$"] \
-    floating enable, border none, sticky enable, \
-    move position 1381 800
+for_window [class="^(Firefox|Nightly)$"] \
+    border none
 
 for_window [class="^Guitarix$"] \
     floating enable, border none, \
     exec $nsi $scripts/move bottom center
 
-for_window [instance="^lyvi$"] \
-    floating enable, \
-    exec $nsi $scripts/move bottom right, \
-    move scratchpad, scratchpad show
-
-for_window [class="^mpv$"] \
-    border none
-
-for_window [instance="^mpv popup$"] \
-    floating enable, border none, sticky enable, \
-    resize set $video_size, \
-    exec $nsi $scripts/move bottom right
-
-for_window [title="^Picture-in-Picture$"] \
-    floating enable, sticky enable, \
-    resize set $video_size, \
-    exec $nsi $scripts/move bottom right
-
-for_window [instance="^ncmpcpp$"] \
-    floating enable, \
-    exec $nsi $scripts/move bottom right, \
-    move scratchpad, scratchpad show
-
-for_window [title="^Preview$"] \
-    floating enable, \
-    resize set 400 300, \
-    exec $nsi $scripts/move bottom right
-
-for_window [title="^floating$"] \
-    floating enable
-
-for_window [title="^floating, bottom right$"] \
-    floating enable, \
-    exec $nsi $scripts/move bottom right
-
-for_window [title="^Server Monitor$"] \
-    floating enable, \
-    exec $nsi $scripts/move top right
-
-for_window [instance="^tridactyl_editor$"] \
-    floating enable, \
-    resize set 800 500, \
-    exec $nsi $scripts/move bottom center, \
-    move scratchpad, scratchpad show
-
-for_window [class="^(Firefox|Nightly)$"] \
-    border none
-
 for_window [class="matplotlib"] \
     floating enable
 
-for_window [class="^feh_floating$"] \
-    floating enable, \
-    exec $nsi $scripts/move top right
+for_window [class="^mpv$"] \
+    border none
 
 for_window [class="^WhatPulse$"] \
     floating enable
@@ -85,3 +25,62 @@ for_window [class="zoom"] \
     floating enable, border none, \
     move position center
 
+for_window [instance="^dropdown$"] \
+    floating enable, border none, \
+    resize set 100 ppt 50 ppt, move position 0 24, \
+    move scratchpad
+
+for_window [instance="^lyvi$"] \
+    floating enable, \
+    exec $nsi $scripts/move bottom right, \
+    move scratchpad, scratchpad show
+
+for_window [instance="^mpv popup$"] \
+    floating enable, border none, sticky enable, \
+    resize set $video_size, \
+    exec $nsi $scripts/move bottom right
+
+for_window [instance="^ncmpcpp$"] \
+    floating enable, \
+    exec $nsi $scripts/move bottom right, \
+    move scratchpad, scratchpad show
+
+for_window [instance="^tridactyl_editor$"] \
+    floating enable, \
+    resize set 800 500, \
+    exec $nsi $scripts/move bottom center, \
+    move scratchpad, scratchpad show
+
+for_window [title="^Cadence$"] \
+    floating enable, border normal, \
+    resize set 800 600, move position center
+
+for_window [title="^floating$"] \
+    floating enable
+
+for_window [title="^floating, bottom right$"] \
+    floating enable, \
+    exec $nsi $scripts/move bottom right
+
+for_window [title="^gcolor2$"] \
+    floating enable, border none, sticky enable, \
+    move position 1381 800
+
+for_window [title="^i?python scratchpad$"] \
+    floating enable, border none, \
+    resize set 600 255, move position 0 24, \
+    move scratchpad, scratchpad show
+
+for_window [title="^Picture-in-Picture$"] \
+    floating enable, sticky enable, \
+    resize set $video_size, \
+    exec $nsi $scripts/move bottom right
+
+for_window [title="^Preview$"] \
+    floating enable, \
+    resize set 400 300, \
+    exec $nsi $scripts/move bottom right
+
+for_window [title="^Server Monitor$"] \
+    floating enable, \
+    exec $nsi $scripts/move top right
