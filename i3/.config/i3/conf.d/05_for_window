@@ -78,6 +78,9 @@ for_window [class="^feh_floating$"] \
     floating enable, \
     exec $nsi $scripts/move top right
 
+for_window [class="^WhatPulse$"] \
+    floating enable
+
 for_window [class="zoom"] \
     floating enable, border none, \
     move position center
