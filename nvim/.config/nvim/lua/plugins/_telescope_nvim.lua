@@ -33,7 +33,7 @@ telescope.setup{
       },
     },
 
-    layout_defaults = {
+    layout_config = {
       horizontal = {
         height_padding = 1,
       },

@@ -64,9 +64,7 @@ local function packer_spec()
 --use {"romainl/"           .. "vim-cool"               } -- highlight smarter
   use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace
   use {"unblevable/"        .. "quick-scope"            } -- hint unique chars
-  use {"lukas-reineke/"     .. "indent-blankline.nvim",   -- indentation guides
-    branch = "lua"
-  }
+  use {"lukas-reineke/"     .. "indent-blankline.nvim"  } -- indentation guides
   use {"onsails/"           .. "lspkind-nvim"           } -- LSP pictograms
   use {"ray-x/"             .. "lsp_signature.nvim"     } -- LSP signature
 --use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
