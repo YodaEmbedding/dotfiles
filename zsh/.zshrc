@@ -34,7 +34,10 @@ zinit snippet OMZL::git.zsh
 zinit snippet OMZL::history.zsh
 # zinit snippet OMZP::vi-mode
 
-ZVM_CURSOR_STYLE_ENABLED=false
+zvm_config() {
+  ZVM_CURSOR_STYLE_ENABLED=false
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+}
 zinit light jeffreytse/zsh-vi-mode
 
 zinit wait lucid light-mode for \
