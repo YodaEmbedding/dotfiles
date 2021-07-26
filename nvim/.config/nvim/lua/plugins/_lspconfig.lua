@@ -21,9 +21,7 @@ local function on_attach(client, bufnr)
     require("lspkind").init({})
   -- end
 
-  -- if _G.plugin_loaded("lsp_signature.nvim") then
-  require("lsp_signature").on_attach()
-  -- end
+  require("plugins._lsp_signature_nvim")
 
   require("mappings._nvim_lsp").load()
 
