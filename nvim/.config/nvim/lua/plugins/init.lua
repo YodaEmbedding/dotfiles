@@ -51,8 +51,13 @@ local function packer_spec()
 --use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
 
   -- Treesitter
-  use {"nvim-treesitter/"   .. "nvim-treesitter", run = ":TSUpdate"}
-  use {"nvim-treesitter/"   .. "nvim-treesitter-textobjects"}
+  use {"nvim-treesitter/"   .. "nvim-treesitter",
+    branch = "0.5-compat",
+    run = ":TSUpdate",
+  }
+  use {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
+    branch = "0.5-compat",
+  }
 
   -- Tweaks
   use {"editorconfig/"      .. "editorconfig-vim"       } -- editorconfig
