@@ -74,8 +74,7 @@ zinit wait lucid light-mode for \
 # zinit wait lucid light-mode for \
 #   atinit"
 #     zstyle ':autocomplete:*' insert-unambiguous yes;
-#     zstyle ':autocomplete:*' min-input 10;
-#     zstyle ':autocomplete:*' max-lines 100%;
+#     zstyle ':autocomplete:*' list-lines 8;
 #   " \
 #     marlonrichert/zsh-autocomplete
 
