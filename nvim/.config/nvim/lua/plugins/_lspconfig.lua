@@ -17,8 +17,10 @@ local function on_attach(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   end
 
+  require("plugins._lspkind_nvim")
+
   -- if _G.plugin_loaded("lspkind-nvim") then
-    require("lspkind").init({})
+    -- require("lspkind").init({})
   -- end
 
   require("plugins._lsp_signature_nvim")
