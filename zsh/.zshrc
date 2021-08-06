@@ -64,12 +64,12 @@ zinit wait lucid light-mode for \
   blockf \
     zsh-users/zsh-completions
 
-zinit wait lucid light-mode for \
-  atinit"
-    forgit_diff=gdf
-    forgit_checkout_commit=gcl
-  " \
-    wfxr/forgit
+# zinit wait lucid light-mode for \
+#   atinit"
+#     forgit_diff=gdf
+#     forgit_checkout_commit=gcl
+#   " \
+#     wfxr/forgit
 
 # zinit wait lucid light-mode for \
 #   atinit"
