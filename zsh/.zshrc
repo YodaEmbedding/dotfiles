@@ -107,6 +107,8 @@ eval "$(fasd --init zsh-hook)"
 # fi
 
 # zoxide
+export _ZO_MAXAGE=100000
+export _ZO_RESOLVE_SYMLINKS=1
 eval "$(zoxide init zsh)"
 
 # THEME {{{1
