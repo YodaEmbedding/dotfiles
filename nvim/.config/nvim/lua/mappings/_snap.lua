@@ -1,3 +1,7 @@
+if not _G.plugin_loaded("snap") then
+  do return end
+end
+
 local snap = require("snap")
 
 local git_file = snap.get"producer.git.file".args {
