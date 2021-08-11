@@ -24,6 +24,11 @@ nnoremap({"silent", "override"}, "F", "F")
 nnoremap({"silent", "override"}, "t", "t")
 nnoremap({"silent", "override"}, "T", "T")
 
+xnoremap({"silent", "override"}, "f", "f")
+xnoremap({"silent", "override"}, "F", "F")
+xnoremap({"silent", "override"}, "t", "t")
+xnoremap({"silent", "override"}, "T", "T")
+
 nnoremap({"silent", "override"}, ";", ";")
 xnoremap({"silent", "override"}, ";", ";")
 -- nnoremap({"silent", "override"}, ",", ",")
