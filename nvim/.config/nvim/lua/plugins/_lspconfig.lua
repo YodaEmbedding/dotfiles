@@ -25,21 +25,21 @@ local function on_attach(client, bufnr)
   print(" ")
 end
 
--- local status, _ = pcall(require, "plugins._lspconfig_py")
+-- local status, _ = pcall(require, "plugins.lspconfig.py_lsp")
 -- local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
 -- py_lsp.setup { on_attach = on_attach }
 
-local status, _ = pcall(require, "plugins._lspconfig_matlab")
+local status, _ = pcall(require, "plugins.lspconfig.matlab")
 if status then
   nvim_lsp.matlab.setup { on_attach = on_attach }
 end
 
-local status, setup = pcall(require, "plugins._lspconfig_sumneko")
+local status, setup = pcall(require, "plugins.lspconfig.sumneko_lua")
 if status then
   setup { on_attach = on_attach }
 end
 
-local status, setup = pcall(require, "plugins._lspconfig_diagnosticls")
+local status, setup = pcall(require, "plugins.lspconfig.diagnosticls")
 if status then
   setup { on_attach = on_attach }
 end
