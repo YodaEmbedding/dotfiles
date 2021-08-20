@@ -31,6 +31,7 @@ local servers = {
   "clojure_lsp",
   "cmake",
   "cssls",
+  "diagnosticls",
   "hls",
   "html",
   "jdtls",
@@ -41,6 +42,7 @@ local servers = {
   -- "py_custom",
   "pyright",
   "rust_analyzer",
+  "sumneko_lua",
   "texlab",
   "tsserver",
   "vimls",
@@ -58,14 +60,8 @@ if vim.tbl_contains(servers, "py_custom") then
   require("plugins.lspconfig.py_custom")
 end
 
-local config = configs["sumneko_lua"]
-config.on_attach = on_attach
-nvim_lsp.sumneko_lua.setup(config)
-
-local config = configs["diagnosticls"]
-config.on_attach = on_attach
-nvim_lsp.diagnosticls.setup(config)
-
 for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup { on_attach = on_attach }
+  local config = configs[lsp] or {}
+  config.on_attach = on_attach
+  nvim_lsp[lsp].setup(config)
 end
