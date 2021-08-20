@@ -56,7 +56,6 @@ local servers = {
   "metals",
   "pyright",
   "rust_analyzer",
-  -- "sumneko_lua",
   "texlab",
   "tsserver",
   "vimls",
