@@ -1,6 +1,7 @@
 require("plugins._coc_nvim")
 require("plugins._compe")
 require("plugins._completion_nvim")
+require("plugins._coq_nvim")
 require("plugins._gitsigns")
 require("plugins._indent_blankline_nvim")
 require("plugins._kommentary")

@@ -46,9 +46,17 @@ local function packer_spec()
   use {"tpope/"             .. "vim-fugitive"           } -- git
   use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
-  use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
+--use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
 --use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
+
+  -- Coq
+  use {"ms-jpq/"            .. "coq_nvim",
+    branch = "coq",
+  }
+  use {"ms-jpq/"            .. "coq.artifacts",
+    branch = "artifacts",
+  }
 
   -- Treesitter
   use {"nvim-treesitter/"   .. "nvim-treesitter",
