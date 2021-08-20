@@ -36,7 +36,9 @@ local servers = {
   "jdtls",
   "jsonls",
   "kotlin_language_server",
+  "matlab",
   "metals",
+  -- "py_custom",
   "pyright",
   "rust_analyzer",
   "texlab",
@@ -45,13 +47,10 @@ local servers = {
   "yamlls",
 }
 
--- local status, _ = pcall(require, "plugins.lspconfig.py_lsp")
--- local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
--- py_lsp.setup { on_attach = on_attach }
+require("plugins.lspconfig.matlab")
 
-local status, _ = pcall(require, "plugins.lspconfig.matlab")
-if status then
-  nvim_lsp.matlab.setup { on_attach = on_attach }
+if vim.tbl_contains(servers, "py_custom") then
+  require("plugins.lspconfig.py_custom")
 end
 
 local config = require("plugins.lspconfig.sumneko_lua")
