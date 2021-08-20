@@ -25,23 +25,6 @@ local function on_attach(client, bufnr)
   print(" ")
 end
 
--- local status, _ = pcall(require, "plugins.lspconfig.py_lsp")
--- local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
--- py_lsp.setup { on_attach = on_attach }
-
-local status, _ = pcall(require, "plugins.lspconfig.matlab")
-if status then
-  nvim_lsp.matlab.setup { on_attach = on_attach }
-end
-
-local config = require("plugins.lspconfig.sumneko_lua")
-config.on_attach = on_attach
-nvim_lsp.sumneko_lua.setup(config)
-
-local config = require("plugins.lspconfig.diagnosticls")
-config.on_attach = on_attach
-nvim_lsp.diagnosticls.setup(config)
-
 local servers = {
   "bashls",
   "ccls",
@@ -61,6 +44,23 @@ local servers = {
   "vimls",
   "yamlls",
 }
+
+-- local status, _ = pcall(require, "plugins.lspconfig.py_lsp")
+-- local py_lsp = status and nvim_lsp.py_custom or nvim_lsp.pyright
+-- py_lsp.setup { on_attach = on_attach }
+
+local status, _ = pcall(require, "plugins.lspconfig.matlab")
+if status then
+  nvim_lsp.matlab.setup { on_attach = on_attach }
+end
+
+local config = require("plugins.lspconfig.sumneko_lua")
+config.on_attach = on_attach
+nvim_lsp.sumneko_lua.setup(config)
+
+local config = require("plugins.lspconfig.diagnosticls")
+config.on_attach = on_attach
+nvim_lsp.diagnosticls.setup(config)
 
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
