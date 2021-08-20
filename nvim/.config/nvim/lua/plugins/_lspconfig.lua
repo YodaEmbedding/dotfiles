@@ -18,13 +18,7 @@ local function on_attach(client, bufnr)
   end
 
   require("plugins._lspkind_nvim")
-
-  -- if _G.plugin_loaded("lspkind-nvim") then
-    -- require("lspkind").init({})
-  -- end
-
   require("plugins._lsp_signature_nvim")
-
   require("mappings._nvim_lsp").load()
 
   -- Hide latest message.
@@ -74,5 +68,3 @@ local servers = {
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
-
--- vim.cmd "autocmd BufEnter * lua require('completion').on_attach()"
