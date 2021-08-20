@@ -47,17 +47,22 @@ local servers = {
   "yamlls",
 }
 
+local configs = {
+  diagnosticls = require("plugins.lspconfig.diagnosticls"),
+  sumneko_lua = require("plugins.lspconfig.sumneko_lua"),
+}
+
 require("plugins.lspconfig.matlab")
 
 if vim.tbl_contains(servers, "py_custom") then
   require("plugins.lspconfig.py_custom")
 end
 
-local config = require("plugins.lspconfig.sumneko_lua")
+local config = configs["sumneko_lua"]
 config.on_attach = on_attach
 nvim_lsp.sumneko_lua.setup(config)
 
-local config = require("plugins.lspconfig.diagnosticls")
+local config = configs["diagnosticls"]
 config.on_attach = on_attach
 nvim_lsp.diagnosticls.setup(config)
 
