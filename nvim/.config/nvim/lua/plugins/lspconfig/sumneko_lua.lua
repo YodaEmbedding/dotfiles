@@ -1,9 +1,7 @@
-local nvim_lsp = require("lspconfig")
-
 local root_path = "/usr/lib/lua-language-server"
 local binary_path = "/usr/bin/lua-language-server"
 
-local config = {
+return {
   cmd = {binary_path, "-E", root_path .. "/main.lua"},
   settings = {
     Lua = {
@@ -24,10 +22,3 @@ local config = {
     },
   },
 }
-
-local function setup(args)
-  config.on_attach = args.on_attach
-  nvim_lsp.sumneko_lua.setup(config)
-end
-
-return setup

@@ -34,15 +34,13 @@ if status then
   nvim_lsp.matlab.setup { on_attach = on_attach }
 end
 
-local status, setup = pcall(require, "plugins.lspconfig.sumneko_lua")
-if status then
-  setup { on_attach = on_attach }
-end
+local config = require("plugins.lspconfig.sumneko_lua")
+config.on_attach = on_attach
+nvim_lsp.sumneko_lua.setup(config)
 
-local status, setup = pcall(require, "plugins.lspconfig.diagnosticls")
-if status then
-  setup { on_attach = on_attach }
-end
+local config = require("plugins.lspconfig.diagnosticls")
+config.on_attach = on_attach
+nvim_lsp.diagnosticls.setup(config)
 
 local servers = {
   "bashls",

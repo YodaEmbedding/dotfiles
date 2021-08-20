@@ -1,6 +1,4 @@
-local nvim_lsp = require("lspconfig")
-
-local config = {
+return {
   filetypes = {
     "css",
     "javascript",
@@ -50,10 +48,3 @@ local config = {
     },
   },
 }
-
-local function setup(args)
-  config.on_attach = args.on_attach
-  nvim_lsp.diagnosticls.setup(config)
-end
-
-return setup
