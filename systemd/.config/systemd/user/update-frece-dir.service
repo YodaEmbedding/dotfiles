@@ -3,7 +3,7 @@ Description=Updates directory index
 
 [Service]
 Type=oneshot
-ExecStart=/home/mulhaq/code/frece/examples/dir_update_fd.sh
+ExecStart=/home/mulhaq/.config/frece/scripts/dir_update_fd.sh
 CPUSchedulingPolicy=idle
 IOSchedulingClass=idle
 IOSchedulingPriority=7

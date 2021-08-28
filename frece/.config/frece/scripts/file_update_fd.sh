@@ -21,4 +21,4 @@ else
 fi
 
 # Also update torr
-./torr_update_fd.sh
+~/.config/frece/scripts/torr_update_fd.sh
