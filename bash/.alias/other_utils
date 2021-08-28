@@ -17,6 +17,20 @@ biber_fix() {
 # fd
 alias fd="fd --hidden --exclude .git"
 
+# fselect
+fselect_by_size() {
+  query="$1"
+  fselect "select FORMAT_SIZE(size, '%.0 s'), $query" |
+    awk -v FS='\t' -v OFS='\t' '{
+      size=$1; split(size, xs, " ");
+      num=xs[1]; unit=xs[2];
+      # print size
+      printf "%5d %s", num, tolower(unit);
+      # print remaining line
+      $1=""; print $0;
+    }'
+}
+
 # googler
 alias goo="googler -n 5"
 
