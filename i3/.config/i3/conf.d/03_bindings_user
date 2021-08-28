@@ -51,7 +51,8 @@ bindsym $mod+t                  exec thunar ~/Downloads
 # Refresh search index
 bindsym $mod+shift+t            exec $nsi \
     systemctl --user --no-block start update-frece-dir.service && \
-    systemctl --user --no-block start update-frece-file.service
+    systemctl --user --no-block start update-frece-file.service && \
+    systemctl --user --no-block start update-frece-torr.service
 
 # Redshift control
 bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.rshift) + 200))

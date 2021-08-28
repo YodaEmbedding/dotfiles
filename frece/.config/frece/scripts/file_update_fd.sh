@@ -19,6 +19,3 @@ if [ ! -f "$DB_FILE" ]; then
 else
     frece update "$DB_FILE" "$ENTRIES_FILE" --purge-old
 fi
-
-# Also update torr
-~/.config/frece/scripts/torr_update_fd.sh

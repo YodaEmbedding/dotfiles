@@ -1,0 +1,10 @@
+[Unit]
+Description=Updates torr index
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=60min
+AccuracySec=20min
+
+[Install]
+WantedBy=default.target
