@@ -52,6 +52,7 @@ List of configs, which directories these belong in, and other details.
 | picom          | `$HOME`  |                                                      | Compositor                                       |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | ranger         | `$HOME`  | ranger                                               | CLI file manager                                 |
+| readline       | `$HOME`  |                                                      | GNU readline config (vi bindings)                |
 | rofi           | `$HOME`  | rofi                                                 | GUI app/command launcher                         |
 | root           | `/`      |                                                      | PYTHONSTARTUP                                    |
 | scripts        | `$HOME`  |                                                      | Personal (e.g. `emoji` clipboard copier)         |
