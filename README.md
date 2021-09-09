@@ -33,6 +33,7 @@ List of configs, which directories these belong in, and other details.
 | Name           | Stow dir | Dependencies                                         | Details                                          |
 | :------------- | :------- | :--------------------------------------------------- | :----------------------------------------------- |
 | alacritty      | `$HOME`  | alacritty                                            | Terminal emulator                                |
+| aliases        | `$HOME`  |                                                      | Shell aliases                                    |
 | bash           | `$HOME`  |                                                      | Shell                                            |
 | colors         | `$HOME`  |                                                      | Terminal and rofi colors                         |
 | devilspie      | `$HOME`  | devilspie, devilspie2                                | Window tweaker                                   |
