@@ -166,6 +166,7 @@ setopt hist_save_no_dups
 # Better globbing
 setopt extended_glob
 setopt globdots
+setopt nullglob
 
 # Style
 # Use LS COLORS to autocomplete
