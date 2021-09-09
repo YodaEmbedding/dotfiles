@@ -4,7 +4,7 @@
 alias todo='vim ~/Dropbox/misc/notepad/todo-txt/todo.txt'
 
 # File config
-alias aliases='cd ~/dotfiles/bash/.alias; f="$(fd | fzf)" && vim "$f"'
+alias aliases='cd ~/dotfiles/aliases/.alias; f="$(fd | fzf)" && vim "$f"'
 alias bashrc='vim ~/.bashrc'
 alias dotfiles='cd ~/dotfiles; vim'
 alias i3config='cd ~/dotfiles/i3/.config/i3/conf.d; f="$(fd | fzf)" && vim "$f"'
