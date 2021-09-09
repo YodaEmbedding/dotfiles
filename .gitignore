@@ -1,1 +1,3 @@
 .nvimlog
+stow-*.tar.gz
+stow-*/
