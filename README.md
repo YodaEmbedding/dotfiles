@@ -49,6 +49,7 @@ List of configs, which directories these belong in, and other details.
 | ncmpcpp        | `$HOME`  |                                                      | Music player (MPD client)                        |
 | nvim           | `$HOME`  | neovim, python-neovim                                | Better than emacs                                |
 | PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
+| PC-Mordor-Arch-home | `$HOME` |                                                  | Personal                                         |
 | picom          | `$HOME`  |                                                      | Compositor                                       |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | ranger         | `$HOME`  | ranger                                               | CLI file manager                                 |
