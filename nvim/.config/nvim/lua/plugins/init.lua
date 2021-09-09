@@ -36,27 +36,27 @@ local function packer_spec()
 
   -- Telescope
   use {"nvim-telescope/"    .. "telescope.nvim"         }
-  use {"nvim-telescope/"    .. "telescope-frecency.nvim",
-    config = function()
-      require("telescope").load_extension("frecency")
-    end,
-  }
+--use {"nvim-telescope/"    .. "telescope-frecency.nvim",
+--  config = function()
+--    require("telescope").load_extension("frecency")
+--  end,
+--}
 
   -- Tools
   use {"tpope/"             .. "vim-fugitive"           } -- git
   use {"sheerun/"           .. "vim-polyglot"           } -- language packs
-  use {"lervag/"            .. "vimtex"                 } -- LaTeX
---use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
+--use {"lervag/"            .. "vimtex"                 } -- LaTeX
+  use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
 --use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
 
   -- Coq
-  use {"ms-jpq/"            .. "coq_nvim",
-    branch = "coq",
-  }
-  use {"ms-jpq/"            .. "coq.artifacts",
-    branch = "artifacts",
-  }
+--use {"ms-jpq/"            .. "coq_nvim",
+--  branch = "coq",
+--}
+--use {"ms-jpq/"            .. "coq.artifacts",
+--  branch = "artifacts",
+--}
 
   -- Treesitter
   use {"nvim-treesitter/"   .. "nvim-treesitter",

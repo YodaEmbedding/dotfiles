@@ -2,6 +2,45 @@
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
 
+# FPATH {{{1
+
+USR_SHARE_ZSH=/usr/share/zsh
+SITE_FUNCTIONS=/usr/share/zsh/site-functions
+SITE_FUNCTIONS_LOCAL=/usr/local/share/zsh/site-functions
+
+USR_SHARE_ZSH=/cvmfs/soft.computecanada.ca/gentoo/2020/usr/share/zsh/5.8
+SITE_FUNCTIONS_LOCAL=/cvmfs/soft.computecanada.ca/gentoo/2020/usr/share/zsh/site-functions
+
+FUNCTIONS_SUBDIRS_ROOT=$USR_SHARE_ZSH/functions
+FUNCTIONS_SUBDIRS=($USR_SHARE_ZSH/functions/*)
+declare -a FUNCTIONS_SUBDIRS
+FUNCTIONS_SUBDIRS=(
+  $FUNCTIONS_SUBDIRS_ROOT/Calendar
+  $FUNCTIONS_SUBDIRS_ROOT/Chpwd
+  $FUNCTIONS_SUBDIRS_ROOT/Completion
+  $FUNCTIONS_SUBDIRS_ROOT/Completion/Base
+  $FUNCTIONS_SUBDIRS_ROOT/Completion/Linux
+  $FUNCTIONS_SUBDIRS_ROOT/Completion/Unix
+  $FUNCTIONS_SUBDIRS_ROOT/Completion/X
+  $FUNCTIONS_SUBDIRS_ROOT/Completion/Zsh
+  $FUNCTIONS_SUBDIRS_ROOT/Exceptions
+  $FUNCTIONS_SUBDIRS_ROOT/Math
+  $FUNCTIONS_SUBDIRS_ROOT/MIME
+  $FUNCTIONS_SUBDIRS_ROOT/Misc
+  $FUNCTIONS_SUBDIRS_ROOT/Newuser
+  $FUNCTIONS_SUBDIRS_ROOT/Prompts
+  $FUNCTIONS_SUBDIRS_ROOT/TCP
+  $FUNCTIONS_SUBDIRS_ROOT/VCS_Info
+  $FUNCTIONS_SUBDIRS_ROOT/VCS_Info/Backends
+  $FUNCTIONS_SUBDIRS_ROOT/Zftp
+  $FUNCTIONS_SUBDIRS_ROOT/Zle
+)
+declare -r FUNCTIONS_SUBDIRS
+
+SITE_FUNCTIONS_FPATH="${FUNCTIONS_SUBDIRS// /:}"
+SITE_FUNCTIONS_FPATH="${(j/:/)FUNCTIONS_SUBDIRS}"
+FPATH="$SITE_FUNCTIONS:$SITE_FUNCTIONS_FPATH:$SITE_FUNCTIONS_LOCAL:$FPATH"
+
 # ZINIT {{{1
 
 ### Added by Zinit's installer
@@ -271,3 +310,6 @@ zle -N -- zoxide-widget
 # bindkey '^v' fzf-fasdvim-widget                         # vim
 # bindkey '^z' zoxide-widget                              # cd
 # bindkey -s '^o' 'lfcd\n'                                # lf
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
