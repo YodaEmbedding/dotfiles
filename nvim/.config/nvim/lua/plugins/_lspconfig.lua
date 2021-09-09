@@ -3,7 +3,6 @@ if not _G.plugin_loaded("nvim-lspconfig") then
 end
 
 local nvim_lsp = require("lspconfig")
-local coq = require("coq")
 
 local function on_attach(client, bufnr)
   print("LSP started.")
@@ -61,8 +60,16 @@ if vim.tbl_contains(servers, "py_custom") then
   require("plugins.lspconfig.py_custom")
 end
 
+local coq = nil
+if _G.plugin_loaded("coq") then
+  coq = require("coq")
+end
+
 for _, lsp in ipairs(servers) do
   local config = configs[lsp] or {}
   config.on_attach = on_attach
-  nvim_lsp[lsp].setup(coq.lsp_ensure_capabilities(config))
+  if coq ~= nil then
+    config = coq.lsp_ensure_capabilities(config)
+  end
+  nvim_lsp[lsp].setup(config)
 end
