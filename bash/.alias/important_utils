@@ -19,6 +19,7 @@ alias gp='git push'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias gr='git rebase'
+alias gre='git reset'
 alias gs='git status'
 alias gsh='git show'
 
