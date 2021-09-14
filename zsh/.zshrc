@@ -41,7 +41,6 @@ zvm_config() {
 zinit light jeffreytse/zsh-vi-mode
 
 bind_keys() {
-    bindkey '^b' anyframe-widget-cdr                        # cd
     bindkey '^f' anyframe-widget-frece                      # frece
     bindkey '^k' anyframe-widget-kill                       # kill
     bindkey '^v' fzf-fasdvim-widget                         # vim
@@ -97,10 +96,6 @@ zinit wait lucid light-mode for \
 # vim edit-command-line
 # autoload edit-command-line
 # zle -N edit-command-line
-
-# cdr (for searching/jumping to frequent directories using anyframe-widget-cdr)
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
 
 # fasd
 export _FASD_MAX=100000
@@ -271,7 +266,6 @@ zle -N -- zoxide-widget
 # bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 
 # NOTE: These are bound above.
-# bindkey '^b' anyframe-widget-cdr                        # cd
 # bindkey '^f' anyframe-widget-frece                      # frece
 # bindkey '^k' anyframe-widget-kill                       # kill
 # bindkey '^v' fzf-fasdvim-widget                         # vim
