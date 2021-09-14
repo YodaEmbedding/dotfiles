@@ -27,7 +27,7 @@ cd "$TMP_DIR"
 wget -nc "https://github.com/clvv/fasd/archive/refs/tags/$FASD_VERSION.tar.gz"
 tar xf "$FASD_VERSION.tar.gz"
 cd "fasd-$FASD_VERSION"
-PREFIX=$HOME make install
+PREFIX=$HOME/.local make install
 
 NVIM_VERSION=0.5.0
 cd "$TMP_DIR"
