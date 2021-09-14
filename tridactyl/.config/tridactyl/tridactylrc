@@ -63,5 +63,7 @@ bindurl www.google.com f hint -Jc .yuRUbf > a
 
 seturl youtube.com modeindicator false
 
+blacklistadd isc.ro
 blacklistadd lichess.org
+blacklistadd woogles.io
 
