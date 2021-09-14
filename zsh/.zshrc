@@ -40,12 +40,17 @@ zvm_config() {
 }
 zinit light jeffreytse/zsh-vi-mode
 
+bind_keys() {
+    bindkey '^b' anyframe-widget-cdr                        # cd
+    bindkey '^f' anyframe-widget-frece                      # frece
+    bindkey '^k' anyframe-widget-kill                       # kill
+    bindkey '^v' fzf-fasdvim-widget                         # vim
+    bindkey '^z' zoxide-widget                              # cd
+    bindkey -s '^o' 'lfcd\n'                                # lf
+}
+
 zinit wait lucid light-mode for \
-  atload"
-    bindkey '^b' anyframe-widget-cdr
-    bindkey '^f' anyframe-widget-frece
-    bindkey '^k' anyframe-widget-kill
-  " \
+  atload"bind_keys" \
     mollifier/anyframe
 
 zinit wait lucid light-mode for \
@@ -266,12 +271,9 @@ zle -N -- zoxide-widget
 # bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 
 # NOTE: These are bound above.
-# bindkey '^b' anyframe-widget-cdr                        # List and jump to frequent directories
-# bindkey '^f' anyframe-widget-frece                      #
-# bindkey '^k' anyframe-widget-kill                       # Kill process
-
-bindkey '^v' fzf-fasdvim-widget                         #
-
-bindkey '^z' zoxide-widget                              # cd to folder using zoxide
-
-bindkey -s '^o' 'lfcd\n'
+# bindkey '^b' anyframe-widget-cdr                        # cd
+# bindkey '^f' anyframe-widget-frece                      # frece
+# bindkey '^k' anyframe-widget-kill                       # kill
+# bindkey '^v' fzf-fasdvim-widget                         # vim
+# bindkey '^z' zoxide-widget                              # cd
+# bindkey -s '^o' 'lfcd\n'                                # lf
