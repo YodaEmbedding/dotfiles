@@ -101,11 +101,6 @@ zinit wait lucid light-mode for \
 export _FASD_MAX=100000
 eval "$(fasd --init zsh-hook)"
 
-# pyenv
-# if command -v pyenv 1>/dev/null 2>&1; then
-#   eval "$(pyenv init -)"
-# fi
-
 # zoxide
 export _ZO_MAXAGE=100000
 export _ZO_RESOLVE_SYMLINKS=1
