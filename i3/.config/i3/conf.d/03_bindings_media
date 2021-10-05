@@ -1,7 +1,3 @@
-# Mouse (scroll wheel) bindings
-bindsym --whole-window --border $mod+ctrl+Button4   exec $nsi $amixer 1%+ && $vol_change
-bindsym --whole-window --border $mod+ctrl+Button5   exec $nsi $amixer 1%- && $vol_change
-
 # Volume control
 bindsym XF86AudioLowerVolume    exec $nsi $amixer 5%-    && $vol_change
 bindsym XF86AudioRaiseVolume    exec $nsi $amixer 5%+    && $vol_change

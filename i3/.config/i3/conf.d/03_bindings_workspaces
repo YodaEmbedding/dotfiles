@@ -1,6 +1,6 @@
 # Mouse (scroll wheel) bindings
-bindsym --whole-window --border $mod+Button4        workspace prev
-bindsym --whole-window --border $mod+Button5        workspace next
+bindsym --whole-window --border $mod+ctrl+Button4   workspace prev
+bindsym --whole-window --border $mod+ctrl+Button5   workspace next
 
 # Workspace switch back/forth
 bindsym $mod+grave              workspace back_and_forth

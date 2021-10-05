@@ -1,3 +1,7 @@
+# Mouse (scroll wheel) bindings
+bindsym --whole-window --border $mod+Button4    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 4 mouseup --clearmodifiers 4"
+bindsym --whole-window --border $mod+Button5    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 5 mouseup --clearmodifiers 5"
+
 # Dropdown terminal
 bindsym $mod+q                  [instance="^dropdown$"] scratchpad show
 
