@@ -5,10 +5,11 @@ alias sp='sudo pacman'
 alias sps='sudo pacman -S'
 alias orphans='pacman -Qtdq'
 
-# AUR package managers: pacaur
-alias pac='pacaur'
-alias pacs='pacaur --noedit --noconfirm -S'
-alias pacu='pacaur --noedit --noconfirm -Syu'
+# AUR package managers: paru
+alias p='paru'
+alias pa='paru -S'
+alias pq='paru -Qs'
+alias pss='paru -Ss'
 
 # AUR package managers: pikaur
 alias pk='pikaur'
