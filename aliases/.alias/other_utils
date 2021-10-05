@@ -72,8 +72,8 @@ alias r='ranger'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # ripgrep
-alias rg="rg --hidden --glob '!.git'"
-alias rgi='rg -i'
+alias rg="rg --hidden --glob '!.git' --ignore-case"
+alias rgi='rg --ignore-case'
 alias rgpy='rg -t py'
 
 # selfspy
