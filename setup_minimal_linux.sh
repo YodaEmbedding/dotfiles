@@ -49,4 +49,8 @@ cd "Python-$PYTHON_VERSION"
 make
 make install
 
+for f in $HOME/.local/share/python-$PYTHON_VERSION/bin/*3.9; do
+    ln -s "$f" "$HOME/.local/bin/${${$(basename "$f")%3.9}%-}"
+done
+
 $HOME/.local/share/python-$PYTHON_VERSION/bin/pip3 install pynvim
