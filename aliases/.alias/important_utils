@@ -23,8 +23,34 @@ alias gre='git reset'
 alias gs='git status'
 alias gsh='git show'
 
-# less
-alias less='less -r'
+alias gitc='git_commit_select'
+alias gitd='git_commit_browse'
+alias gith='git_history_browse'
+
+git_commit_browse() {
+  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local sha=$(awk '{ print $1 }' <<< "$out")
+  [ -n "$sha" ] && git show "$sha"
+}
+
+git_commit_select() {
+  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local sha=$(awk '{ print $1 }' <<< "$out")
+  echo "$sha"
+}
+
+git_history_browse() {
+  local out sha q
+  while out=$(
+      git log --graph --color=always \
+          --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" |
+      fzf --ansi --multi --reverse --query="$q" --print-query); do
+    q=$(head -1 <<< "$out")
+    while read sha; do
+      [ -n "$sha" ] && git show --color=always $sha | less -R
+    done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
+  done
+}
 
 # python
 alias py="python3"
@@ -32,9 +58,6 @@ alias py="python3"
 # rsync
 alias rsync="rsync -h"
 alias rscp="rsync -a --info=progress2 --partial"
-
-# tmux
-alias tm="tmux"
 
 # vim
 alias v='nvim'

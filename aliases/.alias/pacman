@@ -29,6 +29,7 @@ alias yays='yay -S --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredow
 alias yayu='yay -Syu --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed --ignore="$(tr "\n" "," < ~/.pkgignorelist)"'
 alias yaya='yay -aSyu --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed --ignore="$(tr "\n" "," < ~/.pkgignorelist)"'
 
+# AUR: misc
 aururl() {
   xdg-open "https://aur.archlinux.org/packages/$1"
 }

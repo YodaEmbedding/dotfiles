@@ -1,5 +1,9 @@
 ### OTHER UTILITIES ###
 
+# at
+alias atqq='for j in $(atq | sort -k6,6 -k3,3M -k4,4 -k5,5 | cut -f 1); do atq | grep -P "^$j\t" | tr "\n" "\t"; at -c "$j" | tail -n 2 | head -n 1; done'
+alias atqqq='for j in $(atq | sort -k6,6 -k3,3M -k4,4 -k5,5 | cut -f 1); do atq | grep -P "^$j\t"; at -c "$j" | tail -n 2; done'
+
 # biber
 biber_fix() {
   file="$1"
@@ -31,9 +35,6 @@ fselect_by_size() {
     }'
 }
 
-# googler
-alias goo="googler -n 5"
-
 # gpg
 alias gpgaddkey="gpg --recv-keys"
 alias gpgforgetpassphrases='echo RELOADAGENT | gpg-connect-agent'
@@ -61,9 +62,6 @@ alias n='nnn'
 # parallel
 alias parallel='parallel --will-cite'
 
-# percol
-alias p='percol'
-
 # ptpython
 alias ptpy='tmux rename-window "py"; ptpython'
 
@@ -76,12 +74,10 @@ alias rg="rg --hidden --glob '!.git' --ignore-case"
 alias rgi='rg --ignore-case'
 alias rgpy='rg -t py'
 
-# selfspy
-alias sspy='rm -f -- ~/.selfspy/selfspy.pid.lock && selfspy'
-
 # stat
-alias filesize="stat -c '%s'"
-alias filedate="stat -c '%y'"
+alias stat_filedate='stat -c "%y"'
+alias stat_filesize='stat -c "%s"'
+alias stat_perm='stat -c "%a %n"'
 
 # tar
 tarf() {
@@ -100,14 +96,15 @@ alias th='bgrnd thunar'
 
 # wtwitch
 alias tw='wtwitch'
-alias twc="wtwitch -c | sed '/^ Offline:\$/,\$d'"
-alias tws='wtwitch -s'
+alias tw_online="wtwitch c | sed '/^ Offline:\$/,\$d'"
+alias tw_watch="tw_online | grep '^  ' | fzf --ansi | sed 's/^   \\([^:]\\+\\).*/\\1/' | xargs wtwitch watch"
+alias twc='tw_online'
+alias tws='wtwitch sub'
+alias tww='tw_watch'
 
-twcc() {
-  stream="$(twc | grep '^   ' | fzf --ansi | sed 's/^   \([^:]\+\).*/\1/')"
-  [ ! -z "$stream" ] && tw "$stream"
-}
-
+# xclip
+alias pbcopy='xclip -selection c'
+alias pbpaste='xclip -selection clipboard -o'
 
 # zip
 zipf() {
