@@ -48,7 +48,7 @@ alias pid='ps -eo user,pid,%mem,command --sort=%mem | fzf --tac | sed "s/^[^ ]* 
 alias updatelocate='systemctl --user --no-block start update-locate.service'
 
 # Update blocklists
-alias updateblocklist='wget http://john.bitsurge.net/public/biglist.p2p.gz -NP ~/.config/qBittorrent && gunzip -kf ~/.config/qBittorrent/biglist.p2p.gz'
+alias updateblocklist='wget https://github.com/Naunter/BT_BlockLists/raw/master/bt_blocklists.gz -NP ~/.config/qBittorrent && gunzip -kf ~/.config/qBittorrent/bt_blocklists.gz && cd ~/.config/qBittorrent && /bin/mv bt_blocklists bt_blocklists.p2p'
 
 # Update frece databases
 alias updatefrece='systemctl --user --no-block start update-frece-dir.service; systemctl --user --no-block start update-frece-file.service'
