@@ -3,11 +3,19 @@ if not _G.plugin_loaded("nvim-cmp") then
 end
 
 local cmp = require("cmp")
-local lspkind = require("lspkind")
+local lspkind_symbols = require("plugins._lspkind_symbols")
 
 cmp.setup {
   formatting = {
-    format = lspkind.cmp_format({ with_text = false, maxwidth = 30 }),
+    format = function(entry, vim_item)
+      local max_len = 20
+      if string.len(vim_item.abbr) > max_len then
+        vim_item.abbr = string.sub(vim_item.abbr, 1, max_len - 2) .. "··"
+      end
+      vim_item.kind = lspkind_symbols.kind_map[vim_item.kind]
+      vim_item.menu = lspkind_symbols.source_map[entry.source.name]
+      return vim_item
+    end,
   },
   mapping = require("mappings._nvim_cmp"),
   snippet = {
