@@ -28,8 +28,12 @@ local function packer_spec()
 --use {"tweekmonster/"      .. "fzf-filemru"            } -- search
 --use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
   use {"camspiers/"         .. "snap", rocks = {"fzy"}  } -- search
-  use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
-  use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
+--use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
+  use {"hrsh7th/"           .. "vim-vsnip"              } -- snippets (engine)
+--use {"L3MON4D3/"          .. "LuaSnip"                } -- snippets (engine)
+--use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
+  use {"rafamadriz/"        .. "friendly-snippets"      } -- snippets (snippets)
+--use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
   use {"wellle/"            .. "targets.vim"            } -- text objects
   use {"tpope/"             .. "vim-eunuch"             } -- unix mv/rm/rename
   use {"nelstrom/"          .. "vim-visual-star-search" } -- visual mode *
@@ -51,12 +55,35 @@ local function packer_spec()
 --use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
 
   -- Coq
-  use {"ms-jpq/"            .. "coq_nvim",
-    branch = "coq",
-  }
-  use {"ms-jpq/"            .. "coq.artifacts",
-    branch = "artifacts",
-  }
+--use {"ms-jpq/"            .. "coq_nvim",
+--  branch = "coq",
+--}
+--use {"ms-jpq/"            .. "coq.artifacts",
+--  branch = "artifacts",
+--}
+
+  -- nvim-cmp
+  use {"hrsh7th/"           .. "nvim-cmp"               } -- completion
+  use {"hrsh7th/"           .. "cmp-buffer"             } -- source
+--use {"uga-rosa/"          .. "cmp-dictionary"         } -- source
+  use {"kdheepak/"          .. "cmp-latex-symbols"      } -- source
+--use {"octaltree/"         .. "cmp-look"               } -- source
+--use {"saadparwaiz1/"      .. "cmp_luasnip"            } -- source
+--use {"f3fora/"            .. "cmp-nuspell"
+--  rocks = { "lua-nuspell" },
+--} -- source
+  use {"hrsh7th/"           .. "cmp-nvim-lsp"           } -- source
+--use {"quangnguyen30192/"  .. "cmp-nvim-tags"          } -- source
+--use {"quangnguyen30192/"  .. "cmp-nvim-ultisnips"     } -- source
+--use {"jc-doyle/"          .. "cmp-pandoc-reference"   } -- source
+  use {"hrsh7th/"           .. "cmp-path"               } -- source
+--use {"f3fora/"            .. "cmp-spell"              } -- source
+  use {"ray-x/"             .. "cmp-treesitter"         } -- source
+  use {"hrsh7th/"           .. "cmp-vsnip"              } -- source
+  use {"tamago324/"         .. "cmp-zsh"                } -- source
+  use {"andersevenrud/"     .. "compe-tmux",
+    branch = "cmp",
+  } -- source
 
   -- Treesitter
   use {"nvim-treesitter/"   .. "nvim-treesitter",

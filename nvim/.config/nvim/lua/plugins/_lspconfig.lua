@@ -60,9 +60,23 @@ if vim.tbl_contains(servers, "py_custom") then
   require("plugins.lspconfig.py_custom")
 end
 
+local config_defaults = {}
+
 local coq = nil
 if _G.plugin_loaded("coq") then
   coq = require("coq")
+end
+
+require("plugins._nvim_cmp")
+
+local cmp_nvim_lsp = nil
+if _G.plugin_loaded("cmp-nvim-lsp") then
+  cmp_nvim_lsp = require("cmp_nvim_lsp")
+  config_defaults = vim.tbl_extend("error", config_defaults, {
+    capabilities = cmp_nvim_lsp.update_capabilities(
+      vim.lsp.protocol.make_client_capabilities()
+    ),
+  })
 end
 
 for _, lsp in ipairs(servers) do
@@ -71,5 +85,6 @@ for _, lsp in ipairs(servers) do
   if coq ~= nil then
     config = coq.lsp_ensure_capabilities(config)
   end
+  config = vim.tbl_extend("keep", config, config_defaults)
   nvim_lsp[lsp].setup(config)
 end
