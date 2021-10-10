@@ -10,9 +10,9 @@ hi GitSignsAdd      guifg=#2CC474
 hi GitSignsChange   guifg=#8E73F6
 hi GitSignsDelete   guifg=#FF436C
 
-hi CmpItemAbbr              guifg=#cccccc
-hi CmpItemAbbrMatchFuzzy    guifg=#ffffdd
+hi CmpItemAbbr              guifg=#bbbbbb
 hi CmpItemAbbrMatch         guifg=#ccccff
-hi CmpItemKind              guifg=#666699
+hi CmpItemAbbrMatchFuzzy    guifg=#aaaaff
+hi CmpItemKind              guifg=#bbbbee
+hi CmpItemMenu              guifg=#bbbbee
 " hi CmpItemAbbrDeprecated
-" hi CmpItemMenu
