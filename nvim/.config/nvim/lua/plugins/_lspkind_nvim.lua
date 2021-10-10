@@ -6,4 +6,7 @@ if _G.plugin_loaded("nvim-cmp") then
   do return end
 end
 
-require("lspkind").init {}
+local config = require("plugins._lspkind_symbols")
+require("lspkind").init {
+  symbol_map = config.symbol_map,
+}
