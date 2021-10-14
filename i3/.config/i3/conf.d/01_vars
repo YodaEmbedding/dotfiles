@@ -35,13 +35,13 @@ set $lock_wallpaper /usr/share/backgrounds/current_lock.png
 
 # Download frece scripts from https://github.com/SicariusNoctis/frece
 set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi
-set $rofi_command   ~/code/frece/examples/command_rofi.sh -i
-set $rofi_dir       ~/code/frece/examples/dir_rofi.sh     -i
-set $rofi_emoji     ~/code/frece/examples/emoji_rofi.sh   -i
-set $rofi_file      ~/code/frece/examples/file_rofi.sh    -i
-set $rofi_torr      ~/code/frece/examples/torr_rofi.sh    -i
-set $command_last   ~/code/frece/examples/command_latest.sh
-set $rofi_bground   ~/code/frece/examples/bground_rofi.sh -i
+set $rofi_command   ~/.config/frece/scripts/command_rofi.sh -i
+set $rofi_dir       ~/.config/frece/scripts/dir_rofi.sh     -i
+set $rofi_emoji     ~/.config/frece/scripts/emoji_rofi.sh   -i
+set $rofi_file      ~/.config/frece/scripts/file_rofi.sh    -i
+set $rofi_torr      ~/.config/frece/scripts/torr_rofi.sh    -i
+set $command_last   ~/.config/frece/scripts/command_latest.sh
+set $rofi_bground   ~/.config/frece/scripts/bground_rofi.sh -i
 
 # Sound control
 set $amixer         amixer -q -D pulse set Master
