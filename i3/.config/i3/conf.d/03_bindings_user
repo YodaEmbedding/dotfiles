@@ -13,6 +13,7 @@ bindsym $mod+shift+e            exec "$command_last"
 bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
 bindsym $mod+ctrl+shift+e       exec "$rofi_emoji   -p 'emojis'"
 bindsym $mod+d                  exec "$rofi_file    -p 'files'"
+bindsym $mod+shift+b            exec "$rofi_book    -p 'books'"
 bindsym $mod+shift+w            exec "$rofi_bground -p 'wallpapers'"
 bindsym $mod+shift+d            exec "$rofi_torr    -p 'torr'"
 

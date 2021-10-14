@@ -35,6 +35,7 @@ set $lock_wallpaper /usr/share/backgrounds/current_lock.png
 
 # Download frece scripts from https://github.com/SicariusNoctis/frece
 set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi
+set $rofi_book      ~/.config/frece/scripts/book_rofi.sh    -i
 set $rofi_command   ~/.config/frece/scripts/command_rofi.sh -i
 set $rofi_dir       ~/.config/frece/scripts/dir_rofi.sh     -i
 set $rofi_emoji     ~/.config/frece/scripts/emoji_rofi.sh   -i

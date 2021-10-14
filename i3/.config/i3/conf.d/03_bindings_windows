@@ -46,7 +46,6 @@ bindsym $mod+shift+ctrl+Right   move right 100px
 
 # Window property control
 bindsym $mod+b                  border toggle
-bindsym $mod+shift+b            border normal
 bindsym $mod+shift+minus        move scratchpad
 bindsym $mod+minus              [instance="^(?!dropdown$).*$"] scratchpad show
 bindsym $mod+g                  sticky toggle
