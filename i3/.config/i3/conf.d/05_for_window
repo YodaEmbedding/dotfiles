@@ -16,7 +16,10 @@ for_window [class="matplotlib"] \
     floating enable
 
 for_window [class="^mpv$"] \
-    border none
+    floating enable, border none, sticky enable, \
+    resize set $video_size, \
+    exec $nsi $scripts/move bottom right, \
+    move scratchpad, scratchpad show
 
 for_window [class="^WhatPulse$"] \
     floating enable
