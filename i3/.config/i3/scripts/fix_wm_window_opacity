@@ -1,0 +1,10 @@
+#!/bin/bash
+
+window_ids=$(xprop -root _NET_CLIENT_LIST_STACKING |
+    cut -d "#" -f2 | tr -d " " | sed "s/,/ /g")
+
+for id in $window_ids; do
+    xprop -id "$id" -remove _NET_WM_WINDOW_OPACITY
+done
+
+# xprop -root -f _NET_SUPPORTED 32a -set _NET_SUPPORTED "$(xprop -root | grep '^_NET_SUPPORTED(ATOM)' | sed 's/^.*= //' | tr -d ' '),_NET_WM_WINDOW_OPACITY"
