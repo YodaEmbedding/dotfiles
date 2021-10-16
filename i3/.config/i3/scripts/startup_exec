@@ -1,0 +1,31 @@
+#!/bin/bash
+
+HOSTNAME="$(hostname)"
+
+bgrnd () {
+    nohup "$@" < /dev/null > /dev/null 2>&1 &
+    disown
+}
+
+bgrnd_exec() {
+    bgrnd bash -c "$@" &
+}
+
+systemctl --user import-environment PATH DBUS_SESSION_BUS_ADDRESS
+systemctl --user start --no-block desktop-user.target
+
+if [[ $HOSTNAME =~ "PC-Mordor-Arch" ]]; then
+    bgrnd picom --experimental-backend
+    bgrnd xmodmap ~/.Xmodmap
+    bgrnd xset led on
+    bgrnd xinput --set-prop \
+        $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') \
+        'libinput Accel Speed' -0.6
+fi
+
+bgrnd alacritty --class dropdown -e tmux
+
+bgrnd_exec 'sleep 20 && copyq'
+bgrnd_exec 'sleep 20 && whatpulse'
+bgrnd_exec 'sleep 30 && dropbox'
+# bgrnd_exec 'sleep 10 && cadence-session-start --system-start'

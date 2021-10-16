@@ -1,34 +1,5 @@
-# System
-exec        $nsi    "systemctl --user import-environment PATH DBUS_SESSION_BUS_ADDRESS && systemctl --user start --no-block desktop-user.target"
-exec        $nsi    picom --experimental-backend
-exec        $nsi    xmodmap ~/.Xmodmap
-exec        $nsi    xset led on
-exec_always $nsi    xinput --set-prop \
-    $(xinput list --short | grep "Razer Abyssus" | sed 's/.*id=\([0-9]\+\).*/\1/') \
-    'libinput Accel Speed' -0.6
+exec        $nsi    ~/.config/i3/scripts/startup_exec
 exec_always $nsi    ~/.config/i3/scripts/fix_wm_window_opacity
-
-# Fast startup
-exec        $nsi    /usr/local/bin/lightsOn/lightsOn.sh 300
 exec_always $nsi    feh --bg-scale $wallpaper
 exec_always $nsi    ~/.config/polybar/polybar.sh
 exec_always $nsi    $(eval "pgrep -f '^python.*focus_last$' | xargs kill; $scripts/focus_last")
-
-# Medium startup
-exec        $nsi    alacritty --class dropdown -e tmux
-exec        $nsi    "sleep 20 && copyq"
-exec        $nsi    "sleep 20 && whatpulse"
-
-# Slow startup
-# exec        $nsi    "sleep 10 && cadence-session-start --system-start"
-# exec        $nsi    "sleep 30 && alsa_out -j 'speakers' -d hw:0,0"
-# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-left'  'speakers:playback_1'"
-# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink-01:front-right' 'speakers:playback_2'"
-# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-left'     'speakers:playback_1'"
-# exec        $nsi    "sleep 32 && jack_connect 'PulseAudio JACK Sink:front-right'    'speakers:playback_2'"
-#
-# probably not needed:
-# exec        $nsi    "sleep 30 && alsa_in  -j 'scarlett' -d hw:2 -p 256 -n 2 -q 0"
-
-exec        $nsi    "sleep 30 && dropbox"
-
