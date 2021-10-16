@@ -1,15 +1,18 @@
-#	$OpenBSD: sshd_config,v 1.101 2017/03/14 07:19:07 djm Exp $
+#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
 
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
 
-# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
+# This sshd was compiled with PATH=/usr/local/sbin:/usr/local/bin:/usr/bin
 
 # The strategy used for options in the default sshd_config shipped with
 # OpenSSH is to specify options with their default value where
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
+
+# TODO: review below...
+# Better yet: replace this file with default sshd_config before modifying
 
 # CUSTOM ADDITIONS
 PermitRootLogin prohibit-password
@@ -20,7 +23,15 @@ PubkeyAuthentication yes
 RSAAuthentication yes
 UsePAM no
 #UsePAM yes
+AllowUsers mulhaq
 
+# Custom
+#PermitRootLogin no  # ignored if PAM yes
+Port 22
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+#AllowUsers mulhaq
 
 
 #Port 22
@@ -29,7 +40,6 @@ UsePAM no
 #ListenAddress ::
 
 #HostKey /etc/ssh/ssh_host_rsa_key
-#HostKey /etc/ssh/ssh_host_dsa_key
 #HostKey /etc/ssh/ssh_host_ecdsa_key
 #HostKey /etc/ssh/ssh_host_ed25519_key
 
@@ -37,8 +47,9 @@ UsePAM no
 #RekeyLimit default none
 
 # Logging
-#SyslogFacility AUTH
-#LogLevel INFO
+# PC-MORDOR CUSTOM EDIT (uncommented below two lines)
+SyslogFacility AUTH
+LogLevel INFO
 
 # Authentication:
 
@@ -72,7 +83,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
-# CUSTOM EDIT (commented this out)
+# PC-MORDOR CUSTOM EDIT (commented out below line)
 #ChallengeResponseAuthentication no
 
 # Kerberos options
@@ -94,7 +105,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and ChallengeResponseAuthentication to 'no'.
-# CUSTOM EDIT (commented this out)
+# PC-MORDOR CUSTOM EDIT (commented out below line)
 #UsePAM yes
 
 #AllowAgentForwarding yes
@@ -107,7 +118,6 @@ AuthorizedKeysFile	.ssh/authorized_keys
 PrintMotd no # pam does that
 #PrintLastLog yes
 #TCPKeepAlive yes
-#UseLogin no
 #PermitUserEnvironment no
 #Compression delayed
 #ClientAliveInterval 0

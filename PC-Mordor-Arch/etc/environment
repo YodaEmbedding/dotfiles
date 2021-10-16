@@ -4,8 +4,9 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
+BROWSER=firefox-nightly
 EDITOR=nvim
-PAGER=most
+#PAGER=most
 #PAGER=nvim
 PYTHONSTARTUP=/usr/local/share/pythonstartup.py
 QT_QPA_PLATFORMTHEME=qt5ct
