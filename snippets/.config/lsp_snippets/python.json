@@ -1,0 +1,26 @@
+{
+  "import matplotlib.pyplot": {
+    "prefix": "iplt",
+    "body": "import matplotlib.pyplot as plt"
+  },
+  "import numpy": {
+    "prefix": "inp",
+    "body": "import numpy as np"
+  },
+  "import pandas": {
+    "prefix": "ipd",
+    "body": "import pandas as pd"
+  },
+  "import tensorflow": {
+    "prefix": "itf",
+    "body": "import tensorflow as tf"
+  },
+  "plt.plot": {
+    "prefix": "plt",
+    "body": [
+      "fig, ax = plt.subplots()",
+      "ax.plot(x, y)",
+      "fig.savefig(${1:filename}, dpi=300)"
+    ]
+  }
+}
