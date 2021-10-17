@@ -41,6 +41,7 @@ local servers = {
   "metals",
   -- "py_custom",
   "pyright",
+  "rnix",
   "rust_analyzer",
   "sumneko_lua",
   "texlab",
