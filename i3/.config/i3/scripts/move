@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 
 # lives at: https://gist.github.com/bhepple/5c43e83e945a42297ba6433ee8ba88ce
 # derived from: https://github.com/benkaiser/i3-wm-config

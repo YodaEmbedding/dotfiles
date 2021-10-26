@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 W=`xdotool getactivewindow`
 S1=`xprop -id ${W} |awk -F '"' '/WM_CLASS/{print $4}'`
