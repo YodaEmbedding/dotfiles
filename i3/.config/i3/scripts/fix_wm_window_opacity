@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 window_ids=$(xprop -root _NET_CLIENT_LIST_STACKING |
     cut -d "#" -f2 | tr -d " " | sed "s/,/ /g")
