@@ -6,6 +6,10 @@ local cmp = require("cmp")
 local lspkind_symbols = require("plugins._lspkind_symbols")
 
 cmp.setup {
+  experimental = {
+    native_menu = false,
+    ghost_text = true,
+  },
   formatting = {
     format = function(entry, vim_item)
       local max_len = 20
