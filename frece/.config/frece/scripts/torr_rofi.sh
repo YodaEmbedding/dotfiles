@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/frece"
 DB_FILE="$DATA_DIR/torr.db"
