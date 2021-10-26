@@ -1,4 +1,4 @@
-source ~/.vim/theming.vim
+source ~/dotfiles/vim/.vim/theming.vim
 
 hi LspDiagnosticsVirtualTextError   guifg=#6C5569
 hi LspDiagnosticsVirtualTextHint    guifg=#5C4459
