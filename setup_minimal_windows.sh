@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 mkdir -p "%USERPROFILE%/.vim/undo"
 mkdir -p "%USERPROFILE%/AppData/Local/nvimta/Local/nvim"

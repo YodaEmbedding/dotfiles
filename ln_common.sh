@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ln -s $HOME/dotfiles/bash/.aliases      $HOME/.aliases
 ln -s $HOME/dotfiles/colors/.Xresources $HOME/.Xresources
