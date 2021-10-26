@@ -40,11 +40,11 @@ local function packer_spec()
 
   -- Telescope
   use {"nvim-telescope/"    .. "telescope.nvim"         }
-  use {"nvim-telescope/"    .. "telescope-frecency.nvim",
-    config = function()
-      require("telescope").load_extension("frecency")
-    end,
-  }
+--use {"nvim-telescope/"    .. "telescope-frecency.nvim",
+--  config = function()
+--    require("telescope").load_extension("frecency")
+--  end,
+--}
 
   -- Tools
   use {"tpope/"             .. "vim-fugitive"           } -- git

@@ -29,9 +29,8 @@ set $nsi            --no-startup-id
 set $scripts        ~/.config/i3/scripts
 
 # Wallpaper paths
-# set $wallpaper      /usr/share/backgrounds/current_desktop.png
-set $wallpaper      --no-fehbg --randomize /usr/share/backgrounds/desktop
-set $lock_wallpaper /usr/share/backgrounds/current_lock.png
+set $wallpaper      --no-fehbg --randomize /mnt/data/Dropbox/pics_misc/usr-share-backgrounds/desktop
+set $lock_wallpaper /mnt/data/Dropbox/pics_misc/usr-share-backgrounds/current_lock.png
 
 # Download frece scripts from https://github.com/SicariusNoctis/frece
 set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi
