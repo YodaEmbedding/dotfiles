@@ -1,5 +1,11 @@
 #!/bin/sh
 
+OS_NAME="$(cat /etc/*-release | grep '^NAME=' | head -n1 | cut -d'=' -f2)"
+
+if [[ $OS_NAME != "Arch Linux" ]]; then
+    exit 1
+fi
+
 updates_arch=$(checkupdates | wc -l)
 
 # if ! updates_aur=$(cower -u 2> /dev/null | wc -l); then
