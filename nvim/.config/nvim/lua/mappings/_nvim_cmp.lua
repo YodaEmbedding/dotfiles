@@ -3,7 +3,10 @@ local cmp = require("cmp")
 return {
   ["<C-Space>"] = cmp.mapping.complete(),
   ["<C-e>"] = cmp.mapping.close(),
-  ["<C-h>"] = cmp.mapping.confirm({ select = true }),
+  ["<C-h>"] = cmp.mapping.confirm({
+    behavior = cmp.ConfirmBehavior.Insert,
+    select = true,
+  }),
   ["<C-b>"] = cmp.mapping.scroll_docs(-4),
   ["<C-f>"] = cmp.mapping.scroll_docs(4),
   ["<PageUp>"] = function(fallback)
