@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 matches=$(progress 2>/dev/null | sed -n '/^\[/{p;n;p}')
 lines=$(sed '/^\[/{$!{N;s|^\[[^]]*\] \([^ ]*\)[^\n]*\n\s*\(.*\)|\1 \2|}}' <<< "$matches")
