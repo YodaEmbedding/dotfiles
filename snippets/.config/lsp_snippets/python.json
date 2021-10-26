@@ -1,4 +1,30 @@
 {
+  "def": {
+    "prefix": "d",
+    "body": "def "
+  },
+  "def __init__": {
+    "prefix": "_i",
+    "body": [
+        "def __init__(self):",
+        "\t${1:pass}"
+    ]
+  },
+  "for i in range()": {
+    "prefix": "fi",
+    "body": "for i in range("
+  },
+  "for x in": {
+    "prefix": "fx",
+    "body": "for x in "
+  },
+  "if __name__": {
+    "prefix": "_m",
+    "body": [
+        "if __name__ == \"__main__\":",
+        "\tmain()"
+    ]
+  },
   "import matplotlib.pyplot": {
     "prefix": "iplt",
     "body": "import matplotlib.pyplot as plt"
@@ -22,5 +48,9 @@
       "ax.plot(x, y)",
       "fig.savefig(${1:filename}, dpi=300)"
     ]
+  },
+  "self": {
+    "prefix": "s",
+    "body": "self."
   }
 }
