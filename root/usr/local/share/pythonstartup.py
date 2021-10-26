@@ -90,6 +90,11 @@ A = array
 R = arange
 
 
+def read(filename: str):
+    with open(filename) as f:
+        return f.read()
+
+
 def json_load(filename: str):
     with open(filename) as f:
         return json.load(f)
