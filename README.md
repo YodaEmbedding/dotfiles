@@ -59,6 +59,7 @@ List of configs, which directories these belong in, and other details.
 | scripts        | `$HOME`  |                                                      | Personal (e.g. `emoji` clipboard copier)         |
 | systemd        | `$HOME`  |                                                      | Services                                         |
 | termite        | `$HOME`  |                                                      | Terminal emulator                                |
+| thunar         | `$HOME`  | thunar                                               | File manager                                     |
 | tmux           | `$HOME`  | tmux                                                 | Terminal multiplexer                             |
 | tridactyl      | `$HOME`  | firefox                                              | Firefox vim-like browsing                        |
 | vim            | `$HOME`  | vim                                                  | Better than emacs                                |

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Terminal</name>
+	<unique-id>1560338072757392-1</unique-id>
+	<command>alacritty --working-directory %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Terminal (Dropdown)</name>
+	<unique-id>1576655552528788-1</unique-id>
+	<command>tmux new-window -t 0: -c %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+<action>
+	<icon>utilities-terminal</icon>
+	<name>Terminal (Dropdown, vidir)</name>
+	<unique-id>1586282344958809-1</unique-id>
+	<command>tmux new-window -t 0: -c %f vidir</command>
+	<description></description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+</actions>
