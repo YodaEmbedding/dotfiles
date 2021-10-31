@@ -1,11 +1,11 @@
 # Volume control
-bindsym XF86AudioRaiseVolume    exec $nsi pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume    exec $nsi pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym XF86AudioMute           exec $nsi pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym XF86AudioRaiseVolume    exec $nsi pamixer --increase 5
+bindsym XF86AudioLowerVolume    exec $nsi pamixer --decrease 5
+bindsym XF86AudioMute           exec $nsi pamixer --toggle-mute
 
-bindsym $mod+z                  exec $nsi pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym $mod+shift+z            exec $nsi pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym $mod+ctrl+z             exec $nsi pactl set-sink-mute   @DEFAULT_SINK@ toggle
+bindsym $mod+z                  exec $nsi pamixer --increase 5
+bindsym $mod+shift+z            exec $nsi pamixer --decrease 5
+bindsym $mod+ctrl+z             exec $nsi pamixer --toggle-mute
 
 # Default sink control
 bindsym $mod+ctrl+shift+z       exec $nsi $cycle_pa_sink
