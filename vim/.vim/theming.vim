@@ -110,6 +110,7 @@ set title               " Change window title to current buffer
 set titlestring=%t      " Change window title
 
 " Highlight groups {{{1
+autocmd BufEnter * syn keyword Todo TODO       containedin=.*Comment
 autocmd BufEnter * syn keyword Todo DEBUG      containedin=.*Comment
 autocmd BufEnter * syn keyword Todo NOTE       containedin=.*Comment
 autocmd BufEnter * syn keyword Todo TODOFIGURE containedin=.*Comment
