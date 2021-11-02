@@ -35,6 +35,7 @@ List of configs, which directories these belong in, and other details.
 | alacritty      | `$HOME`  | alacritty                                            | Terminal emulator                                |
 | aliases        | `$HOME`  |                                                      | Shell aliases                                    |
 | bash           | `$HOME`  |                                                      | Shell                                            |
+| cargo          | `$HOME`  | cargo                                                | Rust                                             |
 | colors         | `$HOME`  |                                                      | Terminal and rofi colors                         |
 | devilspie      | `$HOME`  | devilspie, devilspie2                                | Window tweaker                                   |
 | dunst          | `$HOME`  |                                                      | Notification manager                             |
