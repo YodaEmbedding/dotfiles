@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+function main() {
+    local action=$1
+
+    VOLUME="$(pamixer --get-volume)"
+    IS_MUTED="$(pamixer --get-mute)"
+
+    if [ "${action}" == "up" ]; then
+        pactl set-sink-volume @DEFAULT_SINK@ +5%
+    elif [ "${action}" == "down" ]; then
+        pactl set-sink-volume @DEFAULT_SINK@ -5%
+    elif [ "${action}" == "mute" ]; then
+        pactl set-sink-mute @DEFAULT_SINK@ toggle
+    else
+        if [ "${IS_MUTED}" == "true" ]; then
+            echo "  M"
+        else
+            echo "  ${VOLUME}%"
+        fi
+    fi
+}
+
+main "$@"

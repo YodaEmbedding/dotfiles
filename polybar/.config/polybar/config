@@ -143,17 +143,15 @@ label-warn-foreground = #ff7777
 warn-temperature = 60
 
 [module/pulseaudio]
-type = internal/pulseaudio
-format-volume = <ramp-volume> <label-volume>
-label-volume = %percentage%
-label-muted =   M
-label-muted-foreground = #666666
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-3 = 
-click-middle = catia &
-click-right = pavucontrol &
+type = custom/script
+label = "%output%"
+label-font = 2
+interval = 1
+exec = ~/.config/polybar/scripts/pipewire
+click-right = exec pavucontrol &
+click-left = exec pamixer --toggle-mute &
+scroll-up = exec pamixer --increase 5 &
+scroll-down = exec pamixer --decrease 5 &
 
 [module/date]
 type = internal/date
