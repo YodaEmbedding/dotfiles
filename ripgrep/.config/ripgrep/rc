@@ -1,0 +1,9 @@
+# --colors=line:fg:yellow
+# --colors=line:style:bold
+# --colors=match:bg:yellow
+# --colors=match:fg:black
+# --colors=path:fg:magenta
+--colors=match:fg:magenta
+--colors=match:style:nobold
+--colors=path:fg:blue
+--colors=path:style:bold
