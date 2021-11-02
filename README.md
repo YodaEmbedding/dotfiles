@@ -53,6 +53,7 @@ List of configs, which directories these belong in, and other details.
 | PC-Mordor-Arch-home | `$HOME` |                                                  | Personal                                         |
 | picom          | `$HOME`  |                                                      | Compositor                                       |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
+| ptpython       | `$HOME`  | ptpython                                             | Python REPL                                      |
 | ranger         | `$HOME`  | ranger                                               | CLI file manager                                 |
 | readline       | `$HOME`  |                                                      | GNU readline config (vi bindings)                |
 | rofi           | `$HOME`  | rofi                                                 | GUI app/command launcher                         |
