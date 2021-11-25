@@ -53,6 +53,7 @@ local function packer_spec()
 --use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
 --use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
+  use {"jpalardy/"          .. "vim-slime"              } -- REPL
 
   -- Coq
 --use {"ms-jpq/"            .. "coq_nvim",
