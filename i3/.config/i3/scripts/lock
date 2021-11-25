@@ -30,7 +30,7 @@ height=$(sed -r 's/^[0-9]*x//' <<< $dimensions)
 radius=$((273 * $width / 1920))
 
 # Moon wallpaper
-i3lock \
+i3lock-color \
 	--nofork \
     --pass-media-keys \
     --clock \
