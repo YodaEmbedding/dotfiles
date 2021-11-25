@@ -9,9 +9,10 @@ assign [class="League of Legends.exe"]            → $ws4
 assign [class="leagueclientux.exe"]               → $ws4
 assign [class="LeagueClientUx.exe"]               → $ws4
 assign [class="Lutris"]                           → $ws4
+assign [class="^obs|\.obs-wrapped$"]              → $ws4
 assign [class="Steam"]                            → $ws4
-#assign [class="mpv"]                              → $ws4
-#assign [class="Vlc"]                              → $ws4
+assign [class="^zhumu$"]                          → $ws5
+assign [class="^zoom$"]                           → $ws5
 assign [class="qBittorrent"]                      → $ws8
 assign [class="Google Play Music Desktop Player"] → $ws9
 
