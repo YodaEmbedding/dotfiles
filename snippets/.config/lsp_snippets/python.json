@@ -14,6 +14,13 @@
     "prefix": "fi",
     "body": "for i in range("
   },
+  "for i, x in enumerate()": {
+    "prefix": "fe",
+    "body": [
+        "for i, ${1:x} in enumerate(${2:xs}):",
+        "\t${3:pass}"
+    ]
+  },
   "for x in": {
     "prefix": "fx",
     "body": "for x in "
@@ -48,6 +55,22 @@
       "ax.plot(x, y)",
       "fig.savefig(${1:filename}, dpi=300)"
     ]
+  },
+  "print": {
+    "prefix": "pr",
+    "body": "print(${1:x})"
+  },
+  "print(\"\")": {
+    "prefix": "ps",
+    "body": "print(\"${1:}\")"
+  },
+  "print(f\"\")": {
+    "prefix": "pf",
+    "body": "print(f\"${1:}\")"
+  },
+  "raise NotImplementedError": {
+    "prefix": "nie",
+    "body": "raise NotImplementedError"
   },
   "self": {
     "prefix": "s",
