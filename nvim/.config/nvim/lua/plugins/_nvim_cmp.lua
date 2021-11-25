@@ -30,10 +30,10 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = "nvim_lsp", max_item_count = 30 },
     { name = "path" },
     { name = "buffer" },
     { name = "nvim_lua" },
-    { name = "nvim_lsp", max_item_count = 30 },
     { name = "vsnip" },
     { name = "latex_symbols" },
     { name = "tmux" },
