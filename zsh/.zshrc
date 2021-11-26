@@ -2,6 +2,7 @@
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
 
+
 # ZINIT {{{1
 
 ### Added by Zinit's installer
@@ -27,6 +28,7 @@ zinit light-mode for \
     zinit-zsh/z-a-bin-gem-node
 
 ### End of Zinit's installer chunk
+
 
 # PLUGINS {{{1
 
@@ -82,6 +84,7 @@ zinit wait lucid light-mode for \
 #   " \
 #     marlonrichert/zsh-autocomplete
 
+
 # SOURCING {{{1
 
 # Aliases
@@ -105,6 +108,7 @@ eval "$(fasd --init zsh-hook)"
 export _ZO_MAXAGE=100000
 export _ZO_RESOLVE_SYMLINKS=1
 eval "$(zoxide init zsh)"
+
 
 # THEME {{{1
 
@@ -139,6 +143,7 @@ case $TERM in
     ;;
 esac
 
+
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
 # Plugin: anyframe
@@ -166,6 +171,7 @@ setopt nullglob
 # Style
 # Use LS COLORS to autocomplete
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
 
 # FUNCTIONS {{{1
 
@@ -236,6 +242,7 @@ zoxide-widget() {
     zle reset-prompt
 }
 
+
 # WIDGETS {{{1
 
 zle -N -- anyframe-widget-fasd
@@ -244,6 +251,7 @@ zle -N -- fzf-fasddir-widget
 zle -N -- fzf-fasdfile-widget
 zle -N -- fzf-fasdvim-widget
 zle -N -- zoxide-widget
+
 
 # KEYBINDINGS {{{1
 
