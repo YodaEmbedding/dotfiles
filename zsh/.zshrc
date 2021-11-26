@@ -70,51 +70,28 @@ zinit wait lucid light-mode for \
   blockf \
     zsh-users/zsh-completions
 
-# zinit wait lucid light-mode for \
-#   atinit"
-#     forgit_diff=gdf
-#     forgit_checkout_commit=gcl
-#   " \
-#     wfxr/forgit
-
-# zinit wait lucid light-mode for \
-#   atinit"
-#     zstyle ':autocomplete:*' insert-unambiguous yes;
-#     zstyle ':autocomplete:*' list-lines 8;
-#   " \
-#     marlonrichert/zsh-autocomplete
-
 
 # SOURCING {{{1
 
-# Aliases
 [ -f ~/.aliases ] && source ~/.aliases
-
-# Profile
 [ -f ~/.profile ] && source ~/.profile
-
-# ls colors
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
+
+export _FASD_MAX=100000
+eval "$(fasd --init zsh-hook)"
+
+export _ZO_MAXAGE=100000
+export _ZO_RESOLVE_SYMLINKS=1
+eval "$(zoxide init zsh)"
 
 # vim edit-command-line
 # autoload edit-command-line
 # zle -N edit-command-line
 
-# fasd
-export _FASD_MAX=100000
-eval "$(fasd --init zsh-hook)"
-
-# zoxide
-export _ZO_MAXAGE=100000
-export _ZO_RESOLVE_SYMLINKS=1
-eval "$(zoxide init zsh)"
-
 
 # THEME {{{1
 
 setopt promptsubst
-
-# for ((i=0;i<256;i++)); do echo "$(tput setab $i)$(tput setaf 4)$(tput bold)$i$(tput sgr0)"; done
 
 [[ ! -z  "$PROMPT_NAME" ]] && PROMPT_NAME="· $PROMPT_NAME "
 
@@ -168,7 +145,6 @@ setopt extended_glob
 setopt globdots
 setopt nullglob
 
-# Style
 # Use LS COLORS to autocomplete
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
