@@ -113,13 +113,6 @@ PS2="> "
 
 RPROMPT='%{$reset_color%}'
 
-# Title
-case $TERM in
-  xterm*)
-    precmd () {print -Pn "\e]0;%~\a"}
-    ;;
-esac
-
 
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
