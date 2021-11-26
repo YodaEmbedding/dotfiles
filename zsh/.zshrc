@@ -128,6 +128,24 @@ PS2="> "
 
 RPROMPT='%{$reset_color%}'
 
+list_colors_bg() {
+    for ((i = 0; i < 256; i++)); do
+        echo "$(tput setab $i)$(tput setaf 4)$(tput bold) $i $(tput sgr0)"
+    done
+}
+
+list_prompts_bg() {
+    for ((i = 0; i < 256; i++)); do
+        print -P "$(make_prompt $i $PROMPT_FGCOLOR)$i"
+    done
+}
+
+list_prompts_fg() {
+    for ((i = 0; i < 256; i++)); do
+        print -P "$(make_prompt $PROMPT_BGCOLOR $i)$i"
+    done
+}
+
 
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
