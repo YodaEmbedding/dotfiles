@@ -93,11 +93,9 @@ eval "$(zoxide init zsh)"
 
 setopt promptsubst
 
-[[ ! -z "$PROMPT_NAME" ]] && PROMPT_NAME="· $PROMPT_NAME "
-
-PROMPT_SYMBOL=λ
-PROMPT_BGCOLOR=96
-PROMPT_FGCOLOR=217
+PROMPT_SYMBOL="${PROMPT_SYMBOL:-λ}"
+PROMPT_BGCOLOR="${PROMPT_BGCOLOR:-96}"
+PROMPT_FGCOLOR="${PROMPT_FGCOLOR:-217}"
 
 make_prompt() {
     local PROMPT_BGCOLOR="$1"
