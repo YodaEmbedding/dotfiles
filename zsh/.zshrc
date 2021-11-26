@@ -93,21 +93,36 @@ eval "$(zoxide init zsh)"
 
 setopt promptsubst
 
-[[ ! -z  "$PROMPT_NAME" ]] && PROMPT_NAME="· $PROMPT_NAME "
+[[ ! -z "$PROMPT_NAME" ]] && PROMPT_NAME="· $PROMPT_NAME "
 
-PURE_PROMPT_SYMBOL=λ
+PROMPT_SYMBOL=λ
+PROMPT_BGCOLOR=96
+PROMPT_FGCOLOR=217
 
-PS1=$'\n'
-PS1+="%}%K{96}%F{217}%B"
-PS1+='· %D{%H:%M:%S} '
-PS1+="$PROMPT_NAME"
-PS1+='· %~ '
-PS1+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
-PS1+="%b%f%k"
-PS1+=$'\n'
-PS1+="%(?.%F{magenta}.%F{red})"
-PS1+="$PURE_PROMPT_SYMBOL"
-PS1+="%f "
+make_prompt() {
+    local PROMPT_BGCOLOR="$1"
+    local PROMPT_FGCOLOR="$2"
+    local s=""
+
+    # · 00:00:00 · ~/pwd · (master)
+    s+=$'\n'
+    s+="%}%K{$PROMPT_BGCOLOR}%F{$PROMPT_FGCOLOR}%B"
+    s+='· %D{%H:%M:%S} '
+    s+='· %~ '
+    s+='$([[ -z "$PROMPT_NAME" ]] || echo "· ($PROMPT_NAME) ")'
+    s+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
+    s+='%b%f%k'
+
+    # λ
+    s+=$'\n'
+    s+='%(?.%F{magenta}.%F{red})'
+    s+="$PROMPT_SYMBOL"
+    s+='%f '
+
+    echo "$s"
+}
+
+PS1="$(make_prompt $PROMPT_BGCOLOR $PROMPT_FGCOLOR)"
 
 PS2="> "
 
