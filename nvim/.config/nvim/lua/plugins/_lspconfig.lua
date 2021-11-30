@@ -37,7 +37,7 @@ local servers = {
   "jdtls",
   "jsonls",
   "kotlin_language_server",
-  "matlab",
+  -- "matlab",
   "metals",
   -- "py_custom",
   "pyright",
