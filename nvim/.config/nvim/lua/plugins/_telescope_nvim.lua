@@ -45,6 +45,13 @@ telescope.setup{
     buffer_previewer_maker = buffer_previewer_maker,
 
   },
+  pickers = {
+    buffers = {
+      ignore_current_buffer = true,
+      -- sort_lastused = true,
+      sort_mru = true,
+    },
+  },
 }
 
 if _G.plugin_loaded("telescope-harpoon.nvim") then
