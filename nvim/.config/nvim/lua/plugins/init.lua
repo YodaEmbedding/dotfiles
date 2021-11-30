@@ -15,7 +15,7 @@ local function packer_spec()
   use {"nvim-lua/"          .. "popup.nvim"             }
   use {"svermeulen/"        .. "vimpeccable"            } -- nvim lua config
   use {"tpope/"             .. "vim-repeat"             } -- repairs .
-  use {"tami5/"             .. "sql.nvim"               } -- sql
+  use {"tami5/"             .. "sqlite.lua"             } -- sql
 
   -- Functional
 --use {"ThePrimeagen/"      .. "harpoon"                } -- bookmarks
@@ -44,6 +44,7 @@ local function packer_spec()
 --  config = function()
 --    require("telescope").load_extension("frecency")
 --  end,
+--  requires = {"tami5/sqlite.lua"},
 --}
 
   -- Tools
