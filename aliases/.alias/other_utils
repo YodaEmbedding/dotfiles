@@ -59,6 +59,7 @@ alias l="lfcd"
 # nix-shell
 alias nx="nix-shell"
 alias nxz='nix-shell --command "PROMPT_BGCOLOR=60 PROMPT_NAME=nix zsh"'
+alias nz='nxz'
 
 # nixos
 alias nxor="sudo nixos-rebuild"
