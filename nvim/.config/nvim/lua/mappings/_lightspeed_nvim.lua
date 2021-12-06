@@ -14,10 +14,10 @@ local function repeat_ft(reverse)
   lightspeed.ft:to(reverse, lightspeed.ft["prev-t-like?"])
 end
 
-nnoremap({"silent"}, ";", function () repeat_ft(false) end)
-xnoremap({"silent"}, ";", function () repeat_ft(false) end)
--- nnoremap({"silent"}, ",", function () repeat_ft(true) end)
-xnoremap({"silent"}, ",", function () repeat_ft(true) end)
+nnoremap({"silent", "override"}, ";", function () repeat_ft(false) end)
+xnoremap({"silent", "override"}, ";", function () repeat_ft(false) end)
+-- nnoremap({"silent", "override"}, ",", function () repeat_ft(true) end)
+xnoremap({"silent", "override"}, ",", function () repeat_ft(true) end)
 
 nnoremap({"silent", "override"}, "f", "f")
 nnoremap({"silent", "override"}, "F", "F")
