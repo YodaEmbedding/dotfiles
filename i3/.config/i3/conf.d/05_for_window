@@ -28,6 +28,15 @@ for_window [class="zoom"] \
     floating enable, border none, \
     move position center
 
+for_window [class="dolphin"] \
+    floating enable, \
+    resize set 50 ppt 50 ppt
+
+# for_window [class="thunar" title="^(Downloads).*$"] \
+for_window [class="thunar" title="^(?!(Rename|Create New Folder|File Operation Progress|Confirm to replace files|.* - Properties).*$)"] \
+    floating enable, \
+    resize set 50 ppt 50 ppt
+
 for_window [instance="^dropdown$"] \
     floating enable, border none, \
     resize set 100 ppt 50 ppt, move position 0 24, \
