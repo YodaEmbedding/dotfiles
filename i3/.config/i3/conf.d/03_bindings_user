@@ -50,8 +50,9 @@ bindsym $mod+$mod_+b            exec $nsi $scripts/switchto "qbittorrent"       
 bindsym $mod+$mod_+s            exec $nsi $scripts/switchto "subl"                 "subl"
 bindsym $mod+$mod_+p            exec $nsi $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
 
-# Thunar > Downloads
+# Downloads
 bindsym $mod+t                  exec thunar ~/Downloads
+bindsym $mod+c                  exec dolphin ~/Downloads
 
 # Refresh search index
 bindsym $mod+shift+t            exec $nsi \
