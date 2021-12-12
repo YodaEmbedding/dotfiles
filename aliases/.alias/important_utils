@@ -56,7 +56,8 @@ git_history_browse() {
 }
 
 # python
-alias py="python3"
+alias p='python'
+alias py='python'
 
 # rsync
 alias rsync="rsync -h"

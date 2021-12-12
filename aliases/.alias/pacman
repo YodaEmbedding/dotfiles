@@ -6,7 +6,6 @@ alias sps='sudo pacman -S'
 alias orphans='pacman -Qtdq'
 
 # AUR package managers: paru
-alias p='paru'
 alias pa='paru -S'
 alias pq='paru -Qs'
 alias pss='paru -Ss'
