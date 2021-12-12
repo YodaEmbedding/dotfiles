@@ -62,6 +62,24 @@ alias py="python3"
 alias rsync="rsync -h"
 alias rscp="rsync -a --info=progress2 --partial"
 
+# systemctl
+alias sy='systemctl'
+alias syu='systemctl --user'
+alias sydr='systemctl daemon-reload'
+alias sydru='systemctl daemon-reload --user'
+alias syd='systemctl disable'
+alias sydu='systemctl disable --user'
+alias sye='systemctl enable'
+alias syeu='systemctl enable --user'
+alias syr='systemctl restart'
+alias syru='systemctl restart --user'
+alias syst='systemctl start'
+alias systu='systemctl start --user'
+alias sys='systemctl status'
+alias sysu='systemctl status --user'
+alias syz='systemctl stop'
+alias syzu='systemctl stop --user'
+
 # vim
 alias v='nvim'
 alias vim='nvim'
