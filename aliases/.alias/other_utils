@@ -72,6 +72,7 @@ alias n='nnn'
 alias parallel='parallel --will-cite'
 
 # ptpython
+alias pp='ptpython'
 alias ptpy='tmux rename-window "py"; ptpython'
 
 # ranger (open navigated folder in terminal on exit)
