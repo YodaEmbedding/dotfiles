@@ -35,20 +35,20 @@ i3lock-color \
     --pass-media-keys \
     --clock \
 	--radius=$radius \
-	--indpos="x+(0.4741*w):y+(0.230*h)" \
-	--timepos="ix:iy"    --timesize=48 --timecolor=223377ff --timestr="%H:%M:%S" \
-	--datepos="tx:ty+40" --datesize=24 --datecolor=223377ff --datestr="%a %m-%d" \
+	--ind-pos="x+(0.4741*w):y+(0.230*h)" \
+	--time-pos="ix:iy"    --time-size=48 --time-color=223377ff --time-str="%H:%M:%S" \
+	--date-pos="tx:ty+40" --date-size=24 --date-color=223377ff --date-str="%a %m-%d" \
 	--line-uses-inside \
-	--insidecolor=ffffff55      --ringcolor=ffffff00 \
-	--insidevercolor=00000077   --ringvercolor=00000000   --verifcolor=ffffffff --veriftext="analyzing..." \
-	--insidewrongcolor=77000099 --ringwrongcolor=77000000 --wrongcolor=ffffffff --wrongtext="self destructing..." \
-	--separatorcolor=ffffff77 \
+	--inside-color=ffffff55      --ring-color=ffffff00 \
+	--insidever-color=00000077   --ringver-color=00000000   --verif-color=ffffffff --verif-text="analyzing..." \
+	--insidewrong-color=77000099 --ringwrong-color=77000000 --wrong-color=ffffffff --wrong-text="self destructing..." \
+	--separator-color=ffffff77 \
 	--color=333344 --image=$wallpaper
 
 # Other options
 #	--composite \
 #	--line-uses-ring \
-#	--insidewrongcolor=ff7777cc \
+#	--insidewrong-color=ff7777cc \
 #	--time-align 1 \ # left align
 
 # Resume notification manager
