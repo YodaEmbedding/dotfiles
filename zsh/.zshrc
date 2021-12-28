@@ -237,6 +237,11 @@ fzf-fasdvim-widget() {
     return ret
 }
 
+zi() {
+  \builtin local result
+  result="$(zoxide query -i --all -- "$@")"  && __zoxide_cd "${result}"
+}
+
 zoxide-widget() {
     zi
     zle reset-prompt
