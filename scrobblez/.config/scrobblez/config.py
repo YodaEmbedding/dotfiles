@@ -5,6 +5,7 @@ from scrobblez.types import Metadata
 
 whitelist = [
     "spotify",
+    "spotifyd",
 ]
 
 RULES = (
