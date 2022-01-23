@@ -36,10 +36,10 @@ function mappings_nvim_lsp.load()
   n_silent("K",         lsp.buf.hover)
 
   -- Diagnostics
-  n_silent("[d",        lsp.diagnostic.goto_prev)
-  n_silent("]d",        lsp.diagnostic.goto_next)
-  n_silent("<space>z",  lsp.diagnostic.set_loclist)
-  n_silent("<space>e",  lsp.diagnostic.show_line_diagnostics)
+  n_silent("[d",        vim.diagnostic.goto_prev)
+  n_silent("]d",        vim.diagnostic.goto_next)
+  n_silent("<space>z",  vim.diagnostic.setloclist)
+  n_silent("<space>e",  vim.diagnostic.open_float)
 
   -- Refactoring
   n_buffer("<space>a",  lsp.buf.code_action)
