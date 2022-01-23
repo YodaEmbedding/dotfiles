@@ -66,4 +66,6 @@ seturl youtube.com modeindicator false
 blacklistadd isc.ro
 blacklistadd lichess.org
 blacklistadd woogles.io
+blacklistadd crackingthecryptic.com
+blacklistadd cracking-the-cryptic.web.app
 
