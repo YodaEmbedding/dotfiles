@@ -1,0 +1,11 @@
+{
+  "\\begin{}…\\end{}": {
+    "prefix": "b",
+    "body": [
+      "\\\\begin{${1:env}}",
+      "\t${2:}",
+      "\\\\end{${1:env}}"
+    ],
+    "description": "Begin - End"
+  }
+}
