@@ -1,19 +1,10 @@
-import functools
-import itertools
 import json
-import math
-import os
-import random
-import re
-import sys
-from functools import partial
 import pkgutil
 from importlib import import_module
 from itertools import *
 from pprint import pprint
 from time import sleep, time
 from timeit import timeit
-from typing import *
 
 import numpy as np
 from numpy import (
@@ -42,10 +33,6 @@ from numpy import (
     zeros,
     zeros_like,
 )
-
-np.set_printoptions(precision=3)
-
-j = 1.0j
 
 
 class LazyModule:
@@ -86,16 +73,14 @@ for module in modules:
     LazyModule(alias=module, path=module)
 
 
-def arange(*shape, dtype=None):
+def arange_(*shape, dtype=None):
     return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
 
 
-def array(*args, **kwargs):
-    return np.array(args, **kwargs)
-
-
+np.set_printoptions(precision=3)
+j = 1.0j
 A = array
-R = arange
+R = arange_
 
 
 def read(filename: str):
@@ -110,7 +95,11 @@ def json_load(filename: str):
 
 def json_dump(data: dict, filename: str):
     with open(filename, "w") as f:
-        json.dump(data, f, indent=4)
+        json.dump(data, f, indent=2)
+
+
+json.loadf = json_load
+json.dumpf = json_dump
 
 
 def read_fwf(s: str, drop_first=True, **kwargs):
@@ -120,7 +109,3 @@ def read_fwf(s: str, drop_first=True, **kwargs):
     if drop_first:
         df.drop(df.columns[0], axis=1, inplace=True)
     return df
-
-
-def h(x):
-    help(x)
