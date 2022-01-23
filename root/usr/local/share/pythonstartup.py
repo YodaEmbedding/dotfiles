@@ -7,6 +7,7 @@ import random
 import re
 import sys
 from functools import partial
+import pkgutil
 from importlib import import_module
 from itertools import *
 from pprint import pprint
@@ -76,6 +77,13 @@ LazyModule("sns", "seaborn")
 LazyModule("tf", "tensorflow")
 
 lazy_callable("DataFrame", "pandas")
+
+modules = [x.name for x in pkgutil.iter_modules()]
+
+for module in modules:
+    if module in globals():
+        continue
+    LazyModule(alias=module, path=module)
 
 
 def arange(*shape, dtype=None):
