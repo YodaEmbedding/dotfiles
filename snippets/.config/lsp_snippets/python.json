@@ -3,12 +3,9 @@
     "prefix": "d",
     "body": "def "
   },
-  "def __init__": {
+  "def __init__(self)": {
     "prefix": "_i",
-    "body": [
-        "def __init__(self):",
-        "\t${1:pass}"
-    ]
+    "body": "def __init__(self):\n\t${0:pass}\n"
   },
   "for ... in": {
     "prefix": "f",
