@@ -18,6 +18,7 @@ local function packer_spec()
   use {"tami5/"             .. "sqlite.lua"             } -- sql
 
   -- Functional
+  use {"windwp/"            .. "nvim-autopairs"         } -- auto-pairs
 --use {"ThePrimeagen/"      .. "harpoon"                } -- bookmarks
 --use {"brandoncc/"         .. "telescope-harpoon.nvim" } -- bookmarks
   use {"tpope/"             .. "vim-surround"           } -- change surrounding
