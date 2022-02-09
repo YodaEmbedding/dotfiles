@@ -2,8 +2,7 @@ local cmp = require("cmp")
 
 return {
   ["<C-Space>"] = cmp.mapping.complete(),
-  ["<C-e>"] = cmp.mapping.close(),
-  ["<C-h>"] = cmp.mapping.confirm({
+  ["<C-e>"] = cmp.mapping.confirm({
     behavior = cmp.ConfirmBehavior.Insert,
     select = true,
   }),
