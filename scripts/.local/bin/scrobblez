@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# scrobblez
+(
+  cd ~/code/scrobblez
+  python -m scrobblez
+)
