@@ -10,20 +10,21 @@
         "\t${1:pass}"
     ]
   },
+  "for ... in": {
+    "prefix": "f",
+    "body": "for $1 in $2:\n\t$0"
+  },
   "for i in range()": {
     "prefix": "fi",
-    "body": "for i in range("
+    "body": "for i in range($1):\n\t$0"
   },
   "for i, x in enumerate()": {
     "prefix": "fe",
-    "body": [
-        "for i, ${1:x} in enumerate(${2:xs}):",
-        "\t${3:pass}"
-    ]
+    "body": "for i, ${1:x} in enumerate(${2:xs}):\n\t$0"
   },
   "for x in": {
     "prefix": "fx",
-    "body": "for x in "
+    "body": "for x in $1:\n\t$0"
   },
   "if __name__": {
     "prefix": "_m",
