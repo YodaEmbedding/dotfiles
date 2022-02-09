@@ -73,5 +73,21 @@
   "self": {
     "prefix": "s",
     "body": "self."
+  },
+  "with open(...) as f": {
+    "prefix": "wo",
+    "body": "with open($1) as f:\n\t$0"
+  },
+  "with open(...) as f: lines = f.read().splitlines()": {
+    "prefix": "wol",
+    "body": "with open($1) as f:\n\tlines = f.read().splitlines()\n$0"
+  },
+  "with open(...) as f: json.dump()": {
+    "prefix": "wojd",
+    "body": "with open($1, \"w\") as f:\n\t${1:data} = json.load(f)\n$0"
+  },
+  "with open(...) as f: json.load()": {
+    "prefix": "wojl",
+    "body": "with open($1) as f:\n\t${1:data} = json.load(f)\n$0"
   }
 }
