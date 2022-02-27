@@ -71,6 +71,9 @@ alias n='nnn'
 # parallel
 alias parallel='parallel --will-cite'
 
+# poetry
+alias po='poetry'
+
 # ptpython
 alias pp='ptpython'
 alias ptpy='tmux rename-window "py"; ptpython'
