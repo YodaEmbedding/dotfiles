@@ -80,8 +80,9 @@ alias r='ranger'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # ripgrep
-alias rg="rg --hidden --glob '!.git' --ignore-case"
+alias rg="rg --hidden --glob '!.git' --smart-case"
 alias rgi='rg --ignore-case'
+alias rgs='rg --case-sensitive'
 alias rgpy='rg -t py'
 
 # stat
