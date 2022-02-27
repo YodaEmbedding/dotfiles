@@ -61,8 +61,8 @@ bindsym $mod+shift+t            exec $nsi \
     systemctl --user --no-block start update-frece-torr.service
 
 # Redshift control
-bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.rshift) + 200))
-bindsym $mod+shift+m            exec $nsi $scripts/rs $(($(cat ~/.rshift) - 200))
+bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) + 200))
+bindsym $mod+shift+m            exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) - 200))
 bindsym $mod+ctrl+m             exec $nsi $scripts/rs 4000
 bindsym $mod+ctrl+shift+m       exec $nsi $scripts/rs 6500
 
