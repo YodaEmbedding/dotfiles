@@ -86,6 +86,16 @@ alias sysu='systemctl status --user'
 alias syz='systemctl stop'
 alias syzu='systemctl stop --user'
 
+# systemctl --user
+alias syu='systemctl --user'
+alias syudr='systemctl --user daemon-reload'
+alias syud='systemctl --user disable'
+alias syue='systemctl --user enable'
+alias syur='systemctl --user restart'
+alias syust='systemctl --user start'
+alias syus='systemctl --user status'
+alias syuz='systemctl --user stop'
+
 # vim
 alias v='nvim'
 alias vim='nvim'
