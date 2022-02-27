@@ -38,8 +38,8 @@ cnoremap("w!!", "w !sudo tee > /dev/null %")        -- Save as sudo
 cnoremap("x!!", "x !sudo tee > /dev/null %")        -- Save as sudo
 xnoremap("<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>')    -- Search selection
 nnoremap("<C-_>", [[/\<\><Left><Left>]])            -- Search whole word
-nnoremap("gs", "vip:sort<CR>")                      -- Sort
-xnoremap("gs", ":sort<CR>")                         -- Sort
+nnoremap("gs", "vip:sort i<CR>")                    -- Sort
+xnoremap("gs", ":sort i<CR>")                       -- Sort
 nnoremap("<Leader><Space>", ":FixWhitespace<CR>")   -- Strip trailing whitespace
 nnoremap("gb", "     :ls<CR>:b<Space>")             -- Switch buffer
 nnoremap("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
