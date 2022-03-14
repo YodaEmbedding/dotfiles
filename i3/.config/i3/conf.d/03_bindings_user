@@ -3,7 +3,9 @@ bindsym --whole-window --border $mod+Button4    exec "xdotool click --clearmodif
 bindsym --whole-window --border $mod+Button5    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 5 mouseup --clearmodifiers 5"
 
 # Dropdown terminal
-bindsym $mod+q                  [instance="^dropdown$"] scratchpad show
+bindsym $mod+q                  [instance="^dropdown$"] scratchpad show, fullscreen disable
+bindsym $mod+ctrl+q             [instance="^dropdown$"] scratchpad show, fullscreen enable
+bindsym $mod+$mod_+q            [instance="^dropdown$"] scratchpad show, fullscreen enable
 
 # rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
 bindsym $mod+w                  exec "$rofi_app     -p 'run'"
