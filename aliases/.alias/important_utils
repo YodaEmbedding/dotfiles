@@ -31,6 +31,8 @@ alias grsh~='git reset HEAD~'
 alias gs='git status'
 alias gsh='git show'
 
+alias gcd='git_commit_date_sign'
+alias gcmd='git_commit_date_sign -m'
 alias gitc='git_commit_select'
 alias gitd='git_commit_browse'
 alias gith='git_history_browse'
@@ -39,6 +41,50 @@ git_commit_browse() {
   local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
   local sha=$(awk '{ print $1 }' <<< "$out")
   [ -n "$sha" ] && git show "$sha"
+}
+
+git_commit_date() {
+  local commit_date="$1"
+  shift
+  GIT_COMMITTER_DATE="$commit_date" git commit --date "$commit_date" $@
+}
+
+git_commit_date_sign() {
+  local commit_date="$1"
+  shift
+  echo "Commit date:      $commit_date"
+  LD_PRELOAD=/run/current-system/sw/lib/libfaketime.so.1 \
+    FAKETIME="@$commit_date" \
+    GIT_COMMITTER_DATE="$commit_date" \
+    git commit --date "$commit_date" $@
+}
+
+git_commit_date_sign_fix() {
+  local author_date="$(git show -s --format=%ai)"
+  local commit_date="$(git show -s --format=%ci)"
+  local new_sign_date="$(git show -s --format=%ci)"
+  echo "Prev author date: $author_date"
+  echo "New author date:  $commit_date"
+  echo "Commit date:      $commit_date"
+  echo "New sign date:    $new_sign_date"
+  LD_PRELOAD=/run/current-system/sw/lib/libfaketime.so.1 \
+    FAKETIME="@$new_sign_date" \
+    GIT_COMMITTER_DATE="$commit_date" \
+    git commit --date "$commit_date" $@
+}
+
+git_commit_date_branch_fix() {
+  git filter-branch -f --commit-filter '
+    git rev-parse "$GIT_COMMIT" >&2
+    git show -s --format=%ci "$GIT_COMMIT" >&2
+    echo "" >&2
+    export author_date="$(git show -s --format=%ai "$GIT_COMMIT")"
+    export LD_PRELOAD=/run/current-system/sw/lib/libfaketime.so.1
+    export FAKETIME="@$author_date";
+    export GIT_AUTHOR_DATE="$author_date"
+    export GIT_COMMITTER_DATE="$author_date"
+    git commit-tree -S "$@"
+  ' $@
 }
 
 git_commit_select() {
