@@ -3,5 +3,7 @@ if not _G.plugin_loaded("nvim-scrollbar") then
 end
 
 require("scrollbar").setup {
-
+  handle = {
+    color = "#5C4561",
+  },
 }
