@@ -102,6 +102,7 @@ local function packer_spec()
   use {"farmergreg/"        .. "vim-lastplace"          } -- remember cursor
 
   -- Visual
+  use {"lukas-reineke/"     .. "virt-column.nvim"       } -- colorcolumn line
 --use {"mastertinner/"      .. "nvim-quantum"           } -- colorscheme
   use {"folke/"             .. "tokyonight.nvim"        } -- colorscheme
 --use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme

@@ -16,3 +16,6 @@ hi CmpItemAbbrMatchFuzzy    guifg=#aaaaff
 hi CmpItemKind              guifg=#bbbbee
 hi CmpItemMenu              guifg=#bbbbee
 " hi CmpItemAbbrDeprecated
+
+hi VirtColumn       guifg=#402D3E
+hi ColorColumn      guibg=NONE
