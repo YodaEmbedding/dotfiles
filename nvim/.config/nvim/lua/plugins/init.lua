@@ -113,7 +113,8 @@ local function packer_spec()
 --use {"ray-x/"             .. "lsp_signature.nvim"     } -- LSP signature
   use {"gennaro-tedesco/"   .. "nvim-peekup"            } -- register " preview
 --use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
-  use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
+  use {"petertriho/"        .. "nvim-scrollbar"         } -- scrollbar
+--use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
   use {"lewis6991/"         .. "gitsigns.nvim"          } -- signs for git
   use {"kshenoy/"           .. "vim-signature"          } -- signs for marks
 end
