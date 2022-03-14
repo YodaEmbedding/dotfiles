@@ -3,7 +3,7 @@ if not _G.plugin_loaded("nvim-treesitter") then
 end
 
 require("nvim-treesitter.configs").setup {
-  ensure_installed = "all",
+  ensure_installed = "maintained",
   highlight = {
     enable = true,
   },
