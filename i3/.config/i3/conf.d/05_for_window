@@ -86,7 +86,8 @@ for_window [title="^i?python scratchpad$"] \
 for_window [title="^Picture-in-Picture$"] \
     floating enable, sticky enable, \
     resize set $video_size, \
-    exec $nsi $scripts/move bottom right
+    exec $nsi $scripts/move bottom right, \
+    move scratchpad, scratchpad show
 
 for_window [title="^Preview$"] \
     floating enable, \
