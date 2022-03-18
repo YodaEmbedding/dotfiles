@@ -10,6 +10,9 @@ local function packer_spec()
   -- Plugin manager
   use {"wbthomason/"        .. "packer.nvim", opt = true}
 
+  -- Performance
+  use {"lewis6991/"         .. "impatient.nvim"         } -- cache lua modules
+
   -- Libraries
   use {"nvim-lua/"          .. "plenary.nvim"           }
   use {"nvim-lua/"          .. "popup.nvim"             }

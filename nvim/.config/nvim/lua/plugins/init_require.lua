@@ -1,3 +1,4 @@
+require("plugins._impatient_nvim")
 require("plugins._coc_nvim")
 require("plugins._compe")
 require("plugins._completion_nvim")
