@@ -12,6 +12,7 @@ local function packer_spec()
 
   -- Performance
   use {"lewis6991/"         .. "impatient.nvim"         } -- cache lua modules
+  use {"nathom/"            .. "filetype.nvim"          } -- lua filetype.vim
 
   -- Libraries
   use {"nvim-lua/"          .. "plenary.nvim"           }
@@ -53,7 +54,7 @@ local function packer_spec()
 
   -- Tools
   use {"tpope/"             .. "vim-fugitive"           } -- git
-  use {"sheerun/"           .. "vim-polyglot"           } -- language packs
+--use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
 --use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
