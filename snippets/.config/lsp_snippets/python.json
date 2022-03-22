@@ -84,10 +84,10 @@
   },
   "with open(...) as f: json.dump()": {
     "prefix": "wojd",
-    "body": "with open($1, \"w\") as f:\n\t${1:data} = json.load(f)\n$0"
+    "body": "with open($1, \"w\") as f:\n\t${2:data} = json.load(f)\n$0"
   },
   "with open(...) as f: json.load()": {
     "prefix": "wojl",
-    "body": "with open($1) as f:\n\t${1:data} = json.load(f)\n$0"
+    "body": "with open($1) as f:\n\t${2:data} = json.load(f)\n$0"
   }
 }
