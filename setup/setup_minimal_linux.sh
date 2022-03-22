@@ -10,6 +10,7 @@ mkdir -p "$TMP_DIR"
 # ./setup/installers/python.sh
 ./setup/installers/python_packages.sh
 ./setup/installers/nvim.sh
+./setup/installers/ripgrep.sh
 
 stow colors
 stow git
