@@ -11,8 +11,10 @@ cd "neovim-$NVIM_VERSION" || exit 1
 make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$HOME/.local
 make install
 
-PYTHON_VERSION=3.9.6
-$HOME/.local/share/python-$PYTHON_VERSION/bin/pip3 install pynvim
+# PYTHON_VERSION=3.9.6
+# $HOME/.local/share/python-$PYTHON_VERSION/bin/pip3 install pynvim
+
+python3 -m pip install pynvim
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
