@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-./install_stow.sh
+./setup/install_stow.sh
 
 stow colors
 stow git
