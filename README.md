@@ -41,6 +41,8 @@ List of configs, which directories these belong in, and other details.
 | dunst          | `$HOME`  |                                                      | Notification manager                             |
 | frece          | `$HOME`  | frece rofi                                           | Frecency indexed database (mostly for rofi)      |
 | git            | `$HOME`  |                                                      | Personal                                         |
+| hosts/\*       | `/`      |                                                      | Personal                                         |
+| hosts/\*-home  | `$HOME`  |                                                      | Personal                                         |
 | i3             | `$HOME`  | feh, i3lock-color, jq, maim, mlocate, rofi, ttf-noto, wmctrl | Window manager                           |
 | i3blocks       | `$HOME`  | fping, gsimplecal, tff-font-awesome                  | Better system bar                                |
 | latexmk        | `$HOME`  |                                                      | Latexmk config                                   |
@@ -49,8 +51,6 @@ List of configs, which directories these belong in, and other details.
 | mpv            | `$HOME`  |                                                      | Video player                                     |
 | ncmpcpp        | `$HOME`  |                                                      | Music player (MPD client)                        |
 | nvim           | `$HOME`  | neovim, python-neovim                                | Better than emacs                                |
-| PC-Mordor-Arch | `/`      |                                                      | Personal                                         |
-| PC-Mordor-Arch-home | `$HOME` |                                                  | Personal                                         |
 | picom          | `$HOME`  |                                                      | Compositor                                       |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | ptpython       | `$HOME`  | ptpython                                             | Python REPL                                      |

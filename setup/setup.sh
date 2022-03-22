@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-stow -R PC-Mordor-Arch -t /
+stow -R hosts/PC-Mordor-Arch -t /
 stow -R root -t /
 
 stow -R alacritty
