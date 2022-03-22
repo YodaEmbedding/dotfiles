@@ -12,11 +12,15 @@ mkdir -p "$TMP_DIR"
 ./setup/installers/nvim.sh
 ./setup/installers/ripgrep.sh
 
+stow aliases
 stow colors
 stow git
 stow lint
 stow nvim
+stow ptpython
 stow readline
+stow ripgrep
+stow snippets
 stow tmux
 stow vim
 stow zsh
