@@ -26,5 +26,3 @@ stow snippets
 stow tmux
 stow vim
 stow zsh
-
-mkdir -p ~/.vim/undo
