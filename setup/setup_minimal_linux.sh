@@ -7,7 +7,7 @@ mkdir -p "$TMP_DIR"
 ./setup/installers/fzf.sh
 ./setup/installers/zoxide.sh
 ./setup/installers/fasd.sh
-./setup/installers/python.sh
+# ./setup/installers/python.sh
 ./setup/installers/python_packages.sh
 ./setup/installers/nvim.sh
 
