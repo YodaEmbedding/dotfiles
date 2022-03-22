@@ -51,22 +51,15 @@ bind_keys() {
 
 zinit wait lucid light-mode for \
   atload"bind_keys" \
-    mollifier/anyframe
-
-zinit wait lucid light-mode for \
+    mollifier/anyframe \
+  \
     OMZP::fzf \
     Aloxaf/fzf-tab \
-
-zinit wait lucid light-mode for \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay" \
-    zdharma-continuum/fast-syntax-highlighting
-
-zinit wait lucid light-mode for \
+  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start; bindkey '^[^M' autosuggest-execute" \
-    zsh-users/zsh-autosuggestions
-
-zinit wait lucid light-mode for \
-  blockf \
+    zsh-users/zsh-autosuggestions \
+  blockf atpull"zinit creinstall -q ." \
     zsh-users/zsh-completions
 
 
