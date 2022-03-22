@@ -9,6 +9,7 @@ mkdir -p "$TMP_DIR"
 ./setup/installers/fasd.sh
 # ./setup/installers/python.sh
 ./setup/installers/python_packages.sh
+./setup/installers/lf.sh
 ./setup/installers/nvim.sh
 ./setup/installers/ripgrep.sh
 
