@@ -26,5 +26,4 @@ stow readline
 stow ripgrep
 stow snippets
 stow tmux
-stow vim
 stow zsh
