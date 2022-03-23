@@ -24,6 +24,12 @@ xnoremap <silent> p p:let @"=@0<CR>
 inoremap <C-v> <C-o>"+p
 nnoremap <Backspace> "+p
 
+" Previous buffer
+nnoremap <S-Tab> :e#<CR>
+
+" Previous jump in jumplist
+nnoremap <C-P> <C-I>
+
 " Quit
 nnoremap zx :qa<CR>
 nnoremap zX :qa!<CR>
@@ -49,5 +55,18 @@ xnoremap gs :sort i<CR>
 " Strip trailing whitespace
 nnoremap <Leader><Space> :FixWhitespace<CR>
 
+" Switch buffer
+nnoremap gb :ls<CR>:b<Space>
+
 " Toggle wrap
 nnoremap <Leader>w :call ToggleWrap()<CR>
+
+" Add <count>jk motions to jumplist
+nnoremap <expr> j (v:count >= 1 ? "m`" . v:count : '') . 'j'
+xnoremap <expr> j (v:count >= 1 ? "m`" . v:count : '') . 'j'
+nnoremap <expr> k (v:count >= 1 ? "m`" . v:count : '') . 'k'
+xnoremap <expr> k (v:count >= 1 ? "m`" . v:count : '') . 'k'
+
+" Don't add {} motions to jumplist
+nnoremap <silent> } :<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>
+nnoremap <silent> { :<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>
