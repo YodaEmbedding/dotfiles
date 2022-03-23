@@ -9,7 +9,7 @@ nnoremap <F6> :set textwidth=72<CR>
 nnoremap <F7> :set textwidth=79<CR>
 
 " Kill buffer
-nnoremap <C-x> :bd<CR>
+nnoremap <Space>d :bd<CR>
 
 " Macro
 nnoremap <silent> <F2> @q
@@ -29,7 +29,8 @@ nnoremap zx :qa<CR>
 nnoremap zX :qa!<CR>
 
 " Save
-nnoremap <C-s> :w<CR>
+nnoremap <C-s> :up<CR>
+nnoremap <Space>s :up<CR>
 
 " Save as sudo
 cnoremap w!! w !sudo tee > /dev/null %
@@ -42,8 +43,8 @@ xnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 nnoremap <C-_> /\<\><Left><Left>
 
 " Sort
-nnoremap gs vip:sort<CR>
-xnoremap gs :sort<CR>
+nnoremap gs vip:sort i<CR>
+xnoremap gs :sort i<CR>
 
 " Strip trailing whitespace
 nnoremap <Leader><Space> :FixWhitespace<CR>

@@ -8,9 +8,11 @@ xnoremap <expr> k (v:count >= 1 ? "m`" . v:count : '') . 'k'
 nnoremap <silent> } :<C-u>execute "keepjumps norm! " . v:count1 . "}"<CR>
 nnoremap <silent> { :<C-u>execute "keepjumps norm! " . v:count1 . "{"<CR>
 
-" Navigate buffers
+" Previous buffer
 nnoremap <S-Tab> :e#<CR>
-nnoremap gb      :ls<CR>:b<Space>
 
 " Previous jump in jumplist
 nnoremap <C-P> <C-I>
+
+" Switch buffer
+nnoremap gb :ls<CR>:b<Space>
