@@ -14,6 +14,8 @@ mkdir -p "$TMP_DIR"
 ./setup/installers/ripgrep.sh
 ./setup/installers/zoxide.sh
 
+mv ~/.zshrc ~/.zshrc.orig
+
 stow aliases
 stow colors
 stow git
