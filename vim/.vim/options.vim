@@ -1,19 +1,3 @@
-" Conceal {{{1
-let g:tex_conceal = ""
-let g:vim_json_syntax_conceal = 0
-
-" Folding {{{1
-set fillchars=fold:\ 
-set foldlevelstart=20
-set foldnestmax=4
-set foldtext=FoldTextStyle()
-
-" GUI {{{1
-if has("gui_running")
-    set guioptions -=m              " Remove menubar
-    set guioptions -=T              " Remove toolbar
-endif
-
 " Indenting, Tabs, Spacing {{{1
 set expandtab                       " Spaces for indent
 set nojoinspaces                    " Join sentences with single space
@@ -21,14 +5,6 @@ set shiftround                      " Round >> to nearest shiftwidth multiple
 set shiftwidth=4                    " Spaces for >>
 set softtabstop=4                   " Spaces for tab
 set tabstop=4                       " Tab display width
-
-" Python indenting {{{2
-" let g:pyindent_continue     = '&sw'
-" let g:pyindent_nested_paren = '&sw'
-" let g:pyindent_open_paren   = '&sw'
-
-" VHDL indenting {{{2
-let g:vhdl_indent_genportmap = 0
 
 " Miscellaneous {{{1
 set hidden                          " Allow hiding unsaved buffers
@@ -57,5 +33,3 @@ set mouse=a                         " Mouse interactivity
 set numberwidth=2                   " Numbering column width
 set relativenumber                  " Relative line numbers
 set scrolloff=2                     " Always display lines around cursor
-
-" let &colorcolumn=join(range(80,999), ",") " Column guide

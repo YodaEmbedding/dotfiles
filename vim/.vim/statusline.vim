@@ -1,7 +1,3 @@
-if !exists("g:pluginUpdateStatus")
-    let g:pluginUpdateStatus = ""
-endif
-
 set statusline=                                 " Clear
 set statusline+=\                               " -
 " set statusline+=%t                            " Tail of the filename
@@ -15,7 +11,6 @@ set statusline+=%r                              " Read only flag
 set statusline+=%m                              " Modified flag
 set statusline+=%=                              " Left/right separator
 set statusline+=\                               " -
-set statusline+=%{g:pluginUpdateStatus}         " Up to date plugins
 set statusline+=\ \                             " --
 set statusline+=%{&filetype}                    " Filetype
 set statusline+=\                               " -

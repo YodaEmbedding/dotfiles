@@ -48,7 +48,3 @@ let g:slime_target = "tmux"
 " let g:vimtex_compiler_latexmk = {'build_dir': 'out'}
 let g:tex_flavor = 'latex'
 let g:vimtex_quickfix_method = 'pplatex'
-
-" Language: Fortran
-let fortran_do_enddo=1
-let fortran_free_source=1

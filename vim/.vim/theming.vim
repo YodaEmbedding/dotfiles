@@ -2,19 +2,21 @@
 set title
 set titlestring=%t
 
+let g:enable_bold_font = 1
+
+if has("gui_running")
+    set guioptions-=m               " Remove menubar
+    set guioptions-=T               " Remove toolbar
+    set guifont=Iosevka\ 15
+    " set guifont=Roboto\ Mono\ 16
+endif
+
 if exists('+termguicolors')
     if !has('nvim')
         let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
         let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
     endif
     set termguicolors
-endif
-
-let g:enable_bold_font = 1
-
-if has("gui_running")
-    set guifont=Iosevka\ 15
-    " set guifont=Roboto\ Mono\ 16
 endif
 
 " Comment-only keywords
