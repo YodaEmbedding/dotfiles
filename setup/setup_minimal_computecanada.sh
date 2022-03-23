@@ -4,4 +4,4 @@ module load python/3.9.6
 
 ./setup/setup_minimal_linux.sh
 
-(cd hosts && stow computecanada-home)
+stow --dir="hosts" --target="$HOME" computecanada-home
