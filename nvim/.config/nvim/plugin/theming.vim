@@ -64,10 +64,6 @@ let g:enable_bold_font = 1
 
 " Statusline {{{1
 
-if !exists("g:pluginUpdateStatus")
-    let g:pluginUpdateStatus = ""
-endif
-
 " Statusline definition {{{2
 set statusline=                                 " Clear
 set statusline+=\                               " -
@@ -82,7 +78,6 @@ set statusline+=%r                              " Read only flag
 set statusline+=%m                              " Modified flag
 set statusline+=%=                              " Left/right separator
 set statusline+=\                               " -
-set statusline+=%{g:pluginUpdateStatus}         " Up to date plugins
 set statusline+=\ \                             " --
 set statusline+=%{&filetype}                    " Filetype
 set statusline+=\                               " -
