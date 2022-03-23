@@ -39,7 +39,7 @@ local servers = {
   "kotlin_language_server",
   -- "matlab",
   "metals",
-  "py_custom",
+  -- "py_custom",
   -- "pyright",
   "rnix",
   "rust_analyzer",
@@ -57,9 +57,8 @@ local configs = {
 
 require("plugins.lspconfig.matlab")
 
-if vim.tbl_contains(servers, "py_custom") then
-  require("plugins.lspconfig.py_custom")
-end
+local ok, _ = pcall(require, "plugins.lspconfig.py_custom")
+table.insert(servers, ok and "py_custom" or "pyright")
 
 local config_defaults = {}
 
