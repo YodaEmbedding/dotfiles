@@ -18,7 +18,7 @@ mv ~/.zshrc ~/.zshrc.orig
 
 stow aliases
 stow colors
-stow git
+# stow git
 stow lint
 stow nvim
 stow ptpython
