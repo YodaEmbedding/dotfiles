@@ -27,7 +27,6 @@ bindsym $mod+f                  fullscreen toggle
 # Floating
 bindsym $mod+s                  focus mode_toggle
 bindsym $mod+shift+s            floating toggle
-bindsym $mod+ctrl+s             focus mode_toggle, fullscreen enable
 
 # Focus parent/child
 bindsym $mod+a                  focus parent

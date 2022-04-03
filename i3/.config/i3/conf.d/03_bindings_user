@@ -7,6 +7,12 @@ bindsym $mod+q                  [instance="^dropdown$"] scratchpad show, fullscr
 bindsym $mod+ctrl+q             [instance="^dropdown$"] scratchpad show, fullscreen enable
 bindsym $mod+$mod_+q            [instance="^dropdown$"] scratchpad show, fullscreen enable
 
+# Floating fullscreen
+bindsym $mod+ctrl+s             focus mode_toggle, fullscreen enable
+
+# Scratchpad fullscreen
+bindcode ctrl+$kp_ins           [instance="^(?!dropdown$).*$"] scratchpad show, fullscreen enable
+
 # rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
 bindsym $mod+w                  exec "$rofi_app     -p 'run'"
 bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
