@@ -128,13 +128,11 @@ local compile_path = util.join_paths(
   vim.fn.stdpath("config"), "generated", "packer_compiled.vim"
 )
 
-local packer_config = {
-  compile_path = compile_path,
-}
-
 packer.startup {
   packer_spec,
-  config = packer_config
+  config = {
+    compile_path = compile_path,
+  },
 }
 
 vim.cmd("source " .. compile_path)
