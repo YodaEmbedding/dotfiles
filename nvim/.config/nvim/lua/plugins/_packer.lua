@@ -23,25 +23,24 @@ local function packer_spec()
 
   -- Functional
   use {"windwp/"            .. "nvim-autopairs"         } -- auto-pairs
---use {"ThePrimeagen/"      .. "harpoon"                } -- bookmarks
---use {"brandoncc/"         .. "telescope-harpoon.nvim" } -- bookmarks
   use {"tpope/"             .. "vim-surround"           } -- change surrounding
---use {"9mm/"               .. "vim-closer"             } -- closes brackets
   use {"b3nj5m1n/"          .. "kommentary"             } -- commenting
   use {"ggandor/"           .. "lightspeed.nvim"        } -- motion
---use {"junegunn/"          .. "fzf.vim"                } -- search
---use {"tweekmonster/"      .. "fzf-filemru"            } -- search
---use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
   use {"camspiers/"         .. "snap", rocks = {"fzy"}  } -- search
---use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
   use {"hrsh7th/"           .. "vim-vsnip"              } -- snippets (engine)
---use {"L3MON4D3/"          .. "LuaSnip"                } -- snippets (engine)
---use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
   use {"rafamadriz/"        .. "friendly-snippets"      } -- snippets (snippets)
---use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
   use {"wellle/"            .. "targets.vim"            } -- text objects
   use {"tpope/"             .. "vim-eunuch"             } -- unix mv/rm/rename
   use {"nelstrom/"          .. "vim-visual-star-search" } -- visual mode *
+--use {"ThePrimeagen/"      .. "harpoon"                } -- bookmarks
+--use {"9mm/"               .. "vim-closer"             } -- closes brackets
+--use {"junegunn/"          .. "fzf.vim"                } -- search
+--use {"tweekmonster/"      .. "fzf-filemru"            } -- search
+--use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
+--use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
+--use {"L3MON4D3/"          .. "LuaSnip"                } -- snippets (engine)
+--use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
+--use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
 
   -- Telescope
   use {"nvim-telescope/"    .. "telescope.nvim"         }
@@ -51,15 +50,16 @@ local function packer_spec()
 --  end,
 --  requires = {"tami5/sqlite.lua"},
 --}
+--use {"brandoncc/"         .. "telescope-harpoon.nvim" } -- bookmarks
 
   -- Tools
   use {"tpope/"             .. "vim-fugitive"           } -- git
---use {"sheerun/"           .. "vim-polyglot"           } -- language packs
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
---use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
---use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
   use {"jpalardy/"          .. "vim-slime"              } -- REPL
+--use {"sheerun/"           .. "vim-polyglot"           } -- language packs
+--use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
+--use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
 
   -- Coq
 --use {"ms-jpq/"            .. "coq_nvim",
@@ -70,27 +70,27 @@ local function packer_spec()
 --}
 
   -- nvim-cmp
-  use {"hrsh7th/"           .. "nvim-cmp"               } -- completion
-  use {"hrsh7th/"           .. "cmp-buffer"             } -- source
---use {"uga-rosa/"          .. "cmp-dictionary"         } -- source
-  use {"kdheepak/"          .. "cmp-latex-symbols"      } -- source
---use {"octaltree/"         .. "cmp-look"               } -- source
---use {"saadparwaiz1/"      .. "cmp_luasnip"            } -- source
+  use {"hrsh7th/"           .. "nvim-cmp"               }
+  use {"hrsh7th/"           .. "cmp-buffer"             }
+  use {"kdheepak/"          .. "cmp-latex-symbols"      }
+  use {"hrsh7th/"           .. "cmp-nvim-lsp"           }
+  use {"hrsh7th/"           .. "cmp-path"               }
+  use {"ray-x/"             .. "cmp-treesitter"         }
+  use {"hrsh7th/"           .. "cmp-vsnip"              }
+  use {"tamago324/"         .. "cmp-zsh"                }
+  use {"andersevenrud/"     .. "compe-tmux",
+    branch = "cmp",
+  }
+--use {"uga-rosa/"          .. "cmp-dictionary"         }
+--use {"octaltree/"         .. "cmp-look"               }
+--use {"saadparwaiz1/"      .. "cmp_luasnip"            }
 --use {"f3fora/"            .. "cmp-nuspell"
 --  rocks = { "lua-nuspell" },
 --} -- source
-  use {"hrsh7th/"           .. "cmp-nvim-lsp"           } -- source
---use {"quangnguyen30192/"  .. "cmp-nvim-tags"          } -- source
---use {"quangnguyen30192/"  .. "cmp-nvim-ultisnips"     } -- source
---use {"jc-doyle/"          .. "cmp-pandoc-reference"   } -- source
-  use {"hrsh7th/"           .. "cmp-path"               } -- source
---use {"f3fora/"            .. "cmp-spell"              } -- source
-  use {"ray-x/"             .. "cmp-treesitter"         } -- source
-  use {"hrsh7th/"           .. "cmp-vsnip"              } -- source
-  use {"tamago324/"         .. "cmp-zsh"                } -- source
-  use {"andersevenrud/"     .. "compe-tmux",
-    branch = "cmp",
-  } -- source
+--use {"quangnguyen30192/"  .. "cmp-nvim-tags"          }
+--use {"quangnguyen30192/"  .. "cmp-nvim-ultisnips"     }
+--use {"jc-doyle/"          .. "cmp-pandoc-reference"   }
+--use {"f3fora/"            .. "cmp-spell"              }
 
   -- Treesitter
   use {"nvim-treesitter/"   .. "nvim-treesitter",
@@ -107,21 +107,21 @@ local function packer_spec()
 
   -- Visual
   use {"lukas-reineke/"     .. "virt-column.nvim"       } -- colorcolumn line
---use {"mastertinner/"      .. "nvim-quantum"           } -- colorscheme
   use {"folke/"             .. "tokyonight.nvim"        } -- colorscheme
---use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme
---use {"romainl/"           .. "vim-cool"               } -- highlight smarter
   use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace
   use {"unblevable/"        .. "quick-scope"            } -- hint unique chars
   use {"lukas-reineke/"     .. "indent-blankline.nvim"  } -- indentation guides
   use {"onsails/"           .. "lspkind-nvim"           } -- LSP pictograms
---use {"ray-x/"             .. "lsp_signature.nvim"     } -- LSP signature
   use {"gennaro-tedesco/"   .. "nvim-peekup"            } -- register " preview
---use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
   use {"petertriho/"        .. "nvim-scrollbar"         } -- scrollbar
---use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
   use {"lewis6991/"         .. "gitsigns.nvim"          } -- signs for git
   use {"kshenoy/"           .. "vim-signature"          } -- signs for marks
+--use {"mastertinner/"      .. "nvim-quantum"           } -- colorscheme
+--use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme
+--use {"romainl/"           .. "vim-cool"               } -- highlight smarter
+--use {"ray-x/"             .. "lsp_signature.nvim"     } -- LSP signature
+--use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
+--use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
 end
 
 local compile_path = util.join_paths(
