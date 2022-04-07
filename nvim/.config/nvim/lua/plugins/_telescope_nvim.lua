@@ -45,6 +45,13 @@ telescope.setup{
     buffer_previewer_maker = buffer_previewer_maker,
 
   },
+
+  extensions = {
+    frecency = {
+      default_workspace = "CWD",
+    },
+  },
+
   pickers = {
     buffers = {
       ignore_current_buffer = true,
