@@ -3,6 +3,7 @@ if not _G.plugin_loaded("nvim-cmp") then
 end
 
 local cmp = require("cmp")
+local compare = require('cmp.config.compare')
 local lspkind_symbols = require("plugins._lspkind_symbols")
 
 cmp.setup {
@@ -28,6 +29,21 @@ cmp.setup {
       -- require("luasnip").lsp_expand(args.body)
       -- vim.fn["UltiSnips#Anon"](args.body)
     end,
+  },
+  sorting = {
+    priority_weight = 2,
+    comparators = {
+      compare.offset,
+      compare.exact,
+      compare.scopes,
+      compare.locality,
+      compare.recently_used,
+      compare.score,
+      compare.kind,
+      compare.sort_text,
+      compare.length,
+      compare.order,
+    },
   },
   sources = {
     { name = "nvim_lsp", max_item_count = 30 },
