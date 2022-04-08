@@ -21,13 +21,13 @@
 
 [core]
     filemode = false
-    # pager = "delta"
+    pager = "delta"
 
 [init]
     defaultBranch = main
 
 [interactive]
-    # diffFilter = delta --color-only
+    diffFilter = delta --color-only
     singleKey = true
 
 [delta]
