@@ -2,6 +2,8 @@
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
 
+# echo "Starting zsh..."
+
 # FPATH {{{1
 
 USR_SHARE_ZSH=/usr/share/zsh
@@ -59,11 +61,12 @@ autoload -Uz _zinit
 
 # Load a few important annexes, without Turbo
 # (this is currently required for annexes)
-zinit light-mode for \
-    zinit-zsh/z-a-rust \
-    zinit-zsh/z-a-as-monitor \
-    zinit-zsh/z-a-patch-dl \
-    zinit-zsh/z-a-bin-gem-node
+# zinit light-mode for \
+#     zinit-zsh/z-a-rust \
+#     zinit-zsh/z-a-as-monitor \
+#     zinit-zsh/z-a-patch-dl \
+#     zinit-zsh/z-a-bin-gem-node
+
 
 ### End of Zinit's installer chunk
 
@@ -137,8 +140,8 @@ zinit wait lucid light-mode for \
 # zle -N edit-command-line
 
 # fasd
-export _FASD_MAX=100000
-eval "$(fasd --init zsh-hook)"
+# export _FASD_MAX=100000
+# eval "$(fasd --init zsh-hook)"
 
 # pyenv
 # if command -v pyenv 1>/dev/null 2>&1; then
@@ -273,6 +276,11 @@ fzf-fasdvim-widget() {
         zle accept-line
     fi
     return ret
+}
+
+zi() {
+  \builtin local result
+  result="$(zoxide query -i --all -- "$@")"  && __zoxide_cd "${result}"
 }
 
 zoxide-widget() {
