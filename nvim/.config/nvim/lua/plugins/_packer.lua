@@ -56,6 +56,7 @@ local function packer_spec()
   use {"tpope/"             .. "vim-fugitive"           } -- git
   use {"lervag/"            .. "vimtex"                 } -- LaTeX
   use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
+  use {"williamboman/"      .. "nvim-lsp-installer"     } -- LSP installer
   use {"jpalardy/"          .. "vim-slime"              } -- REPL
 --use {"sheerun/"           .. "vim-polyglot"           } -- language packs
 --use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
