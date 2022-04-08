@@ -2,6 +2,9 @@
 
 HOSTNAME="$(hostname)"
 
+# Include environment variables defined in ~/.profile.
+[ -f ~/.profile ] && source ~/.profile
+
 bgrnd () {
     nohup "$@" < /dev/null > /dev/null 2>&1 &
     disown
