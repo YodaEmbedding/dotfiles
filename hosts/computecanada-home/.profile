@@ -4,6 +4,7 @@ VISUAL=nvim
 PATH="$HOME/.local/bin:$PATH"
 export PATH
 
+export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
 export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour182"
 
 # echo "Loading module python..."
