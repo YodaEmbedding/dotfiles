@@ -75,12 +75,10 @@ local function packer_spec()
   use {"kdheepak/"          .. "cmp-latex-symbols"      }
   use {"hrsh7th/"           .. "cmp-nvim-lsp"           }
   use {"hrsh7th/"           .. "cmp-path"               }
+  use {"andersevenrud/"     .. "cmp-tmux"               }
   use {"ray-x/"             .. "cmp-treesitter"         }
   use {"hrsh7th/"           .. "cmp-vsnip"              }
   use {"tamago324/"         .. "cmp-zsh"                }
-  use {"andersevenrud/"     .. "compe-tmux",
-    branch = "cmp",
-  }
 --use {"uga-rosa/"          .. "cmp-dictionary"         }
 --use {"octaltree/"         .. "cmp-look"               }
 --use {"saadparwaiz1/"      .. "cmp_luasnip"            }
