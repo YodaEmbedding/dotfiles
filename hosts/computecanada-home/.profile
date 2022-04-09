@@ -8,7 +8,7 @@ export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
 
 HOSTNAME="$(hostname)"
 
-case "$string" in
+case "$HOSTNAME" in
   *beluga*)
     TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
     ;;
