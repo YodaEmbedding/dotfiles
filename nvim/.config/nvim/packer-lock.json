@@ -1,0 +1,143 @@
+{
+  "cmp-buffer": {
+    "commit": "d66c4c2"
+  },
+  "cmp-latex-symbols": {
+    "commit": "29dc9e5"
+  },
+  "cmp-nvim-lsp": {
+    "commit": "ebdfc20"
+  },
+  "cmp-path": {
+    "commit": "466b6b8"
+  },
+  "cmp-tmux": {
+    "commit": "3c16f7e"
+  },
+  "cmp-treesitter": {
+    "commit": "a6b4c95"
+  },
+  "cmp-vsnip": {
+    "commit": "0abfa18"
+  },
+  "cmp-zsh": {
+    "commit": "1d8133e"
+  },
+  "editorconfig-vim": {
+    "commit": "a8e3e66"
+  },
+  "filetype.nvim": {
+    "commit": "25b5f7e"
+  },
+  "friendly-snippets": {
+    "commit": "e302658"
+  },
+  "gitsigns.nvim": {
+    "commit": "ac5ba87"
+  },
+  "impatient.nvim": {
+    "commit": "2337df7"
+  },
+  "indent-blankline.nvim": {
+    "commit": "db7d3ad"
+  },
+  "kommentary": {
+    "commit": "12ecde4"
+  },
+  "lightspeed.nvim": {
+    "commit": "cfde2b2"
+  },
+  "lspkind-nvim": {
+    "commit": "93e98a0"
+  },
+  "nvim-autopairs": {
+    "commit": "8faf72b"
+  },
+  "nvim-cmp": {
+    "commit": "3192a0c"
+  },
+  "nvim-lsp-installer": {
+    "commit": "88f590c"
+  },
+  "nvim-lspconfig": {
+    "commit": "fd7843a"
+  },
+  "nvim-peekup": {
+    "commit": "e8ad8c7"
+  },
+  "nvim-scrollbar": {
+    "commit": "3097240"
+  },
+  "nvim-treesitter": {
+    "commit": "c6d4650"
+  },
+  "nvim-treesitter-textobjects": {
+    "commit": "7c6b5fe"
+  },
+  "packer.nvim": {
+    "commit": "4dedd3b"
+  },
+  "plenary.nvim": {
+    "commit": "13f9959"
+  },
+  "popup.nvim": {
+    "commit": "b7404d3"
+  },
+  "quick-scope": {
+    "commit": "5e2373e"
+  },
+  "snap": {
+    "commit": "500f976"
+  },
+  "sqlite.lua": {
+    "commit": "9ccd2a6"
+  },
+  "targets.vim": {
+    "commit": "8d6ff29"
+  },
+  "telescope.nvim": {
+    "commit": "b7ae91c"
+  },
+  "tokyonight.nvim": {
+    "commit": "8223c97"
+  },
+  "vim-eunuch": {
+    "commit": "cceba47"
+  },
+  "vim-fugitive": {
+    "commit": "cba8634"
+  },
+  "vim-lastplace": {
+    "commit": "cef9d62"
+  },
+  "vim-repeat": {
+    "commit": "24afe92"
+  },
+  "vim-signature": {
+    "commit": "6bc3dd1"
+  },
+  "vim-slime": {
+    "commit": "0ea9b35"
+  },
+  "vim-surround": {
+    "commit": "81fc0ec"
+  },
+  "vim-trailing-whitespace": {
+    "commit": "05f068e"
+  },
+  "vim-visual-star-search": {
+    "commit": "3725972"
+  },
+  "vim-vsnip": {
+    "commit": "70a1131"
+  },
+  "vimpeccable": {
+    "commit": "bd19b2a"
+  },
+  "vimtex": {
+    "commit": "7bfcfb7"
+  },
+  "virt-column.nvim": {
+    "commit": "29db24c"
+  }
+}
