@@ -1,6 +1,8 @@
 local cmp = require("cmp")
 
 return {
+  ["<C-n>"] = cmp.mapping.select_next_item(),
+  ["<C-p>"] = cmp.mapping.select_prev_item(),
   ["<Tab>"] = cmp.mapping.select_next_item(),
   ["<S-Tab>"] = cmp.mapping.select_prev_item(),
   ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
