@@ -28,7 +28,7 @@ x_silent("<F2>", ":normal @q<CR>")                  -- Macro
 x_silent("<F3>", ":normal @@<CR>")                  -- Macro
 x_silent("p", 'p:let @"=@0<CR>')                    -- Paste blackhole
 inoremap("<C-v>", '<C-o>"+p')                       -- Paste clipboard
-nnoremap("<Backspace>", '"+p')                      -- Paste clipboard
+-- nnoremap("<Backspace>", '"+p')                      -- Paste clipboard
 nnoremap("<S-Tab>", ":e#<CR>")                      -- Previous buffer
 nnoremap("<C-P>", "<C-I>")                          -- Previous jump in jumplist
 nnoremap("zx", ":qa<CR>")                           -- Quit
