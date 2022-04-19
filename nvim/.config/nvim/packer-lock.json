@@ -33,7 +33,7 @@
     "commit": "804c3f5"
   },
   "gitsigns.nvim": {
-    "commit": "eb7d40f"
+    "commit": "565b94d"
   },
   "impatient.nvim": {
     "commit": "2337df7"
@@ -48,16 +48,16 @@
     "commit": "cfde2b2"
   },
   "lspkind-nvim": {
-    "commit": "93e98a0"
+    "commit": "57e5b5d"
   },
   "nvim-autopairs": {
     "commit": "38d486a"
   },
   "nvim-cmp": {
-    "commit": "b5433f9"
+    "commit": "2aa7eee"
   },
   "nvim-lsp-installer": {
-    "commit": "90996e5"
+    "commit": "e68ac4a"
   },
   "nvim-lspconfig": {
     "commit": "ad9903c"
@@ -96,13 +96,13 @@
     "commit": "8d6ff29"
   },
   "telescope.nvim": {
-    "commit": "66c3e2a"
+    "commit": "6e7ed1b"
   },
   "tokyonight.nvim": {
     "commit": "8223c97"
   },
   "vim-eunuch": {
-    "commit": "7d81275"
+    "commit": "3e2582c"
   },
   "vim-fugitive": {
     "commit": "4b0f2b6"
