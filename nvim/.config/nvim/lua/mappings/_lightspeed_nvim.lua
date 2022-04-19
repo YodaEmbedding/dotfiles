@@ -16,20 +16,30 @@ end
 
 nnoremap({"silent", "override"}, ";", function () repeat_ft(false) end)
 xnoremap({"silent", "override"}, ";", function () repeat_ft(false) end)
+
 -- nnoremap({"silent", "override"}, ",", function () repeat_ft(true) end)
 xnoremap({"silent", "override"}, ",", function () repeat_ft(true) end)
 
-nnoremap({"silent", "override"}, "f", "f")
-nnoremap({"silent", "override"}, "F", "F")
-nnoremap({"silent", "override"}, "t", "t")
-nnoremap({"silent", "override"}, "T", "T")
 
+-- DISABLE SOME DEFAULT MAPPINGS
+
+nnoremap({"silent", "override"}, "gs", "gs")
+nnoremap({"silent", "override"}, "gS", "gS")
+
+nnoremap({"silent", "override"}, "f", "f")
 xnoremap({"silent", "override"}, "f", "f")
+
+nnoremap({"silent", "override"}, "F", "F")
 xnoremap({"silent", "override"}, "F", "F")
+
+nnoremap({"silent", "override"}, "t", "t")
 xnoremap({"silent", "override"}, "t", "t")
+
+nnoremap({"silent", "override"}, "T", "T")
 xnoremap({"silent", "override"}, "T", "T")
 
 nnoremap({"silent", "override"}, ";", ";")
 xnoremap({"silent", "override"}, ";", ";")
+
 -- nnoremap({"silent", "override"}, ",", ",")
 xnoremap({"silent", "override"}, ",", ",")

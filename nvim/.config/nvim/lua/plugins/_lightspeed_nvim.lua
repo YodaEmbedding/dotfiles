@@ -5,3 +5,5 @@ end
 require("lightspeed").setup {
 
 }
+
+require("mappings._lightspeed_nvim")
