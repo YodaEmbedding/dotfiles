@@ -18,12 +18,12 @@ end
 
 -- DEFAULT MAPPINGS
 
-n ("s", "<Plug>Lightspeed_s")
-n ("S", "<Plug>Lightspeed_S")
-x ("s", "<Plug>Lightspeed_s")
-x ("S", "<Plug>Lightspeed_S")
-o ("z", "<Plug>Lightspeed_s")
-o ("Z", "<Plug>Lightspeed_S")
+-- n ("s", "<Plug>Lightspeed_s")
+-- n ("S", "<Plug>Lightspeed_S")
+-- x ("s", "<Plug>Lightspeed_s")
+-- x ("S", "<Plug>Lightspeed_S")
+-- o ("z", "<Plug>Lightspeed_s")
+-- o ("Z", "<Plug>Lightspeed_S")
 
 -- n ("gs", "<Plug>Lightspeed_gs")
 -- n ("gS", "<Plug>Lightspeed_gS")
@@ -56,9 +56,9 @@ o ("X", "<Plug>Lightspeed_X")
 
 -- CUSTOM OVERRIDES
 
--- n ("s", "<Plug>Lightspeed_omni_s")
--- x ("s", "<Plug>Lightspeed_omni_s")
--- o ("z", "<Plug>Lightspeed_omni_s")
+n ("s", "<Plug>Lightspeed_omni_s")
+x ("s", "<Plug>Lightspeed_omni_s")
+o ("z", "<Plug>Lightspeed_omni_s")
 
 -- n ({"silent", "override"}, ";", function () repeat_ft(false) end)
 -- x ({"silent", "override"}, ";", function () repeat_ft(false) end)
