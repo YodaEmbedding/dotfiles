@@ -8,20 +8,28 @@
     "body": "def __init__(self):\n\t${0:pass}\n"
   },
   "for ... in": {
-    "prefix": "f",
+    "prefix": "fo",
     "body": "for $1 in $2:\n\t$0"
   },
   "for i in range()": {
     "prefix": "fi",
-    "body": "for i in range($1):\n\t$0"
+    "body": "for i in range($1)$0"
   },
   "for i, x in enumerate()": {
     "prefix": "fe",
-    "body": "for i, ${1:x} in enumerate(${2:xs}):\n\t$0"
+    "body": "for i, ${1:x} in enumerate(${2:xs})$0"
+  },
+  "for k, v in d.items()": {
+    "prefix": "fd",
+    "body": "for ${2:k}, ${3:v} in ${1:d}.items()$0"
   },
   "for x in": {
     "prefix": "fx",
-    "body": "for x in $1:\n\t$0"
+    "body": "for x in ${1:xs}$0"
+  },
+  "from ... import ...": {
+    "prefix": "f",
+    "body": "from $1 import $0"
   },
   "if __name__": {
     "prefix": "_m",
