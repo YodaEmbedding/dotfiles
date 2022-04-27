@@ -108,6 +108,7 @@ local function packer_spec()
   -- Visual
   use {"lukas-reineke/"     .. "virt-column.nvim"       } -- colorcolumn line
   use {"folke/"             .. "tokyonight.nvim"        } -- colorscheme
+  use {"Mofiqul/"           .. "trld.nvim"              } -- diagnostics corner
   use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace
   use {"unblevable/"        .. "quick-scope"            } -- hint unique chars
   use {"lukas-reineke/"     .. "indent-blankline.nvim"  } -- indentation guides
