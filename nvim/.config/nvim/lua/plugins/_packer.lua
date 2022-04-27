@@ -25,6 +25,7 @@ local function packer_spec()
   use {"windwp/"            .. "nvim-autopairs"         } -- auto-pairs
   use {"tpope/"             .. "vim-surround"           } -- change surrounding
   use {"b3nj5m1n/"          .. "kommentary"             } -- commenting
+--use {"ggandor/"           .. "leap.nvim"              } -- motion
   use {"ggandor/"           .. "lightspeed.nvim"        } -- motion
   use {"camspiers/"         .. "snap", rocks = {"fzy"}  } -- search
   use {"hrsh7th/"           .. "vim-vsnip"              } -- snippets (engine)
