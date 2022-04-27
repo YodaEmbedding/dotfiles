@@ -101,6 +101,9 @@
   "tokyonight.nvim": {
     "commit": "8223c97"
   },
+  "trld.nvim": {
+    "commit": "75e3e1b"
+  },
   "vim-eunuch": {
     "commit": "3e2582c"
   },
