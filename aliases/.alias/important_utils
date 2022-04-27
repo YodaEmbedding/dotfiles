@@ -113,7 +113,8 @@ alias py='python'
 
 # rsync
 alias rsync="rsync -h"
-alias rscp="rsync -a --info=progress2 --partial"
+alias rscp="rsync -a --progress --partial"
+# alias rscp="rsync -a --info=progress2 --partial"
 
 # systemctl
 alias sy='systemctl'
