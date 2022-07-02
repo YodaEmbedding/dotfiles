@@ -133,8 +133,8 @@ packer.startup {
   packer_spec,
   config = {
     compile_path = compile_path,
-    snapshot = util.join_paths(vim.fn.stdpath("config"), "packer-lock.json"),
-    snapshot_path = vim.fn.stdpath("config"),
+    -- snapshot = util.join_paths(vim.fn.stdpath("config"), "packer-lock.json"),
+    -- snapshot_path = vim.fn.stdpath("config"),
   },
 }
 
