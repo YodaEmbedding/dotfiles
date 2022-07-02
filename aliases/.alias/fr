@@ -74,7 +74,7 @@ alias fenetres='windows'                # windows
 # List of french aliases
 francais() {
   grep -e "^alias" ~/.alias/fr | \
-    sed -ne "s/^alias \(\w\+\)='\(.*\)'\s\+# \([^# ]\+\)\s\+# \([^#]\+\)$/\2#\1#\3#\4/p" \
+    sed -ne "s/^alias \([a-zA-Z]\{1,\}\)='\(.*\)'[[:space:]]\{1,\}# \([^#]\{1,\}\)$/\2#\1#\3/p" \
     | sort | column -t -s '#'
 }
 
