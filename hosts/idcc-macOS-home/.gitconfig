@@ -43,3 +43,5 @@
     plus-emph-style                 = syntax "#40516B"
     plus-empty-line-marker-style    = normal "#313E52"
     # plus-style                    = syntax "#3B3152"  # a more purply color
+[pull]
+	ff = only
