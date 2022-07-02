@@ -1,3 +1,6 @@
+" Buffer: Auto-format on save
+autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+
 " Buffer: Disable continue comment on new line
 autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
 
