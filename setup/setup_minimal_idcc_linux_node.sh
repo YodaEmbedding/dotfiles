@@ -10,3 +10,5 @@ mkdir -p "$TMP_DIR"
 ./setup/installers/cmake.sh
 
 ./setup/setup_minimal_linux.sh
+
+stow --dir="hosts" --target="$HOME" idcc-node-linux-home
