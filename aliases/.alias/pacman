@@ -32,3 +32,7 @@ alias yaya='yay -aSyu --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --nore
 aururl() {
   xdg-open "https://aur.archlinux.org/packages/$1"
 }
+
+# Homebrew
+alias bi='brew install'
+alias bic='brew install --cask'
