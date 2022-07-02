@@ -46,6 +46,7 @@ bind_keys() {
     bindkey '^k' anyframe-widget-kill                       # kill
     bindkey '^v' fzf-fasdvim-widget                         # vim
     bindkey '^z' zoxide-widget                              # cd
+    bindkey '^a' zoxide-widget                              # cd
     bindkey -s '^o' 'lfcd\n'                                # lf
 }
 
