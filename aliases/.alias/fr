@@ -1,0 +1,83 @@
+### FRENCH ###
+
+alias pour='for'                        # for
+alias dans='in'                         # in
+alias faire='do'                        # do
+alias fin='done'                        # end
+alias si='if'                           # if
+alias alors='then'                      # then
+alias puis='then'                       # then
+alias autre='else'                      # else
+alias ausi='elif'                       # else if
+alias is='fi'                           # fi
+alias retourner='return'                # to return (go back)
+alias vrai='true'                       # true
+alias faux='false'                      # false
+alias ou='||'                           # or
+alias et='&&'                           # et
+alias egal='=='                         # equal
+
+alias voir='cat'                        # to see
+alias revenir='cd -'                    # to return (come back)
+alias rentrer='cd ~'                    # to return (home)
+alias jour='date'                       # day
+alias temps='date'                      # the time
+alias fois='date'                       # n times
+alias dit='echo'                        # to say
+alias dire='echo'                       # to say
+alias parle='echo'                      # to say
+alias copier='/bin/cp'                  # to copy
+alias mettre='/bin/mv'                  # to put
+alias moins='less'                      # less
+alias lire='read'                       # to read
+alias perdre='rm'                       # to lose/throw away
+alias enlever='rm'                      # to remove
+alias supprimer='rm'                    # to remove
+alias dormir='sleep'                    # to sleep
+alias attendre='sleep'                  # to wait
+alias ou='where'                        # where
+alias qui='which'                       # which
+alias oui='yes'                         # yes
+alias non='yes n'                       # no
+
+alias contexte='b'                      # background
+alias moins='bat'                       # less
+alias lire='bat'                        # read
+alias voir='bat'                        # to see
+alias noir='black -l 79'                # black
+alias aujourdhui='cal'                  # today
+alias travail='htop_cpu'                # work
+alias memoire='htop_mem'                # memory
+alias rappeler='htop_mem'               # to remember
+alias trier='isort'                     # sort
+alias tuer='killall'                    # to kill
+# alias faire='make'                    # to make
+alias creer='make'                      # to create
+alias copie='/usr/bin/pbcopy'           # copy
+alias tomber='/usr/bin/pbpaste'         # to drop/fall
+alias ou='pwd'                          # where
+alias recommencer='reboot'              # to restart
+alias chercher='rgi'                    # to locate
+alias trouver='rgi'                     # to find
+alias envoyer='rscp'                    # to send
+alias arreter='shutdown -P 0'           # to stop
+alias lien='ssh'                        # link
+alias liaison='ssh'                     # link
+alias diviser='tmux'                    # to split
+# alias faire='todo'                    # to do
+
+alias poesie='poetry'                   # poetry
+alias vers='poetry'                     # verse
+alias arbre='tree'                      # tree
+alias fenetres='windows'                # windows
+
+# List of french aliases
+francais() {
+  grep -e "^alias" ~/.alias/fr | \
+    sed -ne "s/^alias \(\w\+\)='\(.*\)'\s\+# \([^# ]\+\)\s\+# \([^#]\+\)$/\2#\1#\3#\4/p" \
+    | sort | column -t -s '#'
+}
+
+fr() {
+  francais | fzf
+}
