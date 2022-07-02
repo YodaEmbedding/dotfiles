@@ -1,3 +1,8 @@
+export EDITOR=nvim
+export VISUAL=nvim
+
+export PATH="$HOME/.local/bin:$PATH"
+
 # MacOS coreutils aliases
 alias dircolors="gdircolors"
 alias ls="gls"
