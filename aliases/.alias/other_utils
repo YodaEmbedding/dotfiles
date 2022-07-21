@@ -76,6 +76,21 @@ alias parallel='parallel --will-cite'
 
 # poetry
 alias po='poetry'
+alias poa='poetry add'
+alias poi='poetry install'
+alias pol='poetry lock'
+alias por='poetry run'
+alias porp='poetry run python'
+alias pos='poetry shell'
+alias posh='poetry_shell'
+
+poetry_shell() {
+  local d="$PWD"
+  cd "$1"
+  local venv="$(poetry env info --path)"
+  cd "$d"
+  source "$venv/bin/activate"
+}
 
 # ptpython
 alias pp='PYTHONSTARTUP=/home/mulhaq/dotfiles/root/usr/local/share/pythonstartup.py ptpython'
