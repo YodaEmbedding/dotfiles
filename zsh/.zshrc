@@ -255,6 +255,11 @@ zle -N -- zoxide-widget
 
 # Use showkey -a to detect terminal keycodes
 
+bindkey '^p' up-history                                   # up/down history
+bindkey '^n' down-history                                 # up/down history
+bindkey "^[[5~" up-history                                # up/down history
+bindkey "^[[6~" down-history                              # up/down history
+
 # bindkey -v                                              # vim
 # bindkey -v '^?' backward-delete-char                    # vim backspace
 # bindkey -M vicmd V edit-command-line                    # vim edit command
