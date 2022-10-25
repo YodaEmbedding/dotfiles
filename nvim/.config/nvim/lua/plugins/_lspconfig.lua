@@ -103,7 +103,7 @@ local cmp_nvim_lsp = nil
 if _G.plugin_loaded("cmp-nvim-lsp") then
   cmp_nvim_lsp = require("cmp_nvim_lsp")
   config_defaults = vim.tbl_extend("error", config_defaults, {
-    capabilities = cmp_nvim_lsp.update_capabilities(
+    capabilities = cmp_nvim_lsp.default_capabilities(
       vim.lsp.protocol.make_client_capabilities()
     ),
   })
