@@ -37,14 +37,16 @@ end
 -- end))
 
 -- Files
-snap.register.map("n", ",", create(function ()
-  return {
-    producer = snap.get"consumer.fzy"(smart_file),
-    select = snap.get"select.file".select,
-    multiselect = snap.get"select.file".multiselect,
-    views = {snap.get"preview.file"},
-  }
-end))
+if false then
+  snap.register.map("n", ",", create(function ()
+    return {
+      producer = snap.get"consumer.fzy"(smart_file),
+      select = snap.get"select.file".select,
+      multiselect = snap.get"select.file".multiselect,
+      views = {snap.get"preview.file"},
+    }
+  end))
+end
 
 -- Files
 snap.register.map("n", "<Space>f", create(function ()
