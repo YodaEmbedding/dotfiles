@@ -34,8 +34,8 @@
   "if __name__": {
     "prefix": "_m",
     "body": [
-        "if __name__ == \"__main__\":",
-        "\tmain()"
+      "if __name__ == \"__main__\":",
+      "\tmain()"
     ]
   },
   "import matplotlib.pyplot": {
@@ -53,6 +53,22 @@
   "import tensorflow": {
     "prefix": "itf",
     "body": "import tensorflow as tf"
+  },
+  "import torch": {
+    "prefix": "it",
+    "body": [
+      "import torch",
+      "import torch.nn as nn",
+      "import torch.nn.functional as F"
+    ]
+  },
+  "import torch.nn": {
+    "prefix": "itn",
+    "body": "import torch.nn as nn"
+  },
+  "import torch.nn.functional": {
+    "prefix": "itnf",
+    "body": "import torch.nn.functional as F"
   },
   "plt.plot": {
     "prefix": "plt",
@@ -82,6 +98,10 @@
     "prefix": "s",
     "body": "self."
   },
+  "self.x = x": {
+    "prefix": "a",
+    "body": "self.${1:} = ${1:}"
+  },
   "with open(...) as f": {
     "prefix": "wo",
     "body": "with open($1) as f:\n\t$0"
@@ -97,5 +117,16 @@
   "with open(...) as f: json.load()": {
     "prefix": "wojl",
     "body": "with open($1) as f:\n\t${2:data} = json.load(f)\n$0"
+  },
+  "class Module(nn.Module)": {
+    "prefix": "cnn",
+    "body": [
+      "class Module(nn.Module):",
+      "\tdef __init__(self):",
+      "\t\tsuper().__init__()",
+      "",
+      "\tdef forward(self, x: Tensor) -> Tensor:",
+      "\t\treturn x"
+    ]
   }
 }
