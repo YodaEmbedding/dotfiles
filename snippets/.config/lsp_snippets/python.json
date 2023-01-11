@@ -99,6 +99,10 @@
     "body": "self."
   },
   "self.x = x": {
+    "prefix": "S",
+    "body": "self.${1:} = ${1:}"
+  },
+  "self.x = x  (shortcut: a)": {
     "prefix": "a",
     "body": "self.${1:} = ${1:}"
   },
