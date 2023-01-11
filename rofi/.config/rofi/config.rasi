@@ -2,9 +2,8 @@
  */
 
 configuration {
-  theme: "themes/cyberpunk-neon";
   terminal: "termite";
   case-sensitive: false;
-  kb-row-tab: "";
-  kb-row-select: "Tab";
 }
+
+@theme "themes/cyberpunk-neon"
