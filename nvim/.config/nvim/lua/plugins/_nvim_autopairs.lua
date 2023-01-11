@@ -3,5 +3,5 @@ if not _G.plugin_loaded("nvim-autopairs") then
 end
 
 require("nvim-autopairs").setup {
-
+  ignored_next_char = "[%w%.]"
 }
