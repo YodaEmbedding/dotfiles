@@ -4,7 +4,7 @@
 # Syntax: simple "KEY=VAL" pairs on separate lines
 #
 
-BROWSER=firefox-nightly
+BROWSER=firefox
 EDITOR=nvim
 #PAGER=most
 #PAGER=nvim
