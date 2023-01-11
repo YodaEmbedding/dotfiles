@@ -2,6 +2,8 @@
 #   TERM: xterm-256color
 
 window:
+  opacity: 0.95
+
   # TODO what is this for...?
   dimensions:
     columns: 80
@@ -132,8 +134,6 @@ colors:
 bell:
   animation: EaseOutExpo
   duration: 0
-
-background_opacity: 0.95
 
 # Available fields:
 #   - mouse
