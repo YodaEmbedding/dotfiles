@@ -10,6 +10,21 @@
 # possible, but leave them commented.  Uncommented options override the
 # default value.
 
+
+# CUSTOM ADDITIONS
+#PermitEmptyPasswords no
+#ChallengeResponseAuthentication no
+PermitRootLogin prohibit-password
+PasswordAuthentication no
+PubkeyAuthentication yes
+RSAAuthentication yes
+UsePAM no
+AllowUsers mulhaq
+Port 22
+AddressFamily any
+ListenAddress 0.0.0.0
+ListenAddress ::
+
 #Port 22
 #AddressFamily any
 #ListenAddress 0.0.0.0
@@ -79,7 +94,9 @@ KbdInteractiveAuthentication no
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
 # and KbdInteractiveAuthentication to 'no'.
-UsePAM yes
+
+# PC-MORDOR CUSTOM EDIT (commented out below line)
+#UsePAM yes
 
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes

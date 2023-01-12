@@ -10,14 +10,14 @@ UUID=46c918ee-097f-4bbf-82db-a714bc6d680f       /mnt/nixos      ext4    rw,relat
 # UUID=FA1ECAA31ECA5871                         /mnt/winrecovry                                                                                         # /dev/sda6
 # UUID=DCD1-89B5                                /mnt/winefi                                                                                             # /dev/sda7
 # UUID=                                         /mnt/winreserve                                                                                         # /dev/sda8
-UUID=BCB2DA24B2D9E346                           /mnt/windows    ntfs-3g defaults,windows_names,locale=en_US.utf8                        0       0       # /dev/sda9
+UUID=BCB2DA24B2D9E346                           /mnt/windows    ntfs-3g defaults,windows_names,locale=en_US.utf8,uid=1000,gid=1000      0       0       # /dev/sda9
 
 UUID=f4dad4a8-4090-4b38-9227-f5a3bce13f08       /mnt/data       ext4    rw,relatime,data=ordered                                        0       1       # /dev/sdb1
 # UUID=6a4ebdf5-1534-44a8-8b8c-dbb0342206bf     none            swap    defaults                                                        0       0       # /dev/sdb3
 UUID=19d34d5e-a01b-47fc-ad9b-356af4e20948       /mnt/data2      ext4    rw,relatime,data=ordered                                        0       1       # /dev/sdb4
 
 UUID=96ee4ab9-3f70-4721-9341-4b147512fc34       /mnt/data3      ext4    rw,relatime,data=ordered                                        0       1       # /dev/sdc1
-UUID=01D470EB28233B10                           /mnt/data4      ntfs-3g defaults,uid=1000,gid=1000,windows_names,locale=en_US.utf8      0       0       # /dev/sdc2
+UUID=01D470EB28233B10                           /mnt/data4      ntfs-3g defaults,windows_names,locale=en_US.utf8,uid=1000,gid=1000      0       0       # /dev/sdc2
 UUID=dbf50732-b129-473b-9e73-cce5dbef41c2       none            swap    defaults                                                        0       0       # /dev/sdc3
 
 # Flags:
