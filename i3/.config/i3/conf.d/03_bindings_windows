@@ -4,7 +4,7 @@ bindsym --whole-window --border $mod+shift+Button5  focus right
 bindsym --border                Button2             kill
 
 # Window switch
-bindsym $mod+space              exec $nsi "wmfocus -c asdfghjkl -o 0,20 --bgcolor 'rgba(30, 30, 30, 0.9)'"
+# bindsym $mod+space              exec $nsi "wmfocus -c asdfghjkl -o 0,20 --bgcolor 'rgba(30, 30, 30, 0.9)'"
 
 # Window switch back/forth
 bindsym $mod+$mod_+grave        exec $scripts/focus_last --switch
