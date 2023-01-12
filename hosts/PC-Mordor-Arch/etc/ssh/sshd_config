@@ -1,4 +1,4 @@
-#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
+#	$OpenBSD: sshd_config,v 1.104 2021/07/02 05:11:21 dtucker Exp $
 
 # This is the sshd server system-wide configuration file.  See
 # sshd_config(5) for more information.
@@ -9,30 +9,6 @@
 # OpenSSH is to specify options with their default value where
 # possible, but leave them commented.  Uncommented options override the
 # default value.
-
-
-# TODO: review below...
-# Better yet: replace this file with default sshd_config before modifying
-
-# CUSTOM ADDITIONS
-PermitRootLogin prohibit-password
-PasswordAuthentication no
-#PermitEmptyPasswords no
-ChallengeResponseAuthentication no
-PubkeyAuthentication yes
-RSAAuthentication yes
-UsePAM no
-#UsePAM yes
-AllowUsers mulhaq
-
-# Custom
-#PermitRootLogin no  # ignored if PAM yes
-Port 22
-AddressFamily any
-ListenAddress 0.0.0.0
-ListenAddress ::
-#AllowUsers mulhaq
-
 
 #Port 22
 #AddressFamily any
@@ -47,9 +23,8 @@ ListenAddress ::
 #RekeyLimit default none
 
 # Logging
-# PC-MORDOR CUSTOM EDIT (uncommented below two lines)
-SyslogFacility AUTH
-LogLevel INFO
+#SyslogFacility AUTH
+#LogLevel INFO
 
 # Authentication:
 
@@ -83,8 +58,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #PermitEmptyPasswords no
 
 # Change to no to disable s/key passwords
-# PC-MORDOR CUSTOM EDIT (commented out below line)
-#ChallengeResponseAuthentication no
+KbdInteractiveAuthentication no
 
 # Kerberos options
 #KerberosAuthentication no
@@ -98,15 +72,14 @@ AuthorizedKeysFile	.ssh/authorized_keys
 
 # Set this to 'yes' to enable PAM authentication, account processing,
 # and session processing. If this is enabled, PAM authentication will
-# be allowed through the ChallengeResponseAuthentication and
+# be allowed through the KbdInteractiveAuthentication and
 # PasswordAuthentication.  Depending on your PAM configuration,
-# PAM authentication via ChallengeResponseAuthentication may bypass
+# PAM authentication via KbdInteractiveAuthentication may bypass
 # the setting of "PermitRootLogin without-password".
 # If you just want the PAM account and session checks to run without
 # PAM authentication, then enable this but set PasswordAuthentication
-# and ChallengeResponseAuthentication to 'no'.
-# PC-MORDOR CUSTOM EDIT (commented out below line)
-#UsePAM yes
+# and KbdInteractiveAuthentication to 'no'.
+UsePAM yes
 
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes
@@ -115,7 +88,7 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #X11DisplayOffset 10
 #X11UseLocalhost yes
 #PermitTTY yes
-PrintMotd no # pam does that
+PrintMotd no
 #PrintLastLog yes
 #TCPKeepAlive yes
 #PermitUserEnvironment no
