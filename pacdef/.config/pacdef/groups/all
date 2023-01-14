@@ -194,6 +194,7 @@ perl-term-readkey
 picom-git
 pipewire
 pipewire-jack
+pkgconf
 playerctl
 polybar
 powerline-fonts
@@ -389,6 +390,7 @@ zsh
 zsh-autosuggestions
 
 acroread
+adobe-reader-11
 android-platform
 android-sdk-build-tools
 anki
@@ -463,6 +465,7 @@ ttf-material-design-icons
 ttf-monaco
 ttf-ms-fonts
 ttf-vista-fonts
+updaurpkg-git
 vim-language-server
 vim-plug
 virtualbox-ext-oracle
