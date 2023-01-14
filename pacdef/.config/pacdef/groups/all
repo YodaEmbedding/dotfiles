@@ -43,6 +43,7 @@ cmatrix
 colordiff
 copyq
 coreutils
+ctags
 cuda
 cups
 cups-pdf
@@ -297,6 +298,7 @@ ttf-iosevka-nerd
 ttf-liberation
 ttf-opensans
 typescript
+typescript-language-server
 ufw
 unison
 unrar
@@ -308,7 +310,9 @@ vim
 virtualbox
 visidata
 vlc
+vscode-css-languageserver
 vscode-html-languageserver
+vscode-json-languageserver
 vulkan-headers
 waifu2x-ncnn-vulkan
 wget
@@ -421,11 +425,9 @@ libreoffice-extension-languagetool
 licensor-git
 numix-gtk-theme
 openblas-lapack
-otf-fira-code
 pacaur
 pandoc-bin
 paru
-pdfmted
 photoqt
 pikaur
 pip2pkgbuild
@@ -441,7 +443,6 @@ python-snakeviz
 python-tekore
 python-tensorboardx
 python-torchinfo
-python-torchsummary
 python2
 qimgv-git
 shellcheck-bin
@@ -462,15 +463,10 @@ ttf-material-design-icons
 ttf-monaco
 ttf-ms-fonts
 ttf-vista-fonts
-typescript-language-server-bin
-universal-ctags-git
 vim-language-server
 vim-plug
 virtualbox-ext-oracle
 visual-studio-code-bin
-vscode-css-languageserver-bin
-vscode-json-languageserver-bin
-what-bin
 xkbset
 xvkbd
 yay
