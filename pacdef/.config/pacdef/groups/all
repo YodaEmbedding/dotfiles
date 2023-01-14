@@ -178,6 +178,7 @@ otf-font-awesome
 p7zip
 pacdef
 pacman
+pacman-contrib
 parallel
 pass
 pass-otp
