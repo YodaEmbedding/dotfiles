@@ -332,9 +332,13 @@ xdotool
 xf86-input-libinput
 xfce4-settings
 xfsprogs
+xorg-bdftopcf
 xorg-iceauth
+xorg-mkfontscale
+xorg-server
 xorg-server-xvfb
 xorg-sessreg
+xorg-setxkbmap
 xorg-smproxy
 xorg-x11perf
 xorg-xauth
@@ -346,9 +350,10 @@ xorg-xdriinfo
 xorg-xev
 xorg-xgamma
 xorg-xhost
-xorg-xinit
 xorg-xinput
+xorg-xkbcomp
 xorg-xkbevd
+xorg-xkbprint
 xorg-xkbutils
 xorg-xkill
 xorg-xlsatoms
