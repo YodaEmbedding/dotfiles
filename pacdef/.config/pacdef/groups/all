@@ -177,7 +177,6 @@ openssh
 os-prober
 otf-font-awesome
 p7zip
-pacdef
 pacman
 pacman-contrib
 parallel
@@ -429,6 +428,7 @@ licensor-git
 numix-gtk-theme
 openblas-lapack
 pacaur
+pacdef
 pandoc-bin
 paru
 photoqt
