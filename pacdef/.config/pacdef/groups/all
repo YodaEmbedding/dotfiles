@@ -191,14 +191,13 @@ perl-term-readkey
 picom-git
 pipewire
 pipewire-jack
+pipewire-pulse
 pkgconf
 playerctl
 polybar
 powerline-fonts
 prettier
 progress
-pulseaudio
-pulseaudio-jack
 pv
 pyright
 python
