@@ -392,14 +392,13 @@ zsh
 zsh-autosuggestions
 
 
-acroread
+# AUR
 adobe-reader-11
 android-platform
 android-sdk-build-tools
 anki
 cabal-static
 cnijfilter-common
-cnijfilter-mg3500
 cnijfilter2
 ddccontrol
 dropbox
@@ -479,3 +478,8 @@ xvkbd
 yay
 zhumu
 zoom
+
+
+# Custom
+acroread
+cnijfilter-mg3500
