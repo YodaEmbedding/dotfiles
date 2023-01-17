@@ -107,6 +107,7 @@ guitarix
 gvfs-mtp
 gzip
 hdparm
+helvum
 hexedit
 hexyl
 htop
@@ -177,6 +178,7 @@ otf-font-awesome
 p7zip
 pacman
 pacman-contrib
+pamixer
 parallel
 pass
 pass-otp
