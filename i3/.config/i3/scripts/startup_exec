@@ -18,7 +18,7 @@ systemctl --user import-environment PATH DBUS_SESSION_BUS_ADDRESS
 systemctl --user start --no-block desktop-user.target
 
 if [[ $HOSTNAME =~ "PC-Mordor-Arch" ]]; then
-    bgrnd picom --experimental-backend
+    bgrnd picom
     bgrnd xmodmap ~/.Xmodmap
     bgrnd xset led on
     bgrnd xinput --set-prop \
