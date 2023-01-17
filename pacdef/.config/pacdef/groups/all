@@ -141,6 +141,7 @@ libinput
 libjpeg-turbo
 libreoffice-fresh
 llvm
+lua-language-server
 luarocks
 lutris
 lxappearance
@@ -221,10 +222,12 @@ python-pylint
 python-pynvim
 python-pytest
 python-pytorch-cuda
+python-pytorch-msssim
 python-pywal
 python-scikit-learn
 python-scipy
 python-seaborn
+python-setuptools
 python-sphinx
 python-sympy
 python-tensorflow-cuda
@@ -241,6 +244,7 @@ ripgrep
 rofi
 rsync
 ruby
+ruff
 rust-analyzer
 rustup
 rxvt-unicode
@@ -450,6 +454,7 @@ python-tekore
 python-tensorboardx
 python-torchinfo
 python2
+python2-setuptools
 qimgv-git
 shellcheck-bin
 skypeforlinux-stable-bin
