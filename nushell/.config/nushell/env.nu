@@ -4,10 +4,20 @@ def create_left_prompt [] {
     let path_segment = if (is-admin) {
         $"(ansi red_bold)($env.PWD)"
     } else {
-        $"(ansi green_bold)($env.PWD)"
+        $"(ansi blue_bold)($env.PWD)"
     }
 
-    $path_segment
+    let time_segment = ([
+        (date now | date format '%m/%d/%Y %r')
+    ] | str join)
+
+    let git_segment = if ((do --ignore-errors { git rev-parse --is-inside-work-tree }) == "true\n") {
+        $"(ansi purple_bold)\((git symbolic-ref --short HEAD)\)"
+    } else {
+        ""
+    }
+
+    $"\n· ($time_segment) · ($path_segment) · ($git_segment)\n "
 }
 
 def create_right_prompt [] {
@@ -20,14 +30,14 @@ def create_right_prompt [] {
 
 # Use nushell functions to define your right and left prompt
 let-env PROMPT_COMMAND = { create_left_prompt }
-let-env PROMPT_COMMAND_RIGHT = { create_right_prompt }
+let-env PROMPT_COMMAND_RIGHT = { "" }
 
 # The prompt indicators are environmental variables that represent
 # the state of the prompt
-let-env PROMPT_INDICATOR = { "〉" }
-let-env PROMPT_INDICATOR_VI_INSERT = { ": " }
-let-env PROMPT_INDICATOR_VI_NORMAL = { "〉" }
-let-env PROMPT_MULTILINE_INDICATOR = { "::: " }
+let-env PROMPT_INDICATOR = { "λ " }
+let-env PROMPT_INDICATOR_VI_INSERT = { "λ " }
+let-env PROMPT_INDICATOR_VI_NORMAL = { "λ " }
+let-env PROMPT_MULTILINE_INDICATOR = { ".. " }
 
 # Specifies how environment variables are:
 # - converted from a string to a value on Nushell startup (from_string)
