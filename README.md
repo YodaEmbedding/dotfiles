@@ -50,6 +50,7 @@ List of configs, which directories these belong in, and other details.
 | mimeapps       | `$HOME`  |                                                      | Choose default app used to open files            |
 | mpv            | `$HOME`  |                                                      | Video player                                     |
 | ncmpcpp        | `$HOME`  |                                                      | Music player (MPD client)                        |
+| nushell        | `$HOME`  | nushell                                              | Structured shell                                 |
 | nvim           | `$HOME`  | neovim, python-neovim                                | Better than emacs                                |
 | pacdef         | `$HOME`  | paru                                                 | Declarative package management                   |
 | picom          | `$HOME`  |                                                      | Compositor                                       |
