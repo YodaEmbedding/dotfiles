@@ -642,5 +642,20 @@ let-env config = {
       mode: [emacs, vi_normal, vi_insert]
       event: { send: menu name: commands_with_description }
     }
+    # User-defined keybindings
+    {
+      name: run_zoxide
+      modifier: control
+      keycode: char_z
+      mode: [emacs, vi_normal, vi_insert]
+      event: [
+        # { send: ClearScreen }
+        # { send: ExecuteHostCommand cmd: "zoxide query --interactive --all" }
+        { send: ExecuteHostCommand cmd: "zi" }
+        # { send: Enter }
+      ]
+    }
   ]
 }
+
+source ~/.local/share/zoxide/init.nu
