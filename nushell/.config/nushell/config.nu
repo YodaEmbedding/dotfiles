@@ -657,7 +657,7 @@ let-env config = {
               | uniq
               | reverse
               | str collect (char -i 0)
-              | fzf --read0 --layout=reverse --height=40% -q (commandline)
+              | fzf --read0 --layout=reverse --height=60% -q (commandline)
               | decode utf-8
               | str trim
           )"
