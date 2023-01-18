@@ -69,6 +69,7 @@ List of configs, which directories these belong in, and other details.
 | tridactyl      | `$HOME`  | firefox                                              | Firefox vim-like browsing                        |
 | vim            | `$HOME`  | vim                                                  | Better than emacs                                |
 | xmodmap        | `$HOME`  |                                                      | Keyboard remappings (e.g. Caps Lock -> Escape)   |
+| xonsh          | `$HOME`  | xonsh                                                | Shell -- Python based!                           |
 | zathura        | `$HOME`  | zathura                                              | PDF reader                                       |
 | zsh            | `$HOME`  | zplug                                                | Shell                                            |
 
