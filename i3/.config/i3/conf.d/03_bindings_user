@@ -35,15 +35,12 @@ bindsym $mod+ctrl+r             exec $nsi ~/.config/polybar/polybar.sh
 # Wallpaper
 bindsym $mod+$mod_+w            exec $nsi feh --bg-fill $wallpaper
 
-# Screenshot (cropped, cropped + edit, full, full + cursor, active, active + cursor)
+# Screenshot (select, select + edit, select + copy, full, active, preview latest)
 bindsym            Print        exec $nsi maim -u -s "$screen_path"
-bindsym ctrl+shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
+bindsym      shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
+bindsym $mod+shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && xclip -selection clipboard -t image/png <\\"$f\\""
 bindsym       ctrl+Print        exec $nsi maim -u "$screen_path"
-bindsym  $mod+ctrl+Print        exec $nsi maim    "$screen_path"
-bindsym      shift+Print        exec $nsi maim -u -i $(xdotool getactivewindow) "$screen_path"
-bindsym $mod+shift+Print        exec $nsi maim    -i $(xdotool getactivewindow) "$screen_path"
-
-# Screenshot: open latest
+bindsym  $mod+ctrl+Print        exec $nsi maim -u -i $(xdotool getactivewindow) "$screen_path"
 bindsym       $mod+Print        exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
 
 # Screencapture
@@ -61,10 +58,11 @@ bindsym $mod+$mod_+p            exec $nsi $scripts/switchto "gpmdp"             
 
 # Downloads
 bindsym $mod+t                  exec thunar ~/Downloads
+bindsym $mod+shift+t            exec thunar ~/Downloads/screenshots
 bindsym $mod+c                  exec dolphin ~/Downloads
 
 # Refresh search index
-bindsym $mod+shift+t            exec $nsi \
+bindsym $mod+$mod_+d            exec $nsi \
     systemctl --user --no-block start update-frece-dir.service && \
     systemctl --user --no-block start update-frece-file.service && \
     systemctl --user --no-block start update-frece-torr.service
