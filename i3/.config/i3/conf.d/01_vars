@@ -50,8 +50,8 @@ set $vol_change     pkill -SIGRTMIN+1 i3blocks
 set $cycle_pa_sink  ~/dotfiles/i3/.config/i3/scripts/pa_set_default_sink
 
 # Screenshot path
-set $screen_base    $HOME/Downloads
-set $screen_path    $HOME/Downloads/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
+set $screen_base    $HOME/Downloads/screenshots
+set $screen_path    $HOME/Downloads/screenshots/$(date '+%Y-%m-%d  %H-%M-%S  %3N.png')
 
 # Window size
 set $screen_size    1920 1080
