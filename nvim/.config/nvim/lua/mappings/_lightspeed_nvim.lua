@@ -15,7 +15,6 @@ local function repeat_ft(reverse)
   lightspeed.ft:to(reverse, lightspeed.ft["prev-t-like?"])
 end
 
-
 -- DEFAULT MAPPINGS
 
 -- n ("s", "<Plug>Lightspeed_s")
