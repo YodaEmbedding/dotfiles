@@ -35,3 +35,4 @@ $VI_MODE = True
 # Plugins
 xontrib load abbrevs
 xontrib load fish_completer
+xontrib load fzf-widgets
