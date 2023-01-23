@@ -64,11 +64,11 @@ local configs = {
       -- rootMarkers = {".git/"},
       languages = {
         lua = {
-          {formatCommand = "lua-format -i", formatStdin = true},
+          { formatCommand = "lua-format -i", formatStdin = true },
         },
         python = {
-          {formatCommand = "isort --quiet -", formatStdin = true},
-          {formatCommand = "black --quiet -", formatStdin = true},
+          { formatCommand = "isort --quiet -", formatStdin = true },
+          { formatCommand = "black --quiet -", formatStdin = true },
           -- {
           --   lintCommand = "mypy --show-column-numbers",
           --   lintFormats = {
