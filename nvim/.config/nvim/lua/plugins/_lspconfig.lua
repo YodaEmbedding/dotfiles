@@ -40,8 +40,7 @@ local servers = {
   "kotlin_language_server",
   -- "matlab",
   "metals",
-  -- "py_custom",
-  -- "pyright",
+  "pyright",
   "rnix",
   "rust_analyzer",
   "sumneko_lua",
@@ -87,8 +86,10 @@ local configs = {
 
 require("plugins.lspconfig.matlab")
 
-local ok, _ = pcall(require, "plugins.lspconfig.py_custom")
-table.insert(servers, ok and "py_custom" or "pyright")
+local ok, pyright_config = pcall(require, "plugins.lspconfig.pyright")
+if ok then
+  configs["pyright"] = pyright_config
+end
 
 local config_defaults = {}
 
