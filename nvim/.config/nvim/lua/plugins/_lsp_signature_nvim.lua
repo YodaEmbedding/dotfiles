@@ -3,6 +3,6 @@ if not _G.plugin_loaded("lsp_signature.nvim") then
 end
 
 require("lsp_signature").on_attach {
---fix_pos = true,
+  --fix_pos = true,
   max_width = 80,
 }

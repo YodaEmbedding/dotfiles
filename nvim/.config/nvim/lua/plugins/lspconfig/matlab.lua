@@ -9,13 +9,13 @@ local root_files = {
 
 configs.matlab = {
   default_config = {
-    cmd = {"sh", binary_path},
-    filetypes = {"octave"},
+    cmd = { "sh", binary_path },
+    filetypes = { "octave" },
     root_dir = function(filename)
       return (
-        util.root_pattern(unpack(root_files))(filename) or
-        util.path.dirname(filename)
-      )
+          util.root_pattern(unpack(root_files))(filename) or
+              util.path.dirname(filename)
+          )
     end,
   }
 }

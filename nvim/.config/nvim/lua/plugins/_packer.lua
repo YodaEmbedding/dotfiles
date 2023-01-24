@@ -4,6 +4,7 @@ vim.cmd [[autocmd BufWritePost **/nvim/lua/plugins/init.lua PackerCompile]]
 local packer = require("packer")
 local util = require("packer.util")
 
+---@format disable-next
 local function packer_spec()
   local use = use;
 

@@ -21,7 +21,7 @@ local function buffer_previewer_maker(filepath, bufnr, opts)
   end)
 end
 
-telescope.setup{
+telescope.setup {
   defaults = {
 
     mappings = {

@@ -1,3 +1,4 @@
+---@format disable-next
 _G.plugin_config_paths = {
   ["neoclide/"          .. "coc.nvim"               ] = "plugins._coc_nvim",
   ["hrsh7th/"           .. "nvim-compe"             ] = "plugins._compe",
