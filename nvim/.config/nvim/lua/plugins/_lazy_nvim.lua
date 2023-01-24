@@ -34,7 +34,11 @@ local plugins = {
   {"tpope/"             .. "vim-surround"           }, -- change surrounding
   {"b3nj5m1n/"          .. "kommentary"             }, -- commenting
 --{"ggandor/"           .. "leap.nvim"              }, -- motion
-  {"ggandor/"           .. "lightspeed.nvim"        }, -- motion
+  {"ggandor/"           .. "lightspeed.nvim",
+    init = function()
+      vim.g.lightspeed_no_default_keymaps = true
+    end
+  }, -- motion
   {"camspiers/"         .. "snap", rocks = {"fzy"}  }, -- search
   {"hrsh7th/"           .. "vim-vsnip"              }, -- snippets (engine)
   {"rafamadriz/"        .. "friendly-snippets"      }, -- snippets (snippets)
@@ -169,7 +173,5 @@ function _G.plugin_loaded(plugin_name)
   end
   return true
 end
-
-vim.g.lightspeed_no_default_keymaps = true
 
 require("lazy").setup(plugins, opts)
