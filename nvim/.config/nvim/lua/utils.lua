@@ -78,7 +78,7 @@ function utils.create_centered_floating_window()
   local mid = "│" .. string.rep(" ", width - 2) .. "│"
   local bot = "╰" .. string.rep("─", width - 2) .. "╯"
 
-  local lines = {top}
+  local lines = { top }
   for i = 2, height - 1 do
     lines[i] = mid
   end
@@ -107,8 +107,8 @@ function utils.toggle_wrap()
   vim.wo.linebreak = true
   vim.wo.list = false
   vim.o.virtualedit = ""
-  bind_buf(0, "n", "j", "gj", {noremap = true, silent = true})
-  bind_buf(0, "n", "k", "gk", {noremap = true, silent = true})
+  bind_buf(0, "n", "j", "gj", { noremap = true, silent = true })
+  bind_buf(0, "n", "k", "gk", { noremap = true, silent = true })
 end
 
 -- Wipes all registers

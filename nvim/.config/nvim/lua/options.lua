@@ -16,6 +16,8 @@ local function w(key, value)
   vim.o[key] = value
 end
 
+---@format disable
+
 -- Completion
 o("completeopt", "menuone,noinsert,noselect")
 o("shortmess", vim.o.shortmess .. "c")
