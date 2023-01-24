@@ -57,13 +57,14 @@ local configs = {
       codeAction = true,
       documentFormatting = true,
     },
-    filetypes = { "lua", "python" },
+    filetypes = { "python" },
+    -- filetypes = { "lua", "python" },
     single_file_support = false,
     settings = {
       -- rootMarkers = {".git/"},
       languages = {
         lua = {
-          { formatCommand = "lua-format -i", formatStdin = true },
+          -- { formatCommand = "lua-format -i", formatStdin = true },
         },
         python = {
           { formatCommand = "isort --quiet -", formatStdin = true },
