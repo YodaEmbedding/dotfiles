@@ -136,11 +136,11 @@ local plugins = {
 
 for i, plugin_spec in ipairs(plugins) do
   local short_url = plugin_spec[1]
-  if _G.plugin_config_paths[short_url] ~= nil then
-    local config_path = _G.plugin_config_paths[short_url]
-    plugin_spec["config"] = function()
-      require(config_path)
-    end
+  local plugin_name = string.match(short_url, "^[^/]*/(.*)$")
+  local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
+  local config_path = "plugins._" .. plugin_name_slug
+  plugin_spec["config"] = function()
+    pcall(require, config_path)
   end
 end
 
