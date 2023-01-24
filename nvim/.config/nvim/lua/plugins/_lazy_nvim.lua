@@ -138,6 +138,10 @@ local plugins = {
 
 }
 
+local opts = {
+
+}
+
 local plugin_names = {}
 
 for i, plugin_spec in ipairs(plugins) do
@@ -150,10 +154,6 @@ for i, plugin_spec in ipairs(plugins) do
     pcall(require, config_path)
   end
 end
-
-local opts = {
-
-}
 
 function _G.plugin_loaded(plugin_name)
   return vim.tbl_contains(plugin_names, plugin_name)
