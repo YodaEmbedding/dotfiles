@@ -8,8 +8,10 @@ local vimp = require("vimp")
 
 local nnoremap = vimp.nnoremap
 
+
+---@format disable
+
 nnoremap("<space>t",  ui.toggle_quick_menu)
 nnoremap("<space>T",  mark.add_file)
 
 -- nnoremap("", function () harpoon.ui.nav_file(1) end)
-

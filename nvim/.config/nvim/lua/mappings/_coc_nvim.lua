@@ -11,6 +11,9 @@ local xnoremap = vimp.xnoremap
 local nmap = vimp.nmap
 local xmap = vimp.xmap
 
+
+---@format disable
+
 -- Navigation
 nmap("gd",  "<Plug>(coc-definition)")
 nmap("gD",  "<Plug>(coc-declaration)")
@@ -25,12 +28,12 @@ inoremap({"silent", "expr"}, "<C-k>", "CocActionAsync('showSignatureHelp')")
 nnoremap("K",     utils.coc_documentation_openclose)
 nnoremap("<C-k>", utils.coc_documentation_openjumpclose)
 
-  -- Diagnostics
+-- Diagnostics
 nmap("[c", "<Plug>(coc-diagnostic-prev)")
 nmap("]c", "<Plug>(coc-diagnostic-next)")
 nnoremap("<space>d", ":<C-u>CocList diagnostics<CR>")
 
-  -- Refactoring
+-- Refactoring
 nmap("<space>a",  "<Plug>(coc-codeaction)")
 nmap("<space>A",  "<Plug>(coc-codeaction-selected)")
 xmap("<space>a",  "<Plug>(coc-codeaction-selected)")

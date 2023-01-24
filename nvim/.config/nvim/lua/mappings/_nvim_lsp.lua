@@ -7,17 +7,18 @@ local nnoremap = vimp.nnoremap
 local lsp = vim.lsp
 
 local function n_buffer(...)
-  nnoremap({"buffer", "silent"}, ...)
+  nnoremap({ "buffer", "silent" }, ...)
 end
 
 local function n_silent(...)
-  nnoremap({"buffer", "silent"}, ...)
+  nnoremap({ "buffer", "silent" }, ...)
 end
 
 local function i_buffer(...)
-  inoremap({"buffer"}, ...)
+  inoremap({ "buffer" }, ...)
 end
 
+---@format disable-next
 function mappings_nvim_lsp.load()
   -- Navigation
   n_silent("gCi",       lsp.buf.incoming_calls)

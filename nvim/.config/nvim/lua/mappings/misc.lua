@@ -7,12 +7,14 @@ local nnoremap = vimp.nnoremap
 local xnoremap = vimp.xnoremap
 
 function n_silent(...)
-  nnoremap({"silent"}, ...)
+  nnoremap({ "silent" }, ...)
 end
 
 function x_silent(...)
-  xnoremap({"silent"}, ...)
+  xnoremap({ "silent" }, ...)
 end
+
+---@format disable
 
 x_silent(".", ":normal .<CR>")                      -- Dot repeat
 nnoremap("<F6>", ":set textwidth=72<CR>")           -- Format width

@@ -21,6 +21,9 @@ local smart_files = function()
   end
 end
 
+
+---@format disable
+
 nnoremap("<Space><Space>",  b.builtin)
 nnoremap("<Tab>",           b.buffers)
 nnoremap(",",               smart_files)

@@ -6,6 +6,9 @@ local vimp = require("vimp")
 
 local inoremap = vimp.inoremap
 
+
+---@format disable
+
 -- Defaults
 -- inoremap({"silent", "expr"}, "<Esc>",   [[pumvisible() ? "\<C-e>\<Esc>" : "\<Esc>"]])
 inoremap({"silent", "expr"}, "<C-c>",   [[pumvisible() ? "\<C-e>\<C-c>" : "\<C-c>"]])

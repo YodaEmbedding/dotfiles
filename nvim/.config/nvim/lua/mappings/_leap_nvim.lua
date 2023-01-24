@@ -11,6 +11,8 @@ local x = vimp.vmap
 local o = vimp.omap
 
 
+---@format disable
+
 -- DEFAULT MAPPINGS
 
 n ("s",  "<Plug>(leap-forward)")
