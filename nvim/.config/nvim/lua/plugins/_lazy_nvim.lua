@@ -138,9 +138,12 @@ local plugins = {
 
 }
 
+local plugin_names = {}
+
 for i, plugin_spec in ipairs(plugins) do
   local short_url = plugin_spec[1]
   local plugin_name = string.match(short_url, "^[^/]*/(.*)$")
+  table.insert(plugin_names, plugin_name)
   local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
   local config_path = "plugins._" .. plugin_name_slug
   plugin_spec["config"] = function()
@@ -152,26 +155,8 @@ local opts = {
 
 }
 
--- TODO Reorganize to avoid this manual hack.
 function _G.plugin_loaded(plugin_name)
-  local exclude_list = {
-    "coc.nvim",
-    "completion-nvim",
-    "coq",
-    "coq_nvim",
-    "fzf.vim",
-    "harpoon",
-    "lsp_signature.nvim",
-    "nvim-compe",
-    "nvim-quantum",
-    "tcomment_vim",
-    "telescope-harpoon.nvim",
-    "vim-quantum",
-  }
-  if vim.tbl_contains(exclude_list, plugin_name) then
-    return false
-  end
-  return true
+  return vim.tbl_contains(plugin_names, plugin_name)
 end
 
 require("lazy").setup(plugins, opts)
