@@ -1,4 +1,4 @@
-local mappings_nvim_lsp = {}
+local _M = {}
 
 local vimp = require("vimp")
 
@@ -19,7 +19,7 @@ local function i_buffer(...)
 end
 
 ---@format disable-next
-function mappings_nvim_lsp.load()
+function _M.on_attach()
   -- Navigation
   n_silent("gCi",       lsp.buf.incoming_calls)
   n_silent("gCo",       lsp.buf.outgoing_calls)
@@ -55,4 +55,4 @@ function mappings_nvim_lsp.load()
   n_buffer("<space>wr", lsp.buf.remove_workspace_folder)
 end
 
-return mappings_nvim_lsp
+return _M

@@ -13,9 +13,9 @@ local function on_attach(client, bufnr)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
   end
 
-  require("plugins._lspkind_nvim")
-  require("plugins._lsp_signature_nvim")
-  require("mappings._nvim_lsp").load()
+  require("plugins._lspkind_nvim").on_attach()
+  require("plugins._lsp_signature_nvim").on_attach()
+  require("mappings._nvim_lsp").on_attach()
 
   -- Hide latest message.
   print(" ")
