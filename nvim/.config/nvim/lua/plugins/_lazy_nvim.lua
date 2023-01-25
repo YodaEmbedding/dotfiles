@@ -34,11 +34,11 @@ local plugins = {
   {"tpope/"             .. "vim-surround"           }, -- change surrounding
   {"b3nj5m1n/"          .. "kommentary"             }, -- commenting
 --{"ggandor/"           .. "leap.nvim"              }, -- motion
-  {"ggandor/"           .. "lightspeed.nvim",
+  {"ggandor/"           .. "lightspeed.nvim",          -- motion
     init = function()
       vim.g.lightspeed_no_default_keymaps = true
     end
-  }, -- motion
+  },
   {"camspiers/"         .. "snap", rocks = {"fzy"}  }, -- search
   {"hrsh7th/"           .. "vim-vsnip"              }, -- snippets (engine)
   {"rafamadriz/"        .. "friendly-snippets"      }, -- snippets (snippets)
@@ -96,9 +96,9 @@ local plugins = {
 --{"uga-rosa/"          .. "cmp-dictionary"         },
 --{"octaltree/"         .. "cmp-look"               },
 --{"saadparwaiz1/"      .. "cmp_luasnip"            },
---{"f3fora/"            .. "cmp-nuspell"
+--{"f3fora/"            .. "cmp-nuspell"              -- source
 --  rocks = { "lua-nuspell" },
---}, -- source
+--},
 --{"quangnguyen30192/"  .. "cmp-nvim-tags"          },
 --{"quangnguyen30192/"  .. "cmp-nvim-ultisnips"     },
 --{"jc-doyle/"          .. "cmp-pandoc-reference"   },
