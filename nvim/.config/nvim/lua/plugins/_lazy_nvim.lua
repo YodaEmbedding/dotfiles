@@ -137,7 +137,9 @@ local plugins = {
 }
 
 local opts = {
-
+  defaults = {
+    version = "*",
+  },
 }
 
 local plugin_names = {}
