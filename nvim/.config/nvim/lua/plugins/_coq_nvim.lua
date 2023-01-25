@@ -1,7 +1,3 @@
-if not _G.plugin_loaded("coq_nvim") then
-  do return end
-end
-
 vim.g.coq_settings = {
   auto_start = "shut-up",
   ["display.preview.x_max_len"] = 40,

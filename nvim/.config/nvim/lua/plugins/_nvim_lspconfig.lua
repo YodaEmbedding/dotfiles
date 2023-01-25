@@ -1,7 +1,3 @@
-if not _G.plugin_loaded("nvim-lspconfig") then
-  do return end
-end
-
 local nvim_lsp = require("lspconfig")
 
 local function on_attach(client, bufnr)

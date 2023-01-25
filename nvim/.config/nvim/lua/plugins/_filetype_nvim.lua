@@ -1,7 +1,3 @@
-if not _G.plugin_loaded("filetype.nvim") then
-  do return end
-end
-
 -- Do not source the default filetype.vim
 -- (required by Neovim <v0.6)
 -- vim.g.did_load_filetypes = 1

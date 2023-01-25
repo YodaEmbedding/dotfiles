@@ -1,7 +1,3 @@
-if not _G.plugin_loaded("nvim-cmp") then
-  do return end
-end
-
 local cmp = require("cmp")
 local compare = require('cmp.config.compare')
 local lspkind_symbols = require("plugins._lspkind_symbols")

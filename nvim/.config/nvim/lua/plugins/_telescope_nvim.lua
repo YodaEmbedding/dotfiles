@@ -1,7 +1,3 @@
-if not _G.plugin_loaded("telescope.nvim") then
-  do return end
-end
-
 local telescope = require("telescope")
 local actions = require("telescope.actions")
 local previewers = require("telescope.previewers")

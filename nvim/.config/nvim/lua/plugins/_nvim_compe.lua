@@ -1,7 +1,3 @@
-if not _G.plugin_loaded("nvim-compe") then
-  do return end
-end
-
 require("compe").setup {
   enabled = true;
   autocomplete = true;
