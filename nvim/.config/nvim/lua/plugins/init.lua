@@ -3,7 +3,7 @@ require("plugins._lazy_nvim")
 do return end
 
 
-require("plugins._packer")
+require("plugins._packer_nivm")
 
 require("plugins._impatient_nvim")
 require("plugins._filetype_nvim")
