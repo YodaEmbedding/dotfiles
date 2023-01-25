@@ -5,125 +5,170 @@ local packer = require("packer")
 local util = require("packer.util")
 
 ---@format disable-next
-local function packer_spec()
-  local use = use;
-
+local plugins = {
   -- Plugin manager
-  use {"wbthomason/"        .. "packer.nvim", opt = true}
+  {"wbthomason/"        .. "packer.nvim", opt = true},
 
   -- Performance
-  use {"lewis6991/"         .. "impatient.nvim"         } -- cache lua modules
-  use {"nathom/"            .. "filetype.nvim"          } -- lua filetype.vim
+  {"lewis6991/"         .. "impatient.nvim"         }, -- cache lua modules
+  {"nathom/"            .. "filetype.nvim"          }, -- lua filetype.vim
 
   -- Libraries
-  use {"nvim-lua/"          .. "plenary.nvim"           }
-  use {"nvim-lua/"          .. "popup.nvim"             }
-  use {"svermeulen/"        .. "vimpeccable"            } -- nvim lua config
-  use {"tpope/"             .. "vim-repeat"             } -- repairs .
-  use {"tami5/"             .. "sqlite.lua"             } -- sql
+  {"nvim-lua/"          .. "plenary.nvim"           },
+  {"nvim-lua/"          .. "popup.nvim"             },
+  {"svermeulen/"        .. "vimpeccable"            }, -- nvim lua config
+  {"tpope/"             .. "vim-repeat"             }, -- repairs .
+  {"tami5/"             .. "sqlite.lua"             }, -- sql
 
   -- Functional
-  use {"windwp/"            .. "nvim-autopairs"         } -- auto-pairs
-  use {"tpope/"             .. "vim-surround"           } -- change surrounding
-  use {"b3nj5m1n/"          .. "kommentary"             } -- commenting
---use {"ggandor/"           .. "leap.nvim"              } -- motion
-  use {"ggandor/"           .. "lightspeed.nvim"        } -- motion
-  use {"camspiers/"         .. "snap", rocks = {"fzy"}  } -- search
-  use {"hrsh7th/"           .. "vim-vsnip"              } -- snippets (engine)
-  use {"rafamadriz/"        .. "friendly-snippets"      } -- snippets (snippets)
-  use {"wellle/"            .. "targets.vim"            } -- text objects
-  use {"tpope/"             .. "vim-eunuch"             } -- unix mv/rm/rename
-  use {"nelstrom/"          .. "vim-visual-star-search" } -- visual mode *
---use {"ThePrimeagen/"      .. "harpoon"                } -- bookmarks
---use {"9mm/"               .. "vim-closer"             } -- closes brackets
---use {"junegunn/"          .. "fzf.vim"                } -- search
---use {"tweekmonster/"      .. "fzf-filemru"            } -- search
---use {"vijaymarupudi/"     .. "nvim-fzf"               } -- search
---use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
---use {"L3MON4D3/"          .. "LuaSnip"                } -- snippets (engine)
---use {"SirVer/"            .. "ultisnips"              } -- snippets (engine)
---use {"honza/"             .. "vim-snippets"           } -- snippets (snippets)
+  {"windwp/"            .. "nvim-autopairs"         }, -- auto-pairs
+  {"tpope/"             .. "vim-surround"           }, -- change surrounding
+  {"b3nj5m1n/"          .. "kommentary"             }, -- commenting
+--{"ggandor/"           .. "leap.nvim"              }, -- motion
+  {"ggandor/"           .. "lightspeed.nvim",          -- motion
+    setup = function()
+      vim.g.lightspeed_no_default_keymaps = true
+    end
+  },
+  {"camspiers/"         .. "snap", rocks = {"fzy"}  }, -- search
+  {"hrsh7th/"           .. "vim-vsnip"              }, -- snippets (engine)
+  {"rafamadriz/"        .. "friendly-snippets"      }, -- snippets (snippets)
+  {"wellle/"            .. "targets.vim"            }, -- text objects
+  {"tpope/"             .. "vim-eunuch"             }, -- unix mv/rm/rename
+  {"nelstrom/"          .. "vim-visual-star-search" }, -- visual mode *
+--{"ThePrimeagen/"      .. "harpoon"                }, -- bookmarks
+--{"9mm/"               .. "vim-closer"             }, -- closes brackets
+--{"junegunn/"          .. "fzf.vim"                }, -- search
+--{"tweekmonster/"      .. "fzf-filemru"            }, -- search
+--{"vijaymarupudi/"     .. "nvim-fzf"               }, -- search
+--{"SirVer/"            .. "ultisnips"              }, -- snippets (engine)
+--{"L3MON4D3/"          .. "LuaSnip"                }, -- snippets (engine)
+--{"SirVer/"            .. "ultisnips"              }, -- snippets (engine)
+--{"honza/"             .. "vim-snippets"           }, -- snippets (snippets)
 
   -- Telescope
-  use {"nvim-telescope/"    .. "telescope.nvim"         }
---use {"nvim-telescope/"    .. "telescope-frecency.nvim",
+  {"nvim-telescope/"    .. "telescope.nvim"         },
+--{"nvim-telescope/"    .. "telescope-frecency.nvim",
 --  config = function()
 --    require("telescope").load_extension("frecency")
 --  end,
 --  requires = {"tami5/sqlite.lua"},
---}
---use {"brandoncc/"         .. "telescope-harpoon.nvim" } -- bookmarks
+--},
+--{"brandoncc/"         .. "telescope-harpoon.nvim" }, -- bookmarks
 
   -- Tools
-  use {"tpope/"             .. "vim-fugitive"           } -- git
-  use {"lervag/"            .. "vimtex"                 } -- LaTeX
-  use {"neovim/"            .. "nvim-lspconfig"         } -- LSP config
-  use {"williamboman/"      .. "nvim-lsp-installer"     } -- LSP installer
-  use {"jpalardy/"          .. "vim-slime"              } -- REPL
---use {"sheerun/"           .. "vim-polyglot"           } -- language packs
---use {"hrsh7th/"           .. "nvim-compe"             } -- LSP completion
---use {"ojroques/"          .. "nvim-lspfuzzy"          } -- LSP fzf
+  {"tpope/"             .. "vim-fugitive"           }, -- git
+  {"lervag/"            .. "vimtex"                 }, -- LaTeX
+  {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
+  {"williamboman/"      .. "nvim-lsp-installer"     }, -- LSP installer
+  {"jpalardy/"          .. "vim-slime"              }, -- REPL
+--{"sheerun/"           .. "vim-polyglot"           }, -- language packs
+--{"hrsh7th/"           .. "nvim-compe"             }, -- LSP completion
+--{"ojroques/"          .. "nvim-lspfuzzy"          }, -- LSP fzf
 
   -- Coq
---use {"ms-jpq/"            .. "coq_nvim",
+--{"ms-jpq/"            .. "coq_nvim",
 --  branch = "coq",
---}
---use {"ms-jpq/"            .. "coq.artifacts",
+--},
+--{"ms-jpq/"            .. "coq.artifacts",
 --  branch = "artifacts",
---}
+--},
 
   -- nvim-cmp
-  use {"hrsh7th/"           .. "nvim-cmp"               }
-  use {"hrsh7th/"           .. "cmp-buffer"             }
-  use {"kdheepak/"          .. "cmp-latex-symbols"      }
-  use {"hrsh7th/"           .. "cmp-nvim-lsp"           }
-  use {"hrsh7th/"           .. "cmp-path"               }
-  use {"andersevenrud/"     .. "cmp-tmux"               }
-  use {"ray-x/"             .. "cmp-treesitter"         }
-  use {"hrsh7th/"           .. "cmp-vsnip"              }
-  use {"tamago324/"         .. "cmp-zsh"                }
---use {"uga-rosa/"          .. "cmp-dictionary"         }
---use {"octaltree/"         .. "cmp-look"               }
---use {"saadparwaiz1/"      .. "cmp_luasnip"            }
---use {"f3fora/"            .. "cmp-nuspell"
+  {"hrsh7th/"           .. "nvim-cmp"               },
+  {"hrsh7th/"           .. "cmp-buffer"             },
+  {"kdheepak/"          .. "cmp-latex-symbols"      },
+  {"hrsh7th/"           .. "cmp-nvim-lsp"           },
+  {"hrsh7th/"           .. "cmp-path"               },
+  {"andersevenrud/"     .. "cmp-tmux"               },
+  {"ray-x/"             .. "cmp-treesitter"         },
+  {"hrsh7th/"           .. "cmp-vsnip"              },
+  {"tamago324/"         .. "cmp-zsh"                },
+--{"uga-rosa/"          .. "cmp-dictionary"         },
+--{"octaltree/"         .. "cmp-look"               },
+--{"saadparwaiz1/"      .. "cmp_luasnip"            },
+--{"f3fora/"            .. "cmp-nuspell"              -- source
 --  rocks = { "lua-nuspell" },
---} -- source
---use {"quangnguyen30192/"  .. "cmp-nvim-tags"          }
---use {"quangnguyen30192/"  .. "cmp-nvim-ultisnips"     }
---use {"jc-doyle/"          .. "cmp-pandoc-reference"   }
---use {"f3fora/"            .. "cmp-spell"              }
+--},
+--{"quangnguyen30192/"  .. "cmp-nvim-tags"          },
+--{"quangnguyen30192/"  .. "cmp-nvim-ultisnips"     },
+--{"jc-doyle/"          .. "cmp-pandoc-reference"   },
+--{"f3fora/"            .. "cmp-spell"              },
 
   -- Treesitter
-  use {"nvim-treesitter/"   .. "nvim-treesitter",
+  {"nvim-treesitter/"   .. "nvim-treesitter",
     run = ":TSUpdate",
     -- commit = "c6d46504ba72a25b41a74397b1728a3677f8bb89",
-  }
-  use {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
+  },
+  {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
     -- commit = "7c6b5fe0926f52854f193d058cd98d2e74c3d483",
-  }
+  },
 
   -- Tweaks
-  use {"editorconfig/"      .. "editorconfig-vim"       } -- editorconfig
-  use {"farmergreg/"        .. "vim-lastplace"          } -- remember cursor
+  {"editorconfig/"      .. "editorconfig-vim"       }, -- editorconfig
+  {"farmergreg/"        .. "vim-lastplace"          }, -- remember cursor
 
   -- Visual
-  use {"lukas-reineke/"     .. "virt-column.nvim"       } -- colorcolumn line
-  use {"folke/"             .. "tokyonight.nvim"        } -- colorscheme
-  use {"Mofiqul/"           .. "trld.nvim"              } -- diagnostics corner
-  use {"bronson/"           .. "vim-trailing-whitespace"} -- hint whitespace
-  use {"unblevable/"        .. "quick-scope"            } -- hint unique chars
-  use {"lukas-reineke/"     .. "indent-blankline.nvim"  } -- indentation guides
-  use {"onsails/"           .. "lspkind-nvim"           } -- LSP pictograms
-  use {"gennaro-tedesco/"   .. "nvim-peekup"            } -- register " preview
-  use {"petertriho/"        .. "nvim-scrollbar"         } -- scrollbar
-  use {"lewis6991/"         .. "gitsigns.nvim"          } -- signs for git
-  use {"kshenoy/"           .. "vim-signature"          } -- signs for marks
---use {"mastertinner/"      .. "nvim-quantum"           } -- colorscheme
---use {"tyrannicaltoucan/"  .. "vim-quantum"            } -- colorscheme
---use {"romainl/"           .. "vim-cool"               } -- highlight smarter
---use {"ray-x/"             .. "lsp_signature.nvim"     } -- LSP signature
---use {"junegunn/"          .. "vim-peekaboo"           } -- register " preview
---use {"dstein64/"          .. "nvim-scrollview"        } -- scrollbar
+  {"lukas-reineke/"     .. "virt-column.nvim"       }, -- colorcolumn line
+  {"folke/"             .. "tokyonight.nvim"        }, -- colorscheme
+  {"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
+  {"bronson/"           .. "vim-trailing-whitespace"}, -- hint whitespace
+  {"unblevable/"        .. "quick-scope"            }, -- hint unique chars
+  {"lukas-reineke/"     .. "indent-blankline.nvim"  }, -- indentation guides
+  {"onsails/"           .. "lspkind-nvim"           }, -- LSP pictograms
+  {"gennaro-tedesco/"   .. "nvim-peekup"            }, -- register " preview
+  {"petertriho/"        .. "nvim-scrollbar"         }, -- scrollbar
+  {"lewis6991/"         .. "gitsigns.nvim"          }, -- signs for git
+  {"kshenoy/"           .. "vim-signature"          }, -- signs for marks
+--{"mastertinner/"      .. "nvim-quantum"           }, -- colorscheme
+--{"tyrannicaltoucan/"  .. "vim-quantum"            }, -- colorscheme
+--{"romainl/"           .. "vim-cool"               }, -- highlight smarter
+--{"ray-x/"             .. "lsp_signature.nvim"     }, -- LSP signature
+--{"junegunn/"          .. "vim-peekaboo"           }, -- register " preview
+--{"dstein64/"          .. "nvim-scrollview"        }, -- scrollbar
+}
+
+local plugin_names = {}
+
+for i, plugin_spec in ipairs(plugins) do
+  local short_url = plugin_spec[1]
+  local plugin_name = string.match(short_url, "^[^/]*/(.*)$")
+  table.insert(plugin_names, plugin_name)
+  local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
+  local config_path = "plugins._" .. plugin_name_slug
+
+  if plugin_name ~= "packer.nvim" then
+    -- Closures don't work, see:
+    -- https://github.com/wbthomason/packer.nvim/issues/655
+    --
+    -- plugin_spec["config"] = function()
+    --   pcall(require, config_path)
+    -- end
+
+    -- Workaround:
+    -- WARNING: Holy string injection attack!
+    -- plugin_spec["config"] = "pcall(require, '" .. config_path .. "' )"
+
+    -- Workaround:
+    -- https://github.com/wbthomason/packer.nvim/pull/402
+    plugin_spec["config"] = function(plugin_name, plugin)
+      local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
+      local config_path = "plugins._" .. plugin_name_slug
+      pcall(require, config_path)
+    end
+  end
+end
+
+function _G.plugin_loaded(plugin_name)
+  local p = _G.packer_plugins
+  return p ~= nil and p[plugin_name] ~= nil and p[plugin_name].loaded
+end
+
+local function packer_spec()
+  local use = use;
+  for _, plugin_spec in ipairs(plugins) do
+    use(plugin_spec)
+  end
 end
 
 local compile_path = util.join_paths(
@@ -140,8 +185,3 @@ packer.startup {
 }
 
 vim.cmd("source " .. compile_path)
-
-function _G.plugin_loaded(plugin_name)
-  local p = _G.packer_plugins
-  return p ~= nil and p[plugin_name] ~= nil and p[plugin_name].loaded
-end
