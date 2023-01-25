@@ -104,7 +104,7 @@ local plugins = {
 
   -- Treesitter
   {"nvim-treesitter/"   .. "nvim-treesitter",
-    run = ":TSUpdate",
+    build = ":TSUpdate",
     -- commit = "c6d46504ba72a25b41a74397b1728a3677f8bb89",
   },
   {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
