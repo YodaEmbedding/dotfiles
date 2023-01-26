@@ -1,7 +1,7 @@
 local nvim_lsp = require("lspconfig")
 
 local function on_attach(client, bufnr)
-  print("LSP started.")
+  print(string.format("LSP: on_attach() buffer=%d client=%s.", bufnr, client["name"]))
 
   if _G.plugin_loaded("completion-nvim") then
     -- For completion-nvim:
