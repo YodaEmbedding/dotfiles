@@ -121,6 +121,7 @@ local plugins = {
   {"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
   {"bronson/"           .. "vim-trailing-whitespace"}, -- hint whitespace
   {"unblevable/"        .. "quick-scope"            }, -- hint unique chars
+  {"nvim-tree/"         .. "nvim-web-devicons"      }, -- icons
   {"lukas-reineke/"     .. "indent-blankline.nvim"  }, -- indentation guides
   {"onsails/"           .. "lspkind-nvim"           }, -- LSP pictograms
   {"gennaro-tedesco/"   .. "nvim-peekup"            }, -- register " preview
