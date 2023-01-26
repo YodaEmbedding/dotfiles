@@ -6,53 +6,49 @@ local inoremap = vimp.inoremap
 local nnoremap = vimp.nnoremap
 local lsp = vim.lsp
 
-local function n_buffer(...)
+local function n(...)
   nnoremap({ "buffer", "silent" }, ...)
 end
 
-local function n_silent(...)
-  nnoremap({ "buffer", "silent" }, ...)
-end
-
-local function i_buffer(...)
-  inoremap({ "buffer" }, ...)
+local function i(...)
+  inoremap({ "buffer", "silent" }, ...)
 end
 
 ---@format disable-next
 function _M.on_attach()
   -- Navigation
-  n_silent("gCi",       lsp.buf.incoming_calls)
-  n_silent("gCo",       lsp.buf.outgoing_calls)
-  n_silent("gd",        lsp.buf.definition)
-  n_silent("gD",        lsp.buf.declaration)
-  n_silent("g{",        lsp.buf.implementation)
-  -- n_silent("gr",        lsp.buf.references)
-  n_silent("gS",        lsp.buf.document_symbol)
-  n_silent("gt",        lsp.buf.type_definition)
-  n_silent("gw",        lsp.buf.workspace_symbol)
+  n ("gCi",       lsp.buf.incoming_calls)
+  n ("gCo",       lsp.buf.outgoing_calls)
+  n ("gd",        lsp.buf.definition)
+  n ("gD",        lsp.buf.declaration)
+  n ("g{",        lsp.buf.implementation)
+  -- n("gr",        lsp.buf.references)
+  n ("gS",        lsp.buf.document_symbol)
+  n ("gt",        lsp.buf.type_definition)
+  n ("gw",        lsp.buf.workspace_symbol)
 
   -- Documentation
-  i_buffer("<C-k>",     lsp.buf.signature_help)
-  n_silent("<C-k>",     lsp.buf.signature_help)
-  n_silent("K",         lsp.buf.hover)
+  i ("<C-k>",     lsp.buf.signature_help)
+  n ("<C-k>",     lsp.buf.signature_help)
+  n ("K",         lsp.buf.hover)
 
   -- Diagnostics
-  n_silent("[d",        vim.diagnostic.goto_prev)
-  n_silent("]d",        vim.diagnostic.goto_next)
-  n_silent("<space>z",  vim.diagnostic.setloclist)
-  n_silent("<space>e",  vim.diagnostic.open_float)
+  n ("[d",        vim.diagnostic.goto_prev)
+  n ("]d",        vim.diagnostic.goto_next)
+  n ("<space>z",  vim.diagnostic.setloclist)
+  n ("<space>e",  vim.diagnostic.open_float)
 
   -- Refactoring
-  n_buffer("<space>a",  lsp.buf.code_action)
-  n_buffer("<space>rf", lsp.buf.formatting)
-  n_buffer("<space>rn", lsp.buf.rename)
+  n ("<space>a",  lsp.buf.code_action)
+  n ("<space>rf", lsp.buf.formatting)
+  n ("<space>rn", lsp.buf.rename)
 
   -- Workspaces
-  n_buffer("<space>wa", lsp.buf.add_workspace_folder)
-  n_buffer("<space>wl", function()
+  n ("<space>wa", lsp.buf.add_workspace_folder)
+  n ("<space>wl", function()
     print(vim.inspect(lsp.buf.list_workspace_folders()))
   end)
-  n_buffer("<space>wr", lsp.buf.remove_workspace_folder)
+  n ("<space>wr", lsp.buf.remove_workspace_folder)
 end
 
 return _M
