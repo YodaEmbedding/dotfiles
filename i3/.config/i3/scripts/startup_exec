@@ -26,7 +26,7 @@ if [[ $HOSTNAME =~ "PC-Mordor-Arch" ]]; then
         'libinput Accel Speed' -0.6
 fi
 
-bgrnd alacritty --class dropdown -e tmux
+bgrnd alacritty --class dropdown -e tmux new-session -A -s 0
 
 bgrnd_exec 'sleep 20 && copyq'
 bgrnd_exec 'sleep 20 && whatpulse'

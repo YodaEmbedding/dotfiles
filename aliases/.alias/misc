@@ -5,7 +5,7 @@
 alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k)builtins} ${(k)commands} | fzf'
 
 # Dropdown terminal
-alias dropdown='b alacritty --class dropdown -e tmux new-session -s 0 &'
+alias dropdown='b alacritty --class dropdown -e tmux new-session -A -s 0 &'
 alias dropdowna='b alacritty --class dropdown -e tmux attach -t 0 &'
 
 # emoji
