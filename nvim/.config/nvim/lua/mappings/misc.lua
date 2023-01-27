@@ -58,6 +58,7 @@ nnoremap("<C-_>", [[/\<\><Left><Left>]])            -- Search whole word
 -- Misc
 x_silent(".", ":normal .<CR>")                      -- Dot repeat
 nnoremap("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
+nnoremap("<C-h>", ":e %:h/")                        -- Edit file at cwd
 
 -- Jumplist
 nnoremap("<C-P>", "<C-I>")                          -- Previous jump in jumplist
