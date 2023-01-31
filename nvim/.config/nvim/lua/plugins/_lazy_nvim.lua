@@ -107,10 +107,8 @@ local plugins = {
   -- Treesitter
   {"nvim-treesitter/"   .. "nvim-treesitter",
     build = ":TSUpdate",
-    -- commit = "c6d46504ba72a25b41a74397b1728a3677f8bb89",
   },
   {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
-    -- commit = "7c6b5fe0926f52854f193d058cd98d2e74c3d483",
   },
 
   -- Tweaks

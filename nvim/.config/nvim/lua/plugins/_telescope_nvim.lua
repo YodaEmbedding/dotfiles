@@ -60,3 +60,11 @@ telescope.setup {
 if _G.plugin_loaded("telescope-harpoon.nvim") then
   telescope.load_extension("harpoon")
 end
+
+-- if _G.plugin_loaded("telescope-fzf-native.nvim") then
+--   telescope.load_extension("fzf")
+-- end
+--
+-- if _G.plugin_loaded("telescope-fzy-native.nvim") then
+--   telescope.load_extension("fzy_native")
+-- end
