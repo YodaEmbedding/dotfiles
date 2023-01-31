@@ -28,7 +28,7 @@ local plugins = {
   {"tami5/"             .. "sqlite.lua"             }, -- sql
 
   -- Functional
-  {"windwp/"            .. "nvim-autopairs"         }, -- auto-pairs
+--{"windwp/"            .. "nvim-autopairs"         }, -- auto-pairs
   {"tpope/"             .. "vim-surround"           }, -- change surrounding
   {"b3nj5m1n/"          .. "kommentary"             }, -- commenting
 --{"ggandor/"           .. "leap.nvim"              }, -- motion
@@ -67,10 +67,10 @@ local plugins = {
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
-  {"williamboman/"      .. "nvim-lsp-installer"     }, -- LSP installer
-  {"jpalardy/"          .. "vim-slime"              }, -- REPL
+--{"williamboman/"      .. "nvim-lsp-installer"     }, -- LSP installer
   {"williamboman/"      .. "mason.nvim"             }, -- LSP installer
   {"williamboman/"      .. "mason-lspconfig.nvim"   }, -- LSP installer
+--{"jpalardy/"          .. "vim-slime"              }, -- REPL
 --{"sheerun/"           .. "vim-polyglot"           }, -- language packs
 --{"hrsh7th/"           .. "nvim-compe"             }, -- LSP completion
 --{"ojroques/"          .. "nvim-lspfuzzy"          }, -- LSP fzf
@@ -120,13 +120,13 @@ local plugins = {
   -- Visual
   {"lukas-reineke/"     .. "virt-column.nvim"       }, -- colorcolumn line
   {"folke/"             .. "tokyonight.nvim"        }, -- colorscheme
-  {"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
+--{"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
   {"bronson/"           .. "vim-trailing-whitespace"}, -- hint whitespace
   {"unblevable/"        .. "quick-scope"            }, -- hint unique chars
   {"nvim-tree/"         .. "nvim-web-devicons"      }, -- icons
   {"lukas-reineke/"     .. "indent-blankline.nvim"  }, -- indentation guides
   {"onsails/"           .. "lspkind-nvim"           }, -- LSP pictograms
-  {"gennaro-tedesco/"   .. "nvim-peekup"            }, -- register " preview
+--{"gennaro-tedesco/"   .. "nvim-peekup"            }, -- register " preview
   {"petertriho/"        .. "nvim-scrollbar"         }, -- scrollbar
   {"lewis6991/"         .. "gitsigns.nvim"          }, -- signs for git
   {"kshenoy/"           .. "vim-signature"          }, -- signs for marks
