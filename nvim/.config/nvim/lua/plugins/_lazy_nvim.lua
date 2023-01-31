@@ -70,6 +70,7 @@ local plugins = {
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
+  {"folke/"             .. "trouble.nvim"           }, -- LSP diagnostics list
 --{"williamboman/"      .. "nvim-lsp-installer"     }, -- LSP installer
   {"williamboman/"      .. "mason.nvim"             }, -- LSP installer
   {"williamboman/"      .. "mason-lspconfig.nvim"   }, -- LSP installer
