@@ -26,6 +26,7 @@ local plugins = {
   {"svermeulen/"        .. "vimpeccable"            }, -- nvim lua config
   {"tpope/"             .. "vim-repeat"             }, -- repairs .
   {"tami5/"             .. "sqlite.lua"             }, -- sql
+  {"MunifTanjim/"       .. "nui.nvim"               }, -- UI component library
 
   -- Functional
 --{"windwp/"            .. "nvim-autopairs"         }, -- auto-pairs
@@ -64,11 +65,7 @@ local plugins = {
 --{"brandoncc/"         .. "telescope-harpoon.nvim" }, -- bookmarks
 
   -- Tools
-  {"jcdickinson/"       .. "codeium.nvim",             -- AI completion
-    dependencies = {
-      "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim", "hrsh7th/nvim-cmp"
-    },
-  },
+  {"jcdickinson/"       .. "codeium.nvim"           }, -- AI completion
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
