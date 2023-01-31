@@ -127,9 +127,16 @@ local plugins = {
   {"lukas-reineke/"     .. "indent-blankline.nvim"  }, -- indentation guides
   {"onsails/"           .. "lspkind-nvim"           }, -- LSP pictograms
 --{"gennaro-tedesco/"   .. "nvim-peekup"            }, -- register " preview
+  {"folke/"             .. "drop.nvim",                -- screensaver (e.g. falling snow)
+    event = "VimEnter",
+  },
   {"petertriho/"        .. "nvim-scrollbar"         }, -- scrollbar
   {"lewis6991/"         .. "gitsigns.nvim"          }, -- signs for git
   {"kshenoy/"           .. "vim-signature"          }, -- signs for marks
+  {"goolord/"           .. "alpha-nvim",               -- startup screen
+    lazy = false,
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+  },
 --{"mastertinner/"      .. "nvim-quantum"           }, -- colorscheme
 --{"tyrannicaltoucan/"  .. "vim-quantum"            }, -- colorscheme
 --{"romainl/"           .. "vim-cool"               }, -- highlight smarter
