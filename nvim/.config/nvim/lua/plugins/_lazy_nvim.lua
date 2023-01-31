@@ -69,6 +69,8 @@ local plugins = {
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
   {"williamboman/"      .. "nvim-lsp-installer"     }, -- LSP installer
   {"jpalardy/"          .. "vim-slime"              }, -- REPL
+  {"williamboman/"      .. "mason.nvim"             }, -- LSP installer
+  {"williamboman/"      .. "mason-lspconfig.nvim"   }, -- LSP installer
 --{"sheerun/"           .. "vim-polyglot"           }, -- language packs
 --{"hrsh7th/"           .. "nvim-compe"             }, -- LSP completion
 --{"ojroques/"          .. "nvim-lspfuzzy"          }, -- LSP fzf
