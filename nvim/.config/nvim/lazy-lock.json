@@ -29,6 +29,7 @@
   "snap": { "branch": "main", "commit": "aca7863edb34af45830e422393fa95bd7ea77f4b" },
   "sqlite.lua": { "branch": "master", "commit": "6c00ab414dc1b69621b145908c582b747f24b46e" },
   "targets.vim": { "branch": "master", "commit": "4a5e9c09ec2ba63c8cd16b433453e41c22efab22" },
+  "telescope-all-recent.nvim": { "branch": "main", "commit": "f26fad245d5a468fe7fd0b494fc983f707f2c4f3" },
   "telescope.nvim": { "branch": "master", "commit": "c1a2af0af69e80e14e6b226d3957a064cd080805" },
   "tokyonight.nvim": { "branch": "main", "commit": "affb21a81e6d7de073378eb86d02864c594104d9" },
   "vim-eunuch": { "branch": "master", "commit": "39e0232f490322c5a2d9e24275872f28da496a93" },

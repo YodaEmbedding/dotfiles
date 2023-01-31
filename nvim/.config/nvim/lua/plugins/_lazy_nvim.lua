@@ -55,11 +55,11 @@ local plugins = {
 
   -- Telescope
   {"nvim-telescope/"    .. "telescope.nvim"         },
+  {"prochri/"           .. "telescope-all-recent.nvim",
+    dependencies = { "tami5/sqlite.lua", "nvim-telescope/telescope.nvim" },
+  },
 --{"nvim-telescope/"    .. "telescope-frecency.nvim",
---  config = function()
---    require("telescope").load_extension("frecency")
---  end,
---  requires = {"tami5/sqlite.lua"},
+--  dependencies = { "tami5/sqlite.lua" },
 --},
 --{"brandoncc/"         .. "telescope-harpoon.nvim" }, -- bookmarks
 
