@@ -64,6 +64,11 @@ local plugins = {
 --{"brandoncc/"         .. "telescope-harpoon.nvim" }, -- bookmarks
 
   -- Tools
+  {"jcdickinson/"       .. "codeium.nvim",             -- AI completion
+    dependencies = {
+      "nvim-lua/plenary.nvim", "MunifTanjim/nui.nvim", "hrsh7th/nvim-cmp"
+    },
+  },
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
