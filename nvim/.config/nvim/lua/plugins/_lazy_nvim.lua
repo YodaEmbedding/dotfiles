@@ -121,6 +121,7 @@ local plugins = {
   {"farmergreg/"        .. "vim-lastplace"          }, -- remember cursor
 
   -- Visual
+--{"xiyaowong/"         .. "nvim-transparent"       }, -- background transparency
   {"lukas-reineke/"     .. "virt-column.nvim"       }, -- colorcolumn line
   {"folke/"             .. "tokyonight.nvim"        }, -- colorscheme
 --{"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
