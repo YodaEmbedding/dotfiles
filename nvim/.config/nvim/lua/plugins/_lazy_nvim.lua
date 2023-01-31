@@ -65,7 +65,8 @@ local plugins = {
 --{"brandoncc/"         .. "telescope-harpoon.nvim" }, -- bookmarks
 
   -- Tools
-  {"jcdickinson/"       .. "codeium.nvim"           }, -- AI completion
+--{"jcdickinson/"       .. "codeium.nvim"           }, -- AI completion
+  {"github/"            .. "copilot.vim"            }, -- AI completion
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
@@ -88,6 +89,7 @@ local plugins = {
   -- nvim-cmp
   {"hrsh7th/"           .. "nvim-cmp"               },
   {"hrsh7th/"           .. "cmp-buffer"             },
+  {"hrsh7th/"           .. "cmp-copilot"            },
   {"kdheepak/"          .. "cmp-latex-symbols"      },
   {"hrsh7th/"           .. "cmp-nvim-lsp"           },
   {"hrsh7th/"           .. "cmp-path"               },

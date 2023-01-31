@@ -42,7 +42,8 @@ cmp.setup {
     },
   },
   sources = {
-    { name = "codeium" },
+    -- { name = "codeium" },
+    { name = "copilot" },
     { name = "nvim_lsp", max_item_count = 30 },
     { name = "path" },
     { name = "buffer" },
