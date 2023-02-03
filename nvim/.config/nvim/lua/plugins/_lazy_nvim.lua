@@ -66,7 +66,11 @@ local plugins = {
 
   -- Tools
 --{"jcdickinson/"       .. "codeium.nvim"           }, -- AI completion
-  {"github/"            .. "copilot.vim"            }, -- AI completion
+--{"github/"            .. "copilot.vim"            }, -- AI completion
+  {"zbirenbaum/"        .. "copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+  }, -- AI completion
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
@@ -91,7 +95,7 @@ local plugins = {
   -- nvim-cmp
   {"hrsh7th/"           .. "nvim-cmp"               },
   {"hrsh7th/"           .. "cmp-buffer"             },
-  {"hrsh7th/"           .. "cmp-copilot"            },
+--{"hrsh7th/"           .. "cmp-copilot"            },
   {"kdheepak/"          .. "cmp-latex-symbols"      },
   {"hrsh7th/"           .. "cmp-nvim-lsp"           },
   {"hrsh7th/"           .. "cmp-path"               },
@@ -99,6 +103,10 @@ local plugins = {
   {"ray-x/"             .. "cmp-treesitter"         },
   {"hrsh7th/"           .. "cmp-vsnip"              },
   {"tamago324/"         .. "cmp-zsh"                },
+  {"zbirenbaum/"        .. "copilot-cmp",
+    dependencies = {"zbirenbaum/copilot.lua" },
+    -- event = "InsertEnter",
+  },
 --{"uga-rosa/"          .. "cmp-dictionary"         },
 --{"octaltree/"         .. "cmp-look"               },
 --{"saadparwaiz1/"      .. "cmp_luasnip"            },
