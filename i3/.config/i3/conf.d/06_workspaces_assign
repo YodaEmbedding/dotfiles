@@ -1,10 +1,10 @@
-assign [class="^discord$"]                        → $ws1
 assign [class="^Firefox$"]                        → $ws1
 assign [class="^Nightly$"]                        → $ws1
 assign [class="^jetbrains-studio$"]               → $ws2
 assign [class="^Guitarix$"]                       → $ws3
 assign [class="^obsidian$"]                       → $ws3
 assign [class="^Zotero$"]                         → $ws3
+assign [class="^discord$"]                        → $ws4
 assign [class="^GalaxyClient.exe$"]               → $ws4
 assign [class="^Gwent.exe$"]                      → $ws4
 assign [class="^League of Legends.exe$"]          → $ws4
