@@ -71,6 +71,7 @@ file
 file-roller
 firefox
 fish
+font-manager
 fping
 fzf
 fzy
@@ -120,6 +121,7 @@ inkscape
 inotify-tools
 intel-oneapi-mkl
 intel-ucode
+iotop
 iw
 jack_capture
 jdk
@@ -165,6 +167,7 @@ nnn
 nodejs
 noto-fonts-cjk
 ntfs-3g
+nushell
 nvidia
 nvidia-utils
 obs-studio
@@ -337,6 +340,7 @@ xdotool
 xf86-input-libinput
 xfce4-settings
 xfsprogs
+xonsh
 xorg-bdftopcf
 xorg-iceauth
 xorg-mkfontscale
@@ -405,6 +409,7 @@ adobe-reader-11
 android-platform
 android-sdk-build-tools
 anki
+arxiv2bib
 cnijfilter-common
 cnijfilter2
 ddccontrol
@@ -448,6 +453,7 @@ ptpython
 python-arxiv
 python-chess
 python-compressai
+python-gspread
 python-hydra-core
 python-plotly
 python-pypi2pkgbuild-git
@@ -467,9 +473,11 @@ spotify-tui
 stack-static
 stockfish
 subliminal
+teams
 termite
 texlive-localmanager-git
 thunar-dropbox
+tmux-plugin-manager
 trizen
 ttf-google-fonts-git
 ttf-material-design-icons
@@ -486,6 +494,7 @@ xvkbd
 yay
 zhumu
 zoom
+zotero
 
 
 # Custom
