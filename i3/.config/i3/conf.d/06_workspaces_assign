@@ -16,5 +16,4 @@ assign [class="Steam"]                            → $ws4
 assign [class="^zhumu$"]                          → $ws5
 assign [class="^zoom$"]                           → $ws5
 assign [class="qBittorrent"]                      → $ws8
-assign [class="Google Play Music Desktop Player"] → $ws9
 
