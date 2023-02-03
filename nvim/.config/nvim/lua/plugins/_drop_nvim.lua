@@ -1,6 +1,8 @@
 math.randomseed(os.time())
 
 require("drop").setup({
-  theme = ({ "stars", "snow", "xmas" })[math.random(1, 3)],
+  theme = "snow",
   screensaver = false,
+  interval = 500,
+  max = 8,
 })
