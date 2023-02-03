@@ -65,6 +65,8 @@ cmp.setup {
   },
 }
 
+_G.cmp_was_setup_first = true
+
 -- if _G.plugin_loaded("nvim-autopairs") then
 --   local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 --   cmp.event:on(

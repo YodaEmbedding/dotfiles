@@ -100,6 +100,9 @@ require("plugins._nvim_cmp")
 
 local cmp_nvim_lsp = nil
 if _G.plugin_loaded("cmp-nvim-lsp") then
+  if not _G.cmp_was_setup_first then
+    print("cmp was not setup yet!")
+  end
   cmp_nvim_lsp = require("cmp_nvim_lsp")
   config_defaults = vim.tbl_extend("error", config_defaults, {
     capabilities = cmp_nvim_lsp.default_capabilities(

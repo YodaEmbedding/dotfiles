@@ -159,6 +159,10 @@ local opts = {
 
 local plugin_names = {}
 
+local exclude_list = {
+  "nvim-cmp",
+}
+
 for i, plugin_spec in ipairs(plugins) do
   local short_url = plugin_spec[1]
   local plugin_name = string.match(short_url, "^[^/]*/(.*)$")
@@ -166,6 +170,9 @@ for i, plugin_spec in ipairs(plugins) do
   local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
   local config_path = "plugins._" .. plugin_name_slug
   plugin_spec["config"] = function()
+    if vim.tbl_contains(exclude_list, plugin_name) then
+      return
+    end
     pcall(require, config_path)
   end
 end
