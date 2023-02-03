@@ -137,7 +137,6 @@ kwalletmanager
 less
 lf
 lib32-nvidia-utils
-libc++experimental
 libinput
 libjpeg-turbo
 libreoffice-fresh
