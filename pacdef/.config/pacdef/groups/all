@@ -115,6 +115,7 @@ hunspell-en_us
 i2c-tools
 i3-wm
 imagemagick
+inetutils
 inkscape
 inotify-tools
 intel-oneapi-mkl
@@ -215,6 +216,7 @@ python-opencv
 python-pandas
 python-pillow
 python-pip
+python-poetry
 python-praw
 python-protobuf
 python-pyinotify
@@ -291,6 +293,7 @@ tmux
 traceroute
 trash-cli
 tree
+ttc-iosevka
 ttf-dejavu
 ttf-fira-code
 ttf-fira-mono
