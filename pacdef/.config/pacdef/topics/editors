@@ -1,0 +1,11 @@
+# vim:ft=conf
+
+intellij-idea-ultimate-edition-jre          # AUR
+jupyterlab
+jupyterlab-widgets
+neovim
+sublime-text
+tensorboard
+vim
+vim-plug                                    # AUR
+visual-studio-code-bin                      # AUR

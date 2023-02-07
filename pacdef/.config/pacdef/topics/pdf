@@ -1,0 +1,12 @@
+# vim:ft=conf
+
+acroread                                    # Custom
+adobe-reader-11                             # AUR
+foxitreader                                 # AUR
+okular
+zathura
+zathura-cb
+zathura-djvu
+zathura-pdf-mupdf
+zathura-ps
+zotero                                      # AUR

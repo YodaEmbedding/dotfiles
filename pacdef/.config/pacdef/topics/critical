@@ -1,0 +1,6 @@
+# vim:ft=conf
+
+base
+linux
+linux-firmware
+linux-headers

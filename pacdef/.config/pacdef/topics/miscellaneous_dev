@@ -1,0 +1,7 @@
+# vim:ft=conf
+
+devtools
+docker
+docker-compose
+doxygen
+electron

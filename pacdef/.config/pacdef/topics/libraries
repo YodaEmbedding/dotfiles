@@ -1,0 +1,17 @@
+# vim:ft=conf
+
+caffe
+cuda
+eigen
+gcc-libs
+glibc
+intel-oneapi-mkl
+jdk
+jdk-openjdk
+jre
+openblas-lapack                             # AUR
+opencl-nvidia
+opencv
+sqlite
+tensorflow-cuda
+vulkan-headers

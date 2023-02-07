@@ -1,0 +1,28 @@
+# vim:ft=conf
+
+alsa-utils
+carla
+feh
+ffmpeg
+gphoto2
+gst-libav
+gst-plugins-base
+gst-plugins-base-libs
+gst-plugins-good
+gst-plugins-ugly
+gstreamer0.10-bad-plugins                   # AUR
+gstreamer0.10-base                          # AUR
+gstreamer0.10-good-plugins                  # AUR
+gstreamer0.10-ugly-plugins                  # AUR
+helvum
+imagemagick
+jack_capture
+libjpeg-turbo
+pamixer
+pasystray
+pavucontrol
+pipewire
+pipewire-jack
+pipewire-pulse
+playerctl
+wireplumber

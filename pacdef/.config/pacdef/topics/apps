@@ -1,0 +1,34 @@
+# vim:ft=conf
+
+anki                                        # AUR
+copyq
+discord
+dropbox                                     # AUR
+dropbox-cli                                 # AUR
+file-roller
+firefox
+firefox-nightly                             # AUR
+gcolor2                                     # AUR
+gcolor3
+gitkraken                                   # AUR
+google-chrome                               # AUR
+libreoffice-fresh
+lutris
+lxappearance
+maim
+obsidian
+qbittorrent
+scrot
+skypeforlinux-stable-bin                    # AUR
+steam
+teams                                       # AUR
+thunar
+thunar-archive-plugin
+thunar-dropbox                              # AUR
+thunar-media-tags-plugin
+thunar-volman
+thunderbird
+virtualbox
+virtualbox-ext-oracle                       # AUR
+zhumu                                       # AUR
+zoom                                        # AUR

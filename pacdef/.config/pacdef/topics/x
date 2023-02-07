@@ -1,0 +1,56 @@
+# vim:ft=conf
+
+# x
+wmctrl
+xautolock
+xcalib
+xdg-user-dirs
+xdot
+xdotool
+xkbset                                      # AUR
+xorg-bdftopcf
+xorg-iceauth
+xorg-mkfontscale
+xorg-server
+xorg-server-xvfb
+xorg-sessreg
+xorg-setxkbmap
+xorg-smproxy
+xorg-x11perf
+xorg-xauth
+xorg-xbacklight
+xorg-xcmsdb
+xorg-xcursorgen
+xorg-xdpyinfo
+xorg-xdriinfo
+xorg-xev
+xorg-xgamma
+xorg-xhost
+xorg-xinit
+xorg-xinput
+xorg-xkbcomp
+xorg-xkbevd
+xorg-xkbprint
+xorg-xkbutils
+xorg-xkill
+xorg-xlsatoms
+xorg-xlsclients
+xorg-xmodmap
+xorg-xpr
+xorg-xprop
+xorg-xrandr
+xorg-xrdb
+xorg-xrefresh
+xorg-xset
+xorg-xsetroot
+xorg-xvinfo
+xorg-xwd
+xorg-xwininfo
+xorg-xwud
+xplr
+xprintidle
+xsane
+xscreensaver
+xsel
+xsv
+xvkbd                                       # AUR

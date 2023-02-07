@@ -1,0 +1,11 @@
+# vim:ft=conf
+
+dunst
+i3-wm
+picom-git
+plasma-desktop
+polybar
+qt5ct
+sddm
+systemsettings
+xfce4-settings

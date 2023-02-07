@@ -1,0 +1,21 @@
+# vim:ft=conf
+
+font-manager
+noto-fonts-cjk
+otf-font-awesome
+powerline-fonts
+ttc-iosevka
+ttf-dejavu
+ttf-fira-code
+ttf-fira-mono
+ttf-firacode-nerd
+ttf-font-awesome
+ttf-google-fonts-git                        # AUR
+ttf-hack
+ttf-iosevka-nerd
+ttf-liberation
+ttf-material-design-icons                   # AUR
+ttf-monaco                                  # AUR
+ttf-ms-fonts                                # AUR
+ttf-opensans
+ttf-vista-fonts                             # AUR

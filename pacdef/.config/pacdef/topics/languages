@@ -1,0 +1,14 @@
+# vim:ft=conf
+
+ghc
+ghc-static
+go
+julia
+kotlin
+luarocks
+nodejs
+perl
+ruby
+rustup
+stack-static                                # AUR
+typescript

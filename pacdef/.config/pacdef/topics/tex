@@ -1,0 +1,16 @@
+# vim:ft=conf
+
+biber
+texlive-bibtexextra
+texlive-core
+texlive-fontsextra
+texlive-formatsextra
+texlive-games
+texlive-humanities
+texlive-latexextra
+texlive-localmanager-git                    # AUR
+texlive-music
+texlive-pictures
+texlive-pstricks
+texlive-publishers
+texlive-science

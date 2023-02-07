@@ -1,0 +1,6 @@
+# vim:ft=conf
+
+alacritty
+rxvt-unicode
+termite                                     # AUR
+xterm

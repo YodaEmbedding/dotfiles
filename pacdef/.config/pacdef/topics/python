@@ -1,0 +1,52 @@
+# vim:ft=conf
+
+cython
+mypy
+ptpython                                    # AUR
+pyright
+python
+python-arxiv                                # AUR
+python-black
+python-chess                                # AUR
+python-compressai                           # AUR
+python-gspread                              # AUR
+python-hydra-core                           # AUR
+python-jedi
+python-keras
+python-matplotlib
+python-numba
+python-numpy
+python-omegaconf
+python-opencv
+python-pandas
+python-pillow
+python-pip
+python-plotly                               # AUR
+python-poetry
+python-praw
+python-protobuf
+python-pyinotify
+python-pylint
+python-pynvim
+python-pypi2pkgbuild-git                    # AUR
+python-pytest
+python-pytorch-cuda
+python-pytorch-msssim
+python-pywal
+python-scikit-learn
+python-scipy
+python-seaborn
+python-setuptools
+python-snakeviz                             # AUR
+python-sphinx
+python-sympy
+python-tekore                               # AUR
+python-tensorboardx                         # AUR
+python-tensorflow-cuda
+python-torchinfo                            # AUR
+python-torchvision-cuda
+python-urllib3
+python-virtualenv
+python2                                     # AUR
+python2-setuptools                          # AUR
+ruff

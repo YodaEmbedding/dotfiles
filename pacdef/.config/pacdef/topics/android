@@ -1,0 +1,9 @@
+# vim:ft=conf
+
+android-emulator
+android-file-transfer
+android-platform                            # AUR
+android-sdk
+android-sdk-build-tools                     # AUR
+android-sdk-platform-tools
+android-udev

@@ -1,0 +1,73 @@
+# vim:ft=conf
+
+arxiv2bib                                   # AUR
+bat
+cmatrix
+colordiff
+coreutils
+dtrx                                        # AUR
+duc                                         # AUR
+fasd
+fd
+file
+fish
+fping
+frece-git                                   # AUR
+fselect                                     # AUR
+fswatch                                     # AUR
+fzf
+fzy
+gawk
+gdb
+git
+git-delta
+github-cli
+grep
+hexedit
+hexyl
+htop
+inotify-tools
+iotop
+jq
+less
+lf
+licensor-git                                # AUR
+man-db
+man-pages
+moreutils
+mosh
+neofetch
+nix
+nnn
+pandoc-bin                                  # AUR
+parallel
+pass
+pass-otp
+pdfgrep
+pdftk
+progress
+pv
+ranger
+ripgrep
+rsync
+sd
+sed
+sshpass
+stockfish                                   # AUR
+stow
+strace
+subliminal                                  # AUR
+subversion
+the_silver_searcher
+tmux
+tmux-plugin-manager                         # AUR
+trash-cli
+tree
+unison
+vifm
+visidata
+wget
+which
+whois
+youtube-dl
+zoxide

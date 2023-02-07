@@ -1,0 +1,27 @@
+# vim:ft=conf
+
+cups
+cups-pdf
+ddccontrol                                  # AUR
+ddcutil
+dhcp
+dhcpcd
+efibootmgr
+gamemode
+gnome-keyring
+gparted
+gvfs-mtp
+hdparm
+i2c-tools
+intel-ucode
+kwallet-pam
+kwalletmanager
+lib32-nvidia-utils
+libinput
+nvidia
+nvidia-utils
+os-prober
+sudo
+systemd
+time
+xf86-input-libinput

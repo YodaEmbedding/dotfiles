@@ -1,0 +1,18 @@
+# vim:ft=conf
+
+aspell-en
+gconf                                       # AUR
+ghq                                         # AUR
+gtk2
+gtk3
+hunspell-en_us
+i3lock-color-git                            # AUR
+libreoffice-extension-languagetool          # AUR
+perl-file-mimeinfo
+perl-image-exiftool
+perl-term-readkey
+redshift
+rofi
+waifu2x-ncnn-vulkan
+wine-staging
+winetricks

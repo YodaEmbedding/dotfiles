@@ -1,0 +1,6 @@
+# vim:ft=conf
+
+e2fsprogs
+ntfs-3g
+reiserfsprogs
+xfsprogs

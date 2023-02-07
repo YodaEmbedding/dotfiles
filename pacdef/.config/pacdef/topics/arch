@@ -1,0 +1,14 @@
+# vim:ft=conf
+
+archlinux-keyring
+pacaur                                      # AUR
+pacdef                                      # AUR
+pacman
+pacman-contrib
+paru                                        # AUR
+pikaur                                      # AUR
+pip2pkgbuild                                # AUR
+reflector
+trizen                                      # AUR
+updaurpkg-git                               # AUR
+yay                                         # AUR

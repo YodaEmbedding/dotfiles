@@ -1,0 +1,12 @@
+# vim:ft=conf
+
+hostsblock                                  # AUR
+inetutils
+iw
+netctl
+network-manager-applet
+openfortivpn
+openssh
+traceroute
+ufw
+wireless_tools

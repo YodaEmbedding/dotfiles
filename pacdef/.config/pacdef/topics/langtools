@@ -1,0 +1,25 @@
+# vim:ft=conf
+
+# Language servers
+bash-language-server
+ccls
+efm-langserver                              # AUR
+jdtls                                       # AUR
+jedi-language-server
+lua-language-server
+rust-analyzer
+texlab
+typescript-language-server
+vim-language-server                         # AUR
+vscode-css-languageserver
+vscode-html-languageserver
+vscode-json-languageserver
+yaml-language-server
+
+# Linters
+eslint
+prettier
+shellcheck-bin                              # AUR
+
+# Miscellaneous
+ctags

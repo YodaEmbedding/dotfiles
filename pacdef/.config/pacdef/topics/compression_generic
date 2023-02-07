@@ -1,0 +1,11 @@
+# vim:ft=conf
+
+bzip2
+gzip
+p7zip
+tar
+unrar
+unzip
+xarchiver
+xz
+zip

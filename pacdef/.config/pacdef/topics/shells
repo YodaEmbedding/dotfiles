@@ -1,0 +1,7 @@
+# vim:ft=conf
+
+bash
+nushell
+xonsh
+zsh
+zsh-autosuggestions
