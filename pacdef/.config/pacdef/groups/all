@@ -9,201 +9,406 @@ linux
 linux-firmware
 linux-headers
 
-
-alacritty
-alsa-utils
-android-emulator
-android-file-transfer
-android-sdk
-android-sdk-platform-tools
-android-udev
-ant
+# Arch
 archlinux-keyring
-ardour
-aspell-en
-audacity
-autoconf
-automake
-bash
-bash-language-server
-bat
-biber
-bison
-bzip2
-caffe
-carla
-ccls
-clang
-cmake
-cmatrix
-colordiff
-copyq
-coreutils
-ctags
-cuda
+pacaur                                      # AUR
+pacdef                                      # AUR
+pacman
+pacman-contrib
+paru                                        # AUR
+pikaur                                      # AUR
+pip2pkgbuild                                # AUR
+reflector
+trizen                                      # AUR
+updaurpkg-git                               # AUR
+yay                                         # AUR
+
+# System
 cups
 cups-pdf
-cython
-darktable
+ddccontrol                                  # AUR
 ddcutil
-devtools
 dhcp
 dhcpcd
-discord
+efibootmgr
+gamemode
+gnome-keyring
+gparted
+gvfs-mtp
+hdparm
+i2c-tools
+intel-ucode
+kwallet-pam
+kwalletmanager
+lib32-nvidia-utils
+libinput
+nvidia
+nvidia-utils
+os-prober
+sudo
+systemd
+time
+xf86-input-libinput
+
+# Filesystems
+e2fsprogs
+ntfs-3g
+reiserfsprogs
+xfsprogs
+
+# Hardware
+cnijfilter-common                           # AUR
+cnijfilter-mg3500                           # Custom
+cnijfilter2                                 # AUR
+epson-inkjet-printer-escpr                  # AUR
+zsa-wally
+zsa-wally-cli
+
+# Terminals
+alacritty
+rxvt-unicode
+termite                                     # AUR
+xterm
+
+# Android
+android-emulator
+android-file-transfer
+android-platform                            # AUR
+android-sdk
+android-sdk-build-tools                     # AUR
+android-sdk-platform-tools
+android-udev
+
+# Miscellaneous unsorted "dev"
+devtools
 docker
 docker-compose
 doxygen
-dunst
-e2fsprogs
-efibootmgr
-eigen
 electron
-eslint
-fasd
-fd
-feh
-ffmpeg
-file
-file-roller
-firefox
-fish
-font-manager
-fping
-fzf
-fzy
-gamemode
-gawk
+
+# Build
+ant
+autoconf
+automake
+bison
+clang
+cmake
 gcc
 gcc-fortran
-gcc-libs
-gcolor3
-gdb
-geeqie
+gradle
+llvm
+m4
+make
+pkgconf
+valgrind
+yarn
+
+# Languages
 ghc
 ghc-static
-gimp
+go
+julia
+kotlin
+luarocks
+nodejs
+perl
+ruby
+rustup
+stack-static                                # AUR
+typescript
+
+# Language servers / Linters
+bash-language-server
+ccls
+ctags
+efm-langserver                              # AUR
+eslint
+jdtls                                       # AUR
+jedi-language-server
+lua-language-server
+prettier
+rust-analyzer
+shellcheck-bin                              # AUR
+texlab
+typescript-language-server
+vim-language-server                         # AUR
+vscode-css-languageserver
+vscode-html-languageserver
+vscode-json-languageserver
+yaml-language-server
+
+# Editors
+intellij-idea-ultimate-edition-jre          # AUR
+jupyterlab
+jupyterlab-widgets
+neovim
+sublime-text
+tensorboard
+vim
+vim-plug                                    # AUR
+visual-studio-code-bin                      # AUR
+
+# Shells
+bash
+nushell
+xonsh
+zsh
+zsh-autosuggestions
+
+# CLI / TUI
+arxiv2bib                                   # AUR
+bat
+cmatrix
+colordiff
+coreutils
+dtrx                                        # AUR
+duc                                         # AUR
+fasd
+fd
+file
+fish
+fping
+frece-git                                   # AUR
+fselect                                     # AUR
+fswatch                                     # AUR
+fzf
+fzy
+gawk
+gdb
 git
 git-delta
 github-cli
-glibc
-gnome-keyring
-go
-gparted
-gphoto2
-gradle
 grep
+hexedit
+hexyl
+htop
+inotify-tools
+iotop
+jq
+less
+lf
+licensor-git                                # AUR
+man-db
+man-pages
+moreutils
+mosh
+neofetch
+nix
+nnn
+pandoc-bin                                  # AUR
+parallel
+pass
+pass-otp
+pdfgrep
+pdftk
+progress
+pv
+ranger
+ripgrep
+rsync
+sd
+sed
+sshpass
+stockfish                                   # AUR
+stow
+strace
+subliminal                                  # AUR
+subversion
+the_silver_searcher
+tmux
+tmux-plugin-manager                         # AUR
+trash-cli
+tree
+unison
+vifm
+visidata
+wget
+which
+whois
+youtube-dl
+zoxide
+
+# Compression (generic)
+bzip2
+gzip
+p7zip
+tar
+unrar
+unzip
+xarchiver
+xz
+zip
+
+# Libraries
+caffe
+cuda
+eigen
+gcc-libs
+glibc
+intel-oneapi-mkl
+jdk
+jdk-openjdk
+jre
+openblas-lapack                             # AUR
+opencl-nvidia
+opencv
+sqlite
+tensorflow-cuda
+vulkan-headers
+
+# Networking
+hostsblock                                  # AUR
+inetutils
+iw
+netctl
+network-manager-applet
+openfortivpn
+openssh
+traceroute
+ufw
+wireless_tools
+
+# Desktop
+dunst
+i3-wm
+picom-git
+plasma-desktop
+polybar
+qt5ct
+sddm
+systemsettings
+xfce4-settings
+
+# Fonts
+font-manager
+noto-fonts-cjk
+otf-font-awesome
+powerline-fonts
+ttc-iosevka
+ttf-dejavu
+ttf-fira-code
+ttf-fira-mono
+ttf-firacode-nerd
+ttf-font-awesome
+ttf-google-fonts-git                        # AUR
+ttf-hack
+ttf-iosevka-nerd
+ttf-liberation
+ttf-material-design-icons                   # AUR
+ttf-monaco                                  # AUR
+ttf-ms-fonts                                # AUR
+ttf-opensans
+ttf-vista-fonts                             # AUR
+
+# Media
+alsa-utils
+carla
+feh
+ffmpeg
+gphoto2
 gst-libav
 gst-plugins-base
 gst-plugins-base-libs
 gst-plugins-good
 gst-plugins-ugly
-gthumb
-gtk2
-gtk3
-guitarix
-gvfs-mtp
-gzip
-hdparm
-helvum
-hexedit
-hexyl
-htop
-hunspell-en_us
-i2c-tools
-i3-wm
+gstreamer0.10-bad-plugins                   # AUR
+gstreamer0.10-base                          # AUR
+gstreamer0.10-good-plugins                  # AUR
+gstreamer0.10-ugly-plugins                  # AUR
 imagemagick
-inetutils
-inkscape
-inotify-tools
-intel-oneapi-mkl
-intel-ucode
-iotop
-iw
 jack_capture
-jdk
-jdk-openjdk
-jedi-language-server
-jq
-jre
-julia
-jupyterlab
-jupyterlab-widgets
-kotlin
-krita
-kwallet-pam
-kwalletmanager
-less
-lf
-lib32-nvidia-utils
-libinput
 libjpeg-turbo
-libreoffice-fresh
-llvm
-lua-language-server
-luarocks
-lutris
-lxappearance
-m4
-maim
-make
-man-db
-man-pages
-moreutils
-mosh
-mpv
-mpv-mpris
-musescore
-mypy
-neofetch
-neovim
-netctl
-network-manager-applet
-nix
-nnn
-nodejs
-noto-fonts-cjk
-ntfs-3g
-nushell
-nvidia
-nvidia-utils
-obs-studio
-obsidian
-okular
-opencl-nvidia
-opencv
-openfortivpn
-openssh
-os-prober
-otf-font-awesome
-p7zip
-pacman
-pacman-contrib
 pamixer
-parallel
-pass
-pass-otp
 pasystray
 pavucontrol
-pdfgrep
-pdftk
-perl
-perl-file-mimeinfo
-perl-image-exiftool
-perl-term-readkey
-picom-git
 pipewire
 pipewire-jack
 pipewire-pulse
-pkgconf
 playerctl
-polybar
-powerline-fonts
-prettier
-progress
-pv
+wireplumber
+
+# Media apps
+ardour
+audacity
+darktable
+geeqie
+gimp
+gthumb
+guitarix
+inkscape
+krita
+mpv
+mpv-mpris
+musescore
+obs-studio
+photoqt                                     # AUR
+qimgv-git                                   # AUR
+spicetify-cli                               # AUR
+spicetify-themes-git                        # AUR
+spotify                                     # AUR
+spotify-tui                                 # AUR
+spotifyd
+viewnior
+vlc
+
+# Apps
+anki                                        # AUR
+copyq
+discord
+dropbox                                     # AUR
+dropbox-cli                                 # AUR
+file-roller
+firefox
+firefox-nightly                             # AUR
+gcolor2                                     # AUR
+gcolor3
+gitkraken                                   # AUR
+google-chrome                               # AUR
+libreoffice-fresh
+lutris
+lxappearance
+maim
+obsidian
+qbittorrent
+scrot
+skypeforlinux-stable-bin                    # AUR
+steam
+teams                                       # AUR
+thunar
+thunar-archive-plugin
+thunar-dropbox                              # AUR
+thunar-media-tags-plugin
+thunar-volman
+thunderbird
+virtualbox
+virtualbox-ext-oracle                       # AUR
+zhumu                                       # AUR
+zoom                                        # AUR
+
+# PDF
+acroread                                    # Custom
+adobe-reader-11                             # AUR
+foxitreader                                 # AUR
+okular
+zathura
+zathura-cb
+zathura-djvu
+zathura-pdf-mupdf
+zathura-ps
+zotero                                      # AUR
+
+# Python
+cython
+mypy
+ptpython                                    # AUR
 pyright
 python
+python-arxiv                                # AUR
 python-black
+python-chess                                # AUR
+python-compressai                           # AUR
+python-gspread                              # AUR
+python-hydra-core                           # AUR
 python-jedi
 python-keras
 python-matplotlib
@@ -214,12 +419,14 @@ python-opencv
 python-pandas
 python-pillow
 python-pip
+python-plotly                               # AUR
 python-poetry
 python-praw
 python-protobuf
 python-pyinotify
 python-pylint
 python-pynvim
+python-pypi2pkgbuild-git                    # AUR
 python-pytest
 python-pytorch-cuda
 python-pytorch-msssim
@@ -228,46 +435,22 @@ python-scikit-learn
 python-scipy
 python-seaborn
 python-setuptools
+python-snakeviz                             # AUR
 python-sphinx
 python-sympy
+python-tekore                               # AUR
+python-tensorboardx                         # AUR
 python-tensorflow-cuda
+python-torchinfo                            # AUR
 python-torchvision-cuda
 python-urllib3
 python-virtualenv
-qbittorrent
-qt5ct
-ranger
-redshift
-reflector
-reiserfsprogs
-ripgrep
-rofi
-rsync
-ruby
+python2                                     # AUR
+python2-setuptools                          # AUR
 ruff
-rust-analyzer
-rustup
-rxvt-unicode
-scrot
-sd
-sddm
-sed
-spotify
-spotify-tui
-spotifyd
-sqlite
-sshpass
-steam
-stow
-strace
-sublime-text
-subversion
-sudo
-systemd
-tar
-tensorboard
-tensorflow-cuda
-texlab
+
+# TeX
+biber
 texlive-bibtexextra
 texlive-core
 texlive-fontsextra
@@ -275,68 +458,19 @@ texlive-formatsextra
 texlive-games
 texlive-humanities
 texlive-latexextra
+texlive-localmanager-git                    # AUR
 texlive-music
 texlive-pictures
 texlive-pstricks
 texlive-publishers
 texlive-science
-the_silver_searcher
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-volman
-thunderbird
-time
-tmux
-traceroute
-trash-cli
-tree
-ttc-iosevka
-ttf-dejavu
-ttf-fira-code
-ttf-fira-mono
-ttf-firacode-nerd
-ttf-font-awesome
-ttf-hack
-ttf-iosevka-nerd
-ttf-liberation
-ttf-opensans
-typescript
-typescript-language-server
-ufw
-unison
-unrar
-unzip
-valgrind
-viewnior
-vifm
-vim
-virtualbox
-visidata
-vlc
-vscode-css-languageserver
-vscode-html-languageserver
-vscode-json-languageserver
-vulkan-headers
-waifu2x-ncnn-vulkan
-wget
-which
-whois
-wine-staging
-winetricks
-wireless_tools
-wireplumber
-wmctrl
-xarchiver
+
+# x
 xautolock
 xcalib
 xdg-user-dirs
 xdot
 xdotool
-xf86-input-libinput
-xfce4-settings
-xfsprogs
-xonsh
 xorg-bdftopcf
 xorg-iceauth
 xorg-mkfontscale
@@ -382,39 +516,33 @@ xsane
 xscreensaver
 xsel
 xsv
-xterm
-xz
-yaml-language-server
-yarn
-youtube-dl
-zathura
-zathura-cb
-zathura-djvu
-zathura-pdf-mupdf
-zathura-ps
-zip
-zoxide
-zsa-wally
-zsa-wally-cli
-zsh
-zsh-autosuggestions
 
+# Miscellaneous
+aspell-en
+gconf                                       # AUR
+ghq                                         # AUR
+gtk2
+gtk3
+helvum
+hunspell-en_us
+i3lock-color-git                            # AUR
+libreoffice-extension-languagetool          # AUR
+perl-file-mimeinfo
+perl-image-exiftool
+perl-term-readkey
+redshift
+rofi
+waifu2x-ncnn-vulkan
+wine-staging
+winetricks
+wmctrl
+xkbset                                      # AUR
+xvkbd                                       # AUR
 
-# Custom
-acroread
-cnijfilter-mg3500
-
-
+# Temporary
 deadd-notification-center-bin
 dolphin
 mathics
-
-flameshot
-spectacle
-ksnip
-
-
-plasma-desktop
 python-aim
 python-catalyst
 python-hydra-slayer
@@ -422,4 +550,8 @@ python-path
 python-xontrib-fzf-widgets
 rnix-lsp-git
 rocksdb
-systemsettings
+
+# Temporary screenshots
+flameshot
+ksnip
+spectacle
