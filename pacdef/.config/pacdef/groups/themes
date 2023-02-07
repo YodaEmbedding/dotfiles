@@ -1,0 +1,63 @@
+
+adapta-gtk-theme                            # 7
+breeze-gtk                                  # 7
+catppuccin-gtk-theme-frappe                 # 6
+catppuccin-gtk-theme-macchiato              # 6
+catppuccin-gtk-theme-mocha                  # 5
+colloid-gtk-theme-git                       # 5
+dracula-gtk-theme                           # 8
+flat-remix-gtk                              # 7
+fluent-gtk-theme-git                        # 6
+gtk-theme-material-black                    # 7
+gtk-theme-windows10-dark                    # 6
+layan-gtk-theme-git                         # 7
+maia-gtk-theme                              # 6
+matcha-gtk-theme                            # 6
+materia-gtk-theme                           # 6
+nordic-darker-theme                         # 5
+orchis-theme                                # 5
+paper-gtk-theme-git                         #
+plata-theme                                 # 6
+qogir-gtk-theme                             # 6
+sweet-gtk-theme-dark                        # 7
+vimix-gtk-themes                            # 9
+whitesur-gtk-theme                          # 7
+
+# Favorites:
+# vimix-dark-compact-amethyst
+# dracula
+# sweet-gtk-theme-dark
+# flat-remix-gtk
+
+gtksourceview-theme-darcula2-git            #
+
+themix-full-git                             #
+themix-theme-oomox-git                      #
+
+# ant-dracula-kde-theme                       #
+arch-kde-theme-git                          #
+breeze                                      # 7
+# catppuccin-kde-theme-git                    #
+cherry-kde-theme                            #
+chromeos-kde-theme-git                      #
+colloid-kde-theme-git                       #
+dracula-kde-theme-git                       #
+# elementary-kde-theme-git                    #
+fluent-kde-theme-git                        #
+graphite-kde-theme-git                      #
+juno-ocean-kde-theme-git                    #
+lavender-kde-theme-git                      #
+mcmojave-kde-theme-git                      #
+monterey-kde-theme-git                      #
+# monterey-kde-theme-plasmoids-git          #
+# numix-kde-theme-git                         #
+# orchis-kde-theme-curve-git                  #
+# orchis-kde-theme-git                        #
+qogir-kde-theme-git                         #
+sensual-kde-theme-git                       #
+sweet-kde-theme-git                         #
+sweet-kde-theme-mars-git                    #
+sweet-kde-theme-nova-git                    #
+whitesur-kde-theme-git                      #
+
+whitesur-icon-theme-git

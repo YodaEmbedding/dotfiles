@@ -10,7 +10,6 @@ linux-firmware
 linux-headers
 
 
-adapta-gtk-theme
 alacritty
 alsa-utils
 android-emulator
@@ -19,7 +18,6 @@ android-sdk
 android-sdk-platform-tools
 android-udev
 ant
-arc-gtk-theme
 archlinux-keyring
 ardour
 aspell-en
@@ -31,8 +29,6 @@ bash-language-server
 bat
 biber
 bison
-breeze
-breeze-gtk
 bzip2
 caffe
 carla
@@ -439,7 +435,6 @@ intellij-idea-ultimate-edition-jre
 jdtls
 libreoffice-extension-languagetool
 licensor-git
-numix-gtk-theme
 openblas-lapack
 pacaur
 pacdef
@@ -448,7 +443,6 @@ paru
 photoqt
 pikaur
 pip2pkgbuild
-plata-theme
 ptpython
 python-arxiv
 python-chess
