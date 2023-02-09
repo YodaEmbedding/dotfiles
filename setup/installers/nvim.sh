@@ -4,7 +4,7 @@ TMP_DIR="$HOME/.dotfiles_tmp_install"
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit 1
 
-NVIM_VERSION=0.6.1
+NVIM_VERSION=0.8.3
 wget -nc "https://github.com/neovim/neovim/archive/refs/tags/v$NVIM_VERSION.tar.gz"
 tar xf "v$NVIM_VERSION.tar.gz"
 cd "neovim-$NVIM_VERSION" || exit 1
