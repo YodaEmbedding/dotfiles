@@ -5,10 +5,10 @@ mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit 1
 
 NVIM_VERSION=0.8.3
-wget -nc "https://github.com/neovim/neovim/archive/refs/tags/v$NVIM_VERSION.tar.gz"
-tar xf "v$NVIM_VERSION.tar.gz"
+wget -nc -O "nvim-v$NVIM_VERSION.tar.gz" "https://github.com/neovim/neovim/archive/refs/tags/v$NVIM_VERSION.tar.gz"
+tar xf "nvim-v$NVIM_VERSION.tar.gz"
 cd "neovim-$NVIM_VERSION" || exit 1
-make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=$HOME/.local
+make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX="$HOME/.local"
 make install
 
 # PYTHON_VERSION=3.9.6
