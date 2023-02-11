@@ -2,6 +2,7 @@ EDITOR=nvim
 VISUAL=nvim
 
 PATH="$HOME/.local/bin:$PATH"
+PATH="$PATH:/cvmfs/soft.computecanada.ca/custom/bin/computecanada"
 export PATH
 
 export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
