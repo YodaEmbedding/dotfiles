@@ -8,15 +8,15 @@ fi
 
 if [[ "$HOSTNAME" == *computecanada.ca ]]; then
   cluster_name() {
-    local CLUSTER = "unknown"
+    local CLUSTER="unknown"
     if [[ "$HOSTNAME" == *beluga.computecanada.ca ]]; then
-      CLUSTER = "beluga"
+      CLUSTER="beluga"
     elif [[ "$HOSTNAME" == *cedar.computecanada.ca ]]; then
-      CLUSTER = "cedar"
+      CLUSTER="cedar"
     elif [[ "$HOSTNAME" == *graham.computecanada.ca ]]; then
-      CLUSTER = "graham"
+      CLUSTER="graham"
     elif [[ "$HOSTNAME" == *narval.computecanada.ca ]]; then
-      CLUSTER = "narval"
+      CLUSTER="narval"
     fi
     echo "$CLUSTER"
   }
