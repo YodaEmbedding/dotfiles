@@ -1,0 +1,7 @@
+### BY HOST ###
+
+HOSTNAME="$(hostname)"
+
+if [[ "$HOSTNAME" == "PC-Mordor-Arch" ]]; then
+    alias porpt="porp train.py --config-path=$HOME/code/research/conf --config-name=root paths=pc-mordor"
+fi
