@@ -23,3 +23,7 @@ if [[ "$HOSTNAME" == *computecanada.ca ]]; then
   export CC_CLUSTER_NAME="$(cluster_name)"
   alias porpt="porp train.py --config-path=$HOME/code/research/conf --config-name=root paths=computecanada ++paths._cluster=$CC_CLUSTER_NAME"
 fi
+
+if [[ "$HOSTNAME" == ensc-mcl-* ]]; then
+  alias porpt="porp train.py --config-path=$HOME/code/research/conf --config-name=root paths=ensc-mcl"
+fi
