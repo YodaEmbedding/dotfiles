@@ -150,6 +150,9 @@ local plugins = {
     lazy = false,
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  {"nvim-neo-tree/"     .. "neo-tree.nvim",            -- tree; deps: nui.nvim, plenary.nvim
+    branch = "v2.x",
+  },
 --{"mastertinner/"      .. "nvim-quantum"           }, -- colorscheme
 --{"tyrannicaltoucan/"  .. "vim-quantum"            }, -- colorscheme
 --{"romainl/"           .. "vim-cool"               }, -- highlight smarter
