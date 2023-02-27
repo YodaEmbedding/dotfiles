@@ -1,5 +1,5 @@
-EDITOR=nvim
-VISUAL=nvim
+export EDITOR=nvim
+export VISUAL=nvim
 
 PATH="$HOME/.local/bin:$PATH"
 PATH="$PATH:/cvmfs/soft.computecanada.ca/custom/bin/computecanada"
