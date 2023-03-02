@@ -7,6 +7,9 @@ export PATH
 
 export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
 
+# Disable automatic shell timeout set in /etc/environment.
+export TMOUT=0
+
 HOSTNAME="$(hostname)"
 
 case "$HOSTNAME" in
