@@ -39,7 +39,8 @@ function _M.on_attach()
   n ("<space>e",  vim.diagnostic.open_float)
 
   -- Refactoring
-  n ("<space>a",  lsp.buf.code_action)
+  local ok, actions_preview = pcall(require, "actions-preview")
+  n ("<space>a",  ok and actions_preview.code_actions or lsp.buf.code_action)
   n ("<space>rf", lsp.buf.formatting)
   n ("<space>rn", lsp.buf.rename)
 
