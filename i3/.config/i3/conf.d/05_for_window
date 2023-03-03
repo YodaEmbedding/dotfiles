@@ -15,11 +15,11 @@ for_window [class="^Guitarix$"] \
 for_window [class="matplotlib"] \
     floating enable
 
-for_window [class="^mpv$"] \
-    floating enable, border none, sticky enable, \
-    resize set $video_size, \
-    exec $nsi $scripts/move bottom right, \
-    move scratchpad, scratchpad show
+# for_window [class="^mpv$"] \
+#     floating enable, border none, sticky enable, \
+#     resize set $video_size, \
+#     exec $nsi $scripts/move bottom right, \
+#     move scratchpad, scratchpad show
 
 for_window [class="^WhatPulse$"] \
     floating enable
@@ -54,6 +54,18 @@ for_window [instance="^mpv popup$"] \
     floating enable, border none, sticky enable, \
     resize set $video_size, \
     exec $nsi $scripts/move bottom right
+
+for_window [instance="^mpv popup left max$"] \
+    floating enable, border none, sticky enable, \
+    resize set width 960, \
+    exec $nsi $scripts/move bottom left, \
+    move scratchpad, scratchpad show
+
+for_window [instance="^mpv popup right max$"] \
+    floating enable, border none, sticky enable, \
+    resize set width 960, \
+    exec $nsi $scripts/move bottom right, \
+    move scratchpad, scratchpad show
 
 for_window [instance="^ncmpcpp$"] \
     floating enable, \
