@@ -26,6 +26,7 @@ local plugins = {
   {"svermeulen/"        .. "vimpeccable"            }, -- nvim lua config
   {"tpope/"             .. "vim-repeat"             }, -- repairs .
   {"tami5/"             .. "sqlite.lua"             }, -- sql
+  {"antoinemadec/"      .. "FixCursorHold.nvim"     }, -- temporary workaround
   {"MunifTanjim/"       .. "nui.nvim"               }, -- UI component library
 
   -- Functional
@@ -131,6 +132,7 @@ local plugins = {
 
   -- Visual
 --{"xiyaowong/"         .. "nvim-transparent"       }, -- background transparency
+  {"kosayoda/"          .. "nvim-lightbulb"         }, -- code actions; deps = FixCursorHold.nvim
   {"lukas-reineke/"     .. "virt-column.nvim"       }, -- colorcolumn line
   {"folke/"             .. "tokyonight.nvim"        }, -- colorscheme
 --{"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
