@@ -26,7 +26,7 @@ local plugins = {
   {"svermeulen/"        .. "vimpeccable"            }, -- nvim lua config
   {"tpope/"             .. "vim-repeat"             }, -- repairs .
   {"tami5/"             .. "sqlite.lua"             }, -- sql
-  {"antoinemadec/"      .. "FixCursorHold.nvim"     }, -- temporary workaround
+--{"antoinemadec/"      .. "FixCursorHold.nvim"     }, -- temporary workaround
   {"MunifTanjim/"       .. "nui.nvim"               }, -- UI component library
 
   -- Functional
@@ -74,7 +74,7 @@ local plugins = {
   }, -- AI completion
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
-  {"aznhe21/"           .. "actions-preview.nvim"   }, -- LSP code actions preview
+--{"aznhe21/"           .. "actions-preview.nvim"   }, -- LSP code actions preview
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
   {"folke/"             .. "trouble.nvim"           }, -- LSP diagnostics list
 --{"rmagatti/"          .. "goto-preview"           }, -- LSP goto preview
@@ -133,7 +133,7 @@ local plugins = {
 
   -- Visual
 --{"xiyaowong/"         .. "nvim-transparent"       }, -- background transparency
-  {"kosayoda/"          .. "nvim-lightbulb"         }, -- code actions; deps = FixCursorHold.nvim
+--{"kosayoda/"          .. "nvim-lightbulb"         }, -- code actions; deps = FixCursorHold.nvim
   {"lukas-reineke/"     .. "virt-column.nvim"       }, -- colorcolumn line
   {"folke/"             .. "tokyonight.nvim"        }, -- colorscheme
 --{"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
