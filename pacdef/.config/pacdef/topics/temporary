@@ -11,6 +11,10 @@ python-xontrib-fzf-widgets
 rnix-lsp-git
 rocksdb
 
+hub
+sshuttle
+vvc-vtm
+
 # Screenshots
 flameshot
 ksnip
