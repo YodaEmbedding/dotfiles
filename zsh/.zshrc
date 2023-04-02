@@ -51,11 +51,12 @@ bind_keys() {
 }
 
 zinit wait lucid light-mode for \
-  atload"bind_keys" \
-    mollifier/anyframe \
   \
     OMZP::fzf \
     Aloxaf/fzf-tab \
+    MichaelAquilina/zsh-you-should-use \
+  atload"bind_keys" \
+    mollifier/anyframe \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start; bindkey '^[^M' autosuggest-execute" \
