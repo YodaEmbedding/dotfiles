@@ -74,7 +74,7 @@ local plugins = {
   }, -- AI completion
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
---{"aznhe21/"           .. "actions-preview.nvim"   }, -- LSP code actions preview
+  {"aznhe21/"           .. "actions-preview.nvim"   }, -- LSP code actions preview
   {"neovim/"            .. "nvim-lspconfig"         }, -- LSP config
   {"folke/"             .. "trouble.nvim"           }, -- LSP diagnostics list
 --{"rmagatti/"          .. "goto-preview"           }, -- LSP goto preview
