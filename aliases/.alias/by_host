@@ -2,8 +2,10 @@
 
 HOSTNAME="$(hostname)"
 
+PORPT_PREFIX="porp -m compressai_trainer.run.train"
+
 if [[ "$HOSTNAME" == "PC-Mordor-Arch" ]]; then
-  alias porpt="porp train.py --config-path=$HOME/code/research/conf --config-name=root paths=pc-mordor"
+  alias porpt="${PORPT_PREFIX} --config-path=$HOME/code/research/conf --config-name=root paths=pc-mordor"
 fi
 
 if [[ "$HOSTNAME" == *computecanada.ca ]]; then
@@ -21,9 +23,9 @@ if [[ "$HOSTNAME" == *computecanada.ca ]]; then
     echo "$CLUSTER"
   }
   export CC_CLUSTER_NAME="$(cluster_name)"
-  alias porpt="porp train.py --config-path=$HOME/code/research/conf --config-name=root paths=computecanada ++paths._cluster=$CC_CLUSTER_NAME"
+  alias porpt="${PORPT_PREFIX} --config-path=$HOME/code/research/conf --config-name=root paths=computecanada ++paths._cluster=$CC_CLUSTER_NAME"
 fi
 
 if [[ "$HOSTNAME" == ensc-mcl-* ]]; then
-  alias porpt="porp train.py --config-path=$HOME/code/research/conf --config-name=root paths=ensc-mcl"
+  alias porpt="${PORPT_PREFIX} --config-path=$HOME/code/research/conf --config-name=root paths=ensc-mcl"
 fi
