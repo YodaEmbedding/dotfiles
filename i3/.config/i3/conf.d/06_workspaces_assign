@@ -1,4 +1,4 @@
-assign [class="^Firefox$"]                        → $ws1
+assign [class="^[Ff]irefox$"]                     → $ws1
 assign [class="^Nightly$"]                        → $ws1
 assign [class="^Alacritty$"]                      → $ws2
 assign [class="^jetbrains-studio$"]               → $ws2
