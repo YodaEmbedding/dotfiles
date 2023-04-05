@@ -55,6 +55,7 @@ b("undofile", true)                   -- Undo history
 w("colorcolumn", "80")                -- Column guide
 w("cursorline", true)                 -- Highlight current line
 o("laststatus", 2)                    -- Status line
+w("linebreak", true)                  -- Wrap on word breaks
 w("numberwidth", 2)                   -- Numbering column width
 w("relativenumber", true)             -- Relative line numbers
 w("scrolloff", 2)                     -- Always display lines around cursor
