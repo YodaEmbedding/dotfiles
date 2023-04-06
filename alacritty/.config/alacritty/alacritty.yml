@@ -63,7 +63,7 @@ draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '0x25192f'
+    background: '0x291935'
     foreground: '0xeaeaea'
     #dim_foreground: '0x9a9a9a'
     #bright_foreground: '0xffffff'
