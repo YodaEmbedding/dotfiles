@@ -9,9 +9,9 @@ workspace_layout              tabbed
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #3D273A #3D273A #ffffff #3D273A   #D94C9E
-client.focused_inactive #221321 #221321 #888888 #221321   #221321
-client.unfocused        #221321 #221321 #888888 #221321   #221321
+client.focused          #391c45 #391c45 #ffffff #3D273A   #D94C9E
+client.focused_inactive #19161C #19161C #777777 #221321   #221321
+client.unfocused        #19161C #19161C #777777 #221321   #221321
 client.urgent           #DF48B4 #DF48B4 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
