@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+boost
 caffe
 cuda
 eigen
