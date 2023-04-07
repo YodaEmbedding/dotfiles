@@ -22,7 +22,7 @@ hi NormalNC         guibg=NONE    ctermbg=NONE
 hi ColorColumn      guibg=#372735
 hi Conceal          guibg=NONE
 hi Conceal          guifg=#555555
-hi CursorLine       guibg=#3B2542
+hi CursorLine       guibg=#3D2946
 hi ExtraWhitespace  guibg=#473745
 hi Folded           guibg=#1E161F
 hi Folded           guifg=#6f6f6f
