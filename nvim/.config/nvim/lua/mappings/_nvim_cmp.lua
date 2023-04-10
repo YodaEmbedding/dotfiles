@@ -7,7 +7,7 @@ return {
   ["<S-Tab>"] = cmp.mapping.select_prev_item(),
   ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   ["<C-e>"] = cmp.mapping.confirm({
-    behavior = cmp.ConfirmBehavior.Insert,
+    behavior = cmp.ConfirmBehavior.Replace,
     select = true,
   }),
   ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
