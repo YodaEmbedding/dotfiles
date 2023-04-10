@@ -10,6 +10,7 @@ intel-oneapi-mkl
 jdk
 jdk-openjdk
 jre
+libfaketime
 openblas-lapack                             # AUR
 opencl-nvidia
 opencv
