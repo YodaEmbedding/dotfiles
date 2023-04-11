@@ -9,7 +9,7 @@ cmp.setup {
   },
   formatting = {
     format = function(entry, vim_item)
-      local max_len = 20
+      local max_len = 40
       if string.len(vim_item.abbr) > max_len then
         vim_item.abbr = string.sub(vim_item.abbr, 1, max_len - 2) .. "··"
       end
@@ -31,10 +31,12 @@ cmp.setup {
     comparators = {
       compare.offset,
       compare.exact,
-      compare.scopes,
-      compare.locality,
       compare.recently_used,
       compare.score,
+      compare.scopes,
+      compare.locality,
+      -- compare.recently_used,
+      -- compare.score,
       compare.kind,
       compare.sort_text,
       compare.length,
