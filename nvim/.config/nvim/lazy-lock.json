@@ -11,7 +11,6 @@
   "cmp-zsh": { "branch": "main", "commit": "c24db8e58fac9006ec23d93f236749288d00dec9" },
   "copilot-cmp": { "branch": "master", "commit": "99467081478aabe4f1183a19a8ba585e511adc20" },
   "copilot.lua": { "branch": "master", "commit": "decc8d43bcd73a288fa689690c20faf0485da217" },
-  "editorconfig-vim": { "branch": "master", "commit": "0a3c1d8082e38a5ebadcba7bb3a608d88a9ff044" },
   "friendly-snippets": { "branch": "main", "commit": "b1b78a6433268fc172adb5a843e165035e83861e" },
   "gitsigns.nvim": { "branch": "main", "commit": "bb808fc7376ed7bac0fbe8f47b83d4bf01738167" },
   "indent-blankline.nvim": { "branch": "master", "commit": "018bd04d80c9a73d399c1061fa0c3b14a7614399" },

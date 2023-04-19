@@ -128,7 +128,6 @@ local plugins = {
   },
 
   -- Tweaks
-  {"editorconfig/"      .. "editorconfig-vim"       }, -- editorconfig
   {"farmergreg/"        .. "vim-lastplace"          }, -- remember cursor
 
   -- Visual
