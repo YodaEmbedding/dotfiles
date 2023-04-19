@@ -39,6 +39,7 @@ local plugins = {
       vim.g.lightspeed_no_default_keymaps = true
     end
   },
+  {"farmergreg/"        .. "vim-lastplace"          }, -- remember cursor
   {"camspiers/"         .. "snap", rocks = {"fzy"}  }, -- search
   {"hrsh7th/"           .. "vim-vsnip"              }, -- snippets (engine)
   {"rafamadriz/"        .. "friendly-snippets"      }, -- snippets (snippets)
@@ -126,9 +127,6 @@ local plugins = {
   },
   {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
   },
-
-  -- Tweaks
-  {"farmergreg/"        .. "vim-lastplace"          }, -- remember cursor
 
   -- Visual
 --{"xiyaowong/"         .. "nvim-transparent"       }, -- background transparency
