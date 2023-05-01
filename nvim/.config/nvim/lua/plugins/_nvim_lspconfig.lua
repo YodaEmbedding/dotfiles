@@ -79,7 +79,6 @@ local configs = {
       },
     },
   },
-  lua_ls = require("plugins.lspconfig.lua_ls"),
 }
 
 require("plugins.lspconfig.matlab")
@@ -108,6 +107,9 @@ if _G.plugin_loaded("cmp-nvim-lsp") then
     capabilities = cmp_nvim_lsp.default_capabilities(),
   })
 end
+
+require("neodev").setup {
+}
 
 for _, lsp in ipairs(servers) do
   local config = configs[lsp] or {}

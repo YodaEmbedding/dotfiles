@@ -82,6 +82,7 @@ local plugins = {
 --{"williamboman/"      .. "nvim-lsp-installer"     }, -- LSP installer
   {"williamboman/"      .. "mason.nvim"             }, -- LSP installer
   {"williamboman/"      .. "mason-lspconfig.nvim"   }, -- LSP installer
+  {"folke/"             .. "neodev.nvim"            }, -- LSP neovim dev
 --{"jpalardy/"          .. "vim-slime"              }, -- REPL
 --{"sheerun/"           .. "vim-polyglot"           }, -- language packs
 --{"hrsh7th/"           .. "nvim-compe"             }, -- LSP completion
