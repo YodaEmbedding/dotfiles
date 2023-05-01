@@ -113,7 +113,7 @@ type = custom/script
 exec = ~/.config/polybar/scripts/ping 1.1.1.1
 ;exec = ~/.config/polybar/scripts/ping 8.8.8.8
 ;exec = ~/.config/polybar/scripts/ping 104.160.131.3
-interval = 60
+interval = 5
 
 [module/filesystem]
 type = internal/fs
