@@ -35,12 +35,12 @@ local servers = {
   "jdtls",
   "jsonls",
   "kotlin_language_server",
+  "lua_ls",
   -- "matlab",
   "metals",
   "pyright",
   "rnix",
   "rust_analyzer",
-  "sumneko_lua",
   "texlab",
   "tsserver",
   "vimls",
@@ -79,7 +79,7 @@ local configs = {
       },
     },
   },
-  sumneko_lua = require("plugins.lspconfig.sumneko_lua"),
+  lua_ls = require("plugins.lspconfig.lua_ls"),
 }
 
 require("plugins.lspconfig.matlab")
