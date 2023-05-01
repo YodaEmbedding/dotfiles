@@ -41,7 +41,7 @@ function _M.on_attach()
   -- Refactoring
   local ok, actions_preview = pcall(require, "actions-preview")
   n ("<space>a",  ok and actions_preview.code_actions or lsp.buf.code_action)
-  n ("<space>rf", lsp.buf.formatting)
+  n ("<space>F", lsp.buf.format)
   n ("<space>rn", lsp.buf.rename)
 
   -- Workspaces
