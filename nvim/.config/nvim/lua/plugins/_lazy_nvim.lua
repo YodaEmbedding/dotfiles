@@ -124,6 +124,7 @@ local plugins = {
   -- Treesitter
   {"nvim-treesitter/"   .. "nvim-treesitter",
     build = ":TSUpdate",
+    version = "*",
   },
   {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
   },
@@ -164,7 +165,7 @@ local plugins = {
 
 local opts = {
   defaults = {
-    version = "*",
+    -- version = "*",
   },
 }
 
