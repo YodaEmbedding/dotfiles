@@ -1,0 +1,227 @@
+// vim: ft=jsonc
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "wlr/workspaces",
+        // "wlr/mode",
+        // "wlr/scratchpad",
+        // "hyprland/submap",
+        "custom/media",
+        "custom/tmux"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        // "idle_inhibitor",
+        "custom/ping",
+        "network",
+        "cpu",
+        "memory",
+        // "temperature",
+        // "backlight",
+        // "keyboard-state",
+        // "wlr/language",
+        "battery",
+        "battery#bat2",
+        "pulseaudio",
+        "clock",
+        "tray"
+    ],
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        },
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e-1 1> /dev/null",
+        "on-scroll-down": "hyprctl dispatch workspace e+1 1> /dev/null"
+    },
+    "wlr/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": [
+            "",
+            ""
+        ],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "min-length": 120,
+        "max-length": 120,
+        "separate-outputs": true,
+        "on-click-right": "hyprctl dispatch killactive 1> /dev/null",
+        "on-scroll-up": "hyprctl dispatch workspace e-1 1> /dev/null",
+        "on-scroll-down": "hyprctl dispatch workspace e+1 1> /dev/null"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%Y-%m-%d  %H:%M:%S}",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": " {usage:02}",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}"
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent} {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity} {icon}",
+        "format-charging": " {capacity}",
+        "format-plugged": " {capacity}",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": " {signalStrength}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "tooltip-format": " {ifname} via {gwaddr}",
+        "format-linked": " {ifname} (No IP)",
+        "format-disconnected": "⚠ Disconnected",
+        "format-alt": "{essid} | {ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume}", // {format_source}
+        "format-bluetooth": "{icon} {volume}",
+        "format-bluetooth-muted": "{icon} ",
+        "format-muted": " {format_source}",
+        "format-source": " {volume}",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                // ▁▂▃▄▅▆▇
+                "▁ ", // 0
+                "▂ ", // 5
+                "▂ ", // 10
+                "▂ ", // 15
+                "▂ ", // 20
+                "▃ ", // 25
+                "▃ ", // 30
+                "▃ ", // 35
+                "▃ ", // 40
+                "▄ ", // 45
+                "▄ ", // 50
+                "▄ ", // 55
+                "▄ ", // 60
+                "▆ ", // 65
+                "▆ ", // 70
+                "▆ ", // 75
+                "▆ ", // 80
+                "▇ ", // 85
+                "▇ ", // 90
+                "▇ " //  95
+            ]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pavucontrol"
+    },
+    "custom/tmux": {
+        "format": "{}",
+        "interval": 1,
+        "max-length": 16,
+        "exec": "tmux capture-pane -p -t '0:1.1' | tac | grep -E -m 1 . | sed -e 's/^[ \t]*//'"
+    },
+    "custom/ping": {
+        "format": "{}",
+        "interval": 5,
+        // "min-length": 5,
+        "max-length": 20,
+        "exec": "$HOME/.config/waybar/scripts/ping 1.1.1.1"
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null",
+        // "exec": "$HOME/.config/waybar/scripts/mediaplayer.py --player spotify 2> /dev/null",
+        "on-click": "playerctl play-pause -p spotify",
+        "on-click-right": "hyprctl dispatch focuswindow 'title:^Spotify$' 1> /dev/null",
+        "on-scroll-up": "$HOME/.config/hypr/scripts/media_volume_spotify.py +10%",
+        "on-scroll-down": "$HOME/.config/hypr/scripts/media_volume_spotify.py -10%"
+    }
+}
