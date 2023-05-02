@@ -142,6 +142,7 @@ local plugins = {
   {"lukas-reineke/"     .. "indent-blankline.nvim"  }, -- indentation guides
   {"onsails/"           .. "lspkind-nvim"           }, -- LSP pictograms
 --{"gennaro-tedesco/"   .. "nvim-peekup"            }, -- register " preview
+  {"tversteeg/"         .. "registers.nvim"         }, -- register " preview
 --{"folke/"             .. "drop.nvim",                -- screensaver (e.g. falling snow)
 --  event = "VimEnter",
 --},
