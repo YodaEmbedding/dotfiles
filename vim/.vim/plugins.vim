@@ -14,7 +14,6 @@ Plug 'bps/'             . 'vim-textobj-python'      " Functional: Text objects
 Plug 'kana/'            . 'vim-textobj-user'        " Functional: Text objects
 Plug 'sheerun/'         . 'vim-polyglot'            " Miscellaneous: Language pack
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }   " Tools: LSP
-Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 Plug 'rafcamlet/'       . 'coc-nvim-lua'            " Tools: Neovim Lua
 Plug 'tpope/'           . 'vim-eunuch'              " Tools: UNIX sugars on mv, rm, rename, ...
 Plug 'editorconfig/'    . 'editorconfig-vim'        " Tweak: Apply .editorconfig settings
@@ -25,7 +24,6 @@ Plug 'bronson/'         . 'vim-trailing-whitespace' " Visual: Highlight trailing
 Plug 'unblevable/'      . 'quick-scope'             " Visual: Highlight unique characters per word in line (for find)
 Plug 'kshenoy/'         . 'vim-signature'           " Visual: Mark navigation
 Plug 'dstein64/'        . 'nvim-scrollview'         " Visual: Scrollbar
-Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 if !has('nvim')
     Plug 'roxma/'       . 'nvim-yarp'               " Functional: Update framework
@@ -73,8 +71,10 @@ endif
 "Plug 'junegunn/'        . 'vim-easy-align'          " Functional: Alignment
 "Plug 'tweekmonster/'    . 'startuptime.vim'         " Miscellaneous: Startup breakdown
 "Plug 'dstein64/'        . 'vim-startuptime'         " Miscellaneous: Startup breakdown
+"Plug 'lervag/'          . 'vimtex'                  " Tools: LaTeX
 "Plug 'jpalardy/'        . 'vim-slime'               " Tools: REPL
 "Plug 'romainl/'         . 'vim-cool'                " Visual: Search highlighting tweaks
+"Plug 'junegunn/'        . 'vim-peekaboo'            " Visual: Show registers during \", @, and <C-R>
 
 " Possibly useful {{{2
 "Plug 'buztard/'         . 'vim-rel-jump'            " Functional: Add to relative jk motions to jumpstack
