@@ -19,3 +19,21 @@ vvc-vtm
 flameshot
 ksnip
 spectacle
+
+# Wayland
+glfw-wayland
+hyprland
+hyprpaper
+plasma-wayland-session
+qt6-wayland
+sway
+swaybg
+waybar
+wofi
+wbg
+wpaperd
+
+foot
+kitty
+
+qt6ct
