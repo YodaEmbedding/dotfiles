@@ -10,6 +10,7 @@ efibootmgr
 gamemode
 gnome-keyring
 gparted
+grub
 gvfs-mtp
 hdparm
 i2c-tools

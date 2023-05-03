@@ -62,3 +62,6 @@ sweet-kde-theme-nova-git                    #
 whitesur-kde-theme-git                      #
 
 whitesur-icon-theme-git
+
+# GRUB themes
+grub-theme-vimix
