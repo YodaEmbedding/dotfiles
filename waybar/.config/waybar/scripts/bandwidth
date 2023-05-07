@@ -36,6 +36,7 @@ def format_size(size):
 
 
 def main():
+    refresh_interval = 2
     rx_icon = " "
     tx_icon = " "
     num_left = "<span font='NotoSansMono'>"
@@ -48,16 +49,15 @@ def main():
     iface = default_interface()
 
     rx_bytes, tx_bytes = get_rx_tx_bytes(iface)
-    sleep(1)
 
     while True:
         prev_rx_bytes, prev_tx_bytes = rx_bytes, tx_bytes
         rx_bytes, tx_bytes = get_rx_tx_bytes(iface)
-        drx = format_size(rx_bytes - prev_rx_bytes)
-        dtx = format_size(tx_bytes - prev_tx_bytes)
+        drx = format_size((rx_bytes - prev_rx_bytes) / refresh_interval)
+        dtx = format_size((tx_bytes - prev_tx_bytes) / refresh_interval)
         line = fmt_str.format(rx=drx, tx=dtx, unit_suffix=unit_suffix)
         print(line, flush=True)
-        sleep(1)
+        sleep(refresh_interval)
 
 
 if __name__ == "__main__":
