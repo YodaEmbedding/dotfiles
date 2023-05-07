@@ -3,13 +3,14 @@
 deadd-notification-center-bin
 dolphin
 mathics
-python-aim
-python-catalyst
-python-hydra-slayer
 python-path
-# python-xontrib-fzf-widgets
 rnix-lsp-git
 rocksdb
+
+# python-aim                                # AUR
+# python-catalyst                           # AUR
+# python-compressai                         # AUR
+# python-xontrib-fzf-widgets
 
 hub
 sshuttle

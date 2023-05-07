@@ -8,7 +8,6 @@ python
 python-arxiv                                # AUR
 python-black
 python-chess                                # AUR
-python-compressai                           # AUR
 python-gspread                              # AUR
 python-hydra-core                           # AUR
 python-jedi
