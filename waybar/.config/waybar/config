@@ -63,8 +63,8 @@
     },
     "hyprland/window": {
         "format": "{}",
-        "min-length": 120,
-        "max-length": 120,
+        "min-length": 100,
+        "max-length": 100,
         "separate-outputs": true,
         "on-click-right": "hyprctl dispatch killactive 1> /dev/null",
         "on-scroll-up": "hyprctl dispatch workspace e-1 1> /dev/null",
@@ -147,7 +147,10 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": " {signalStrength}",
+        "format-wifi": " {signalStrength}", //  {bandwidthDownBytes:09}   {bandwidthUpBytes:09}",
+        // "format-wifi": " <span font='NotoSansMono-Regular'>{signalStrength:>3}</span>   <span font='NotoSansMono-Regular'>{bandwidthDownBytes:09}</span>   <span font='NotoSansMono-Regular'>{bandwidthUpBytes:09}</span>",
+        "interval": 1,
+        // "min-length": 30,
         "format-ethernet": " {ipaddr}/{cidr}",
         "tooltip-format": " {ifname} via {gwaddr}",
         "format-linked": " {ifname} (No IP)",
