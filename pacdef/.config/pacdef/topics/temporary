@@ -7,7 +7,7 @@ python-aim
 python-catalyst
 python-hydra-slayer
 python-path
-python-xontrib-fzf-widgets
+# python-xontrib-fzf-widgets
 rnix-lsp-git
 rocksdb
 
