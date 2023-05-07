@@ -22,18 +22,31 @@ spectacle
 
 # Wayland
 glfw-wayland
-hyprland
+hyprland-git
 hyprpaper
 plasma-wayland-session
 qt6-wayland
 sway
 swaybg
-waybar
-wofi
+waybar-hyprland
 wbg
+wofi
 wpaperd
 
 foot
 kitty
 
 qt6ct
+
+grim
+gst-plugin-pipewire
+nwg-look
+showmethekey
+slurp
+wl-clipboard
+wlrobs-hg
+xdg-desktop-portal-hyprland
+
+frogmouth
+ghq
+rebuild-detector
