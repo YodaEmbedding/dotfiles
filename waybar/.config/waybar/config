@@ -18,6 +18,7 @@
     "modules-right": [
         // "idle_inhibitor",
         "custom/ping",
+        "custom/bandwidth",
         "network",
         "cpu",
         "memory",
@@ -204,6 +205,9 @@
         "interval": 1,
         "max-length": 16,
         "exec": "tmux capture-pane -p -t '0:1.1' | tac | grep -E -m 1 . | sed -e 's/^[ \t]*//'"
+    },
+    "custom/bandwidth": {
+        "exec": "$HOME/.config/waybar/scripts/bandwidth"
     },
     "custom/ping": {
         "format": "{}",
