@@ -25,14 +25,22 @@ def get_rx_tx_bytes(iface):
     raise RuntimeError("Interface not found")
 
 
-def format_size(size):
+def format_size(size, min_threshold=1024):
     power_labels = {0: "B", 1: "K", 2: "M", 3: "G", 4: "T"}
     kilo = 2**10
+
     power = 0
-    while size > kilo:
-        size /= kilo
+    significand = size
+    while significand > kilo:
+        significand /= kilo
         power += 1
-    return f"{size:3.0f} {power_labels[power]}"
+
+    # Round significand to 0 to reduce constant chatter.
+    if size < min_threshold:
+        significand = 0
+        power += 1
+
+    return f"{significand:3.0f} {power_labels[power]}"
 
 
 def main():
