@@ -21,6 +21,25 @@ biber_fix() {
   /bin/mv "$tmpfile" "$file"
 }
 
+# clipboard
+if ! type "pbcopy" > /dev/null; then
+  if [ ! -z "${WAYLAND_DISPLAY}" ]; then
+    PBCOPY="wl-copy"
+  else
+    PBCOPY="xclip -selection clipboard"
+  fi
+  alias pbcopy="${PBCOPY}"
+fi
+
+if ! type "pbpaste" > /dev/null; then
+  if [ ! -z "${WAYLAND_DISPLAY}" ]; then
+    PBPASTE="wl-paste"
+  else
+    PBPASTE="xclip -selection clipboard -o"
+  fi
+  alias pbpaste="${PBPASTE}"
+fi
+
 # fd
 alias fd="fd --hidden --exclude .git"
 
@@ -133,10 +152,6 @@ alias tw_watch="tw_online | grep '^  ' | fzf --ansi | sed 's/^   \\([^:]\\+\\).*
 alias twc='tw_online'
 alias tws='wtwitch sub'
 alias tww='tw_watch'
-
-# xclip
-alias pbcopy='xclip -selection c'
-alias pbpaste='xclip -selection clipboard -o'
 
 # zip
 zipf() {
