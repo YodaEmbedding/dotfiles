@@ -91,10 +91,11 @@
     },
     "cpu": {
         "format": " {usage:02}",
-        "tooltip": false
+        "interval": 2
     },
     "memory": {
-        "format": " {}"
+        "format": " {}",
+        "interval": 2
     },
     "temperature": {
         // "thermal-zone": 2,
