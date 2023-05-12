@@ -23,7 +23,7 @@ spectacle
 
 # Wayland
 glfw-wayland
-hyprland-git
+hyprland-nvidia-git                         # AUR
 hyprpaper
 plasma-wayland-session
 qt6-wayland

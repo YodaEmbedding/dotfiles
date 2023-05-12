@@ -22,6 +22,7 @@ python-pillow
 python-pip
 python-plotly                               # AUR
 python-poetry
+python-polars                               # AUR
 python-praw
 python-protobuf
 python-pyinotify
@@ -48,4 +49,5 @@ python-urllib3
 python-virtualenv
 python2                                     # AUR
 python2-setuptools                          # AUR
+python310                                   # AUR
 ruff
