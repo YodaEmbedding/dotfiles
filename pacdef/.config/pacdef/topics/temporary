@@ -1,20 +1,25 @@
 # vim:ft=conf
 
-deadd-notification-center-bin
+deadd-notification-center-bin               # AUR
 dolphin
-mathics
+foot
+frogmouth                                   # AUR
+ghq
+hub
+kitty
+mathics                                     # AUR
 python-path
-rnix-lsp-git
+qt6ct
+rebuild-detector
+rnix-lsp-git                                # AUR
 rocksdb
+sshuttle
+vvc-vtm                                     # AUR
 
 # python-aim                                # AUR
 # python-catalyst                           # AUR
 # python-compressai                         # AUR
 # python-xontrib-fzf-widgets
-
-hub
-sshuttle
-vvc-vtm
 
 # Screenshots
 flameshot
@@ -23,31 +28,35 @@ spectacle
 
 # Wayland
 glfw-wayland
-hyprland-nvidia-git                         # AUR
-hyprpaper
-plasma-wayland-session
-qt6-wayland
-sway
-swaybg
-waybar-hyprland
-wbg
-wofi
-wpaperd
-
-foot
-kitty
-
-qt6ct
-
 grim
 gst-plugin-pipewire
-nwg-look
-showmethekey
+hyprland-nvidia-git                         # AUR
+hyprpaper
+hyprpicker-git                              # AUR
+hyprprop-git                                # AUR
+hyprshot                                    # AUR
+nwg-look                                    # AUR
+plasma-wayland-session
+qt6-wayland
+showmethekey                                # AUR
 slurp
+sway
+swaybg
+waybar-hyprland                             # AUR
+wbg                                         # AUR
 wl-clipboard
-wlrobs-hg
+wlrobs-hg                                   # AUR
+wofi
+wpaperd
+wshowkeys-git                               # AUR
 xdg-desktop-portal-hyprland
 
-frogmouth
-ghq
-rebuild-detector
+# Bluetooth
+bluedevil
+blueman
+bluetuith                                   # AUR
+bluez-utils
+
+# Audio
+easyeffects                                 # AUR
+noise-suppression-for-voice                 # AUR
