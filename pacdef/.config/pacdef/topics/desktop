@@ -1,11 +1,40 @@
 # vim:ft=conf
 
 dunst
+glfw-wayland
+hyprland-nvidia-git                         # AUR
 i3-wm
 picom-git
 plasma-desktop
+plasma-wayland-session
 polybar
-qt5ct
+qt6-wayland
 sddm
+sway
+waybar-hyprland                             # AUR
+xdg-desktop-portal-hyprland
+
+# Configuration
+lxappearance
+nwg-look                                    # AUR
+qt5ct
+qt6ct
 systemsettings
 xfce4-settings
+
+# Desktop background
+hyprpaper
+swaybg
+wbg                                         # AUR
+wpaperd
+
+# Screenshots, etc
+grim
+hyprpicker-git                              # AUR
+hyprprop-git                                # AUR
+hyprshot                                    # AUR
+maim
+scrot
+showmethekey                                # AUR
+slurp
+wl-clipboard

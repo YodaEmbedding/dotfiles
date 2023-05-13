@@ -26,3 +26,9 @@ sudo
 systemd
 time
 xf86-input-libinput
+
+# Bluetooth
+bluedevil
+blueman
+bluetuith                                   # AUR
+bluez-utils

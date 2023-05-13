@@ -6,6 +6,7 @@ feh
 ffmpeg
 gphoto2
 gst-libav
+gst-plugin-pipewire
 gst-plugins-base
 gst-plugins-base-libs
 gst-plugins-good

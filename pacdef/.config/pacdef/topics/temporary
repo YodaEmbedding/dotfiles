@@ -9,7 +9,6 @@ hub
 kitty
 mathics                                     # AUR
 python-path
-qt6ct
 rebuild-detector
 rnix-lsp-git                                # AUR
 rocksdb
@@ -25,37 +24,6 @@ vvc-vtm                                     # AUR
 flameshot
 ksnip
 spectacle
-
-# Wayland
-glfw-wayland
-grim
-gst-plugin-pipewire
-hyprland-nvidia-git                         # AUR
-hyprpaper
-hyprpicker-git                              # AUR
-hyprprop-git                                # AUR
-hyprshot                                    # AUR
-nwg-look                                    # AUR
-plasma-wayland-session
-qt6-wayland
-showmethekey                                # AUR
-slurp
-sway
-swaybg
-waybar-hyprland                             # AUR
-wbg                                         # AUR
-wl-clipboard
-wlrobs-hg                                   # AUR
-wofi
-wpaperd
-wshowkeys-git                               # AUR
-xdg-desktop-portal-hyprland
-
-# Bluetooth
-bluedevil
-blueman
-bluetuith                                   # AUR
-bluez-utils
 
 # Audio
 easyeffects                                 # AUR

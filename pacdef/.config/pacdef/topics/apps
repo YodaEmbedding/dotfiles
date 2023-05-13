@@ -14,11 +14,9 @@ gitkraken                                   # AUR
 google-chrome                               # AUR
 libreoffice-fresh
 lutris
-lxappearance
-maim
 obsidian
 qbittorrent
-scrot
+rofi
 skypeforlinux-stable-bin                    # AUR
 steam
 teams                                       # AUR
@@ -30,5 +28,7 @@ thunar-volman
 thunderbird
 virtualbox
 virtualbox-ext-oracle                       # AUR
+wofi
+wshowkeys-git                               # AUR
 zhumu                                       # AUR
 zoom                                        # AUR
