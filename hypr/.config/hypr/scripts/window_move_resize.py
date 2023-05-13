@@ -52,30 +52,25 @@ def get_target_window_info(windows, workspaces, monitors, address):
     return window_info, workspace_info, monitor_info
 
 
-def get_window_snap_location(directions, window_info, monitor_info):
+def compute_anchor(directions, width, height):
     assert sum(1 for d in directions if d in ["top", "middle", "bottom"]) <= 1
     assert sum(1 for d in directions if d in ["left", "center", "right"]) <= 1
 
-    window_width = window_info["size"][0]
-    window_height = window_info["size"][1]
-    monitor_width = monitor_info["width"]
-    monitor_height = monitor_info["height"]
-    x = window_info["at"][0]
-    y = window_info["at"][1]
+    x, y = 0, 0  # Default to top left.
 
     if "left" in directions:
         x = 0
     if "center" in directions:
-        x = monitor_width // 2 - window_width // 2
+        x = width // 2
     if "right" in directions:
-        x = monitor_width - window_width
+        x = width
 
     if "top" in directions:
         y = 0
     if "middle" in directions:
-        y = monitor_height // 2 - window_height // 2
+        y = height // 2
     if "bottom" in directions:
-        y = monitor_height - window_height
+        y = height
 
     return x, y
 
@@ -96,42 +91,41 @@ def clip_bounds(x, y, window_info, bounds):
 
 def parse_position_command(command, size, offset):
     if not command:
-        return int(offset)
+        return None
     if command[-1] == "%":
         position = float(command[:-1]) * size // 100
     else:
         position = float(command)
     if command[0] in ["+", "-"]:
         position += offset  # convert relative position to absolute
-    return int(position)
+    return position
 
 
 def compute_bounds(args, monitor_info):
     monitor_width = monitor_info["width"]
     monitor_height = monitor_info["height"]
-    parse_maybe = (
-        lambda c, s, p: parse_position_command(c, s, p) if c is not None else None
-    )
     return {
-        "x_min": parse_maybe(args.x_min, monitor_width, 0),
-        "x_max": parse_maybe(args.x_max, monitor_width, 0),
-        "y_min": parse_maybe(args.y_min, monitor_height, 0),
-        "y_max": parse_maybe(args.y_max, monitor_height, 0),
+        "x_min": parse_position_command(args.x_min, monitor_width, 0),
+        "x_max": parse_position_command(args.x_max, monitor_width, 0),
+        "y_min": parse_position_command(args.y_min, monitor_height, 0),
+        "y_max": parse_position_command(args.y_max, monitor_height, 0),
     }
 
 
 def compute_new_window_position(args, window_info, monitor_info, bounds):
-    if args.snap is not None:
-        directions = args.snap.split("_")
-        x, y = get_window_snap_location(directions, window_info, monitor_info)
-        x, y = clip_bounds(x, y, window_info, bounds)
-        return x, y
+    ref_dx, ref_dy = compute_anchor(
+        args.anchor.split("_"), window_info["size"][0], window_info["size"][1]
+    )
 
-    x = parse_position_command(args.x, monitor_info["width"], window_info["at"][0])
-    y = parse_position_command(args.y, monitor_info["height"], window_info["at"][1])
+    x = window_info["at"][0] + ref_dx
+    y = window_info["at"][1] + ref_dy
+
+    x = parse_position_command(args.x or "+0", monitor_info["width"], x) - ref_dx
+    y = parse_position_command(args.y or "+0", monitor_info["height"], y) - ref_dy
+
     x, y = clip_bounds(x, y, window_info, bounds)
 
-    return x, y
+    return int(x), int(y)
 
 
 def build_parser():
@@ -142,7 +136,8 @@ def build_parser():
         help="Address of the target window. Default: active window.",
     )
     parser.add_argument(
-        "--snap",
+        "--anchor",
+        default="top_left",
         choices=[
             "top",
             "middle",
@@ -160,13 +155,7 @@ def build_parser():
             "bottom_center",
             "bottom_right",
         ],
-        help="Location to snap the window.",
-    )
-    parser.add_argument(
-        "--reference",
-        default="top_left",
-        choices=["top_left"],  # TODO support "center", etc
-        help="Reference point in window for determining position.",
+        help="Anchor point in window for determining position.",
     )
     parser.add_argument(
         "-x",
@@ -226,10 +215,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# TODO reference point
-# Perhaps with reference point, "--snap" is not necessary?
-# e.g. --reference=top_center --x=50% --y=0%
-# e.g. --reference=bottom_right --x=100% --y=100%
 
 # TODO resizing windows
