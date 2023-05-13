@@ -2,6 +2,18 @@
 
 # Author: Mateen Ulhaq <mulhaq2005 [at] gmail [dot] com>
 
+"""
+Move windows more intuitively for Hyprland.
+
+Examples:
+
+# Move 100 pixels right, and 20% of monitor height down.
+python window_move_resize.py --x=+100 --y=-20%
+
+# Snap to center of region that excludes top toolbar of 32 px.
+python window_move_resize.py --units=bounds --y_min=32 --anchor=middle_center --x=50% --y=50%
+"""
+
 import argparse
 import json
 import subprocess
@@ -228,8 +240,10 @@ def main():
     #     return
 
     bounds = compute_bounds(args, monitor_info)
+    prev_x, prev_y = window_info["at"]
     x, y = compute_new_window_position(args, window_info, monitor_info, bounds)
-    print(f"Moving window to ({x}, {y}).")
+
+    print(f"Moving window from ({prev_x}, {prev_y}) to ({x}, {y}).")
     move_window_pixel(x, y, window_info["address"])
 
 
