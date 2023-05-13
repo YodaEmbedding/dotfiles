@@ -117,11 +117,24 @@ def compute_new_window_position(args, window_info, monitor_info, bounds):
         args.anchor.split("_"), window_info["size"][0], window_info["size"][1]
     )
 
+    if args.units == "monitor":
+        unit_width = monitor_info["width"]
+        unit_height = monitor_info["height"]
+    else:
+        x_min = bounds.get("x_min", 0)
+        x_max = bounds.get("x_max", monitor_info["width"])
+        y_min = bounds.get("y_min", 0)
+        y_max = bounds.get("y_max", monitor_info["height"])
+        unit_width = x_max - x_min
+        unit_height = y_max - y_min
+        ref_dx -= x_min
+        ref_dy -= y_min
+
     x = window_info["at"][0] + ref_dx
     y = window_info["at"][1] + ref_dy
 
-    x = parse_position_command(args.x or "+0", monitor_info["width"], x) - ref_dx
-    y = parse_position_command(args.y or "+0", monitor_info["height"], y) - ref_dy
+    x = parse_position_command(args.x or "+0", unit_width, x) - ref_dx
+    y = parse_position_command(args.y or "+0", unit_height, y) - ref_dy
 
     x, y = clip_bounds(x, y, window_info, bounds)
 
@@ -186,6 +199,12 @@ def build_parser():
         "--y_max",
         default=None,
         help="Maximum y-coordinate for the window's bottom edge (exclusive).",
+    )
+    parser.add_argument(
+        "--units",
+        default="monitor",
+        choices=["monitor", "bounds"],
+        help="Use %% units relative to monitor or viewport induced by x/y_min/max.",
     )
     # TODO --width, --height
     return parser
