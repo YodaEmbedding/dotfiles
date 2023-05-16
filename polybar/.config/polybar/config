@@ -103,7 +103,8 @@ format-font = 5
 
 [module/network]
 type = internal/network
-interface = enp2s0
+# interface = enp2s0
+interface = wlp3s0
 label-connected =  %downspeed:6:6%  %upspeed:6:6%
 format-connected-foreground = #66cc00
 format-connected-font = 5
