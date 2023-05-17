@@ -1,3 +1,5 @@
+# vim: ft=i3config
+
 for_window [class="^.*"] \
     border pixel 1
 
@@ -78,3 +80,4 @@ for_window [title="^Picture-in-Picture$"] \
 
 for_window [class="^Spotify$"] \
     exec $nsi picom-trans -c 90
+

@@ -1,3 +1,5 @@
+# vim: ft=i3config
+
 # Main modifier keys
 set $mod  Mod4
 set $mod_ Mod1

@@ -1,5 +1,8 @@
+# vim: ft=i3config
+
 exec        $nsi    $scripts/startup_exec
 exec_always $nsi    $scripts/fix_wm_window_opacity
 exec_always $nsi    feh --bg-scale $wallpaper
 exec_always $nsi    ~/.config/polybar/polybar.sh
 exec_always $nsi    $(eval "pgrep -f '^python.*focus_last$' | xargs kill; $scripts/focus_last")
+

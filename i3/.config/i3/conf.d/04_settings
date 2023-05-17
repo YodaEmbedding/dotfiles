@@ -1,3 +1,6 @@
+# vim: ft=i3config
+
+# Settings
 font                          pango:Noto Mono Regular, Awesome 8
 floating_modifier             $mod
 focus_follows_mouse           no
@@ -18,3 +21,4 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #333333
 
 # Other colors: #ff33aa #923069 #5B3092 #432F53
+

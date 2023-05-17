@@ -1,3 +1,5 @@
+# vim: ft=i3config
+
 # High real-estate:
 # $mod+a        (focus parent/child)
 # $mod+shift+a  (focus parent/child)
@@ -174,5 +176,4 @@
 # PiP video floating resize
 # bindsym $mod+shift+g            fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
 # bindcode $mod+shift+$kp_ins     fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
-
 

@@ -1,3 +1,5 @@
+# vim: ft=i3config
+
 # bar {
 #    font pango:DejavuSansMono, FontAwesome5Free, FontAwesome5Brands, MaterialIcons, RobotoMono 10.5
 #    # pango:NotoSans-Regular

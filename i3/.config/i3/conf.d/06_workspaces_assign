@@ -1,3 +1,5 @@
+# vim: ft=i3config
+
 assign [class="^[Ff]irefox$"]                     → $ws1
 assign [class="^Nightly$"]                        → $ws1
 # assign [class="^Alacritty$"]                      → $ws2

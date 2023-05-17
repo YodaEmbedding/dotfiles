@@ -1,3 +1,5 @@
+# vim: ft=i3config
+
 # Restart/reload i3/polybar
 bindsym $mod+r                  exec $nsi cat ~/.config/i3/conf.d/* > ~/.config/i3/config && i3-msg reload
 bindsym $mod+shift+r            exec $nsi cat ~/.config/i3/conf.d/* > ~/.config/i3/config && i3-msg restart
