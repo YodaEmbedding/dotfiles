@@ -177,3 +177,6 @@
 # bindsym $mod+shift+g            fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
 # bindcode $mod+shift+$kp_ins     fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
 
+# Kill window via middle mouse button click on border
+# bindsym --border Button2        kill
+

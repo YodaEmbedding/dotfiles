@@ -7,7 +7,6 @@ bindsym $mod+ctrl+r             exec $nsi ~/.config/polybar/polybar.sh
 
 # Kill window
 bindsym $mod+shift+q            kill
-bindsym --border Button2        kill
 
 # Terminal
 bindsym $mod+Return             exec $nsi alacritty
