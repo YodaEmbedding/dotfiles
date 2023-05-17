@@ -31,6 +31,12 @@ bindsym $mod+shift+v            split v
 # Fullscreen
 bindsym $mod+f                  fullscreen toggle
 
+# Pseudo-fullscreen
+bindsym $mod+$mod_+f            resize set $screen_size, move position 0 0
+
+# "Fake" fullscreen
+bindsym --release $mod+shift+f  exec $nsi xdotool key --clearmodifiers f && i3-msg fullscreen disable
+
 # Floating
 bindsym $mod+s                  focus mode_toggle
 bindsym $mod+shift+s            floating toggle
