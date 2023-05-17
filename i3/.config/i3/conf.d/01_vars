@@ -34,14 +34,14 @@ set $wallpaper      --no-fehbg --randomize /mnt/data/Dropbox/media/pics/wallpape
 set $lock_wallpaper /mnt/data/Dropbox/media/pics/wallpaper/desktop/current_lock.png
 
 # Download frece scripts from https://github.com/SicariusNoctis/frece
-set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi
-set $rofi_bground   ~/.config/frece/scripts/rofi/bground.sh -i
-set $rofi_book      ~/.config/frece/scripts/rofi/book.sh    -i
-set $rofi_command   ~/.config/frece/scripts/rofi/command.sh -i
-set $rofi_dir       ~/.config/frece/scripts/rofi/dir.sh     -i
-set $rofi_emoji     ~/.config/frece/scripts/rofi/emoji.sh   -i
-set $rofi_file      ~/.config/frece/scripts/rofi/file.sh    -i
-set $rofi_torr      ~/.config/frece/scripts/rofi/torr.sh    -i
+set $rofi_app       rofi -combi-modi drun,run -show combi -modi combi -p 'run'
+set $rofi_bground   ~/.config/frece/scripts/rofi/bground.sh -i -p 'wallpapers'
+set $rofi_book      ~/.config/frece/scripts/rofi/book.sh    -i -p 'books'
+set $rofi_command   ~/.config/frece/scripts/rofi/command.sh -i -p 'command'
+set $rofi_dir       ~/.config/frece/scripts/rofi/dir.sh     -i -p 'folders'
+set $rofi_emoji     ~/.config/frece/scripts/rofi/emoji.sh   -i -p 'emojis'
+set $rofi_file      ~/.config/frece/scripts/rofi/file.sh    -i -p 'files'
+set $rofi_torr      ~/.config/frece/scripts/rofi/torr.sh    -i -p 'torr'
 set $command_last   ~/.config/frece/scripts/command_latest.sh
 
 # Sound control
