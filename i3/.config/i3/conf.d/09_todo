@@ -156,5 +156,9 @@
 # # Scratchpad fullscreen
 # bindcode ctrl+$kp_ins           [instance="^(?!dropdown$).*$"] scratchpad show, exec sleep 0.1, fullscreen enable
 
+# Focus (mouse scroll wheel)
+# bindsym --whole-window --border $mod+shift+Button4  focus left
+# bindsym --whole-window --border $mod+shift+Button5  focus right
+
 
 

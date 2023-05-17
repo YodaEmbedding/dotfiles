@@ -1,0 +1,236 @@
+# Restart/reload i3/polybar
+bindsym $mod+r                  exec $nsi cat ~/.config/i3/conf.d/* > ~/.config/i3/config && i3-msg reload
+bindsym $mod+shift+r            exec $nsi cat ~/.config/i3/conf.d/* > ~/.config/i3/config && i3-msg restart
+bindsym $mod+ctrl+r             exec $nsi ~/.config/polybar/polybar.sh
+
+# Kill window
+bindsym $mod+shift+q            kill
+bindsym --border Button2        kill
+
+# Terminal
+bindsym $mod+Return             exec $nsi alacritty
+
+# Focus window
+bindsym $mod+h                  focus left
+bindsym $mod+j                  focus down
+bindsym $mod+k                  focus up
+bindsym $mod+l                  focus right
+
+# Next/previous windows
+bindsym $mod_+Tab               focus right
+bindsym $mod_+shift+Tab         focus left
+
+# Focus (mouse scroll wheel)
+bindsym --whole-window --border $mod+shift+Button4  focus left
+bindsym --whole-window --border $mod+shift+Button5  focus right
+
+# Split
+bindsym $mod+v                  split h
+bindsym $mod+shift+v            split v
+
+# Fullscreen
+bindsym $mod+f                  fullscreen toggle
+bindsym $mod+ctrl+s             focus mode_toggle, fullscreen enable
+
+# Floating
+bindsym $mod+s                  focus mode_toggle
+bindsym $mod+shift+s            floating toggle
+
+# Focus parent/child
+bindsym $mod+a                  focus parent
+bindsym $mod+shift+a            focus child
+
+# Jump to urgent window
+bindsym $mod+u                  [urgent=latest] focus
+
+# Workspace switching
+bindsym $mod+1                  workspace $ws1
+bindsym $mod+2                  workspace $ws2
+bindsym $mod+3                  workspace $ws3
+bindsym $mod+4                  workspace $ws4
+bindsym $mod+5                  workspace $ws5
+bindsym $mod+6                  workspace $ws6
+bindsym $mod+7                  workspace $ws7
+bindsym $mod+8                  workspace $ws8
+bindsym $mod+9                  workspace $ws9
+bindsym $mod+0                  workspace $ws10
+
+# Workspace cycling
+bindsym $mod+shift+Tab          workspace prev
+bindsym $mod+Tab                workspace next
+
+# Workspace cycling (mouse scroll wheel)
+bindsym --whole-window --border $mod+ctrl+Button4   workspace prev
+bindsym --whole-window --border $mod+ctrl+Button5   workspace next
+
+# Workspace switch back/forth
+bindsym $mod+grave              workspace back_and_forth
+
+# Workspace switch back/forth and move
+bindsym $mod+shift+grave        move container to workspace back_and_forth; workspace back_and_forth
+
+# Move to workspace
+bindsym $mod+shift+1            move container to workspace $ws1;  workspace $ws1
+bindsym $mod+shift+2            move container to workspace $ws2;  workspace $ws2
+bindsym $mod+shift+3            move container to workspace $ws3;  workspace $ws3
+bindsym $mod+shift+4            move container to workspace $ws4;  workspace $ws4
+bindsym $mod+shift+5            move container to workspace $ws5;  workspace $ws5
+bindsym $mod+shift+6            move container to workspace $ws6;  workspace $ws6
+bindsym $mod+shift+7            move container to workspace $ws7;  workspace $ws7
+bindsym $mod+shift+8            move container to workspace $ws8;  workspace $ws8
+bindsym $mod+shift+9            move container to workspace $ws9;  workspace $ws9
+bindsym $mod+shift+0            move container to workspace $ws10; workspace $ws10
+
+# Move window
+bindsym $mod+shift+h            move left
+bindsym $mod+shift+j            move down
+bindsym $mod+shift+k            move up
+bindsym $mod+shift+l            move right
+
+bindsym $mod+shift+Left         move left
+bindsym $mod+shift+Down         move down
+bindsym $mod+shift+Up           move up
+bindsym $mod+shift+Right        move right
+
+# Move window (fast)
+bindsym $mod+shift+ctrl+h       move left  100px
+bindsym $mod+shift+ctrl+j       move down  100px
+bindsym $mod+shift+ctrl+k       move up    100px
+bindsym $mod+shift+ctrl+l       move right 100px
+
+bindsym $mod+shift+ctrl+Left    move left  100px
+bindsym $mod+shift+ctrl+Down    move down  100px
+bindsym $mod+shift+ctrl+Up      move up    100px
+bindsym $mod+shift+ctrl+Right   move right 100px
+
+# Move window (snap)
+bindsym $mod+Left               exec $nsi $scripts/move left
+bindsym $mod+Down               exec $nsi $scripts/move bottom
+bindsym $mod+Up                 exec $nsi $scripts/move top
+bindsym $mod+Right              exec $nsi $scripts/move right
+
+bindsym $mod+$mod_+c            move position center
+bindsym $mod+$mod_+v            resize set $screen_size, move position 0 0
+bindsym $mod+shift+g            fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
+bindcode $mod+shift+$kp_ins     fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
+
+# Resize window
+bindsym $mod+$mod_+h            exec $nsi $scripts/resize shrink width  5
+bindsym $mod+$mod_+j            exec $nsi $scripts/resize grow   height 5
+bindsym $mod+$mod_+k            exec $nsi $scripts/resize shrink height 5
+bindsym $mod+$mod_+l            exec $nsi $scripts/resize grow   width  5
+
+bindsym $mod+$mod_+Left         exec $nsi $scripts/resize shrink width  5
+bindsym $mod+$mod_+Down         exec $nsi $scripts/resize grow   height 5
+bindsym $mod+$mod_+Up           exec $nsi $scripts/resize shrink height 5
+bindsym $mod+$mod_+Right        exec $nsi $scripts/resize grow   width  5
+
+bindsym $mod+$mod_+shift+h      exec $nsi $scripts/resize shrink width  1
+bindsym $mod+$mod_+shift+j      exec $nsi $scripts/resize grow   height 1
+bindsym $mod+$mod_+shift+k      exec $nsi $scripts/resize shrink height 1
+bindsym $mod+$mod_+shift+l      exec $nsi $scripts/resize grow   width  1
+
+bindsym $mod+$mod_+shift+Left   exec $nsi $scripts/resize shrink width  1
+bindsym $mod+$mod_+shift+Down   exec $nsi $scripts/resize grow   height 1
+bindsym $mod+$mod_+shift+Up     exec $nsi $scripts/resize shrink height 1
+bindsym $mod+$mod_+shift+Right  exec $nsi $scripts/resize grow   width  1
+
+bindsym $mod+$mod_+ctrl+h       exec $nsi $scripts/resize shrink width  20
+bindsym $mod+$mod_+ctrl+j       exec $nsi $scripts/resize grow   height 20
+bindsym $mod+$mod_+ctrl+k       exec $nsi $scripts/resize shrink height 20
+bindsym $mod+$mod_+ctrl+l       exec $nsi $scripts/resize grow   width  20
+
+bindsym $mod+$mod_+ctrl+Left    exec $nsi $scripts/resize shrink width  20
+bindsym $mod+$mod_+ctrl+Down    exec $nsi $scripts/resize grow   height 20
+bindsym $mod+$mod_+ctrl+Up      exec $nsi $scripts/resize shrink height 20
+bindsym $mod+$mod_+ctrl+Right   exec $nsi $scripts/resize grow   width  20
+
+# Window property control
+bindsym $mod+b                  border toggle
+bindsym $mod+g                  sticky toggle
+
+# Gaps
+# bindsym $mod+period             gaps inner all plus  5
+# bindsym $mod+shift+period       gaps inner all minus 5
+# bindsym $mod+slash              gaps outer all plus  5
+# bindsym $mod+shift+slash        gaps outer all minus 5
+
+# Scratchpad
+bindcode shift+$kp_ins          move scratchpad
+bindsym $mod+shift+minus        move scratchpad
+
+bindcode $kp_ins                [instance="^(?!dropdown$).*$"] scratchpad show
+bindsym $mod+minus              [instance="^(?!dropdown$).*$"] scratchpad show
+
+# Dropdown terminal
+bindsym $mod+q                  [instance="^dropdown$"] scratchpad show, fullscreen disable
+bindsym $mod+ctrl+q             [instance="^dropdown$"] scratchpad show, fullscreen enable
+
+# Fast scrolling (mouse scroll wheel)
+bindsym --whole-window --border $mod+Button4    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 4 mouseup --clearmodifiers 4"
+bindsym --whole-window --border $mod+Button5    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 5 mouseup --clearmodifiers 5"
+
+# Volume control
+bindsym XF86AudioRaiseVolume    exec $nsi pamixer --increase 5
+bindsym XF86AudioLowerVolume    exec $nsi pamixer --decrease 5
+bindsym XF86AudioMute           exec $nsi pamixer --toggle-mute
+
+bindsym $mod+z                  exec $nsi pamixer --increase 5
+bindsym $mod+shift+z            exec $nsi pamixer --decrease 5
+bindsym $mod+ctrl+z             exec $nsi pamixer --toggle-mute
+
+# Default sink control
+bindsym $mod+ctrl+shift+z       exec $nsi $cycle_pa_sink
+
+# Media control
+bindsym XF86AudioPlay           exec $nsi "$media_playpause"
+bindsym XF86AudioPause          exec $nsi "$media_pause"
+bindsym XF86AudioNext           exec $nsi "$media_next"
+bindsym XF86AudioPrev           exec $nsi "$media_prev"
+
+# Media control
+bindsym $mod+shift+period       exec $nsi "$media_next"
+bindsym $mod+shift+comma        exec $nsi "$media_prev"
+bindsym $mod+ctrl+x             exec $nsi "$media_playpause"
+bindsym $mod+x                  exec $nsi "$media_vol_up"
+bindsym $mod+shift+x            exec $nsi "$media_vol_down"
+
+# Color picker
+bindsym $mod+p                  exec $nsi gcolor2
+
+# File manager
+bindsym $mod+t                  exec thunar ~/Downloads
+bindsym $mod+shift+t            exec thunar "$screen_base"
+
+# rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
+bindsym $mod+space              exec "$rofi_app     -p 'run'"
+bindsym $mod+w                  exec "$rofi_app     -p 'run'"
+bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
+bindsym $mod+e                  exec "$rofi_command -p 'command'"
+bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
+bindsym $mod+ctrl+shift+e       exec "$rofi_emoji   -p 'emojis'"
+bindsym $mod+d                  exec "$rofi_file    -p 'files'"
+bindsym $mod+shift+b            exec "$rofi_book    -p 'books'"
+bindsym $mod+shift+w            exec "$rofi_bground -p 'wallpapers'"
+bindsym $mod+shift+d            exec "$rofi_torr    -p 'torr'"
+
+# Screenshot (select, select + edit, select + copy, full, active, preview latest)
+bindsym            Print        exec $nsi maim -u -s "$screen_path"
+bindsym      shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
+bindsym $mod+shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && xclip -selection clipboard -t image/png <\\"$f\\""
+bindsym       ctrl+Print        exec $nsi maim -u "$screen_path"
+bindsym  $mod+ctrl+Print        exec $nsi maim -u -i $(xdotool getactivewindow) "$screen_path"
+bindsym       $mod+Print        exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
+
+# Screencapture
+# TODO
+
+# Redshift control
+bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) + 200))
+bindsym $mod+shift+m            exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) - 200))
+bindsym $mod+ctrl+m             exec $nsi $scripts/rs 5500
+bindsym $mod+ctrl+shift+m       exec $nsi $scripts/rs 6500
+
+# Cycle wallpaper
+bindsym $mod+$mod_+w            exec $nsi feh --bg-fill $wallpaper
+
