@@ -174,8 +174,8 @@ bindsym $mod+q                  [instance="^dropdown$"] scratchpad show, fullscr
 bindsym $mod+ctrl+q             [instance="^dropdown$"] scratchpad show, fullscreen enable
 
 # Fast scrolling (mouse scroll wheel)
-bindsym --whole-window --border $mod+Button4    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 4 mouseup --clearmodifiers 4"
-bindsym --whole-window --border $mod+Button5    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 5 mouseup --clearmodifiers 5"
+bindsym --whole-window --border $mod+Button4    exec "xdotool click --clearmodifiers --repeat 3 --delay 10 4 mouseup --clearmodifiers 4"
+bindsym --whole-window --border $mod+Button5    exec "xdotool click --clearmodifiers --repeat 3 --delay 10 5 mouseup --clearmodifiers 5"
 
 # Volume control
 bindsym XF86AudioRaiseVolume    exec $nsi pamixer --increase 5
