@@ -92,7 +92,8 @@ label-maxlen = 60
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
 interval = 43200
-format-prefix = "つつみ"
+# format-prefix = "つつみ"
+format-prefix = " "
 
 # [module/bandwidth]
 # type = custom/script
@@ -132,20 +133,23 @@ mount-0 = /
 [module/memory]
 type = internal/memory
 interval = 5
-format-prefix = "きおく"
+# format-prefix = "きおく"
+format-prefix = " "
 label = %gb_used:1:2%
 fixed-values = true
 
 [module/cpu]
 type = internal/cpu
 interval = 5
-format-prefix = "しごと"
+# format-prefix = "しごと"
+format-prefix = " "
 label = %percentage:02%
 
 [module/temperature]
 type = internal/temperature
 interval = 5
-format-prefix = "あつい"
+# format-prefix = "あつい"
+format-prefix = " "
 label = %temperature:0:3%
 label-warn-foreground = #ff7777
 warn-temperature = 60
@@ -162,8 +166,11 @@ scroll-down = ~/.config/polybar/scripts/pulseaudio-control --volume-max 100 --vo
 
 [module/date]
 type = internal/date
-date = 今  %y-%m-%d  %H:%M:%S
+date = %Y-%m-%d  %H:%M:%S
+# date = %y-%m-%d  %H:%M:%S
 date-alt = %A, %d %B %Y  %H:%M:%S
+# format-prefix = "今  "
+format-prefix = ""
 
 ; TODO
 ;
