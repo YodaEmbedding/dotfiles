@@ -212,13 +212,21 @@ bindsym $mod+shift+b            exec "$rofi_book"
 bindsym $mod+shift+w            exec "$rofi_bground"
 bindsym $mod+shift+d            exec "$rofi_torr"
 
-# Screenshot (select, select + edit, select + copy, full, active, preview latest)
-bindsym            Print        exec $nsi maim -u -s "$screen_path"
-bindsym      shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && gthumb \\"$f\\""
-bindsym $mod+shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\" && xclip -selection clipboard -t image/png <\\"$f\\""
-bindsym       ctrl+Print        exec $nsi maim -u "$screen_path"
-bindsym  $mod+ctrl+Print        exec $nsi maim -u -i $(xdotool getactivewindow) "$screen_path"
-bindsym       $mod+Print        exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
+# Screenshot
+# full = ctrl
+# edit = mod
+# copy = shift
+bindsym                 Print   exec $nsi f="$screen_path" && $screen_cmd_sel "$f"                                               && $screen_notify "Screenshot saved"  "$f"
+bindsym           shift+Print   exec $nsi f="$screen_path" && $screen_cmd_sel "$f" &&                        $screen_copy < "$f" && $screen_notify "Screenshot copied" "$f"
+bindsym      $mod      +Print   exec $nsi f="$screen_path" && $screen_cmd_sel "$f" && $screen_editor "$f"                        && $screen_notify "Screenshot saved"  "$f"
+bindsym      $mod+shift+Print   exec $nsi f="$screen_path" && $screen_cmd_sel "$f" && $screen_editor "$f" && $screen_copy < "$f" && $screen_notify "Screenshot copied" "$f"
+bindsym ctrl           +Print   exec $nsi f="$screen_path" && $screen_cmd_ful "$f"                                               && $screen_notify "Screenshot saved"  "$f"
+bindsym ctrl     +shift+Print   exec $nsi f="$screen_path" && $screen_cmd_ful "$f" &&                        $screen_copy < "$f" && $screen_notify "Screenshot copied" "$f"
+bindsym ctrl+$mod      +Print   exec $nsi f="$screen_path" && $screen_cmd_ful "$f" && $screen_editor "$f"                        && $screen_notify "Screenshot saved"  "$f"
+bindsym ctrl+$mod+shift+Print   exec $nsi f="$screen_path" && $screen_cmd_ful "$f" && $screen_editor "$f" && $screen_copy < "$f" && $screen_notify "Screenshot copied" "$f"
+
+# Screenshot preview latest
+bindsym $mod+ctrl+shift+t       exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
 
 # Redshift control
 bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) + 200))
