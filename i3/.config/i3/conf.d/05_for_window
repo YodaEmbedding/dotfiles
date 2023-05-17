@@ -112,3 +112,6 @@ for_window [title="^Preview$"] \
 for_window [title="^Server Monitor$"] \
     floating enable, \
     exec $nsi $scripts/move top right
+
+for_window [class="^Spotify$"] \
+    exec $nsi picom-trans -c 90
