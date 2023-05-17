@@ -4,15 +4,18 @@
 font                          pango:Noto Mono Regular, Awesome 8
 floating_modifier             $mod
 focus_follows_mouse           no
-default_border                pixel 1
-hide_edge_borders             smart
+default_border                pixel 2
+default_floating_border       pixel 2
+# hide_edge_borders             smart
+# smart_borders                 on
+gaps                          inner 12
 new_window                    none
 workspace_auto_back_and_forth yes
 workspace_layout              tabbed
 
 # Colors
 # class                 border  backgr. text    indicator child_border
-client.focused          #2E2043 #2E2043 #ffffff #2E2043   #D94C9E
+client.focused          #2E2043 #2E2043 #ffffff #2E2043   #33FFDD
 client.focused_inactive #19161C #19161C #777777 #221321   #221321
 client.unfocused        #19161C #19161C #777777 #221321   #221321
 client.urgent           #DF48B4 #DF48B4 #ffffff #900000   #900000
