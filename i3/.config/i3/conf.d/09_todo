@@ -17,10 +17,17 @@
 # $mod+shift+y
 
 # Rarely used bindings:
-# $mod+a  (focus parent/child)
-# $mod+r  (reload)
-# $mod+u  (jump to urgent window)
-# $mod+space
+# bindsym $mod+space              exec "$rofi_app     -p 'run'"
+# bindsym $mod+a                  focus parent
+# bindsym $mod+shift+a            focus child
+# bindsym $mod+r                  exec $nsi cat ~/.config/i3/conf.d/* > ~/.config/i3/config && i3-msg reload
+# bindsym $mod+shift+r            exec $nsi cat ~/.config/i3/conf.d/* > ~/.config/i3/config && i3-msg restart
+# bindsym $mod+ctrl+r             exec $nsi ~/.config/polybar/polybar.sh
+# bindsym $mod+b                  border toggle
+# bindsym $mod+u                  [urgent=latest] focus
+# bindsym $mod+$mod_+f            resize set $screen_size, move position 0 0
+# bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) + 200))
+# bindsym $mod+ctrl+shift+z       exec $nsi $cycle_pa_sink
 
 # Highly used bindings (that are hard to reach):
 # $mod+t
@@ -35,8 +42,8 @@
 
 # BINDINGS GRAVEYARD:
 
-# Terminal
-# bindsym $mod+shift+Return       exec $nsi alacritty -e tmux
+# Fullscreen
+# bindsym $mod+ctrl+s             focus mode_toggle, fullscreen enable
 
 # Layout
 # bindsym $mod+y                  layout tabbed
@@ -127,6 +134,9 @@
 # bindsym $mod+ctrl+shift+Left    move container to workspace prev; workspace prev
 # bindsym $mod+ctrl+shift+Right   move container to workspace next; workspace next
 
+# Terminal
+# bindsym $mod+shift+Return       exec $nsi alacritty -e tmux
+
 # Dropdown terminal
 # bindsym $mod+$mod_+q            [instance="^dropdown$"] scratchpad show, fullscreen enable
 
@@ -134,6 +144,7 @@
 # bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
 
 # rofi
+# bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
 # bindsym $mod+shift+e            exec "$command_last"
 
 # Shortcuts: open/switch to
@@ -160,5 +171,8 @@
 # bindsym --whole-window --border $mod+shift+Button4  focus left
 # bindsym --whole-window --border $mod+shift+Button5  focus right
 
+# PiP video floating resize
+# bindsym $mod+shift+g            fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
+# bindcode $mod+shift+$kp_ins     fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
 
 

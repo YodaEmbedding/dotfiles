@@ -30,7 +30,6 @@ bindsym $mod+shift+v            split v
 
 # Fullscreen
 bindsym $mod+f                  fullscreen toggle
-bindsym $mod+ctrl+s             focus mode_toggle, fullscreen enable
 
 # Floating
 bindsym $mod+s                  focus mode_toggle
@@ -202,10 +201,9 @@ bindsym $mod+p                  exec $nsi gcolor2
 bindsym $mod+t                  exec thunar ~/Downloads
 bindsym $mod+shift+t            exec thunar "$screen_base"
 
-# rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
+# rofi (app launcher, file search, folder search, emoji, window jumper)
 bindsym $mod+space              exec "$rofi_app     -p 'run'"
 bindsym $mod+w                  exec "$rofi_app     -p 'run'"
-bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
 bindsym $mod+e                  exec "$rofi_command -p 'command'"
 bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
 bindsym $mod+ctrl+shift+e       exec "$rofi_emoji   -p 'emojis'"
@@ -221,9 +219,6 @@ bindsym $mod+shift+Print        exec $nsi "f=$screen_path && maim -u -s \\"$f\\"
 bindsym       ctrl+Print        exec $nsi maim -u "$screen_path"
 bindsym  $mod+ctrl+Print        exec $nsi maim -u -i $(xdotool getactivewindow) "$screen_path"
 bindsym       $mod+Print        exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
-
-# Screencapture
-# TODO
 
 # Redshift control
 bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) + 200))
