@@ -24,7 +24,7 @@ tray-position = right
 
 modules-left = i3 mpris preview
 modules-center = title
-modules-right = network ping updates memory cpu temperature pulseaudio date
+modules-right = ping bandwidth updates memory cpu temperature pulseaudio date
 
 scroll-up = i3wm-wsprev
 scroll-down = i3wm-wsnext
@@ -94,12 +94,19 @@ exec = ~/.config/polybar/scripts/updates-arch-combined.sh
 interval = 43200
 format-prefix = "つつみ"
 
+# [module/bandwidth]
+# type = custom/script
+# exec = ~/.config/i3blocks/scripts/bandwidth
+# interval = 1
+# format-foreground = #66cc00
+# format-font = 5
+
 [module/bandwidth]
 type = custom/script
-exec = ~/.config/i3blocks/scripts/bandwidth
-interval = 1
-format-foreground = #66cc00
-format-font = 5
+exec = ~/.config/waybar/scripts/bandwidth
+tail = true
+label-font = 5
+format-foreground = #cc99cc
 
 [module/network]
 type = internal/network
