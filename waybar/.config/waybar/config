@@ -208,7 +208,7 @@
         "exec": "tmux capture-pane -p -t '0:1.1' | tac | grep -E -m 1 . | sed -e 's/^[ \t]*//'"
     },
     "custom/bandwidth": {
-        "exec": "$HOME/.config/waybar/scripts/bandwidth"
+        "exec": "$HOME/.config/waybar/scripts/bandwidth --num_left=\"<span font='NotoSansMono'>\" --num_right=\"</span>\""
     },
     "custom/ping": {
         "format": "{}",

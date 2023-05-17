@@ -1,7 +1,10 @@
 #!/usr/bin/env python
 
+import argparse
 import subprocess
 from time import sleep
+
+FIGURE_SPACE = " "
 
 
 def default_interface():
@@ -40,20 +43,29 @@ def format_size(size, min_threshold=1024):
         significand = 0
         power += 1
 
-    return f"{significand:3.0f} {power_labels[power]}"
+    return f"{significand:3.0f}".replace(" ", FIGURE_SPACE) + f" {power_labels[power]}"
+
+
+def build_parser():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--rx_icon", default=" ", help="Icon for received bytes")
+    parser.add_argument("--tx_icon", default=" ", help="Icon for transmitted bytes")
+    parser.add_argument("--num_left", default="", help="Text left of number.")
+    parser.add_argument("--num_right", default="", help="Text right of number.")
+    parser.add_argument(
+        "--refresh_interval", type=float, default=2, help="Refresh interval in seconds"
+    )
+    return parser
 
 
 def main():
-    refresh_interval = 2
-    rx_icon = " "
-    tx_icon = " "
-    num_left = "<span font='NotoSansMono'>"
-    num_right = "</span>"
+    parser = build_parser()
+    args = parser.parse_args()
+
     fmt_str = (
-        f"{rx_icon}{num_left}{{rx}}{{unit_suffix}}{num_right}  "
-        f"{tx_icon}{num_left}{{tx}}{{unit_suffix}}{num_right}"
+        f"{args.rx_icon}{args.num_left}{{rx}}{args.num_right}  "
+        f"{args.tx_icon}{args.num_left}{{tx}}{args.num_right}"
     )
-    unit_suffix = ""
     iface = default_interface()
 
     rx_bytes, tx_bytes = get_rx_tx_bytes(iface)
@@ -61,11 +73,11 @@ def main():
     while True:
         prev_rx_bytes, prev_tx_bytes = rx_bytes, tx_bytes
         rx_bytes, tx_bytes = get_rx_tx_bytes(iface)
-        drx = format_size((rx_bytes - prev_rx_bytes) / refresh_interval)
-        dtx = format_size((tx_bytes - prev_tx_bytes) / refresh_interval)
-        line = fmt_str.format(rx=drx, tx=dtx, unit_suffix=unit_suffix)
+        drx = format_size((rx_bytes - prev_rx_bytes) / args.refresh_interval)
+        dtx = format_size((tx_bytes - prev_tx_bytes) / args.refresh_interval)
+        line = fmt_str.format(rx=drx, tx=dtx)
         print(line, flush=True)
-        sleep(refresh_interval)
+        sleep(args.refresh_interval)
 
 
 if __name__ == "__main__":
