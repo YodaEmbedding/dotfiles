@@ -34,7 +34,7 @@ for_window [class="Thunar" title="^(?!(Rename|Create New Folder|File Operation P
     resize set 50 ppt 50 ppt
 
 for_window [instance="^dropdown$"] \
-    floating enable, border none, \
+    floating enable, \
     resize set 100 ppt 50 ppt, move position 0 24, \
     move scratchpad
 
@@ -67,7 +67,7 @@ for_window [instance="^tridactyl_editor$"] \
     move scratchpad, scratchpad show
 
 for_window [title="^gcolor2$"] \
-    floating enable, border none, sticky enable, \
+    floating enable, sticky enable, \
     move position 1381 800
 
 for_window [title="^Picture-in-Picture$"] \
