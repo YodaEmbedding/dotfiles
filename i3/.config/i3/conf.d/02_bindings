@@ -109,15 +109,17 @@ bindsym $mod+shift+ctrl+Up      move up    100px
 bindsym $mod+shift+ctrl+Right   move right 100px
 
 # Move window (snap)
+bindsym $mod+ctrl+h             exec $nsi $scripts/move left
+bindsym $mod+ctrl+j             exec $nsi $scripts/move bottom
+bindsym $mod+ctrl+k             exec $nsi $scripts/move top
+bindsym $mod+ctrl+l             exec $nsi $scripts/move right
+
+bindsym $mod+ctrl+c             move position center
+
 bindsym $mod+Left               exec $nsi $scripts/move left
 bindsym $mod+Down               exec $nsi $scripts/move bottom
 bindsym $mod+Up                 exec $nsi $scripts/move top
 bindsym $mod+Right              exec $nsi $scripts/move right
-
-bindsym $mod+$mod_+c            move position center
-bindsym $mod+$mod_+v            resize set $screen_size, move position 0 0
-bindsym $mod+shift+g            fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
-bindcode $mod+shift+$kp_ins     fullscreen disable, floating enable, sticky enable, resize set $video_size, exec $nsi $scripts/move bottom right
 
 # Resize window
 bindsym $mod+$mod_+h            exec $nsi $scripts/resize shrink width  5
