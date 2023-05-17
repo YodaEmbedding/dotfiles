@@ -66,9 +66,18 @@ set $video_size     752 423
 # set $media_vol_down             ~/.config/i3/scripts/mpc_volume -
 
 # Media control (mpris)
-set $media_playpause            playerctl -p spotify -p spotifyd play-pause
-set $media_pause                playerctl -p spotify -p spotifyd pause
-set $media_next                 playerctl -p spotify -p spotifyd next
-set $media_prev                 playerctl -p spotify -p spotifyd previous
-set $media_vol_up               playerctl -p spotify -p spotifyd volume 0.05+
-set $media_vol_down             playerctl -p spotify -p spotifyd volume 0.05-
+# set $media_playpause            playerctl -p spotify -p spotifyd play-pause
+# set $media_pause                playerctl -p spotify -p spotifyd pause
+# set $media_next                 playerctl -p spotify -p spotifyd next
+# set $media_prev                 playerctl -p spotify -p spotifyd previous
+# set $media_vol_up               playerctl -p spotify -p spotifyd volume 0.05+
+# set $media_vol_down             playerctl -p spotify -p spotifyd volume 0.05-
+
+# Media control (mpris, spotify gui app)
+set $media_playpause            playerctl -p spotify play-pause
+set $media_pause                playerctl -p spotify pause
+set $media_next                 playerctl -p spotify next
+set $media_prev                 playerctl -p spotify previous
+set $media_vol_up               $HOME/.config/hypr/scripts/media_volume_spotify.py +10%
+set $media_vol_down             $HOME/.config/hypr/scripts/media_volume_spotify.py -10%
+
