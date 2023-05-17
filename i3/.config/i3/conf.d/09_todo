@@ -1,6 +1,9 @@
 # High real-estate:
-# $mod+shift+e
-# $mod+shift+w
+# $mod+a        (focus parent/child)
+# $mod+shift+a  (focus parent/child)
+# $mod+r        (reload)
+# $mod+shift+r  (restart)
+# $mod+shift+w  (wallpapers rofi)
 
 # Unused bindings:
 # $mod+shift+space
@@ -8,15 +11,15 @@
 # $mod+n
 # $mod+p
 # $mod+r
+# $mod+y
 # $mod+shift+f
 # $mod+shift+v
 # $mod+shift+y
 
 # Rarely used bindings:
-# $mod+a
-# $mod+s
-# $mod+u
-# $mod+y
+# $mod+a  (focus parent/child)
+# $mod+r  (reload)
+# $mod+u  (jump to urgent window)
 # $mod+space
 
 # Highly used bindings (that are hard to reach):
@@ -27,3 +30,131 @@
 # Alt-tabbing (focus last)
 # Perhaps save previous window ID when selecting between different windows
 # https://www.reddit.com/r/i3wm/comments/3o2bdn/i3_how_to_quickly_switch_between_current_and/?st=j4hmby3s&sh=1dc36d16
+
+
+
+# BINDINGS GRAVEYARD:
+
+# Terminal
+# bindsym $mod+shift+Return       exec $nsi alacritty -e tmux
+
+# Layout
+# bindsym $mod+y                  layout tabbed
+# #bindsym $mod+w                  layout tabbed
+# #bindsym $mod+s                  layout stacking
+# #bindsym $mod+e                  layout toggle split
+
+# Window property control: multiple scratchpads
+# bindcode $mod+$mod_+shift+87    mark "scratchpad1", move scratchpad
+# bindcode $mod+$mod_+shift+88    mark "scratchpad2", move scratchpad
+# bindcode $mod+$mod_+shift+89    mark "scratchpad3", move scratchpad
+# bindcode $mod+$mod_+shift+83    mark "scratchpad4", move scratchpad
+# bindcode $mod+$mod_+shift+84    mark "scratchpad5", move scratchpad
+# bindcode $mod+$mod_+shift+85    mark "scratchpad6", move scratchpad
+# bindcode $mod+$mod_+shift+79    mark "scratchpad7", move scratchpad
+# bindcode $mod+$mod_+shift+80    mark "scratchpad8", move scratchpad
+# bindcode $mod+$mod_+shift+81    mark "scratchpad9", move scratchpad
+# bindcode $mod+$mod_+87          [con_mark="scratchpad1"] scratchpad show
+# bindcode $mod+$mod_+88          [con_mark="scratchpad2"] scratchpad show
+# bindcode $mod+$mod_+89          [con_mark="scratchpad3"] scratchpad show
+# bindcode $mod+$mod_+83          [con_mark="scratchpad4"] scratchpad show
+# bindcode $mod+$mod_+84          [con_mark="scratchpad5"] scratchpad show
+# bindcode $mod+$mod_+85          [con_mark="scratchpad6"] scratchpad show
+# bindcode $mod+$mod_+79          [con_mark="scratchpad7"] scratchpad show
+# bindcode $mod+$mod_+80          [con_mark="scratchpad8"] scratchpad show
+# bindcode $mod+$mod_+81          [con_mark="scratchpad9"] scratchpad show
+
+# Window switch
+# bindsym $mod+space              exec $nsi "wmfocus -c asdfghjkl -o 0,20 --bgcolor 'rgba(30, 30, 30, 0.9)'"
+
+# Window switch back/forth
+# bindsym $mod+$mod_+grave        exec $scripts/focus_last --switch
+
+# Window snap floating to edge (numpad)
+# bindcode $mod+87                exec $nsi $scripts/move bottom left
+# bindcode $mod+88                exec $nsi $scripts/move bottom
+# bindcode $mod+89                exec $nsi $scripts/move bottom right
+# bindcode $mod+83                exec $nsi $scripts/move left
+# bindcode $mod+84                exec $nsi $scripts/move middle center
+# bindcode $mod+85                exec $nsi $scripts/move right
+# bindcode $mod+79                exec $nsi $scripts/move top left
+# bindcode $mod+80                exec $nsi $scripts/move top
+# bindcode $mod+81                exec $nsi $scripts/move top right
+# bindcode $mod+shift+87          exec $nsi $scripts/move bottom left
+# bindcode $mod+shift+88          exec $nsi $scripts/move bottom center
+# bindcode $mod+shift+89          exec $nsi $scripts/move bottom right
+# bindcode $mod+shift+83          exec $nsi $scripts/move middle left
+# bindcode $mod+shift+84          exec $nsi $scripts/move middle center
+# bindcode $mod+shift+85          exec $nsi $scripts/move middle right
+# bindcode $mod+shift+79          exec $nsi $scripts/move top left
+# bindcode $mod+shift+80          exec $nsi $scripts/move top center
+# bindcode $mod+shift+81          exec $nsi $scripts/move top right
+
+# Transparency
+# bindsym $mod+ctrl+shift+o       exec $nsi transset-df -a -t
+# bindsym $mod+ctrl+o             exec $nsi transset-df -a --dec 0.05
+# bindsym $mod+o                  exec $nsi transset-df -a --inc 0.15
+# bindsym $mod+shift+o            exec $nsi transset-df -a --dec 0.15
+# bindsym $mod+$mod_+o            exec $nsi transset-df -a --inc 0.01
+# bindsym $mod+$mod_+shift+o      exec $nsi transset-df -a --dec 0.01
+# bindsym $mod+$mod_+ctrl+o       exec $nsi transset-df -a \
+#     $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity" | awk '{print $1 / 100}')
+
+# Transparency (via picom)
+# bindsym $mod+o                  exec $nsi picom-trans -c --delete
+# bindsym $mod+o                  exec $nsi picom-trans -c +5
+# bindsym $mod+shift+o            exec $nsi picom-trans -c -- -5
+# bindsym $mod+$mod_+o            exec $nsi picom-trans -c -o $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity")
+
+# ncmpcpp
+# bindsym $mod+$mod_+x            exec $nsi alacritty --class ncmpcpp -t ncmpcpp -e ncmpcpp
+
+# Lyrics
+# bindsym $mod+$mod_+shift+x      exec $nsi alacritty --class lyvi -t lyvi -e lyvi
+
+# mpv popup
+# bindsym $mod+ctrl+e             exec $nsi "mpv \\"$(xclip -selection clipboard -o)\\" --x11-name=\\"mpv popup\\""
+
+# Workspace cycling
+# bindsym $mod+ctrl+h             workspace prev
+# bindsym $mod+ctrl+l             workspace next
+# bindsym $mod+ctrl+Left          workspace prev
+# bindsym $mod+ctrl+Right         workspace next
+
+# Workspace cycling and moving
+# bindsym $mod+ctrl+shift+h       move container to workspace prev; workspace prev
+# bindsym $mod+ctrl+shift+l       move container to workspace next; workspace next
+# bindsym $mod+ctrl+shift+Left    move container to workspace prev; workspace prev
+# bindsym $mod+ctrl+shift+Right   move container to workspace next; workspace next
+
+# Dropdown terminal
+# bindsym $mod+$mod_+q            [instance="^dropdown$"] scratchpad show, fullscreen enable
+
+# Lock screen
+# bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
+
+# rofi
+# bindsym $mod+shift+e            exec "$command_last"
+
+# Shortcuts: open/switch to
+# bindsym $mod+$mod_+f            exec $nsi $scripts/switchto "firefox-nightly"      "Nightly"
+# bindsym $mod+$mod_+f            exec $nsi $scripts/switchto "firefox"              "Firefox"
+# bindsym $mod+$mod_+g            exec $nsi $scripts/switchto "google-chrome-stable" "Chrome"
+# bindsym $mod+$mod_+b            exec $nsi $scripts/switchto "qbittorrent"          "qBittorrent"
+# bindsym $mod+$mod_+s            exec $nsi $scripts/switchto "subl"                 "subl"
+# bindsym $mod+$mod_+p            exec $nsi $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
+
+# Downloads
+# bindsym $mod+c                  exec dolphin ~/Downloads
+
+# Refresh search index
+# bindsym $mod+$mod_+d            exec $nsi \
+#     systemctl --user --no-block start update-frece-dir.service && \
+#     systemctl --user --no-block start update-frece-file.service && \
+#     systemctl --user --no-block start update-frece-torr.service
+
+# # Scratchpad fullscreen
+# bindcode ctrl+$kp_ins           [instance="^(?!dropdown$).*$"] scratchpad show, exec sleep 0.1, fullscreen enable
+
+
+

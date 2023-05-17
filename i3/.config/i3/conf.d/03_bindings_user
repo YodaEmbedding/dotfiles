@@ -1,33 +1,25 @@
-# Mouse (scroll wheel) bindings
+# Mouse scroll wheel (fast scrolling)
 bindsym --whole-window --border $mod+Button4    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 4 mouseup --clearmodifiers 4"
 bindsym --whole-window --border $mod+Button5    exec "xdotool click --clearmodifiers --repeat 2 --delay 10 5 mouseup --clearmodifiers 5"
 
 # Dropdown terminal
 bindsym $mod+q                  [instance="^dropdown$"] scratchpad show, fullscreen disable
 bindsym $mod+ctrl+q             [instance="^dropdown$"] scratchpad show, fullscreen enable
-bindsym $mod+$mod_+q            [instance="^dropdown$"] scratchpad show, fullscreen enable
 
 # Floating fullscreen
 bindsym $mod+ctrl+s             focus mode_toggle, fullscreen enable
-
-# Scratchpad fullscreen
-bindcode ctrl+$kp_ins           [instance="^(?!dropdown$).*$"] scratchpad show, fullscreen enable
 
 # rofi (app launcher, sudo app launcher, file search, folder search, emoji, window jumper)
 bindsym $mod+space              exec "$rofi_app     -p 'run'"
 bindsym $mod+w                  exec "$rofi_app     -p 'run'"
 bindsym $mod+ctrl+w             exec "$rofi_app     -p 'run (sudo)' -run-command 'gksudo {cmd}'"
 bindsym $mod+e                  exec "$rofi_command -p 'command'"
-bindsym $mod+shift+e            exec "$command_last"
 bindsym $mod+ctrl+d             exec "$rofi_dir     -p 'folders'"
 bindsym $mod+ctrl+shift+e       exec "$rofi_emoji   -p 'emojis'"
 bindsym $mod+d                  exec "$rofi_file    -p 'files'"
 bindsym $mod+shift+b            exec "$rofi_book    -p 'books'"
 bindsym $mod+shift+w            exec "$rofi_bground -p 'wallpapers'"
 bindsym $mod+shift+d            exec "$rofi_torr    -p 'torr'"
-
-# Lock screen
-bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
 
 # Restart polybar
 bindsym $mod+ctrl+r             exec $nsi ~/.config/polybar/polybar.sh
@@ -49,23 +41,9 @@ bindsym       $mod+Print        exec $nsi xdg-open "$(ls -t $screen_base/*.png |
 # Color picker
 bindsym $mod+p                  exec $nsi gcolor2
 
-# Shortcuts: open/switch to
-bindsym $mod+$mod_+f            exec $nsi $scripts/switchto "firefox-nightly"      "Nightly"
-bindsym $mod+$mod_+g            exec $nsi $scripts/switchto "google-chrome-stable" "Chrome"
-bindsym $mod+$mod_+b            exec $nsi $scripts/switchto "qbittorrent"          "qBittorrent"
-bindsym $mod+$mod_+s            exec $nsi $scripts/switchto "subl"                 "subl"
-bindsym $mod+$mod_+p            exec $nsi $scripts/switchto "gpmdp"                "Google Play Music Desktop Player"
-
 # Downloads
 bindsym $mod+t                  exec thunar ~/Downloads
 bindsym $mod+shift+t            exec thunar ~/Downloads/screenshots
-bindsym $mod+c                  exec dolphin ~/Downloads
-
-# Refresh search index
-bindsym $mod+$mod_+d            exec $nsi \
-    systemctl --user --no-block start update-frece-dir.service && \
-    systemctl --user --no-block start update-frece-file.service && \
-    systemctl --user --no-block start update-frece-torr.service
 
 # Redshift control
 bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) + 200))

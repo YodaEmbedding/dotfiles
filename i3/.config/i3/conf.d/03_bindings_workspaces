@@ -12,14 +12,4 @@ bindsym $mod+shift+grave        move container to workspace back_and_forth; \
 # Workspace cycling
 bindsym $mod+shift+Tab          workspace prev
 bindsym $mod+Tab                workspace next
-bindsym $mod+ctrl+h             workspace prev
-bindsym $mod+ctrl+l             workspace next
-bindsym $mod+ctrl+Left          workspace prev
-bindsym $mod+ctrl+Right         workspace next
-
-# Workspace cycling and moving
-# bindsym $mod+ctrl+shift+h       move container to workspace prev; workspace prev
-# bindsym $mod+ctrl+shift+l       move container to workspace next; workspace next
-# bindsym $mod+ctrl+shift+Left    move container to workspace prev; workspace prev
-# bindsym $mod+ctrl+shift+Right   move container to workspace next; workspace next
 

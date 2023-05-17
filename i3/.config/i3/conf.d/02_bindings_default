@@ -3,19 +3,12 @@ bindsym $mod+shift+q            kill
 
 # Terminal
 bindsym $mod+Return             exec $nsi alacritty
-bindsym $mod+shift+Return       exec $nsi alacritty -e tmux
 
 # Focus window
 bindsym $mod+h                  focus left
 bindsym $mod+j                  focus down
 bindsym $mod+k                  focus up
 bindsym $mod+l                  focus right
-
-# Layout
-bindsym $mod+y                  layout tabbed
-#bindsym $mod+w                  layout tabbed
-#bindsym $mod+s                  layout stacking
-#bindsym $mod+e                  layout toggle split
 
 # Split
 bindsym $mod+v                  split h

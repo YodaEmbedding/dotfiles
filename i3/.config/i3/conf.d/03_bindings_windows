@@ -3,12 +3,6 @@ bindsym --whole-window --border $mod+shift+Button4  focus left
 bindsym --whole-window --border $mod+shift+Button5  focus right
 bindsym --border                Button2             kill
 
-# Window switch
-# bindsym $mod+space              exec $nsi "wmfocus -c asdfghjkl -o 0,20 --bgcolor 'rgba(30, 30, 30, 0.9)'"
-
-# Window switch back/forth
-bindsym $mod+$mod_+grave        exec $scripts/focus_last --switch
-
 # Jump to urgent window
 bindsym $mod+u                  [urgent=latest] focus
 
@@ -60,49 +54,11 @@ bindcode $mod+shift+$kp_ins     fullscreen disable, floating enable, \
     sticky enable, resize set $video_size, \
     exec $nsi $scripts/move bottom right
 
-# Window property control: multiple scratchpads
-bindcode $mod+$mod_+shift+87    mark "scratchpad1", move scratchpad
-bindcode $mod+$mod_+shift+88    mark "scratchpad2", move scratchpad
-bindcode $mod+$mod_+shift+89    mark "scratchpad3", move scratchpad
-bindcode $mod+$mod_+shift+83    mark "scratchpad4", move scratchpad
-bindcode $mod+$mod_+shift+84    mark "scratchpad5", move scratchpad
-bindcode $mod+$mod_+shift+85    mark "scratchpad6", move scratchpad
-bindcode $mod+$mod_+shift+79    mark "scratchpad7", move scratchpad
-bindcode $mod+$mod_+shift+80    mark "scratchpad8", move scratchpad
-bindcode $mod+$mod_+shift+81    mark "scratchpad9", move scratchpad
-bindcode $mod+$mod_+87          [con_mark="scratchpad1"] scratchpad show
-bindcode $mod+$mod_+88          [con_mark="scratchpad2"] scratchpad show
-bindcode $mod+$mod_+89          [con_mark="scratchpad3"] scratchpad show
-bindcode $mod+$mod_+83          [con_mark="scratchpad4"] scratchpad show
-bindcode $mod+$mod_+84          [con_mark="scratchpad5"] scratchpad show
-bindcode $mod+$mod_+85          [con_mark="scratchpad6"] scratchpad show
-bindcode $mod+$mod_+79          [con_mark="scratchpad7"] scratchpad show
-bindcode $mod+$mod_+80          [con_mark="scratchpad8"] scratchpad show
-bindcode $mod+$mod_+81          [con_mark="scratchpad9"] scratchpad show
-
 # Window snap floating to edge
 bindsym $mod+Left               exec $nsi $scripts/move left
 bindsym $mod+Down               exec $nsi $scripts/move bottom
 bindsym $mod+Up                 exec $nsi $scripts/move top
 bindsym $mod+Right              exec $nsi $scripts/move right
-bindcode $mod+87                exec $nsi $scripts/move bottom left
-bindcode $mod+88                exec $nsi $scripts/move bottom
-bindcode $mod+89                exec $nsi $scripts/move bottom right
-bindcode $mod+83                exec $nsi $scripts/move left
-bindcode $mod+84                exec $nsi $scripts/move middle center
-bindcode $mod+85                exec $nsi $scripts/move right
-bindcode $mod+79                exec $nsi $scripts/move top left
-bindcode $mod+80                exec $nsi $scripts/move top
-bindcode $mod+81                exec $nsi $scripts/move top right
-bindcode $mod+shift+87          exec $nsi $scripts/move bottom left
-bindcode $mod+shift+88          exec $nsi $scripts/move bottom center
-bindcode $mod+shift+89          exec $nsi $scripts/move bottom right
-bindcode $mod+shift+83          exec $nsi $scripts/move middle left
-bindcode $mod+shift+84          exec $nsi $scripts/move middle center
-bindcode $mod+shift+85          exec $nsi $scripts/move middle right
-bindcode $mod+shift+79          exec $nsi $scripts/move top left
-bindcode $mod+shift+80          exec $nsi $scripts/move top center
-bindcode $mod+shift+81          exec $nsi $scripts/move top right
 
 # Resize window
 bindsym $mod+$mod_+h            exec $nsi $scripts/resize shrink width  5
@@ -134,20 +90,4 @@ bindsym $mod+$mod_+ctrl+Left    exec $nsi $scripts/resize shrink width  20
 bindsym $mod+$mod_+ctrl+Down    exec $nsi $scripts/resize grow   height 20
 bindsym $mod+$mod_+ctrl+Up      exec $nsi $scripts/resize shrink height 20
 bindsym $mod+$mod_+ctrl+Right   exec $nsi $scripts/resize grow   width  20
-
-# Transparency
-bindsym $mod+ctrl+shift+o       exec $nsi transset-df -a -t
-bindsym $mod+ctrl+o             exec $nsi transset-df -a --dec 0.05
-bindsym $mod+o                  exec $nsi transset-df -a --inc 0.15
-bindsym $mod+shift+o            exec $nsi transset-df -a --dec 0.15
-bindsym $mod+$mod_+o            exec $nsi transset-df -a --inc 0.01
-bindsym $mod+$mod_+shift+o      exec $nsi transset-df -a --dec 0.01
-bindsym $mod+$mod_+ctrl+o       exec $nsi transset-df -a \
-    $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity" | awk '{print $1 / 100}')
-
-# Transparency (via picom)
-# bindsym $mod+o                  exec $nsi picom-trans -c --delete
-# bindsym $mod+o                  exec $nsi picom-trans -c +5
-# bindsym $mod+shift+o            exec $nsi picom-trans -c -- -5
-# bindsym $mod+$mod_+o            exec $nsi picom-trans -c -o $(rofi -dmenu -input /dev/null -lines 0 -p "Opacity")
 
