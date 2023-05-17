@@ -29,7 +29,6 @@ set $nsi            --no-startup-id
 set $scripts        ~/.config/i3/scripts
 
 # Wallpaper paths
-
 set $wallpaper      --no-fehbg --randomize /mnt/data/Dropbox/media/pics/wallpaper/desktop/current/*
 set $lock_wallpaper /mnt/data/Dropbox/media/pics/wallpaper/desktop/current_lock.png
 
