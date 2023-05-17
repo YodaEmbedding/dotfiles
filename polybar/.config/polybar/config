@@ -24,7 +24,7 @@ tray-position = right
 
 modules-left = i3 mpris preview
 modules-center = title
-modules-right = ping bandwidth updates memory cpu temperature pulseaudio date
+modules-right = ping bandwidth updates cpu memory temperature pulseaudio date
 
 scroll-up = i3wm-wsprev
 scroll-down = i3wm-wsnext
