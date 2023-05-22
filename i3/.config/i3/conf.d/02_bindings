@@ -235,7 +235,7 @@ bindsym ctrl+$mod      +Print   exec $nsi f="$screen_path" && $screen_cmd_ful "$
 bindsym ctrl+$mod+shift+Print   exec $nsi f="$screen_path" && $screen_cmd_ful "$f" && $screen_editor "$f" && $screen_copy < "$f" && $screen_notify "Screenshot copied" "$f"
 
 # Screenshot preview latest
-bindsym $mod+ctrl+shift+t       exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
+bindsym $mod+$mod_+t            exec $nsi xdg-open "$(ls -t $screen_base/*.png | head -1)"
 
 # Redshift control
 bindsym $mod+m                  exec $nsi $scripts/rs $(($(cat ~/.cache/rshift) + 200))
