@@ -22,7 +22,7 @@ biber_fix() {
 }
 
 # clipboard
-if ! type "pbcopy" > /dev/null; then
+if ! command -v "pbcopy" &> /dev/null; then
   if [ ! -z "${WAYLAND_DISPLAY}" ]; then
     PBCOPY="wl-copy"
   else
@@ -31,7 +31,7 @@ if ! type "pbcopy" > /dev/null; then
   alias pbcopy="${PBCOPY}"
 fi
 
-if ! type "pbpaste" > /dev/null; then
+if ! command -v "pbpaste" &> /dev/null; then
   if [ ! -z "${WAYLAND_DISPLAY}" ]; then
     PBPASTE="wl-paste"
   else
