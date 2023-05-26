@@ -1,1 +1,5 @@
-require("codeium").setup {}
+return {
+  config = function()
+    require("codeium").setup {}
+  end,
+}

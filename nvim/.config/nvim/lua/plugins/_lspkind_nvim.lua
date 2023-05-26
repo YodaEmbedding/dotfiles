@@ -1,18 +1,18 @@
-local _M = {}
+return {
+  _ = {
+    on_attach = function()
+      if not _G.plugin_loaded("lspkind-nvim") then
+        return
+      end
 
-function _M.on_attach()
-  if not _G.plugin_loaded("lspkind-nvim") then
-    do return end
-  end
+      if _G.plugin_loaded("nvim-cmp") then
+        return
+      end
 
-  if _G.plugin_loaded("nvim-cmp") then
-    do return end
-  end
-
-  local config = require("plugins._lspkind_symbols")
-  require("lspkind").init {
-    symbol_map = config.symbol_map,
-  }
-end
-
-return _M
+      local config = require("plugins._lspkind_symbols")._
+      require("lspkind").init {
+        symbol_map = config.symbol_map,
+      }
+    end,
+  },
+}

@@ -1,1 +1,5 @@
-require("lspfuzzy").setup {}
+return {
+  config = function()
+    require("lspfuzzy").setup {}
+  end,
+}

@@ -169,19 +169,9 @@ local opts = {
 
 local plugin_names = {}
 
-local init_list = {
-  "lightspeed.nvim",
-}
-
-local config_exclude_list = {
-  "nvim-cmp",
-}
-
 -- Initialize plugin_names with loaded plugins.
 -- Set each plugin's lazy.nvim config function to import plugins.<plugin_name>.
-local function config_plugins(
-  plugins, plugin_names, config_exclude_list, init_list
-)
+local function config_plugins(plugins, plugin_names)
   for i, plugin_spec in ipairs(plugins) do
     local short_url = plugin_spec[1]
     local plugin_name = string.match(short_url, "^[^/]*/(.*)$")
@@ -191,18 +181,13 @@ local function config_plugins(
     -- Indicate that plugin will be loaded.
     table.insert(plugin_names, plugin_name)
 
-    -- Set plugin's lazy.nvim config function to import plugins.<plugin_name>.
-    plugin_spec["config"] = function()
-      if vim.tbl_contains(config_exclude_list, plugin_name) then
-        return
-      end
-      pcall(require, config_path)
-    end
-
-    -- Set plugin's lazy.nvim init function to import plugins.<plugin_name>.__init.
-    if vim.tbl_contains(init_list, plugin_name) then
-      plugin_spec["init"] = function()
-        pcall(require, config_path .. "__init")
+    -- Set plugin's options for lazy.nvim.
+    local ok, module_spec = pcall(require, config_path)
+    if ok then
+      for k, v in pairs(module_spec) do
+        if k ~= "_" then
+          plugin_spec[k] = v
+        end
       end
     end
   end
@@ -212,6 +197,6 @@ function _G.plugin_loaded(plugin_name)
   return vim.tbl_contains(plugin_names, plugin_name)
 end
 
-config_plugins(plugins, plugin_names, config_exclude_list, init_list)
+config_plugins(plugins, plugin_names)
 
 require("lazy").setup(plugins, opts)

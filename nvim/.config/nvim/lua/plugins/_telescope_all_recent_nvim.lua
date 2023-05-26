@@ -1,1 +1,5 @@
-require("telescope-all-recent").setup {}
+return {
+  config = function()
+    require("telescope-all-recent").setup {}
+  end,
+}

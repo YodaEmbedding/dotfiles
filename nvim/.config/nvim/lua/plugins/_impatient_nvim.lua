@@ -1,2 +1,6 @@
-require("impatient")
--- require("impatient").enable_profile()
+return {
+  config = function()
+    require("impatient")
+    -- require("impatient").enable_profile()
+  end,
+}

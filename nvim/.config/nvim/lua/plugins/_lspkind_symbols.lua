@@ -94,4 +94,6 @@ end
 
 _M.kind_map = kind_map
 
-return _M
+return {
+  _ = _M,
+}

@@ -1,3 +1,7 @@
-require("virt-column").setup {
-  char = "│",
+return {
+  config = function()
+    require("virt-column").setup {
+      char = "│",
+    }
+  end,
 }
