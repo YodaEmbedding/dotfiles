@@ -1,4 +1,7 @@
 return {
+  build = ":TSUpdate",
+  version = "*",
+
   config = function()
 
     require("nvim-treesitter.configs").setup {

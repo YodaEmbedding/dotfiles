@@ -1,0 +1,5 @@
+return {
+  rocks = {
+    "fzy",
+  },
+}

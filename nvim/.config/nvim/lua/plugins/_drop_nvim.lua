@@ -1,4 +1,6 @@
 return {
+  event = "VimEnter",
+
   config = function()
     math.randomseed(os.time())
 

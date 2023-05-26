@@ -36,7 +36,7 @@ local plugins = {
 --{"ggandor/"           .. "leap.nvim"              }, -- motion
   {"ggandor/"           .. "lightspeed.nvim",       }, -- motion
   {"farmergreg/"        .. "vim-lastplace"          }, -- remember cursor
-  {"camspiers/"         .. "snap", rocks = {"fzy"}  }, -- search
+  {"camspiers/"         .. "snap"                   }, -- search
   {"hrsh7th/"           .. "vim-vsnip"              }, -- snippets (engine)
   {"rafamadriz/"        .. "friendly-snippets"      }, -- snippets (snippets)
   {"wellle/"            .. "targets.vim"            }, -- text objects
@@ -55,20 +55,14 @@ local plugins = {
   -- Telescope
   {"nvim-telescope/"    .. "telescope.nvim"         },
   {"prochri/"           .. "telescope-all-recent.nvim",
-    dependencies = { "tami5/sqlite.lua", "nvim-telescope/telescope.nvim" },
   },
---{"nvim-telescope/"    .. "telescope-frecency.nvim",
---  dependencies = { "tami5/sqlite.lua" },
---},
+--{"nvim-telescope/"    .. "telescope-frecency.nvim"},
 --{"brandoncc/"         .. "telescope-harpoon.nvim" }, -- bookmarks
 
   -- Tools
 --{"jcdickinson/"       .. "codeium.nvim"           }, -- AI completion
 --{"github/"            .. "copilot.vim"            }, -- AI completion
-  {"zbirenbaum/"        .. "copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-  }, -- AI completion
+  {"zbirenbaum/"        .. "copilot.lua"            }, -- AI completion
   {"tpope/"             .. "vim-fugitive"           }, -- git
   {"lervag/"            .. "vimtex"                 }, -- LaTeX
   {"aznhe21/"           .. "actions-preview.nvim"   }, -- LSP code actions preview
@@ -85,9 +79,7 @@ local plugins = {
 --{"ojroques/"          .. "nvim-lspfuzzy"          }, -- LSP fzf
 
   -- Coq
---{"ms-jpq/"            .. "coq_nvim",
---  branch = "coq",
---},
+--{"ms-jpq/"            .. "coq_nvim"               },
 --{"ms-jpq/"            .. "coq.artifacts",
 --  branch = "artifacts",
 --},
@@ -103,10 +95,7 @@ local plugins = {
   {"ray-x/"             .. "cmp-treesitter"         },
   {"hrsh7th/"           .. "cmp-vsnip"              },
   {"tamago324/"         .. "cmp-zsh"                },
-  {"zbirenbaum/"        .. "copilot-cmp",
-    dependencies = {"zbirenbaum/copilot.lua" },
-    -- event = "InsertEnter",
-  },
+  {"zbirenbaum/"        .. "copilot-cmp"            },
 --{"uga-rosa/"          .. "cmp-dictionary"         },
 --{"octaltree/"         .. "cmp-look"               },
 --{"saadparwaiz1/"      .. "cmp_luasnip"            },
@@ -119,16 +108,13 @@ local plugins = {
 --{"f3fora/"            .. "cmp-spell"              },
 
   -- Treesitter
-  {"nvim-treesitter/"   .. "nvim-treesitter",
-    build = ":TSUpdate",
-    version = "*",
-  },
+  {"nvim-treesitter/"   .. "nvim-treesitter"        },
   {"nvim-treesitter/"   .. "nvim-treesitter-textobjects",
   },
 
   -- Visual
 --{"xiyaowong/"         .. "nvim-transparent"       }, -- background transparency
---{"kosayoda/"          .. "nvim-lightbulb"         }, -- code actions; deps = FixCursorHold.nvim
+--{"kosayoda/"          .. "nvim-lightbulb"         }, -- code actions
   {"lukas-reineke/"     .. "virt-column.nvim"       }, -- colorcolumn line
   {"folke/"             .. "tokyonight.nvim"        }, -- colorscheme
 --{"Mofiqul/"           .. "trld.nvim"              }, -- diagnostics corner
@@ -139,19 +125,12 @@ local plugins = {
   {"onsails/"           .. "lspkind-nvim"           }, -- LSP pictograms
 --{"gennaro-tedesco/"   .. "nvim-peekup"            }, -- register " preview
 --{"tversteeg/"         .. "registers.nvim"         }, -- register " preview
---{"folke/"             .. "drop.nvim",                -- screensaver (e.g. falling snow)
---  event = "VimEnter",
---},
+--{"folke/"             .. "drop.nvim"              }, -- screensaver (e.g. falling snow)
   {"petertriho/"        .. "nvim-scrollbar"         }, -- scrollbar
   {"lewis6991/"         .. "gitsigns.nvim"          }, -- signs for git
   {"kshenoy/"           .. "vim-signature"          }, -- signs for marks
-  {"goolord/"           .. "alpha-nvim",               -- startup screen
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-  },
-  {"nvim-neo-tree/"     .. "neo-tree.nvim",            -- tree; deps: nui.nvim, plenary.nvim
-    branch = "v2.x",
-  },
+  {"goolord/"           .. "alpha-nvim",            }, -- startup screen
+  {"nvim-neo-tree/"     .. "neo-tree.nvim",         }, -- tree
 --{"mastertinner/"      .. "nvim-quantum"           }, -- colorscheme
 --{"tyrannicaltoucan/"  .. "vim-quantum"            }, -- colorscheme
 --{"romainl/"           .. "vim-cool"               }, -- highlight smarter
