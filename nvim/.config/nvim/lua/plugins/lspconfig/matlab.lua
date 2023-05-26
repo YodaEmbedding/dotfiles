@@ -18,6 +18,4 @@ local config = {
   end,
 }
 
-configs.matlab = {
-  default_config = config,
-}
+return config

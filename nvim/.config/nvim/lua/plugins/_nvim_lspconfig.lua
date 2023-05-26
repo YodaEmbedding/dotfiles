@@ -51,9 +51,8 @@ return {
     local configs = {
       diagnosticls = require("plugins.lspconfig.diagnosticls"),
       efm = require("plugins.lspconfig.efm"),
+      matlab = require("plugins.lspconfig.matlab"),
     }
-
-    require("plugins.lspconfig.matlab")
 
     local ok, pyright_config = pcall(require, "plugins.lspconfig.pyright")
     if ok then
