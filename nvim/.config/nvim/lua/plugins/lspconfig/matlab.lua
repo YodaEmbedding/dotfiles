@@ -7,15 +7,17 @@ local root_files = {
   ".git",
 }
 
+local config = {
+  cmd = { "sh", binary_path },
+  filetypes = { "octave" },
+  root_dir = function(filename)
+    return (
+      util.root_pattern(unpack(root_files))(filename) or
+      util.path.dirname(filename)
+    )
+  end,
+}
+
 configs.matlab = {
-  default_config = {
-    cmd = { "sh", binary_path },
-    filetypes = { "octave" },
-    root_dir = function(filename)
-      return (
-          util.root_pattern(unpack(root_files))(filename) or
-              util.path.dirname(filename)
-          )
-    end,
-  }
+  default_config = config,
 }
