@@ -33,8 +33,8 @@ local plugins = {
 --{"windwp/"            .. "nvim-autopairs"         }, -- auto-pairs
   {"tpope/"             .. "vim-surround"           }, -- change surrounding
   {"b3nj5m1n/"          .. "kommentary"             }, -- commenting
---{"ggandor/"           .. "leap.nvim"              }, -- motion
-  {"ggandor/"           .. "lightspeed.nvim",       }, -- motion
+  {"ggandor/"           .. "leap.nvim"              }, -- motion
+--{"ggandor/"           .. "lightspeed.nvim",       }, -- motion
   {"farmergreg/"        .. "vim-lastplace"          }, -- remember cursor
   {"camspiers/"         .. "snap"                   }, -- search
   {"hrsh7th/"           .. "vim-vsnip"              }, -- snippets (engine)
