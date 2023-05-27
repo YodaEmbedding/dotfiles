@@ -85,11 +85,12 @@ return {
       pyright = require_maybe("plugins.lspconfig.pyright") or {},
     }
 
+    local config_defaults = {}
+
     require("neodev").setup {
     }
 
-    local config_defaults = {}
-    config_default = setup_nvim_cmp(config_defaults)
+    config_defaults = setup_nvim_cmp(config_defaults)
     setup_servers(servers, configs, config_defaults, on_attach)
   end,
 }
