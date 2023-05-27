@@ -48,16 +48,17 @@ return {
       end
     end
 
+    local function require_maybe(name)
+      local ok, module = pcall(require, name)
+      return ok and module or nil
+    end
+
     local configs = {
       diagnosticls = require("plugins.lspconfig.diagnosticls"),
       efm = require("plugins.lspconfig.efm"),
       matlab = require("plugins.lspconfig.matlab"),
+      pyright = require_maybe("plugins.lspconfig.pyright") or {},
     }
-
-    local ok, pyright_config = pcall(require, "plugins.lspconfig.pyright")
-    if ok then
-      configs["pyright"] = pyright_config
-    end
 
     local config_defaults = {}
 
@@ -80,11 +81,11 @@ return {
     end
 
     local function setup_servers(servers, on_attach)
-      local coq_ok, coq = pcall(require, "coq")
+      local coq = require_maybe("coq")
       for _, lsp in ipairs(servers) do
         local config = configs[lsp] or {}
         config.on_attach = on_attach
-        if coq_ok then
+        if coq ~= nil then
           config = coq.lsp_ensure_capabilities(config)
         end
         config = vim.tbl_extend("keep", config, config_defaults)
