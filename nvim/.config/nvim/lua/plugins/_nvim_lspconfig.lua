@@ -29,15 +29,9 @@ return {
     local function on_attach(client, bufnr)
       -- print(string.format("LSP: on_attach() buffer=%d client=%s.", bufnr, client["name"]))
 
-      if _G.plugin_loaded("completion-nvim") then
-        -- For completion-nvim:
-        vim.api.nvim_buf_set_option(bufnr, "omnifunc", "")
-        require("completion").on_attach(client)
-      else
-        -- For built-in LSP omnifunc:
-        vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
-        vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
-      end
+      -- For built-in LSP omnifunc:
+      vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
+      vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
       if not vim.b._lsp_on_attach_lock then
         vim.b._lsp_on_attach_lock = true
