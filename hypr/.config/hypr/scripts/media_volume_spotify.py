@@ -8,17 +8,21 @@ import sys
 
 env = os.environ
 env["LANG"] = "en_US"
-app = '"Spotify"'
+apps = [
+    '"Spotify"',
+    '"spotifyd"',
+    '"psst-gui"',
+]
 
 
 def parse(text):
     pactl = text.strip().split()
-    if app not in pactl:
+    if not any(app in pactl for app in apps):
         return
     x = 0
     for e in pactl:
         x += 1
-        if e == app:
+        if e in apps:
             break
     y = 0
     for i in pactl[0 : x - 1]:
