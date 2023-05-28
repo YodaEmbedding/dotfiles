@@ -191,17 +191,17 @@ bindsym $mod+ctrl+z             exec $nsi pamixer --toggle-mute
 bindsym $mod+ctrl+shift+z       exec $nsi $cycle_pa_sink
 
 # Media control
-bindsym XF86AudioPlay           exec $nsi "$media_playpause"
-bindsym XF86AudioPause          exec $nsi "$media_pause"
-bindsym XF86AudioNext           exec $nsi "$media_next"
-bindsym XF86AudioPrev           exec $nsi "$media_prev"
+bindsym XF86AudioPlay           exec $nsi "$media_playpause  $players"
+bindsym XF86AudioPause          exec $nsi "$media_pause      $players"
+bindsym XF86AudioNext           exec $nsi "$media_next       $players"
+bindsym XF86AudioPrev           exec $nsi "$media_prev       $players"
 
 # Media control
-bindsym $mod+shift+period       exec $nsi "$media_next"
-bindsym $mod+shift+comma        exec $nsi "$media_prev"
-bindsym $mod+ctrl+x             exec $nsi "$media_playpause"
-bindsym $mod+x                  exec $nsi "$media_vol_up"
-bindsym $mod+shift+x            exec $nsi "$media_vol_down"
+bindsym $mod+shift+period       exec $nsi "$media_next       $players"
+bindsym $mod+shift+comma        exec $nsi "$media_prev       $players"
+bindsym $mod+ctrl+x             exec $nsi "$media_playpause  $players"
+bindsym $mod+x                  exec $nsi "$media_vol_up     $players"
+bindsym $mod+shift+x            exec $nsi "$media_vol_down   $players"
 
 # Color picker
 bindsym $mod+p                  exec $nsi gcolor2
