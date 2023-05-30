@@ -43,6 +43,42 @@ fi
 # fd
 alias fd="fd --hidden --exclude .git"
 
+# ffmpeg
+ffmpeg_trim() {
+  local f="$1"
+  local start="$2"
+  local end="$3"
+  # local outfile="${f%.*}_trim.${f##*.}"
+  local outfile="${f%.*}.${f##*.}.trim"
+
+  ffmpeg -ss "$start" -to "$end" -i "$f" -c copy -map 0 "$outfile"
+
+  # Copy over last modified date, too.
+  local date_str="$(stat -c %y "$f")"
+  touch -m "$outfile" --date="${date_str}"
+}
+
+ffmpeg_reencode() {
+  local f="$1"
+  local c_v="${2:-libx265}"
+  local crf="${3:-30}"
+  local c_a="${4:-libopus}"
+  local b_a="${5:-64K}"
+  local outfile="${f%.*}.${f##*.}.reencode"
+  local outfile="${6:-"$outfile"}"
+
+  nice -n 19 \
+    ffmpeg -i "$f" \
+    # -c copy -map 0 \
+    -c:v "${c_v}" -crf "${crf}" \
+    -c:a "${c_a}" -b:a "${b_a}" \
+    "$outfile"
+
+  # Copy over last modified date, too.
+  local date_str="$(stat -c %y "$f")"
+  touch -m "$outfile" --date="${date_str}"
+}
+
 # fselect
 fselect_by_size() {
   query="$1"
