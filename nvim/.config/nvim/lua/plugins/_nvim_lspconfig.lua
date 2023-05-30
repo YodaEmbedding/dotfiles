@@ -14,7 +14,7 @@ return {
       "jdtls",
       "jsonls",
       "kotlin_language_server",
-      -- "lua_ls",
+      "lua_ls",
       -- "matlab",
       "metals",
       "pyright",
