@@ -2,10 +2,18 @@
 
 from scrobblez.metadata_filter import *
 from scrobblez.types import Metadata
+from mpris2 import get_players_uri
+
+
+print("Available players:")
+print("\n".join(str(player) for player in get_players_uri()))
+print("")
 
 whitelist = [
-    "spotify",
-    "spotifyd",
+    # "spotify",
+    # "spotifyd",
+    # "psst-gui",
+    "Spot",
 ]
 
 RULES = (
