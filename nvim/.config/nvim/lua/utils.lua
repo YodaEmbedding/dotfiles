@@ -102,6 +102,21 @@ function utils.create_centered_floating_window()
   vim.cmd("au BufWipeout <buffer> execute 'bw " .. tostring(buf) .. "'")
 end
 
+-- Removes old swap files for current buffer, not including current swap file.
+function utils.buf_remove_old_swap()
+  local filepath = vim.fn.swapname(vim.fn.bufnr())
+  local len = string.len(filepath)
+  local prefix = string.sub(filepath, 1, len - 4)
+  local extension = string.sub(filepath, len - 3, len)
+
+  -- NOTE: Technically, .swp, .swo, .swn, .swm, .swl, ..., .sac, .sab, .saa
+  for _, ext in ipairs({ ".swp", ".swo", ".swn", ".swm" }) do
+    if extension ~= ext then
+      os.remove(prefix .. ext)
+    end
+  end
+end
+
 function utils.toggle_wrap()
   vim.wo.wrap = true
   vim.wo.linebreak = true
