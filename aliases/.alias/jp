@@ -1,5 +1,13 @@
 ### JAPANESE ###
 
+# Only enable these aliases:
+alias kuro='black -l 79'                # 黒            # black
+alias shigoto='htop_cpu'                # 仕事          # work
+alias kioku='htop_mem'                  # 記憶          # memory
+alias oku='/bin/mv'                     # 置く          # to put
+return  # Disable below aliases.
+
+
 alias namae='aliases'                   # 名前          # name
 alias haikei='b'                        # 背景          # background
 alias kuro='black -l 79'                # 黒            # black
