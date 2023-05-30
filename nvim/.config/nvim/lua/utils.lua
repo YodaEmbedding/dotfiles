@@ -60,6 +60,14 @@ function utils.copy_matches(register)
   ]])
 end
 
+-- Formats the current buffer
+function utils.format()
+  whitelist = { "python", "rust" }
+  if vim.tbl_contains(whitelist, vim.bo.filetype) then
+    vim.lsp.buf.format()
+  end
+end
+
 -- vim-peekaboo float
 function utils.create_centered_floating_window()
   local width = math.floor(vim.o.columns * 0.8)
