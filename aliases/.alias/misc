@@ -21,6 +21,16 @@ bgrnd() {
 alias b='bgrnd'
 alias o='bgrnd xdg-open'
 
+# Fix date by parsing it from filename.
+# Expected format:  YYYY-mm-dd_HH-MM-SS*
+# For example:      2020-12-31_23-59-59_filename.txt
+fix_date_using_filename() {
+  local f="$1"
+  local date_tokens="$( (cut -c 1-19 | sed 's/[_-]/ /g') <<< "${f%.*}")"
+  local date_str="$(printf '%s-%s-%s %s:%s:%s' $date_tokens)"
+  touch -m --date="${date_str}" "$f"
+}
+
 # Monitor control
 mbc() {
   sudo bash -c 'ddccontrol -p -r 0x10 -w $0 >/dev/null 2>&1 && ddccontrol -p -r 0x12 -w $0 >/dev/null 2>&1 &' "$1"
