@@ -3,7 +3,7 @@ Description=Updates torr index
 
 [Service]
 Type=oneshot
-ExecStart=/home/mulhaq/.config/frece/scripts/torr_update_fd.sh
+ExecStart=/home/mulhaq/.config/frece/scripts/update/torr_fd.sh
 CPUSchedulingPolicy=idle
 IOSchedulingClass=idle
 IOSchedulingPriority=7
