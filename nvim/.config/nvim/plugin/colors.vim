@@ -54,6 +54,7 @@ hi CocInfoVirtualText       guifg=#5C4459
 hi GitSignsAdd      guifg=#2CC474
 hi GitSignsChange   guifg=#8E73F6
 hi GitSignsDelete   guifg=#FF436C
+hi SignColumn       guibg=NONE
 
 " indent-blankline.nvim
 hi IndentBlanklineChar      guifg=#382935
