@@ -1,14 +1,25 @@
 local cmp = require("cmp")
 
+local function copilot_suggestion_accept()
+  local ok, copilot_suggestion = pcall(require, "copilot.suggestion")
+  if ok and copilot_suggestion.is_visible() then
+    copilot_suggestion.accept()
+    return true
+  else
+    return false
+  end
+end
+
+local complete = cmp.mapping.complete()
+
 local __confirm = cmp.mapping.confirm({
   behavior = cmp.ConfirmBehavior.Replace,
   select = true,
 })
 
 local function confirm(fallback)
-  local ok, copilot_suggestion = pcall(require, "copilot.suggestion")
-  if ok and copilot_suggestion.is_visible() then
-    copilot_suggestion.accept()
+  if copilot_suggestion_accept() then
+    -- noop
   elseif cmp.visible() then
     cmp.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
@@ -25,7 +36,7 @@ return {
   ["<C-p>"] = cmp.mapping.select_prev_item(),
   ["<Tab>"] = cmp.mapping.select_next_item(),
   ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-  ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
+  ["<C-Space>"] = cmp.mapping(complete, { "i", "c" }),
   ["<C-e>"] = cmp.mapping(confirm, { "i", "s" }),
   ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
   ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
