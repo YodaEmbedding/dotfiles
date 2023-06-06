@@ -53,6 +53,11 @@ return {
   "nvim-treesitter/"   .. "nvim-treesitter"        ,
   "nvim-treesitter/"   .. "nvim-treesitter-textobjects",
 
+  -- Visual: Colorschemes
+  "folke/"             .. "tokyonight.nvim"        ,
+--"mastertinner/"      .. "nvim-quantum"           ,
+--"tyrannicaltoucan/"  .. "vim-quantum"            ,
+
   -- Visual
   "lukas-reineke/"     .. "virt-column.nvim"       , -- colorcolumn line
   "bronson/"           .. "vim-trailing-whitespace", -- hint whitespace
@@ -67,11 +72,6 @@ return {
   "kshenoy/"           .. "vim-signature"          , -- signs for marks
   "goolord/"           .. "alpha-nvim"             , -- startup screen
   "nvim-neo-tree/"     .. "neo-tree.nvim"          , -- tree
-
-  -- Visual: Colorschemes
-  "folke/"             .. "tokyonight.nvim"        ,
---"mastertinner/"      .. "nvim-quantum"           ,
---"tyrannicaltoucan/"  .. "vim-quantum"            ,
 
 
   -- OLD
