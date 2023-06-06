@@ -10,7 +10,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-local plugins = require("plugins.enabled")
+local short_urls = require("plugins.enabled")
 
 local opts = {
   defaults = {
@@ -22,9 +22,10 @@ local plugin_names = {}
 
 -- Initialize plugin_names with loaded plugins.
 -- Set each plugin's lazy.nvim config function to import plugins.<plugin_name>.
-local function config_plugins(plugins, plugin_names)
-  for i, plugin_spec in ipairs(plugins) do
-    local short_url = plugin_spec[1]
+local function build_plugin_specs(short_urls, plugin_names)
+  local plugin_specs = {}
+
+  for i, short_url in ipairs(short_urls) do
     local plugin_name = string.match(short_url, "^[^/]*/(.*)$")
     local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
     local config_path = "plugins._" .. plugin_name_slug
@@ -32,7 +33,10 @@ local function config_plugins(plugins, plugin_names)
     -- Indicate that plugin will be loaded.
     table.insert(plugin_names, plugin_name)
 
-    -- Set plugin's options for lazy.nvim.
+    -- Build plugin spec.
+    local plugin_spec = {short_url}
+    plugin_specs[i] = plugin_spec
+
     local ok, module_spec = pcall(require, config_path)
     if ok then
       for k, v in pairs(module_spec) do
@@ -42,12 +46,14 @@ local function config_plugins(plugins, plugin_names)
       end
     end
   end
+
+  return plugin_specs
 end
 
 function _G.plugin_loaded(plugin_name)
   return vim.tbl_contains(plugin_names, plugin_name)
 end
 
-config_plugins(plugins, plugin_names)
+local plugin_specs = build_plugin_specs(short_urls, plugin_names)
 
-require("lazy").setup(plugins, opts)
+require("lazy").setup(plugin_specs, opts)
