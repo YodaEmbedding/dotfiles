@@ -23,7 +23,7 @@ return {
 
       suggestion = {
         enabled = true,          -- default: true
-        auto_trigger = false,    -- default: false
+        auto_trigger = true,     -- default: false
         debounce = 75,           -- default: 75
         keymap = {
           accept      = "<C-t>", -- default: "<M-l>"
