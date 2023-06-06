@@ -29,7 +29,10 @@ hi Folded           guifg=#6f6f6f
 hi LineNr           guifg=#6f6f6f
 hi MatchParen       guibg=#446677
 hi MatchParen       guifg=#dddddd
-hi Pmenu            guibg=#473745
+
+" hi Pmenu            guibg=#473745
+hi Pmenu            guibg=#170725
+set pumblend=7
 
 hi StatusLine       guibg=NONE ctermbg=NONE
 hi StatusLine       guifg=NONE ctermfg=NONE
