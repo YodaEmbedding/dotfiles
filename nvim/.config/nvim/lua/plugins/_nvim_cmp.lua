@@ -14,6 +14,11 @@ return {
           ghost_text = true,
         },
         formatting = {
+          fields = {
+            "kind",
+            "abbr",
+            "menu",
+          },
           format = function(entry, vim_item)
             local max_len = 40
             if string.len(vim_item.abbr) > max_len then

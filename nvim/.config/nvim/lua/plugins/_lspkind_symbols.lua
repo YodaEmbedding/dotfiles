@@ -87,9 +87,11 @@ _M.source_map = {
 
 local kind_map = {}
 for kind, symbol in pairs(_M.kind_symbol_map) do
-  local text = _M.kind_text_map[kind]
-  local sep = string.rep(" ", 3 - vim.fn.strchars(symbol))
-  kind_map[kind] = symbol .. sep .. text
+  -- local text = _M.kind_text_map[kind]
+  -- local sep = string.rep(" ", 3 - vim.fn.strchars(symbol))
+  -- kind_map[kind] = symbol .. sep .. text
+
+  kind_map[kind] = symbol
 end
 
 _M.kind_map = kind_map
