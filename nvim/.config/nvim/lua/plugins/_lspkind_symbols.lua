@@ -1,6 +1,4 @@
-local _M = {}
-
-_M.kind_symbol_map = {
+local kind_symbol_map = {
   Class         = "∴", -- ∴  🅒
   Color         = "⛭", -- 🖌
   Constant      = "π", -- 
@@ -41,7 +39,7 @@ _M.kind_symbol_map = {
 
 }
 
-_M.kind_text_map = {
+local kind_text_map = {
   Class         = "Cls",
   Color         = "RGB",
   Constant      = "Con",
@@ -82,7 +80,7 @@ _M.kind_text_map = {
 
 }
 
-_M.source_map = {
+local source_map = {
   buffer        = "Buf",
   nvim_lsp      = "LSP",
   luasnip       = "Snip",
@@ -90,17 +88,25 @@ _M.source_map = {
   latex_symbols = "TeX",
 }
 
-local kind_map = {}
-for kind, symbol in pairs(_M.kind_symbol_map) do
-  -- local text = _M.kind_text_map[kind]
-  -- local sep = string.rep(" ", 3 - vim.fn.strchars(symbol))
-  -- kind_map[kind] = symbol .. sep .. text
+local function build_kind_map()
+  local kind_map = {}
+  for kind, symbol in pairs(kind_symbol_map) do
+    -- local text = kind_text_map[kind]
+    -- local sep = string.rep(" ", 3 - vim.fn.strchars(symbol))
+    -- kind_map[kind] = symbol .. sep .. text
 
-  kind_map[kind] = symbol
+    kind_map[kind] = symbol
+  end
+  return kind_map
 end
 
-_M.kind_map = kind_map
+local kind_map = build_kind_map()
 
 return {
-  _ = _M,
+  _ = {
+    kind_map = kind_map,
+    kind_symbol_map = kind_symbol_map,
+    kind_text_map = kind_text_map,
+    source_map = source_map,
+  },
 }
