@@ -348,6 +348,6 @@ key_bindings:
   - { key: F10,      mods: Super,   chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Super,   chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Super,   chars: "\x1b[24;3~"                  }
-# - { key: Space,    mods: Control, chars: "\x00"                        }
-  - { key: Space,    mods: Control, chars: "\x0e"                        }
+# - { key: Space,    mods: Control, chars: "\x00"                        } # \x00 == ^@  (default)
+  - { key: Space,    mods: Control, chars: "\x03"                        } # \x03 == ^C
   - { key: Space,    mods: Control|Shift, chars: "\x10"                  }
