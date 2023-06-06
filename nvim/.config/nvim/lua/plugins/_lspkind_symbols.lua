@@ -1,51 +1,44 @@
 local _M = {}
 
 _M.kind_symbol_map = {
-  Class         = "∴",
-  Color         = "⛭",
-  Constant      = "π",
-  Constructor   = "⬡",
+  Class         = "∴", -- ∴  🅒
+  Color         = "⛭", -- 🖌
+  Constant      = "π", -- 
+  Constructor   = "⬡", -- 
   Copilot       = "",
-  Enum          = "e",
-  EnumMember    = ".",
-  Event         = "",
-  Field         = ".",
-  File          = "🗎", -- 🗈
+  Enum          = "e",  -- 
+  EnumMember    = ".",  -- 
+  Event         = "", -- 
+  Field         = ".",  --  ⚐ →
+  File          = "🗎", --  🗈 🗎
   Folder        = "📁", -- 🗀
-  Function      = "λ", -- ƒ 𝑓
-  Interface     = "I",
-  Keyword       = "🗝",
-  Method        = "λ",
-  Module        = "⬡",
-  Operator      = "+",
-  Property      = "p",
-  Reference     = "⮻",
+  Function      = "λ", --  ƒ 𝑓 ⇒
+  Interface     = "I",  -- 
+  Keyword       = "🗝", -- ⌘
+  Method        = "λ", --  ❖
+  Module        = "⬡", --  📦
+  Operator      = "+",  -- 
+  Property      = ".",  -- 
+  Reference     = "⮻", -- ↶
   Snippet       = "✂", -- ✂
-  Struct        = "{}",
-  Text          = "𐄗",
-  TypeParameter = "t",
-  Unit          = "()",
-  Value         = "#",
-  Variable      = "α", -- "×",
-  -- Class         = "🅒",
-  -- Color         = "🖌",
-  -- Constant      = "c",
-  -- Constructor   = "()",
-  -- Field         = "→",
-  -- Field         = "⚐",
-  -- File          = "🗎",
-  -- Function      = "ƒ",
-  -- Function      = "⇒",
-  -- Keyword       = "⌘",
-  -- Method        = "❖",
-  -- Module        = "M",
-  -- Module        = "📦",
-  -- Reference     = "↶",
-  -- Snippet       = "✂",
-  -- Text          = "t",
-  -- Unit          = "u",
-  -- Value         = "$",
-  -- Variable      = "χ",
+  Struct        = "{}", -- 
+  Text          = "𐄗", -- t
+  TypeParameter = "", -- 
+  Unit          = "()", -- u
+  Value         = "#",  -- $
+  Variable      = "α", --  × χ
+
+  -- New; added for barbecue.nvim
+  Array         = "",
+  Boolean       = "",
+  Key           = "",
+  Namespace     = "",
+  Null          = "",
+  Number        = "",
+  Object        = "",
+  Package       = "",
+  String        = "",
+
 }
 
 _M.kind_text_map = {
@@ -75,6 +68,18 @@ _M.kind_text_map = {
   Unit          = "Unit",
   Value         = "Val",
   Variable      = "Var",
+
+  -- New; added for barbecue.nvim
+  Array         = "Arr",
+  Boolean       = "Boo",
+  Key           = "Key",
+  Namespace     = "Ns",
+  Null          = "Nul",
+  Number        = "Num",
+  Object        = "Obj",
+  Package       = "Pkg",
+  String        = "Str",
+
 }
 
 _M.source_map = {
