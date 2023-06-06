@@ -22,7 +22,7 @@ return {
       },
 
       suggestion = {
-        enabled = false,         -- default: true
+        enabled = true,          -- default: true
         auto_trigger = false,    -- default: false
         debounce = 75,           -- default: 75
         keymap = {
