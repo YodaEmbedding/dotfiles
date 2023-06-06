@@ -18,25 +18,27 @@ local __confirm = cmp.mapping.confirm({
 })
 
 local function confirm(fallback)
-  if copilot_suggestion_accept() then
-    -- noop
-  elseif cmp.visible() then
+  -- if copilot_suggestion_accept() then
+  --   return
+  -- end
+  if cmp.visible() then
     cmp.confirm({
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     })
     -- cmp.complete()
   else
-    -- fallback()
   end
 end
 
+-- i = insert, c = command, s = select
 return {
   ["<C-n>"] = cmp.mapping.select_next_item(),
   ["<C-p>"] = cmp.mapping.select_prev_item(),
   ["<Tab>"] = cmp.mapping.select_next_item(),
   ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-  ["<C-Space>"] = cmp.mapping(complete, { "i", "c" }),
+  ["<C-Space>"] = cmp.mapping(copilot_suggestion_accept, { "i", "c" }),
+  ["<C-c>"] = cmp.mapping(copilot_suggestion_accept, { "i", "c" }),
   ["<C-e>"] = cmp.mapping(confirm, { "i", "s" }),
   ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
   ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
