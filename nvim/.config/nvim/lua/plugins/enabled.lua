@@ -60,6 +60,7 @@ return {
   "nvim-tree/"         .. "nvim-web-devicons"      , -- icons
   "lukas-reineke/"     .. "indent-blankline.nvim"  , -- indentation guides
   "onsails/"           .. "lspkind-nvim"           , -- LSP pictograms
+  "SmiteshP/"          .. "nvim-navic"             , -- LSP winbar code context
   "petertriho/"        .. "nvim-scrollbar"         , -- scrollbar
   "lewis6991/"         .. "gitsigns.nvim"          , -- signs for git
   "kshenoy/"           .. "vim-signature"          , -- signs for marks

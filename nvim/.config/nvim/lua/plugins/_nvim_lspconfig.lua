@@ -76,6 +76,8 @@ return {
         require("plugins._lsp_signature_nvim")._.on_attach()
         require("mappings._nvim_lsp").on_attach()
       end
+
+      require("plugins._nvim_navic")._.on_attach(client, bufnr)
     end
 
     local configs = {
