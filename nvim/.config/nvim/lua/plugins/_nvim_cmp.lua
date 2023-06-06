@@ -77,6 +77,14 @@ return {
           -- { name = "nuspell" },
           -- { name = "spell" },
         },
+        window = {
+          completion = {
+            col_offset = -3,
+          },
+          documentation = {
+            -- border = "single",
+          },
+        },
       }
 
       _G.cmp_was_setup_first = true
