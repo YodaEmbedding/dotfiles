@@ -27,7 +27,7 @@ local function confirm(fallback)
     })
     -- cmp.complete()
   else
-    fallback()
+    -- fallback()
   end
 end
 
