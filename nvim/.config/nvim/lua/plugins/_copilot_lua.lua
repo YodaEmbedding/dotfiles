@@ -7,7 +7,7 @@ return {
 
       panel = {
         enabled = false,      -- default: true
-        auto_refresh = false, -- default: false
+        auto_refresh = true,  -- default: false
         keymap = {
           jump_prev = "[[",   -- default: "[["
           jump_next = "]]",   -- default: "]]"
