@@ -80,7 +80,7 @@ click-left = playerctl play-pause
 type = custom/script
 exec = tmux capture-pane -p -t "0:1.1" | tac | grep -E -m 1 . | sed -e 's/^[ \t]*//'
 interval = 1
-label = %output:0:16:...%
+label = %output:0:50:...%
 format-foreground = #9977AA
 label-font = 6
 
