@@ -95,7 +95,8 @@ local function build_kind_map()
     -- local sep = string.rep(" ", 3 - vim.fn.strchars(symbol))
     -- kind_map[kind] = symbol .. sep .. text
 
-    kind_map[kind] = symbol
+    local sep = string.rep(" ", 2 - vim.fn.strchars(symbol))
+    kind_map[kind] = symbol .. sep
   end
   return kind_map
 end
