@@ -28,10 +28,10 @@ return {
         keymap = {
           accept      = "<C-t>", -- default: "<M-l>"
           accept_word = "<C-w>", -- default: false
-          accept_line = "<C-l>", -- default: false
-          next        = "<C-f>", -- default: "<M-]>"
+          accept_line = "<C-f>", -- default: false
+          next        = "<C-g>", -- default: "<M-]>"
           prev        = "<C-b>", -- default: "<M-[>"
-          dismiss     = "<C-g>", -- default: "<C-]>"
+          dismiss     = "<C-x>", -- default: "<C-]>"
         },
       },
 
