@@ -11,7 +11,8 @@ return {
       cmp.setup {
         experimental = {
           native_menu = false,
-          ghost_text = true,
+          -- NOTE: Ghost text disabled since copilot.lua already creates ghost text.
+          -- ghost_text = true,
         },
         formatting = {
           fields = {
