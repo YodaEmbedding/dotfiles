@@ -12,6 +12,7 @@ alias ensuite='then'                    # then
 alias lors='then'                       # then
 alias puis='then'                       # then
 alias autre='else'                      # else
+alias sinon='else'                      # else (otherwise)
 alias ausi='elif'                       # else if
 alias finis='fi'                        # fi
 alias retourner='return'                # to return (go back)
