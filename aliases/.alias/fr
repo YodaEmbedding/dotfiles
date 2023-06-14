@@ -56,6 +56,7 @@ alias rappeler='htop_mem'               # to remember
 alias creer='make'                      # to create
 alias ouvre='open'                      # open
 alias copie='/usr/bin/pbcopy'           # copy
+alias coller='/usr/bin/pbpaste'         # to paste
 alias tomber='/usr/bin/pbpaste'         # to drop/fall
 alias recommencer='reboot'              # to restart
 
