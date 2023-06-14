@@ -18,7 +18,6 @@ alias ou='||'                           # or
 alias et='&&'                           # et
 alias egal='=='                         # equal
 
-alias voir='cat'                        # to see
 alias revenir='cd -'                    # to return (come back)
 alias rentrer='cd ~'                    # to return (home)
 alias copier='/bin/cp'                  # to copy
