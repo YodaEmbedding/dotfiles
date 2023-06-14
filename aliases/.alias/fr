@@ -3,6 +3,7 @@
 alias pour='for'                        # for
 alias dans='in'                         # in
 alias faire='do'                        # do
+alias fais='do'                         # do
 alias fait='do'                         # do
 alias fin='done'                        # end
 alias si='if'                           # if
