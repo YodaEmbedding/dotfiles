@@ -43,7 +43,8 @@ alias dormir='sleep'                    # to sleep
 alias attendre='sleep'                  # to wait
 alias ou='where'                        # where
 alias ouest='whereis'                   # where is
-alias qui='which'                       # which
+alias que='which'                       # what
+alias quel='which'                      # which
 alias oui='yes'                         # yes
 alias non='yes n'                       # no
 
