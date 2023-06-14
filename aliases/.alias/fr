@@ -41,7 +41,6 @@ alias enlever='rm'                      # to remove
 alias supprimer='rm'                    # to remove
 alias dormir='sleep'                    # to sleep
 alias attendre='sleep'                  # to wait
-alias ou='where'                        # where
 alias ouest='whereis'                   # where is
 alias que='which'                       # what
 alias quel='which'                      # which
@@ -60,7 +59,6 @@ alias creer='make'                      # to create
 alias ouvre='open'                      # open
 alias copie='/usr/bin/pbcopy'           # copy
 alias tomber='/usr/bin/pbpaste'         # to drop/fall
-alias ou='pwd'                          # where
 alias recommencer='reboot'              # to restart
 
 alias noir='black -l 79'                # black
@@ -103,6 +101,10 @@ alias pres=''                           # near
 alias rien=''                           # none
 alias sur=''                            # on
 alias tout=''                           # all
+
+# alias ou='||'                         # or
+# alias ou='where'                      # where
+# alias ou='pwd'                        # where
 
 
 # List of french aliases
