@@ -48,7 +48,6 @@ alias non='yes n'                       # no
 
 alias contexte='b'                      # background
 alias moins='bat'                       # less
-alias lire='bat'                        # read
 alias voir='bat'                        # to see
 alias haut='htop'                       # top
 alias travail='htop_cpu'                # work
