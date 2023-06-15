@@ -30,14 +30,19 @@ return {
   "zbirenbaum/"        .. "copilot.lua"            , -- AI completion
   "tpope/"             .. "vim-fugitive"           , -- git
   "lervag/"            .. "vimtex"                 , -- LaTeX
-  "aznhe21/"           .. "actions-preview.nvim"   , -- LSP code actions preview
-  "neovim/"            .. "nvim-lspconfig"         , -- LSP config
-  "folke/"             .. "trouble.nvim"           , -- LSP diagnostics list
-  "williamboman/"      .. "mason.nvim"             , -- LSP installer
-  "williamboman/"      .. "mason-lspconfig.nvim"   , -- LSP installer
-  "folke/"             .. "neodev.nvim"            , -- LSP neovim dev
 
-  -- nvim-cmp
+  -- Tools: LSP
+  "aznhe21/"           .. "actions-preview.nvim"   , -- code actions telescope
+  "neovim/"            .. "nvim-lspconfig"         , -- config
+  "folke/"             .. "trouble.nvim"           , -- diagnostics list
+  "williamboman/"      .. "mason.nvim"             , -- installer
+  "williamboman/"      .. "mason-lspconfig.nvim"   , -- installer
+  "folke/"             .. "neodev.nvim"            , -- neovim dev
+  "onsails/"           .. "lspkind-nvim"           , -- pictograms
+  "utilyre/"           .. "barbecue.nvim"          , -- winbar code context
+  "SmiteshP/"          .. "nvim-navic"             , -- winbar code context
+
+  -- Completion: nvim-cmp
   "hrsh7th/"           .. "nvim-cmp"               ,
   "hrsh7th/"           .. "cmp-buffer"             ,
   "kdheepak/"          .. "cmp-latex-symbols"      ,
@@ -64,9 +69,6 @@ return {
   "unblevable/"        .. "quick-scope"            , -- hint unique chars
   "nvim-tree/"         .. "nvim-web-devicons"      , -- icons
   "lukas-reineke/"     .. "indent-blankline.nvim"  , -- indentation guides
-  "onsails/"           .. "lspkind-nvim"           , -- LSP pictograms
-  "utilyre/"           .. "barbecue.nvim"          , -- LSP winbar code context
-  "SmiteshP/"          .. "nvim-navic"             , -- LSP winbar code context
   "petertriho/"        .. "nvim-scrollbar"         , -- scrollbar
   "lewis6991/"         .. "gitsigns.nvim"          , -- signs for git
   "kshenoy/"           .. "vim-signature"          , -- signs for marks
@@ -106,13 +108,16 @@ return {
 --"jcdickinson/"       .. "codeium.nvim"           , -- AI completion
 --"github/"            .. "copilot.vim"            , -- AI completion
 --"sheerun/"           .. "vim-polyglot"           , -- language packs
---"hrsh7th/"           .. "nvim-compe"             , -- LSP completion
---"ojroques/"          .. "nvim-lspfuzzy"          , -- LSP fzf
---"rmagatti/"          .. "goto-preview"           , -- LSP goto preview
---"williamboman/"      .. "nvim-lsp-installer"     , -- LSP installer
 --"jpalardy/"          .. "vim-slime"              , -- REPL
 
-  -- nvim-cmp
+  -- Tools: LSP
+--"hrsh7th/"           .. "nvim-compe"             , -- completion (deprecated)
+--"ojroques/"          .. "nvim-lspfuzzy"          , -- fzf
+--"rmagatti/"          .. "goto-preview"           , -- goto preview
+--"williamboman/"      .. "nvim-lsp-installer"     , -- installer
+--"ray-x/"             .. "lsp_signature.nvim"     , -- signature
+
+  -- Completion: nvim-cmp
 --"hrsh7th/"           .. "cmp-copilot"            ,
 --"uga-rosa/"          .. "cmp-dictionary"         ,
 --"octaltree/"         .. "cmp-look"               ,
@@ -125,7 +130,7 @@ return {
 --"jc-doyle/"          .. "cmp-pandoc-reference"   ,
 --"f3fora/"            .. "cmp-spell"              ,
 
-  -- Coq
+  -- Completion: Coq
 --{"ms-jpq/"            .. "coq_nvim"               },
 --{"ms-jpq/"            .. "coq.artifacts",
 --  branch = "artifacts",
@@ -136,7 +141,6 @@ return {
 --"kosayoda/"          .. "nvim-lightbulb"         , -- code actions
 --"Mofiqul/"           .. "trld.nvim"              , -- diagnostics corner
 --"romainl/"           .. "vim-cool"               , -- highlight smarter
---"ray-x/"             .. "lsp_signature.nvim"     , -- LSP signature
 --"gennaro-tedesco/"   .. "nvim-peekup"            , -- register " preview
 --"tversteeg/"         .. "registers.nvim"         , -- register " preview
 --"junegunn/"          .. "vim-peekaboo"           , -- register " preview
