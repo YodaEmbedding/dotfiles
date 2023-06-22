@@ -5,6 +5,10 @@ return {
   config = function()
     require("copilot").setup {
 
+      filetypes = {
+        markdown = true,
+      },
+
       panel = {
         enabled = false,      -- default: true
         auto_refresh = true,  -- default: false
