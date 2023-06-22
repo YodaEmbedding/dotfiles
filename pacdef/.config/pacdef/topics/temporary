@@ -28,3 +28,41 @@ spectacle
 # Audio
 easyeffects                                 # AUR
 noise-suppression-for-voice                 # AUR
+
+spot-client
+spotify-qt
+psst-git
+lyricstify
+
+paruz
+flake8
+pplatex
+python-metadata_filter
+python-scrobblez
+rye-bin
+
+# caja
+# caja-dropbox
+# diskus
+# duf
+# f3d-bin
+# filelight
+# gdu
+# gsmartcontrol
+# lua51
+# lua51-cjson
+# openctm-tools
+# smartmontools
+# torch7-trepl-git
+# twine
+# wpaperd-git
+
+mpeg-pcc-tmc13-git
+
+cuda-11.1
+cuda-11.7
+gcc10
+gcc11
+gcc12
+
+
