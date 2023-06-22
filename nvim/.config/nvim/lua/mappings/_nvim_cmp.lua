@@ -39,6 +39,7 @@ return {
   ["<S-Tab>"] = cmp.mapping.select_prev_item(),
   ["<C-Space>"] = cmp.mapping(copilot_suggestion_accept, { "i", "c" }),
   ["<C-c>"] = cmp.mapping(copilot_suggestion_accept, { "i", "c" }),
+  ["<C-x>"] = cmp.mapping(complete, { "i", "c" }),
   ["<C-e>"] = cmp.mapping(confirm, { "i", "s" }),
   ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
   ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
