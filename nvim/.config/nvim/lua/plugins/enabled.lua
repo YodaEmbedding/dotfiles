@@ -12,6 +12,7 @@ return {
   -- Functional
   "tpope/"             .. "vim-surround"           , -- change surrounding
   "b3nj5m1n/"          .. "kommentary"             , -- commenting
+  "kwkarlwang/"        .. "bufresize.nvim"         , -- maintain buffer sizes on terminal resize
   "ggandor/"           .. "leap.nvim"              , -- motion
   "farmergreg/"        .. "vim-lastplace"          , -- remember cursor
   "camspiers/"         .. "snap"                   , -- search
