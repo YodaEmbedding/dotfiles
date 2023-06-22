@@ -42,8 +42,7 @@ nnoremap("<S-Tab>", ":e#<CR>")                      -- Previous buffer
 nnoremap("gb", "     :ls<CR>:b<Space>")             -- Switch buffer
 
 -- Save, quit, kill
--- n_silent("<Space>d", ":ScrollViewDisable | bd<CR>") -- Kill buffer
-n_silent("<Space>d", ":bd<CR>")                     -- Kill buffer
+n_silent("<Space>d", ":Bdelete<CR>")                -- Kill buffer
 nnoremap("zx", ":qa<CR>")                           -- Quit
 nnoremap("zX", ":qa!<CR>")                          -- Quit
 nnoremap("<C-s>", ":up<CR>")                        -- Save
