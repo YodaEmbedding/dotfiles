@@ -61,6 +61,7 @@ return {
 
   -- Visual
   "lukas-reineke/"     .. "virt-column.nvim"       , -- colorcolumn line
+  "nvim-neo-tree/"     .. "neo-tree.nvim"          , -- file tree
   "bronson/"           .. "vim-trailing-whitespace", -- hint whitespace
   "unblevable/"        .. "quick-scope"            , -- hint unique chars
   "nvim-tree/"         .. "nvim-web-devicons"      , -- icons
@@ -69,7 +70,6 @@ return {
   "lewis6991/"         .. "gitsigns.nvim"          , -- signs for git
   "kshenoy/"           .. "vim-signature"          , -- signs for marks
   "goolord/"           .. "alpha-nvim"             , -- startup screen
-  "nvim-neo-tree/"     .. "neo-tree.nvim"          , -- tree
 
   -- Visual: colorschemes
   "folke/"             .. "tokyonight.nvim"        ,
