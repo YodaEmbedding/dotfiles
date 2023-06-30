@@ -62,6 +62,7 @@ return {
   -- Visual
   "lukas-reineke/"     .. "virt-column.nvim"       , -- colorcolumn line
   "nvim-neo-tree/"     .. "neo-tree.nvim"          , -- file tree
+  "nvim-tree/"         .. "nvim-tree.lua"          , -- file tree
   "bronson/"           .. "vim-trailing-whitespace", -- hint whitespace
   "unblevable/"        .. "quick-scope"            , -- hint unique chars
   "nvim-tree/"         .. "nvim-web-devicons"      , -- icons
