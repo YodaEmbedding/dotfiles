@@ -60,10 +60,19 @@ def lazy_callable(alias, path):
 LazyModule("mpl", "matplotlib")
 LazyModule("plt", "matplotlib.pyplot")
 LazyModule("pd", "pandas")
+LazyModule("pl", "polars")
 LazyModule("sns", "seaborn")
 LazyModule("tf", "tensorflow")
+LazyModule("nn", "torch.nn")
+LazyModule("F", "torch.nn.functional")
 
+lazy_callable("datetime", "datetime")
+lazy_callable("DictConfig", "omegaconf")
+lazy_callable("OmegaConf", "omegaconf")
 lazy_callable("DataFrame", "pandas")
+lazy_callable("Path", "pathlib")
+lazy_callable("Image", "PIL")
+lazy_callable("Tensor", "torch")
 
 modules = [x.name for x in pkgutil.iter_modules()]
 
