@@ -1,8 +1,2 @@
 require("mappings.misc")
 require("mappings.colemak")
-require("mappings._coc_nvim")
-require("mappings._coq_nvim")
-require("mappings._fzf_vim")
-require("mappings._snap")
-require("mappings._telescope_nvim")
-require("mappings._vim_vsnip")

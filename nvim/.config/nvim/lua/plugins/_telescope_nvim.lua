@@ -70,5 +70,7 @@ return {
     -- if _G.plugin_loaded("telescope-fzy-native.nvim") then
     --   telescope.load_extension("fzy_native")
     -- end
+
+    require("mappings._telescope_nvim")
   end,
 }

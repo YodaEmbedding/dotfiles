@@ -18,4 +18,8 @@ return {
       "coc-yaml",
     }
   end,
+
+  config = function()
+    require("mappings._coc_nvim")
+  end,
 }

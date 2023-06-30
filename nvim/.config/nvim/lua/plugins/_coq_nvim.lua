@@ -13,5 +13,6 @@ return {
 
   config = function()
     require("coq")
+    require("mappings._coq_nvim")
   end,
 }
