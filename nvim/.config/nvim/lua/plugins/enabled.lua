@@ -29,6 +29,7 @@ return {
 
   -- Tools
   "zbirenbaum/"        .. "copilot.lua"            , -- AI completion
+  "sindrets/"          .. "diffview.nvim"          , -- diff/merge (git)
   "tpope/"             .. "vim-fugitive"           , -- git
   "lervag/"            .. "vimtex"                 , -- LaTeX
 
