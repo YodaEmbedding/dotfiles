@@ -12,7 +12,7 @@ return {
   -- Functional
   "tpope/"             .. "vim-surround"           , -- change surrounding
   "b3nj5m1n/"          .. "kommentary"             , -- commenting
-  "famiu/"             .. "bufdelete.nvim"         , -- maintain layout on :Bdelete
+--"famiu/"             .. "bufdelete.nvim"         , -- maintain layout on :Bdelete
   "kwkarlwang/"        .. "bufresize.nvim"         , -- maintain layout on terminal resize
   "ggandor/"           .. "leap.nvim"              , -- motion
   "farmergreg/"        .. "vim-lastplace"          , -- remember cursor
