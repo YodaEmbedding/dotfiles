@@ -21,6 +21,22 @@ biber_fix() {
   /bin/mv "$tmpfile" "$file"
 }
 
+biber_fix_bibtex() {
+  file="$1"
+  tmpfile="$(mktemp /tmp/biber.bib.XXXXXX)"
+  biber \
+    --tool \
+    --output_format=bibtex \
+    --output-legacy-dates \
+    --output-field-replace=location:address,journaltitle:journal \
+    --output_align \
+    --output_indent=2 \
+    --output_fieldcase=lower \
+    --output-file="$tmpfile" \
+    "$file" || return 1
+  /bin/mv "$tmpfile" "$file"
+}
+
 # clipboard
 if ! command -v "pbcopy" &> /dev/null; then
   if [ ! -z "${WAYLAND_DISPLAY}" ]; then
