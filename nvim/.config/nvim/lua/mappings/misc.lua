@@ -60,6 +60,16 @@ x_silent(".", ":normal .<CR>")                      -- Dot repeat
 nnoremap("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
 nnoremap("<C-h>", ":e %:h/")                        -- Edit file at cwd
 
+-- Automatic marks
+nnoremap("i", "mii")
+nnoremap("I", "miI")
+nnoremap("a", "mia")
+nnoremap("A", "miA")
+nnoremap("o", "mio")
+nnoremap("O", "miO")
+nnoremap("c", "mic")
+nnoremap("C", "miC")
+
 -- Jumplist
 nnoremap("<C-P>", "<C-I>")                          -- Previous jump in jumplist
 
