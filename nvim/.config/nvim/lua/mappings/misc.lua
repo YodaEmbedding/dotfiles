@@ -58,7 +58,8 @@ nnoremap("<C-_>", [[/\<\><Left><Left>]])            -- Search whole word
 -- Misc
 x_silent(".", ":normal .<CR>")                      -- Dot repeat
 nnoremap("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
-nnoremap("<C-h>", ":e %:h/")                        -- Edit file at cwd
+-- nnoremap("<C-h>", ":e %:h/")                        -- Edit file at cwd
+nnoremap("<space>e", ":e %:h/")                     -- Edit file at cwd
 
 -- Automatic marks
 nnoremap("i", "mii")
@@ -82,6 +83,17 @@ xnoremap({"expr"}, "k", "(v:count >= 1 ? 'm`' . v:count : '') . 'k'")
 -- Don't add {} motions to jumplist
 n_silent("}", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '}'<CR>")
 n_silent("{", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '{'<CR>")
+
+-- Windows
+nnoremap("<C-left>",  "<C-w>h")                     -- Move left
+nnoremap("<C-down>",  "<C-w>j")                     -- Move down
+nnoremap("<C-up>",    "<C-w>k")                     -- Move up
+nnoremap("<C-right>", "<C-w>l")                     -- Move right
+nnoremap("<C-h>",     "<C-w>h")                     -- Move left
+nnoremap("<C-j>",     "<C-w>j")                     -- Move down
+nnoremap("<C-k>",     "<C-w>k")                     -- Move up
+nnoremap({"override"}, "<C-l>", "<C-w>l")           -- Move right
+nnoremap("<Space>D",  "<C-w>c")                     -- Close window
 
 
 -- Frequently used:
