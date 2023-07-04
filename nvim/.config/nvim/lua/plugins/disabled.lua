@@ -15,7 +15,9 @@ return {
   "windwp/"            .. "nvim-autopairs"         , -- auto-pairs
   "ThePrimeagen/"      .. "harpoon"                , -- bookmarks
   "9mm/"               .. "vim-closer"             , -- closes brackets
+  "famiu/"             .. "bufdelete.nvim"         , -- maintain layout on :Bdelete
   "ggandor/"           .. "lightspeed.nvim"        , -- motion
+  "farmergreg/"        .. "vim-lastplace"          , -- remember cursor
   "junegunn/"          .. "fzf.vim"                , -- search
   "tweekmonster/"      .. "fzf-filemru"            , -- search
   "vijaymarupudi/"     .. "nvim-fzf"               , -- search
@@ -66,6 +68,7 @@ return {
   "junegunn/"          .. "vim-peekaboo"           , -- register " preview
   "dstein64/"          .. "nvim-scrollview"        , -- scrollbar
   "folke/"             .. "drop.nvim"              , -- screensaver (e.g. falling snow)
+  "kshenoy/"           .. "vim-signature"          , -- signs for marks
 
   -- Visual: colorschemes
   "mastertinner/"      .. "nvim-quantum"           ,

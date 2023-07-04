@@ -12,10 +12,8 @@ return {
   -- Functional
   "tpope/"             .. "vim-surround"           , -- change surrounding
   "b3nj5m1n/"          .. "kommentary"             , -- commenting
---"famiu/"             .. "bufdelete.nvim"         , -- maintain layout on :Bdelete
   "kwkarlwang/"        .. "bufresize.nvim"         , -- maintain layout on terminal resize
   "ggandor/"           .. "leap.nvim"              , -- motion
---"farmergreg/"        .. "vim-lastplace"          , -- remember cursor
   "ethanholz/"         .. "nvim-lastplace"         , -- remember cursor
   "camspiers/"         .. "snap"                   , -- search
   "hrsh7th/"           .. "vim-vsnip"              , -- snippets (engine)
@@ -72,7 +70,6 @@ return {
   "petertriho/"        .. "nvim-scrollbar"         , -- scrollbar
   "lewis6991/"         .. "gitsigns.nvim"          , -- signs for git
   "chentoast/"         .. "marks.nvim"             , -- signs for marks
---"kshenoy/"           .. "vim-signature"          , -- signs for marks
   "goolord/"           .. "alpha-nvim"             , -- startup screen
 
   -- Visual: colorschemes
