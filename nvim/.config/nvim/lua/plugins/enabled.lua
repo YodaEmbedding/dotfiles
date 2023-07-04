@@ -15,7 +15,8 @@ return {
 --"famiu/"             .. "bufdelete.nvim"         , -- maintain layout on :Bdelete
   "kwkarlwang/"        .. "bufresize.nvim"         , -- maintain layout on terminal resize
   "ggandor/"           .. "leap.nvim"              , -- motion
-  "farmergreg/"        .. "vim-lastplace"          , -- remember cursor
+--"farmergreg/"        .. "vim-lastplace"          , -- remember cursor
+  "ethanholz/"         .. "nvim-lastplace"         , -- remember cursor
   "camspiers/"         .. "snap"                   , -- search
   "hrsh7th/"           .. "vim-vsnip"              , -- snippets (engine)
   "rafamadriz/"        .. "friendly-snippets"      , -- snippets (snippets)
