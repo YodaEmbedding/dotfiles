@@ -71,7 +71,8 @@ return {
   "lukas-reineke/"     .. "indent-blankline.nvim"  , -- indentation guides
   "petertriho/"        .. "nvim-scrollbar"         , -- scrollbar
   "lewis6991/"         .. "gitsigns.nvim"          , -- signs for git
-  "kshenoy/"           .. "vim-signature"          , -- signs for marks
+  "chentoast/"         .. "marks.nvim"             , -- signs for marks
+--"kshenoy/"           .. "vim-signature"          , -- signs for marks
   "goolord/"           .. "alpha-nvim"             , -- startup screen
 
   -- Visual: colorschemes
