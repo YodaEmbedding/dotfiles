@@ -6,7 +6,7 @@ return {
     on_lspconfig_load = function()
       local cmp = require("cmp")
       local compare = require('cmp.config.compare')
-      local lspkind_symbols = require("plugins._lspkind_symbols")._
+      local lspkind_symbols = require("utils.lspkind_symbols")._
 
       cmp.setup {
         experimental = {

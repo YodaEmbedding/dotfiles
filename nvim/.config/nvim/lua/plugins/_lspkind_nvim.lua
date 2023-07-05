@@ -9,7 +9,7 @@ return {
         return
       end
 
-      local config = require("plugins._lspkind_symbols")._
+      local config = require("utils.lspkind_symbols")._
       require("lspkind").init {
         symbol_map = config.symbol_map,
       }

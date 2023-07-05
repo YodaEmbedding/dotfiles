@@ -8,7 +8,7 @@ return {
   },
   config = function()
     require("barbecue").setup {
-      kinds = require("plugins._lspkind_symbols")._.kind_symbol_map,
+      kinds = require("utils.lspkind_symbols")._.kind_symbol_map,
     }
   end,
 }
