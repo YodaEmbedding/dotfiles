@@ -4,11 +4,10 @@ end
 
 
 local lightspeed = require("lightspeed")
-local vimp = require("vimp")
 
-local n = vimp.nmap
-local x = vimp.vmap
-local o = vimp.omap
+local n = function(...) vim.keymap.set("n", ...) end
+local x = function(...) vim.keymap.set("x", ...) end
+local o = function(...) vim.keymap.set("o", ...) end
 
 local function repeat_ft(reverse)
   lightspeed.ft["instant-repeat?"] = true

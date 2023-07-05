@@ -4,11 +4,6 @@ end
 
 
 local leap = require("leap")
-local vimp = require("vimp")
-
-local n = vimp.nmap
-local x = vimp.vmap
-local o = vimp.omap
 
 
 ---@format disable
