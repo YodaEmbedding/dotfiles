@@ -96,9 +96,7 @@ return {
 
     local config_defaults = {}
 
-    require("neodev").setup {
-    }
-
+    require("plugins._neodev_nvim")._.on_lspconfig_load()
     config_defaults = setup_nvim_cmp(config_defaults)
     setup_servers(servers, configs, config_defaults, on_attach)
   end,
