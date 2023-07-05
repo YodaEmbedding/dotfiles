@@ -1,4 +1,15 @@
 return {
+  "neovim/nvim-lspconfig",
+
+  dependencies = {
+    "hrsh7th/nvim-cmp",
+    "hrsh7th/cmp-nvim-lsp",
+    "folke/neodev.nvim",
+    -- "ray-x/lsp_signature.nvim",
+    -- "onsails/lspkind-nvim",
+    -- "SmiteshP/nvim-navic",
+  },
+
   config = function()
     -- Enabled servers:
     local servers = {

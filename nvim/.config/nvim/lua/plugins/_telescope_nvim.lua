@@ -1,4 +1,10 @@
 return {
+  "nvim-telescope/telescope.nvim",
+
+  -- dependencies = {
+  --   "aznhe21/actions-preview.nvim",
+  -- },
+
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")

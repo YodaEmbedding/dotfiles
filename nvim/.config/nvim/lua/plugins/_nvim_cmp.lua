@@ -1,4 +1,6 @@
 return {
+  "hrsh7th/nvim-cmp",
+
   dependencies = {
     "hrsh7th/vim-vsnip", -- snippets (engine)
     "hrsh7th/cmp-buffer",

@@ -1,4 +1,6 @@
 return {
+  "folke/drop.nvim",
+
   enabled = false,
 
   event = "VimEnter",

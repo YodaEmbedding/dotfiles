@@ -34,7 +34,7 @@ local function build_plugin_specs(short_urls, plugin_names)
     table.insert(plugin_names, plugin_name)
 
     -- Build plugin spec.
-    local plugin_spec = {short_url}
+    local plugin_spec = {} -- {short_url}
     plugin_specs[i] = plugin_spec
 
     local ok, module_spec = pcall(require, config_path)

@@ -1,4 +1,6 @@
 return {
+  "b3nj5m1n/kommentary",
+
   config = function()
     require("kommentary.config").configure_language("default", {
       ignore_whitespace = false,

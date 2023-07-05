@@ -1,4 +1,6 @@
 return {
+  "folke/tokyonight.nvim",
+
   config = function()
     -- See https://github.com/folke/tokyonight.nvim#%EF%B8%8F-configuration
     require("tokyonight").setup {

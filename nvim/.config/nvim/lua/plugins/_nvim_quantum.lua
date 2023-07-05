@@ -1,4 +1,6 @@
 return {
+  "mastertinner/nvim-quantum",
+
   enabled = false,
 
   config = function()

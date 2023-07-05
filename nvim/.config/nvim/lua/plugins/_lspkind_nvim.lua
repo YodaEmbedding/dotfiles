@@ -1,4 +1,6 @@
 return {
+  "onsails/lspkind-nvim",
+
   _ = {
     on_attach = function()
       if not _G.plugin_loaded("lspkind-nvim") then

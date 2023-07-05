@@ -1,9 +1,15 @@
 return {
-  build = ":TSUpdate",
+  "nvim-treesitter/nvim-treesitter",
+
   version = "*",
 
-  config = function()
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+  },
 
+  build = ":TSUpdate",
+
+  config = function()
     require("nvim-treesitter.configs").setup {
       ensure_installed = "all",
       -- ignore_install = { },

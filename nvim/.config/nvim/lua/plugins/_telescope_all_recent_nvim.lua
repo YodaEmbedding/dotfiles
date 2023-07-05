@@ -1,4 +1,6 @@
 return {
+  "prochri/telescope-all-recent.nvim",
+
   dependencies = {
     "kkharji/sqlite.lua",
     "nvim-telescope/telescope.nvim",

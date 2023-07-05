@@ -1,4 +1,6 @@
 return {
+  "ggandor/lightspeed.nvim",
+
   enabled = false,
 
   init = function()

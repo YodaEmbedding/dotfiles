@@ -1,4 +1,6 @@
 return {
+  "tversteeg/registers.nvim",
+
   enabled = false,
 
   config = function()

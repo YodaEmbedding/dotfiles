@@ -1,2 +1,3 @@
 return {
+  "unblevable/quick-scope",
 }

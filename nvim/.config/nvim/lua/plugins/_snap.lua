@@ -1,4 +1,6 @@
 return {
+  "camspiers/snap",
+
   rocks = {
     "fzy",
   },

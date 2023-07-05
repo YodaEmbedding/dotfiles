@@ -1,4 +1,6 @@
 return {
+  "nvim-telescope/telescope-frecency.nvim",
+
   enabled = false,
 
   dependencies = {
