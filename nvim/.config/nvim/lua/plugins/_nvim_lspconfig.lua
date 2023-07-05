@@ -43,13 +43,9 @@ return {
     end
 
     local function setup_servers(servers, configs, config_defaults, on_attach)
-      local coq = require_maybe("coq")
       for _, lsp in ipairs(servers) do
         local config = configs[lsp] or {}
         config.on_attach = on_attach
-        if coq ~= nil then
-          config = coq.lsp_ensure_capabilities(config)
-        end
         config = vim.tbl_extend("keep", config, config_defaults)
         require("lspconfig")[lsp].setup(config)
       end

@@ -12,38 +12,6 @@ function utils.check_backspace()
   return result and true
 end
 
--- Opens either LSP documentation or vim help
-function utils.coc_documentation()
-  local filetype = vim.bo.filetype
-  if filetype == "vim" or filetype == "help" then
-    api.nvim_command("h " .. fn.expand("<cword>"))
-  elseif fn["coc#rpc#ready"]() then
-    fn.CocActionAsync("doHover")
-  else
-    api.nvim_command("!" .. vim.bo.keywordprg .. " " .. fn.expand("<cword>"))
-  end
-end
-
-function utils.coc_documentation_openclose()
-  if vim.fn["coc#float#has_float"]() == 1 then
-    return vim.fn["coc#float#close_all"]()
-  end
-
-  return utils.coc_documentation()
-end
-
-function utils.coc_documentation_openjumpclose()
-  if vim.fn.exists("w:float") == 1 then
-    return vim.fn["coc#float#close_all"]()
-  end
-
-  if vim.fn["coc#float#has_float"]() == 1 then
-    return vim.fn["coc#float#jump"]()
-  end
-
-  return utils.coc_documentation()
-end
-
 -- Copies all search matches
 function utils.copy_matches(register)
   if register == nil or string.len(register) ~= 1 then

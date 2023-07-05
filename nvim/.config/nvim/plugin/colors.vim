@@ -47,12 +47,6 @@ hi DiffText         guibg=#554575 guifg=NONE
 hi LspDiagnosticsVirtualTextError   guifg=#6C5569
 hi LspDiagnosticsVirtualTextHint    guifg=#5C4459
 
-" coc.nvim
-hi CocErrorFloat            guifg=#cc6666
-hi CocErrorVirtualText      guifg=#5C4459
-hi CocWarningVirtualText    guifg=#5C4459
-hi CocInfoVirtualText       guifg=#5C4459
-
 " gitsigns.nvim
 hi GitSignsAdd      guifg=#2CC474
 hi GitSignsChange   guifg=#8E73F6
