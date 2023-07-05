@@ -1,4 +1,17 @@
 return {
+  dependencies = {
+    "hrsh7th/vim-vsnip", -- snippets (engine)
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-vsnip",
+    "kdheepak/cmp-latex-symbols",
+    "andersevenrud/cmp-tmux",
+    "ray-x/cmp-treesitter",
+    "tamago324/cmp-zsh",
+    "zbirenbaum/copilot-cmp",
+  },
+
   config = function()
     -- Skip lazy.nvim require().
   end,
