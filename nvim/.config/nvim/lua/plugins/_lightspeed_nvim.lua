@@ -1,4 +1,6 @@
 return {
+  enabled = false,
+
   init = function()
     vim.g.lightspeed_no_default_keymaps = true
   end,

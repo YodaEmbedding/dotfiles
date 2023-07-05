@@ -1,4 +1,6 @@
 return {
+  enabled = false,
+
   config = function()
     require("registers").setup {
       window = {

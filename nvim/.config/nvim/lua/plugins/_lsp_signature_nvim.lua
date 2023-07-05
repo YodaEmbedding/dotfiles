@@ -1,4 +1,6 @@
 return {
+  enabled = false,
+
   _ = {
     on_attach = function()
       if not _G.plugin_loaded("lsp_signature.nvim") then

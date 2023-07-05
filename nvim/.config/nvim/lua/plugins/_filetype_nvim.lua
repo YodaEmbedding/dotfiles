@@ -1,4 +1,6 @@
 return {
+  enabled = false,
+
   init = function()
     -- Do not source the default filetype.vim
     -- (required by Neovim <v0.6)

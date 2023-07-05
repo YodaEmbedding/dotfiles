@@ -1,4 +1,6 @@
 return {
+  enabled = false,
+
   dependencies = {
     "kkharji/sqlite.lua",
   },

@@ -1,4 +1,6 @@
 return {
+  enabled = false,
+
   event = "VimEnter",
 
   config = function()

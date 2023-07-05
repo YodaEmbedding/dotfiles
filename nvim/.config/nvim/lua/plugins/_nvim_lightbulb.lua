@@ -1,4 +1,6 @@
 return {
+  enabled = false,
+
   dependencies = {
     "antoinemadec/FixCursorHold.nvim",
   },
