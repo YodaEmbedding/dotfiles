@@ -30,7 +30,7 @@ end
 
 -- Formats the current buffer
 function utils.format()
-  whitelist = { "python", "rust" }
+  local whitelist = { "python", "rust" }
   if vim.tbl_contains(whitelist, vim.bo.filetype) then
     vim.lsp.buf.format()
   end
