@@ -1,5 +1,5 @@
 return {
   "williamboman/mason.nvim",
 
-  build = ":MasonUpdate" -- :MasonUpdate updates registry contents
+  -- build = ":MasonUpdate" -- :MasonUpdate updates registry contents
 }
