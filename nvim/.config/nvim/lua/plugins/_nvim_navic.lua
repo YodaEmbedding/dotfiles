@@ -11,8 +11,6 @@ return {
 
   _ = {
     on_attach = function(client, bufnr)
-      return
-
       if not _G.plugin_loaded("nvim-navic") then
         return
       end
