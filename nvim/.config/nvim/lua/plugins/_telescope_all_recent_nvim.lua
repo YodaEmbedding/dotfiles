@@ -1,6 +1,6 @@
 return {
   dependencies = {
-    "tami5/sqlite.lua",
+    "kkharji/sqlite.lua",
     "nvim-telescope/telescope.nvim",
   },
 

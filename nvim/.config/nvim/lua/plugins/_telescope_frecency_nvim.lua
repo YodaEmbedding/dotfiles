@@ -1,6 +1,6 @@
 return {
   dependencies = {
-    "tami5/sqlite.lua",
+    "kkharji/sqlite.lua",
   },
 
   config = function()

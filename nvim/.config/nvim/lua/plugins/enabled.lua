@@ -6,7 +6,7 @@ return {
   "nvim-lua/"          .. "popup.nvim"             ,
   "svermeulen/"        .. "vimpeccable"            , -- nvim lua config
   "tpope/"             .. "vim-repeat"             , -- repairs .
-  "tami5/"             .. "sqlite.lua"             , -- sql
+  "kkharji/"           .. "sqlite.lua"             , -- sql
   "MunifTanjim/"       .. "nui.nvim"               , -- UI component library
 
   -- Functional
