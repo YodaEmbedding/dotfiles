@@ -6,4 +6,4 @@ local vimp = require("vimp")
 
 local n = vimp.nmap
 
-n ("<space>t",  ":NvimTreeToggle<CR>")
+-- n ("<space>t",  ":NvimTreeToggle<CR>")
