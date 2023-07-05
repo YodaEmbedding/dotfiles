@@ -49,7 +49,6 @@ o("inccommand", "split")              -- Incremental highlight during :%s
 o("smartcase", true)                  -- Ignore case if lower
 
 -- Undo
-o("undodir", home .. "/.vim_undo")    -- Undo history location
 b("undofile", true)                   -- Undo history
 
 -- Visual
