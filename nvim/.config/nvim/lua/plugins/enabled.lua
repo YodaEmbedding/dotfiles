@@ -2,76 +2,76 @@
 return {
 
   -- Libraries
-  "nvim-lua/"          .. "plenary.nvim"           ,
-  "svermeulen/"        .. "vimpeccable"            , -- nvim lua config
-  "tpope/"             .. "vim-repeat"             , -- repairs .
-  "kkharji/"           .. "sqlite.lua"             , -- sql
-  "MunifTanjim/"       .. "nui.nvim"               , -- UI component library
+  "plenary.nvim"           ,
+  "vimpeccable"            , -- nvim lua config
+  "vim-repeat"             , -- repairs .
+  "sqlite.lua"             , -- sql
+  "nui.nvim"               , -- UI component library
 
   -- Functional
-  "tpope/"             .. "vim-surround"           , -- change surrounding
-  "b3nj5m1n/"          .. "kommentary"             , -- commenting
-  "kwkarlwang/"        .. "bufresize.nvim"         , -- maintain layout on terminal resize
-  "ggandor/"           .. "leap.nvim"              , -- motion
-  "ethanholz/"         .. "nvim-lastplace"         , -- remember cursor
-  "camspiers/"         .. "snap"                   , -- search
-  "hrsh7th/"           .. "vim-vsnip"              , -- snippets (engine)
-  "rafamadriz/"        .. "friendly-snippets"      , -- snippets (snippets)
-  "wellle/"            .. "targets.vim"            , -- text objects
-  "tpope/"             .. "vim-eunuch"             , -- unix mv/rm/rename
-  "nelstrom/"          .. "vim-visual-star-search" , -- visual mode *
+  "vim-surround"           , -- change surrounding
+  "kommentary"             , -- commenting
+  "bufresize.nvim"         , -- maintain layout on terminal resize
+  "leap.nvim"              , -- motion
+  "nvim-lastplace"         , -- remember cursor
+  "snap"                   , -- search
+  "vim-vsnip"              , -- snippets (engine)
+  "friendly-snippets"      , -- snippets (snippets)
+  "targets.vim"            , -- text objects
+  "vim-eunuch"             , -- unix mv/rm/rename
+  "vim-visual-star-search" , -- visual mode *
 
   -- Telescope
-  "nvim-telescope/"    .. "telescope.nvim"         ,
-  "prochri/"           .. "telescope-all-recent.nvim",
+  "telescope.nvim"         ,
+  "telescope-all-recent.nvim",
 
   -- Tools
-  "zbirenbaum/"        .. "copilot.lua"            , -- AI completion
-  "sindrets/"          .. "diffview.nvim"          , -- diff/merge (git)
-  "tpope/"             .. "vim-fugitive"           , -- git
-  "lervag/"            .. "vimtex"                 , -- LaTeX
+  "copilot.lua"            , -- AI completion
+  "diffview.nvim"          , -- diff/merge (git)
+  "vim-fugitive"           , -- git
+  "vimtex"                 , -- LaTeX
 
   -- Tools: LSP
-  "aznhe21/"           .. "actions-preview.nvim"   , -- code actions telescope
-  "neovim/"            .. "nvim-lspconfig"         , -- config
-  "folke/"             .. "trouble.nvim"           , -- diagnostics list
-  "williamboman/"      .. "mason.nvim"             , -- installer
-  "williamboman/"      .. "mason-lspconfig.nvim"   , -- installer
-  "folke/"             .. "neodev.nvim"            , -- neovim dev
-  "onsails/"           .. "lspkind-nvim"           , -- pictograms
-  "utilyre/"           .. "barbecue.nvim"          , -- winbar code context
-  "SmiteshP/"          .. "nvim-navic"             , -- winbar code context
+  "actions-preview.nvim"   , -- code actions telescope
+  "nvim-lspconfig"         , -- config
+  "trouble.nvim"           , -- diagnostics list
+  "mason.nvim"             , -- installer
+  "mason-lspconfig.nvim"   , -- installer
+  "neodev.nvim"            , -- neovim dev
+  "lspkind-nvim"           , -- pictograms
+  "barbecue.nvim"          , -- winbar code context
+  "nvim-navic"             , -- winbar code context
 
   -- Completion: nvim-cmp
-  "hrsh7th/"           .. "nvim-cmp"               ,
-  "hrsh7th/"           .. "cmp-buffer"             ,
-  "kdheepak/"          .. "cmp-latex-symbols"      ,
-  "hrsh7th/"           .. "cmp-nvim-lsp"           ,
-  "hrsh7th/"           .. "cmp-path"               ,
-  "andersevenrud/"     .. "cmp-tmux"               ,
-  "ray-x/"             .. "cmp-treesitter"         ,
-  "hrsh7th/"           .. "cmp-vsnip"              ,
-  "tamago324/"         .. "cmp-zsh"                ,
-  "zbirenbaum/"        .. "copilot-cmp"            ,
+  "nvim-cmp"               ,
+  "cmp-buffer"             ,
+  "cmp-latex-symbols"      ,
+  "cmp-nvim-lsp"           ,
+  "cmp-path"               ,
+  "cmp-tmux"               ,
+  "cmp-treesitter"         ,
+  "cmp-vsnip"              ,
+  "cmp-zsh"                ,
+  "copilot-cmp"            ,
 
   -- Treesitter
-  "nvim-treesitter/"   .. "nvim-treesitter"        ,
-  "nvim-treesitter/"   .. "nvim-treesitter-textobjects",
+  "nvim-treesitter"        ,
+  "nvim-treesitter-textobjects",
 
   -- Visual
-  "lukas-reineke/"     .. "virt-column.nvim"       , -- colorcolumn line
-  "nvim-neo-tree/"     .. "neo-tree.nvim"          , -- file tree
-  "nvim-tree/"         .. "nvim-tree.lua"          , -- file tree
-  "bronson/"           .. "vim-trailing-whitespace", -- hint whitespace
-  "unblevable/"        .. "quick-scope"            , -- hint unique chars
-  "nvim-tree/"         .. "nvim-web-devicons"      , -- icons
-  "lukas-reineke/"     .. "indent-blankline.nvim"  , -- indentation guides
-  "petertriho/"        .. "nvim-scrollbar"         , -- scrollbar
-  "lewis6991/"         .. "gitsigns.nvim"          , -- signs for git
-  "chentoast/"         .. "marks.nvim"             , -- signs for marks
-  "goolord/"           .. "alpha-nvim"             , -- startup screen
+  "virt-column.nvim"       , -- colorcolumn line
+  "neo-tree.nvim"          , -- file tree
+  "nvim-tree.lua"          , -- file tree
+  "vim-trailing-whitespace", -- hint whitespace
+  "quick-scope"            , -- hint unique chars
+  "nvim-web-devicons"      , -- icons
+  "indent-blankline.nvim"  , -- indentation guides
+  "nvim-scrollbar"         , -- scrollbar
+  "gitsigns.nvim"          , -- signs for git
+  "marks.nvim"             , -- signs for marks
+  "alpha-nvim"             , -- startup screen
 
   -- Visual: colorschemes
-  "folke/"             .. "tokyonight.nvim"        ,
+  "tokyonight.nvim"        ,
 
 }

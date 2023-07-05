@@ -26,7 +26,7 @@ local function build_plugin_specs(short_urls, plugin_names)
   local plugin_specs = {}
 
   for i, short_url in ipairs(short_urls) do
-    local plugin_name = string.match(short_url, "^[^/]*/(.*)$")
+    local plugin_name = string.match(short_url, "([^/]*)$")
     local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
     local config_path = "plugins._" .. plugin_name_slug
 
