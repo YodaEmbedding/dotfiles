@@ -3,7 +3,6 @@ return {
 
   -- Libraries
   "nvim-lua/"          .. "plenary.nvim"           ,
-  "nvim-lua/"          .. "popup.nvim"             ,
   "svermeulen/"        .. "vimpeccable"            , -- nvim lua config
   "tpope/"             .. "vim-repeat"             , -- repairs .
   "kkharji/"           .. "sqlite.lua"             , -- sql
