@@ -54,7 +54,6 @@
   "vim-trailing-whitespace": { "branch": "master", "commit": "5540b3faa2288b226a8d9a4e8244558b12c598aa" },
   "vim-visual-star-search": { "branch": "master", "commit": "37259722f45996733fd309add61385a4ad88bdb9" },
   "vim-vsnip": { "branch": "master", "commit": "7753ba9c10429c29d25abfd11b4c60b76718c438" },
-  "vimpeccable": { "branch": "master", "commit": "bd19b2a86a3d4a0ee184412aa3edb7ed57025d56" },
   "vimtex": { "branch": "master", "commit": "bab96ed04dd951b22663b08c670ff33960fc6419" },
   "virt-column.nvim": { "branch": "master", "commit": "93b40ea038f676f5a72d7d1f2336fe7b051fc0ce" }
 }
