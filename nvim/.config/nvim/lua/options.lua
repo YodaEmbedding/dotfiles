@@ -23,6 +23,8 @@ g.pyindent_open_paren   = "&sw"
 -- Miscellaneous
 o.hidden = true                       -- Allow hiding unsaved buffers
 o.mouse = "a"                         -- Mouse interactivity
+o.title = true                        -- Set terminal title
+o.titlestring = "%t"                  -- Set current file as terminal title
 o.wildmenu = true                     -- Enhanced command-line completion
 o.wildmode = "longest,list,full"      -- Command-line completion behavior
 o.updatetime = 500                    -- ms until CursorHold fires and swap save

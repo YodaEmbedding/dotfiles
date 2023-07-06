@@ -1,7 +1,3 @@
-" Change window title to current buffer
-set title
-set titlestring=%t
-
 if exists('+termguicolors')
     set termguicolors
 endif
