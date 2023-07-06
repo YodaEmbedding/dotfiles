@@ -3,6 +3,11 @@ local o = vim.opt
 
 ---@format disable
 
+-- Colors
+if vim.fn.exists("+termguicolors") then
+  o.termguicolors = true              -- True color (24-bit)
+end
+
 -- Completion
 o.completeopt = "menuone,noinsert,noselect"
 vim.o.shortmess = vim.o.shortmess .. "c"
