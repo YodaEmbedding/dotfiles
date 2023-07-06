@@ -2,8 +2,6 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
-let g:enable_bold_font = 1
-
 if has("gui_running")
     set guifont=Iosevka\ 15
     " set guifont=Roboto\ Mono\ 16
