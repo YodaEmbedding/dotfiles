@@ -1,6 +1,12 @@
 ---@format disable-next
 return {
 
+  -- WARNING:
+  --
+  -- Plugins are now AUTOMATICALLY read from the directory.
+  -- This file is now IGNORED.
+  -- This file may not be up to date.
+
   -- Libraries
   "plenary.nvim"           ,
   "vimpeccable"            , -- nvim lua config

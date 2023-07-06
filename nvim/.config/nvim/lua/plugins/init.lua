@@ -27,7 +27,7 @@ local function build_plugin_specs()
     table.insert(plugin_names, plugin_name)
   end
 
-  local use_enabled_list = true
+  local use_enabled_list = false
 
   if use_enabled_list then
     -- Load plugins listed in plugins/enabled.lua.
