@@ -53,15 +53,11 @@ return {
 
     local function setup_nvim_cmp(config_defaults)
       require("plugins._nvim_cmp")._.on_lspconfig_load()
-
-      if not _G.plugin_loaded("cmp-nvim-lsp") then
-        return
+      if _G.plugin_loaded("cmp-nvim-lsp") then
+        config_defaults = vim.tbl_extend("error", config_defaults, {
+          capabilities = require("cmp_nvim_lsp").default_capabilities(),
+        })
       end
-
-      config_defaults = vim.tbl_extend("error", config_defaults, {
-        capabilities = require("cmp_nvim_lsp").default_capabilities(),
-      })
-
       return config_defaults
     end
 
