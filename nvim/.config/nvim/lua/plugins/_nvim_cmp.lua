@@ -20,7 +20,7 @@ return {
   _ = {
     on_lspconfig_load = function()
       local cmp = require("cmp")
-      local compare = require('cmp.config.compare')
+      local compare = require("cmp.config.compare")
       local lspkind_symbols = require("utils.lspkind_symbols")._
 
       cmp.setup {
@@ -70,7 +70,7 @@ return {
         sources = {
           { name = "copilot" },
           { name = "nvim_lsp", max_item_count = 30 },
-          { name = 'nvim_lsp_signature_help' },
+          { name = "nvim_lsp_signature_help" },
           { name = "path" },
           { name = "buffer" },
           { name = "nvim_lua" },

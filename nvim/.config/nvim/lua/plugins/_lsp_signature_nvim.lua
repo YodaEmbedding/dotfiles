@@ -10,7 +10,12 @@ return {
       require("lsp_signature").on_attach {
         --fix_pos = true,
         max_width = 80,
+
+        -- Disable automatic floating window since nvim-cmp-lsp-signature-help
+        -- already displays the signature in as a completion popup.
         floating_window = false,
+
+        -- Enable virtual text hints, though!
         hint_enable = true,
       }
     end
