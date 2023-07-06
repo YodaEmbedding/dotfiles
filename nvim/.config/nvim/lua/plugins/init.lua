@@ -41,9 +41,10 @@ local function build_plugin_specs()
     end
   else
     -- Load all plugins in plugins/ directory automatically.
-    local files = vim.split(vim.fn.glob("*", true), "\n")
+    local curr_script_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
+    local files = vim.split(vim.fn.glob(curr_script_dir .. "/*", true), "\n")
     for _, file in ipairs(files) do
-      local basename = string.match(file, "(_.*).lua$")
+      local basename = string.match(vim.fs.basename(file), "(_.*).lua$")
       if basename ~= nil and basename ~= "init" and basename ~= "enabled" then
         local config_path = "plugins." .. basename
         local ok, module_spec = pcall(require, config_path)
