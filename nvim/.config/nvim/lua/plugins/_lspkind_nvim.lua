@@ -11,9 +11,8 @@ return {
         return
       end
 
-      local config = require("utils.lspkind_symbols")._
       require("lspkind").init {
-        symbol_map = config.symbol_map,
+        symbol_map = require("utils.lspkind_symbols")._.symbol_map,
       }
     end,
   },
