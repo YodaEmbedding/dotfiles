@@ -36,48 +36,6 @@ function utils.format()
   end
 end
 
--- vim-peekaboo float
-function utils.create_centered_floating_window()
-  local width = math.floor(vim.o.columns * 0.8)
-  local height = math.floor(vim.o.lines * 0.8)
-
-  local opts = {
-    relative = "editor",
-    width = width,
-    height = height,
-    col = math.floor((vim.o.columns - width) / 2),
-    row = math.floor((vim.o.lines - height) / 2) - 1,
-    style = "minimal",
-  }
-
-  local top = "╭" .. string.rep("─", width - 2) .. "╮"
-  local mid = "│" .. string.rep(" ", width - 2) .. "│"
-  local bot = "╰" .. string.rep("─", width - 2) .. "╯"
-
-  local lines = { top }
-  for i = 2, height - 1 do
-    lines[i] = mid
-  end
-  lines[height] = bot
-
-  local buf = api.nvim_create_buf(false, true)
-  api.nvim_buf_set_lines(buf, 0, -1, true, lines)
-  api.nvim_open_win(buf, true, opts)
-  api.nvim_set_option("winhl", "Normal:Floating")
-
-  local opts_new = {
-    relative = opts.relative,
-    width = opts.width - 4,
-    height = opts.height - 2,
-    col = opts.col + 2,
-    row = opts.row + 1,
-    style = opts.style,
-  }
-
-  api.nvim_open_win(api.nvim_create_buf(false, true), true, opts_new)
-  vim.cmd("au BufWipeout <buffer> execute 'bw " .. tostring(buf) .. "'")
-end
-
 -- Removes old swap files for current buffer, not including current swap file.
 function utils.buf_remove_old_swap()
   local filepath = vim.fn.swapname(vim.fn.bufnr())
