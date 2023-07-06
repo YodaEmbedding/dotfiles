@@ -102,8 +102,6 @@ return {
           },
         },
       }
-
-      _G.cmp_was_setup = true
     end,
   },
 }

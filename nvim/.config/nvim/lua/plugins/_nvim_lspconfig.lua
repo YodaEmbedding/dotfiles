@@ -58,10 +58,6 @@ return {
         return
       end
 
-      if not _G.cmp_was_setup then
-        print("cmp was not setup yet!")
-      end
-
       config_defaults = vim.tbl_extend("error", config_defaults, {
         capabilities = require("cmp_nvim_lsp").default_capabilities(),
       })
