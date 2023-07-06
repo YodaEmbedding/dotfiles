@@ -7,11 +7,6 @@ if
     colorscheme quantum
 endif
 
-if luaeval('_G.plugin_loaded("tokyonight.nvim")')
-    let g:tokyonight_transparent = 1
-    colorscheme tokyonight
-endif
-
 set pumblend=7  " Pseudo-transparency for popup menu (Pmenu)
 
 hi Normal           guibg=NONE    guifg=Grey70                ctermbg=NONE  ctermfg=249
