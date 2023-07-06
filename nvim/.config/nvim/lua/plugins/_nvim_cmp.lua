@@ -5,6 +5,7 @@ return {
     "hrsh7th/vim-vsnip", -- snippets (engine)
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-nvim-lsp",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-vsnip",
     "kdheepak/cmp-latex-symbols",
@@ -69,6 +70,7 @@ return {
         sources = {
           { name = "copilot" },
           { name = "nvim_lsp", max_item_count = 30 },
+          { name = 'nvim_lsp_signature_help' },
           { name = "path" },
           { name = "buffer" },
           { name = "nvim_lua" },
