@@ -51,16 +51,6 @@ return {
       end
     end
 
-    local function setup_nvim_cmp(config_defaults)
-      require("plugins._nvim_cmp")._.on_lspconfig_load()
-      if _G.plugin_loaded("cmp-nvim-lsp") then
-        config_defaults = vim.tbl_extend("error", config_defaults, {
-          capabilities = require("cmp_nvim_lsp").default_capabilities(),
-        })
-      end
-      return config_defaults
-    end
-
     local function on_attach(client, bufnr)
       -- print(string.format("LSP: on_attach() buffer=%d client=%s.", bufnr, client["name"]))
 
@@ -89,7 +79,12 @@ return {
     local config_defaults = {}
 
     require("plugins._neodev_nvim")._.on_lspconfig_load()
-    config_defaults = setup_nvim_cmp(config_defaults)
+    require("plugins._nvim_cmp")._.on_lspconfig_load()
+    if _G.plugin_loaded("cmp-nvim-lsp") then
+      config_defaults = vim.tbl_extend("error", config_defaults, {
+        capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      })
+    end
     setup_servers(servers, configs, config_defaults, on_attach)
   end,
 }
