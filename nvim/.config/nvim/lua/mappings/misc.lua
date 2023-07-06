@@ -8,8 +8,8 @@ local x = function(...) vim.keymap.set("x", ...) end
 ---@format disable
 
 -- Formatting
-n("<F6>", ":set textwidth=72<CR>")           -- Format width
-n("<F7>", ":set textwidth=79<CR>")           -- Format width
+n("<F8>", ":set textwidth=72<CR>")           -- Format width
+n("<F9>", ":set textwidth=79<CR>")           -- Format width
 x(
   "gq", "<Esc>:let tw=&tw<CR>:set tw=72<CR>gvgq:let &tw=tw<CR>"
 )                                            -- Format width (72-char)
@@ -18,10 +18,10 @@ x("gs", ":sort i<CR>")                       -- Sort
 n("<Leader><Space>", ":FixWhitespace<CR>")   -- Strip trailing whitespace
 
 -- Macros
-n("<F2>", "@q", {silent = true})             -- Macro run q
-n("<F3>", "@@", {silent = true})             -- Macro run previous
-x("<F2>", ":normal @q<CR>", {silent = true}) -- Macro run q
-x("<F3>", ":normal @@<CR>", {silent = true}) -- Macro run previous
+n("<F5>", "@q", {silent = true})             -- Macro run q
+n("<F6>", "@@", {silent = true})             -- Macro run previous
+x("<F5>", ":normal @q<CR>", {silent = true}) -- Macro run q
+x("<F6>", ":normal @@<CR>", {silent = true}) -- Macro run previous
 
 -- Pasting
 x("p", 'p:let @"=@0<CR>', {silent = true})   -- Paste blackhole
@@ -88,11 +88,11 @@ n("<Space>D",  "<C-w>c")                     -- Close window
 
 
 -- Frequently used:
--- .  <Space>d  <F2>  <F3>  p  <C-v>  <S-Tab>  zx  zX  <C-s>  gs
+-- .  <Space>d  <F5>  <F6>  p  <C-v>  <S-Tab>  zx  zX  <C-s>  gs
 -- j  k  {  }
 
 -- Sometimes used:
 -- gq  <C-P>  w!!  <C-_>  <Leader><Space>
 
 -- Rarely used:
--- <F6>  <F7>  <Space>s  x!!  <C-r>  gb  <Leader>w
+-- <F8>  <F9>  <Space>s  x!!  <C-r>  gb  <Leader>w
