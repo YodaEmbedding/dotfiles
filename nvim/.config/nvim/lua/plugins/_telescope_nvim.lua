@@ -54,6 +54,11 @@ return {
         frecency = {
           default_workspace = "CWD",
         },
+        smart_open = {
+          show_scores = false,
+          ignore_patterns = {"*.git/*", "*/tmp/*"},
+          match_algorithm = "fzy",
+        },
       },
 
       pickers = {

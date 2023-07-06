@@ -24,6 +24,7 @@ return {
   -- Telescope
   "telescope.nvim"         ,
   "telescope-all-recent.nvim",
+  "smart-open.nvim"        ,
 
   -- Tools
   "copilot.lua"            , -- AI completion
