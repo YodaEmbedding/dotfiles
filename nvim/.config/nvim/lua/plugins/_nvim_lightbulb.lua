@@ -1,10 +1,8 @@
 return {
   "kosayoda/nvim-lightbulb",
 
-  enabled = false,
-
   dependencies = {
-    "antoinemadec/FixCursorHold.nvim",
+    -- "antoinemadec/FixCursorHold.nvim",
   },
 
   config = function()
