@@ -12,31 +12,24 @@ if luaeval('_G.plugin_loaded("tokyonight.nvim")')
     colorscheme tokyonight
 endif
 
-"hi Normal          guibg=#332331
-hi Normal           guibg=NONE    ctermbg=NONE
-hi Normal           guifg=Grey70  ctermfg=249
+set pumblend=7  " Pseudo-transparency for popup menu (Pmenu)
 
-hi NormalNC         guibg=NONE    ctermbg=NONE
-" hi NormalNC         guifg=Grey70  ctermfg=249
-
-hi ColorColumn      guibg=#372735
-hi Conceal          guibg=NONE
-hi Conceal          guifg=#555555
+hi Normal           guibg=NONE    guifg=Grey70                ctermbg=NONE  ctermfg=249
+hi NormalNC         guibg=NONE                                ctermbg=NONE
+hi ColorColumn      guibg=NONE
+hi Conceal          guibg=NONE    guifg=#555555
 hi CursorLine       guibg=#3D2946
 hi ExtraWhitespace  guibg=#473745
-hi Folded           guibg=#1E161F
-hi Folded           guifg=#6f6f6f
-hi LineNr           guifg=#6f6f6f
-hi MatchParen       guibg=#446677
-hi MatchParen       guifg=#dddddd
-
-" hi Pmenu            guibg=#473745
+hi Folded           guibg=#1E161F guifg=#6f6f6f
+hi LineNr                         guifg=#6f6f6f
+hi MatchParen       guibg=#446677 guifg=#dddddd gui=bold                                  cterm=bold
 hi Pmenu            guibg=#170725
-set pumblend=7
+hi SignColumn       guibg=NONE
+hi StatusLine       guibg=NONE    guifg=NONE    gui=NONE      ctermbg=NONE  ctermfg=NONE  cterm=NONE
 
-hi StatusLine       guibg=NONE ctermbg=NONE
-hi StatusLine       guifg=NONE ctermfg=NONE
-hi StatusLine       gui=NONE   cterm=NONE
+if has("gui_running")
+    hi Normal       guibg=#291935 guifg=Grey70
+endif
 
 " vim diff
 hi DiffAdd          guibg=#313e52 guifg=NONE
@@ -44,34 +37,24 @@ hi DiffChange       guibg=#43365C guifg=NONE
 hi DiffDelete       guibg=#663b63 guifg=NONE
 hi DiffText         guibg=#554575 guifg=NONE
 
-hi LspDiagnosticsVirtualTextError   guifg=#6C5569
-hi LspDiagnosticsVirtualTextHint    guifg=#5C4459
+" LSP diagnostics
+hi LspDiagnosticsVirtualTextError guifg=#6C5569
+hi LspDiagnosticsVirtualTextHint  guifg=#5C4459
 
 " gitsigns.nvim
-hi GitSignsAdd      guifg=#2CC474
-hi GitSignsChange   guifg=#8E73F6
-hi GitSignsDelete   guifg=#FF436C
-hi SignColumn       guibg=NONE
+hi GitSignsAdd                    guifg=#2CC474
+hi GitSignsChange                 guifg=#8E73F6
+hi GitSignsDelete                 guifg=#FF436C
 
 " indent-blankline.nvim
-hi IndentBlanklineChar      guifg=#382935
+hi IndentBlanklineChar            guifg=#382935
 
 " nvim-cmp
-hi CmpItemAbbr              guifg=#bbbbbb
-hi CmpItemAbbrMatch         guifg=#ccccff
-hi CmpItemAbbrMatchFuzzy    guifg=#aaaaff
-hi CmpItemKind              guifg=#bbbbee
-hi CmpItemMenu              guifg=#bbbbee
-" hi CmpItemAbbrDeprecated
-
-" nvim-scrollview
-hi ScrollView       guibg=#9977aa
+hi CmpItemAbbr                    guifg=#bbbbbb
+hi CmpItemAbbrMatch               guifg=#ccccff
+hi CmpItemAbbrMatchFuzzy          guifg=#aaaaff
+hi CmpItemKind                    guifg=#bbbbee
+hi CmpItemMenu                    guifg=#bbbbee
 
 " virt-column.nvim
-hi ColorColumn      guibg=NONE
-hi VirtColumn       guifg=#402D3E
-
-if has("gui_running")
-    hi Normal guibg=#332331
-    hi Normal guifg=#EAEAEA
-endif
+hi VirtColumn                     guifg=#402D3E
