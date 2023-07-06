@@ -5,9 +5,6 @@ autocmd BufWritePre * lua require("utils").format()
 " Buffer: Disable continue comment on new line
 autocmd BufRead,BufNewFile * setlocal formatoptions-=cro
 
-" Miscellaneous: Auto close preview
-autocmd InsertLeave * silent! pclose!
-
 " Miscellaneous: Highlight on yank
 autocmd TextYankPost * lua vim.highlight.on_yank {timeout=500}
 
