@@ -7,6 +7,8 @@ return {
       -- style = "night",
     }
 
-    vim.cmd [[ colorscheme tokyonight ]]
+    if vim.fn.exists("+termguicolors") then
+      vim.cmd [[ colorscheme tokyonight ]]
+    end
   end
 }
