@@ -17,6 +17,7 @@ return {
   config = function()
     -- Skip lazy.nvim require().
   end,
+
   _ = {
     on_lspconfig_load = function()
       local cmp = require("cmp")
