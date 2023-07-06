@@ -26,7 +26,6 @@ return {
       "jsonls",
       "kotlin_language_server",
       "lua_ls",
-      -- "matlab",
       "metals",
       "pyright",
       "rnix",
@@ -52,15 +51,12 @@ return {
     end
 
     local function on_attach(client, bufnr)
-      -- print(string.format("LSP: on_attach() buffer=%d client=%s.", bufnr, client["name"]))
-
       -- For built-in LSP omnifunc:
       vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
       vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
 
       if not vim.b._lsp_on_attach_lock then
         vim.b._lsp_on_attach_lock = true
-
         require("plugins._lspkind_nvim")._.on_attach()
         require("plugins._lsp_signature_nvim")._.on_attach()
         require("mappings._nvim_lsp").on_attach()
@@ -70,13 +66,16 @@ return {
     end
 
     local configs = {
+      -- server-specific configs
       diagnosticls = require("plugins.lspconfig.diagnosticls"),
       efm = require("plugins.lspconfig.efm"),
       matlab = require("plugins.lspconfig.matlab"),
       pyright = require_maybe("plugins.lspconfig.pyright") or {},
     }
 
-    local config_defaults = {}
+    local config_defaults = {
+      -- config that is common across servers
+    }
 
     require("plugins._neodev_nvim")._.on_lspconfig_load()
     require("plugins._nvim_cmp")._.on_lspconfig_load()
