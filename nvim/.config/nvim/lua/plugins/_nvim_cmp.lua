@@ -103,7 +103,7 @@ return {
         },
       }
 
-      _G.cmp_was_setup_first = true
+      _G.cmp_was_setup = true
     end,
   },
 }

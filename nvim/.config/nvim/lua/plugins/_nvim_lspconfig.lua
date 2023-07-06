@@ -58,7 +58,7 @@ return {
         return
       end
 
-      if not _G.cmp_was_setup_first then
+      if not _G.cmp_was_setup then
         print("cmp was not setup yet!")
       end
 
