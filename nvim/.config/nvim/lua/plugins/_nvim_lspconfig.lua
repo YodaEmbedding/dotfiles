@@ -81,9 +81,7 @@ return {
     require("plugins._neodev_nvim")._.on_lspconfig_load()
     require("plugins._nvim_cmp")._.on_lspconfig_load()
     if _G.plugin_loaded("cmp-nvim-lsp") then
-      config_defaults = vim.tbl_extend("error", config_defaults, {
-        capabilities = require("cmp_nvim_lsp").default_capabilities(),
-      })
+      config_defaults.capabilities = require("cmp_nvim_lsp").default_capabilities()
     end
     setup_servers(servers, configs, config_defaults, on_attach)
   end,
