@@ -1,16 +1,7 @@
 local utils = {}
 
 local api = vim.api
-local fn = vim.fn
 local bind_buf = api.nvim_buf_set_keymap
-
--- In insert mode, checks if there is a non-space character before the cursor
-function utils.check_backspace()
-  local col = api.nvim_win_get_cursor(0)[2]
-  local line = api.nvim_get_current_line()
-  local result = col == 0 or line:sub(col, col):match("%s")
-  return result and true
-end
 
 -- Copies all search matches
 function utils.copy_matches(register)
