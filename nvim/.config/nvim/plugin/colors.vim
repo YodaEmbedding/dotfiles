@@ -1,12 +1,5 @@
 set background=dark
 
-if
-  \ luaeval('_G.plugin_loaded("vim-quantum")') ||
-  \ luaeval('_G.plugin_loaded("nvim-quantum")')
-    let g:quantum_black = 1
-    colorscheme quantum
-endif
-
 set pumblend=7  " Pseudo-transparency for popup menu (Pmenu)
 
 hi Normal           guibg=NONE    guifg=Grey70                ctermbg=NONE  ctermfg=249
