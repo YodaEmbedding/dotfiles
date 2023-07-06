@@ -9,8 +9,6 @@ return {
     "hrsh7th/cmp-vsnip",
     "kdheepak/cmp-latex-symbols",
     "andersevenrud/cmp-tmux",
-    "ray-x/cmp-treesitter",
-    "tamago324/cmp-zsh",
     "zbirenbaum/copilot-cmp",
   },
 
@@ -50,8 +48,6 @@ return {
         snippet = {
           expand = function(args)
             vim.fn["vsnip#anonymous"](args.body)
-            -- require("luasnip").lsp_expand(args.body)
-            -- vim.fn["UltiSnips#Anon"](args.body)
           end,
         },
         sorting = {
@@ -64,8 +60,6 @@ return {
             compare.score,
             compare.scopes,
             compare.locality,
-            -- compare.recently_used,
-            -- compare.score,
             compare.kind,
             compare.sort_text,
             compare.length,
@@ -73,7 +67,6 @@ return {
           },
         },
         sources = {
-          -- { name = "codeium" },
           { name = "copilot" },
           { name = "nvim_lsp", max_item_count = 30 },
           { name = "path" },
@@ -82,17 +75,6 @@ return {
           { name = "vsnip" },
           { name = "latex_symbols" },
           { name = "tmux" },
-          -- { name = "treesitter" },
-          -- { name = "cmp_tabnine" },
-          -- { name = "tags" },
-          -- { name = "luasnip" },
-          -- { name = "ultisnips" },
-          -- { name = "zsh" },
-          -- { name = "pandoc_references" },
-          -- { name = "dictionary", keyword_length = 2 },
-          -- { name = "look", keyword_length = 2 },
-          -- { name = "nuspell" },
-          -- { name = "spell" },
         },
         window = {
           completion = {
