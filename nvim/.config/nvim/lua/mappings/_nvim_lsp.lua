@@ -31,8 +31,8 @@ function _M.on_attach()
   -- Refactoring
   local ok, actions_preview = pcall(require, "actions-preview")
   map("n", "<space>a",  ok and actions_preview.code_actions or vim.lsp.buf.code_action)
-  map("n", "<space>F", vim.lsp.buf.format)
-  map("n", "<space>rn", vim.lsp.buf.rename)
+  map("n", "<F2>",      vim.lsp.buf.rename)
+  map("n", "<F4>",      vim.lsp.buf.format)
 
   -- Workspaces
   map("n", "<space>wa", vim.lsp.buf.add_workspace_folder)
