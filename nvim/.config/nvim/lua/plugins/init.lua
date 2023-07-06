@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Initialize plugin_names with loaded plugins.
 -- Set each plugin's lazy.nvim config function to import plugins.<plugin_name>.
 local function build_plugin_specs()
-  local plugin_names = {}
+  local plugins = {}
   local plugin_specs = {}
 
   local function build_plugin_spec(module_spec, plugin_name)
@@ -24,7 +24,7 @@ local function build_plugin_specs()
       end
     end
     table.insert(plugin_specs, plugin_spec)
-    table.insert(plugin_names, plugin_name)
+    plugins[plugin_name] = plugin_spec
   end
 
   local use_enabled_list = false
@@ -57,14 +57,14 @@ local function build_plugin_specs()
     end
   end
 
-  return plugin_names, plugin_specs
+  return plugins, plugin_specs
 end
 
 
-local plugin_names, plugin_specs = build_plugin_specs()
+local plugins, plugin_specs = build_plugin_specs()
 
 function _G.plugin_loaded(plugin_name)
-  return vim.tbl_contains(plugin_names, plugin_name)
+  return plugins[plugin_name] ~= nil and plugins[plugin_name].enabled ~= false
 end
 
 local opts = {
