@@ -9,23 +9,27 @@ return {
     require("mason-lspconfig").setup {
       ensure_installed = {
         "bashls",
-        -- "ccls",  -- not supported
-        "cmake",
-        "cssls",
-        "diagnosticls",
         "efm",
-        "html",
-        "jsonls",
         "lua_ls",
         "pyright",
-        "rust_analyzer",
-        "texlab",
-        "tsserver",
+        "ruff_lsp",
         "vimls",
-        "yamlls",
+
+        -- -- "ccls",  -- not supported
+        -- "cmake",
+        -- "cssls",
+        -- "diagnosticls",
+        -- "html",
+        -- "jsonls",
+        -- "rust_analyzer",
+        -- "texlab",
+        -- "tsserver",
+        -- "yamlls",
+
         -- "clojure_lsp",
         -- "hls",
         -- "jdtls",
+        -- "ltex",
         -- "kotlin_language_server",
         -- "metals",
         -- "pylyzer",

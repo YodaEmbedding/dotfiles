@@ -11,6 +11,10 @@ return {
       -- float = { enabled = true },
       -- virtual_text = { enabled = true },
       -- status_text = { enabled = true },
+
+      ignore = {
+        "ruff_lsp",
+      },
     }
   end,
 }
