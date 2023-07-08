@@ -27,32 +27,18 @@ local function build_plugin_specs()
     plugins[plugin_name] = plugin_spec
   end
 
-  local use_enabled_list = false
-
-  if use_enabled_list then
-    -- Load plugins listed in plugins/enabled.lua.
-    for _, plugin_name in ipairs(require("plugins.enabled")) do
-      local plugin_name_slug = string.gsub(plugin_name, "[-\\.]", "_")
-      local config_path = "plugins._" .. plugin_name_slug
+  -- Load all plugins in plugins/ directory automatically.
+  local curr_script_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
+  local files = vim.split(vim.fn.glob(curr_script_dir .. "/*", true), "\n")
+  for _, file in ipairs(files) do
+    local basename = string.match(vim.fs.basename(file), "(_.*).lua$")
+    if basename ~= nil and basename ~= "init" then
+      local config_path = "plugins." .. basename
       local ok, module_spec = pcall(require, config_path)
+      local short_url = module_spec[1]
+      local plugin_name = string.match(short_url, "^[^/]*/([^/]*)$")
       if ok then
         build_plugin_spec(module_spec, plugin_name)
-      end
-    end
-  else
-    -- Load all plugins in plugins/ directory automatically.
-    local curr_script_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
-    local files = vim.split(vim.fn.glob(curr_script_dir .. "/*", true), "\n")
-    for _, file in ipairs(files) do
-      local basename = string.match(vim.fs.basename(file), "(_.*).lua$")
-      if basename ~= nil and basename ~= "init" and basename ~= "enabled" then
-        local config_path = "plugins." .. basename
-        local ok, module_spec = pcall(require, config_path)
-        local short_url = module_spec[1]
-        local plugin_name = string.match(short_url, "^[^/]*/([^/]*)$")
-        if ok then
-          build_plugin_spec(module_spec, plugin_name)
-        end
       end
     end
   end
