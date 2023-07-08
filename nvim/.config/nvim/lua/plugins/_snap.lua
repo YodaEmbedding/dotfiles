@@ -1,6 +1,8 @@
 return {
   "camspiers/snap",
 
+  enabled = false,
+
   rocks = {
     "fzy",
   },
