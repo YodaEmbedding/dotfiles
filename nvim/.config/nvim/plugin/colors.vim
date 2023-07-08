@@ -25,9 +25,11 @@ hi DiffChange       guibg=#43365C guifg=NONE
 hi DiffDelete       guibg=#663b63 guifg=NONE
 hi DiffText         guibg=#554575 guifg=NONE
 
-" LSP diagnostics
-hi LspDiagnosticsVirtualTextError guifg=#6C5569
-hi LspDiagnosticsVirtualTextHint  guifg=#5C4459
+" Diagnostics
+hi DiagnosticVirtualTextError guibg=NONE guifg=#905566
+hi DiagnosticVirtualTextWarn  guibg=NONE guifg=#887755
+hi DiagnosticVirtualTextInfo  guibg=NONE guifg=#557788
+hi DiagnosticVirtualTextHint  guibg=NONE guifg=#665577
 
 " gitsigns.nvim
 hi GitSignsAdd                    guifg=#2CC474
