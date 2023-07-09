@@ -219,6 +219,7 @@ bindsym $mod+shift+e            exec "$rofi_emoji"
 bindsym $mod+d                  exec "$rofi_file"
 bindsym $mod+shift+b            exec "$rofi_book"
 bindsym $mod+shift+w            exec "$rofi_bground"
+bindsym $mod+ctrl+e             exec "$rofi_symbols"
 bindsym $mod+shift+d            exec "$rofi_torr"
 
 # Screenshot

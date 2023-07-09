@@ -45,6 +45,7 @@ set $rofi_command   ~/.config/frece/scripts/rofi/command.sh -i -p 'command'
 set $rofi_dir       ~/.config/frece/scripts/rofi/dir.sh     -i -p 'folders'
 set $rofi_emoji     ~/.config/frece/scripts/rofi/emoji.sh   -i -p 'emojis'
 set $rofi_file      ~/.config/frece/scripts/rofi/file.sh    -i -p 'files'
+set $rofi_symbols   ~/.config/frece/scripts/rofi/symbols.sh -i -p 'symbols'
 set $rofi_torr      ~/.config/frece/scripts/rofi/torr.sh    -i -p 'torr'
 set $command_last   ~/.config/frece/scripts/command_latest.sh
 
