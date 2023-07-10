@@ -14,6 +14,8 @@ return {
     { "nvim-telescope/telescope-fzy-native.nvim" },
   },
 
+  lazy = true,
+
   config = function()
     require("telescope").load_extension("smart_open")
   end,

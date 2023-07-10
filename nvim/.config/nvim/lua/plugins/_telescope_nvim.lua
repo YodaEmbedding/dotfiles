@@ -5,6 +5,8 @@ return {
   --   "aznhe21/actions-preview.nvim",
   -- },
 
+  lazy = true,
+
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
@@ -70,6 +72,6 @@ return {
       },
     }
 
-    require("mappings._telescope_nvim")
+    -- require("mappings._telescope_nvim")
   end,
 }

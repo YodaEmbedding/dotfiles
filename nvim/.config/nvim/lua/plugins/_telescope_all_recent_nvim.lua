@@ -6,6 +6,8 @@ return {
     "nvim-telescope/telescope.nvim",
   },
 
+  lazy = true,
+
   config = function()
     require("telescope-all-recent").setup {}
   end,
