@@ -53,14 +53,14 @@ n("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
 n("<space>e", ":e %:h/")                     -- Edit file at cwd
 
 -- Automatic marks
-n("i", "mii")
-n("I", "miI")
-n("a", "mia")
-n("A", "miA")
-n("o", "mio")
-n("O", "miO")
-n("c", "mic")
-n("C", "miC")
+-- n("i", "mii")
+-- n("I", "miI")
+-- n("a", "mia")
+-- n("A", "miA")
+-- n("o", "mio")
+-- n("O", "miO")
+-- n("c", "mic")
+-- n("C", "miC")
 
 -- Jumplist
 n("<C-P>", "<C-I>")                          -- Previous jump in jumplist
