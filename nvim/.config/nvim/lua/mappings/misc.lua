@@ -26,14 +26,11 @@ x("<F6>", ":normal @@<CR>", {silent = true}) -- Macro run previous
 -- Pasting
 x("p", 'p:let @"=@0<CR>', {silent = true})   -- Paste blackhole
 i("<C-v>", '<C-o>"+p')                       -- Paste clipboard
--- n("<Backspace>", '"+p')                   -- Paste clipboard
 
 -- Buffers
 n("<S-Tab>", ":e#<CR>")                      -- Previous buffer
-n("gb", "     :ls<CR>:b<Space>")             -- Switch buffer
 
 -- Save, quit, kill
--- n("<Space>d", ":Bdelete<CR>", {silent = true})  -- Kill buffer
 n("<Space>d", ":bdelete<CR>", {silent = true})  -- Kill buffer
 n("zx", ":qa<CR>")                           -- Quit
 n("zX", ":qa!<CR>")                          -- Quit
@@ -43,14 +40,13 @@ c("w!!", "w !sudo tee > /dev/null %")        -- Save as sudo
 c("x!!", "x !sudo tee > /dev/null %")        -- Save as sudo
 
 -- Search
-x("<C-r>", '"hy:%s/<C-r>h//gc<left><left><left>')  -- Search selection
-n("<C-_>", [[/\<\><Left><Left>]])            -- Search whole word
+n("<F3>", [[/\<\><Left><Left>]])             -- Search whole word
+x("&", '"hy:%s/<C-r>h//gc<Left><Left><Left>')  -- Substitute selection
 
 -- Misc
 x(".", ":normal .<CR>", {silent = true})     -- Dot repeat
 n("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
--- n("<C-h>", ":e %:h/")                        -- Edit file at cwd
-n("<space>e", ":e %:h/")                     -- Edit file at cwd
+n("<Space><C-e>", ":e %:h/")                 -- Edit file at cwd
 
 -- Automatic marks
 -- n("i", "mii")
@@ -85,14 +81,3 @@ n("<C-j>",     "<C-w>j")                     -- Move down
 n("<C-k>",     "<C-w>k")                     -- Move up
 n("<C-l>",     "<C-w>l")                     -- Move right
 n("<Space>D",  "<C-w>c")                     -- Close window
-
-
--- Frequently used:
--- .  <Space>d  <F5>  <F6>  p  <C-v>  <S-Tab>  zx  zX  <C-s>  gs
--- j  k  {  }
-
--- Sometimes used:
--- gq  <C-P>  w!!  <C-_>  <Leader><Space>
-
--- Rarely used:
--- <F8>  <F9>  <Space>s  x!!  <C-r>  gb  <Leader>w
