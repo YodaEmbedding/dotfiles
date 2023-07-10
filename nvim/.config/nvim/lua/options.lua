@@ -9,8 +9,8 @@ if vim.fn.exists("+termguicolors") then
 end
 
 -- Completion
-o.completeopt = "menuone,noinsert,noselect"
-vim.o.shortmess = vim.o.shortmess .. "c"
+-- o.completeopt = "menuone,noinsert,noselect"
+-- vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- Indenting, tabs, spacing
 o.expandtab = true                    -- Spaces for indent
