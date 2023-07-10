@@ -2,15 +2,25 @@ if not _G.plugin_loaded("telescope.nvim") then
   do return end
 end
 
-local b = require("telescope.builtin")
 local map = vim.keymap.set
 
 ---@format disable
 
+local b = {
+  builtin                   = function() require("telescope.builtin").builtin() end,
+  buffers                   = function() require("telescope.builtin").buffers() end,
+  smart_open                = function() require("telescope").extensions.smart_open.smart_open() end,
+  current_buffer_fuzzy_find = function() require("telescope.builtin").current_buffer_fuzzy_find() end,
+  marks                     = function() require("telescope.builtin").marks() end,
+  command_history           = function() require("telescope.builtin").command_history() end,
+  lsp_definitions           = function() require("telescope.builtin").lsp_definitions() end,
+  lsp_implementations       = function() require("telescope.builtin").lsp_implementations() end,
+  lsp_references            = function() require("telescope.builtin").lsp_references() end,
+}
+
 map("n", "<Space><Space>",  b.builtin)
 map("n", "<Tab>",           b.buffers)
--- map("n", ",",               smart_files)
-map("n", ",",               require("telescope").extensions.smart_open.smart_open)
+map("n", ",",               b.smart_open)
 map("n", "<CR>",            b.current_buffer_fuzzy_find)
 map("n", "<m",              b.marks)
 map("n", "<:",              b.command_history)
