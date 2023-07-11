@@ -10,6 +10,7 @@ local b = {
   builtin                   = function() require("telescope.builtin").builtin() end,
   buffers                   = function() require("telescope.builtin").buffers() end,
   smart_open                = function() require("telescope").extensions.smart_open.smart_open() end,
+  smart_open_cwd            = function() require("telescope").extensions.smart_open.smart_open({cwd_only = true}) end,
   current_buffer_fuzzy_find = function() require("telescope.builtin").current_buffer_fuzzy_find() end,
   marks                     = function() require("telescope.builtin").marks() end,
   command_history           = function() require("telescope.builtin").command_history() end,
@@ -20,7 +21,8 @@ local b = {
 
 map("n", "<Space><Space>",  b.builtin)
 map("n", "<Tab>",           b.buffers)
-map("n", ",",               b.smart_open)
+map("n", ",",               b.smart_open_cwd)
+map("n", "<Space>,",        b.smart_open)
 map("n", "<CR>",            b.current_buffer_fuzzy_find)
 map("n", "<Space>m",        b.marks)
 map("n", "<Space>:",        b.command_history)
