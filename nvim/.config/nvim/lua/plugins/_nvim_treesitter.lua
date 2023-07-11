@@ -26,10 +26,10 @@ return {
         },
       },
       indent = {
-        enable = false,
+        enable = true,
         disable = {
-          "javascript",
-          "python",
+          -- "javascript",
+          -- "python",
         },
       },
       textobjects = {
