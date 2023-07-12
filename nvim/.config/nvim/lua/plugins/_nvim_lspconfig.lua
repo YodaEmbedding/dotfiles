@@ -40,11 +40,6 @@ return {
       -- "rnix",
     }
 
-    local function require_maybe(name)
-      local ok, module = pcall(require, name)
-      return ok and module or nil
-    end
-
     local function setup_servers(servers, configs, config_defaults, on_attach)
       for _, lsp in ipairs(servers) do
         local config = configs[lsp] or {}
@@ -69,21 +64,35 @@ return {
       require("plugins._nvim_navic")._.on_attach(client, bufnr)
     end
 
-    local configs = {
-      -- server-specific configs
-      diagnosticls = require("plugins.lspconfig.diagnosticls"),
-      efm = require("plugins.lspconfig.efm"),
-      matlab = require("plugins.lspconfig.matlab"),
-      pyright = require_maybe("plugins.lspconfig.pyright") or {},
-    }
+    -- Load all server configs in plugins/lspconfig/ directory automatically.
+    local function load_configs()
+      local configs = {}
+      local curr_script_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
+      local files = vim.split(vim.fn.glob(curr_script_dir .. "/lspconfig/*", true), "\n")
+      for _, file in ipairs(files) do
+        local basename = string.match(vim.fs.basename(file), "(.*).lua$")
+        if basename ~= nil and basename ~= "init" then
+          local config_path = "plugins.lspconfig." .. basename
+          local ok, module_config = pcall(require, config_path)
+          if ok then
+            configs[basename] = module_config
+          end
+        end
+      end
+      return configs
+    end
 
+    -- server-specific configs
+    local configs = load_configs()
+
+    -- config that is common across servers
     local config_defaults = {
-      -- config that is common across servers
+      capabilities = require("cmp_nvim_lsp").default_capabilities(),
     }
 
     require("plugins._neodev_nvim")._.on_lspconfig_load()
     require("plugins._nvim_cmp")._.on_lspconfig_load()
-    config_defaults.capabilities = require("cmp_nvim_lsp").default_capabilities()
+
     setup_servers(servers, configs, config_defaults, on_attach)
   end,
 }
