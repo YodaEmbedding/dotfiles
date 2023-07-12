@@ -40,7 +40,7 @@ return {
       -- "rnix",
     }
 
-    local function setup_servers(servers, configs, config_defaults)
+    local function setup_servers(configs, config_defaults)
       for _, lsp in ipairs(servers) do
         local config = configs[lsp] or {}
         config = vim.tbl_extend("keep", config, config_defaults)
@@ -93,6 +93,6 @@ return {
     require("plugins._neodev_nvim")._.on_lspconfig_load()
     require("plugins._nvim_cmp")._.on_lspconfig_load()
 
-    setup_servers(servers, configs, config_defaults)
+    setup_servers(configs, config_defaults)
   end,
 }
