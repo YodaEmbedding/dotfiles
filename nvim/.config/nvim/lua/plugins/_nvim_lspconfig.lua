@@ -40,10 +40,9 @@ return {
       -- "rnix",
     }
 
-    local function setup_servers(servers, configs, config_defaults, on_attach)
+    local function setup_servers(servers, configs, config_defaults)
       for _, lsp in ipairs(servers) do
         local config = configs[lsp] or {}
-        config.on_attach = on_attach
         config = vim.tbl_extend("keep", config, config_defaults)
         require("lspconfig")[lsp].setup(config)
       end
@@ -88,11 +87,12 @@ return {
     -- config that is common across servers
     local config_defaults = {
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
+      on_attach = on_attach,
     }
 
     require("plugins._neodev_nvim")._.on_lspconfig_load()
     require("plugins._nvim_cmp")._.on_lspconfig_load()
 
-    setup_servers(servers, configs, config_defaults, on_attach)
+    setup_servers(servers, configs, config_defaults)
   end,
 }
