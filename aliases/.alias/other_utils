@@ -64,10 +64,11 @@ ffmpeg_trim() {
   local f="$1"
   local start="$2"
   local end="$3"
-  # local outfile="${f%.*}_trim.${f##*.}"
-  local outfile="${f%.*}.${f##*.}.trim"
+  local args=("${@:4}")
 
-  ffmpeg -ss "$start" -to "$end" -i "$f" -c copy -map 0 "$outfile"
+  local outfile="${f%.*}.trim.${f##*.}"
+
+  ffmpeg -ss "$start" -to "$end" -i "$f" -c copy -map 0 "${args[@]}" "$outfile"
 
   # Copy over last modified date, too.
   local date_str="$(stat -c %y "$f")"
@@ -80,7 +81,7 @@ ffmpeg_reencode() {
   local crf="${3:-30}"
   local c_a="${4:-libopus}"
   local b_a="${5:-64K}"
-  local outfile="${f%.*}.${f##*.}.reencode"
+  local outfile="${f%.*}.reencode.${f##*.}"
   local outfile="${6:-"$outfile"}"
 
   nice -n 19 \
