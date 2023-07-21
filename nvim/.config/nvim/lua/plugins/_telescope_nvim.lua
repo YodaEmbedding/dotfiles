@@ -42,6 +42,7 @@ return {
         layout_config = {
           horizontal = {
             height_padding = 1,
+            width = 0.85,
           },
           vertical = {
             height_padding = 1,
