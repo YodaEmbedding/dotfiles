@@ -13,7 +13,9 @@ return {
       -- status_text = { enabled = true },
 
       ignore = {
-        "ruff_lsp",
+        clients = {
+          "ruff_lsp",
+        },
       },
     }
   end,
