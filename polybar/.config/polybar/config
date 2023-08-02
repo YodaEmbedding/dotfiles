@@ -5,7 +5,7 @@
 width = 100%
 height = 24
 
-background = #ff221133
+background = #cc221133
 foreground = #ccfdfdff
 line-color = ${bar/top.foreground}
 line-size = 2
@@ -72,7 +72,8 @@ format-online-font = 6
 type = custom/script
 exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{:t20:{artist}:} - {:t70:{title}:}'
 tail = true
-format-foreground = #CCAADD
+# format-foreground = #CCAADD
+format-foreground = #BBAACC
 format-font = 6
 click-left = playerctl play-pause
 
@@ -81,7 +82,8 @@ type = custom/script
 exec = tmux capture-pane -p -t "0:1.1" | tac | grep -E -m 1 . | sed -e 's/^[ \t]*//'
 interval = 1
 label = %output:0:50:...%
-format-foreground = #9977AA
+# format-foreground = #9977AA
+format-foreground = #AA99BB
 label-font = 6
 
 [module/title]
