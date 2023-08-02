@@ -1,6 +1,8 @@
 return {
   "ray-x/lsp_signature.nvim",
 
+  enabled = false,
+
   _ = {
     on_attach = function()
       if not _G.plugin_loaded("lsp_signature.nvim") then
