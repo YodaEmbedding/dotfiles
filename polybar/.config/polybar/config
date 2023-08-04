@@ -137,7 +137,8 @@ type = internal/memory
 interval = 5
 # format-prefix = "きおく"
 format-prefix = " "
-label = %gb_used:1:2%
+# label = "%gb_used:1:2%/%gb_total:1:2%"
+label = "%percentage_used:02%"
 fixed-values = true
 
 [module/cpu]
