@@ -7,6 +7,12 @@ alias atqqq='for j in $(atq | sort -k6,6 -k3,3M -k4,4 -k5,5 | cut -f 1); do atq 
 # bat
 alias c='bat'
 
+batw() {
+  # bat with word wrapping.
+  local f="$1"
+  fold -s "$f" | bat --language="${f##*.}" "${@:2}"
+}
+
 # biber
 biber_fix() {
   file="$1"
