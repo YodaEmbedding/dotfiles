@@ -33,13 +33,18 @@ zinit light-mode for \
 
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::history.zsh
-# zinit snippet OMZP::vi-mode
 
-zvm_config() {
-  ZVM_CURSOR_STYLE_ENABLED=false
-  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
-}
-zinit light jeffreytse/zsh-vi-mode
+OMZ_VI_MODE=0
+
+if [[ $OMZ_VI_MODE -eq 1 ]]; then
+  zinit snippet OMZP::vi-mode
+else
+  zvm_config() {
+    ZVM_CURSOR_STYLE_ENABLED=false
+    ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+  }
+  zinit light jeffreytse/zsh-vi-mode
+fi
 
 bind_keys() {
   bindkey '^f' anyframe-widget-frece                      # frece
@@ -77,9 +82,11 @@ export _ZO_MAXAGE=100000
 export _ZO_RESOLVE_SYMLINKS=1
 eval "$(zoxide init zsh)"
 
-# vim edit-command-line
-# autoload edit-command-line
-# zle -N edit-command-line
+if [[ $OMZ_VI_MODE -eq 1 ]]; then
+  # vim edit-command-line
+  autoload edit-command-line
+  zle -N edit-command-line
+fi
 
 
 # THEME {{{1
@@ -222,12 +229,14 @@ bindkey '^n' down-history                                 # up/down history
 bindkey "^[[5~" up-history                                # up/down history
 bindkey "^[[6~" down-history                              # up/down history
 
-# bindkey -v                                              # vim
-# bindkey -v '^?' backward-delete-char                    # vim backspace
-# bindkey -M vicmd V edit-command-line                    # vim edit command
-# bindkey -M vicmd '^[[3~' ''                             # vim disable DEL key
-# bindkey -M vicmd "^[[5~" up-history                     # vim page up
-# bindkey -M vicmd "^[[6~" down-history                   # vim page down
+if [[ $OMZ_VI_MODE -eq 1 ]]; then
+  bindkey -v                                              # vim
+  bindkey -v '^?' backward-delete-char                    # vim backspace
+  bindkey -M vicmd V edit-command-line                    # vim edit command
+  bindkey -M vicmd '^[[3~' ''                             # vim disable DEL key
+  bindkey -M vicmd "^[[5~" up-history                     # vim page up
+  bindkey -M vicmd "^[[6~" down-history                   # vim page down
+fi
 
 # NOTE: These are bound above.
 # bindkey '^ '   autosuggest-accept                       # Fill suggestion
