@@ -49,10 +49,10 @@ else
 fi
 
 bind_keys() {
+  bindkey '^a' anyframe-widget-cd                         # cd
   bindkey '^f' anyframe-widget-frece                      # frece
   bindkey '^k' anyframe-widget-kill                       # kill
   bindkey '^z' zoxide-widget                              # cd
-  bindkey '^a' zoxide-widget                              # cd
   bindkey -s '^o' 'lfcd\n'                                # lf
 }
 
@@ -169,6 +169,27 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # FUNCTIONS {{{1
 
+anyframe-widget-cd() {
+  local dirs=$(find . -mindepth 1 -maxdepth 1 -type d,l -printf '%f\0' | sort)
+  [[ -z $dirs ]] && return
+  local item=$(
+    printf '%s\0%s\0%s' "$PWD" ".." "$dirs" |
+      fzf \
+        --read0 \
+        --preview="tree -C -L 1 {} | head -n 80" \
+        --preview-window=bottom:70% \
+        --bind "/:accept" \
+        --bind "pgup:preview-up" \
+        --bind "pgdn:preview-down" \
+        --bind "ctrl-h:clear-query+pos(2)+accept" \
+        --bind "ctrl-l:accept"
+  )
+  [[ -z $item ]] && return
+  cd "$item"
+  zle reset-prompt
+  anyframe-widget-cd
+}
+
 anyframe-widget-frece() {
   local DB_FILE="$HOME/.local/share/frece/dir.db"
   local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
@@ -192,6 +213,7 @@ zoxide-widget() {
 
 # WIDGETS {{{1
 
+zle -N -- anyframe-widget-cd
 zle -N -- anyframe-widget-frece
 zle -N -- zoxide-widget
 
