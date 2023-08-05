@@ -177,24 +177,6 @@ anyframe-widget-frece() {
   echo "$item" | anyframe-action-execute cd --
 }
 
-run_fzf() {
-  setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
-  local bind_key="$1"
-  local src_cmd="$2"
-  local fzf_opts="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.."
-  fzf_opts+=" --tiebreak=index --bind=${bind_key}:toggle-sort"
-  fzf_opts+=" $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m"
-  local selected=( $(eval "$src_cmd" | FZF_DEFAULT_OPTS="$fzf_opts" $(__fzfcmd)) )
-  local ret=$?
-  if [ -n "$selected" ]; then
-    local item="${selected[@]:1}"
-    if [ -n "$item" ]; then
-      echo "$item"
-    fi
-  fi
-  return $ret
-}
-
 zi() {
   \builtin local result
   result="$(zoxide query -i --all -- "$@")"  && __zoxide_cd "${result}"
