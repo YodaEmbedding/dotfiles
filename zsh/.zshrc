@@ -44,7 +44,6 @@ zinit light jeffreytse/zsh-vi-mode
 bind_keys() {
     bindkey '^f' anyframe-widget-frece                      # frece
     bindkey '^k' anyframe-widget-kill                       # kill
-    bindkey '^v' fzf-fasdvim-widget                         # vim
     bindkey '^z' zoxide-widget                              # cd
     bindkey '^a' zoxide-widget                              # cd
     bindkey -s '^o' 'lfcd\n'                                # lf
@@ -170,14 +169,8 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # FUNCTIONS {{{1
 
 # anyframe {{{2
-anyframe-widget-fasd() {
-    fasd -Rdl "$LBUFFER" \
-        | anyframe-selector-auto \
-        | anyframe-action-execute cd --
-}
-
 anyframe-widget-frece() {
-    local DB_FILE="$HOME/.frece/db/dir.db"
+    local DB_FILE="$HOME/.local/share/frece/dir.db"
     local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
     [[ -z $item ]] && return
     frece increment "$DB_FILE" "$item"
@@ -203,34 +196,6 @@ run_fzf() {
     return $ret
 }
 
-fzf-fasddir-widget() {
-    local item="$(run_fzf 'ctrl-z' 'fasd -Rd')"
-    local ret=$?
-    cd "$item"
-    zle reset-prompt
-    return ret
-}
-
-fzf-fasdfile-widget() {
-    local item="$(run_fzf 'ctrl-f' 'fasd -R')"
-    local ret=$?
-    LBUFFER="${LBUFFER}${item}"
-    zle reset-prompt
-    return ret
-}
-
-fzf-fasdvim-widget() {
-    local item="$(run_fzf 'ctrl-v' 'fasd -R')"
-    local ret=$?
-    if [ -n "$item" ]; then
-        LBUFFER="vim "
-        RBUFFER="$item"
-        zle reset-prompt
-        zle accept-line
-    fi
-    return ret
-}
-
 zi() {
   \builtin local result
   result="$(zoxide query -i --all -- "$@")"  && __zoxide_cd "${result}"
@@ -244,11 +209,7 @@ zoxide-widget() {
 
 # WIDGETS {{{1
 
-zle -N -- anyframe-widget-fasd
 zle -N -- anyframe-widget-frece
-zle -N -- fzf-fasddir-widget
-zle -N -- fzf-fasdfile-widget
-zle -N -- fzf-fasdvim-widget
 zle -N -- zoxide-widget
 
 
@@ -275,6 +236,5 @@ bindkey "^[[6~" down-history                              # up/down history
 # NOTE: These are bound above.
 # bindkey '^f' anyframe-widget-frece                      # frece
 # bindkey '^k' anyframe-widget-kill                       # kill
-# bindkey '^v' fzf-fasdvim-widget                         # vim
 # bindkey '^z' zoxide-widget                              # cd
 # bindkey -s '^o' 'lfcd\n'                                # lf
