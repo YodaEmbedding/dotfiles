@@ -42,11 +42,11 @@ zvm_config() {
 zinit light jeffreytse/zsh-vi-mode
 
 bind_keys() {
-    bindkey '^f' anyframe-widget-frece                      # frece
-    bindkey '^k' anyframe-widget-kill                       # kill
-    bindkey '^z' zoxide-widget                              # cd
-    bindkey '^a' zoxide-widget                              # cd
-    bindkey -s '^o' 'lfcd\n'                                # lf
+  bindkey '^f' anyframe-widget-frece                      # frece
+  bindkey '^k' anyframe-widget-kill                       # kill
+  bindkey '^z' zoxide-widget                              # cd
+  bindkey '^a' zoxide-widget                              # cd
+  bindkey -s '^o' 'lfcd\n'                                # lf
 }
 
 zinit wait lucid light-mode for \
@@ -91,26 +91,26 @@ PROMPT_BGCOLOR="${PROMPT_BGCOLOR:-96}"
 PROMPT_FGCOLOR="${PROMPT_FGCOLOR:-217}"
 
 make_prompt() {
-    local PROMPT_BGCOLOR="$1"
-    local PROMPT_FGCOLOR="$2"
-    local s=""
+  local PROMPT_BGCOLOR="$1"
+  local PROMPT_FGCOLOR="$2"
+  local s=""
 
-    # · 00:00:00 · ~/pwd · (master)
-    s+=$'\n'
-    s+="%}%K{$PROMPT_BGCOLOR}%F{$PROMPT_FGCOLOR}%B"
-    s+='· %D{%H:%M:%S} '
-    s+='· %~ '
-    s+='$([[ -z "$PROMPT_NAME" ]] || echo "· ($PROMPT_NAME) ")'
-    s+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
-    s+='%b%f%k'
+  # · 00:00:00 · ~/pwd · (master)
+  s+=$'\n'
+  s+="%}%K{$PROMPT_BGCOLOR}%F{$PROMPT_FGCOLOR}%B"
+  s+='· %D{%H:%M:%S} '
+  s+='· %~ '
+  s+='$([[ -z "$PROMPT_NAME" ]] || echo "· ($PROMPT_NAME) ")'
+  s+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
+  s+='%b%f%k'
 
-    # λ
-    s+=$'\n'
-    s+='%(?.%F{magenta}.%F{red})'
-    s+="$PROMPT_SYMBOL"
-    s+='%f '
+  # λ
+  s+=$'\n'
+  s+='%(?.%F{magenta}.%F{red})'
+  s+="$PROMPT_SYMBOL"
+  s+='%f '
 
-    echo "$s"
+  echo "$s"
 }
 
 PS1="$(make_prompt $PROMPT_BGCOLOR $PROMPT_FGCOLOR)"
@@ -120,21 +120,21 @@ PS2="> "
 RPROMPT='%{$reset_color%}'
 
 list_colors_bg() {
-    for ((i = 0; i < 256; i++)); do
-        echo "$(tput setab $i)$(tput setaf 4)$(tput bold) $i $(tput sgr0)"
-    done
+  for ((i = 0; i < 256; i++)); do
+    echo "$(tput setab $i)$(tput setaf 4)$(tput bold) $i $(tput sgr0)"
+  done
 }
 
 list_prompts_bg() {
-    for ((i = 0; i < 256; i++)); do
-        print -P "$(make_prompt $i $PROMPT_FGCOLOR)$i"
-    done
+  for ((i = 0; i < 256; i++)); do
+    print -P "$(make_prompt $i $PROMPT_FGCOLOR)$i"
+  done
 }
 
 list_prompts_fg() {
-    for ((i = 0; i < 256; i++)); do
-        print -P "$(make_prompt $PROMPT_BGCOLOR $i)$i"
-    done
+  for ((i = 0; i < 256; i++)); do
+    print -P "$(make_prompt $PROMPT_BGCOLOR $i)$i"
+  done
 }
 
 
@@ -170,30 +170,30 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # anyframe {{{2
 anyframe-widget-frece() {
-    local DB_FILE="$HOME/.local/share/frece/dir.db"
-    local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
-    [[ -z $item ]] && return
-    frece increment "$DB_FILE" "$item"
-    echo "$item" | anyframe-action-execute cd --
+  local DB_FILE="$HOME/.local/share/frece/dir.db"
+  local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
+  [[ -z $item ]] && return
+  frece increment "$DB_FILE" "$item"
+  echo "$item" | anyframe-action-execute cd --
 }
 
 # fzf {{{2
 run_fzf() {
-    setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
-    local bind_key="$1"
-    local src_cmd="$2"
-    local fzf_opts="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.."
-    fzf_opts+=" --tiebreak=index --bind=${bind_key}:toggle-sort"
-    fzf_opts+=" $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m"
-    local selected=( $(eval "$src_cmd" | FZF_DEFAULT_OPTS="$fzf_opts" $(__fzfcmd)) )
-    local ret=$?
-    if [ -n "$selected" ]; then
-        local item="${selected[@]:1}"
-        if [ -n "$item" ]; then
-            echo "$item"
-        fi
+  setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
+  local bind_key="$1"
+  local src_cmd="$2"
+  local fzf_opts="--height ${FZF_TMUX_HEIGHT:-40%} $FZF_DEFAULT_OPTS -n2..,.."
+  fzf_opts+=" --tiebreak=index --bind=${bind_key}:toggle-sort"
+  fzf_opts+=" $FZF_CTRL_R_OPTS --query=${(qqq)LBUFFER} +m"
+  local selected=( $(eval "$src_cmd" | FZF_DEFAULT_OPTS="$fzf_opts" $(__fzfcmd)) )
+  local ret=$?
+  if [ -n "$selected" ]; then
+    local item="${selected[@]:1}"
+    if [ -n "$item" ]; then
+      echo "$item"
     fi
-    return $ret
+  fi
+  return $ret
 }
 
 zi() {
@@ -202,8 +202,8 @@ zi() {
 }
 
 zoxide-widget() {
-    zi
-    zle reset-prompt
+  zi
+  zle reset-prompt
 }
 
 
