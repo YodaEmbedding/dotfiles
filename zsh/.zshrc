@@ -38,6 +38,8 @@ OMZ_VI_MODE=0
 
 if [[ $OMZ_VI_MODE -eq 1 ]]; then
   zinit snippet OMZP::vi-mode
+  autoload edit-command-line
+  zle -N edit-command-line
 else
   zvm_config() {
     ZVM_CURSOR_STYLE_ENABLED=false
@@ -82,12 +84,6 @@ export _ZO_MAXAGE=100000
 export _ZO_RESOLVE_SYMLINKS=1
 eval "$(zoxide init zsh)"
 
-if [[ $OMZ_VI_MODE -eq 1 ]]; then
-  # vim edit-command-line
-  autoload edit-command-line
-  zle -N edit-command-line
-fi
-
 
 # THEME {{{1
 
@@ -121,9 +117,7 @@ make_prompt() {
 }
 
 PS1="$(make_prompt $PROMPT_BGCOLOR $PROMPT_FGCOLOR)"
-
 PS2="> "
-
 RPROMPT='%{$reset_color%}'
 
 list_colors_bg() {
@@ -147,9 +141,6 @@ list_prompts_fg() {
 
 # MISCELLANEOUS CONFIGURATIONS {{{1
 
-# Plugin: anyframe
-zstyle ":anyframe:selector:" use fzf
-
 # History sizes
 HISTSIZE=20000000
 SAVEHIST=10000000
@@ -169,13 +160,15 @@ setopt extended_glob
 setopt globdots
 setopt nullglob
 
+# Plugin: anyframe
+zstyle ":anyframe:selector:" use fzf
+
 # Use LS COLORS to autocomplete
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 
 # FUNCTIONS {{{1
 
-# anyframe {{{2
 anyframe-widget-frece() {
   local DB_FILE="$HOME/.local/share/frece/dir.db"
   local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
@@ -184,7 +177,6 @@ anyframe-widget-frece() {
   echo "$item" | anyframe-action-execute cd --
 }
 
-# fzf {{{2
 run_fzf() {
   setopt localoptions noglobsubst noposixbuiltins pipefail 2> /dev/null
   local bind_key="$1"
@@ -239,11 +231,6 @@ if [[ $OMZ_VI_MODE -eq 1 ]]; then
 fi
 
 # NOTE: These are bound above.
+# bind_keys
 # bindkey '^ '   autosuggest-accept                       # Fill suggestion
 # bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
-
-# NOTE: These are bound above.
-# bindkey '^f' anyframe-widget-frece                      # frece
-# bindkey '^k' anyframe-widget-kill                       # kill
-# bindkey '^z' zoxide-widget                              # cd
-# bindkey -s '^o' 'lfcd\n'                                # lf
