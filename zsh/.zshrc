@@ -174,7 +174,9 @@ anyframe-widget-frece() {
   local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
   [[ -z $item ]] && return
   frece increment "$DB_FILE" "$item"
-  echo "$item" | anyframe-action-execute cd --
+  # echo "$item" | anyframe-action-execute cd --
+  cd "$item"
+  zle reset-prompt
 }
 
 zi() {
