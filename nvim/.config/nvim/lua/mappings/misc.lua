@@ -31,7 +31,7 @@ i("<C-v>", '<C-o>"+p')                       -- Paste clipboard
 n("<S-Tab>", ":e#<CR>")                      -- Previous buffer
 
 -- Save, quit, kill
-n("<Space>d", ":bdelete<CR>", {silent = true})  -- Kill buffer
+n("<Space>d", ":Bdelete<CR>", {silent = true})  -- Kill buffer
 n("zx", ":qa<CR>")                           -- Quit
 n("zX", ":qa!<CR>")                          -- Quit
 n("<C-s>", ":up<CR>")                        -- Save
