@@ -9,6 +9,7 @@ export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
 export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.local/bin_python:$PATH"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
 export RUST_BACKTRACE=1
 # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"

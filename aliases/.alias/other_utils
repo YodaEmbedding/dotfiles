@@ -161,6 +161,10 @@ alias por='poetry run'
 alias porp='poetry run python'
 alias pos='poetry shell'
 alias posh='poetry_shell'
+alias pou='poetry-user'
+alias poua='poetry-user add'
+
+alias poetry-user='poetry --directory ~/.config/pypoetry/envs/default'
 
 poetry_shell() {
   local d="$PWD"
