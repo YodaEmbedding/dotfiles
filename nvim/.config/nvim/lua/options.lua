@@ -21,9 +21,14 @@ o.softtabstop = 4                     -- Spaces for tab
 o.tabstop = 4                         -- Tab display width
 
 -- Indenting (python)
-g.pyindent_continue     = "&sw"
-g.pyindent_nested_paren = "&sw"
-g.pyindent_open_paren   = "&sw"
+g.python_indent = {
+  continue = "shiftwidth()",
+  nested_paren = "shiftwidth()",
+  open_paren = "shiftwidth()",
+  close_paren = "shiftwidth() * -1",
+  -- close_paren = "0",
+  closed_paren_align_last_line = false,
+}
 
 -- Miscellaneous
 o.hidden = true                       -- Allow hiding unsaved buffers

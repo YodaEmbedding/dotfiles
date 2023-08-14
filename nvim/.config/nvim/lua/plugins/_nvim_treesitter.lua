@@ -29,7 +29,7 @@ return {
         enable = true,
         disable = {
           -- "javascript",
-          -- "python",
+          "python",
         },
       },
       textobjects = {
