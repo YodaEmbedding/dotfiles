@@ -20,7 +20,6 @@
   "indent-o-matic": { "branch": "master", "commit": "4d11e98f523d3c4500b1dc33f0d1a248a4f69719" },
   "kommentary": { "branch": "main", "commit": "3a80117148c6798972bb69414423311ab151d368" },
   "lazy.nvim": { "branch": "main", "commit": "3ad55ae678876516156cca2f361c51f7952a924b" },
-  "lsp_signature.nvim": { "branch": "master", "commit": "17ff7a405fea8376b015b8ea7910d2e59958bf68" },
   "lspkind-nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
   "lualine.nvim": { "branch": "master", "commit": "05d78e9fd0cdfb4545974a5aa14b1be95a86e9c9" },
   "marks.nvim": { "branch": "master", "commit": "76aca5069c5ce5c0099e30168649e6393e494f26" },
