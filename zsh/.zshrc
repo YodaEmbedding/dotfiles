@@ -201,8 +201,8 @@ anyframe-widget-frece() {
 }
 
 zi() {
-  \builtin local result
-  result="$(zoxide query -i --all -- "$@")"  && __zoxide_cd "${result}"
+  builtin local result
+  result="$(zoxide query --interactive --all -- "$@")"  && __zoxide_cd "${result}"
 }
 
 zoxide-widget() {
