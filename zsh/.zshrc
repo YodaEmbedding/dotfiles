@@ -200,13 +200,13 @@ anyframe-widget-frece() {
   zle reset-prompt
 }
 
-zi() {
+zi_all() {
   builtin local result
   result="$(zoxide query --interactive --all -- "$@")"  && __zoxide_cd "${result}"
 }
 
 zoxide-widget() {
-  zi
+  zi_all
   zle reset-prompt
 }
 
