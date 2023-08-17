@@ -31,6 +31,13 @@ zinit light-mode for \
 
 # PLUGINS {{{1
 
+# light-mode: disable stats tracking
+# wait: load 0s (about 5ms exactly) after prompt; aka "Turbo mode"
+# lucid: silence "loaded plugin" messages
+# atinit'': execute code before loading plugin
+# atload'': execute code after loading plugin
+# blockf: disallow plugin to modify fpath; useful for completions
+
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::history.zsh
 
@@ -48,7 +55,7 @@ else
   zinit light jeffreytse/zsh-vi-mode
 fi
 
-zinit wait lucid light-mode for \
+zinit light-mode wait lucid for \
   \
     OMZP::fzf \
     Aloxaf/fzf-tab \
