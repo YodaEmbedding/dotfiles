@@ -48,14 +48,6 @@ else
   zinit light jeffreytse/zsh-vi-mode
 fi
 
-bind_keys() {
-  bindkey '^a' anyframe-widget-cd                         # cd
-  bindkey '^f' anyframe-widget-frece                      # frece
-  bindkey '^k' anyframe-widget-kill                       # kill
-  bindkey '^z' zoxide-widget                              # cd
-  bindkey -s '^o' 'lfcd\n'                                # lf
-}
-
 zinit wait lucid light-mode for \
   \
     OMZP::fzf \
@@ -236,7 +228,14 @@ if [[ $OMZ_VI_MODE -eq 1 ]]; then
   bindkey -M vicmd "^[[6~" down-history                   # vim page down
 fi
 
+bind_keys() {
+  bindkey '^a' anyframe-widget-cd                         # cd
+  bindkey '^f' anyframe-widget-frece                      # frece
+  bindkey '^k' anyframe-widget-kill                       # kill
+  bindkey '^z' zoxide-widget                              # cd
+  bindkey -s '^o' 'lfcd\n'                                # lf
+}
+
 # NOTE: These are bound above.
-# bind_keys
 # bindkey '^ '   autosuggest-accept                       # Fill suggestion
 # bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
