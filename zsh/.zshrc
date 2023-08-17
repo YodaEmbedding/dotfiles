@@ -38,13 +38,14 @@ zinit light-mode for \
 # atload'': execute code after loading plugin
 # blockf: disallow plugin to modify fpath; useful for completions
 
-zinit snippet OMZL::git.zsh
-zinit snippet OMZL::history.zsh
+zinit for \
+    OMZL::git.zsh \
+    OMZL::history.zsh
 
 OMZ_VI_MODE=0
 
 if [[ $OMZ_VI_MODE -eq 1 ]]; then
-  zinit snippet OMZP::vi-mode
+  zinit for OMZP::vi-mode
   autoload edit-command-line
   zle -N edit-command-line
 else
@@ -52,7 +53,7 @@ else
     ZVM_CURSOR_STYLE_ENABLED=false
     ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
   }
-  zinit light jeffreytse/zsh-vi-mode
+  zinit light-mode for jeffreytse/zsh-vi-mode
 fi
 
 zinit light-mode wait lucid for \
