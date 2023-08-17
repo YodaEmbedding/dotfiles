@@ -13,7 +13,7 @@ jre
 libfaketime
 openblas-lapack                             # AUR
 opencl-nvidia
-opencv
+opencv-cuda
 sqlite
 tensorflow-cuda
 vulkan-headers

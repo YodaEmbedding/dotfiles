@@ -66,3 +66,36 @@ gcc11
 gcc12
 
 
+# Miscellanous mischief unmanaged
+asciinema
+caja
+caja-dropbox
+cozy-audiobooks
+diskus
+dos2unix
+draco
+duf
+f3d-bin
+filelight
+gdu
+gsmartcontrol
+jujutsu
+languagetool
+lazygit
+ltex-ls-bin
+lua51
+lua51-cjson
+meld
+openctm-tools
+pngcrush
+pngquant
+pylyzer
+python-conda
+python36
+python37
+python38
+python39
+smartmontools
+torch7-trepl-git
+twine
+wpaperd-git

@@ -51,3 +51,4 @@ python2                                     # AUR
 python2-setuptools                          # AUR
 python310                                   # AUR
 ruff
+ruff-lsp
