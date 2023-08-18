@@ -2,6 +2,7 @@
 
 [arch]
 biber
+texlive-basic
 texlive-bibtexextra
 texlive-core
 texlive-fontsextra
@@ -9,6 +10,7 @@ texlive-formatsextra
 texlive-games
 texlive-humanities
 texlive-latexextra
+texlive-mathscience
 texlive-music
 texlive-pictures
 texlive-pstricks
