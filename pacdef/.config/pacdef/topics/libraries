@@ -1,6 +1,7 @@
 # vim:ft=conf
 
 [arch]
+blas-openblas
 boost
 caffe
 cuda
@@ -12,7 +13,7 @@ jdk
 jdk-openjdk
 jre
 libfaketime
-openblas-lapack                             # AUR
+openblas
 opencl-nvidia
 opencv-cuda
 sqlite
