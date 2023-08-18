@@ -3,7 +3,6 @@
 [arch]
 blas-openblas
 boost
-caffe
 cuda
 eigen
 gcc-libs
@@ -20,3 +19,5 @@ opencv-cuda
 sqlite
 tensorflow-cuda
 vulkan-headers
+
+# caffe-cuda
