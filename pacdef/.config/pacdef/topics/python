@@ -38,7 +38,6 @@ python-scikit-learn
 python-scipy
 python-seaborn
 python-setuptools
-python-snakeviz                             # AUR
 python-sphinx
 python-sympy
 python-tekore                               # AUR
