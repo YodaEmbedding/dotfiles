@@ -7,14 +7,17 @@ texlive-bibtexextra
 texlive-binextra
 texlive-core
 texlive-fontsextra
+texlive-fontutils
 texlive-formatsextra
 texlive-games
 texlive-humanities
 texlive-latexextra
+texlive-luatex
 texlive-mathscience
 texlive-music
 texlive-pictures
 texlive-pstricks
 texlive-publishers
 texlive-science
+texlive-xetex
 tllocalmgr                                  # AUR
