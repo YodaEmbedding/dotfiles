@@ -5,7 +5,6 @@ biber
 texlive-basic
 texlive-bibtexextra
 texlive-binextra
-texlive-core
 texlive-fontsextra
 texlive-fontutils
 texlive-formatsextra
@@ -20,4 +19,3 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 texlive-xetex
-tllocalmgr                                  # AUR
