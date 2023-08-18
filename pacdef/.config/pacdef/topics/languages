@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 ghc
 ghc-static
 go

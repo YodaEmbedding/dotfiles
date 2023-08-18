@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 bzip2
 gzip
 p7zip

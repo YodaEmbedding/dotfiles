@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 archlinux-keyring
 pacaur                                      # AUR
 pacdef                                      # AUR

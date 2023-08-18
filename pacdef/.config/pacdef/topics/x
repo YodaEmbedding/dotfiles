@@ -1,6 +1,6 @@
 # vim:ft=conf
 
-# x
+[arch]
 wmctrl
 xautolock
 xcalib

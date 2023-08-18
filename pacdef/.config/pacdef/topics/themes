@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 adapta-gtk-theme                            # 7
 breeze-gtk                                  # 7
 catppuccin-gtk-theme-frappe                 # 6

@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 base
 linux
 linux-firmware

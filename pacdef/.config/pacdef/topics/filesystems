@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 e2fsprogs
 ntfs-3g
 reiserfsprogs

@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 alsa-utils
 carla
 feh

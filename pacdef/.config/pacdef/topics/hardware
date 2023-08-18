@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 cnijfilter-common                           # AUR
 cnijfilter-mg3500                           # Custom
 cnijfilter2                                 # AUR

@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 devtools
 docker
 docker-compose

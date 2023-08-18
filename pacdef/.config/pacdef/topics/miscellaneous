@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 aspell-en
 gconf                                       # AUR
 gtk2

@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 dunst
 glfw-wayland
 hyprland-nvidia-git                         # AUR

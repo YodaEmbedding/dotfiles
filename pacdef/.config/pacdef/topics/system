@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 cups
 cups-pdf
 ddccontrol                                  # AUR

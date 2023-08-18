@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 intellij-idea-ultimate-edition-jre          # AUR
 jupyterlab
 jupyterlab-widgets

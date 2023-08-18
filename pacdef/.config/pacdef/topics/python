@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 cython
 mypy
 ptpython                                    # AUR

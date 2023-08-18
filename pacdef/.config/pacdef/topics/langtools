@@ -1,5 +1,6 @@
 # vim:ft=conf
 
+[arch]
 # Language servers
 bash-language-server
 ccls
