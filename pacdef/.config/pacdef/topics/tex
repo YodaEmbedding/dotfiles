@@ -13,6 +13,8 @@ texlive-humanities
 texlive-latexextra
 texlive-luatex
 texlive-mathscience
+texlive-meta
+texlive-metapost
 texlive-music
 texlive-pictures
 texlive-pstricks
