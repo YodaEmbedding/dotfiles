@@ -19,3 +19,22 @@ texlive-pstricks
 texlive-publishers
 texlive-science
 texlive-xetex
+
+# texlive-lang
+# texlive-langarabic
+# texlive-langchinese
+# texlive-langcjk
+# texlive-langcyrillic
+# texlive-langczechslovak
+texlive-langenglish
+# texlive-langeuropean
+# texlive-langfrench
+# texlive-langgerman
+# texlive-langgreek
+# texlive-langitalian
+# texlive-langjapanese
+# texlive-langkorean
+# texlive-langother
+# texlive-langpolish
+# texlive-langportuguese
+# texlive-langspanish
