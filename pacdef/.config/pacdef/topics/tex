@@ -5,6 +5,7 @@ biber
 texlive-basic
 texlive-bibtexextra
 texlive-binextra
+texlive-context
 texlive-fontsextra
 texlive-fontutils
 texlive-formatsextra
