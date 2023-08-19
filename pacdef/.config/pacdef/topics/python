@@ -2,53 +2,63 @@
 
 [arch]
 cython
+python
+python2                                     # AUR
+python310                                   # AUR
+
+# Install
+python-pip
+python-setuptools
+python-virtualenv
+python2-setuptools                          # AUR
+
+# Tools
 mypy
 ptpython                                    # AUR
 pyright
-python
-python-arxiv                                # AUR
 python-black
-python-chess                                # AUR
-python-gspread                              # AUR
-python-hydra-core                           # AUR
 python-jedi
-python-keras
-python-matplotlib
-python-numba
-python-numpy
-python-omegaconf
-python-opencv
-python-pandas
-python-pillow
-python-pip
-python-plotly                               # AUR
 python-poetry
-python-polars                               # AUR
-python-praw
-python-protobuf
 python-pyinotify
 python-pylint
 python-pynvim
-python-pypi2pkgbuild-git                    # AUR
 python-pytest
+ruff
+ruff-lsp
+
+# Computation
+python-keras
+python-numba
+python-numpy
+python-opencv
+python-pandas
+python-pillow
+python-polars                               # AUR
+python-protobuf
 python-pytorch-cuda
 python-pytorch-msssim
-python-pywal
 python-scikit-learn
 python-scipy
-python-seaborn
-python-setuptools
-python-sphinx
 python-sympy
-python-tekore                               # AUR
 python-tensorboardx                         # AUR
 python-tensorflow-cuda
 python-torchinfo                            # AUR
 python-torchvision-cuda
+
+# Plotting
+python-matplotlib
+python-plotly                               # AUR
+python-seaborn
+
+# Other
+python-arxiv                                # AUR
+python-chess                                # AUR
+python-gspread                              # AUR
+python-hydra-core                           # AUR
+python-omegaconf
+python-praw
+python-pypi2pkgbuild-git                    # AUR
+python-pywal
+python-sphinx
+python-tekore                               # AUR
 python-urllib3
-python-virtualenv
-python2                                     # AUR
-python2-setuptools                          # AUR
-python310                                   # AUR
-ruff
-ruff-lsp
