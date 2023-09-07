@@ -8,3 +8,26 @@ menuentry "Windows 10" --class os {
     search --no-floppy --set=root --fs-uuid BCB2DA24B2D9E346
     ntldr /bootmgr
 }
+
+menuentry "NixOS" {
+    boot.loader.grub.device = "nodev";
+    # set root = "(hd0,4)"
+    search --no-floppy --set=root --fs-uuid 46c918ee-097f-4bbf-82db-a714bc6d680f
+    configfile "/boot/grub/grub.cfg"
+}
+
+menuentry "NixOS (2)" --class gnu-linux \
+    --class gnu \
+    --class os \
+    $menuentry_id_option \
+    "nixos-46c918ee-097f-4bbf-82db-a714bc6d680f" {
+    set root="hd0,msdos4"
+    configfile "/nixos/root/boot/grub/grub.cfg"
+}
+
+# https://unix.stackexchange.com/questions/343632/uefi-chainloading-grub-from-grub
+# menuentry "NixOS" --class gnu-linux --class gnu --class os $menuentry_id_option "nixos-0aca58bc-8fdb-4a07-aa2f-56406bcf19b7" {
+#     set root="hd0,msdos4"
+#     configfile /nixos/root/boot/grub/grub.cfg
+# }
+
