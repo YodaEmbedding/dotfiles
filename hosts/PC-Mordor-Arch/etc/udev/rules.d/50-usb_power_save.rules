@@ -1,1 +1,10 @@
+# $ lsusb -vt
+#
+# /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/12p, 480M
+#     ID 1d6b:0002 Linux Foundation 2.0 root hub
+#     |__ Port 8: Dev 7, If 0, Class=Wireless, Driver=btusb, 12M
+#         ID 8087:0032 Intel Corp. AX210 Bluetooth
+#     |__ Port 8: Dev 7, If 1, Class=Wireless, Driver=btusb, 12M
+#         ID 8087:0032 Intel Corp. AX210 Bluetooth
+
 ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="8087", ATTR{idProduct}=="0032", ATTR{power/autosuspend}="-1"
