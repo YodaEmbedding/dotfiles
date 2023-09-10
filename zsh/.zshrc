@@ -186,7 +186,7 @@ anyframe-widget-cd() {
   )
   [[ -z $item ]] && return
   cd "$item"
-  zle reset-prompt
+  _reset-prompt
   anyframe-widget-cd
 }
 
@@ -197,7 +197,7 @@ anyframe-widget-frece() {
   frece increment "$DB_FILE" "$item"
   # echo "$item" | anyframe-action-execute cd --
   cd "$item"
-  zle reset-prompt
+  _reset-prompt
 }
 
 zi_all() {
@@ -207,7 +207,11 @@ zi_all() {
 
 zoxide-widget() {
   zi_all
-  zle reset-prompt
+  _reset-prompt
+}
+
+_reset-prompt() {
+  zle .reset-prompt
 }
 
 
