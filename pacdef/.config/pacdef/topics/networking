@@ -6,6 +6,8 @@ inetutils
 iw
 netctl
 network-manager-applet
+nmap
+openbsd-netcat
 openfortivpn
 openssh
 traceroute

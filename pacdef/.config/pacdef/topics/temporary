@@ -16,11 +16,6 @@ rocksdb
 sshuttle
 vvc-vtm                                     # AUR
 
-# python-aim                                # AUR
-# python-catalyst                           # AUR
-# python-compressai                         # AUR
-# python-xontrib-fzf-widgets
-
 # Screenshots
 flameshot
 ksnip
@@ -42,22 +37,6 @@ python-metadata_filter
 python-scrobblez
 rye-bin
 
-# caja
-# caja-dropbox
-# diskus
-# duf
-# f3d-bin
-# filelight
-# gdu
-# gsmartcontrol
-# lua51
-# lua51-cjson
-# openctm-tools
-# smartmontools
-# torch7-trepl-git
-# twine
-# wpaperd-git
-
 mpeg-pcc-tmc13-git
 
 cuda-11.1
@@ -66,11 +45,13 @@ gcc10
 gcc11
 gcc12
 
-
 # Miscellanous mischief unmanaged
+ansel-git
 asciinema
+caffe-cuda
 caja
 caja-dropbox
+chrome-remote-desktop
 cozy-audiobooks
 diskus
 dos2unix
@@ -78,6 +59,7 @@ draco
 duf
 f3d-bin
 filelight
+forticlient-vpn
 gdu
 gsmartcontrol
 jujutsu
@@ -97,5 +79,6 @@ python37
 python38
 python39
 smartmontools
+speech-dispatcher
 torch7-trepl-git
 twine
