@@ -1,1 +1,4 @@
 aur_helper: paru
+disabled_backends:
+  - python
+  - rust
