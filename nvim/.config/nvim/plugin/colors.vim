@@ -36,6 +36,10 @@ hi GitSignsAdd                    guifg=#2CC474
 hi GitSignsChange                 guifg=#8E73F6
 hi GitSignsDelete                 guifg=#FF436C
 
+" local-highlight.nvim
+hi LocalHighlight   guibg=#4c395c
+hi CWLocalHighlight guibg=#443055
+
 " indent-blankline.nvim
 hi IndentBlanklineChar            guifg=#382935
 
