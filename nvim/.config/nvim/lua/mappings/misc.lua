@@ -40,7 +40,7 @@ c("w!!", "w !sudo tee > /dev/null %")        -- Save as sudo
 c("x!!", "x !sudo tee > /dev/null %")        -- Save as sudo
 
 -- Search
-n("<F3>", [[/\<\><Left><Left>]])             -- Search whole word
+n("<leader>/", [[/\<\><Left><Left>]])          -- Search whole word
 x("&", '"hy:%s/<C-r>h//gc<Left><Left><Left>')  -- Substitute selection
 
 -- Misc
