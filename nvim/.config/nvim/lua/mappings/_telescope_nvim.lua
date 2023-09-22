@@ -16,7 +16,7 @@ local b = {
   command_history           = function() require("telescope.builtin").command_history() end,
   lsp_definitions           = function() require("telescope.builtin").lsp_definitions() end,
   lsp_implementations       = function() require("telescope.builtin").lsp_implementations() end,
-  lsp_references            = function() require("telescope.builtin").lsp_references() end,
+  lsp_references            = function() require("telescope.builtin").lsp_references({show_line = false}) end,
 }
 
 map("n", "<Space><Space>",  b.builtin)
