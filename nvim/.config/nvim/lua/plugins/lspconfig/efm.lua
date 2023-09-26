@@ -5,7 +5,7 @@ return {
   },
   filetypes = { "python" },
   -- filetypes = { "lua", "python" },
-  single_file_support = false,
+  single_file_support = true,
   settings = {
     -- rootMarkers = {".git/"},
     languages = {
