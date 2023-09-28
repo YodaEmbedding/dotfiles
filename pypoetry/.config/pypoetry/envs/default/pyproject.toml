@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.9,<3.12"
 accelerate = "0.15.0"
-aim = "^4.0.0"
+aim = "^3.17.5"
 better-exceptions = "^0.3.3"
 bjontegaard = "^1.2.0"
 black = "^23.7.0"
