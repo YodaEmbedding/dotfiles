@@ -59,4 +59,20 @@ function utils.wipe_registers()
   end
 end
 
+-- From https://stackoverflow.com/questions/13848429/window-navigation-wrap-around-in-vim/73612761#73612761
+local function try_jump_window(direction, count)
+  local prev_win_nr = vim.fn.winnr()
+  vim.cmd(count .. "wincmd " .. direction)
+  return vim.fn.winnr() ~= prev_win_nr
+end
+
+-- From https://stackoverflow.com/questions/13848429/window-navigation-wrap-around-in-vim/73612761#73612761
+function utils.jump_window_with_wrap(direction, opposite)
+  return function()
+    if not try_jump_window(direction, vim.v.count1) then
+      try_jump_window(opposite, 999)
+    end
+  end
+end
+
 return utils

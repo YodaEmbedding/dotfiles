@@ -72,12 +72,27 @@ n("}", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '}'<CR>", {silent = true})
 n("{", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '{'<CR>", {silent = true})
 
 -- Windows
-n("<C-left>",  "<C-w>h")                     -- Move left
-n("<C-down>",  "<C-w>j")                     -- Move down
-n("<C-up>",    "<C-w>k")                     -- Move up
-n("<C-right>", "<C-w>l")                     -- Move right
-n("<C-h>",     "<C-w>h")                     -- Move left
-n("<C-j>",     "<C-w>j")                     -- Move down
-n("<C-k>",     "<C-w>k")                     -- Move up
-n("<C-l>",     "<C-w>l")                     -- Move right
 n("<Space>D",  "<C-w>c")                     -- Close window
+
+-- Window selection
+local sel = utils.jump_window_with_wrap
+local sel_opts = { silent = true, noremap = true }
+n("<C-w>h",    sel("h", "l"), sel_opts)      -- Select left
+n("<C-w>j",    sel("j", "k"), sel_opts)      -- Select down
+n("<C-w>k",    sel("k", "j"), sel_opts)      -- Select up
+n("<C-w>l",    sel("l", "h"), sel_opts)      -- Select right
+
+n("<C-left>",  sel("h", "l"), sel_opts)      -- Select left
+n("<C-down>",  sel("j", "k"), sel_opts)      -- Select down
+n("<C-up>",    sel("k", "j"), sel_opts)      -- Select up
+n("<C-right>", sel("l", "h"), sel_opts)      -- Select right
+
+n("<C-h>",     sel("h", "l"), sel_opts)      -- Select left
+n("<C-j>",     sel("j", "k"), sel_opts)      -- Select down
+n("<C-k>",     sel("k", "j"), sel_opts)      -- Select up
+n("<C-l>",     sel("l", "h"), sel_opts)      -- Select right
+
+i("<C-h>",     sel("h", "l"), sel_opts)      -- Select left
+i("<C-j>",     sel("j", "k"), sel_opts)      -- Select down
+i("<C-k>",     sel("k", "j"), sel_opts)      -- Select up
+i("<C-l>",     sel("l", "h"), sel_opts)      -- Select right
