@@ -1,0 +1,3 @@
+return {
+  "sunaku/tmux-navigate",
+}
