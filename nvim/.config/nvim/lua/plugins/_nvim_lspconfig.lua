@@ -10,9 +10,10 @@ return {
     -- "SmiteshP/nvim-navic",
   },
 
-  config = function()
+  _ = {
+
     -- Enabled servers:
-    local servers = {
+    servers = {
       "bashls",
       "ccls",
       "cmake",
@@ -38,17 +39,17 @@ return {
       -- "metals",
       -- "pylyzer",
       -- "rnix",
-    }
+    },
 
-    local function setup_servers(configs, config_defaults)
+    setup_servers = function(servers, configs, config_defaults)
       for _, lsp in ipairs(servers) do
         local config = configs[lsp] or {}
         config = vim.tbl_extend("keep", config, config_defaults)
         require("lspconfig")[lsp].setup(config)
       end
-    end
+    end,
 
-    local function on_attach(client, bufnr)
+    on_attach = function(client, bufnr)
       -- For built-in LSP omnifunc:
       vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
       vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
@@ -61,10 +62,10 @@ return {
       end
 
       require("plugins._nvim_navic")._.on_attach(client, bufnr)
-    end
+    end,
 
     -- Load all server configs in plugins/lspconfig/ directory automatically.
-    local function load_configs()
+    load_configs = function()
       local configs = {}
       local curr_script_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
       local files = vim.split(vim.fn.glob(curr_script_dir .. "/lspconfig/*", true), "\n")
@@ -79,20 +80,25 @@ return {
         end
       end
       return configs
-    end
+    end,
+
+  },
+
+  config = function()
+    local this = require("plugins._nvim_lspconfig")._
 
     -- server-specific configs
-    local configs = load_configs()
+    local configs = this.load_configs()
 
     -- config that is common across servers
     local config_defaults = {
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
-      on_attach = on_attach,
+      on_attach = this.on_attach,
     }
 
     require("plugins._neodev_nvim")._.on_lspconfig_load()
     require("plugins._nvim_cmp")._.on_lspconfig_load()
 
-    setup_servers(configs, config_defaults)
+    this.setup_servers(this.servers, configs, config_defaults)
   end,
 }
