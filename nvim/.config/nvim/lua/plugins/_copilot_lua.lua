@@ -8,7 +8,11 @@ return {
     require("copilot").setup {
 
       filetypes = {
+        yaml = true,
         markdown = true,
+        gitcommit = true,
+        gitrebase = false,
+        ["."] = true,
       },
 
       panel = {
