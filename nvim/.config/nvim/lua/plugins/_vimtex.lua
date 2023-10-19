@@ -7,5 +7,6 @@ return {
     -- vim.g.vimtex_quickfix_enabled = 0
     vim.g.vimtex_quickfix_method = "pplatex"
     vim.g.vimtex_quickfix_mode = 0
+    vim.g.vimtex_view_method = "zathura"  -- also helps with synctex
   end,
 }
