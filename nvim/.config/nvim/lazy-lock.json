@@ -26,6 +26,7 @@
   "lsp-lens.nvim": { "branch": "main", "commit": "296e0d33dddba1a1de9b69143f189cb994111c5a" },
   "lsp-progress.nvim": { "branch": "main", "commit": "eb1cb142a44310ad4934d7a8540e61217b2b393a" },
   "lspkind-nvim": { "branch": "master", "commit": "57610d5ab560c073c465d6faf0c19f200cb67e6e" },
+  "ltex-utils.nvim": { "branch": "fix/TelescopePreviewerLoaded", "commit": "d1477655707c6d485ba65bdefcdd814582971703" },
   "lualine.nvim": { "branch": "master", "commit": "45e27ca739c7be6c49e5496d14fcf45a303c3a63" },
   "marks.nvim": { "branch": "master", "commit": "76aca5069c5ce5c0099e30168649e6393e494f26" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "dfdd771b792fbb4bad8e057d72558255695aa1a7" },

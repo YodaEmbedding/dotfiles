@@ -14,4 +14,9 @@ return {
       },
     },
   },
+
+  on_attach = function(client, bufnr)
+    require("plugins._nvim_lspconfig")._.on_attach(client, bufnr)
+    require("ltex-utils").on_attach(bufnr)
+  end,
 }
