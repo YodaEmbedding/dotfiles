@@ -50,5 +50,9 @@ hi CmpItemAbbrMatchFuzzy          guifg=#aaaaff
 hi CmpItemKind                    guifg=#bbbbee
 hi CmpItemMenu                    guifg=#bbbbee
 
+" nvim-treesitter-context
+hi TreesitterContext           guibg=#403659
+hi TreesitterContextLineNumber guibg=NONE    guifg=#554466
+
 " virt-column.nvim
 hi VirtColumn                     guifg=#402D3E
