@@ -65,7 +65,7 @@ zinit light-mode wait lucid for \
     mollifier/anyframe \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
-  atload"_zsh_autosuggest_start; bindkey '^[^M' autosuggest-execute" \
+  atload"_zsh_autosuggest_start; bind_keys_zsh_autosuggestions" \
     zsh-users/zsh-autosuggestions \
   blockf atpull"zinit creinstall -q ." \
     zsh-users/zsh-completions
@@ -240,6 +240,8 @@ if [[ $OMZ_VI_MODE -eq 1 ]]; then
   bindkey -M vicmd "^[[6~" down-history                   # vim page down
 fi
 
+bindkey '^w' forward-word                                 # move forward word
+
 bind_keys() {
   bindkey '^a' anyframe-widget-cd                         # cd
   bindkey '^f' anyframe-widget-frece                      # frece
@@ -248,6 +250,8 @@ bind_keys() {
   bindkey -s '^o' 'lfcd\n'                                # lf
 }
 
-# NOTE: These are bound above.
-# bindkey '^ '   autosuggest-accept                       # Fill suggestion
-# bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
+bind_keys_zsh_autosuggestions() {
+  bindkey '^ ' autosuggest-accept                         # Fill suggestion
+  bindkey '^t' autosuggest-accept                         # Fill suggestion
+  bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
+}
