@@ -15,6 +15,7 @@ return {
       -- ignore_install = { },
       highlight = {
         enable = true,
+        disable = { "latex" },
       },
       incremental_selection = {
         enable = true,
