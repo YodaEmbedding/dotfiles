@@ -216,6 +216,21 @@ alias twc='tw_online'
 alias tws='wtwitch sub'
 alias tww='tw_watch'
 
+# yazi
+alias y='yazicd'
+
+# Perhaps a better version of this is available here:
+# https://yazi-rs.github.io/usage/quick-start#changing-working-directory-when-exiting-yazi
+yazicd() {
+  tmp="$(mktemp -t 'yazi-cwd.XXXXXX')"
+  yazi --cwd-file="$tmp" "$@"
+  [ -f "$tmp" ] || return
+  dir="$(cat "$tmp")"
+  rm -f "$tmp"
+  [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] || return
+  cd "$dir"
+}
+
 # zip
 zipf() {
   zip -r "$1.zip" "$1"
