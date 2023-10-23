@@ -7,6 +7,9 @@ set selection-clipboard     clipboard
 set window-title-basename   true
 
 set default-bg              rgba(0,0,0,0.6)
+set highlight-active-color  "#7766aa"
+set highlight-color         "#cc3377"
+set highlight-transparency  0.1875
 set notification-bg         "#171717"
 set notification-fg         "#ffffff"
 set recolor-darkcolor       rgba(247,247,247,1.0)
