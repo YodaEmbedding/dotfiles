@@ -7,3 +7,4 @@ setlocal colorcolumn=79
 setlocal textwidth=79
 
 setlocal conceallevel=2
+setlocal formatoptions-=t
