@@ -34,8 +34,8 @@ autocmd BufWritePre * lua require("utils").format()
 " Interesting: tcroqnlj
 autocmd BufRead,BufNewFile * setlocal formatoptions-=t
 autocmd BufRead,BufNewFile * setlocal formatoptions-=c
+autocmd BufRead,BufNewFile * setlocal formatoptions-=o
 autocmd BufRead,BufNewFile * setlocal formatoptions+=r
-" autocmd BufRead,BufNewFile * setlocal formatoptions+=o
 " autocmd BufRead,BufNewFile * setlocal formatoptions=rqj
 
 " Miscellaneous: Highlight on yank
