@@ -19,7 +19,7 @@ function _M.on_attach()
 
   -- Documentation
   map("i", "<C-k>",     vim.lsp.buf.signature_help)
-  map("n", "<C-k>",     vim.lsp.buf.signature_help)
+  -- map("n", "<C-k>",     vim.lsp.buf.signature_help)
   map("n", "K",         vim.lsp.buf.hover)
 
   -- Diagnostics
