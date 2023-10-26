@@ -70,6 +70,8 @@ zinit light-mode wait lucid for \
   blockf atpull"zinit creinstall -q ." \
     zsh-users/zsh-completions
 
+# zinit light-mode wait lucid for wfxr/forgit
+
 
 # SOURCING {{{1
 
