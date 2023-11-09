@@ -24,7 +24,7 @@ return {
           "branch",
           "diagnostics",
           "fileformat",
-          "filetype",
+          { "filetype", icon_only = true }
         },
         lualine_y = { "progress" },
         lualine_z = { "location" },
