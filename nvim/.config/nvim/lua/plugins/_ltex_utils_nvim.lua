@@ -8,6 +8,9 @@ return {
   },
 
   opts = {
+    dictionary = {
+      path = vim.api.nvim_call_function("stdpath", {"state"}) .. "/ltex/",
+    },
   },
 
   _ = {
