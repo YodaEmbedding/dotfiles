@@ -203,6 +203,13 @@ bindsym $mod+ctrl+x             exec $nsi "$media_playpause  $players"
 bindsym $mod+x                  exec $nsi "$media_vol_up     $players"
 bindsym $mod+shift+x            exec $nsi "$media_vol_down   $players"
 
+# dunst (notifications)
+bindsym $mod+semicolon          exec $nsi dunstctl close
+bindsym $mod+colon              exec $nsi dunstctl close-all
+bindsym $mod+ctrl+semicolon     exec $nsi dunstctl history-pop
+bindsym $mod+$mod_+semicolon    exec $nsi dunstctl action
+bindsym $mod+$mod_+colon        exec $nsi dunstctl context
+
 # Color picker
 bindsym $mod+p                  exec $nsi gcolor2
 
