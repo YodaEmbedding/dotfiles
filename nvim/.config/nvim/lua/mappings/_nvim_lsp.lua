@@ -35,11 +35,11 @@ function _M.on_attach()
   map("n", "<F4>",      vim.lsp.buf.format)
 
   -- Workspaces
-  map("n", "<space>wa", vim.lsp.buf.add_workspace_folder)
-  map("n", "<space>wl", function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end)
-  map("n", "<space>wr", vim.lsp.buf.remove_workspace_folder)
+  -- map("n", "<space>wa", vim.lsp.buf.add_workspace_folder)
+  -- map("n", "<space>wl", function()
+  --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  -- end)
+  -- map("n", "<space>wr", vim.lsp.buf.remove_workspace_folder)
 end
 
 return _M
