@@ -8,7 +8,7 @@
     gpgsign = true
 
 [credential]
-    helper = cache --timeout=86400
+    helper = cache --timeout=604800
 
 # [url "https://yodaembedding@github.com"]
 #     insteadOf = https://github.com
