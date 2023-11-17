@@ -27,6 +27,10 @@
     frame_width = 1
     frame_color = "#383838"
 
+[transient_history_ignore]
+    match_transient = yes
+    history_ignore = yes
+
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
