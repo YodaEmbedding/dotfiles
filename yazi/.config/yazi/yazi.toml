@@ -1,0 +1,4 @@
+[plugins]
+preload = [
+    "~/.config/yazi/ui.lua",
+]
