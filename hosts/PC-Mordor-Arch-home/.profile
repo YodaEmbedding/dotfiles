@@ -18,3 +18,12 @@ export TF_CPP_MIN_LOG_LEVEL=2
 export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
 
 # eval "$(pyenv init --path)"
+
+shell_name="$(ps -p $$ | tail -n 1 | awk '{ print $4 }')"
+if [[ "$shell_name" == "zsh" ]]; then
+  eval "$(direnv hook zsh)"
+elif [[ "$shell_name" == "bash" ]]; then
+  eval "$(direnv hook bash)"
+else
+  echo "Unknown shell: $shell_name"
+fi
