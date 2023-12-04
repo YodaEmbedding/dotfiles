@@ -1,15 +1,23 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
 
-  version = "v2",
+  main = "ibl",
+  -- opts = {},
 
   config = function()
-    require("indent_blankline").setup {
-      char = "│",
-      show_current_context = true,
-      show_current_context_start = false,
-      show_first_indent_level = false,
-      use_treesitter = true,
+    require("ibl").setup {
+      indent = {
+        char = "│",
+      },
+      scope = {
+        enabled = true,     -- Default: true. Requires treesitter.
+        show_start = false, -- Shows an underline on the first line of the scope
+        show_end = false,   -- Shows an underline on the last line of the scope
+      },
     }
+
+    local hooks = require("ibl.hooks")
+    hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+    -- hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)
   end,
 }

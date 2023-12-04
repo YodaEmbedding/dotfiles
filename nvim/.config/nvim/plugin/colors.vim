@@ -41,7 +41,8 @@ hi LocalHighlight   guibg=#4c395c
 hi CWLocalHighlight guibg=#443055
 
 " indent-blankline.nvim
-hi IndentBlanklineChar            guifg=#382935
+hi IndentBlanklineChar            guifg=#382935  " v2
+hi IblScope                       guifg=#382935  " v3
 
 " nvim-cmp
 hi CmpItemAbbr                    guifg=#bbbbbb
