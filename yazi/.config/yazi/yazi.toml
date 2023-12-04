@@ -1,3 +1,12 @@
+[manager]
+linemode = "mtime"
+show_hidden = true
+show_symlink = true
+sort_by = "natural"
+sort_dir_first = true
+sort_reverse = false
+
+
 [plugins]
 preload = [
     "~/.config/yazi/ui.lua",
