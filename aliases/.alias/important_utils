@@ -27,6 +27,7 @@ alias gplr='git pull --rebase'
 alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
+alias grbca='git_continue "git add -u && git rebase --continue"'
 alias grbi='git rebase --interactive'
 alias gre='git reset'
 alias grs='git reset'
@@ -118,6 +119,10 @@ git_commit_select() {
   local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
   local sha=$(awk '{ print $1 }' <<< "$out")
   echo "$sha"
+}
+
+git_continue() {
+  git ls-files --exclude-standard --deduplicate -z | xargs -0 rg '<+ HEAD' | ifne -n zsh -c "$1"
 }
 
 git_history_browse() {
