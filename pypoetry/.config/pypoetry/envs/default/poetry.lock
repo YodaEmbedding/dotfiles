@@ -760,6 +760,39 @@ files = [
 ]
 
 [[package]]
+name = "compressai"
+version = "1.2.4"
+description = "A PyTorch library and evaluation platform for end-to-end compression research"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "compressai-1.2.4-cp36-cp36m-macosx_10_14_x86_64.whl", hash = "sha256:c05b45887a33a2f53613d9d8bd3d0a77bece8c81e7fdf08094dac1314521968a"},
+    {file = "compressai-1.2.4-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fcff01c6e0abfb3c1875977f9e7df6953c7e5681dc50873cabfabc2dffbd8bed"},
+    {file = "compressai-1.2.4-cp37-cp37m-macosx_10_15_x86_64.whl", hash = "sha256:27ce39d470e266a7bc2f9c2e0f4ee79110e8054e002454843173323cc8dff925"},
+    {file = "compressai-1.2.4-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:b2c4c065eb5857fd0bef9f05a60459147e83b6d6790e37c0421eaa8c372fcf92"},
+    {file = "compressai-1.2.4-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:6b51f0e90031c3bab7f146e10179bf036d4eccd92770b9632e7a5095caa498b9"},
+    {file = "compressai-1.2.4-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f96b107526708579551fab2e96557bfb6380b6974b8de7306bc2e7a638496dca"},
+    {file = "compressai-1.2.4-cp39-cp39-macosx_11_0_x86_64.whl", hash = "sha256:9c149ff62e9966b1e9540e2d0fc19d090813190b2a242fb5982a5aaab891de31"},
+    {file = "compressai-1.2.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:7f129127d584b5bc68f526d63472e4618c9a81aff1e81d89c9c589a1f784fa82"},
+    {file = "compressai-1.2.4.tar.gz", hash = "sha256:7cbfbd11259ad52c3d8c77edad52778567e76a36b4c91e6d9c18f4fbe1d9cead"},
+]
+
+[package.dependencies]
+matplotlib = "*"
+numpy = "*"
+pytorch-msssim = "*"
+scipy = "*"
+torch = ">=1.7.1"
+torchvision = "*"
+
+[package.extras]
+all = ["black", "flake8", "flake8-bugbear", "flake8-comprehensions", "furo", "ipywidgets", "isort", "jupyter", "mypy", "plotly", "pytest", "pytest-cov", "sphinx"]
+dev = ["black", "flake8", "flake8-bugbear", "flake8-comprehensions", "isort", "mypy", "plotly", "pytest", "pytest-cov"]
+doc = ["furo", "sphinx"]
+test = ["plotly", "pytest", "pytest-cov"]
+tutorials = ["ipywidgets", "jupyter"]
+
+[[package]]
 name = "contourpy"
 version = "1.1.1"
 description = "Python library for calculating contours of 2D quadrilateral grids"
@@ -4321,4 +4354,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "a97e0566988d376fcb99c54f9e1ee5384f5bcbb785f6f90a8cbf345a122d7302"
+content-hash = "4c5913c933a0e65eca4d17e8cb7ce167c4eb532099e07120a96216bebdbbd1c0"
