@@ -149,6 +149,9 @@ inputbar {
         textbox-prompt-colon,
         entry,
         case-indicator,
+        num-filtered-rows,
+        textbox-sep,
+        num-rows
     ];
 }
 textbox-prompt-colon {
@@ -156,4 +159,10 @@ textbox-prompt-colon {
     str:        ":";
     margin:     0px 0.3em 0em 0em ;
     text-color: @normal-foreground;
+}
+textbox-sep, num-filtered-rows, num-rows {
+    text-color: #887788;
+    expand:     false;
+    str:        "/";
+    vertical-align: 0.5;
 }
