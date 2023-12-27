@@ -14,9 +14,7 @@ python2-setuptools                          # AUR
 
 # Tools
 mypy
-ptpython                                    # AUR
 pyright
-python-arxiv2bib                            # AUR
 python-black
 python-jedi
 python-poetry
@@ -34,32 +32,19 @@ python-numpy
 python-opencv
 python-pandas
 python-pillow
-python-polars                               # AUR
 python-protobuf
 python-pytorch-cuda
 python-pytorch-msssim
-python-scikit-learn
 python-scipy
 python-sympy
-python-tensorboardx                         # AUR
 python-tensorflow-cuda
-python-torchinfo                            # AUR
 python-torchvision-cuda
 
 # Plotting
 python-matplotlib
-python-plotly                               # AUR
-python-seaborn
 
 # Other
-python-arxiv                                # AUR
-python-chess                                # AUR
-python-gspread                              # AUR
-python-hydra-core                           # AUR
-python-omegaconf
-python-praw
 python-pypi2pkgbuild-git                    # AUR
 python-pywal
 python-sphinx
-python-tekore                               # AUR
 python-urllib3
