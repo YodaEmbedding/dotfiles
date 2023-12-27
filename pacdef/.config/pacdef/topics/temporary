@@ -39,7 +39,7 @@ rye-bin
 
 mpeg-pcc-tmc13-git
 
-cuda-11.1
+# cuda-11.1
 cuda-11.7
 gcc10
 gcc11

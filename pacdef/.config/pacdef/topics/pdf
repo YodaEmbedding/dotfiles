@@ -1,7 +1,7 @@
 # vim:ft=conf
 
 [arch]
-acroread                                    # Custom
+# acroread                                    # Custom
 adobe-reader-11                             # AUR
 foxitreader                                 # AUR
 okular
