@@ -42,11 +42,12 @@ return {
         layout_config = {
           horizontal = {
             height_padding = 1,
-            width = 0.85,
+            width = 0.98,
           },
           vertical = {
             height_padding = 1,
           },
+          preview_cutoff = 180,
         },
 
         buffer_previewer_maker = buffer_previewer_maker,
