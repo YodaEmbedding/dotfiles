@@ -1,6 +1,9 @@
 # vim:ft=conf
 
 [arch]
+
+# GTK
+
 adapta-gtk-theme                            # 7
 breeze-gtk                                  # 7
 catppuccin-gtk-theme-frappe                 # 6
@@ -36,6 +39,8 @@ gtksourceview-theme-darcula2-git            #
 themix-full-git                             #
 themix-theme-oomox-git                      #
 
+# KDE themes
+
 # ant-dracula-kde-theme                       #
 arch-kde-theme-git                          #
 breeze                                      # 7
@@ -62,6 +67,7 @@ sweet-kde-theme-mars-git                    #
 sweet-kde-theme-nova-git                    #
 whitesur-kde-theme-git                      #
 
+# Icons
 whitesur-icon-theme-git
 
 # GRUB themes
