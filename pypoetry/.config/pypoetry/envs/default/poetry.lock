@@ -286,6 +286,21 @@ files = [
 ]
 
 [[package]]
+name = "arxiv"
+version = "2.1.0"
+description = "Python wrapper for the arXiv API: https://arxiv.org/help/api/"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "arxiv-2.1.0-py3-none-any.whl", hash = "sha256:d634a0a59c9f05baf524eaa65563bb0a4532d2b4727a1162a1a9ba7e1e6e48cc"},
+    {file = "arxiv-2.1.0.tar.gz", hash = "sha256:eb4b1d5ab9dfd66027c344bb324c20be21d56fe15f6ce216ed5b209df747dea8"},
+]
+
+[package.dependencies]
+feedparser = "6.0.10"
+requests = "2.31.0"
+
+[[package]]
 name = "attrs"
 version = "23.1.0"
 description = "Classes Without Boilerplate"
@@ -1059,6 +1074,20 @@ typing-extensions = ">=4.5.0"
 
 [package.extras]
 all = ["email-validator (>=2.0.0)", "httpx (>=0.23.0)", "itsdangerous (>=1.1.0)", "jinja2 (>=2.11.2)", "orjson (>=3.2.1)", "pydantic-extra-types (>=2.0.0)", "pydantic-settings (>=2.0.0)", "python-multipart (>=0.0.5)", "pyyaml (>=5.3.1)", "ujson (>=4.0.1,!=4.0.2,!=4.1.0,!=4.2.0,!=4.3.0,!=5.0.0,!=5.1.0)", "uvicorn[standard] (>=0.12.0)"]
+
+[[package]]
+name = "feedparser"
+version = "6.0.10"
+description = "Universal feed parser, handles RSS 0.9x, RSS 1.0, RSS 2.0, CDF, Atom 0.3, and Atom 1.0 feeds"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "feedparser-6.0.10-py3-none-any.whl", hash = "sha256:79c257d526d13b944e965f6095700587f27388e50ea16fd245babe4dfae7024f"},
+    {file = "feedparser-6.0.10.tar.gz", hash = "sha256:27da485f4637ce7163cdeab13a80312b93b7d0c1b775bef4a47629a3110bca51"},
+]
+
+[package.dependencies]
+sgmllib3k = "*"
 
 [[package]]
 name = "filelock"
@@ -3523,6 +3552,16 @@ rich = ["rich"]
 test = ["pytest", "rich", "virtualenv (>20)"]
 
 [[package]]
+name = "sgmllib3k"
+version = "1.0.0"
+description = "Py3k port of sgmllib."
+optional = false
+python-versions = "*"
+files = [
+    {file = "sgmllib3k-1.0.0.tar.gz", hash = "sha256:7868fb1c8bfa764c1ac563d3cf369c381d1325d36124933a726f29fcdaa812e9"},
+]
+
+[[package]]
 name = "shellingham"
 version = "1.5.3"
 description = "Tool to Detect Surrounding Shell"
@@ -4354,4 +4393,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "4c5913c933a0e65eca4d17e8cb7ce167c4eb532099e07120a96216bebdbbd1c0"
+content-hash = "73752e74cfb5200d67a080c8b58a2099cfa71f0f723ac443bf7fa01a6aff00a8"
