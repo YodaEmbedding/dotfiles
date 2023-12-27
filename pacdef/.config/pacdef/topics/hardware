@@ -2,7 +2,8 @@
 
 [arch]
 cnijfilter-common                           # AUR
-cnijfilter-mg3500                           # Custom
+# cnijfilter-mg3500                           # Custom
+# cnijfilter-mg3500series                     # AUR
 cnijfilter2                                 # AUR
 epson-inkjet-printer-escpr                  # AUR
 zsa-udev

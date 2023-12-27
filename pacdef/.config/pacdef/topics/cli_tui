@@ -1,7 +1,6 @@
 # vim:ft=conf
 
 [arch]
-arxiv2bib                                   # AUR
 bat
 cmatrix
 colordiff

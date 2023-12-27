@@ -16,6 +16,7 @@ python2-setuptools                          # AUR
 mypy
 ptpython                                    # AUR
 pyright
+python-arxiv2bib                            # AUR
 python-black
 python-jedi
 python-poetry

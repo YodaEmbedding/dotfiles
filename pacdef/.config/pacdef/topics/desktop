@@ -3,7 +3,7 @@
 [arch]
 dunst
 glfw-wayland
-hyprland-nvidia-git                         # AUR
+hyprland-nvidia                             # AUR
 i3-wm
 picom-git
 plasma-desktop
