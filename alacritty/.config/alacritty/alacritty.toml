@@ -20,7 +20,6 @@ yellow = "0xe7c547"
 [colors.cursor]
 cursor = "0xdfd7d7"
 text = "0x000000"
-unfocused_hollow = true
 
 [colors.dim]
 black = "0x333333"
@@ -600,12 +599,6 @@ mods = "Control"
 [[mouse.bindings]]
 action = "PasteSelection"
 mouse = "Middle"
-
-[mouse.double_click]
-threshold = 300
-
-[mouse.triple_click]
-threshold = 300
 
 [scrolling]
 history = 100000
