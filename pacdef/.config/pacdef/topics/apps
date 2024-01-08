@@ -13,6 +13,7 @@ gcolor2                                     # AUR
 gcolor3
 gitkraken                                   # AUR
 google-chrome                               # AUR
+kdeconnect
 libreoffice-fresh
 lutris
 obsidian
@@ -20,6 +21,7 @@ qbittorrent
 rofi
 skypeforlinux-stable-bin                    # AUR
 steam
+syncthing
 teams                                       # AUR
 thunar
 thunar-archive-plugin
@@ -27,6 +29,7 @@ thunar-dropbox                              # AUR
 thunar-media-tags-plugin
 thunar-volman
 thunderbird
+tumbler
 virtualbox
 virtualbox-ext-oracle                       # AUR
 wofi

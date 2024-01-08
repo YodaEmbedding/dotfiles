@@ -1,6 +1,7 @@
 # vim:ft=conf
 
 [arch]
+arp-scan
 hostsblock                                  # AUR
 inetutils
 iw
