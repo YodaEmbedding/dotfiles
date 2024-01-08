@@ -92,10 +92,11 @@ ffmpeg_reencode() {
 
   nice -n 19 \
     ffmpeg -i "$f" \
-    # -c copy -map 0 \
     -c:v "${c_v}" -crf "${crf}" \
     -c:a "${c_a}" -b:a "${b_a}" \
     "$outfile"
+
+    # -c copy -map 0 \
 
   # Copy over last modified date, too.
   local date_str="$(stat -c %y "$f")"
