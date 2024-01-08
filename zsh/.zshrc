@@ -162,6 +162,9 @@ setopt extended_glob
 setopt globdots
 setopt nullglob
 
+# Completion after =
+setopt magic_equal_subst
+
 # Plugin: anyframe
 zstyle ":anyframe:selector:" use fzf
 
