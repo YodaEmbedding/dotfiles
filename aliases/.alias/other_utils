@@ -89,11 +89,13 @@ ffmpeg_reencode() {
   local b_a="${5:-64K}"
   local outfile="${f%.*}.reencode.${f##*.}"
   local outfile="${6:-"$outfile"}"
+  local args=("${@:7}")
 
   nice -n 19 \
     ffmpeg -i "$f" \
     -c:v "${c_v}" -crf "${crf}" \
     -c:a "${c_a}" -b:a "${b_a}" \
+    "${args[@]}" \
     "$outfile"
 
     # -c copy -map 0 \
