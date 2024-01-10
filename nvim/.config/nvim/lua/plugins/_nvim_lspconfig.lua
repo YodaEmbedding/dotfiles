@@ -15,7 +15,8 @@ return {
     -- Enabled servers:
     servers = {
       "bashls",
-      "ccls",
+      -- "ccls",
+      "clangd",
       "cmake",
       "cssls",
       "diagnosticls",
