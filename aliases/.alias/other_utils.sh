@@ -67,21 +67,31 @@ alias fd="fd --hidden --exclude .git"
 
 # ffmpeg
 ffmpeg_trim() {
+  if [ "$1" = "--help" ]; then
+    echo "Usage: ffmpeg_trim <file> <start> <end> [ffmpeg args...]"
+    return 0
+  fi
+
   local f="$1"
   local start="$2"
   local end="$3"
   local args=("${@:4}")
-
   local outfile="${f%.*}.trim.${f##*.}"
+  local date_str
+  date_str="$(stat -c %y "$f")"
 
   ffmpeg -ss "$start" -to "$end" -i "$f" -c copy -map 0 "${args[@]}" "$outfile"
 
   # Copy over last modified date, too.
-  local date_str="$(stat -c %y "$f")"
   touch -m "$outfile" --date="${date_str}"
 }
 
 ffmpeg_reencode() {
+  if [ "$1" = "--help" ]; then
+    echo "Usage: ffmpeg_reencode <file> [c_v] [crf] [c_a] [b_a] [outfile] [ffmpeg args...]"
+    return 0
+  fi
+
   local f="$1"
   local c_v="${2:-libx265}"
   local crf="${3:-30}"
@@ -90,6 +100,8 @@ ffmpeg_reencode() {
   local outfile="${f%.*}.reencode.${f##*.}"
   local outfile="${6:-"$outfile"}"
   local args=("${@:7}")
+  local date_str
+  date_str="$(stat -c %y "$f")"
 
   nice -n 19 \
     ffmpeg -i "$f" \
@@ -101,7 +113,6 @@ ffmpeg_reencode() {
     # -c copy -map 0 \
 
   # Copy over last modified date, too.
-  local date_str="$(stat -c %y "$f")"
   touch -m "$outfile" --date="${date_str}"
 }
 
