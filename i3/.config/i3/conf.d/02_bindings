@@ -210,6 +210,9 @@ bindsym $mod+ctrl+semicolon     exec $nsi dunstctl history-pop
 bindsym $mod+$mod_+semicolon    exec $nsi dunstctl action
 bindsym $mod+$mod_+colon        exec $nsi dunstctl context
 
+# Lock screen
+bindsym $mod+$mod_+z            exec $nsi $scripts/lock $ws666 $lock_wallpaper
+
 # Color picker
 bindsym $mod+p                  exec $nsi gcolor2
 
