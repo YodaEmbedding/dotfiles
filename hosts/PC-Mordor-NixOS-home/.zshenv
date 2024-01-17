@@ -4,6 +4,7 @@ export FZF_BASE=/run/current-system/sw/bin/fzf
 export FZF_DEFAULT_COMMAND='fd --type f'
 export GOPATH="$HOME/.cache/go"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 export NVIM_LOG_FILE="~/.cache/nvim/nvimlog"
 export PATH="$PATH:$HOME/.cabal/bin"
 export PATH="$PATH:$HOME/.cargo/bin"
