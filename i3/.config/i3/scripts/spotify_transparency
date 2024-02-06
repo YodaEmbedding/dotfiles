@@ -1,0 +1,6 @@
+#!/bin/bash
+
+xdotool search --class ^spotify$ |
+  while read -r wid; do
+    picom-trans -c 90 --window="$wid"
+  done

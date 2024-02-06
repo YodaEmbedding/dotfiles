@@ -79,5 +79,5 @@ for_window [title="^Picture-in-Picture$"] \
     move scratchpad, scratchpad show
 
 for_window [class="^Spotify$"] \
-    exec $nsi picom-trans -c 90 --name "Spotify"
+    exec $nsi bash $scripts/spotify_transparency
 
