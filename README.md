@@ -1,5 +1,7 @@
 # Dotfiles
 
+![showcase](https://github.com/YodaEmbedding/dotfiles/assets/721196/4528634c-2bf2-43a1-b39c-194339dde3a2)
+
 [![Click for full album.](https://i.imgur.com/tJlW7l1.gif)](https://imgur.com/a/W5QwA)
 
 [![Click for full album.](https://i.imgur.com/azSHUBZ.gif)](https://imgur.com/a/JK2Pc6m)
