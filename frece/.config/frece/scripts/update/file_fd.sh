@@ -6,7 +6,7 @@ ENTRIES_FILE="/tmp/frece_file_entries.txt"
 FDIGNORE="${XDG_CONFIG_HOME:-$HOME/.config}/frece/src/file_fdignore"
 
 append() {
-    fd . "$1" -t f --ignore-file="$FDIGNORE" | sort -V >> "$ENTRIES_FILE"
+    fd . "$1" --no-ignore -t f --ignore-file="$FDIGNORE" | sort -V >> "$ENTRIES_FILE"
 }
 
 true > "$ENTRIES_FILE"
