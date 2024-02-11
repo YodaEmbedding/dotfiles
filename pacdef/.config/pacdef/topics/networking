@@ -2,6 +2,7 @@
 
 [arch]
 arp-scan
+bind
 hostsblock                                  # AUR
 inetutils
 iw
