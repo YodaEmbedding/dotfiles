@@ -10,7 +10,7 @@ local b = {
   builtin                   = function() require("telescope.builtin").builtin() end,
   buffers                   = function() require("telescope.builtin").buffers() end,
   smart_open                = function() require("telescope").extensions.smart_open.smart_open() end,
-  smart_open_cwd            = function() require("telescope").extensions.smart_open.smart_open({cwd_only = true, filename_first = false}) end,
+  smart_open_cwd            = function() require("telescope").extensions.smart_open.smart_open({cwd_only = true, filename_first = true}) end,
   current_buffer_fuzzy_find = function() require("telescope.builtin").current_buffer_fuzzy_find() end,
   marks                     = function() require("telescope.builtin").marks() end,
   command_history           = function() require("telescope.builtin").command_history() end,
