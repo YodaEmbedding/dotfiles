@@ -4,7 +4,7 @@ TMP_DIR="$HOME/.dotfiles_tmp_install"
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit 1
 
-RIPGREP_VERSION=13.0.0
+RIPGREP_VERSION=14.0.3
 wget -nc "https://github.com/BurntSushi/ripgrep/releases/download/$RIPGREP_VERSION/ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl.tar.gz"
 tar xf "ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl.tar.gz"
 cd "ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl" || exit 1

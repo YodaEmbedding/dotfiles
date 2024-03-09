@@ -4,7 +4,7 @@ TMP_DIR="$HOME/.dotfiles_tmp_install"
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit 1
 
-FD_VERSION=8.3.2
+FD_VERSION=9.0.0
 wget -nc "https://github.com/sharkdp/fd/releases/download/v$FD_VERSION/fd-v$FD_VERSION-x86_64-unknown-linux-musl.tar.gz"
 tar xf "fd-v$FD_VERSION-x86_64-unknown-linux-musl.tar.gz"
 cd "fd-v$FD_VERSION-x86_64-unknown-linux-musl" || exit 1
