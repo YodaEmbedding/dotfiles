@@ -62,7 +62,9 @@ n("<Space><C-e>", ":e %:h/")                 -- Edit file at cwd
 -- n("C", "miC")
 
 -- Jumplist
-n("<C-P>", "<C-I>")                          -- Previous jump in jumplist
+  if not _G.plugin_loaded("before.nvim") then
+    n("<C-P>", "<C-I>")                        -- Previous jump in jumplist
+  end
 
 -- Add <count>jk motions to jumplist
 n("j", "(v:count >= 1 ? 'm`' . v:count : '') . 'j'", {expr = true})
