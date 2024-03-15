@@ -1,0 +1,3 @@
+return {
+  "mizlan/delimited.nvim",
+}

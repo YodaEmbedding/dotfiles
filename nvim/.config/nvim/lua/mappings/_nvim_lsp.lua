@@ -23,8 +23,10 @@ function _M.on_attach()
   map("n", "K",         vim.lsp.buf.hover)
 
   -- Diagnostics
-  map("n", "[d",        vim.diagnostic.goto_prev)
-  map("n", "]d",        vim.diagnostic.goto_next)
+  if not _G.plugin_loaded("delimited.nvim") then
+    map("n", "[d",      vim.diagnostic.goto_prev)
+    map("n", "]d",      vim.diagnostic.goto_next)
+  end
   map("n", "<space>z",  vim.diagnostic.setloclist)
   map("n", "<space>e",  vim.diagnostic.open_float)
 
