@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Packages required: i3lock-color, jq
 # https://github.com/chrjguill/i3lock-color
@@ -16,7 +16,7 @@ curr_ws=$(i3-msg -t get_workspaces | jq ".[] | select(.focused==true).name" | cu
 # Switch only if not on desired workspace
 # This prevents accidental switching if workspace_auto_back_and_forth is enabled in i3
 if [[ "$curr_ws" != "$desired_ws" ]]; then
-	i3-msg workspace $desired_ws
+	i3-msg workspace "$desired_ws"
 fi
 
 # Pause notification manager
@@ -25,31 +25,36 @@ pkill -u "$USER" -USR1 "$notification_manager"
 
 # Compute parameters
 dimensions=$(xdpyinfo | grep dimensions | sed -r 's/^[^0-9]*([0-9]+x[0-9]+).*$/\1/')
-width=$( sed -r 's/x[0-9]*$//' <<< $dimensions)
-height=$(sed -r 's/^[0-9]*x//' <<< $dimensions)
-radius=$((273 * $width / 1920))
+width=$( sed -r 's/x[0-9]*$//' <<< "$dimensions")
+height=$(sed -r 's/^[0-9]*x//' <<< "$dimensions")
+radius=$((273 * width / 1920))
 
-# Moon wallpaper
-i3lock \
-	--nofork \
-    --pass-media-keys \
-    --clock \
-	--radius=$radius \
-	--ind-pos="x+(0.4741*w):y+(0.230*h)" \
-	--time-pos="ix:iy"    --time-size=48 --time-color=223377ff --time-str="%H:%M:%S" \
-	--date-pos="tx:ty+40" --date-size=24 --date-color=223377ff --date-str="%a %m-%d" \
-	--line-uses-inside \
-	--inside-color=ffffff55      --ring-color=ffffff00 \
-	--insidever-color=00000077   --ringver-color=00000000   --verif-color=ffffffff --verif-text="analyzing..." \
-	--insidewrong-color=77000099 --ringwrong-color=77000000 --wrong-color=ffffffff --wrong-text="self destructing..." \
-	--separator-color=ffffff77 \
-	--color=333344 --image=$wallpaper
+CMD=(
+  i3lock
+  --nofork
+	# --no-verify
+  --pass-media-keys
+  --clock
+  # Moon wallpaper settings
+  --radius="$radius"
+  --ind-pos="x+(0.4741*w):y+(0.230*h)"
+  --time-pos="ix:iy"    --time-size=48 --time-color=223377ff --time-str="%H:%M:%S"
+  --date-pos="tx:ty+40" --date-size=24 --date-color=223377ff --date-str="%a %m-%d"
+  --line-uses-inside
+  --inside-color=ffffff55      --ring-color=ffffff00
+  --insidever-color=00000077   --ringver-color=00000000   --verif-color=ffffffff --verif-text="analyzing..."
+  --insidewrong-color=77000099 --ringwrong-color=77000000 --wrong-color=ffffffff --wrong-text="self destructing..."
+  --separator-color=ffffff77
+  --color=333344
+  --image="$wallpaper"
+  #	--composite
+  #	--line-uses-ring
+  #	--insidewrong-color=ff7777cc
+  #	--time-align 1  # left align
+)
 
-# Other options
-#	--composite \
-#	--line-uses-ring \
-#	--insidewrong-color=ff7777cc \
-#	--time-align 1 \ # left align
+"${CMD[@]}"
+
 
 # Resume notification manager
 pkill -u "$USER" -USR2 "$notification_manager"
