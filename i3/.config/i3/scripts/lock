@@ -4,8 +4,8 @@
 # https://github.com/chrjguill/i3lock-color
 
 # Parse arguments
-desired_ws=$1
-wallpaper=$2
+desired_ws=${1:-"666:"}
+wallpaper=${2:-"$HOME/Dropbox/media/pics/wallpaper/desktop/current_lock.png"}
 
 # Notification manager
 notification_manager="dunst"
@@ -33,6 +33,7 @@ CMD=(
   i3lock
   --nofork
 	# --no-verify
+  --ignore-empty-password
   --pass-media-keys
   --clock
   # Moon wallpaper settings
