@@ -1,9 +1,10 @@
 return {
   "nvim-telescope/telescope.nvim",
 
-  -- dependencies = {
-  --   "aznhe21/actions-preview.nvim",
-  -- },
+  dependencies = {
+    -- "aznhe21/actions-preview.nvim",
+    "Myzel394/jsonfly.nvim",
+  },
 
   lazy = true,
 
@@ -75,5 +76,7 @@ return {
     }
 
     -- require("mappings._telescope_nvim")
+
+    require("telescope").load_extension("jsonfly")
   end,
 }
