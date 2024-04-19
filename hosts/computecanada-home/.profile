@@ -32,9 +32,19 @@ esac
 
 export TMUX_STATUS_STYLE
 
-# echo "Loading module python..."
-module load python/3.9.6
-# echo "Loaded module python"
+MODULES=(
+  gcc
+  # nodejs
+  # python/3.9.6
+  # python/3.10.2
+  # python/3.10.13
+  python/3.11.5
+  rust
+)
+
+# echo "Loading modules..."
+module load "${MODULES[@]}"
+# echo "Loaded modules"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
