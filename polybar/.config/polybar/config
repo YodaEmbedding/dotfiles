@@ -31,6 +31,9 @@ scroll-down = i3wm-wsnext
 click-middle = i3-msg "kill"
 click-right = i3-msg "kill"
 
+enable-ipc = true
+
+
 [module/i3]
 type = internal/i3
 format = <label-state>
