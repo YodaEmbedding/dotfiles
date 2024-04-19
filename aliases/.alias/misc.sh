@@ -23,9 +23,12 @@ alias o='bgrnd xdg-open'
 
 # Files per directory.
 files_per_directory() {
-  /bin/fd -uu --type d --max-depth=1 '' | sort | while read d; do
-    printf '%8d  %s\n' $(/bin/fd -uu --type f '' "$d" | wc -l) "$(du -sh "$d")"
-  done
+  (
+    unalias -a
+    \fd -uu --type d --max-depth=1 '' | sort | while read d; do
+      printf '%8d  %s\n' $(\fd -uu --type f '' "$d" | wc -l) "$(du -sh "$d")"
+    done
+  )
 }
 
 # Fix date by parsing it from filename.
