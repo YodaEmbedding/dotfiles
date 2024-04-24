@@ -73,12 +73,15 @@ format-online-font = 6
 
 [module/mpris]
 type = custom/script
-exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{:t20:{artist}:} - {:t70:{title}:}'
+exec = ~/.config/polybar/scripts/player-mpris-tail.py -f '{icon} {:t20:{artist}:} - {:t70:{title}:}'
 tail = true
-# format-foreground = #CCAADD
-format-foreground = #BBAACC
+# TODO Color bright or show iff currently playing.
+# format-foreground = #BBAACC
+format-foreground = #665577
+# format-foreground = #554466
 format-font = 6
-click-left = playerctl play-pause
+# click-left = playerctl play-pause
+click-left = playerctl pause && polybar-msg action mpris module_toggle
 
 [module/preview]
 type = custom/script
