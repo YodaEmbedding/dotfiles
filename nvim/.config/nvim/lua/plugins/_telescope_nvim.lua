@@ -4,6 +4,7 @@ return {
   dependencies = {
     -- "aznhe21/actions-preview.nvim",
     "Myzel394/jsonfly.nvim",
+    "nvim-lua/plenary.nvim",
   },
 
   lazy = true,
