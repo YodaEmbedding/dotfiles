@@ -10,6 +10,9 @@ export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
 # Disable automatic shell timeout set in /etc/environment.
 export TMOUT=0
 
+CLUSTER="$(hostname | perl -ne '/.*?(\w+).computecanada.ca/ && print "$1"')"
+export CLUSTER
+
 HOSTNAME="$(hostname)"
 
 case "$HOSTNAME" in
@@ -31,6 +34,8 @@ case "$HOSTNAME" in
 esac
 
 export TMUX_STATUS_STYLE
+
+export RUNS_ROOT="$HOME/data/runs/cc/$CLUSTER"
 
 MODULES=(
   gcc
