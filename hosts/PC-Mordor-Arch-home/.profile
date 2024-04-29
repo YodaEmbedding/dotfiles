@@ -18,4 +18,6 @@ export RUST_SRC_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/
 export TF_CPP_MIN_LOG_LEVEL=2
 export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
 
+export RUNS_ROOT="$HOME/data/runs/pc-mordor"
+
 # eval "$(pyenv init --path)"
