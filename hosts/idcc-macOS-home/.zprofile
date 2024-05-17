@@ -12,3 +12,5 @@ alias ls="gls"
 # sed -e "pairs#0x10000/pairs#0xFFFF" -i ~/tmux-256color.src
 # /usr/bin/tic -x -o $HOME/.local/share/terminfo tmux-256color.src
 export TERMINFO_DIRS=$TERMINFO_DIRS:$HOME/.local/share/terminfo
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
