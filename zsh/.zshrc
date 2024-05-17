@@ -29,6 +29,11 @@ zinit light-mode for \
 ### End of Zinit's installer chunk
 
 
+# Fix:
+# https://github.com/ohmyzsh/ohmyzsh#disable-async-git-prompt
+zstyle ':omz:alpha:lib:git' async-prompt no
+
+
 # PLUGINS {{{1
 
 # light-mode: disable stats tracking
