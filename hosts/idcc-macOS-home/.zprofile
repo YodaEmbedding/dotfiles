@@ -1,3 +1,5 @@
+source "$HOME/.profile"
+
 export EDITOR=nvim
 export VISUAL=nvim
 
