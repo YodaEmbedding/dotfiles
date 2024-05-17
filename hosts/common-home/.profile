@@ -6,21 +6,24 @@ fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+PATH="$HOME/.local/bin_python:$PATH"
+PATH="$HOME/.local/bin:$PATH"
+export PATH
+
+export GPG_TTY=$(tty)
+
 
 case "$HOSTNAME" in
 
   PC-Mordor-Arch)
     PATH="$PATH:$HOME/.cabal/bin"
     PATH="$PATH:$HOME/.cargo/bin"
-    PATH="$PATH:$HOME/.local/bin"
-    PATH="$HOME/.local/bin_python:$PATH"
     export PATH
 
     export CLASSPATH=""
     export FILTER_BRANCH_SQUELCH_WARNING=1
     export FZF_DEFAULT_COMMAND='fd --type f'
     export GOPATH="$HOME/.cache/go"
-    export GPG_TTY="$(tty)"
     # export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
     export MANROFFOPT="-c"
@@ -45,7 +48,6 @@ case "$HOSTNAME" in
 
 
   *.computecanada.ca)
-    PATH="$HOME/.local/bin:$PATH"
     PATH="$PATH:/cvmfs/soft.computecanada.ca/custom/bin/computecanada"
     export PATH
 
@@ -100,10 +102,6 @@ case "$HOSTNAME" in
 
 
   L10142.local)  # idcc-macOS
-    PATH="$HOME/.local/bin_python:$PATH"
-    PATH="$HOME/.local/bin:$PATH"
-    export PATH
-
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
     # fg = colour4 colour104 colour182 colour183 colour189 colour225
 
@@ -123,8 +121,6 @@ case "$HOSTNAME" in
 
 
   kopsvgd*p)  # idcc-node-linux
-    PATH="$HOME/.local/bin:$PATH"
-    export PATH
     export SHELL=/bin/zsh
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
 
