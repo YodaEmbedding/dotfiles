@@ -4265,6 +4265,21 @@ packaging = "*"
 protobuf = ">=3.20"
 
 [[package]]
+name = "tensorly"
+version = "0.8.1"
+description = "Tensor learning in Python."
+optional = false
+python-versions = "*"
+files = [
+    {file = "tensorly-0.8.1-py3-none-any.whl", hash = "sha256:08988dbc5e433c3f255d0e00855f99a613fe273d50a1627b7e82b03ff2a6da9a"},
+    {file = "tensorly-0.8.1.tar.gz", hash = "sha256:cf78e4ffe612feca3510214002845c6831b267b1f2c1181154d41430310b237d"},
+]
+
+[package.dependencies]
+numpy = "*"
+scipy = "*"
+
+[[package]]
 name = "threadpoolctl"
 version = "3.2.0"
 description = "threadpoolctl"
@@ -4820,4 +4835,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "301e8fcafcb3dd2451d16b4c39f68f3bad88a2aee3f702c998f816d28f2b0f08"
+content-hash = "0589c2a628d7f089628cc7d251f270648f198a04de2d0c9666ecd4b70ca39847"

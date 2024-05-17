@@ -61,6 +61,7 @@ torchinfo = "^1.8.0"
 torchvision = ">=0.15,<1.0"
 tqdm = "^4.65.0"
 typing-extensions = "^4.7.1"
+tensorly = "^0.8.1"
 
 
 [build-system]
