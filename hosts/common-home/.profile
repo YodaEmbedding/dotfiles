@@ -117,6 +117,9 @@ case "$HOSTNAME" in
 
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
+    PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+    export PATH
+
     ulimit -n unlimited
 
     ;;
