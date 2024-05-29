@@ -117,6 +117,8 @@ case "$HOSTNAME" in
 
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
+    ulimit -n unlimited
+
     ;;
 
 
