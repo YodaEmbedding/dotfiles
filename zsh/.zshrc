@@ -103,15 +103,17 @@ PROMPT_FGCOLOR="${PROMPT_FGCOLOR:-217}"
 make_prompt() {
   local PROMPT_BGCOLOR="$1"
   local PROMPT_FGCOLOR="$2"
+  local PROMPT_DATE_FORMAT="%m-%d %H:%M:%S"
   local s=""
 
-  # · 00:00:00 · ~/pwd · (master)
+  # · 01-01 00:00:00 · ~/pwd · (PROMPT_NAME) · (master) · [user@hostname]
   s+=$'\n'
   s+="%}%K{$PROMPT_BGCOLOR}%F{$PROMPT_FGCOLOR}%B"
-  s+='· %D{%H:%M:%S} '
+  s+="· %D{$PROMPT_DATE_FORMAT} "
   s+='· %~ '
   s+='$([[ -z "$PROMPT_NAME" ]] || echo "· ($PROMPT_NAME) ")'
   s+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
+  s+='$(out=$SLURM_JOB_ID; [ -z "$out" ] || echo "· ($(whoami)@$(hostname)) ")'
   s+='%b%f%k'
 
   # λ
