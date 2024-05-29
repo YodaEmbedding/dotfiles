@@ -22,7 +22,7 @@ return {
       "diagnosticls",
       "efm",
       "html",
-      "jsonls",
+      -- "jsonls",
       "ltex",
       "lua_ls",
       "pyright",
