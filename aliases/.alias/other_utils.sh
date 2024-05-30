@@ -139,14 +139,11 @@ alias htop_cpu="htop --sort-key=PERCENT_CPU"
 alias htop_mem="htop --sort-key=PERCENT_MEM"
 
 # lf
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    [ -f "$tmp" ] || return
-    dir="$(cat "$tmp")"
-    rm -f "$tmp"
-    [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] || return
-    cd "$dir"
+lfcd() {
+  local dir
+  dir="$(command lf -print-last-dir "$@")"
+  [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] || return
+  cd "$dir"
 }
 
 alias l="lfcd"
