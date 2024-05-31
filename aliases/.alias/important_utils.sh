@@ -57,12 +57,30 @@ alias refactor='git_commit_message_with_prefix "refactor: "'
 alias style='git_commit_message_with_prefix "style: "'
 alias wip='git_commit_message_with_prefix "wip: "'
 
+alias chore:='git_commit_message_with_prefix_easy "chore: "'
+alias chored:='git_commit_message_with_prefix_easy "chore(deps): "'
+alias chorer:='git_commit_message_with_prefix_easy "chore(release): "'
+alias docs:='git_commit_message_with_prefix_easy "docs: "'
+alias feat:='git_commit_message_with_prefix_easy "feat: "'
+alias fix:='git_commit_message_with_prefix_easy "fix: "'
+alias perf:='git_commit_message_with_prefix_easy "perf: "'
+alias refactor:='git_commit_message_with_prefix_easy "refactor: "'
+alias style:='git_commit_message_with_prefix_easy "style: "'
+alias wip:='git_commit_message_with_prefix_easy "wip: "'
+
 git_commit_message_with_prefix() {
   local prefix="$1"
   local message="$2"
   shift 2
   local args=("$@")
   git commit -m "${prefix}${message}" "${args[@]}"
+}
+
+git_commit_message_with_prefix_easy() {
+  local prefix="$1"
+  shift 1
+  local message="$@"
+  git commit -m "${prefix}${message}"
 }
 
 git_commit_browse() {
