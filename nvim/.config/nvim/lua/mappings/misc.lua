@@ -42,9 +42,10 @@ c("x!!", "x !sudo tee > /dev/null %")        -- Save as sudo
 -- Search
 n("<leader>/", [[/\<\><Left><Left>]])          -- Search whole word
 x("&", '"hy:%s/<C-r>h//gc<Left><Left><Left>')  -- Substitute selection
-n("/", [[/\v]])                                -- Very magic regex
-n("?", [[:%s/\v]])                             -- Very magic regex
-x("?", [[:s/\v]])                              -- Very magic regex
+
+n("<Space>/", [[/\v]])                         -- Very magic regex
+n("<Space>?", [[:%s/\v]])                      -- Very magic regex
+x("<Space>?", [[:s/\v]])                       -- Very magic regex
 
 -- Misc
 x(".", ":normal .<CR>", {silent = true})     -- Dot repeat
