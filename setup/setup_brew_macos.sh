@@ -24,6 +24,7 @@ brew install fzf
 brew install htop
 brew install lf
 brew install ripgrep
+brew install sd
 brew install stow
 brew install tmux
 brew install tree
@@ -53,9 +54,20 @@ brew install sqlite
 brew install yazi
 brew install zoxide
 
+brew install hugo
+brew install openfortivpn
+
+# brew install --cask firefox
+# brew install --cask google-chrome
+# brew install --cask thunderbird
+
+# brew install --cask alacritty
 brew install --cask font-iosevka
+brew install --cask iterm2
+brew install --cask linearmouse
 brew install --cask mpv
 brew install --cask qview
+brew install --cask spotify
 brew install --cask visual-studio-code
 brew install --cask zoom
 
