@@ -1,9 +1,8 @@
-import json
 import pkgutil
 from importlib import import_module
 from itertools import *
 from pprint import pprint
-from time import sleep, time
+from time import sleep
 from timeit import timeit
 
 import numpy as np
@@ -88,33 +87,3 @@ def arange_(*shape, dtype=None):
 
 np.set_printoptions(precision=3)
 j = 1.0j
-A = array
-R = arange_
-
-
-def read(filename: str):
-    with open(filename) as f:
-        return f.read()
-
-
-def json_load(filename: str):
-    with open(filename) as f:
-        return json.load(f)
-
-
-def json_dump(data: dict, filename: str):
-    with open(filename, "w") as f:
-        json.dump(data, f, indent=2)
-
-
-json.loadf = json_load
-json.dumpf = json_dump
-
-
-def read_fwf(s: str, drop_first=True, **kwargs):
-    from io import StringIO
-
-    df = pd.read_fwf(StringIO(s), **kwargs)
-    if drop_first:
-        df.drop(df.columns[0], axis=1, inplace=True)
-    return df
