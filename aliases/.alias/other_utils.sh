@@ -186,7 +186,7 @@ poetry_shell() {
 }
 
 # ptpython
-alias pp='PYTHONSTARTUP=/home/mulhaq/dotfiles/root/usr/local/share/pythonstartup.py ptpython'
+alias pp="PYTHONSTARTUP=$HOME/dotfiles/root/usr/local/share/pythonstartup.py ptpython"
 alias ptpy='tmux rename-window "py"; pp'
 
 # ranger (open navigated folder in terminal on exit)
