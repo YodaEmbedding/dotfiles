@@ -5,34 +5,6 @@ from pprint import pprint
 from time import sleep
 from timeit import timeit
 
-import numpy as np
-from numpy import (
-    arange,
-    arccos,
-    arcsin,
-    arctan,
-    arctan2,
-    array,
-    ceil,
-    concatenate,
-    cos,
-    degrees,
-    exp,
-    floor,
-    log,
-    log2,
-    log10,
-    ones,
-    ones_like,
-    pi,
-    radians,
-    sin,
-    sqrt,
-    tan,
-    zeros,
-    zeros_like,
-)
-
 
 class LazyModule:
     def __init__(self, alias, path):
@@ -58,6 +30,7 @@ def lazy_callable(alias, path):
 
 LazyModule("mpl", "matplotlib")
 LazyModule("plt", "matplotlib.pyplot")
+LazyModule("np", "numpy")
 LazyModule("pd", "pandas")
 LazyModule("pl", "polars")
 LazyModule("sns", "seaborn")
@@ -80,10 +53,39 @@ for module in modules:
         continue
     LazyModule(alias=module, path=module)
 
+try:
+    import numpy as np
+    from numpy import (
+        arange,
+        arccos,
+        arcsin,
+        arctan,
+        arctan2,
+        array,
+        ceil,
+        concatenate,
+        cos,
+        degrees,
+        exp,
+        floor,
+        log,
+        log2,
+        log10,
+        ones,
+        ones_like,
+        pi,
+        radians,
+        sin,
+        sqrt,
+        tan,
+        zeros,
+        zeros_like,
+    )
 
-def arange_(*shape, dtype=None):
-    return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
+    np.set_printoptions(precision=3)
 
+    def arange_(*shape, dtype=None):
+        return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
 
-np.set_printoptions(precision=3)
-j = 1.0j
+except ImportError:
+    pass
