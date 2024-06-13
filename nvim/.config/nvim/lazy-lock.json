@@ -55,6 +55,7 @@
   "telescope-fzy-native.nvim": { "branch": "master", "commit": "282f069504515eec762ab6d6c89903377252bf5b" },
   "telescope.nvim": { "branch": "master", "commit": "f12b15e1b3a33524eb06a1ae7bc852fb1fd92197" },
   "tmux-navigate": { "branch": "master", "commit": "27c83cd229bceff55e6318cce7945995623a6106" },
+  "todo-comments.nvim": { "branch": "main", "commit": "51e10f838e84b4756c16311d0b1ef0972c6482d2" },
   "tokyonight.nvim": { "branch": "main", "commit": "024621763d91bb48f2b486df529c7aaeb8d6d355" },
   "trouble.nvim": { "branch": "main", "commit": "5e45bb78f8da3444d35616934c180fce3742c439" },
   "vim-bbye": { "branch": "master", "commit": "25ef93ac5a87526111f43e5110675032dbcacf56" },
