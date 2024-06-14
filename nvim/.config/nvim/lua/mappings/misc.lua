@@ -102,3 +102,6 @@ i("<C-h>",     sel("h", "l"), sel_opts)      -- Select left
 i("<C-j>",     sel("j", "k"), sel_opts)      -- Select down
 i("<C-k>",     sel("k", "j"), sel_opts)      -- Select up
 i("<C-l>",     sel("l", "h"), sel_opts)      -- Select right
+
+
+-- High real-estate, but unused: <Del>, <Ins>
