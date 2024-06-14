@@ -26,10 +26,10 @@ hi DiffDelete       guibg=#663b63 guifg=NONE
 hi DiffText         guibg=#554575 guifg=NONE
 
 " Diagnostics
-hi DiagnosticVirtualTextError guibg=NONE guifg=#905566
-hi DiagnosticVirtualTextWarn  guibg=NONE guifg=#887755
-hi DiagnosticVirtualTextInfo  guibg=NONE guifg=#557788
-hi DiagnosticVirtualTextHint  guibg=NONE guifg=#665577
+hi DiagnosticVirtualTextError guibg=NONE guifg=#905566  " Default: guifg=#db4b4b guibg=#362c3d
+hi DiagnosticVirtualTextWarn  guibg=NONE guifg=#887755  " Default: guifg=#e0af68 guibg=#373640
+hi DiagnosticVirtualTextInfo  guibg=NONE guifg=#557788  " Default: guifg=#0db9d7 guibg=#22374b
+hi DiagnosticVirtualTextHint  guibg=NONE guifg=#665577  " Default: guifg=#1abc9c guibg=#233745
 
 " gitsigns.nvim
 hi GitSignsAdd                    guifg=#2CC474
