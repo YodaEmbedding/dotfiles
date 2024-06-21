@@ -52,20 +52,10 @@ x(".", ":normal .<CR>", {silent = true})     -- Dot repeat
 n("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
 n("<Space><C-e>", ":e %:h/")                 -- Edit file at cwd
 
--- Automatic marks
--- n("i", "mii")
--- n("I", "miI")
--- n("a", "mia")
--- n("A", "miA")
--- n("o", "mio")
--- n("O", "miO")
--- n("c", "mic")
--- n("C", "miC")
-
 -- Jumplist
-  if not _G.plugin_loaded("before.nvim") then
-    n("<C-P>", "<C-I>")                        -- Previous jump in jumplist
-  end
+if not _G.plugin_loaded("before.nvim") then
+  n("<C-P>", "<C-I>")                        -- Previous jump in jumplist
+end
 
 -- Add <count>jk motions to jumplist
 n("j", "(v:count >= 1 ? 'm`' . v:count : '') . 'j'", {expr = true})

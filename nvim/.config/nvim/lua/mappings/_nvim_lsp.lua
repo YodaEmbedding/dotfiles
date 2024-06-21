@@ -4,10 +4,11 @@ local map = vim.keymap.set
 
 ---@format disable-next
 function _M.on_attach()
-  -- Already handled by Telescope:
-  -- map("n", "gd",        vim.lsp.buf.definition)
-  -- map("n", "gi",        vim.lsp.buf.implementation)
-  -- map("n", "gr",        vim.lsp.buf.references)
+  if not _G.plugin_loaded("telescope.nvim") then
+    map("n", "gd",      vim.lsp.buf.definition)
+    map("n", "gi",      vim.lsp.buf.implementation)
+    map("n", "gr",      vim.lsp.buf.references)
+  end
 
   -- Navigation
   map("n", "gCi",       vim.lsp.buf.incoming_calls)
@@ -19,7 +20,6 @@ function _M.on_attach()
 
   -- Documentation
   map("i", "<C-k>",     vim.lsp.buf.signature_help)
-  -- map("n", "<C-k>",     vim.lsp.buf.signature_help)
   map("n", "K",         vim.lsp.buf.hover)
 
   -- Diagnostics
@@ -35,13 +35,6 @@ function _M.on_attach()
   map("n", "<space>a",  ok and actions_preview.code_actions or vim.lsp.buf.code_action)
   map("n", "<F2>",      vim.lsp.buf.rename)
   map("n", "<F4>",      vim.lsp.buf.format)
-
-  -- Workspaces
-  -- map("n", "<space>wa", vim.lsp.buf.add_workspace_folder)
-  -- map("n", "<space>wl", function()
-  --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  -- end)
-  -- map("n", "<space>wr", vim.lsp.buf.remove_workspace_folder)
 end
 
 return _M

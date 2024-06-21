@@ -12,12 +12,6 @@ smap <expr> <C-e>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-e
 imap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 smap <expr> <C-j>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-j>'
 
-" Expand or jump
-" imap <expr> <C-e>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'
-" smap <expr> <C-e>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'
-" imap <expr> <C-e>   vsnip#expandable() ? '<Plug>(vsnip-expand)' : available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'
-" smap <expr> <C-e>   vsnip#expandable() ? '<Plug>(vsnip-expand)' : available(1) ? '<Plug>(vsnip-expand-or-jump)' : '<C-e>'
-
 " Jump forward or backward
 imap <expr> <C-l>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-l>'
 smap <expr> <C-l>   vsnip#jumpable(1)  ? '<Plug>(vsnip-jump-next)' : '<C-l>'
