@@ -1,3 +1,6 @@
+[manager]
+syntect_theme = "~/dotfiles/yazi/.config/yazi/themes/night-owlish.tmTheme"
+
 
 # [icons]
 #
