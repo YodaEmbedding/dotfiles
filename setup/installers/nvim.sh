@@ -4,10 +4,14 @@ TMP_DIR="$HOME/.dotfiles_tmp_install"
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit 1
 
-NVIM_VERSION=0.9.5
-wget -nc -O "nvim-v$NVIM_VERSION.tar.gz" "https://github.com/neovim/neovim/archive/refs/tags/v$NVIM_VERSION.tar.gz"
-tar xf "nvim-v$NVIM_VERSION.tar.gz"
-cd "neovim-$NVIM_VERSION" || exit 1
+AUTHOR="neovim"
+PKGNAME="neovim"
+VERSION=0.9.5
+
+wget -nc -O "nvim-v$VERSION.tar.gz" "https://github.com/$AUTHOR/$PKGNAME/archive/refs/tags/v$VERSION.tar.gz"
+tar xf "nvim-v$VERSION.tar.gz"
+cd "$PKGNAME-$VERSION" || exit 1
+
 make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX="$HOME/.local"
 make install
 

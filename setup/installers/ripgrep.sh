@@ -4,10 +4,15 @@ TMP_DIR="$HOME/.dotfiles_tmp_install"
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit 1
 
-RIPGREP_VERSION=14.0.3
-wget -nc "https://github.com/BurntSushi/ripgrep/releases/download/$RIPGREP_VERSION/ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl.tar.gz"
-tar xf "ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl.tar.gz"
-cd "ripgrep-$RIPGREP_VERSION-x86_64-unknown-linux-musl" || exit 1
+AUTHOR="BurntSushi"
+PKGNAME="ripgrep"
+VERSION=14.0.3
+ARCH="x86_64-unknown-linux-musl"
+
+wget -nc "https://github.com/$AUTHOR/$PKGNAME/releases/download/$VERSION/$PKGNAME-$VERSION-$ARCH.tar.gz"
+tar xf "$PKGNAME-$VERSION-$ARCH.tar.gz"
+cd "$PKGNAME-$VERSION-$ARCH" || exit 1
+
 mkdir -p "$HOME/.local/bin/"
 mkdir -p "$HOME/.local/share/zsh/site-functions/"
 mkdir -p "$HOME/.local/share/man/man1/"

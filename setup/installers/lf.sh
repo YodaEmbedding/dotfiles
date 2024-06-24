@@ -4,8 +4,12 @@ TMP_DIR="$HOME/.dotfiles_tmp_install"
 mkdir -p "$TMP_DIR"
 cd "$TMP_DIR" || exit 1
 
-LF_VERSION=31
-wget -nc "https://github.com/gokcehan/lf/releases/download/r$LF_VERSION/lf-linux-amd64.tar.gz"
-tar xf "lf-linux-amd64.tar.gz"
+AUTHOR="gokcehan"
+PKGNAME="lf"
+VERSION=31
+ARCH="linux-amd64"
+
+wget -nc "https://github.com/$AUTHOR/$PKGNAME/releases/download/r$VERSION/$PKGNAME-$ARCH.tar.gz"
+tar xf "$PKGNAME-$ARCH.tar.gz"
 mkdir -p "$HOME/.local/bin/"
-mv "lf" "$HOME/.local/bin/"
+mv "$PKGNAME" "$HOME/.local/bin/"
