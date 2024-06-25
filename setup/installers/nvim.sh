@@ -18,7 +18,7 @@ make install
 # PYTHON_VERSION=3.9.6
 # $HOME/.local/share/python-$PYTHON_VERSION/bin/pip3 install pynvim
 
-python3 -m pip install pynvim
+# python3 -m pip install pynvim
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim \
+#   ~/.local/share/nvim/site/pack/packer/start/packer.nvim
