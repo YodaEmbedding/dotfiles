@@ -15,6 +15,7 @@ local b = {
   jumplist                  = function() require("telescope.builtin").jumplist() end,
   live_grep                 = function() require("telescope.builtin").live_grep() end,
   marks                     = function() require("telescope.builtin").marks() end,
+  resume                    = function() require("telescope.builtin").resume() end,
   command_history           = function() require("telescope.builtin").command_history() end,
   lsp_definitions           = function() require("telescope.builtin").lsp_definitions() end,
   lsp_dynamic_workspace_symbols = function() require("telescope.builtin").lsp_dynamic_workspace_symbols() end,
@@ -30,6 +31,7 @@ map("n", "-",               b.current_buffer_fuzzy_find)
 map("n", "<CR>",            b.jumplist)
 map("n", "_",               b.live_grep)
 map("n", "<Space>m",        b.marks)
+map("n", "<Space>r",        b.resume)
 map("n", "<Space>:",        b.command_history)
 
 map("n", "gd",              b.lsp_definitions)
