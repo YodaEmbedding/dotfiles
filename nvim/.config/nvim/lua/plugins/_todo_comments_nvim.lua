@@ -6,6 +6,9 @@ return {
   },
 
   opts = {
+    highlight = {
+      pattern = [[.*<(KEYWORDS)>]],
+    },
     search = {
       command = "rg",
       args = {
