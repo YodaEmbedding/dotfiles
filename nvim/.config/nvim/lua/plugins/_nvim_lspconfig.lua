@@ -52,8 +52,8 @@ return {
 
     on_attach = function(client, bufnr)
       -- For built-in LSP omnifunc:
-      vim.api.nvim_buf_set_option(bufnr, "completefunc", "v:lua.vim.lsp.omnifunc")
-      vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+      vim.api.nvim_set_option_value("completefunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
+      vim.api.nvim_set_option_value("omnifunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
 
       if not vim.b._lsp_on_attach_lock then
         vim.b._lsp_on_attach_lock = true
@@ -62,7 +62,9 @@ return {
         require("mappings._nvim_lsp").on_attach()
       end
 
-      require("plugins._nvim_navic")._.on_attach(client, bufnr)
+      if _G.plugin_loaded("nvim-navic") then
+        require("plugins._nvim_navic")._.on_attach(client, bufnr)
+      end
     end,
 
     -- Load all server configs in plugins/lspconfig/ directory automatically.
