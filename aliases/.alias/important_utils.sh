@@ -70,8 +70,14 @@ alias wip:='git_commit_message_with_prefix_easy "wip: "'
 
 git_commit_message_with_prefix() {
   local prefix="$1"
-  local message="$2"
-  shift 2
+  shift 1
+  local message="$1"
+  if [ "$#" -lt 1 ]; then
+    # If no message, trim ": " from the prefix.
+    prefix="${prefix%: }"
+  else
+    shift 1
+  fi
   local args=("$@")
   git commit -m "${prefix}${message}" "${args[@]}"
 }
@@ -80,6 +86,12 @@ git_commit_message_with_prefix_easy() {
   local prefix="$1"
   shift 1
   local message="$@"
+  if [ "$#" -lt 1 ]; then
+    # If no message, trim ": " from the prefix.
+    prefix="${prefix%: }"
+  else
+    shift 1
+  fi
   git commit -m "${prefix}${message}"
 }
 
