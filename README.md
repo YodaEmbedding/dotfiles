@@ -64,6 +64,7 @@ List of configs, which directories these belong in, and other details.
 | rofi           | `$HOME`  | rofi                                                 | GUI app/command launcher                         |
 | root           | `/`      |                                                      | PYTHONSTARTUP                                    |
 | scripts        | `$HOME`  |                                                      | Personal (e.g. `emoji` clipboard copier)         |
+| skhd           | `$HOME`  | skhd                                                 | Keyboard shortcuts (MacOS)                       |
 | systemd        | `$HOME`  |                                                      | Services                                         |
 | termite        | `$HOME`  |                                                      | Terminal emulator                                |
 | thunar         | `$HOME`  | thunar                                               | File manager                                     |
