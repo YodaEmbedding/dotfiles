@@ -1,4 +1,4 @@
-if not _G.plugin_loaded("telescope.nvim") then
+if not _G.plugin_loaded("aerial.nvim") then
   do return end
 end
 
