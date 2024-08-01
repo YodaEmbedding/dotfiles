@@ -48,16 +48,6 @@ class LazyObject:
         return self._obj[key]
 
 
-def lazy_callable(alias, path):
-    def inner(*args, **kwargs):
-        module = import_module(path)
-        func = getattr(module, alias)
-        globals()[alias] = func
-        return func(*args, **kwargs)
-
-    globals()[alias] = inner
-
-
 LazyModule("mpl", "matplotlib")
 LazyModule("plt", "matplotlib.pyplot")
 LazyModule("np", "numpy")
@@ -68,14 +58,13 @@ LazyModule("tf", "tensorflow")
 LazyModule("nn", "torch.nn")
 LazyModule("F", "torch.nn.functional")
 
+LazyObject("datetime", "datetime")
+LazyObject("DictConfig", "omegaconf")
+LazyObject("OmegaConf", "omegaconf")
+LazyObject("DataFrame", "pandas")
+LazyObject("Path", "pathlib")
 LazyObject("Image", "PIL.Image", getattr=False)
-
-lazy_callable("datetime", "datetime")
-lazy_callable("DictConfig", "omegaconf")
-lazy_callable("OmegaConf", "omegaconf")
-lazy_callable("DataFrame", "pandas")
-lazy_callable("Path", "pathlib")
-lazy_callable("Tensor", "torch")
+LazyObject("Tensor", "torch")
 
 modules = [x.name for x in pkgutil.iter_modules()]
 
