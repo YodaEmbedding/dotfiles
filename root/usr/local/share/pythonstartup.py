@@ -19,6 +19,35 @@ class LazyModule:
         return getattr(module, attr)
 
 
+class LazyObject:
+    def __init__(self, alias, path, getattr=True):
+        self._alias = alias
+        self._path = path
+        self._getattr = getattr
+        globals()[self._alias] = self
+
+    @property
+    def _obj(self):
+        module = import_module(self._path)
+        obj = module
+        if self._getattr:
+            obj = getattr(obj, self._alias)
+        globals()[self._alias] = obj
+        return obj
+
+    def __call__(self, *args, **kwargs):
+        return self._obj(*args, **kwargs)
+
+    def __getattr__(self, attr):
+        if attr == "_obj":
+            return super().__getattribute__(attr)
+        obj = self._obj
+        return getattr(obj, attr)
+
+    def __getitem__(self, key):
+        return self._obj[key]
+
+
 def lazy_callable(alias, path):
     def inner(*args, **kwargs):
         module = import_module(path)
@@ -39,12 +68,13 @@ LazyModule("tf", "tensorflow")
 LazyModule("nn", "torch.nn")
 LazyModule("F", "torch.nn.functional")
 
+LazyObject("Image", "PIL.Image", getattr=False)
+
 lazy_callable("datetime", "datetime")
 lazy_callable("DictConfig", "omegaconf")
 lazy_callable("OmegaConf", "omegaconf")
 lazy_callable("DataFrame", "pandas")
 lazy_callable("Path", "pathlib")
-lazy_callable("Image", "PIL")
 lazy_callable("Tensor", "torch")
 
 modules = [x.name for x in pkgutil.iter_modules()]
