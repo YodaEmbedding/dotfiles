@@ -100,6 +100,9 @@ PROMPT_SYMBOL="${PROMPT_SYMBOL:-λ}"
 PROMPT_BGCOLOR="${PROMPT_BGCOLOR:-96}"
 PROMPT_FGCOLOR="${PROMPT_FGCOLOR:-217}"
 
+HOSTNAME="${HOSTNAME:-$(hostname)}"
+WHOAMI="${WHOAMI:-$(whoami)}"
+
 make_prompt() {
   local PROMPT_BGCOLOR="$1"
   local PROMPT_FGCOLOR="$2"
@@ -112,9 +115,11 @@ make_prompt() {
   s+="· %D{$PROMPT_DATE_FORMAT} "
   s+='· %~ '
   s+='$([[ -z "$PROMPT_NAME" ]] || echo "· ($PROMPT_NAME) ")'
-  s+='$(out=$(git_prompt_info); [ -z "$out" ] || echo "· ($out) ")'
-  s+='$(out=$SLURM_JOB_ID; [ -z "$out" ] || echo "· ($(whoami)@$(hostname)) ")'
+  s+='$(out=$(git_current_branch); [ -z "$out" ] || echo "· ($out) ")'
+  s+='$(out=$SLURM_JOB_ID; [ -z "$out" ] || echo "· ($WHOAMI@$HOSTNAME) ")'
   s+='%b%f%k'
+
+  # Use git_current_branch, since git_prompt_info is sometimes slow.
 
   # λ
   s+=$'\n'
