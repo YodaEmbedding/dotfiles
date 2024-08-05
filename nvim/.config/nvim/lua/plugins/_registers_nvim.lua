@@ -1,6 +1,8 @@
 return {
   "tversteeg/registers.nvim",
 
+  enabled = false,
+
   -- name = "registers",
 
   cmd = "Registers",
