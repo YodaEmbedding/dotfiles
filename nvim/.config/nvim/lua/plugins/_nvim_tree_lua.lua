@@ -30,6 +30,6 @@ return {
       },
     }
 
-    -- require("mappings._nvim_tree_lua")
+    require("mappings._nvim_tree_lua")
   end,
 }
