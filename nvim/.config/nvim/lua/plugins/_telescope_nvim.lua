@@ -5,6 +5,7 @@ return {
     -- "aznhe21/actions-preview.nvim",
     "Myzel394/jsonfly.nvim",
     "nvim-lua/plenary.nvim",
+    "nvim-telescope/telescope-smart-history.nvim",
   },
 
   lazy = true,
@@ -32,12 +33,19 @@ return {
     telescope.setup {
       defaults = {
 
+        history = {
+          path = "~/.local/share/nvim/databases/telescope_history.sqlite3",
+          limit = 100,
+        },
+
         mappings = {
           i = {
             ["<Esc>"] = actions.close,
             ["<C-c>"] = function()
               vim.cmd [[stopinsert]]
             end,
+            ["<C-n>"] = require("telescope.actions").cycle_history_next,
+            ["<C-p>"] = require("telescope.actions").cycle_history_prev,
           },
         },
 
@@ -79,5 +87,6 @@ return {
     -- require("mappings._telescope_nvim")
 
     require("telescope").load_extension("jsonfly")
+    require("telescope").load_extension("smart_history")
   end,
 }
