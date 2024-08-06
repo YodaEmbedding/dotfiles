@@ -16,6 +16,7 @@ return {
       sort_by = "case_sensitive",
       disable_netrw = true,
       view = {
+        side = "right",
         width = 30,
       },
       renderer = {
