@@ -32,6 +32,9 @@
     diffFilter = delta --color-only
     singleKey = true
 
+[rebase]
+    updateRefs = true
+
 [delta]
     dark
     # navigate = true  # wait: https://github.com/dandavison/delta/issues/237
