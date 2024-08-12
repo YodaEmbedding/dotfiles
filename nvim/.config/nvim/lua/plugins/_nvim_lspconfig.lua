@@ -97,6 +97,11 @@ return {
     local config_defaults = {
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
       on_attach = this.on_attach,
+      -- on_init = function(client)
+      --   -- Workaround/fix.
+      --   -- See https://github.com/neovim/neovim/issues/19237#issuecomment-2237037154
+      --   client.offset_encoding = "utf-8"
+      -- end,
     }
 
     require("plugins._neodev_nvim")._.on_lspconfig_load()
