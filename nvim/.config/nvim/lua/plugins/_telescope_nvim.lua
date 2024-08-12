@@ -86,7 +86,7 @@ return {
       },
     }
 
-    -- require("mappings._telescope_nvim")
+    require("mappings._telescope_nvim")
 
     require("telescope").load_extension("jsonfly")
     require("telescope").load_extension("smart_history")

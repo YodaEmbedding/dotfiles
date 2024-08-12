@@ -20,5 +20,7 @@ return {
         end,
       },
     }
+
+    require("mappings._aerial_nvim")
   end,
 }

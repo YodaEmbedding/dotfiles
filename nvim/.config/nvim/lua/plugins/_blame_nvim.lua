@@ -6,5 +6,7 @@ return {
       date_format = "%Y-%m-%d",
       -- commit_detail_view = "current",
     }
+
+    require("mappings._blame_nvim")
   end
 }

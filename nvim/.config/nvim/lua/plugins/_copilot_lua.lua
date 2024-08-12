@@ -55,5 +55,7 @@ return {
       },
 
     }
+
+    require("mappings._copilot_lua")
   end,
 }
