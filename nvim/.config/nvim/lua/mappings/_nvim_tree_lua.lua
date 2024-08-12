@@ -1,1 +1,4 @@
-vim.keymap.set("n", "<space>T", ":NvimTreeFindFileToggle<CR>")
+local map = vim.keymap.set
+
+
+map("n", "<space>T", ":NvimTreeFindFileToggle<CR>")
