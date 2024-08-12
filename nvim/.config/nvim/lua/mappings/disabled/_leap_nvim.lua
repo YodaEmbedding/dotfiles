@@ -1,8 +1,3 @@
-if not _G.plugin_loaded("leap.nvim") then
-  do return end
-end
-
-
 local leap = require("leap")
 
 

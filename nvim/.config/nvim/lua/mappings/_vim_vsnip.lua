@@ -1,7 +1,3 @@
-if not _G.plugin_loaded("vim-vsnip") then
-  do return end
-end
-
 vim.cmd [[
 
 " Expand

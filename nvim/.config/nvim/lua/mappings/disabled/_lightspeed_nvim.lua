@@ -1,8 +1,3 @@
-if not _G.plugin_loaded("lightspeed.nvim") then
-  do return end
-end
-
-
 local lightspeed = require("lightspeed")
 
 local n = function(...) vim.keymap.set("n", ...) end
