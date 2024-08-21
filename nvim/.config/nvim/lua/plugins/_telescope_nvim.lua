@@ -5,7 +5,9 @@ return {
     -- "aznhe21/actions-preview.nvim",
     "Myzel394/jsonfly.nvim",
     "nvim-lua/plenary.nvim",
+    -- "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-smart-history.nvim",
+    "prochri/telescope-all-recent.nvim",
   },
 
   lazy = true,

@@ -3,8 +3,10 @@ return {
 
   dependencies = {
     "kkharji/sqlite.lua",
-    "nvim-telescope/telescope.nvim",
+    -- "nvim-telescope/telescope.nvim",  -- Disable to facilitate lazy loading.
   },
+
+  lazy = true,
 
   config = function()
     require("telescope-all-recent").setup {}
