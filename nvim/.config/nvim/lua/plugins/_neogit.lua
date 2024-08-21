@@ -7,5 +7,7 @@ return {
     "nvim-telescope/telescope.nvim",
   },
 
+  cmd = { "Neogit" },
+
   config = true,
 }

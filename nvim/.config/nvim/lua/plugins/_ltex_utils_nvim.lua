@@ -7,6 +7,14 @@ return {
     -- "nvim-telescope/telescope-fzf-native.nvim", -- optional
   },
 
+  ft = {
+    "bib",
+    "markdown",
+    "plaintex",
+    "rst",
+    "tex",
+  },
+
   opts = {
     dictionary = {
       -- path = vim.api.nvim_call_function("stdpath", { "state" }) .. "/ltex/",

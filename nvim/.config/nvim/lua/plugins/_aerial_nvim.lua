@@ -1,6 +1,18 @@
 return {
   "stevearc/aerial.nvim",
 
+  init = function()
+    -- Since we load lazily upon cmd, set up the mappings in init, not config.
+    require("mappings._aerial_nvim")
+  end,
+
+  cmd = {
+    "AerialOpen",
+    "AerialNavOpen",
+    "AerialToggle",
+    "AerialNavToggle",
+  },
+
   config = function()
     require("aerial").setup {
       layout = {
@@ -20,7 +32,5 @@ return {
         end,
       },
     }
-
-    require("mappings._aerial_nvim")
   end,
 }

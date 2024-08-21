@@ -5,6 +5,8 @@ return {
     "williamboman/mason.nvim",
   },
 
+  event = { "BufReadPre", "BufNewFile" },
+
   config = function()
     require("mason-lspconfig").setup {
       ensure_installed = {

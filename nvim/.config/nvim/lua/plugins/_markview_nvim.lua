@@ -8,4 +8,6 @@ return {
 
     "nvim-tree/nvim-web-devicons",
   },
+
+  ft = { "markdown" },
 }

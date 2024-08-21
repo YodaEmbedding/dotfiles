@@ -1,6 +1,13 @@
 return {
   "FabijanZulj/blame.nvim",
 
+  cmd = { "BlameToggle" },
+
+  init = function()
+    -- Since we load lazily upon cmd, set up the mappings in init, not config.
+    require("mappings._blame_nvim")
+  end,
+
   config = function()
     require("blame").setup {
       date_format = "%Y-%m-%d",
@@ -31,7 +38,5 @@ return {
         end
       end,
     })
-
-    require("mappings._blame_nvim")
   end
 }

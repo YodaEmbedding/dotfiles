@@ -5,10 +5,19 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
 
+  cmd = {
+    "NvimTreeFindFileToggle",
+    "NvimTreeFocus",
+    "NvimTreeToggle",
+  },
+
   init = function()
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
+
+    -- Since we load lazily upon cmd, set up the mappings in init, not config.
+    require("mappings._nvim_tree_lua")
   end,
 
   config = function()
@@ -29,7 +38,5 @@ return {
         -- dotfiles = true,
       },
     }
-
-    require("mappings._nvim_tree_lua")
   end,
 }
