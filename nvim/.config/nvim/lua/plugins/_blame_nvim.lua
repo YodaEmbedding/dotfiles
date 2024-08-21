@@ -3,10 +3,7 @@ return {
 
   cmd = { "BlameToggle" },
 
-  init = function()
-    -- Since we load lazily upon cmd, set up the mappings in init, not config.
-    require("mappings._blame_nvim")
-  end,
+  keys = require("mappings._blame_nvim"),
 
   config = function()
     require("blame").setup {

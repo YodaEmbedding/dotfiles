@@ -1,4 +1,3 @@
-local map = vim.keymap.set
-
-
-map("n", "<Space>o", function() vim.cmd [[ execute "AerialToggle" ]] end)
+return {
+  { "<Space>o", function() require("aerial").toggle() end, "n" },
+}

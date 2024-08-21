@@ -1,6 +1,3 @@
-local map = vim.keymap.set
-
-
 ---@format disable
 
 local b = {
@@ -20,18 +17,20 @@ local b = {
   lsp_references            = function() require("telescope.builtin").lsp_references({show_line = false}) end,
 }
 
-map("n", "<Space><Space>",  b.builtin)
-map("n", "<Tab>",           b.buffers)
-map("n", ",",               b.smart_open_cwd)
-map("n", "<Space>,",        b.smart_open)
-map("n", "_",               b.current_buffer_fuzzy_find)
-map("n", "<CR>",            b.jumplist)
-map("n", "-",               b.live_grep)
-map("n", "<Space>m",        b.marks)
-map("n", "<Space>r",        b.resume)
-map("n", "<Space>:",        b.command_history)
+return {
+  { "<Space><Space>",  b.builtin,                       "n" },
+  { "<Tab>",           b.buffers,                       "n" },
+  { ",",               b.smart_open_cwd,                "n" },
+  { "<Space>,",        b.smart_open,                    "n" },
+  { "_",               b.current_buffer_fuzzy_find,     "n" },
+  { "<CR>",            b.jumplist,                      "n" },
+  { "-",               b.live_grep,                     "n" },
+  { "<Space>m",        b.marks,                         "n" },
+  { "<Space>r",        b.resume,                        "n" },
+  { "<Space>:",        b.command_history,               "n" },
 
-map("n", "gd",              b.lsp_definitions)
-map("n", "<C-t>",           b.lsp_dynamic_workspace_symbols)
-map("n", "gi",              b.lsp_implementations)
-map("n", "gr",              b.lsp_references)
+  { "gd",              b.lsp_definitions,               "n" },
+  { "<C-t>",           b.lsp_dynamic_workspace_symbols, "n" },
+  { "gi",              b.lsp_implementations,           "n" },
+  { "gr",              b.lsp_references,                "n" },
+}

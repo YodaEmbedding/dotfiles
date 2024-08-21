@@ -10,6 +10,8 @@ return {
 
   lazy = true,
 
+  keys = require("mappings._telescope_nvim"),
+
   config = function()
     local telescope = require("telescope")
     local actions = require("telescope.actions")
@@ -85,8 +87,6 @@ return {
         },
       },
     }
-
-    require("mappings._telescope_nvim")
 
     require("telescope").load_extension("jsonfly")
     require("telescope").load_extension("smart_history")

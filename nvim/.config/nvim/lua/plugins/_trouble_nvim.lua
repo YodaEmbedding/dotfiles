@@ -3,10 +3,7 @@ return {
 
   cmd = { "Trouble" },
 
-  init = function()
-    -- Since we load lazily upon cmd, set up the mappings in init, not config.
-    require("mappings._trouble_nvim")
-  end,
+  keys = require("mappings._trouble_nvim"),
 
   config = function()
     require("trouble").setup {

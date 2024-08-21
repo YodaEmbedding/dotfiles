@@ -4,6 +4,8 @@ return {
   cmd = "Copilot",
   event = "InsertEnter",
 
+  keys = require("mappings._copilot_lua"),
+
   config = function()
     require("copilot").setup {
 
@@ -55,7 +57,5 @@ return {
       },
 
     }
-
-    require("mappings._copilot_lua")
   end,
 }

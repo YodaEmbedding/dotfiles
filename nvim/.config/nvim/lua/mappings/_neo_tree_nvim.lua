@@ -1,4 +1,3 @@
-local map = vim.keymap.set
-
-
-map("n", "<space>T", ":NeoTreeFocusToggle<CR>")
+return {
+  { "<space>T", ":NeoTreeFocusToggle<CR>", "n" },
+}
