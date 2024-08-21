@@ -90,6 +90,8 @@ return {
       },
     }
 
+    require("telescope-all-recent").setup {}
+
     require("telescope").load_extension("jsonfly")
     require("telescope").load_extension("smart_history")
   end,
