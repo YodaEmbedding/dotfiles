@@ -20,7 +20,6 @@ return {
         if blame_type == "window" then
           vim.cmd [[
             execute "LspLensOff"
-            call feedkeys("\<C-w>h")
           ]]
         end
       end,
