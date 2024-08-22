@@ -77,6 +77,7 @@ return {
           { name = "vsnip" },
           { name = "latex_symbols" },
           { name = "tmux" },
+          { name = "lazydev", group_index = 0 },
         },
         window = {
           completion = {

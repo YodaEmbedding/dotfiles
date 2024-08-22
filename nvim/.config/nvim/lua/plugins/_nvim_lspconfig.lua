@@ -4,7 +4,6 @@ return {
   dependencies = {
     "hrsh7th/nvim-cmp",
     "hrsh7th/cmp-nvim-lsp",
-    "folke/neodev.nvim",
     -- "ray-x/lsp_signature.nvim",
     -- "onsails/lspkind-nvim",
     -- "SmiteshP/nvim-navic",
@@ -104,7 +103,6 @@ return {
       -- end,
     }
 
-    require("plugins._neodev_nvim")._.on_lspconfig_load()
     require("plugins._nvim_cmp")._.on_lspconfig_load()
 
     this.setup_servers(this.servers, configs, config_defaults)
