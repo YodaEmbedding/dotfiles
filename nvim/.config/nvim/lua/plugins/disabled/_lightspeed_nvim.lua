@@ -7,10 +7,12 @@ return {
     vim.g.lightspeed_no_default_keymaps = true
   end,
 
-  config = function()
-    require("lightspeed").setup {
-      ignore_case = true,
-    }
+  opts = {
+    ignore_case = true,
+  },
+
+  config = function(_, opts)
+    require("lightspeed").setup(opts)
 
     require("mappings._lightspeed_nvim")
   end,

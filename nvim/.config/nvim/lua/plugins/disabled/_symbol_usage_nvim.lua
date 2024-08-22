@@ -7,9 +7,7 @@ return {
 
   enabled = false,
 
-  config = function()
-    require("symbol-usage").setup {
-      vt_position = "end_of_line",
-    }
-  end,
+  opts = {
+    vt_position = "end_of_line",
+  },
 }

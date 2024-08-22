@@ -9,41 +9,39 @@ return {
     -- vim.g.did_load_filetypes = 1
   end,
 
-  config = function()
-    require("filetype").setup {
-      overrides = {
+  opts = {
+    overrides = {
 
-        extensions = {
-          cls = "tex",
-          nxc = "cpp",
-        },
-
-        literal = {
-          -- gtkrc = "config",
-        },
-
-        complex = {
-          [".*rc$"] = "config",
-          -- [".*/.config/.*$"] = "config",
-        },
-
-        function_extensions = {
-          -- filetype = function()
-          --   vim.bo.filetype = "config"
-          --   vim.cmd("syntax off")
-          -- end,
-        },
-
-        function_literal = {
-        },
-
-        function_complex = {
-        },
-
-        shebang = {
-        },
-
+      extensions = {
+        cls = "tex",
+        nxc = "cpp",
       },
-    }
-  end,
+
+      literal = {
+        -- gtkrc = "config",
+      },
+
+      complex = {
+        [".*rc$"] = "config",
+        -- [".*/.config/.*$"] = "config",
+      },
+
+      function_extensions = {
+        -- filetype = function()
+        --   vim.bo.filetype = "config"
+        --   vim.cmd("syntax off")
+        -- end,
+      },
+
+      function_literal = {
+      },
+
+      function_complex = {
+      },
+
+      shebang = {
+      },
+
+    },
+  },
 }

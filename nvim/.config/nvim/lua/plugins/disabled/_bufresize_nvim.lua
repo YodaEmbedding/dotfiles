@@ -3,7 +3,6 @@ return {
 
   enabled = false,
 
-  config = function()
-    require("bufresize").setup()
-  end,
+  opts = {
+  },
 }

@@ -5,18 +5,16 @@ return {
     -- "antoinemadec/FixCursorHold.nvim",
   },
 
-  config = function()
-    require("nvim-lightbulb").setup {
-      autocmd = { enabled = true },
-      -- float = { enabled = true },
-      -- virtual_text = { enabled = true },
-      -- status_text = { enabled = true },
+  opts = {
+    autocmd = { enabled = true },
+    -- float = { enabled = true },
+    -- virtual_text = { enabled = true },
+    -- status_text = { enabled = true },
 
-      ignore = {
-        clients = {
-          "ruff_lsp",
-        },
+    ignore = {
+      clients = {
+        "ruff_lsp",
       },
-    }
-  end,
+    },
+  },
 }

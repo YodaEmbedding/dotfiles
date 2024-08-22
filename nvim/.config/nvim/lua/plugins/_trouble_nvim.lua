@@ -5,9 +5,7 @@ return {
 
   keys = require("mappings._trouble_nvim"),
 
-  config = function()
-    require("trouble").setup {
-      -- auto_preview = false,
-    }
-  end,
+  opts = {
+    -- auto_preview = false,
+  },
 }

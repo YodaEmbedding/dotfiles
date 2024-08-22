@@ -3,13 +3,15 @@ return {
 
   enabled = false,
 
-  config = function()
+  opts = {
+    case_sensitive = false,
+  },
+
+  config = function(_, opts)
     -- require("leap").set_default_keymaps()  -- NOTE: deprecated
     -- require("leap").add_default_mappings()
 
-    require("leap").setup {
-      case_sensitive = false,
-    }
+    require("leap").setup(opts)
 
     require("mappings._leap_nvim")
   end,

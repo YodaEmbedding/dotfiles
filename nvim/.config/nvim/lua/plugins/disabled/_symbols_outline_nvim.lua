@@ -3,12 +3,10 @@ return {
 
   enabled = false,
 
-  config = function()
-    require("symbols-outline").setup {
-      symbol_blacklist = {
-        "Constant",
-        "Variable",
-      },
-    }
-  end,
+  opts = {
+    symbol_blacklist = {
+      "Constant",
+      "Variable",
+    },
+  },
 }

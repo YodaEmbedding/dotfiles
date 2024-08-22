@@ -7,36 +7,34 @@ return {
 
   event = { "BufReadPre", "BufNewFile" },
 
-  config = function()
-    require("mason-lspconfig").setup {
-      ensure_installed = {
-        "bashls",
-        "efm",
-        "lua_ls",
-        "pyright",
-        "ruff_lsp",
-        "vimls",
+  opts = {
+    ensure_installed = {
+      "bashls",
+      "efm",
+      "lua_ls",
+      "pyright",
+      "ruff_lsp",
+      "vimls",
 
-        -- -- "ccls",  -- not supported
-        -- "cmake",
-        -- "cssls",
-        -- "diagnosticls",
-        -- "html",
-        -- "jsonls",
-        -- "rust_analyzer",
-        -- "texlab",
-        -- "tsserver",
-        -- "yamlls",
+      -- -- "ccls",  -- not supported
+      -- "cmake",
+      -- "cssls",
+      -- "diagnosticls",
+      -- "html",
+      -- "jsonls",
+      -- "rust_analyzer",
+      -- "texlab",
+      -- "tsserver",
+      -- "yamlls",
 
-        -- "clojure_lsp",
-        -- "hls",
-        -- "jdtls",
-        -- "ltex",
-        -- "kotlin_language_server",
-        -- "metals",
-        -- "pylyzer",
-        -- "rnix",
-      },
-    }
-  end,
+      -- "clojure_lsp",
+      -- "hls",
+      -- "jdtls",
+      -- "ltex",
+      -- "kotlin_language_server",
+      -- "metals",
+      -- "pylyzer",
+      -- "rnix",
+    },
+  },
 }

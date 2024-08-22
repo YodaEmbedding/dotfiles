@@ -19,23 +19,21 @@ return {
     vim.g.loaded_netrwPlugin = 1
   end,
 
-  config = function()
-    require("nvim-tree").setup {
-      sort_by = "case_sensitive",
-      disable_netrw = true,
-      view = {
-        side = "right",
-        width = 30,
-      },
-      renderer = {
-        -- group_empty = true,
-      },
-      update_focused_file = {
-        enable = true,
-      },
-      filters = {
-        -- dotfiles = true,
-      },
-    }
-  end,
+  opts = {
+    sort_by = "case_sensitive",
+    disable_netrw = true,
+    view = {
+      side = "right",
+      width = 30,
+    },
+    renderer = {
+      -- group_empty = true,
+    },
+    update_focused_file = {
+      enable = true,
+    },
+    filters = {
+      -- dotfiles = true,
+    },
+  },
 }

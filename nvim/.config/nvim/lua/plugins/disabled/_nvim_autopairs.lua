@@ -3,9 +3,7 @@ return {
 
   enabled = false,
 
-  config = function()
-    require("nvim-autopairs").setup {
-      ignored_next_char = "[%w%.]"
-    }
-  end,
+  opts = {
+    ignored_next_char = "[%w%.]"
+  },
 }

@@ -9,8 +9,6 @@ return {
 
   ft = { "markdown", "tex" },
 
-  config = function()
-    require("ltex_extra").setup {
-    }
-  end
+  opts = {
+  },
 }

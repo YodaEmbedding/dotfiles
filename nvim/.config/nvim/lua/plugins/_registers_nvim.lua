@@ -12,7 +12,7 @@ return {
     { "<C-R>", mode = "i" },
   },
 
-  config = {
+  opts = {
       window = {
         border = "rounded",
         transparency = 0,

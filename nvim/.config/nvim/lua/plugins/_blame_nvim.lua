@@ -5,11 +5,13 @@ return {
 
   keys = require("mappings._blame_nvim"),
 
-  config = function()
-    require("blame").setup {
-      date_format = "%Y-%m-%d",
-      -- commit_detail_view = "current",
-    }
+  opts = {
+    date_format = "%Y-%m-%d",
+    -- commit_detail_view = "current",
+  },
+
+  config = function(_, opts)
+    require("blame").setup(opts)
 
     vim.api.nvim_create_autocmd("User", {
       pattern = "BlameViewOpened",

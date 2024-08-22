@@ -34,7 +34,7 @@ return {
       end)
     end
 
-    telescope.setup {
+    require("telescope").setup {
       defaults = {
 
         history = {

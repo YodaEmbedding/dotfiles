@@ -7,11 +7,9 @@ return {
     "neovim/nvim-lspconfig",
   },
 
-  config = function()
-    -- https://github.com/SmiteshP/nvim-navic#-customise
-    require("nvim-navic").setup {
-    }
-  end,
+  -- https://github.com/SmiteshP/nvim-navic#-customise
+  opts = {
+  },
 
   _ = {
     on_attach = function(client, bufnr)
