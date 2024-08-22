@@ -1,3 +1,3 @@
 return {
-  "nelstrom/vim-visual-star-search",
+  "bronson/vim-visual-star-search",
 }
