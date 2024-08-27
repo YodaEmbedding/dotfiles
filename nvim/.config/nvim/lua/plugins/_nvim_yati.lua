@@ -1,0 +1,3 @@
+return {
+  "yioneko/nvim-yati",
+}

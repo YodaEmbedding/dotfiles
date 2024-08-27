@@ -27,11 +27,27 @@ return {
         },
       },
       indent = {
-        enable = true,
+        enable = not _G.plugin_loaded("nvim-yati"),
         disable = {
           -- "javascript",
           "python",
         },
+      },
+      yati = {
+        enable = _G.plugin_loaded("nvim-yati"),
+        disable = {
+          -- "python",
+        },
+
+        -- Lazy mode (recommended if bad indent happens frequently).
+        default_lazy = true,
+
+        -- Fallback for if tree-sitter insufficent.
+        --   "auto": fallback to vim auto indent
+        --   "asis": use current indent as-is
+        --   "cindent": see `:h cindent()`
+        -- Or a custom function return the final indent result.
+        default_fallback = "auto",
       },
       textobjects = {
         enable = true,

@@ -1,6 +1,8 @@
 return {
   "Vimjas/vim-python-pep8-indent",
 
+  enabled = false,
+
   init = function()
     -- Defaults:
     -- vim.g.python_pep8_indent_multiline_string = 0
