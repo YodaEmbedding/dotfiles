@@ -1,49 +1,57 @@
 local _M = {}
 
--- See https://github.com/lewis6991/gitsigns.nvim?tab=readme-ov-file#keymaps
-function _M.on_attach(bufnr)
-  local gitsigns = require("gitsigns")
-
-  local function map(mode, l, r, opts)
-    opts = opts or {}
-    opts.buffer = bufnr
-    vim.keymap.set(mode, l, r, opts)
-  end
+local mappings = {
 
   -- Navigation
-  map("n", "]c", function()
-    if vim.wo.diff then
-      vim.cmd.normal({"]c", bang = true})
-    else
-      gitsigns.nav_hunk("next")
-    end
-  end)
-
-  map("n", "[c", function()
-    if vim.wo.diff then
-      vim.cmd.normal({"[c", bang = true})
-    else
-      gitsigns.nav_hunk("prev")
-    end
-  end)
+  {
+    "]c",
+    function()
+      if vim.wo.diff then
+        vim.cmd.normal({ "]c", bang = true })
+      else
+        require("gitsigns").nav_hunk("next")
+      end
+    end,
+  },
+  {
+    "[c",
+    function()
+      if vim.wo.diff then
+        vim.cmd.normal({ "[c", bang = true })
+      else
+        require("gitsigns").nav_hunk("prev")
+      end
+    end,
+  },
 
   -- Actions
-  map("n", "<leader>hs", gitsigns.stage_hunk)
-  map("n", "<leader>hr", gitsigns.reset_hunk)
-  map("v", "<leader>hs", function() gitsigns.stage_hunk {vim.fn.line("."), vim.fn.line("v")} end)
-  map("v", "<leader>hr", function() gitsigns.reset_hunk {vim.fn.line("."), vim.fn.line("v")} end)
-  map("n", "<leader>hS", gitsigns.stage_buffer)
-  map("n", "<leader>hu", gitsigns.undo_stage_hunk)
-  map("n", "<leader>hR", gitsigns.reset_buffer)
-  map("n", "<leader>hp", gitsigns.preview_hunk)
-  map("n", "<leader>hb", function() gitsigns.blame_line{full=true} end)
-  map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
-  map("n", "<leader>hd", gitsigns.diffthis)
-  map("n", "<leader>hD", function() gitsigns.diffthis("~") end)
-  map("n", "<leader>td", gitsigns.toggle_deleted)
+  { "<leader>hs", function() require("gitsigns").stage_hunk() end },
+  { "<leader>hr", function() require("gitsigns").reset_hunk() end },
+  { "<leader>hs", function() require("gitsigns").stage_hunk { vim.fn.line("."), vim.fn.line("v") } end, "v" },
+  { "<leader>hr", function() require("gitsigns").reset_hunk { vim.fn.line("."), vim.fn.line("v") } end, "v" },
+  { "<leader>hS", function() require("gitsigns").stage_buffer() end },
+  { "<leader>hu", function() require("gitsigns").undo_stage_hunk() end },
+  { "<leader>hR", function() require("gitsigns").reset_buffer() end },
+  { "<leader>hp", function() require("gitsigns").preview_hunk() end },
+  { "<leader>hb", function() require("gitsigns").blame_line { full = true } end },
+  { "<leader>tb", function() require("gitsigns").toggle_current_line_blame() end },
+  { "<leader>hd", function() require("gitsigns").diffthis() end },
+  { "<leader>hD", function() require("gitsigns").diffthis("~") end },
+  { "<leader>td", function() require("gitsigns").toggle_deleted() end },
 
   -- Text object
-  map({"o", "x"}, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+  { "ih",         ":<C-U>Gitsigns select_hunk<CR>",                                                     { "o", "x" } },
+
+}
+
+
+-- See https://github.com/lewis6991/gitsigns.nvim?tab=readme-ov-file#keymaps
+function _M.on_attach(bufnr)
+  for _, mapping in ipairs(mappings) do
+    mapping.opts = mapping.opts or {}
+    mapping.opts.buffer = bufnr
+    vim.keymap.set(mapping[3] or "n", mapping[1], mapping[2], mapping.opts)
+  end
 end
 
 return _M
