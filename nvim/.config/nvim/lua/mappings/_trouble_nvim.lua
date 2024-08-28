@@ -1,22 +1,22 @@
 return {
   {
     "<space>tt",
-    ":Trouble<CR>",
+    "<Cmd>Trouble<CR>",
     desc = "Trouble toggle",
   },
   {
     "<space>tl",
-    ":Trouble loclist toggle<CR>",
+    "<Cmd>Trouble loclist toggle<CR>",
     desc = "Trouble loclist toggle",
   },
   {
     "<space>tq",
-    ":Trouble quickfix toggle<CR>",
+    "<Cmd>Trouble quickfix toggle<CR>",
     desc = "Trouble quickfix toggle",
   },
   {
     "<space>td",
-    ":Trouble diagnostics toggle<CR>",
+    "<Cmd>Trouble diagnostics toggle<CR>",
     desc = "Trouble diagnostics toggle",
   },
 }
