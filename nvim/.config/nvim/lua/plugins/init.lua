@@ -1,13 +1,15 @@
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  -- Download and install lazy.nvim if missing...
-  vim.fn.system({
-    "git", "clone", "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath
-  })
-  vim.fn.system({ "git", "-C", lazypath, "checkout", "tags/stable" })
+local function ensure_lazy_nvim_installed()
+  local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+  if not vim.loop.fs_stat(lazypath) then
+    -- Download and install lazy.nvim if missing...
+    vim.fn.system {
+      "git", "clone", "--filter=blob:none",
+      "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath
+    }
+    vim.fn.system { "git", "-C", lazypath, "checkout", "tags/stable" }
+  end
+  vim.opt.rtp:prepend(lazypath)
 end
-vim.opt.rtp:prepend(lazypath)
 
 
 -- Initialize plugin_names with loaded plugins.
@@ -46,6 +48,8 @@ local function build_plugin_specs()
   return plugins, plugin_specs
 end
 
+
+ensure_lazy_nvim_installed()
 
 local plugins, plugin_specs = build_plugin_specs()
 
