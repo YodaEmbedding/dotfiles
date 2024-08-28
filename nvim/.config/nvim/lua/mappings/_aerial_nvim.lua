@@ -1,3 +1,7 @@
 return {
-  { "<Space>o", function() require("aerial").toggle() end, "n" },
+  {
+    "<Space>o",
+    function() require("aerial").toggle() end,
+    desc = "Outline",
+  },
 }

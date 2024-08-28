@@ -18,19 +18,19 @@ local b = {
 }
 
 return {
-  { "<Space><Space>",  b.builtin,                       "n" },
-  { "<Tab>",           b.buffers,                       "n" },
-  { ",",               b.smart_open_cwd,                "n" },
-  { "<Space>,",        b.smart_open,                    "n" },
-  { "_",               b.current_buffer_fuzzy_find,     "n" },
-  { "<CR>",            b.jumplist,                      "n" },
-  { "-",               b.live_grep,                     "n" },
-  { "<Space>m",        b.marks,                         "n" },
-  { "<Space>r",        b.resume,                        "n" },
-  { "<Space>:",        b.command_history,               "n" },
+  { "<Space><Space>",  b.builtin,                       desc = "Telescope" },
+  { "<Tab>",           b.buffers,                       desc = "Buffers" },
+  { ",",               b.smart_open_cwd,                desc = "Open file (cwd)" },
+  { "<Space>,",        b.smart_open,                    desc = "Open file" },
+  { "_",               b.current_buffer_fuzzy_find,     desc = "Fuzzy find" },
+  { "<CR>",            b.jumplist,                      desc = "Jumplist" },
+  { "-",               b.live_grep,                     desc = "Grep" },
+  { "<Space>m",        b.marks,                         desc = "Marks" },
+  { "<Space>r",        b.resume,                        desc = "Telescope resume" },
+  { "<Space>:",        b.command_history,               desc = "Command history" },
 
-  { "gd",              b.lsp_definitions,               "n" },
-  { "<C-t>",           b.lsp_dynamic_workspace_symbols, "n" },
-  { "gi",              b.lsp_implementations,           "n" },
-  { "gr",              b.lsp_references,                "n" },
+  { "gd",              b.lsp_definitions,               desc = "Go to definition" },
+  { "<C-t>",           b.lsp_dynamic_workspace_symbols, desc = "Workspace symbols" },
+  { "gi",              b.lsp_implementations,           desc = "Implementations" },
+  { "gr",              b.lsp_references,                desc = "References" },
 }

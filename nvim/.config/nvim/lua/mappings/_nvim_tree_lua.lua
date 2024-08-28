@@ -1,3 +1,7 @@
 return {
-  { "<space>T", ":NvimTreeFindFileToggle<CR>", "n" },
+  {
+    "<space>T",
+    ":NvimTreeFindFileToggle<CR>",
+    desc = "NvimTree toggle",
+  },
 }

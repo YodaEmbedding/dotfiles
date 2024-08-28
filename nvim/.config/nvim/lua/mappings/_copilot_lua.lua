@@ -8,7 +8,7 @@ return {
       assert(was_enabled ~= is_enabled)
       print(is_enabled)
     end,
-    "n",
     silent = true,
+    desc = "Copilot toggle",
   },
 }
