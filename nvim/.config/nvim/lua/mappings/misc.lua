@@ -38,6 +38,9 @@ n("<Space>s", ":up<CR>")                     -- Save
 c("w!!", "w !sudo tee > /dev/null %")        -- Save as sudo
 c("x!!", "x !sudo tee > /dev/null %")        -- Save as sudo
 
+-- Navigation
+n("<Space>;",  ",")                          -- Repeat f/t (reverse)
+
 -- Search
 n("<leader>/", [[/\<\><Left><Left>]])          -- Search whole word
 x("&", '"hy:%s/<C-r>h//gc<Left><Left><Left>')  -- Substitute selection
