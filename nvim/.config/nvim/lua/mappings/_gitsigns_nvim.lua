@@ -109,9 +109,10 @@ local mappings = {
 -- See https://github.com/lewis6991/gitsigns.nvim?tab=readme-ov-file#keymaps
 function _M.on_attach(bufnr)
   for _, mapping in ipairs(mappings) do
-    mapping.opts = mapping.opts or {}
-    mapping.opts.buffer = bufnr
-    vim.keymap.set(mapping[3] or "n", mapping[1], mapping[2], mapping.opts)
+    local m = vim.deepcopy(mapping)
+    m.opts = m.opts or {}
+    m.opts.buffer = bufnr
+    vim.keymap.set(m[3] or "n", m[1], m[2], m.opts)
   end
 end
 
