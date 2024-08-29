@@ -44,8 +44,10 @@ if not _G.plugin_loaded("delimited.nvim") then
 end
 
 
-function _M.on_attach()
+function _M.on_attach(client, bufnr)
   for _, mapping in ipairs(mappings) do
+    mapping.opts = mapping.opts or {}
+    mapping.opts.buffer = bufnr
     vim.keymap.set(mapping[3] or "n", mapping[1], mapping[2], mapping.opts)
   end
 end

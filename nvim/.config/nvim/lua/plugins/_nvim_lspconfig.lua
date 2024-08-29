@@ -58,7 +58,7 @@ return {
         vim.b._lsp_on_attach_lock = true
         require("plugins._lspkind_nvim")._.on_attach()
         -- require("plugins._lsp_signature_nvim")._.on_attach()
-        require("mappings._nvim_lsp").on_attach()
+        require("mappings._nvim_lsp").on_attach(client, bufnr)
       end
 
       if _G.plugin_loaded("nvim-navic") then
