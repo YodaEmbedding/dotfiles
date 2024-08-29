@@ -106,14 +106,29 @@ local mappings = {
 }
 
 
+local function set_buffer_local_mappings(mappings_, bufnr)
+  if _G.plugin_loaded("which-key.nvim") then
+    local mappings_buf = vim.deepcopy(mappings_)
+    for _, m in ipairs(mappings_buf) do
+      m.buffer = bufnr
+      m.mode = m[3] or "n"
+      m[3] = nil
+    end
+    require("which-key").add(mappings_buf)
+  else
+    local mappings_buf = vim.deepcopy(mappings_)
+    for _, m in ipairs(mappings_buf) do
+      m.opts = m.opts or {}
+      m.opts.buffer = bufnr
+      vim.keymap.set(m[3] or "n", m[1], m[2], m.opts)
+    end
+  end
+end
+
+
 -- See https://github.com/lewis6991/gitsigns.nvim?tab=readme-ov-file#keymaps
 function _M.on_attach(bufnr)
-  for _, mapping in ipairs(mappings) do
-    local m = vim.deepcopy(mapping)
-    m.opts = m.opts or {}
-    m.opts.buffer = bufnr
-    vim.keymap.set(m[3] or "n", m[1], m[2], m.opts)
-  end
+  set_buffer_local_mappings(mappings, bufnr)
 end
 
 return _M
