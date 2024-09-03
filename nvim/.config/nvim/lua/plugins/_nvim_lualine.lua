@@ -9,6 +9,20 @@ return {
   config = function()
     local prose = require("nvim-prose")
 
+    local diff_source = nil
+    if _G.plugin_loaded("gitsigns.nvim") then
+      diff_source = function()
+        local gitsigns = vim.b.gitsigns_status_dict
+        if gitsigns then
+          return {
+            added = gitsigns.added,
+            modified = gitsigns.changed,
+            removed = gitsigns.removed
+          }
+        end
+      end
+    end
+
     require("lualine").setup {
       options = {
         theme = "palenight",
@@ -18,10 +32,13 @@ return {
         lualine_b = { { "filename", path = 1, newfile_status = true } },
         lualine_c = { "require('lsp-progress').progress()" },
         lualine_x = {
-          { prose.word_count,   cond = prose.is_available },
+          { prose.word_count, cond = prose.is_available },
           -- { prose.reading_time, cond = prose.is_available },
-          "diff",
-          "branch",
+          -- "diff",
+          -- { "diff", cond = not _G.plugin_loaded("gitsigns.nvim") },
+          { "diff", source = diff_source },
+          -- "branch",
+          { "b:gitsigns_head", icon = "" },
           "diagnostics",
           "fileformat",
           { "filetype", icon_only = true }
