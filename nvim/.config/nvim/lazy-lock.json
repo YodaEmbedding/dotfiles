@@ -33,6 +33,7 @@
   "lspkind-nvim": { "branch": "master", "commit": "cff4ae321a91ee3473a92ea1a8c637e3a9510aec" },
   "ltex-utils.nvim": { "branch": "main", "commit": "8c6ef83d5ba059725265825f72a329757216991c" },
   "lualine.nvim": { "branch": "master", "commit": "b431d228b7bbcdaea818bdc3e25b8cdbe861f056" },
+  "luminate.nvim": { "branch": "main", "commit": "d347e3997022ce96c695b919e3d0171e1ccea3d2" },
   "luvit-meta": { "branch": "main", "commit": "ce76f6f6cdc9201523a5875a4471dcfe0186eb60" },
   "marks.nvim": { "branch": "master", "commit": "74e8d01b2a2131b6e46354cffc553aa7f81bcf5b" },
   "markview.nvim": { "branch": "main", "commit": "169faa8b99f06b5145a4114864210029fa2e84e0" },
