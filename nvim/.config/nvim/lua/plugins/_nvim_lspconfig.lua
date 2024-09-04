@@ -13,6 +13,7 @@ return {
 
     -- Enabled servers:
     servers = {
+      "basedpyright",
       "bashls",
       -- "ccls",
       "clangd",
@@ -24,7 +25,7 @@ return {
       -- "jsonls",
       "ltex",
       "lua_ls",
-      "pyright",
+      -- "pyright",
       -- "ruff_lsp",
       "rust_analyzer",
       "texlab",
