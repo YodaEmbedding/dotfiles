@@ -15,8 +15,13 @@ return {
     desc = "Trouble quickfix toggle",
   },
   {
-    "<space>td",
+    "<space>tw",
     "<Cmd>Trouble diagnostics toggle<CR>",
     desc = "Trouble diagnostics toggle",
+  },
+  {
+    "<space>to",
+    "<Cmd>Trouble todo toggle<CR>",
+    desc = "Trouble todo toggle",
   },
 }
