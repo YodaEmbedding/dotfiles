@@ -29,7 +29,7 @@ return {
       -- "ruff_lsp",
       "rust_analyzer",
       "texlab",
-      "tsserver",
+      "ts_ls",
       "vimls",
       "yamlls",
 
