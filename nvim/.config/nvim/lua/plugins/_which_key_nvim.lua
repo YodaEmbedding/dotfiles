@@ -16,12 +16,17 @@ return {
         desc = "Trouble",
       },
       {
-        "<leader>h",
+        "<space>gd",
+        group = true,
+        desc = "Gitsigns diff",
+      },
+      {
+        "<space>gh",
         group = true,
         desc = "Gitsigns hunk",
       },
       {
-        "<leader>t",
+        "<space>gt",
         group = true,
         desc = "Gitsigns toggle",
       },

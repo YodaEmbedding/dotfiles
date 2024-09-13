@@ -28,69 +28,69 @@ local mappings = {
 
   -- Actions
   {
-    "<leader>hs",
+    "<space>ghs",
     function() require("gitsigns").stage_hunk() end,
     desc = "Git stage hunk",
   },
   {
-    "<leader>hs",
+    "<space>ghs",
     function() require("gitsigns").stage_hunk { vim.fn.line("."), vim.fn.line("v") } end,
     "v",
     desc = "Git stage hunk",
   },
   {
-    "<leader>hr",
+    "<space>ghr",
     function() require("gitsigns").reset_hunk() end,
     desc = "Git reset hunk",
   },
   {
-    "<leader>hr",
+    "<space>ghr",
     function() require("gitsigns").reset_hunk { vim.fn.line("."), vim.fn.line("v") } end,
     "v",
     desc = "Git reset hunk",
   },
   {
-    "<leader>hS",
+    "<space>ghS",
     function() require("gitsigns").stage_buffer() end,
     desc = "Git stage buffer",
   },
   {
-    "<leader>hu",
+    "<space>ghu",
     function() require("gitsigns").undo_stage_hunk() end,
     desc = "Git undo stage hunk",
   },
   {
-    "<leader>hR",
+    "<space>ghR",
     function() require("gitsigns").reset_buffer() end,
     desc = "Git reset buffer",
   },
   {
-    "<leader>hp",
+    "<space>ghp",
     function() require("gitsigns").preview_hunk() end,
     desc = "Git preview hunk",
   },
   {
-    "<leader>hb",
+    "<space>ghb",
     function() require("gitsigns").blame_line { full = true } end,
     desc = "Git blame line",
   },
   {
-    "<leader>tb",
+    "<space>gtb",
     function() require("gitsigns").toggle_current_line_blame() end,
     desc = "Git blame current line toggle",
   },
   {
-    "<leader>hd",
+    "<space>gdh",
     function() require("gitsigns").diffthis() end,
     desc = "Git diff",
   },
   {
-    "<leader>hD",
+    "<space>gd~",
     function() require("gitsigns").diffthis("~") end,
     desc = "Git diff (HEAD~)",
   },
   {
-    "<leader>td",
+    "<space>gtd",
     function() require("gitsigns").toggle_deleted() end,
     desc = "Git toggle deleted",
   },
