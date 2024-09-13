@@ -18,7 +18,7 @@ return {
       {
         "<space>gd",
         group = true,
-        desc = "Gitsigns diff",
+        desc = "Git diff",
       },
       {
         "<space>gh",
@@ -29,6 +29,11 @@ return {
         "<space>gt",
         group = true,
         desc = "Gitsigns toggle",
+      },
+      {
+        "<space>gn",
+        group = true,
+        desc = "Neogit",
       },
     },
   },

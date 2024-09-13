@@ -9,5 +9,7 @@ return {
 
   cmd = { "Neogit" },
 
+  keys = require("mappings._neogit"),
+
   config = true,
 }
