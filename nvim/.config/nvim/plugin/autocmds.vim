@@ -39,7 +39,7 @@ autocmd BufRead,BufNewFile * setlocal formatoptions+=r
 " autocmd BufRead,BufNewFile * setlocal formatoptions=rqj
 
 " Miscellaneous: Highlight on yank
-" autocmd TextYankPost * lua vim.highlight.on_yank {timeout=500}
+autocmd TextYankPost * lua vim.highlight.on_yank {timeout=500}
 
 " Miscellaneous: Set read-only if swap file exists
 autocmd SwapExists * let v:swapchoice = "o"
