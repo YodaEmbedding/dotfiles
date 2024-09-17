@@ -59,7 +59,7 @@ return {
 
         -- Right mid
         lualine_y = {
-          "progress",
+          -- "progress",
         },
 
         -- Right outer
