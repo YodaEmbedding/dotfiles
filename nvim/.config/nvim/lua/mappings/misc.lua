@@ -71,7 +71,6 @@ n("{", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '{'<CR>", {silent = true})
 
 -- Windows
 n("<Space>D",  "<C-w>c")                     -- Close window
-n("<Space>w",  "<C-w>")                      -- Window prefix
 
 -- Window selection
 local sel = utils.jump_window_with_wrap
