@@ -27,10 +27,23 @@ return {
       options = {
         theme = "palenight",
       },
+
       sections = {
-        lualine_a = {},
-        lualine_b = { { "filename", path = 1, newfile_status = true } },
-        lualine_c = { "require('lsp-progress').progress()" },
+        -- Left outer
+        lualine_a = {
+        },
+
+        -- Left mid
+        lualine_b = {
+          { "filename", path = 1, newfile_status = true },
+        },
+
+        -- Left inner
+        lualine_c = {
+          "require('lsp-progress').progress()",
+        },
+
+        -- Right inner
         lualine_x = {
           { prose.word_count, cond = prose.is_available },
           -- { prose.reading_time, cond = prose.is_available },
@@ -41,10 +54,18 @@ return {
           { "b:gitsigns_head", icon = "" },
           "diagnostics",
           "fileformat",
-          { "filetype", icon_only = true }
+          { "filetype", icon_only = true },
         },
-        lualine_y = { "progress" },
-        lualine_z = { "location" },
+
+        -- Right mid
+        lualine_y = {
+          "progress",
+        },
+
+        -- Right outer
+        lualine_z = {
+          "location",
+        },
       },
     }
 
