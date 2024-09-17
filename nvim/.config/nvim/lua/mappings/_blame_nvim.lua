@@ -1,7 +1,7 @@
 return {
   {
-    "<Space>gb",
+    "<Space>gbb",
     function() vim.cmd [[ execute "BlameToggle window" ]] end,
-    desc = "Git blame",
+    desc = "Git blame (blame.nvim)",
   },
 }

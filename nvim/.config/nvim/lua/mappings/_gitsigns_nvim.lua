@@ -26,7 +26,7 @@ local mappings = {
     desc = "Go to previous Git hunk",
   },
 
-  -- Actions
+  -- Hunks
   {
     "<space>ghs",
     function() require("gitsigns").stage_hunk() end,
@@ -69,16 +69,25 @@ local mappings = {
     function() require("gitsigns").preview_hunk() end,
     desc = "Git preview hunk",
   },
+
+  -- Blame
   {
-    "<space>ghb",
+    "<space>gb<space>",
+    function() require("gitsigns").blame() end,
+    desc = "Git blame (Gitsigns)",
+  },
+  {
+    "<space>gbl",
     function() require("gitsigns").blame_line { full = true } end,
     desc = "Git blame line",
   },
   {
-    "<space>gtb",
+    "<space>gbt",
     function() require("gitsigns").toggle_current_line_blame() end,
     desc = "Git blame current line toggle",
   },
+
+  -- Diff
   {
     "<space>gdh",
     function() require("gitsigns").diffthis() end,
@@ -90,7 +99,7 @@ local mappings = {
     desc = "Git diff (HEAD~)",
   },
   {
-    "<space>gtd",
+    "<space>gdt",
     function() require("gitsigns").toggle_deleted() end,
     desc = "Git toggle deleted",
   },
