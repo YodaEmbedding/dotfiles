@@ -17,6 +17,7 @@ return {
       "^neo-tree$",
       "^NvimTree$",
       -- "^NvimTree_\\d*$",
+      "^trouble$",
     }
 
     local ignore_buftypes = {
