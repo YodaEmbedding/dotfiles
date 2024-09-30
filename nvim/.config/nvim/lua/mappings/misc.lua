@@ -52,7 +52,7 @@ x("<Space>?", [[:s/\v]])                       -- Very magic regex
 -- Misc
 x(".", ":normal .<CR>", {silent = true})     -- Dot repeat
 n("<Leader>w", utils.toggle_wrap)            -- Toggle wrap
-n("<Space><C-e>", ":e %:h/")                 -- Edit file at cwd
+n("<Leader>e", ":e %:h/")                    -- Edit file at cwd
 
 -- Jumplist
 if not _G.plugin_loaded("before.nvim") then
