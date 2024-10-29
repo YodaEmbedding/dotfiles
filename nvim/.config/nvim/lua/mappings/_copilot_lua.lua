@@ -9,6 +9,6 @@ return {
       print(is_enabled)
     end,
     silent = true,
-    desc = "Copilot toggle",
+    desc = "C toggle",
   },
 }
