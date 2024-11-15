@@ -43,3 +43,6 @@ autocmd TextYankPost * lua vim.highlight.on_yank {timeout=500}
 
 " Miscellaneous: Set read-only if swap file exists
 autocmd SwapExists * let v:swapchoice = "o"
+
+" Miscellaneous: git-rebase move to last non-empty/comment line
+" autocmd BufReadPost {git-rebase-todo,git-rebase} call feedkeys("G{k", "n")
