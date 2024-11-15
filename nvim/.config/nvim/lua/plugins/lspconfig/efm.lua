@@ -13,8 +13,10 @@ return {
         -- { formatCommand = "lua-format -i", formatStdin = true },
       },
       python = {
-        { formatCommand = "isort --quiet -", formatStdin = true },
-        { formatCommand = "black --quiet -", formatStdin = true },
+        { formatCommand = "ruff check --quiet --fix --ignore ALL --select I -", formatStdin = true },
+        -- { formatCommand = "isort --quiet -", formatStdin = true },
+        { formatCommand = "ruff format --quiet -", formatStdin = true },
+        -- { formatCommand = "black --quiet -", formatStdin = true },
 
         -- {
         --   lintCommand = "mypy --show-column-numbers",
