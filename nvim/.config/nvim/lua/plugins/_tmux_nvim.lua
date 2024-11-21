@@ -1,6 +1,8 @@
 return {
   "aserowy/tmux.nvim",
 
+  enabled = false,
+
   keys = require("mappings._tmux_nvim"),
 
   config = function()
