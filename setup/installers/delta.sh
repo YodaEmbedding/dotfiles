@@ -8,6 +8,7 @@ AUTHOR="dandavison"
 PKGNAME="delta"
 VERSION=0.16.5
 ARCH="x86_64-unknown-linux-musl"
+source "${PWD}/_ARCH.sh"
 
 wget -nc "https://github.com/$AUTHOR/$PKGNAME/releases/download/$VERSION/$PKGNAME-$VERSION-$ARCH.tar.gz"
 tar xf "$PKGNAME-$VERSION-$ARCH.tar.gz"

@@ -8,6 +8,7 @@ AUTHOR="sharkdp"
 PKGNAME="bat"
 VERSION=0.24.0
 ARCH="x86_64-unknown-linux-musl"
+source "${PWD}/_ARCH.sh"
 
 wget -nc "https://github.com/$AUTHOR/$PKGNAME/releases/download/v$VERSION/$PKGNAME-v$VERSION-$ARCH.tar.gz"
 tar xf "$PKGNAME-v$VERSION-$ARCH.tar.gz"
