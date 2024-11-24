@@ -12,6 +12,8 @@ wget -nc -O "nvim-v$VERSION.tar.gz" "https://github.com/$AUTHOR/$PKGNAME/archive
 tar xf "nvim-v$VERSION.tar.gz"
 cd "$PKGNAME-$VERSION" || exit 1
 
+printf "%s\n%s\n" "$(tput setaf 2)Please run:" "$(tput setaf 3)sudo apt-get install ninja-build gettext cmake unzip curl build-essential$(tput sgr0)"
+
 make CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX="$HOME/.local"
 make install
 
