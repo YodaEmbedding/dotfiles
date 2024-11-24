@@ -7,7 +7,7 @@ return {
   },
 
   config = function()
-    local prose = require("nvim-prose")
+    -- local prose = require("nvim-prose")
 
     local diff_source = nil
     if _G.plugin_loaded("gitsigns.nvim") then
@@ -45,8 +45,7 @@ return {
 
         -- Right inner
         lualine_x = {
-          { prose.word_count, cond = prose.is_available },
-          -- { prose.reading_time, cond = prose.is_available },
+          -- { prose.word_count, cond = prose.is_available },
           -- "diff",
           -- { "diff", cond = not _G.plugin_loaded("gitsigns.nvim") },
           -- { "diff", source = diff_source },
