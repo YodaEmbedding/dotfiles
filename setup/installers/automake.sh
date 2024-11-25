@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-TMP_DIR="$HOME/.dotfiles_tmp_install"
-mkdir -p "$TMP_DIR"
-cd "$TMP_DIR" || exit 1
+# Get script's current directory.
+pushd "$(dirname $0)" > /dev/null
+SCRIPT_DIR="$(pwd)"
+popd > /dev/null
+
+source "${SCRIPT_DIR}/_utils.sh" || exit 1
+init_install_dir
 
 PKGNAME="automake"
 VERSION=1.16.5
