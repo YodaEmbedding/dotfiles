@@ -22,7 +22,7 @@ HW_ARCH="$(uname -m)"
 if [ "$HW_ARCH" == "x86_64" ]; then
   ARCH="linux-amd64"
 elif [ "$HW_ARCH" == "aarch64" ]; then
-  ARCH="android-arm64"
+  ARCH="linux-arm64"
 elif [ "$HW_ARCH" == "arm64" ]; then
   ARCH="darwin-arm64"
 else
