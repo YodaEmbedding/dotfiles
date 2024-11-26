@@ -58,6 +58,7 @@
   "quick-scope": { "branch": "master", "commit": "4d35d3b2bc6794666353dcc241b2680bd560416f" },
   "registers.nvim": { "branch": "main", "commit": "17df665d3fd8995b69a1a434cb285a25ab22cc49" },
   "smart-open.nvim": { "branch": "main", "commit": "7770b01ce4d551c143d7ec8589879320796621b9" },
+  "smear-cursor.nvim": { "branch": "main", "commit": "3cacbf0fa4ccefd4391ac47b7776444d2af08d46" },
   "sqlite.lua": { "branch": "master", "commit": "d0ffd703b56d090d213b497ed4eb840495f14a11" },
   "submode.nvim": { "branch": "main", "commit": "9d5830b5db70ffaff64cabec4d6b557bf97694ed" },
   "targets.vim": { "branch": "master", "commit": "6325416da8f89992b005db3e4517aaef0242602e" },
