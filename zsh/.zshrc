@@ -136,7 +136,13 @@ RPROMPT='%{$reset_color%}'
 
 list_colors_bg() {
   for ((i = 0; i < 256; i++)); do
-    echo "$(tput setab $i)$(tput setaf 4)$(tput bold) $i $(tput sgr0)"
+    echo "$(tput setab $i)$(tput setaf $PROMPT_FGCOLOR)$(tput bold) $i $(tput sgr0)"
+  done
+}
+
+list_colors_fg() {
+  for ((i = 0; i < 256; i++)); do
+    echo "$(tput setab $PROMPT_BGCOLOR)$(tput setaf $i)$(tput bold) $i $(tput sgr0)"
   done
 }
 
