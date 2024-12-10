@@ -77,6 +77,7 @@
   "vim-vsnip": { "branch": "master", "commit": "02a8e79295c9733434aab4e0e2b8c4b7cea9f3a9" },
   "vimtex": { "branch": "master", "commit": "3401dc81a14b7251bd813e2411eaf0d3b65bd2af" },
   "virt-column.nvim": { "branch": "master", "commit": "b87e3e0864211a32724a2ebf3be37e24e9e2fa99" },
+  "visual-whitespace.nvim": { "branch": "main", "commit": "3a10ba59c1efb0874f15bfc5632d02e25cfa080e" },
   "which-key.nvim": { "branch": "main", "commit": "9b365a6428a9633e3eeb34dbef1b791511c54f70" },
   "wilder.nvim": { "branch": "master", "commit": "679f348dc90d80ff9ba0e7c470c40a4d038dcecf" }
 }
