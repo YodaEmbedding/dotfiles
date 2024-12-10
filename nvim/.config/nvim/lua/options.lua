@@ -56,3 +56,4 @@ o.linebreak = true                    -- Wrap on word breaks
 o.numberwidth = 2                     -- Numbering column width
 o.relativenumber = true               -- Relative line numbers
 o.scrolloff = 2                       -- Always display lines around cursor
+o.signcolumn = "auto:1-3"             -- Sign column
