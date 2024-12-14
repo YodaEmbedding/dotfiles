@@ -6,7 +6,8 @@ return {
       definition = false,
       references = true,
       implements = true,
-      git_authors = true,
+      -- Disable the following since it causes too many open files:
+      git_authors = false,
     },
   },
 }
