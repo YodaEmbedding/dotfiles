@@ -1,5 +1,8 @@
 return {
-  "jhofscheier/ltex-utils.nvim",
+  -- "jhofscheier/ltex-utils.nvim",
+  "YodaEmbedding/ltex-utils.nvim",
+
+  branch = "yodaembedding/main",
 
   dependencies = {
     "neovim/nvim-lspconfig",

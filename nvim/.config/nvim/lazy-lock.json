@@ -28,7 +28,7 @@
   "lsp-lens.nvim": { "branch": "main", "commit": "48bb1a7e271424c15f3d588d54adc9b7c319d977" },
   "lsp-progress.nvim": { "branch": "main", "commit": "d5f4d28efe75ce636bfbe271eb45f39689765aab" },
   "lspkind-nvim": { "branch": "master", "commit": "d79a1c3299ad0ef94e255d045bed9fa26025dab6" },
-  "ltex-utils.nvim": { "branch": "main", "commit": "8c6ef83d5ba059725265825f72a329757216991c" },
+  "ltex-utils.nvim": { "branch": "yodaembedding/main", "commit": "02cb82ff826a5c697f95ef2c7be20172ed177a95" },
   "lualine.nvim": { "branch": "master", "commit": "2a5bae925481f999263d6f5ed8361baef8df4f83" },
   "luvit-meta": { "branch": "main", "commit": "57d464c4acb5c2e66bd4145060f5dc9e96a7bbb7" },
   "marks.nvim": { "branch": "master", "commit": "bb25ae3f65f504379e3d08c8a02560b76eaf91e8" },
