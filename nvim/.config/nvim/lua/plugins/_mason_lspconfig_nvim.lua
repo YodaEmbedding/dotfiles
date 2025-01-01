@@ -9,10 +9,10 @@ return {
 
   opts = {
     ensure_installed = {
+      "basedpyright",
       "bashls",
       "efm",
       "lua_ls",
-      "pyright",
       "ruff",
       "vimls",
 
