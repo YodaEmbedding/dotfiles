@@ -13,7 +13,7 @@ return {
       "efm",
       "lua_ls",
       "pyright",
-      "ruff_lsp",
+      "ruff",
       "vimls",
 
       -- -- "ccls",  -- not supported
