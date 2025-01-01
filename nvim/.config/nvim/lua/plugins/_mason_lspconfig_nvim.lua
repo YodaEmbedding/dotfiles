@@ -11,10 +11,23 @@ return {
     ensure_installed = {
       "basedpyright",
       "bashls",
-      "efm",
       "lua_ls",
       "ruff",
       "vimls",
+
+      -- Generic:
+      -- "ast_grep",
+      "efm",
+
+      -- Language/spell/grammar:
+      -- "harper_ls",
+      -- "textlsp",
+      -- "vale_ls",
+
+      -- Text:
+      -- "markdown_oxide",
+      -- "marksman",
+      -- "texlab",
 
       -- -- "ccls",  -- not supported
       -- "cmake",
