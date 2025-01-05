@@ -5,7 +5,10 @@ return {
     vim.g.tex_flavor = "latex"
     -- vim.g.vimtex_compiler_latexmk = { build_dir = "out" }
     -- vim.g.vimtex_quickfix_enabled = 0
-    vim.g.vimtex_quickfix_method = "pplatex"
+    vim.g.vimtex_quickfix_method = (
+      (vim.fn.executable("pplatex") == 1 and "pplatex") or
+      "latexlog"
+    )
     vim.g.vimtex_quickfix_mode = 0
     vim.g.vimtex_syntax_conceal = {
       accents = 1,
@@ -22,6 +25,11 @@ return {
       sections = 0,
       styles = 1,
     }
-    vim.g.vimtex_view_method = "zathura"  -- also helps with synctex
+    -- Also helps with synctex:
+    vim.g.vimtex_view_method = (
+      (vim.fn.executable("zathura") == 1 and "zathura") or
+      (vim.fn.executable("skim") == 1 and "skim") or
+      nil
+    )
   end,
 }
