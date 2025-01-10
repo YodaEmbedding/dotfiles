@@ -2,6 +2,15 @@
 # If not running interactively, don't do anything
 [[ -o interactive ]] || return
 
+[[ -o login ]] || (
+  # Is non-login shell. (i.e., ~/.zprofile is not automatically sourced)
+  # Ensure that we source it anyways:
+  # [ -f ~/.zprofile ] && source ~/.zprofile
+)
+
+# Always source ~/.profile (idempotent). (It may not be sourced by ~/.zprofile.)
+[ -f ~/.profile ] && source ~/.profile
+
 
 # ZINIT {{{1
 
@@ -81,7 +90,6 @@ zinit light-mode wait lucid for \
 # SOURCING {{{1
 
 [ -f ~/.aliases ] && source ~/.aliases
-[ -f ~/.profile ] && source ~/.profile
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
 
 # export _FASD_MAX=100000
@@ -278,3 +286,12 @@ bind_keys_zsh_autosuggestions() {
   bindkey '^t' autosuggest-accept                         # Fill suggestion
   bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 }
+
+
+# FINAL {{{1
+
+[[ -o login ]] || (
+  # Is non-login shell. (i.e., ~/.zlogin is not automatically sourced)
+  # Ensure that we source it anyways:
+  # [ -f ~/.zlogin ] && source ~/.zlogin
+)
