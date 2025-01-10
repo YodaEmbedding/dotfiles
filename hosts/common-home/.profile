@@ -112,10 +112,6 @@ case "$HOSTNAME" in
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
     # fg = colour4 colour104 colour182 colour183 colour189 colour225
 
-    # MacOS coreutils aliases
-    alias dircolors="gdircolors"
-    alias ls='gls --color=auto -h --group-directories-first --time-style="+%Y-%m-%d %H:%M:%S"'
-
     # Fix tmux-256color on MacOS
     # /usr/local/opt/ncurses/bin/infocmp -x tmux-256color > ~/tmux-256color.src
     # sed -e "pairs#0x10000/pairs#0xFFFF" -i ~/tmux-256color.src
