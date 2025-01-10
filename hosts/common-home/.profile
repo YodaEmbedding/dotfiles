@@ -13,63 +13,48 @@ fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+PATH="$HOME/.cabal/bin:$PATH"
+PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.local/bin_python:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 export PATH
 
+export FILTER_BRANCH_SQUELCH_WARNING=1
+if command -v fd &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='fd --type f'
+fi
+export GOPATH="$HOME/.cache/go"
 export GPG_TTY=$(tty)
+# export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"
+if command -v bat &> /dev/null; then
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+  export MANROFFOPT="-c"
+fi
+# export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
+export RUST_BACKTRACE=1
+export TF_CPP_MIN_LOG_LEVEL=2
+export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
 
 
 case "$HOSTNAME" in
 
   PC-Mordor-Arch)
-    PATH="$PATH:$HOME/.cabal/bin"
-    PATH="$PATH:$HOME/.cargo/bin"
-    export PATH
-
     export CLASSPATH=""
-    export FILTER_BRANCH_SQUELCH_WARNING=1
-    export FZF_DEFAULT_COMMAND='fd --type f'
-    export GOPATH="$HOME/.cache/go"
-    # export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-    export MANROFFOPT="-c"
-    export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
-    export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
     export RUNS_ROOT="$HOME/data/runs/pc-mordor"
-    export RUST_BACKTRACE=1
     # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
     export RUST_SRC_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-    export TF_CPP_MIN_LOG_LEVEL=2
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
-    # eval "$(pyenv init --path)"
 
     ;;
 
 
   PC-Mordor-NixOS)
-    export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
-    # fg = colour4 colour104 colour182 colour183 colour189 colour225
-
-    PATH="$PATH:$HOME/.cabal/bin"
-    PATH="$PATH:$HOME/.cargo/bin"
-    export PATH
-
     export CLASSPATH=""
-    export FILTER_BRANCH_SQUELCH_WARNING=1
     export FZF_BASE=/run/current-system/sw/bin/fzf
-    export FZF_DEFAULT_COMMAND='fd --type f'
-    export GOPATH="$HOME/.cache/go"
-    # export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"
-    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-    export MANROFFOPT="-c"
-    export NVIM_LOG_FILE="~/.cache/nvim/nvimlog"
-    export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
-    export RUST_BACKTRACE=1
     # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
     # export RUST_SRC_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-    export TF_CPP_MIN_LOG_LEVEL=2
-    # eval "$(pyenv init --path)"
+    export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
 
     ;;
 
@@ -159,3 +144,8 @@ case "$HOSTNAME" in
     ;;
 
 esac
+
+
+# if command -v pyenv &> /dev/null; then
+#   eval "$(pyenv init --path)"
+# fi
