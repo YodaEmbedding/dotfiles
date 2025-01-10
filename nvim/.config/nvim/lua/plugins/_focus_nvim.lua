@@ -8,6 +8,9 @@ return {
         minheight = 0,
         height_quickfix = 10,
       },
+      ui = {
+        signcolumn = false,
+      },
     }
 
     local ignore_filetypes = {
