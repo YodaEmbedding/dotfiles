@@ -26,7 +26,7 @@ From inside `~/dotfiles`, one may symlink configurations of choice into the `$HO
 
 Similarly, configurations for other directories may be symlinked as follows:
 
-    stow -t / root
+    stow -t ~ -d hosts common-home
 
 ## Configuration Details
 
