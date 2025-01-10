@@ -58,11 +58,11 @@ List of configs, which directories these belong in, and other details.
 | picom          | `$HOME`  |                                                      | Compositor                                       |
 | polybar        | `$HOME`  | fping, progress, tff-font-awesome, trizen            | Better system bar                                |
 | ptpython       | `$HOME`  | ptpython                                             | Python REPL                                      |
+| python         | `$HOME`  |                                                      | PYTHONSTARTUP                                    |
 | ranger         | `$HOME`  | ranger                                               | CLI file manager                                 |
 | readline       | `$HOME`  |                                                      | GNU readline config (vi bindings)                |
 | ripgrep        | `$HOME`  | ripgrep                                              | Search utility                                   |
 | rofi           | `$HOME`  | rofi                                                 | GUI app/command launcher                         |
-| root           | `/`      |                                                      | PYTHONSTARTUP                                    |
 | scripts        | `$HOME`  |                                                      | Personal (e.g. `emoji` clipboard copier)         |
 | skhd           | `$HOME`  | skhd                                                 | Keyboard shortcuts (MacOS)                       |
 | systemd        | `$HOME`  |                                                      | Services                                         |

@@ -31,6 +31,7 @@ if command -v bat &> /dev/null; then
   export MANROFFOPT="-c"
 fi
 # export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
+export PYTHONSTARTUP="$HOME/.config/python/pythonstartup.py"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
 export RUST_BACKTRACE=1
 export TF_CPP_MIN_LOG_LEVEL=2
