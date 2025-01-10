@@ -7,7 +7,12 @@ popd > /dev/null
 
 source "${SCRIPT_DIR}/_utils.sh" || exit 1
 init_install_dir
-# determine_arch
+determine_arch
+
+if [[ "$HW_ARCH" != "x86_64" ]]; then
+    echo "Unsupported architecture: $HW_ARCH"
+    exit 1
+fi
 
 AUTHOR=""
 PKGNAME="sqlite-tools"
