@@ -114,7 +114,7 @@ case "$HOSTNAME" in
 
     # MacOS coreutils aliases
     alias dircolors="gdircolors"
-    alias ls="gls"
+    alias ls='gls --color=auto -h --group-directories-first --time-style="+%Y-%m-%d %H:%M:%S"'
 
     # Fix tmux-256color on MacOS
     # /usr/local/opt/ncurses/bin/infocmp -x tmux-256color > ~/tmux-256color.src
