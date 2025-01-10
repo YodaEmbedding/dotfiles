@@ -219,6 +219,12 @@ alias t="todo.sh"
 # thunar
 alias th='bgrnd thunar'
 
+# uv
+alias uvu='uv-user'
+alias uvupip='uv --directory="$HOME/.config/uv/envs/default" pip'
+
+alias uv-user='uv --project="$HOME/.config/uv/envs/default"'
+
 # wtwitch
 alias tw='wtwitch'
 alias tw_online="wtwitch c | sed '/^ Offline:\$/,\$d'"
