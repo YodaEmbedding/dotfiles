@@ -4,15 +4,15 @@
 [user]
     name = Mateen Ulhaq
     email = mulhaq2005@gmail.com
-    # signingKey =
+    signingKey = F4DF49423A12E5A7B65904E4D4B948EAE511FC1B
 
 [commit]
-    gpgsign = false
+    gpgsign = true
 
 [credential]
-    helper = cache --timeout=86400
+    helper = cache --timeout=604800
 
-[url "https://yodaembedding@github.com"]
+[url "git@github.com:"]
     insteadOf = https://github.com
 
 [credential "https://git.overleaf.com"]

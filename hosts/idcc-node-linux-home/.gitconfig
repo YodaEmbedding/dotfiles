@@ -4,16 +4,19 @@
 [user]
     name = Mateen Ulhaq
     email = mateen.ulhaq@interdigital.com
-    signingKey = A890EB0912828F41B01F3232CBD32D7905A5D20A  # CBD32D7905A5D20A
+    # signingKey = A890EB0912828F41B01F3232CBD32D7905A5D20A  # CBD32D7905A5D20A
 
 [commit]
-    gpgsign = true
+    gpgsign = false
 
 [credential]
     helper = cache --timeout=86400
 
-[url "git@github.com:"]
-    insteadOf = https://github.com
+# [url "https://yodaembedding@github.com"]
+#     insteadOf = https://github.com
+
+# [url "git@github.com:"]
+#     insteadOf = https://github.com
 
 [credential "https://git.overleaf.com"]
     username = mateen.ulhaq@interdigital.com

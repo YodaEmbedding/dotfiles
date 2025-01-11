@@ -1,0 +1,28 @@
+# vim: set ft=gitconfig:
+
+[core]
+    filemode = false
+    pager = "delta"
+
+[init]
+    defaultBranch = main
+
+[interactive]
+    diffFilter = delta --color-only
+    singleKey = true
+
+[rebase]
+    autoStash = true
+    updateRefs = true
+
+[delta]
+    dark
+    # navigate = true  # wait: https://github.com/dandavison/delta/issues/237
+    file-style                      = blue bold
+    minus-style                     = syntax "#663B63"
+    minus-emph-style                = syntax "#522B4F"
+    minus-empty-line-marker-style   = normal "#663B63"
+    plus-style                      = syntax "#313E52"
+    plus-emph-style                 = syntax "#40516B"
+    plus-empty-line-marker-style    = normal "#313E52"
+    # plus-style                    = syntax "#3B3152"  # a more purply color
