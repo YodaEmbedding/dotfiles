@@ -10,7 +10,7 @@ init_install_dir
 
 AUTHOR="Kitware"
 PKGNAME="cmake"
-VERSION=3.23.1
+VERSION=3.31.4
 
 wget -nc "https://github.com/$AUTHOR/$PKGNAME/releases/download/v$VERSION/$PKGNAME-$VERSION.tar.gz"
 tar xf "$PKGNAME-$VERSION.tar.gz"
