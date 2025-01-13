@@ -28,6 +28,13 @@ Similarly, configurations for other directories may be symlinked as follows:
 
     stow -t ~ -d hosts common-home
 
+Starter install:
+
+```bash
+stow aliases bash cargo colors git lf lint mimeapps mpv nvim ptpython pypoetry python ranger readline ripgrep scripts snippets tmux uv yazi zsh
+stow -t ~ -d hosts common-home
+```
+
 ## Configuration Details
 
 List of configs, which directories these belong in, and other details.
