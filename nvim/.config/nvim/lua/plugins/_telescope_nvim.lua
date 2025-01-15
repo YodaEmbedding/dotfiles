@@ -34,11 +34,14 @@ return {
       end)
     end
 
+    local databases_dir = vim.fn.stdpath("data") .. "/databases"
+    vim.fn.mkdir(databases_dir, "p")
+
     require("telescope").setup {
       defaults = {
 
         history = {
-          path = "~/.local/share/nvim/databases/telescope_history.sqlite3",
+          path = databases_dir .. "/telescope_history.sqlite3",
           limit = 100,
         },
 
