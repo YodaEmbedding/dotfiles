@@ -27,7 +27,7 @@ return {
   { "<Tab>",           b.buffers,                       desc = "Buffers" },
   { ",",               b.smart_open_cwd,                desc = "Open file (cwd)" },
   { "<Space>,",        b.smart_open,                    desc = "Open file" },
-  { "_",               b.current_buffer_fuzzy_find,     desc = "Fuzzy find" },
+  -- { "_",               b.current_buffer_fuzzy_find,     desc = "Fuzzy find" },
   { "<CR>",            b.jumplist,                      desc = "Jumplist" },
   { "-",               b.live_grep,                     desc = "Grep" },
   { "<Space>m",        b.marks,                         desc = "Marks" },
