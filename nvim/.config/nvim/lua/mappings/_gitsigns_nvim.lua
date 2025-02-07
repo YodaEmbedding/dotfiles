@@ -28,8 +28,19 @@ local mappings = {
 
   -- Hunks
   {
+    "<C-h>",
+    function() require("gitsigns").stage_hunk() end,
+    desc = "Git stage hunk",
+  },
+  {
     "<space>ghs",
     function() require("gitsigns").stage_hunk() end,
+    desc = "Git stage hunk",
+  },
+  {
+    "<C-h>",
+    function() require("gitsigns").stage_hunk { vim.fn.line("."), vim.fn.line("v") } end,
+    "v",
     desc = "Git stage hunk",
   },
   {
