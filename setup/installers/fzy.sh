@@ -17,6 +17,6 @@ wget -nc \
   -O "$PKGNAME-$VERSION.tar.gz"
 mkdir -p "$PKGNAME-$VERSION"
 tar xf "$PKGNAME-$VERSION.tar.gz" -C "$PKGNAME-$VERSION"
-cd "$PKGNAME-$VERSION" || exit 1
+cd "$PKGNAME-$VERSION/$PKGNAME-$VERSION" || exit 1
 
 PREFIX=$HOME/.local make install
