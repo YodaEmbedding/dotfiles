@@ -92,9 +92,6 @@ zinit light-mode wait lucid for \
 [ -f ~/.aliases ] && source ~/.aliases
 [ -e ~/.dircolors ] && eval $(dircolors -b ~/.dircolors) || eval $(dircolors -b)
 
-# export _FASD_MAX=100000
-# eval "$(fasd --init zsh-hook)"
-
 export _ZO_MAXAGE=100000
 export _ZO_RESOLVE_SYMLINKS=1
 eval "$(zoxide init zsh)"

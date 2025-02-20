@@ -9,7 +9,6 @@ mkdir -p "$TMP_DIR"
 ./setup/installers/python_packages.sh
 ./setup/installers/bat.sh
 ./setup/installers/delta.sh
-./setup/installers/fasd.sh
 ./setup/installers/fd.sh
 ./setup/installers/fzy.sh
 ./setup/installers/lf.sh

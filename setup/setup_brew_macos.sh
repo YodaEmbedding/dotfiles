@@ -18,7 +18,6 @@ brew install python
 brew install zsh
 
 brew install bat
-brew install fasd
 brew install fd
 brew install fzf
 brew install htop
