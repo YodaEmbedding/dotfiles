@@ -12,55 +12,47 @@ local function ensure_lazy_nvim_installed()
 end
 
 
--- Initialize plugin_names with loaded plugins.
--- Set each plugin's lazy.nvim config function to import plugins.<plugin_name>.
-local function build_plugin_specs()
-  local plugins = {}
-  local plugin_specs = {}
+local function load_plugin_specs()
+  local specs = {}
+  local loaded = {}
+  local plugins_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
+  local files = vim.split(vim.fn.glob(plugins_dir .. "/*", true), "\n")
 
-  local function build_plugin_spec(module_spec, plugin_name)
-    local plugin_spec = {}
-    for k, v in pairs(module_spec) do
-      if k ~= "_" then
-        plugin_spec[k] = v
-      end
-    end
-    table.insert(plugin_specs, plugin_spec)
-    plugins[plugin_name] = plugin_spec
-  end
-
-  -- Load all plugins in plugins/ directory automatically.
-  local curr_script_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
-  local files = vim.split(vim.fn.glob(curr_script_dir .. "/*", true), "\n")
   for _, file in ipairs(files) do
-    local basename = string.match(vim.fs.basename(file), "(_.*).lua$")
-    if basename ~= nil and basename ~= "init" then
-      local config_path = "plugins." .. basename
-      local ok, module_spec = pcall(require, config_path)
-      local short_url = module_spec[1]
-      local plugin_name = string.match(short_url, "^[^/]*/([^/]*)$")
-      if ok then
-        build_plugin_spec(module_spec, plugin_name)
+    local basename = vim.fs.basename(file):match("(_.*).lua$")
+
+    if basename and basename ~= "init" then
+      ---@type LazyPluginSpec
+      local spec = {}
+      for k, v in pairs(require("plugins." .. basename)) do
+        if k ~= "_" then -- Skip private fields.
+          spec[k] = v
+        end
       end
+
+      table.insert(specs, spec)
+      local short_url = spec[1]
+      local name = short_url and short_url:match("^[^/]*/([^/]*)$")
+      assert(name, "Could not determine name for " .. file)
+      loaded[name] = spec.enabled ~= false
     end
   end
 
-  return plugins, plugin_specs
+  function _G.plugin_loaded(name)
+    return loaded[name] or false
+  end
+
+  return specs
 end
 
 
 ensure_lazy_nvim_installed()
 
-local plugins, plugin_specs = build_plugin_specs()
-
-function _G.plugin_loaded(plugin_name)
-  return plugins[plugin_name] ~= nil and plugins[plugin_name].enabled ~= false
-end
-
-local opts = {
-  defaults = {
-    -- version = "*",
+require("lazy").setup {
+  spec = load_plugin_specs(),
+  opts = {
+    defaults = {
+      -- version = "*",
+    },
   },
 }
-
-require("lazy").setup(plugin_specs, opts)
