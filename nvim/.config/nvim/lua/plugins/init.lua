@@ -16,10 +16,9 @@ local function load_plugin_specs()
   local specs = {}
   local loaded = {}
   local plugins_dir = vim.fs.dirname(debug.getinfo(2, "S").source:sub(2))
-  local files = vim.split(vim.fn.glob(plugins_dir .. "/*", true), "\n")
 
-  for _, file in ipairs(files) do
-    local basename = vim.fs.basename(file):match("(_.*).lua$")
+  for file in vim.fs.dir(plugins_dir) do
+    local basename = file:match("(_.*).lua$")
 
     if basename and basename ~= "init" then
       ---@type LazyPluginSpec
