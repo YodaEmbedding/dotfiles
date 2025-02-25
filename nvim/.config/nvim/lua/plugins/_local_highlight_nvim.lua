@@ -10,5 +10,8 @@ return {
     disable_file_types = { "tex", "markdown" },
     hlgroup = "LocalHighlight",
     cw_hlgroup = "CWLocalHighlight",
+    animate = {
+      enabled = false,
+    },
   },
 }
