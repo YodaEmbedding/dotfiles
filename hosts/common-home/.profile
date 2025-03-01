@@ -7,6 +7,7 @@ _COMMON_PROFILE_LOADED=1
 
 if [[ -z "$HOSTNAME" ]]; then
   export HOSTNAME=$(hostname)
+  echo "HOSTNAME manually set to $HOSTNAME"
 fi
 
 
@@ -73,50 +74,31 @@ case "$HOSTNAME" in
     export CLUSTER
 
     case "$HOSTNAME" in
-      *beluga*)
-        TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
-        ;;
-      *cedar*)
-        TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour186"
-        ;;
-      *gra-login*)  # graham
-        TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour72"
-        ;;
-      *narval*)
-        TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour245"
-        ;;
-      *)
-        TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour182"
-        ;;
+      *beluga*)     TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117" ;;
+      *cedar*)      TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour186" ;;
+      *gra-login*)  TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour72"  ;;  # graham
+      *narval*)     TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour245" ;;
+      *)            TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour182" ;;
     esac
-
     export TMUX_STATUS_STYLE
-
-    export RUNS_ROOT="$HOME/data/runs/cc/$CLUSTER"
 
     MODULES=(
       gcc
-      # nodejs
-      # python/3.9.6
-      # python/3.10.2
-      # python/3.10.13
       python/3.11.5
       rust
     )
-
-    # echo "Loading modules..."
     module load "${MODULES[@]}"
-    # echo "Loaded modules"
 
     # Generated for envman. Do not edit.
     [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+    export RUNS_ROOT="$HOME/data/runs/cc/$CLUSTER"
 
     ;;
 
 
   L10142|L10142.local)  # idcc-macOS
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
-    # fg = colour4 colour104 colour182 colour183 colour189 colour225
 
     # Fix tmux-256color on MacOS
     # /usr/local/opt/ncurses/bin/infocmp -x tmux-256color > ~/tmux-256color.src
@@ -145,8 +127,3 @@ case "$HOSTNAME" in
     ;;
 
 esac
-
-
-# if command -v pyenv &> /dev/null; then
-#   eval "$(pyenv init --path)"
-# fi
