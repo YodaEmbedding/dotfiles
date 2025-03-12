@@ -123,6 +123,18 @@ case "$HOSTNAME" in
     ;;
 
 
+  jetson-agx-orin*)
+    export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour81"
+
+    ;;
+
+
+  jetson-orin-nano*)
+    export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour212"
+
+    ;;
+
+
   *)
     ;;
 
