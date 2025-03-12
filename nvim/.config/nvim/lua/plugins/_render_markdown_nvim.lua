@@ -12,6 +12,10 @@ return {
   ---@module "render-markdown"
   ---@type render.md.UserConfig
   opts = {
-
+    html = {
+      comment = {
+        conceal = false,
+      },
+    },
   },
 }
