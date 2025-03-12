@@ -8,6 +8,24 @@ end
 return {
   settings = {
     ltex = {
+      enabled = {
+        "bib",
+        "gitcommit",
+        "markdown",
+        "org",
+        "plaintex",
+        "rst",
+        "rnoweb",
+        "tex",
+        "pandoc",
+        "quarto",
+        "rmd",
+        "context",
+        -- "html",
+        -- "xhtml",
+        "mail",
+        "text",
+      },
       dictionary = {
         ["en-US"] = words,
         ["en-GB"] = words,
