@@ -190,12 +190,10 @@ git_commit_date_branch_fix() {
   ' $@
 }
 
-git_commit_select() {
-  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
-  local sha=$(awk '{ print $1 }' <<< "$out")
-  echo "$sha"
-}
-
+# Continue with given command ONLY if there are no remaining merge conflicts.
+#
+# Example:
+#  git_continue "git add -u && git rebase --continue"
 git_continue() {
   git ls-files --exclude-standard --deduplicate -z | xargs -0 rg '<+ HEAD' | ifne -n zsh -c "$1"
 }
@@ -211,6 +209,18 @@ git_history_browse() {
       [ -n "$sha" ] && git show --color=always $sha | less -R
     done < <(sed '1d;s/^[^a-z0-9]*//;/^$/d' <<< "$out" | awk '{print $1}')
   done
+}
+
+git_commit_fixup_interactively() {
+  local sha=$(git_select_commit_interactively)
+  git commit --fixup "$sha"
+  git rebase "$sha~" --autosquash
+}
+
+git_select_commit_interactively() {
+  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local sha=$(awk '{ print $1 }' <<< "$out")
+  echo "$sha"
 }
 
 # python
