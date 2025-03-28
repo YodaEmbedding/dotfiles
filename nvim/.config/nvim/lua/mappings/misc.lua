@@ -7,6 +7,12 @@ local x = function(...) vim.keymap.set("x", ...) end
 
 ---@format disable
 
+-- Disable defaults
+pcall(vim.keymap.del, "n", "gra")
+pcall(vim.keymap.del, "n", "gri")
+pcall(vim.keymap.del, "n", "grn")
+pcall(vim.keymap.del, "n", "grr")
+
 -- Formatting
 n("<F8>", ":set textwidth=72<CR>")           -- Format width
 n("<F9>", ":set textwidth=79<CR>")           -- Format width
