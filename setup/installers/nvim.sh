@@ -10,7 +10,7 @@ init_install_dir
 
 AUTHOR="neovim"
 PKGNAME="neovim"
-VERSION=0.10.0
+VERSION=0.11.0
 
 wget -nc -O "nvim-v$VERSION.tar.gz" "https://github.com/$AUTHOR/$PKGNAME/archive/refs/tags/v$VERSION.tar.gz"
 tar xf "nvim-v$VERSION.tar.gz"
