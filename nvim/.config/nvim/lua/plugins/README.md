@@ -10,70 +10,73 @@
 
 Scored by "importance":
 
-```
-5   _actions_preview_nvim.lua
-1   _aerial_nvim.lua
-5   _alpha_nvim.lua
-0   _before_nvim.lua
-3   _blame_nvim.lua
-7   _copilot_cmp.lua
-7   _copilot_lua.lua
-1   _delimited_nvim.lua
-2   _diffview_nvim.lua
-3   _flash_nvim.lua
-2   _focus_nvim.lua
-1   _friendly_snippets.lua
-1   _garbage_day_nvim.lua
-2   _git_conflict_nvim.lua
-6   _gitsigns_nvim.lua
-5   _indent_blankline_nvim.lua
-5   _indent_o_matic.lua
-7   _kommentary.lua
-2   _lazydev_nvim.lua
-2   _lion_vim.lua
-4   _local_highlight_nvim.lua
-3   _lsp_lens_nvim.lua
-1   _lsp_progress_nvim.lua
-4   _lspkind_nvim.lua
-4   _ltex_utils_nvim.lua
-2   _luvit_meta.lua
-4   _marks_nvim.lua
-4   _markview_nvim.lua
-2   _mason_lspconfig_nvim.lua
-2   _mason_nvim.lua
-2   _neogit.lua
-9   _nvim_cmp.lua
-3   _nvim_hlslens.lua
-6   _nvim_lastplace.lua
-2   _nvim_lightbulb.lua
-9   _nvim_lspconfig.lua
-3   _nvim_lualine.lua
-1   _nvim_prose.lua
-4   _nvim_scrollbar.lua
-2   _nvim_tree_lua.lua
-6   _nvim_treesitter.lua
-6   _nvim_treesitter_context.lua
-1   _nvim_various_textobjs.lua
-5   _nvim_yati.lua
-7   _quick_scope.lua
-8   _smart_open_nvim.lua
-1   _submode_nvim.lua
-2   _targets_vim.lua
-8   _telescope_nvim.lua
-4   _todo_comments_nvim.lua
-8   _tokyonight_nvim.lua
-4   _trouble_nvim.lua
-3   _vim_bbye.lua
-3   _vim_eunuch.lua
-2   _vim_fugitive.lua
-4   _vim_repeat.lua
-3   _vim_surround.lua
-3   _vim_trailing_whitespace.lua
-6   _vim_visual_star_search.lua
-1   _vim_vsnip.lua
-3   _vimtex.lua
-5   _virt_column_nvim.lua
-4   _which_key_nvim.lua
-2   _wilder_nvim.lua
-```
+| Importance | Plugin name             | Types             |
+|------------|-------------------------|-------------------|
+| 1          | garbage_day_nvim        | background        |
+| 6          | nvim_lastplace          | background        |
+| 6          | nvim_treesitter         | background        |
+| 3          | vim_bbye                | background        |
+| 5          | indent_o_matic          | background indent |
+| 5          | nvim_yati               | background indent |
+| 4          | trouble_nvim            | tool              |
+| 3          | vimtex                  | tool              |
+| 3          | vim_eunuch              | tool cmd          |
+| 7          | copilot_cmp             | tool completion   |
+| 7          | copilot_lua             | tool completion   |
+| 1          | friendly_snippets       | tool completion   |
+| 9          | nvim_cmp                | tool completion   |
+| 1          | vim_vsnip               | tool completion   |
+| 2          | wilder_nvim             | tool completion   |
+| 3          | blame_nvim              | tool git          |
+| 2          | diffview_nvim           | tool git          |
+| 2          | neogit                  | tool git          |
+| 2          | vim_fugitive            | tool git          |
+| 7          | kommentary              | tool keys         |
+| 2          | lion_vim                | tool keys         |
+| 1          | nvim_various_textobjs   | tool keys         |
+| 1          | submode_nvim            | tool keys         |
+| 2          | targets_vim             | tool keys         |
+| 4          | vim_repeat              | tool keys         |
+| 3          | vim_surround            | tool keys         |
+| 3          | vim_trailing_whitespace | tool keys         |
+| 6          | vim_visual_star_search  | tool keys         |
+| 2          | lazydev_nvim            | tool lsp          |
+| 4          | ltex_utils_nvim         | tool lsp          |
+| 2          | luvit_meta              | tool lsp          |
+| 9          | nvim_lspconfig          | tool lsp          |
+| 1          | aerial_nvim             | tool navigation   |
+| 0          | before_nvim             | tool navigation   |
+| 3          | flash_nvim              | tool navigation   |
+| 2          | nvim_tree_lua           | tool navigation   |
+| 8          | smart_open_nvim         | tool navigation   |
+| 8          | telescope_nvim          | tool navigation   |
+| 2          | mason_lspconfig_nvim    | tool setup        |
+| 2          | mason_nvim              | tool setup        |
+| 5          | alpha_nvim              | ui                |
+| 1          | delimited_nvim          | ui                |
+| 2          | focus_nvim              | ui                |
+| 5          | indent_blankline_nvim   | ui                |
+| 4          | local_highlight_nvim    | ui                |
+| 4          | marks_nvim              | ui                |
+| 4          | markview_nvim           | ui                |
+| 3          | nvim_hlslens            | ui                |
+| 3          | nvim_lualine            | ui                |
+| 1          | nvim_prose              | ui                |
+| 4          | nvim_scrollbar          | ui                |
+| 6          | nvim_treesitter_context | ui                |
+| 7          | quick_scope             | ui                |
+| 4          | todo_comments_nvim      | ui                |
+| 5          | virt_column_nvim        | ui                |
+| 4          | which_key_nvim          | ui                |
+| 2          | git_conflict_nvim       | ui git            |
+| 6          | gitsigns_nvim           | ui git            |
+| 5          | actions_preview_nvim    | ui lsp            |
+| 3          | lsp_lens_nvim           | ui lsp            |
+| 1          | lsp_progress_nvim       | ui lsp            |
+| 4          | lspkind_nvim            | ui lsp            |
+| 2          | nvim_lightbulb          | ui lsp            |
+| 8          | tokyonight_nvim         | ui theme          |
+
+`!sort -t'|' -k4,4 -k3,3`
+
 
