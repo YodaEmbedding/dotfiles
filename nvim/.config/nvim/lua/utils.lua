@@ -63,6 +63,25 @@ function utils.buf_remove_old_swap()
   end
 end
 
+function utils.set_buffer_local_mappings(mappings, bufnr)
+  local mappings_buf = vim.deepcopy(mappings)
+  if _G.plugin_loaded("which-key.nvim") then
+    for _, m in ipairs(mappings_buf) do
+      m.buffer = bufnr
+      m.mode = m[3] or "n"
+      m[3] = nil
+    end
+    require("which-key").add(mappings_buf)
+  else
+    for _, m in ipairs(mappings_buf) do
+      m.opts = m.opts or {}
+      m.opts.buffer = bufnr
+      local mode = m[3] or "n"
+      vim.keymap.set(mode, m[1], m[2], m.opts)
+    end
+  end
+end
+
 function utils.toggle_wrap()
   vim.wo.wrap = true
   vim.wo.linebreak = true

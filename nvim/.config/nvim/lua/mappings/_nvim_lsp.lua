@@ -44,12 +44,7 @@ end
 
 
 function _M.on_attach(client, bufnr)
-  for _, mapping in ipairs(mappings) do
-    local m = vim.deepcopy(mapping)
-    m.opts = m.opts or {}
-    m.opts.buffer = bufnr
-    vim.keymap.set(m[3] or "n", m[1], m[2], m.opts)
-  end
+  require("utils").set_buffer_local_mappings(mappings, bufnr)
 end
 
 return _M
