@@ -40,14 +40,6 @@ function utils.copy_matches(register)
   ]])
 end
 
--- Formats the current buffer
-function utils.format()
-  local whitelist = { "python", "rust" }
-  if vim.tbl_contains(whitelist, vim.bo.filetype) then
-    vim.lsp.buf.format()
-  end
-end
-
 -- Removes old swap files for current buffer, not including current swap file.
 function utils.buf_remove_old_swap()
   local filepath = vim.fn.swapname(vim.fn.bufnr())

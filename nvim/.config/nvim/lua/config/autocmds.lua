@@ -2,8 +2,10 @@
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*",
   callback = function(args)
-    -- vim.lsp.buf.format()
-    require("utils").format()
+    local whitelist = { "python", "rust" }
+    if vim.tbl_contains(whitelist, vim.bo.filetype) then
+      vim.lsp.buf.format()
+    end
   end,
 })
 
