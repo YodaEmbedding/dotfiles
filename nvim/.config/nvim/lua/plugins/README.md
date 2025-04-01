@@ -34,7 +34,6 @@ Scored by "importance":
 | 7          | kommentary              | tool keys         |
 | 2          | lion_vim                | tool keys         |
 | 1          | nvim_various_textobjs   | tool keys         |
-| 1          | submode_nvim            | tool keys         |
 | 2          | targets_vim             | tool keys         |
 | 4          | vim_repeat              | tool keys         |
 | 3          | vim_surround            | tool keys         |
@@ -45,7 +44,6 @@ Scored by "importance":
 | 2          | luvit_meta              | tool lsp          |
 | 9          | nvim_lspconfig          | tool lsp          |
 | 1          | aerial_nvim             | tool navigation   |
-| 0          | before_nvim             | tool navigation   |
 | 3          | flash_nvim              | tool navigation   |
 | 2          | nvim_tree_lua           | tool navigation   |
 | 8          | smart_open_nvim         | tool navigation   |
@@ -61,7 +59,6 @@ Scored by "importance":
 | 4          | markview_nvim           | ui                |
 | 3          | nvim_hlslens            | ui                |
 | 3          | nvim_lualine            | ui                |
-| 1          | nvim_prose              | ui                |
 | 4          | nvim_scrollbar          | ui                |
 | 6          | nvim_treesitter_context | ui                |
 | 7          | quick_scope             | ui                |
