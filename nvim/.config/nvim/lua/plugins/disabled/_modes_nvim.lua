@@ -1,9 +1,9 @@
 return {
-	"mvllow/modes.nvim",
+  "mvllow/modes.nvim",
 
-	enabled = false,
+  enabled = false,
 
-	opts = {
+  opts = {
 
-	},
+  },
 }
