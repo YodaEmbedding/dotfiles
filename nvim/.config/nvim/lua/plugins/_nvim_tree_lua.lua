@@ -11,7 +11,13 @@ return {
     "NvimTreeToggle",
   },
 
-  keys = require("mappings._nvim_tree_lua"),
+  keys = {
+    {
+      "<space>T",
+      ":NvimTreeFindFileToggle<CR>",
+      desc = "NvimTree toggle",
+    },
+  },
 
   init = function()
     -- disable netrw at the very start of your init.lua

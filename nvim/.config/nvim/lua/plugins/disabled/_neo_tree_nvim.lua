@@ -9,5 +9,11 @@ return {
   },
   branch = "v2.x",
 
-  keys = require("mappings._neo_tree_nvim"),
+  keys = {
+    {
+      "<space>T",
+      ":NeoTreeFocusToggle<CR>",
+      desc = "NeoTree toggle",
+    },
+  },
 }

@@ -3,7 +3,13 @@ return {
 
   cmd = { "BlameToggle" },
 
-  keys = require("mappings._blame_nvim"),
+  keys = {
+    {
+      "<Space>gbb",
+      function() vim.cmd [[ execute "BlameToggle window" ]] end,
+      desc = "Git blame (blame.nvim)",
+    },
+  },
 
   opts = {
     date_format = "%Y-%m-%d",

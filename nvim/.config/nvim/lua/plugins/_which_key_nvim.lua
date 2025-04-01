@@ -38,5 +38,16 @@ return {
     },
   },
 
-  keys = require("mappings._which_key_nvim"),
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show {
+          -- global = false,
+        }
+      end,
+      -- desc = "Buffer Local Keymaps (which-key)",
+      desc = "Keymaps (which-key)",
+    },
+  },
 }

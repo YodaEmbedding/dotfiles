@@ -8,7 +8,18 @@ return {
     "AerialNavToggle",
   },
 
-  keys = require("mappings._aerial_nvim"),
+  keys = {
+    {
+      "<Space>o",
+      function() require("aerial").toggle() end,
+      desc = "Outline",
+    },
+    {
+      "_",
+      function() require("aerial").nav_toggle() end,
+      desc = "Outline (nav)",
+    },
+  },
 
   opts = {
     layout = {
