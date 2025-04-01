@@ -44,6 +44,9 @@ hi CWLocalHighlight guibg=#443055
 hi IndentBlanklineChar            guifg=#382935  " v2
 hi IblScope                       guifg=#382935  " v3
 
+" match-visual.nvim
+hi VisualMatch                    guibg=#514d6e
+
 " nvim-cmp
 hi CmpItemAbbr                    guifg=#bbbbbb
 hi CmpItemAbbrMatch               guifg=#ccccff
