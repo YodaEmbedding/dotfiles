@@ -56,4 +56,14 @@ return {
     },
 
   },
+
+  config = function(_, opts)
+    if _G.local_settings.copilot then
+      require("copilot").setup(opts)
+    end
+
+    -- if not _G.local_settings.copilot then
+    --   vim.cmd [[ Copilot disable ]]
+    -- end
+  end,
 }

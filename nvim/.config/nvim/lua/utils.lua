@@ -3,6 +3,27 @@ local utils = {}
 local api = vim.api
 local bind_buf = api.nvim_buf_set_keymap
 
+---@param filename string
+function utils.read_file(filename)
+  local file = io.open(filename, "r")
+  if file == nil then
+    return nil
+  end
+  local content = file:read("*a")
+  file:close()
+  return content
+end
+
+function utils.load_local_settings()
+  local filename = vim.fn.stdpath("config") .. "/local_settings.json"
+  local content = utils.read_file(filename)
+  local local_settings = {}
+  if content ~= nil then
+    local_settings = vim.fn.json_decode(content)
+  end
+  _G.local_settings = local_settings
+end
+
 -- Copies all search matches
 function utils.copy_matches(register)
   if register == nil or string.len(register) ~= 1 then
