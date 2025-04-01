@@ -222,7 +222,7 @@ git_commit_fixup_interactively() {
 }
 
 git_select_commit_interactively() {
-  local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
+  local out=$(git log --oneline --color | fzf --no-sort --ansi --multi --reverse)
   local sha=$(awk '{ print $1 }' <<< "$out")
   echo "$sha"
 }
