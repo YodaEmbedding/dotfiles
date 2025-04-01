@@ -211,6 +211,10 @@ git_history_browse() {
   done
 }
 
+git_log_watch() {
+  watch --no-title --color --interval=5 'git status --porcelain | cut -c1-2  | tr " " "." | sort | uniq -c | awk '\''{print $2" "$1"  "}'\'' | paste -sd " " -; git log --color --oneline --graph --decorate'
+}
+
 git_commit_fixup_interactively() {
   local sha=$(git_select_commit_interactively)
   git commit --fixup "$sha"
