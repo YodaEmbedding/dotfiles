@@ -24,6 +24,17 @@ function utils.load_local_settings()
   _G.local_settings = local_settings
 end
 
+function utils.try_require(name)
+  local ok, result = pcall(require, name)
+  if ok then
+    return result
+  elseif result:match("^module '" .. name .. "' not found") then
+    return nil
+  else
+    error(result)
+  end
+end
+
 -- Copies all search matches
 function utils.copy_matches(register)
   if register == nil or string.len(register) ~= 1 then

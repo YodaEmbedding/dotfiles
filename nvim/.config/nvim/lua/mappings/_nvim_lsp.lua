@@ -1,7 +1,7 @@
 local _M = {}
 
-local ok, actions_preview = pcall(require, "actions-preview")
-local code_action = ok and actions_preview.code_actions or vim.lsp.buf.code_action
+local actions_preview = require("utils").try_require("actions-preview")
+local code_action = actions_preview and actions_preview.code_actions or vim.lsp.buf.code_action
 
 local mappings = {
   -- Navigation

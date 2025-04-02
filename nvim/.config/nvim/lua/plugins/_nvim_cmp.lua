@@ -24,8 +24,8 @@ return {
       local lspkind_symbols = require("utils.lspkind_symbols")._
 
       local function copilot_suggestion_accept()
-        local ok, copilot_suggestion = pcall(require, "copilot.suggestion")
-        if ok and copilot_suggestion.is_visible() then
+        local copilot_suggestion = require("utils").try_require("copilot.suggestion")
+        if copilot_suggestion and copilot_suggestion.is_visible() then
           copilot_suggestion.accept()
           return true
         else

@@ -76,8 +76,8 @@ return {
         local basename = string.match(vim.fs.basename(file), "(.*).lua$")
         if basename ~= nil and basename ~= "init" then
           local config_path = "plugins.lspconfig." .. basename
-          local ok, module_config = pcall(require, config_path)
-          if ok then
+          local module_config = require("utils").try_require(config_path)
+          if module_config then
             configs[basename] = module_config
           end
         end
