@@ -14,11 +14,6 @@ local highlights = {
   DiagnosticVirtualTextInfo   = { bg = NONE, fg = "#557788", }, -- Default: bg = "#22374b", fg = "#0db9d7",
   DiagnosticVirtualTextHint   = { bg = NONE, fg = "#665577", }, -- Default: bg = "#233745", fg = "#1abc9c",
 
-  -- gitsigns.nvim
-  GitSignsAdd                 = { fg = "#2cc474", },
-  GitSignsChange              = { fg = "#8e73f6", },
-  GitSignsDelete              = { fg = "#ff436c", },
-
   -- local-highlight.nvim
   LocalHighlight              = { bg = "#513965", }, -- Default: fg = "#dcd7ba",
   CWLocalHighlight            = { bg = "#443055", },

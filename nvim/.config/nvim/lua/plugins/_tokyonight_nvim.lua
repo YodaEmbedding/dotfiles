@@ -15,6 +15,11 @@ return {
     on_colors = function(colors)
       local new_colors = {
         fg = "Grey70",
+        git = {
+          add = "#2cc474",
+          change = "#8e73f6",
+          delete = "#ff436c",
+        },
       }
       for key, value in pairs(new_colors) do
         colors[key] = value
