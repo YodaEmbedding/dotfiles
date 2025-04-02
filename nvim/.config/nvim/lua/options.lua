@@ -57,3 +57,31 @@ o.numberwidth = 2                     -- Numbering column width
 o.relativenumber = true               -- Relative line numbers
 o.scrolloff = 2                       -- Always display lines around cursor
 o.signcolumn = "auto:1-3"             -- Sign column
+
+-- Statusline
+o.statusline = table.concat({
+  " ",                              -- -
+  -- "%t",                          -- Tail of the filename
+  -- " ",                           -- -
+  -- "∈",                           -- ∈
+  -- " ",                           -- -
+  -- "%{expand('%:~:.:h')}",        -- Parents till cwd
+  "%{expand('%:~:.')}",             -- Relative filepath
+  "%h",                             -- Help file flag
+  "%r",                             -- Read only flag
+  "%m",                             -- Modified flag
+  "%=",                             -- Left/right separator
+  " ",                              -- -
+  "  ",                             -- --
+  "%{&filetype}",                   -- Filetype
+  " ",                              -- -
+  "%{&ff}",                         -- File format
+  " ",                              -- -
+  "%{&expandtab?\"sp\":\"tab\"}-",  -- Indent settings
+  "%{&shiftwidth}",                 -- Indent settings
+  "  ",                             -- --
+  "%2v",                            -- Cursor column (virtual)
+  "  ",                             -- --
+  "(%l / %L)",                      -- Cursor line/total lines
+  " ",                              -- -
+})
