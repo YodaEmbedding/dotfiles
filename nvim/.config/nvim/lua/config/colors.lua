@@ -69,7 +69,7 @@ local colors = {
 }
 
 if vim.fn.has("gui_running") == 1 then
-  colors.Normal.bg = "#291935"
+  colors.Normal.bg = "#2e253d"
 end
 
 for _, c in ipairs(colors) do
