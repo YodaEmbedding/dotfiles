@@ -6,8 +6,8 @@ local NONE = nil
 local colors = {
 
   -- Base
-  { "Normal",                      { bg = NONE, fg = "Grey70", ctermbg = NONE, ctermfg = 249, }, },
-  { "NormalNC",                    { link = "Normal", }, },
+  -- { "Normal",                      { bg = NONE, fg = "Grey70", ctermbg = NONE, ctermfg = 249, }, },
+  -- { "NormalNC",                    { link = "Normal", }, },
   { "ColorColumn",                 { bg = NONE, }, },
   { "Conceal",                     { bg = NONE, fg = "#555555", }, },
   { "CursorLine",                  { bg = "#3d2946", }, },
