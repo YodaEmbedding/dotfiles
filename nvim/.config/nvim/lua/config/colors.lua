@@ -25,13 +25,6 @@ local highlights = {
   -- match-visual.nvim
   VisualMatch                 = { bg = "#514d6e", },
 
-  -- nvim-cmp
-  CmpItemAbbr                 = { fg = "#bbbbbb", },
-  CmpItemAbbrMatch            = { fg = "#ccccff", },
-  CmpItemAbbrMatchFuzzy       = { fg = "#aaaaff", },
-  CmpItemKind                 = { fg = "#bbbbee", },
-  CmpItemMenu                 = { fg = "#bbbbee", },
-
   -- nvim-hlslens
   HlSearchLens                = { bg = "#362956", fg = "#554466", },
 
