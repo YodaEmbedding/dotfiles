@@ -18,10 +18,6 @@ local highlights = {
   LocalHighlight              = { bg = "#513965", }, -- Default: fg = "#dcd7ba",
   CWLocalHighlight            = { bg = "#443055", },
 
-  -- indent-blankline.nvim
-  IndentBlanklineChar         = { fg = "#382935", nocombine = true }, -- v2
-  IblScope                    = { fg = "#382935", nocombine = true }, -- v3
-
   -- match-visual.nvim
   VisualMatch                 = { bg = "#514d6e", },
 
