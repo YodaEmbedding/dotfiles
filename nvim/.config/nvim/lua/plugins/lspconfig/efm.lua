@@ -1,8 +1,8 @@
 local eslint = require("efmls-configs.linters.eslint_d")
-local fixjson = require("efmls-configs.linters.fixjson")
 local stylelint = require("efmls-configs.linters.stylelint")
 
 local clang_format = require("efmls-configs.formatters.clang_format")
+local fixjson = require("efmls-configs.formatters.fixjson")
 local prettier = require("efmls-configs.formatters.prettier_d")
 local shfmt = require("efmls-configs.formatters.shfmt")
 

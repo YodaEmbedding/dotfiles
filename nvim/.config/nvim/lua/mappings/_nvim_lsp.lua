@@ -17,7 +17,7 @@ local mappings = {
   -- Refactoring
   { "<space>a", code_action,                desc = "Code actions" },
   { "<F2>",     vim.lsp.buf.rename,         desc = "Rename symbol" },
-  { "<F4>",     vim.lsp.buf.format,         desc = "Format document" },
+  { "<F4>",     require("utils").format,    desc = "Format document" },
 }
 
 if not _G.plugin_loaded("telescope.nvim") then

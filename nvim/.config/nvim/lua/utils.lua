@@ -66,6 +66,17 @@ function utils.buf_remove_old_swap()
   end
 end
 
+function utils.format(bufnr)
+  if bufnr == nil then
+    bufnr = vim.api.nvim_get_current_buf()
+  end
+  if _G.plugin_loaded("conform.nvim") then
+    require("conform").format { bufnr = bufnr }
+  else
+    vim.lsp.buf.format()
+  end
+end
+
 function utils.set_buffer_local_mappings(mappings, bufnr)
   local mappings_buf = vim.deepcopy(mappings)
   if _G.plugin_loaded("which-key.nvim") then
