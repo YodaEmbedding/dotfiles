@@ -39,6 +39,9 @@ return {
           blend = highlights.Pmenu.blend,
         },
         StatusLine = {},
+        -- nvim-treesitter-context
+        TreesitterContext = { bg = "#403659", },
+        TreesitterContextLineNumber = { fg = "#554466", },
       }
       if vim.fn.has("gui_running") == 1 then
         new_highlights.Normal.bg = "#2e253d"

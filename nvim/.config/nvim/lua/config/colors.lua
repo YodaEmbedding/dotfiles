@@ -35,10 +35,6 @@ local highlights = {
   -- nvim-hlslens
   HlSearchLens                = { bg = "#362956", fg = "#554466", },
 
-  -- nvim-treesitter-context
-  TreesitterContext           = { bg = "#403659", },
-  TreesitterContextLineNumber = { bg = NONE, fg = "#554466", },
-
   -- virt-column.nvim
   VirtColumn                  = { fg = "#402d3e", },
 
