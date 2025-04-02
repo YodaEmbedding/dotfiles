@@ -1,22 +1,6 @@
-vim.o.background = "dark"
-vim.o.pumblend = 7 -- Pseudo-transparency for popup menu (Pmenu)
-
 local NONE = nil
 
 local colors = {
-
-  -- Base
-  -- { "Normal",                      { bg = NONE, fg = "Grey70", ctermbg = NONE, ctermfg = 249, }, },
-  -- { "NormalNC",                    { link = "Normal", }, },
-  { "ColorColumn",                 { bg = NONE, }, },
-  { "Conceal",                     { bg = NONE, fg = "#555555", }, },
-  { "CursorLine",                  { bg = "#3d2946", }, },
-  { "ExtraWhitespace",             { bg = "#473745", }, },
-  { "Folded",                      { bg = "#1e161f", fg = "#6f6f6f", }, },
-  { "LineNr",                      { fg = "#6f6f6f", }, },
-  { "MatchParen",                  { bg = "#446677", fg = "#dddddd", bold = true, }, },
-  { "Pmenu",                       { bg = "#170725", }, },
-  { "StatusLine",                  { bg = NONE, fg = NONE, ctermbg = NONE, ctermfg = NONE, cterm = NONE, }, },
 
   -- vim diff
   { "DiffAdd",                     { bg = "#313e52", fg = NONE, }, },
@@ -64,10 +48,6 @@ local colors = {
   { "VirtColumn",                  { fg = "#402d3e", }, },
 
 }
-
-if vim.fn.has("gui_running") == 1 then
-  colors.Normal.bg = "#2e253d"
-end
 
 for _, c in ipairs(colors) do
   vim.api.nvim_set_hl(0, c[1], c[2])

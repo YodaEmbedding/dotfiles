@@ -67,6 +67,10 @@ local options = {
     " ",                              -- -
   }),
 
+  -- Theme
+  background = "dark",                -- Colorscheme background
+  pumblend = 7,                       -- Pseudo-transparency for popup menu (Pmenu)
+
 }
 
 ---@format disable-next
