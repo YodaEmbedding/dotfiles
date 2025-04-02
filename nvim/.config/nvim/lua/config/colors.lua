@@ -12,9 +12,9 @@ local colors = {
   { "NormalNC",                    { bg = NONE, fg = tn_moon_bright_white, ctermbg = NONE, }, },
   { "ColorColumn",                 { bg = NONE, }, },
   { "Conceal",                     { bg = NONE, fg = "#555555", }, },
-  { "CursorLine",                  { bg = "#3D2946", }, },
+  { "CursorLine",                  { bg = "#3d2946", }, },
   { "ExtraWhitespace",             { bg = "#473745", }, },
-  { "Folded",                      { bg = "#1E161F", fg = "#6f6f6f", }, },
+  { "Folded",                      { bg = "#1e161f", fg = "#6f6f6f", }, },
   { "LineNr",                      { fg = "#6f6f6f", }, },
   { "MatchParen",                  { bg = "#446677", fg = "#dddddd", bold = true, }, },
   { "Pmenu",                       { bg = "#170725", fg = tn_moon_bright_white, }, },
@@ -23,7 +23,7 @@ local colors = {
 
   -- vim diff
   { "DiffAdd",                     { bg = "#313e52", fg = NONE, }, },
-  { "DiffChange",                  { bg = "#43365C", fg = NONE, }, },
+  { "DiffChange",                  { bg = "#43365c", fg = NONE, }, },
   { "DiffDelete",                  { bg = "#663b63", fg = NONE, }, },
   { "DiffText",                    { bg = "#554575", fg = NONE, }, },
 
@@ -34,9 +34,9 @@ local colors = {
   { "DiagnosticVirtualTextHint",   { bg = NONE, fg = "#665577", }, }, -- Default: bg = "#233745", fg = "#1abc9c",
 
   -- gitsigns.nvim
-  { "GitSignsAdd",                 { fg = "#2CC474", }, },
-  { "GitSignsChange",              { fg = "#8E73F6", }, },
-  { "GitSignsDelete",              { fg = "#FF436C", }, },
+  { "GitSignsAdd",                 { fg = "#2cc474", }, },
+  { "GitSignsChange",              { fg = "#8e73f6", }, },
+  { "GitSignsDelete",              { fg = "#ff436c", }, },
 
   -- local-highlight.nvim
   { "LocalHighlight",              { bg = "#513965", }, }, -- Default: fg = "#dcd7ba",
@@ -64,7 +64,7 @@ local colors = {
   { "TreesitterContextLineNumber", { bg = NONE, fg = "#554466", }, },
 
   -- virt-column.nvim
-  { "VirtColumn",                  { fg = "#402D3E", }, },
+  { "VirtColumn",                  { fg = "#402d3e", }, },
 
 }
 
