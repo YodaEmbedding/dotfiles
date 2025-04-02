@@ -2,14 +2,12 @@ vim.o.background = "dark"
 vim.o.pumblend = 7 -- Pseudo-transparency for popup menu (Pmenu)
 
 local NONE = nil
-local tn_moon_bright_white = "#c8d3f5"
-local tn_moon_signcolumn = "#3b4261"
 
 local colors = {
 
   -- Base
   { "Normal",                      { bg = NONE, fg = "Grey70", ctermbg = NONE, ctermfg = 249, }, },
-  { "NormalNC",                    { bg = NONE, fg = tn_moon_bright_white, ctermbg = NONE, }, },
+  { "NormalNC",                    { link = "Normal", }, },
   { "ColorColumn",                 { bg = NONE, }, },
   { "Conceal",                     { bg = NONE, fg = "#555555", }, },
   { "CursorLine",                  { bg = "#3d2946", }, },
@@ -17,8 +15,7 @@ local colors = {
   { "Folded",                      { bg = "#1e161f", fg = "#6f6f6f", }, },
   { "LineNr",                      { fg = "#6f6f6f", }, },
   { "MatchParen",                  { bg = "#446677", fg = "#dddddd", bold = true, }, },
-  { "Pmenu",                       { bg = "#170725", fg = tn_moon_bright_white, }, },
-  { "SignColumn",                  { bg = NONE, fg = tn_moon_signcolumn, }, },
+  { "Pmenu",                       { bg = "#170725", }, },
   { "StatusLine",                  { bg = NONE, fg = NONE, ctermbg = NONE, ctermfg = NONE, cterm = NONE, }, },
 
   -- vim diff
