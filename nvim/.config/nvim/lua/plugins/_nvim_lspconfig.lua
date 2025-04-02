@@ -26,7 +26,7 @@ return {
       "ltex",
       "lua_ls",
       -- "pyright",
-      -- "ruff_lsp",
+      -- "ruff",
       "rust_analyzer",
       "texlab",
       "ts_ls",
