@@ -52,6 +52,16 @@ zstyle ':omz:alpha:lib:git' async-prompt no
 # atload'': execute code after loading plugin
 # blockf: disallow plugin to modify fpath; useful for completions
 
+bind_keys_anyframe() {
+  bindkey '^k' anyframe-widget-kill                       # kill
+}
+
+bind_keys_zsh_autosuggestions() {
+  bindkey '^ ' autosuggest-accept                         # Fill suggestion
+  bindkey '^t' autosuggest-accept                         # Fill suggestion
+  bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
+}
+
 zinit for \
     OMZL::git.zsh \
     OMZL::history.zsh
@@ -78,7 +88,7 @@ zinit light-mode wait lucid for \
     OMZP::fzf \
     Aloxaf/fzf-tab \
     MichaelAquilina/zsh-you-should-use \
-  atload"bind_keys" \
+  atload"bind_keys_anyframe" \
     mollifier/anyframe \
   atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
     zdharma-continuum/fast-syntax-highlighting \
@@ -200,7 +210,7 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 # FUNCTIONS {{{1
 
-anyframe-widget-cd() {
+interactive-widget-cd() {
   local dirs=$(find . -mindepth 1 -maxdepth 1 -type d,l -printf '%f\0' | sort)
   [[ -z $dirs ]] && return
   local item=$(
@@ -218,7 +228,7 @@ anyframe-widget-cd() {
   [[ -z $item ]] && return
   cd "$item"
   _reset-prompt
-  anyframe-widget-cd
+  interactive-widget-cd
 }
 
 zi_all() {
@@ -238,7 +248,7 @@ _reset-prompt() {
 
 # WIDGETS {{{1
 
-zle -N -- anyframe-widget-cd
+zle -N -- interactive-widget-cd
 zle -N -- zoxide-widget
 
 
@@ -260,20 +270,10 @@ if [[ $OMZ_VI_MODE -eq 1 ]]; then
   bindkey -M vicmd "^[[6~" down-history                   # vim page down
 fi
 
+bindkey '^a' interactive-widget-cd                        # cd
 bindkey '^w' forward-word                                 # move forward word
-
-bind_keys() {
-  bindkey '^a' anyframe-widget-cd                         # cd
-  bindkey '^k' anyframe-widget-kill                       # kill
-  bindkey '^z' zoxide-widget                              # cd
-  bindkey -s '^o' 'lfcd\n'                                # lf
-}
-
-bind_keys_zsh_autosuggestions() {
-  bindkey '^ ' autosuggest-accept                         # Fill suggestion
-  bindkey '^t' autosuggest-accept                         # Fill suggestion
-  bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
-}
+bindkey '^z' zoxide-widget                                # cd
+bindkey -s '^o' 'lfcd\n'                                  # lf
 
 
 # FINAL {{{1
