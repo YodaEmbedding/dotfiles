@@ -79,6 +79,7 @@ else
   }
   zvm_after_init_commands=(
     "zvm_bindkey vicmd '^R' redo"
+    "zvm_bindkey viins '^W' forward-word"
   )
   zinit light-mode for jeffreytse/zsh-vi-mode
 fi
