@@ -67,6 +67,9 @@ else
     ZVM_CURSOR_STYLE_ENABLED=false
     ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
   }
+  zvm_after_init_commands=(
+    "zvm_bindkey vicmd '^R' redo"
+  )
   zinit light-mode for jeffreytse/zsh-vi-mode
 fi
 
