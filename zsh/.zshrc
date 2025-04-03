@@ -218,16 +218,6 @@ anyframe-widget-cd() {
   anyframe-widget-cd
 }
 
-anyframe-widget-frece() {
-  local DB_FILE="$HOME/.local/share/frece/dir.db"
-  local item=$(frece print "$DB_FILE" | anyframe-selector-auto)
-  [[ -z $item ]] && return
-  frece increment "$DB_FILE" "$item"
-  # echo "$item" | anyframe-action-execute cd --
-  cd "$item"
-  _reset-prompt
-}
-
 zi_all() {
   builtin local result
   result="$(zoxide query --interactive --all -- "$@")"  && __zoxide_cd "${result}"
@@ -246,7 +236,6 @@ _reset-prompt() {
 # WIDGETS {{{1
 
 zle -N -- anyframe-widget-cd
-zle -N -- anyframe-widget-frece
 zle -N -- zoxide-widget
 
 
@@ -272,7 +261,6 @@ bindkey '^w' forward-word                                 # move forward word
 
 bind_keys() {
   bindkey '^a' anyframe-widget-cd                         # cd
-  bindkey '^f' anyframe-widget-frece                      # frece
   bindkey '^k' anyframe-widget-kill                       # kill
   bindkey '^z' zoxide-widget                              # cd
   bindkey -s '^o' 'lfcd\n'                                # lf
