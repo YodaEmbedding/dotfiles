@@ -26,6 +26,9 @@ set cursorpreviewfmt "\033[7;2m"
 # Syntax highlighting for preview pane
 set previewer ~/.config/lf/preview
 
+# Preview file using a pager
+map i $bat $f
+
 # use enter for shell commands
 map <enter> shell
 
