@@ -48,31 +48,31 @@ fi
 # git
 alias g='git'
 alias ga='git add'
-alias gap='git add -p'
+alias gap='git add --patch'
 alias gbr='git branch'
 alias gc='git commit'
-alias gca='git commit -a'
+alias gca='git commit --all'
 alias gcA='git commit --amend'
 alias gcAn='git commit --amend --no-edit'
 alias gcaa='git commit --amend'
 alias gcaan='git commit --amend --no-edit'
-alias gcam='git commit -am'
+alias gcam='git commit --all --message'
 alias gcl='git clone'
-alias gcm='git commit -m'
+alias gcm='git commit --message'
 alias gco='git checkout'
 alias gcob='git checkout -B'
 alias gd='git diff'
 alias gds='git diff --staged'
 alias gl='git log --color --oneline --graph --full-history'
 alias gla='git log --color --oneline --graph --full-history --branches --remotes --tags'
-alias gle='git log --graph --decorate $(git rev-list -g --branches --remotes --tags)'
+alias gle='git log --graph --decorate $(git rev-list --walk-reflogs --branches --remotes --tags)'
 alias gp='git push'
 alias gpl='git pull'
 alias gplr='git pull --rebase'
 alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
-alias grbca='git_continue "git add -u && git rebase --continue"'
+alias grbca='git_continue "git add --update && git rebase --continue"'
 alias grbi='git rebase --interactive'
 alias gre='git reset'
 alias grs='git reset'
@@ -86,7 +86,7 @@ alias gwl='git worktree list'
 alias gwr='git worktree remove'
 
 alias gcd='git_commit_date_sign'
-alias gcmd='git_commit_date_sign -m'
+alias gcmd='git_commit_date_sign --message'
 alias gitc='git_commit_select'
 alias gitd='git_commit_browse'
 alias gith='git_history_browse'
@@ -124,7 +124,7 @@ git_commit_message_with_prefix() {
     shift 1
   fi
   local args=("$@")
-  git commit -m "${prefix}${message}" "${args[@]}"
+  git commit --message "${prefix}${message}" "${args[@]}"
 }
 
 git_commit_message_with_prefix_easy() {
@@ -137,7 +137,7 @@ git_commit_message_with_prefix_easy() {
   else
     shift 1
   fi
-  git commit -m "${prefix}${message}"
+  git commit --message "${prefix}${message}"
 }
 
 git_commit_browse() {
@@ -163,9 +163,9 @@ git_commit_date_sign() {
 }
 
 git_commit_date_sign_fix() {
-  local author_date="$(git show -s --format=%ai)"
-  local commit_date="$(git show -s --format=%ci)"
-  local new_sign_date="$(git show -s --format=%ci)"
+  local author_date="$(git show --no-patch --format=%ai)"
+  local commit_date="$(git show --no-patch --format=%ci)"
+  local new_sign_date="$(git show --no-patch --format=%ci)"
   echo "Prev author date: $author_date"
   echo "New author date:  $commit_date"
   echo "Commit date:      $commit_date"
@@ -177,23 +177,23 @@ git_commit_date_sign_fix() {
 }
 
 git_commit_date_branch_fix() {
-  git filter-branch -f --commit-filter '
+  git filter-branch --force --commit-filter '
     git rev-parse "$GIT_COMMIT" >&2
-    git show -s --format=%ci "$GIT_COMMIT" >&2
+    git show --no-patch --format=%ci "$GIT_COMMIT" >&2
     echo "" >&2
-    export author_date="$(git show -s --format=%ai "$GIT_COMMIT")"
+    export author_date="$(git show --no-patch --format=%ai "$GIT_COMMIT")"
     export LD_PRELOAD=/run/current-system/sw/lib/libfaketime.so.1
     export FAKETIME="@$author_date";
     export GIT_AUTHOR_DATE="$author_date"
     export GIT_COMMITTER_DATE="$author_date"
-    git commit-tree -S "$@"
+    git commit-tree --gpg-sign "$@"
   ' $@
 }
 
 # Continue with given command ONLY if there are no remaining merge conflicts.
 #
 # Example:
-#  git_continue "git add -u && git rebase --continue"
+#  git_continue "git add --update && git rebase --continue"
 git_continue() {
   git ls-files --exclude-standard --deduplicate -z | xargs -0 rg '<+ HEAD' | ifne -n zsh -c "$1"
 }
