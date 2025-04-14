@@ -138,8 +138,6 @@ make_prompt() {
   s+='$(out=$SLURM_JOB_ID; [ -z "$out" ] || echo "· ($WHOAMI@$HOSTNAME) ")'
   s+='%b%f%k'
 
-  # Use git_current_branch, since git_prompt_info is sometimes slow.
-
   # λ
   s+=$'\n'
   s+='%(?.%F{magenta}.%F{red})'
