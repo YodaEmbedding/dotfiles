@@ -23,6 +23,28 @@ return {
     -- disable netrw at the very start of your init.lua
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
+
+    local timer
+    vim.api.nvim_create_autocmd("CursorMoved", {
+      pattern = "NvimTree*",
+      callback = function()
+        if timer then
+          timer:stop()
+        end
+        timer = vim.defer_fn(function()
+          local node = require("nvim-tree.api").tree.get_node_under_cursor()
+          if not node or node.type ~= "file" then
+            return
+          end
+          local win_ids = usable_win_ids()
+          if #win_ids ~= 1 then
+            return
+          end
+          local win_id = win_ids[1]
+          require("nvim-tree.api").node.open.preview()
+        end, 5)
+      end,
+    })
   end,
 
   opts = {
