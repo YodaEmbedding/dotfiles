@@ -19,6 +19,9 @@ DEST="${REMOTE_HOST}:~/${PWD#"$HOME"}/"
   echo "1"  # Force initial run.
   fswatch -o "$PWD/" --exclude=".git/.*"  # Watch for changes in the current directory.
 } | while read -r _; do
+  # Drain event queue and debounce.
+  while read -t 1 -r _; do :; done
+
   echo ""
   echo ">>>"
   echo "SRC: ${SRC}"
