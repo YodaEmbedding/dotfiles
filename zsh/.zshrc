@@ -62,6 +62,15 @@ bind_keys_zsh_autosuggestions() {
   bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 }
 
+setup_completion() {
+  ZINIT[COMPINIT_OPTS]=-C
+  zicompinit
+  zicdreplay
+  eval "$(ruff generate-shell-completion zsh)"
+  eval "$(uv generate-shell-completion zsh)"
+  eval "$(zoxide init zsh)"
+}
+
 zinit for \
     OMZL::git.zsh \
     OMZL::history.zsh
@@ -91,7 +100,7 @@ zinit light-mode wait lucid for \
     MichaelAquilina/zsh-you-should-use \
   atload"bind_keys_anyframe" \
     mollifier/anyframe \
-  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+  atinit"setup_completion" \
     zdharma-continuum/fast-syntax-highlighting \
   atload"_zsh_autosuggest_start; bind_keys_zsh_autosuggestions" \
     zsh-users/zsh-autosuggestions \
@@ -108,7 +117,6 @@ zinit light-mode wait lucid for \
 
 export _ZO_MAXAGE=100000
 export _ZO_RESOLVE_SYMLINKS=1
-eval "$(zoxide init zsh)"
 
 
 # THEME {{{1
