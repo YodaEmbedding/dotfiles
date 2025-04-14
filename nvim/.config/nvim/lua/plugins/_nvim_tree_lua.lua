@@ -29,7 +29,7 @@ return {
     sort_by = "case_sensitive",
     disable_netrw = true,
     view = {
-      side = "right",
+      -- side = "right",
       width = 40,
     },
     renderer = {
