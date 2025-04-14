@@ -42,26 +42,6 @@ load_zinit() {
 }
 
 
-bind_keys_anyframe() {
-  bindkey '^k' anyframe-widget-kill                       # kill
-}
-
-bind_keys_zsh_autosuggestions() {
-  bindkey '^ ' autosuggest-accept                         # Fill suggestion
-  bindkey '^t' autosuggest-accept                         # Fill suggestion
-  bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
-}
-
-setup_completion() {
-  ZINIT[COMPINIT_OPTS]=-C
-  zicompinit
-  zicdreplay
-  eval "$(ruff generate-shell-completion zsh)"
-  eval "$(uv generate-shell-completion zsh)"
-  eval "$(zoxide init zsh)"
-}
-
-
 load_zinit_plugins() {
   # light-mode: disable stats tracking
   # wait: load 0s (about 5ms exactly) after prompt; aka "Turbo mode"
@@ -109,6 +89,16 @@ load_zinit_plugins() {
       zsh-users/zsh-completions
 
   # zinit light-mode wait lucid for wfxr/forgit
+}
+
+
+setup_completion() {
+  ZINIT[COMPINIT_OPTS]=-C
+  zicompinit
+  zicdreplay
+  eval "$(ruff generate-shell-completion zsh)"
+  eval "$(uv generate-shell-completion zsh)"
+  eval "$(zoxide init zsh)"
 }
 
 
@@ -281,6 +271,16 @@ setup_keybindings() {
   bindkey '^w' forward-word                               # move forward word
   bindkey '^z' zoxide-widget                              # cd
   bindkey -s '^o' 'lfcd\n'                                # lf
+}
+
+bind_keys_anyframe() {
+  bindkey '^k' anyframe-widget-kill                       # kill
+}
+
+bind_keys_zsh_autosuggestions() {
+  bindkey '^ ' autosuggest-accept                         # Fill suggestion
+  bindkey '^t' autosuggest-accept                         # Fill suggestion
+  bindkey '^[^M' autosuggest-execute                      # Fill and run suggestion
 }
 
 
