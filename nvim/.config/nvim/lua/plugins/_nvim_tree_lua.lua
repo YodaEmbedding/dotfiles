@@ -34,12 +34,24 @@ return {
     },
     renderer = {
       -- group_empty = true,
+      full_name = true,
+      -- highlight_git = true,
+      highlight_opened_files = "name",
+      indent_markers = {
+        enable = true,
+      },
+      icons = {
+        modified_placement = "before",
+      },
     },
     update_focused_file = {
       enable = true,
     },
     filters = {
       -- dotfiles = true,
+    },
+    modified = {
+      enable = true,
     },
   },
 }
