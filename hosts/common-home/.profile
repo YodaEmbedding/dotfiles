@@ -14,6 +14,7 @@ fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.local/bin_python:$PATH"
