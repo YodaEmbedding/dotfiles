@@ -216,8 +216,9 @@ git_log_watch() {
 
 git_commit_fixup_interactively() {
   local sha=$(git_select_commit_interactively)
-  git commit --fixup "$sha"
-  git rebase "$sha~" --autosquash
+  [ -n "$sha" ] || return 1
+  git commit --fixup "$sha" || return 1
+  git rebase "$sha~" --autosquash || return 1
 }
 
 git_select_commit_interactively() {
