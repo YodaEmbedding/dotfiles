@@ -62,8 +62,18 @@ return {
       {
         "<C-n>",
         function()
-          require("gitsigns").stage_hunk(); require("gitsigns").nav_hunk("next")
+          require("gitsigns").stage_hunk()
+          require("gitsigns").nav_hunk("next")
         end,
+        desc = "Git stage hunk then go to next Git hunk",
+      },
+      {
+        "<C-n>",
+        function()
+          require("gitsigns").stage_hunk { vim.fn.line("."), vim.fn.line("v") }
+          require("gitsigns").nav_hunk("next")
+        end,
+        "v",
         desc = "Git stage hunk then go to next Git hunk",
       },
       {
