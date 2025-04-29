@@ -501,10 +501,12 @@ alias t="todo.sh"
 alias th='bgrnd thunar'
 
 # uv
-alias uvu='uv-user'
-alias uvupip='uv --directory="$HOME/.config/uv/envs/default" pip'
-
 alias uv-user='uv --project="$HOME/.config/uv/envs/default"'
+alias uv-user-pip='uv --directory="$HOME/.config/uv/envs/default" pip'
+
+alias uvu='uv-user'
+alias pip='uv-user-pip'
+alias python='uv-user run python'
 
 # wtwitch
 alias tw='wtwitch'
