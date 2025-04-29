@@ -193,6 +193,9 @@ setup_options() {
   setopt globdots
   setopt nullglob
 
+  # Allow comments (#)
+  setopt interactivecomments
+
   # Completion after =
   setopt magic_equal_subst
 
