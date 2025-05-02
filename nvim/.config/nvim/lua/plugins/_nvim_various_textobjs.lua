@@ -8,3 +8,9 @@ return {
     },
   },
 }
+
+-- Potentially useful:
+-- gG: entire buffer
+-- ii: same indentation
+-- aI: higher indentation
+-- an: number, e.g. -1.34
