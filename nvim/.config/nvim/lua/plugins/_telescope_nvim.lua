@@ -31,6 +31,8 @@ return {
     -- "nvim-telescope/telescope-frecency.nvim",
     "nvim-telescope/telescope-smart-history.nvim",
     "prochri/telescope-all-recent.nvim",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "nvim-telescope/telescope-fzy-native.nvim" },
   },
 
   lazy = true,
@@ -62,6 +64,7 @@ return {
     local telescope = require("telescope")
     local actions = require("telescope.actions")
     local previewers = require("telescope.previewers")
+    local sorters = require("telescope.sorters")
 
     local function buffer_previewer_maker(filepath, bufnr, opts)
       opts = opts or {}
@@ -134,11 +137,18 @@ return {
           -- sort_lastused = true,
           sort_mru = true,
         },
+        lsp_dynamic_workspace_symbols = {
+          -- sorter = sorters.get_generic_fuzzy_sorter(),
+          -- sorter = sorters.get_fzy_sorter(),
+          sorter = telescope.extensions.fzf.native_fzf_sorter(),
+        }
       },
     }
 
     require("telescope-all-recent").setup {}
 
+    require("telescope").load_extension("fzf")
+    require("telescope").load_extension("fzy_native")
     require("telescope").load_extension("jsonfly")
     require("telescope").load_extension("smart_history")
   end,
