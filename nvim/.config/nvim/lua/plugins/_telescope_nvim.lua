@@ -128,6 +128,7 @@ return {
           show_scores = false,
           ignore_patterns = {"*.git/*", "*/tmp/*"},
           match_algorithm = "fzy",
+          result_limit = 1000,
         },
       },
 
