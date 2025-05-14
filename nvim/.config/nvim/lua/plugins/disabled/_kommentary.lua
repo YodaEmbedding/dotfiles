@@ -1,6 +1,8 @@
 return {
   "b3nj5m1n/kommentary",
 
+  enabled = false,
+
   keys = {
     { "gcc", nil, "n" },
     { "gc",  nil, "n" },
