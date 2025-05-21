@@ -4,7 +4,6 @@ from importlib import import_module
 from itertools import *
 from pprint import pprint
 from time import sleep
-from timeit import timeit
 
 
 class LazyModule:
@@ -103,9 +102,6 @@ try:
     )
 
     np.set_printoptions(precision=3)
-
-    def arange_(*shape, dtype=None):
-        return np.arange(np.prod(shape), dtype=dtype).reshape(shape)
 
 except ImportError:
     pass
