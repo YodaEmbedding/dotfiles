@@ -1,9 +1,9 @@
 import pkgutil
-from collections import defaultdict
+from collections import defaultdict as defaultdict
 from importlib import import_module
 from itertools import *
-from pprint import pprint
-from time import sleep
+from pprint import pprint as pprint
+from time import sleep as sleep
 
 
 class LazyModule:
