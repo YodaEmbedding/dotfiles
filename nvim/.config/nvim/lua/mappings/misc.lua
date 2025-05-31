@@ -19,8 +19,8 @@ n("<F9>", ":set textwidth=79<CR>")           -- Format width
 x(
   "gq", "<Esc>:let tw=&tw<CR>:set tw=72<CR>gvgq:let &tw=tw<CR>"
 )                                            -- Format width (72-char)
-n("gs", "vip:sort i<CR>")                    -- Sort
-x("gs", ":sort i<CR>")                       -- Sort
+n("gs", "vip:sort<CR>")                      -- Sort
+x("gs", ":sort<CR>")                         -- Sort
 n("<Leader><Space>", ":FixWhitespace<CR>")   -- Strip trailing whitespace
 
 -- Macros
