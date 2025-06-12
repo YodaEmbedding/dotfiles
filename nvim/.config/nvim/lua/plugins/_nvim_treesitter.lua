@@ -209,6 +209,7 @@ return {
         "hyprlang",
         "idl",
         "inko",
+        "ipkg",
         "ispc",
         "janet_simple",
         "kconfig",
