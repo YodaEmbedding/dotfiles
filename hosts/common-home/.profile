@@ -14,11 +14,11 @@ fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.local/bin_python:$PATH"
-PATH="$HOME/.local/bin:$PATH"
 export PATH
 
 export FILTER_BRANCH_SQUELCH_WARNING=1
