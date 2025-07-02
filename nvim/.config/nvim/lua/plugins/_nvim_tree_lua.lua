@@ -97,6 +97,7 @@ return {
     sort_by = "case_sensitive",
     disable_netrw = true,
     view = {
+      relativenumber = true,
       -- side = "right",
       width = 40,
     },
