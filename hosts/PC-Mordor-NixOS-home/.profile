@@ -1,1 +1,1 @@
-source "$HOME/dotfiles/hosts/common-home/.profile"
+../common-home/.profile
