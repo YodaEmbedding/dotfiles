@@ -234,6 +234,7 @@ dependencies = [
     { name = "plotly" },
     { name = "polars" },
     { name = "ptpython" },
+    { name = "pyperclip" },
     { name = "pyyaml" },
     { name = "scipy" },
     { name = "seaborn" },
@@ -255,6 +256,7 @@ requires-dist = [
     { name = "plotly", specifier = ">=5.24.1" },
     { name = "polars", specifier = ">=1.8.2" },
     { name = "ptpython", specifier = ">=3.0.29" },
+    { name = "pyperclip", specifier = ">=1.9.0" },
     { name = "pyyaml", specifier = ">=6.0.2" },
     { name = "scipy", specifier = ">=1.10.1" },
     { name = "seaborn", specifier = ">=0.13.2" },
@@ -1116,6 +1118,12 @@ sdist = { url = "https://files.pythonhosted.org/packages/83/08/13f3bce01b2061f2b
 wheels = [
     { url = "https://files.pythonhosted.org/packages/e5/0c/0e3c05b1c87bb6a1c76d281b0f35e78d2d80ac91b5f8f524cebf77f51049/pyparsing-3.1.4-py3-none-any.whl", hash = "sha256:a6a7ee4235a3f944aa1fa2249307708f893fe5717dc603503c6c7969c070fb7c", size = 104100, upload-time = "2024-08-25T15:00:45.361Z" },
 ]
+
+[[package]]
+name = "pyperclip"
+version = "1.9.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/30/23/2f0a3efc4d6a32f3b63cdff36cd398d9701d26cda58e3ab97ac79fb5e60d/pyperclip-1.9.0.tar.gz", hash = "sha256:b7de0142ddc81bfc5c7507eea19da920b92252b548b96186caf94a5e2527d310", size = 20961, upload-time = "2024-06-18T20:38:48.401Z" }
 
 [[package]]
 name = "python-dateutil"
