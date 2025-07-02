@@ -42,24 +42,21 @@ export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
 
 case "$HOSTNAME" in
 
-  PC-Mordor-Arch)
+  PC-Mordor-*)
     export CLASSPATH=""
-    export RUNS_ROOT="$HOME/data/runs/pc-mordor"
-    # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-    export RUST_SRC_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
 
-    ;;
-
-
-  PC-Mordor-NixOS)
-    export CLASSPATH=""
-    export FZF_BASE=/run/current-system/sw/bin/fzf
-    # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-    # export RUST_SRC_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-    export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
-
-    ;;
+    case "$HOSTNAME" in
+      PC-Mordor-Arch)
+        export RUNS_ROOT="$HOME/data/runs/pc-mordor"
+        # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+        export RUST_SRC_PATH="$HOME/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+      ;;
+      PC-Mordor-NixOS)
+        export FZF_BASE=/run/current-system/sw/bin/fzf
+      ;;
+    esac
+  ;;
 
 
   *.computecanada.ca)
