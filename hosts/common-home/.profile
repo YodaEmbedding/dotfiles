@@ -23,6 +23,14 @@ PATH="$HOME/.local/bin_python:$PATH"
 export PATH
 
 
+# Other names were considered, but this is the most polite.
+# (Other names include: anarchy, chaotic, rebel, rogue, stubborn-devs, unlawful, unruly, etc.)
+export XDG_WILD_HOME="$HOME/.local/wild"
+
+# export CARGO_HOME="$XDG_WILD_HOME/cargo"
+export IPYTHONDIR="$XDG_WILD_HOME/ipython"
+
+
 export GOPATH="$HOME/.cache/go"
 export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
 # export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
