@@ -14,6 +14,7 @@ fi
 export EDITOR="nvim"
 export VISUAL="nvim"
 
+
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
@@ -21,20 +22,23 @@ PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/.local/bin_python:$PATH"
 export PATH
 
+
+export GOPATH="$HOME/.cache/go"
+# export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"
+# export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
+export PYTHONSTARTUP="$HOME/.config/python/pythonstartup.py"
+export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
+
+
 export FILTER_BRANCH_SQUELCH_WARNING=1
 if command -v fd &> /dev/null; then
   export FZF_DEFAULT_COMMAND='fd --type f'
 fi
-export GOPATH="$HOME/.cache/go"
 export GPG_TTY=$(tty)
-# export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"
 if command -v bat &> /dev/null; then
   export MANPAGER="sh -c 'col -bx | bat -l man -p'"
   export MANROFFOPT="-c"
 fi
-# export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
-export PYTHONSTARTUP="$HOME/.config/python/pythonstartup.py"
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
 export RUST_BACKTRACE=1
 export TF_CPP_MIN_LOG_LEVEL=2
 export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
