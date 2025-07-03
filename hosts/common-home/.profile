@@ -24,7 +24,7 @@ export PATH
 
 
 export GOPATH="$HOME/.cache/go"
-# export JUPYTERLAB_DIR="$HOME/.local/share/jupyter/lab"
+export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
 # export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
 export PYTHONSTARTUP="$HOME/.config/python/pythonstartup.py"
 export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
