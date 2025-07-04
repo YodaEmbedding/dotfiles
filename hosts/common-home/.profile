@@ -15,6 +15,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 
+PATH="$HOME/.local/homebrew/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
