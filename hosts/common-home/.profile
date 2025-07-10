@@ -128,7 +128,8 @@ case "$HOSTNAME" in
 
 
   kopsgrid*|kopsvgd*p)  # idcc-node-linux
-    export SHELL=/bin/zsh
+    SHELL=$(which zsh)
+    export SHELL
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
 
     ;;
