@@ -34,7 +34,11 @@ return {
 
       markdown = { "mdformat" },
 
-      python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
+      python = {
+        -- "ruff_fix",
+        "ruff_format",
+        "ruff_organize_imports",
+      },
 
       rust = { "rustfmt", lsp_format = "fallback" },
     },
