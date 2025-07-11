@@ -138,6 +138,11 @@ return {
           -- sort_lastused = true,
           sort_mru = true,
         },
+        live_grep = {
+          additional_args = {
+            "--hidden",
+          },
+        },
         lsp_dynamic_workspace_symbols = {
           -- sorter = sorters.get_generic_fuzzy_sorter(),
           -- sorter = sorters.get_fzy_sorter(),
