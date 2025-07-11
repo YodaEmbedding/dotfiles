@@ -4,16 +4,12 @@ alias pour='for'                        # for
 alias dans='in'                         # in
 alias faire='do'                        # do
 alias fais='do'                         # do
-alias fait='do'                         # do
 alias fin='done'                        # end
 alias si='if'                           # if
 alias alors='then'                      # then
 alias ensuite='then'                    # then
-alias lors='then'                       # then
 alias puis='then'                       # then
-alias autre='else'                      # else
 alias sinon='else'                      # else (otherwise)
-# alias ausi='elif'                     # else if [autre+si]
 alias sinonsi='elif'                    # else if (otherwise)
 alias finis='fi'                        # fi
 alias retourner='return'                # to return (go back)
@@ -28,7 +24,6 @@ alias rentrer='cd ~'                    # to return (home)
 alias copier='/bin/cp'                  # to copy
 alias jour='date'                       # day
 alias temps='date'                      # the time
-alias fois='date'                       # n times
 alias dit='echo'                        # to say
 alias dire='echo'                       # to say
 alias parle='echo'                      # to say
@@ -46,8 +41,7 @@ alias supprimer='rm'                    # to remove
 alias dormir='sleep'                    # to sleep
 alias attendre='sleep'                  # to wait
 alias ouest='whereis'                   # where is
-alias que='which'                       # what
-alias quel='which'                      # which
+alias quel='which -a'                   # which
 alias oui='yes'                         # yes
 alias non='yes n'                       # no
 
@@ -106,9 +100,28 @@ alias rien=''                           # none
 alias sur=''                            # on
 alias tout=''                           # all
 
-# alias ou='||'                         # or
-# alias ou='where'                      # where
+# alias fois='repeat'                   # n times
+# alias toujours='repeat_forever'       # forever
 # alias ou='pwd'                        # where
+# alias ou='where'                      # where
+# alias ou='||'                         # or
+# alias oui='true'                      # yes
+# alias non='false'                     # no
+
+# repeat() {
+#   local n=$1; shift
+#   for ((i=0; i<n; i++)); do
+#     "$@"
+#   done
+# }
+
+# repeat_forever() {
+#   while true; do
+#     "$@"
+#   done
+# }
+
+# TODO: More useful functional functions.
 
 
 # List of french aliases
