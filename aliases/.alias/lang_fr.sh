@@ -12,12 +12,12 @@ alias ensuite='then'                    # then
 alias puis='then'                       # then
 alias sinon='else'                      # else (otherwise)
 alias sinonsi='elif'                    # else if (otherwise)
-alias finis='fi'                        # fi
+alias finis='fi'                        # finish
 alias retourner='return'                # to return (go back)
 alias vrai='true'                       # true
 alias faux='false'                      # false
 alias ou='||'                           # or
-alias et='&&'                           # et
+alias et='&&'                           # and
 alias egal='=='                         # equal
 
 alias revenir='cd -'                    # to return (come back)
