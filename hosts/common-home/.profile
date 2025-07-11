@@ -2,7 +2,7 @@ if [[ -n "$_COMMON_PROFILE_LOADED" ]]; then
   return
 fi
 
-_COMMON_PROFILE_LOADED=1
+export _COMMON_PROFILE_LOADED=1
 
 
 if [[ -z "$HOSTNAME" ]]; then
