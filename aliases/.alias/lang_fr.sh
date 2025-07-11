@@ -113,7 +113,7 @@ alias tout=''                           # all
 
 # List of french aliases
 francais() {
-  grep -e "^alias" ~/.alias/fr | \
+  grep -e "^alias" ~/.alias/lang_fr.sh | \
     sed -ne "s/^alias \([a-zA-Z]\{1,\}\)='\(.*\)'[[:space:]]\{1,\}# \([^#]\{1,\}\)$/\2#\1#\3/p" \
     | sort | column -t -s '#'
 }

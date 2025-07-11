@@ -147,7 +147,7 @@ alias baka='git'                        # バカ          # idiot
 
 # List of japanese aliases
 nihon() {
-  grep -e "^alias" ~/.alias/jp | \
+  grep -e "^alias" ~/.alias/lang_jp.sh | \
     sed -ne "s/^alias \([a-zA-Z]\{1,\}\)='\(.*\)'[[:space:]]\{1,\}# \([^#]\{1,\}\)[[:space:]]\{1,\}# \([^#]\{1,\}\)$/\2#\1#\3#\4/p" \
     | sort | column -t -s '#'
 }
