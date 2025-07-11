@@ -1,5 +1,3 @@
-echo ".profile sourced with -$- and previously_loaded=${_COMMON_PROFILE_LOADED:-0}"
-
 if [[ -n "$_COMMON_PROFILE_LOADED" ]]; then
   return
 fi

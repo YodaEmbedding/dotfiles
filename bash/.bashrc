@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-echo ".bashrc sourced with -$-"
-
 # Prompt (see also: PS2,3,4)
 PS1='[\u@\h \W]\$ '
 

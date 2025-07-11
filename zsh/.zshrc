@@ -1,5 +1,3 @@
-echo ".zshrc sourced with -$-"
-
 OMZ_VI_MODE=0
 
 
