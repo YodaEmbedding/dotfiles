@@ -5,6 +5,7 @@ alias dans='in'                         # in
 alias faire='do'                        # do
 alias fais='do'                         # do
 alias fin='done'                        # end
+alias toujours='while true; do'         # forever
 alias si='if'                           # if
 alias alors='then'                      # then
 alias ensuite='then'                    # then
@@ -33,15 +34,19 @@ alias tuertous='killall'                # to kill all
 alias moins='less'                      # less
 alias met='/bin/mv'                     # to put
 alias mettre='/bin/mv'                  # to put
+alias ici='pwd'                         # here
 alias lire='read'                       # to read
 alias effacer='rm'                      # to erase
 alias perdre='rm'                       # to lose/throw away
 alias enlever='rm'                      # to remove
 alias supprimer='rm'                    # to remove
+alias compter='seq'                     # to count
 alias dormir='sleep'                    # to sleep
 alias attendre='sleep'                  # to wait
+alias quoi='type -a'                    # what
 alias ouest='whereis'                   # where is
 alias quel='which -a'                   # which
+alias qui='who'                         # who
 alias oui='yes'                         # yes
 alias non='yes n'                       # no
 
@@ -58,6 +63,7 @@ alias copie='/usr/bin/pbcopy'           # copy
 alias coller='/usr/bin/pbpaste'         # to paste
 alias tomber='/usr/bin/pbpaste'         # to drop/fall
 alias recommencer='reboot'              # to restart
+alias regarder='watch'                  # to watch
 
 alias noir='black -l 79'                # black
 alias aujourdhui='cal'                  # today
@@ -85,14 +91,13 @@ alias ligne='wc -l'                     # line
 alias apres=''                          # after
 alias aucun=''                          # none
 alias autour=''                         # around
-alias aux=''                            # to
+alias aux=''                            # to the
 alias avant=''                          # before
 alias cette=''                          # this
 alias cote=''                           # side
 alias dernier=''                        # last
 alias entre=''                          # between
 alias eux=''                            # them
-alias ici=''                            # here
 alias la=''                             # there
 alias leur=''                           # them
 alias pres=''                           # near
@@ -122,6 +127,7 @@ alias tout=''                           # all
 # }
 
 # TODO: More useful functional functions.
+# TODO: Consider converting infinitive verbs to imperative form. (e.g. "faire" to "fais")
 
 
 # List of french aliases
