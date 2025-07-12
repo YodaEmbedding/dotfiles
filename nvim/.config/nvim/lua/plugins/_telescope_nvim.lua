@@ -141,6 +141,7 @@ return {
         live_grep = {
           additional_args = {
             "--hidden",
+            "--glob", "!.git",
           },
         },
         lsp_dynamic_workspace_symbols = {
