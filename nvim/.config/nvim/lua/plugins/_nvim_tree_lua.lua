@@ -3,11 +3,12 @@
 ---@return table with valid win_ids
 local function usable_win_ids()
   local M = require("nvim-tree.actions.node.open-file")
-  local view = require("nvim-tree.view")
+  local core = require("nvim-tree.core")
 
+  local explorer = core.get_explorer()
   local tabpage = vim.api.nvim_get_current_tabpage()
   local win_ids = vim.api.nvim_tabpage_list_wins(tabpage)
-  local tree_winid = view.get_winnr(tabpage)
+  local tree_winid = explorer and explorer.view:get_winnr(tabpage, "open-file.usable_win_ids")
 
   return vim.tbl_filter(function(id)
     local bufid = vim.api.nvim_win_get_buf(id)
@@ -25,7 +26,7 @@ local function usable_win_ids()
     end
 
     local win_config = vim.api.nvim_win_get_config(id)
-    return id ~= tree_winid and win_config.focusable and not win_config.external or false
+    return id ~= tree_winid and win_config.focusable and not win_config.hide and not win_config.external or false
   end, win_ids)
 end
 
