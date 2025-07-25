@@ -257,13 +257,9 @@ interactive-widget-cd() {
   interactive-widget-cd
 }
 
-zi_all() {
+zoxide-widget() {
   builtin local result
   result="$(zoxide query --interactive --all -- "$@")"  && __zoxide_cd "${result}"
-}
-
-zoxide-widget() {
-  zi_all
   _reset-prompt
 }
 
