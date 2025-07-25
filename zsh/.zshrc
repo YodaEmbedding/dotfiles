@@ -2,9 +2,6 @@ OMZ_VI_MODE=0
 
 
 setup_init() {
-  # If not running interactively, don't do anything
-  [[ -o interactive ]] || return
-
   [[ -o login ]] || (
     # Is non-login shell. (i.e., ~/.zprofile is not automatically sourced)
     # Ensure that we source it anyways:
@@ -324,12 +321,20 @@ setup_final() {
 }
 
 
-setup_init
-load_zinit
-load_zinit_plugins
-source_files
-setup_theme
-setup_options
-setup_widgets
-setup_keybindings
-setup_final
+run_setup() {
+  # If not running interactively, don't do anything
+  [[ -o interactive ]] || return
+
+  setup_init
+  load_zinit
+  load_zinit_plugins
+  source_files
+  setup_theme
+  setup_options
+  setup_widgets
+  setup_keybindings
+  setup_final
+}
+
+
+run_setup
