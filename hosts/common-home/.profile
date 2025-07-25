@@ -16,6 +16,7 @@ export VISUAL="nvim"
 
 
 PATH="$HOME/.local/homebrew/bin:$PATH"
+PATH="$HOME/.local/spack/bin:$PATH"
 PATH="$HOME/.local/bin:$PATH"
 PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
@@ -131,6 +132,9 @@ case "$HOSTNAME" in
     SHELL=$(which zsh)
     export SHELL
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
+
+    source "$HOME/.local/spack/share/spack/setup-env.sh"
+    spack env activate default
 
     ;;
 
