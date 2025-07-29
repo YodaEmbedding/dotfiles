@@ -133,6 +133,9 @@ case "$HOSTNAME" in
     export SHELL
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
 
+    export CURL_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
+    export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
+
     source "$HOME/.local/spack/share/spack/setup-env.sh"
     spack env activate default
 
