@@ -5,6 +5,11 @@ return {
     handle = {
       color = "#5C4561",
     },
+    marks = {
+      Info = { text = { "" } },
+      Hint = { text = { "" } },
+      Misc = { text = { "" } },
+    },
   },
 
   config = function(_, opts)
