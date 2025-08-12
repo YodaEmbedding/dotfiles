@@ -72,8 +72,12 @@ n("k", "(v:count >= 1 ? 'm`' . v:count : '') . 'k'", {expr = true})
 x("k", "(v:count >= 1 ? 'm`' . v:count : '') . 'k'", {expr = true})
 
 -- Don't add {} motions to jumplist
-n("}", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '}'<CR>", {silent = true})
-n("{", ":<C-u>execute 'keepjumps norm! ' . v:count1 . '{'<CR>", {silent = true})
+n("{", "<Cmd>execute 'keepjumps normal! ' . v:count1 . '{'<CR>", {silent = true})
+n("}", "<Cmd>execute 'keepjumps normal! ' . v:count1 . '}'<CR>", {silent = true})
+
+-- Don't add () motions to jumplist
+n("(", "<Cmd>execute 'keepjumps normal! ' . v:count1 . '('<CR>", {silent = true})
+n(")", "<Cmd>execute 'keepjumps normal! ' . v:count1 . ')'<CR>", {silent = true})
 
 -- Windows
 n("<Space>D",  "<C-w>c")                     -- Close window
