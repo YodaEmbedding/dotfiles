@@ -140,6 +140,7 @@ setup_theme() {
   PROMPT_BGCOLOR="${PROMPT_BGCOLOR:-96}"
   PROMPT_FGCOLOR="${PROMPT_FGCOLOR:-217}"
 
+  HOSTINFO="${SLURM_JOB_ID:+SLURM_JOB_ID=$SLURM_JOB_ID}"
   HOSTNAME="${HOSTNAME:-$(hostname)}"
   WHOAMI="${WHOAMI:-$(whoami)}"
 
@@ -161,7 +162,7 @@ make_prompt() {
   s+='· %~ '
   s+='$([[ -z "$PROMPT_NAME" ]] || echo "· ($PROMPT_NAME) ")'
   s+='$(out=$(git_current_branch); [ -z "$out" ] || echo "· ($out) ")'
-  s+='$(out=$SLURM_JOB_ID; [ -z "$out" ] || echo "· ($WHOAMI@$HOSTNAME) ")'
+  s+='$([ -z "$HOSTINFO" ] || echo "· ($WHOAMI@$HOSTNAME [$HOSTINFO]) ")'
   s+='%b%f%k'
 
   # λ
