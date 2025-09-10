@@ -1,4 +1,5 @@
 import pkgutil
+import sys
 from collections import defaultdict as defaultdict
 from importlib import import_module
 from itertools import *
@@ -65,7 +66,10 @@ LazyObject("Path", "pathlib")
 LazyObject("Image", "PIL.Image", getattr=False)
 LazyObject("Tensor", "torch")
 
-modules = [x.name for x in pkgutil.iter_modules()]
+modules = [
+    *[x.name for x in pkgutil.iter_modules()],
+    *[x for x in sys.builtin_module_names if not x.startswith("_")],
+]
 
 for module in modules:
     if module in globals():
