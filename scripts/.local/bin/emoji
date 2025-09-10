@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
-import clipboard
+import pyperclip
 import sys
 
 emoji = {
@@ -47,6 +47,6 @@ if args.markdown:
 print(value)
 
 if args.copy:
-    clipboard.copy(value)
+    pyperclip.copy(value)
     print('Copied!')
 
