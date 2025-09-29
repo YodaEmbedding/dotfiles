@@ -1,56 +1,51 @@
-if [[ -n "$_COMMON_PROFILE_LOADED" ]]; then
-  return
-fi
-
-export _COMMON_PROFILE_LOADED=1
-
-
 if [[ -z "$HOSTNAME" ]]; then
   export HOSTNAME=$(hostname)
   echo "HOSTNAME manually set to $HOSTNAME"
 fi
 
 
-export EDITOR="nvim"
-export VISUAL="nvim"
+if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
+  export EDITOR="nvim"
+  export VISUAL="nvim"
 
 
-PATH="$HOME/.local/spack/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"
-PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
-PATH="$HOME/.cabal/bin:$PATH"
-PATH="$HOME/.cargo/bin:$PATH"
-PATH="$HOME/.local/bin_python:$PATH"
-export PATH
+  PATH="$HOME/.local/spack/bin:$PATH"
+  PATH="$HOME/.local/bin:$PATH"
+  PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
+  PATH="$HOME/.cabal/bin:$PATH"
+  PATH="$HOME/.cargo/bin:$PATH"
+  PATH="$HOME/.local/bin_python:$PATH"
+  export PATH
 
 
-# Other names were considered, but this is the most polite.
-# (Other names include: anarchy, chaotic, rebel, rogue, stubborn-devs, unlawful, unruly, etc.)
-export XDG_WILD_HOME="$HOME/.local/wild"
+  # Other names were considered, but this is the most polite.
+  # (Other names include: anarchy, chaotic, rebel, rogue, stubborn-devs, unlawful, unruly, etc.)
+  export XDG_WILD_HOME="$HOME/.local/wild"
 
-# export CARGO_HOME="$XDG_WILD_HOME/cargo"
-export IPYTHONDIR="$XDG_WILD_HOME/ipython"
-
-
-export GOPATH="$HOME/.cache/go"
-export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
-# export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
-export PYTHONSTARTUP="$HOME/.config/python/pythonstartup.py"
-export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
+  # export CARGO_HOME="$XDG_WILD_HOME/cargo"
+  export IPYTHONDIR="$XDG_WILD_HOME/ipython"
 
 
-export FILTER_BRANCH_SQUELCH_WARNING=1
-if command -v fd &> /dev/null; then
-  export FZF_DEFAULT_COMMAND='fd --type f'
+  export GOPATH="$HOME/.cache/go"
+  export JUPYTER_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/jupyter"
+  # export NVIM_LOG_FILE="$HOME/.cache/nvim/nvimlog"
+  export PYTHONSTARTUP="$HOME/.config/python/pythonstartup.py"
+  export RIPGREP_CONFIG_PATH="$HOME/.config/ripgrep/rc"
+
+
+  export FILTER_BRANCH_SQUELCH_WARNING=1
+  if command -v fd &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='fd --type f'
+  fi
+  export GPG_TTY=$(tty)
+  if command -v bat &> /dev/null; then
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+    export MANROFFOPT="-c"
+  fi
+  export RUST_BACKTRACE=1
+  export TF_CPP_MIN_LOG_LEVEL=2
+  export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
 fi
-export GPG_TTY=$(tty)
-if command -v bat &> /dev/null; then
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-  export MANROFFOPT="-c"
-fi
-export RUST_BACKTRACE=1
-export TF_CPP_MIN_LOG_LEVEL=2
-export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
 
 
 case "$HOSTNAME" in
@@ -73,16 +68,20 @@ case "$HOSTNAME" in
 
 
   *.computecanada.ca)
-    PATH="$PATH:/cvmfs/soft.computecanada.ca/custom/bin/computecanada"
-    export PATH
+    if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
+      PATH="$PATH:/cvmfs/soft.computecanada.ca/custom/bin/computecanada"
+      export PATH
+    fi
 
     export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
 
     # Disable automatic shell timeout set in /etc/environment.
     export TMOUT=0
 
-    CLUSTER="$(hostname | perl -ne '/.*?(\w+).computecanada.ca/ && print "$1"')"
-    export CLUSTER
+    if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
+      CLUSTER="$(hostname | perl -ne '/.*?(\w+).computecanada.ca/ && print "$1"')"
+      export CLUSTER
+    fi
 
     case "$HOSTNAME" in
       *beluga*)     TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117" ;;
@@ -119,9 +118,11 @@ case "$HOSTNAME" in
 
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
-    PATH="$(brew --prefix rustup)/bin:$PATH"
-    PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
-    export PATH
+    if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
+      PATH="$(brew --prefix rustup)/bin:$PATH"
+      PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+      export PATH
+    fi
 
     ulimit -n unlimited
 
@@ -159,3 +160,6 @@ case "$HOSTNAME" in
     ;;
 
 esac
+
+
+export _COMMON_PROFILE_LOADED=1
