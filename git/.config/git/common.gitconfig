@@ -4,6 +4,9 @@
     filemode = false
     pager = "delta"
 
+[diff]
+    colorMoved = default
+
 [init]
     defaultBranch = main
 
@@ -11,14 +14,24 @@
     diffFilter = delta --color-only
     singleKey = true
 
+[merge]
+    conflictStyle = zdiff3
+
+[pull]
+    ff = only
+
 [rebase]
     autoStash = true
     updateRefs = true
+
+[status]
+    branch = true
 
 [delta]
     dark
     # navigate = true  # wait: https://github.com/dandavison/delta/issues/237
     file-style                      = blue bold
+    map-styles                      = bold purple => syntax "#3C2740", bold cyan => syntax "#2E3242"  # Moved lines.
     minus-style                     = syntax "#663B63"
     minus-emph-style                = syntax "#522B4F"
     minus-empty-line-marker-style   = normal "#663B63"
