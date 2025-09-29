@@ -5,10 +5,6 @@ fi
 
 
 if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
-  export EDITOR="nvim"
-  export VISUAL="nvim"
-
-
   PATH="$HOME/.local/spack/bin:$PATH"
   PATH="$HOME/.local/bin:$PATH"
   PATH="$HOME/.local/share/nvim/mason/bin:$PATH"
@@ -16,6 +12,10 @@ if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
   PATH="$HOME/.cargo/bin:$PATH"
   PATH="$HOME/.local/bin_python:$PATH"
   export PATH
+
+
+  export EDITOR="nvim"
+  export VISUAL="nvim"
 
 
   # Other names were considered, but this is the most polite.
@@ -51,7 +51,6 @@ fi
 case "$HOSTNAME" in
 
   PC-Mordor-*)
-    export CLASSPATH=""
     export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour104"
 
     case "$HOSTNAME" in
@@ -64,25 +63,12 @@ case "$HOSTNAME" in
         export FZF_BASE=/run/current-system/sw/bin/fzf
       ;;
     esac
+
+    export CLASSPATH=""
   ;;
 
 
   *.computecanada.ca)
-    if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
-      PATH="$PATH:/cvmfs/soft.computecanada.ca/custom/bin/computecanada"
-      export PATH
-    fi
-
-    export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
-
-    # Disable automatic shell timeout set in /etc/environment.
-    export TMOUT=0
-
-    if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
-      CLUSTER="$(hostname | perl -ne '/.*?(\w+).computecanada.ca/ && print "$1"')"
-      export CLUSTER
-    fi
-
     case "$HOSTNAME" in
       *beluga*)     TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117" ;;
       *cedar*)      TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour186" ;;
@@ -91,6 +77,19 @@ case "$HOSTNAME" in
       *)            TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour182" ;;
     esac
     export TMUX_STATUS_STYLE
+
+    if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
+      PATH="$PATH:/cvmfs/soft.computecanada.ca/custom/bin/computecanada"
+      export PATH
+
+      CLUSTER="$(hostname | perl -ne '/.*?(\w+).computecanada.ca/ && print "$1"')"
+      export CLUSTER
+    fi
+
+    export SHELL=/cvmfs/soft.computecanada.ca/gentoo/2020/bin/zsh
+
+    # Disable automatic shell timeout set in /etc/environment.
+    export TMOUT=0
 
     MODULES=(
       gcc
@@ -130,9 +129,10 @@ case "$HOSTNAME" in
 
 
   kopsgrid*|kopsvgd*p)  # idcc-node-linux
+    export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
+
     SHELL=$(which zsh)
     export SHELL
-    export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour117"
 
     export CURL_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
     export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
