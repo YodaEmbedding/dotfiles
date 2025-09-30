@@ -90,39 +90,14 @@ load_zinit_plugins() {
 
 
 setup_completion() {
-  ZINIT[COMPINIT_OPTS]=-C
+  typeset -gU fpath
+  fpath=("${XDG_DATA_HOME:-$HOME/.local/share}/zsh/site-functions" $fpath)
+  ZINIT[COMPINIT_OPTS]=-C  # Cache
   zicompinit
   zicdreplay
   eval "$(ruff generate-shell-completion zsh)"
   eval "$(uv generate-shell-completion zsh)"
   eval "$(zoxide init zsh)"
-
-  # Workaround
-  # https://github.com/astral-sh/uv/issues/8432#issuecomment-2605216865
-  _uv_override() {
-    local flagless_words=()
-
-    for word in "${words[@]}"; do
-      if [[ "$word" != --* ]]; then
-        flagless_words+=("$word")
-      fi
-    done
-
-    local command_word="${flagless_words[2]}"
-
-    if [[ "$command_word" == "run" && "$words[CURRENT]" != -* ]]; then
-      local venv_binaries
-      if [[ -d .venv/bin ]]; then
-        venv_binaries=( ${(@f)"$(_call_program files ls -1 .venv/bin 2>/dev/null)"} )
-      fi
-      _alternative \
-        'files:filename:_files' \
-        "binaries:venv binary:(($venv_binaries))"
-    else
-      _uv "$@"
-    fi
-  }
-
   compdef _uv_override uv
 }
 
