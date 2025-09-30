@@ -74,11 +74,12 @@ load_zinit_plugins() {
   zinit light-mode wait lucid for \
     \
       OMZP::fzf \
-      Aloxaf/fzf-tab \
       MichaelAquilina/zsh-you-should-use \
     atload"bind_keys_anyframe" \
       mollifier/anyframe \
     atinit"setup_completion" \
+      Aloxaf/fzf-tab \
+    atinit"" \
       zdharma-continuum/fast-syntax-highlighting \
     atload"_zsh_autosuggest_start; bind_keys_zsh_autosuggestions" \
       zsh-users/zsh-autosuggestions \
