@@ -86,6 +86,14 @@ load_zinit_plugins() {
       zsh-users/zsh-completions
 
   # zinit light-mode wait lucid for wfxr/forgit
+
+  # Loosely speaking, after the prompt is drawn, the plugins are loaded as:
+  # for plugin in plugins; do
+  #   plugin.atinit()
+  #   plugin.load()
+  #   plugin.atload()
+  # done
+  # This is done sequentially.
 }
 
 
