@@ -38,6 +38,7 @@ return {
 
       -- Hunks
       {
+        -- WARN: <C-m> maps to <CR> (Enter) in terminal.
         "<C-m>",
         function() require("gitsigns").stage_hunk() end,
         desc = "Git stage hunk",

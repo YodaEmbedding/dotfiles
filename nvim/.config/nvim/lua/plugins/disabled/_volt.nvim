@@ -1,0 +1,7 @@
+return {
+  "nvzone/volt",
+
+  enabled = false,
+
+  lazy = true,
+}
