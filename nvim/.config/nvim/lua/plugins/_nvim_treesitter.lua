@@ -395,10 +395,12 @@ return {
           swap_next = {
             ["g>>"] = "@parameter.inner",
             ["g>f"] = "@function.outer",
+            ["g>c"] = "@class.outer",
           },
           swap_previous = {
             ["g<<"] = "@parameter.inner",
             ["g<f"] = "@function.outer",
+            ["g<c"] = "@class.outer",
           },
         },
       },
