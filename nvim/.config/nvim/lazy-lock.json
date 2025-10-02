@@ -1,6 +1,5 @@
 {
   "actions-preview.nvim": { "branch": "master", "commit": "929696ad265fe369bb53d2cdfeffb513a55a4e9a" },
-  "aerial.nvim": { "branch": "master", "commit": "5e687b5a14004fa2dd9eccbee042b96869fe1557" },
   "alpha-nvim": { "branch": "main", "commit": "2b3cbcdd980cae1e022409289245053f62fb50f6" },
   "blame.nvim": { "branch": "main", "commit": "d5f4ad5c8ebca3caecc773dda5983709c5a5da8f" },
   "cmp-buffer": { "branch": "main", "commit": "b74fab3656eea9de20a9b8116afa3cfc4ec09657" },

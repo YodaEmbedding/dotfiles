@@ -1,6 +1,8 @@
 return {
   "stevearc/aerial.nvim",
 
+  enabled = false,
+
   cmd = {
     "AerialOpen",
     "AerialNavOpen",
