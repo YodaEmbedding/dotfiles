@@ -46,7 +46,8 @@ return {
       for _, lsp in ipairs(servers) do
         local config = configs[lsp] or {}
         config = vim.tbl_extend("keep", config, config_defaults)
-        require("lspconfig")[lsp].setup(config)
+        vim.lsp.config(lsp, config)
+        vim.lsp.enable(lsp)
       end
     end,
 
