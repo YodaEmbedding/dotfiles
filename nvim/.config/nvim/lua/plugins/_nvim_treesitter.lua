@@ -11,8 +11,8 @@ return {
 
   config = function()
     require("nvim-treesitter.configs").setup {
-      ensure_installed = "all",
-      _ensure_installed = {
+      _ensure_installed = "all",
+      ensure_installed = {
 
         "asm",
         "bash",
@@ -102,7 +102,7 @@ return {
         "zathurarc",
 
       },
-      ignore_install = {
+      _ignore_install = {
 
         "ada",
         "agda",
