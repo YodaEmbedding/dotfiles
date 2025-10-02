@@ -42,13 +42,6 @@ return {
       -- "rnix",
     },
 
-    setup_servers = function(servers, config_defaults)
-      vim.lsp.config("*", config_defaults)
-      for _, lsp in ipairs(servers) do
-        vim.lsp.enable(lsp)
-      end
-    end,
-
     on_attach = function(client, bufnr)
       -- For built-in LSP omnifunc:
       vim.api.nvim_set_option_value("completefunc", "v:lua.vim.lsp.omnifunc", { buf = bufnr })
@@ -72,7 +65,7 @@ return {
     local this = require("plugins._nvim_lspconfig")._
 
     -- config that is common across servers
-    local config_defaults = {
+    vim.lsp.config("*", {
       capabilities = require("cmp_nvim_lsp").default_capabilities(),
       on_attach = this.on_attach,
       -- on_init = function(client)
@@ -80,10 +73,12 @@ return {
       --   -- See https://github.com/neovim/neovim/issues/19237#issuecomment-2237037154
       --   client.offset_encoding = "utf-8"
       -- end,
-    }
+    })
 
     require("plugins._nvim_cmp")._.on_lspconfig_load()
 
-    this.setup_servers(this.servers, config_defaults)
+    for _, lsp in ipairs(this.servers) do
+      vim.lsp.enable(lsp)
+    end
   end,
 }
