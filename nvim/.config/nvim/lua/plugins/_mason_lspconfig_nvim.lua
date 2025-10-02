@@ -8,6 +8,7 @@ return {
   event = { "BufReadPre", "BufNewFile" },
 
   opts = {
+    automatic_enable = false,
     ensure_installed = {
       "basedpyright",
       "bashls",
