@@ -3,7 +3,8 @@ return {
 
   opts = {
     handle = {
-      color = "#5C4561",
+      -- color = "#5C4561",
+      color = "#6C5571",
     },
     marks = {
       Info = { text = { "" } },
