@@ -143,6 +143,9 @@ return {
           },
         },
       }
+
+      cmp.setup.filetype("namu_prompt", { enabled = false })
+      cmp.setup.filetype("namu_sidebar", { enabled = false })
     end,
   },
 }
