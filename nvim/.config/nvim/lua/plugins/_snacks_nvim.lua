@@ -5,6 +5,7 @@ return {
   lazy = false,
 
   keys = {
+    { "<Space>d", function() Snacks.bufdelete() end, desc = "Buffer Delete" },
   },
 
   ---@type snacks.Config

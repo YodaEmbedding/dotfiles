@@ -119,7 +119,6 @@ return {
           vertical = {
             height = 0.99,
             preview_cutoff = 22,
-            -- preview_height = 0.5,
           },
         },
 
