@@ -12,13 +12,19 @@ return {
 
   keys = {
     {
-      "_", -- "<leader>ss",
+      "_",
       ":Namu symbols<CR>",
       desc = "Jump to LSP symbol",
       silent = true,
     },
     {
-      "<leader>sw",
+      "<space>-",
+      ":Namu workspace<CR>",
+      desc = "LSP Symbols - Workspace",
+      silent = true,
+    },
+    {
+      "<C-t>",
       ":Namu workspace<CR>",
       desc = "LSP Symbols - Workspace",
       silent = true,

@@ -57,7 +57,7 @@ return {
     { "gCo",            b.lsp_outgoing_calls,            desc = "Outgoing calls" },
     { "gS",             b.lsp_document_symbols,          desc = "Document symbols" },
     { "gw",             b.lsp_workspace_symbols,         desc = "Workspace symbols" },
-    { "<C-t>",          b.lsp_dynamic_workspace_symbols, desc = "Workspace symbols (dynamic)" },
+    -- { "<C-t>",          b.lsp_dynamic_workspace_symbols, desc = "Workspace symbols (dynamic)" },
   },
 
   config = function()
