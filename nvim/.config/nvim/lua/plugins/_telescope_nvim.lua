@@ -105,15 +105,22 @@ return {
           },
         },
 
+        layout_strategy = "flex",
+
         layout_config = {
+          flex = {
+            flip_columns = 162,
+            flip_lines = 0,
+          },
           horizontal = {
-            height_padding = 1,
-            width = 0.98,
+            width = 0.99,
+            preview_width = 0.5,
           },
           vertical = {
-            height_padding = 1,
+            height = 0.99,
+            preview_cutoff = 22,
+            -- preview_height = 0.5,
           },
-          preview_cutoff = 180,
         },
 
         buffer_previewer_maker = buffer_previewer_maker,
