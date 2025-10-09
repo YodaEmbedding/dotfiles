@@ -37,7 +37,6 @@ if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
   if command -v fd &> /dev/null; then
     export FZF_DEFAULT_COMMAND='fd --type f'
   fi
-  export GPG_TTY=$(tty)
   if command -v bat &> /dev/null; then
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
     export MANROFFOPT="-c"
@@ -46,6 +45,10 @@ if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
   export TF_CPP_MIN_LOG_LEVEL=2
   export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
 fi
+
+
+GPG_TTY=$(tty)
+export GPG_TTY
 
 
 case "$HOSTNAME" in
