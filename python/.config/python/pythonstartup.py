@@ -1,10 +1,7 @@
 import pkgutil
 import sys
-from collections import defaultdict as defaultdict
 from importlib import import_module
 from itertools import *
-from pprint import pprint as pprint
-from time import sleep as sleep
 
 
 class LazyModule:
@@ -58,11 +55,19 @@ LazyModule("tf", "tensorflow")
 LazyModule("nn", "torch.nn")
 LazyModule("F", "torch.nn.functional")
 
+LazyObject("Counter", "collections")
+LazyObject("Path", "pathlib")
+LazyObject("dataclass", "dataclasses")
 LazyObject("datetime", "datetime")
+LazyObject("defaultdict", "collections")
+LazyObject("deque", "collections")
+LazyObject("namedtuple", "collections")
+LazyObject("pprint", "pprint")
+LazyObject("sleep", "time")
+
 LazyObject("DictConfig", "omegaconf")
 LazyObject("OmegaConf", "omegaconf")
 LazyObject("DataFrame", "pandas")
-LazyObject("Path", "pathlib")
 LazyObject("Image", "PIL.Image", getattr=False)
 LazyObject("Tensor", "torch")
 
