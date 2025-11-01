@@ -141,8 +141,11 @@ case "$HOSTNAME" in
     export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
 
     if [[ -f "$HOME/.local/spack/share/spack/setup-env.sh" ]]; then
-      source "$HOME/.local/spack/share/spack/setup-env.sh"
-      spack env activate default
+      if [[ -z "${SPACK_ENV:-}" ]]; then
+        source "$HOME/.local/spack/share/spack/setup-env.sh"
+        spack env activate default
+        # eval "$(spack env activate default --sh)"
+      fi
     fi
 
     ;;
