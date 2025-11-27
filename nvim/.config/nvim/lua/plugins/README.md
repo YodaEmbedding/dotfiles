@@ -19,7 +19,6 @@ Scored by "importance":
 | 2          | nvim_lightbulb          | ui lsp            |
 | 1          | lsp_progress_nvim       | ui lsp            |
 | 6          | gitsigns_nvim           | ui git            |
-| 2          | git_conflict_nvim       | ui git            |
 | 7          | quick_scope             | ui                |
 | 6          | nvim_treesitter_context | ui                |
 | 5          | virt_column_nvim        | ui                |
@@ -41,7 +40,6 @@ Scored by "importance":
 | 8          | smart_open_nvim         | tool navigation   |
 | 3          | flash_nvim              | tool navigation   |
 | 2          | nvim_tree_lua           | tool navigation   |
-| 1          | aerial_nvim             | tool navigation   |
 | 9          | nvim_lspconfig          | tool lsp          |
 | 4          | ltex_utils_nvim         | tool lsp          |
 | 2          | luvit_meta              | tool lsp          |
@@ -53,7 +51,6 @@ Scored by "importance":
 | 3          | vim_surround            | tool keys         |
 | 2          | targets_vim             | tool keys         |
 | 2          | lion_vim                | tool keys         |
-| 1          | nvim_various_textobjs   | tool keys         |
 | 3          | blame_nvim              | tool git          |
 | 2          | vim_fugitive            | tool git          |
 | 2          | neogit                  | tool git          |
@@ -71,9 +68,14 @@ Scored by "importance":
 | 5          | indent_o_matic          | background indent |
 | 6          | nvim_treesitter         | background        |
 | 6          | nvim_lastplace          | background        |
-| 3          | vim_bbye                | background        |
-| 1          | garbage_day_nvim        | background        |
 
+
+Disabled:
+| 3          | vim_bbye                | background        |
+| 2          | git_conflict_nvim       | ui git            |
+| 1          | nvim_various_textobjs   | tool keys         |
+| 1          | aerial_nvim             | tool navigation   |
+| 1          | garbage_day_nvim        | background        |
 
 
 `!sort -t'|' -k4,4 -rk2,2`
