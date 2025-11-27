@@ -19,7 +19,6 @@ Scored by "importance":
 | 3          | vimtex                  | tool              |
 | 4          | trouble_nvim            | tool              |
 | 3          | vim_eunuch              | tool cmd          |
-| 1          | friendly_snippets       | tool completion   |
 | 1          | vim_vsnip               | tool completion   |
 | 2          | wilder_nvim             | tool completion   |
 | 7          | copilot_cmp             | tool completion   |
@@ -63,12 +62,15 @@ Scored by "importance":
 | 7          | quick_scope             | ui                |
 | 6          | gitsigns_nvim           | ui git            |
 | 1          | lsp_progress_nvim       | ui lsp            |
-| 2          | nvim_lightbulb          | ui lsp            |
 | 3          | lsp_lens_nvim           | ui lsp            |
 | 4          | lspkind_nvim            | ui lsp            |
 | 5          | actions_preview_nvim    | ui lsp            |
 | 8          | tokyonight_nvim         | ui theme          |
 
+
+Disabled since not used often enough:
+| 2          | nvim_lightbulb          | ui lsp            |
+| 1          | friendly_snippets       | tool completion   |
 
 Disabled:
 | 3          | vim_bbye                | background        |
