@@ -12,60 +12,62 @@ Scored by "importance":
 
 | Importance | Plugin name             | Types             |
 |------------|-------------------------|-------------------|
-| 6          | nvim_lastplace          | background        |
-| 6          | nvim_treesitter         | background        |
-| 5          | indent_o_matic          | background indent |
-| 5          | nvim_yati               | background indent |
-| 3          | vimtex                  | tool              |
-| 4          | trouble_nvim            | tool              |
-| 3          | vim_eunuch              | tool cmd          |
-| 1          | vim_vsnip               | tool completion   |
-| 2          | wilder_nvim             | tool completion   |
-| 7          | copilot_cmp             | tool completion   |
-| 7          | copilot_lua             | tool completion   |
-| 9          | nvim_cmp                | tool completion   |
-| 2          | diffview_nvim           | tool git          |
-| 2          | neogit                  | tool git          |
-| 2          | vim_fugitive            | tool git          |
-| 3          | blame_nvim              | tool git          |
+| 5          | actions-preview.nvim    | ui lsp            |
+| 5          | alpha-nvim              | ui                |
+| 3          | blame.nvim              | tool git          |
+| 7          | copilot-cmp             | tool completion   |
+| 7          | copilot.lua             | tool completion   |
+| 1          | delimited.nvim          | ui                |
+| 2          | diffview.nvim           | tool git          |
+| 3          | flash.nvim              | tool navigation   |
+| 2          | focus.nvim              | ui                |
+| 6          | gitsigns.nvim           | ui git            |
+| 5          | indent-blankline.nvim   | ui                |
+| 5          | indent-o-matic          | background indent |
+| 2          | lazydev.nvim            | tool lsp          |
 | 2          | lion_vim                | tool keys         |
-| 2          | targets_vim             | tool keys         |
-| 3          | vim_surround            | tool keys         |
-| 3          | vim_trailing_whitespace | tool keys         |
-| 4          | vim_repeat              | tool keys         |
-| 6          | vim_visual_star_search  | tool keys         |
-| 7          | kommentary              | tool keys         |
-| 2          | lazydev_nvim            | tool lsp          |
-| 2          | luvit_meta              | tool lsp          |
-| 4          | ltex_utils_nvim         | tool lsp          |
-| 9          | nvim_lspconfig          | tool lsp          |
-| 2          | nvim_tree_lua           | tool navigation   |
-| 3          | flash_nvim              | tool navigation   |
-| 8          | smart_open_nvim         | tool navigation   |
-| 8          | telescope_nvim          | tool navigation   |
-| 2          | mason_lspconfig_nvim    | tool setup        |
-| 2          | mason_nvim              | tool setup        |
-| 1          | delimited_nvim          | ui                |
-| 2          | focus_nvim              | ui                |
-| 3          | nvim_hlslens            | ui                |
-| 3          | nvim_lualine            | ui                |
-| 4          | local_highlight_nvim    | ui                |
-| 4          | marks_nvim              | ui                |
+| 4          | local-highlight.nvim    | ui                |
+| 3          | lsp-lens.nvim           | ui lsp            |
+| 1          | lsp-progress.nvim       | ui lsp            |
+| 4          | lspkind-nvim            | ui lsp            |
+| 4          | ltex-utils.nvim         | tool lsp          |
+| 3          | lualine.nvim            | ui                |
+| 2          | luvit-meta              | tool lsp          |
+| 4          | marks.nvim              | ui                |
 | 4          | markview_nvim           | ui                |
-| 4          | nvim_scrollbar          | ui                |
-| 4          | todo_comments_nvim      | ui                |
-| 4          | which_key_nvim          | ui                |
-| 5          | alpha_nvim              | ui                |
-| 5          | indent_blankline_nvim   | ui                |
-| 5          | virt_column_nvim        | ui                |
-| 6          | nvim_treesitter_context | ui                |
-| 7          | quick_scope             | ui                |
-| 6          | gitsigns_nvim           | ui git            |
-| 1          | lsp_progress_nvim       | ui lsp            |
-| 3          | lsp_lens_nvim           | ui lsp            |
-| 4          | lspkind_nvim            | ui lsp            |
-| 5          | actions_preview_nvim    | ui lsp            |
-| 8          | tokyonight_nvim         | ui theme          |
+| 2          | mason-lspconfig.nvim    | tool setup        |
+| 2          | mason.nvim              | tool setup        |
+| 2          | neogit                  | tool git          |
+| 9          | nvim-cmp                | tool completion   |
+| 3          | nvim-hlslens            | ui                |
+| 6          | nvim-lastplace          | background        |
+| 9          | nvim-lspconfig          | tool lsp          |
+| 4          | nvim-scrollbar          | ui                |
+| 2          | nvim-tree.lua           | tool navigation   |
+| 6          | nvim-treesitter         | background        |
+| 6          | nvim-treesitter-context | ui                |
+| 5          | nvim-yati               | background indent |
+| 7          | quick-scope             | ui                |
+| 8          | smart-open.nvim         | tool navigation   |
+| 2          | targets.vim             | tool keys         |
+| 8          | telescope.nvim          | tool navigation   |
+| 4          | todo-comments.nvim      | ui                |
+| 8          | tokyonight.nvim         | ui theme          |
+| 4          | trouble.nvim            | tool              |
+| 3          | vim-eunuch              | tool cmd          |
+| 2          | vim-fugitive            | tool git          |
+| 4          | vim-repeat              | tool keys         |
+| 3          | vim-surround            | tool keys         |
+| 3          | vim-trailing-whitespace | tool keys         |
+| 6          | vim-visual-star-search  | tool keys         |
+| 1          | vim-vsnip               | tool completion   |
+| 3          | vimtex                  | tool              |
+| 5          | virt-column.nvim        | ui                |
+| 4          | which-key.nvim          | ui                |
+| 2          | wilder.nvim             | tool completion   |
+
+
+
 
 
 Disabled since not used often enough:
@@ -73,6 +75,7 @@ Disabled since not used often enough:
 | 1          | friendly_snippets       | tool completion   |
 
 Disabled:
+| 7          | kommentary              | tool keys         |
 | 3          | vim_bbye                | background        |
 | 2          | git_conflict_nvim       | ui git            |
 | 1          | nvim_various_textobjs   | tool keys         |
