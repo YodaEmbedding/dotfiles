@@ -24,8 +24,8 @@ Scored by "importance":
 | 6          | gitsigns.nvim           | ui git            |
 | 5          | indent-blankline.nvim   | ui                |
 | 5          | indent-o-matic          | background indent |
+| 10         | lazy.nvim               | plugin manager    |
 | 2          | lazydev.nvim            | tool lsp          |
-| 2          | lion_vim                | tool keys         |
 | 4          | local-highlight.nvim    | ui                |
 | 3          | lsp-lens.nvim           | ui lsp            |
 | 1          | lsp-progress.nvim       | ui lsp            |
@@ -34,7 +34,6 @@ Scored by "importance":
 | 3          | lualine.nvim            | ui                |
 | 2          | luvit-meta              | tool lsp          |
 | 4          | marks.nvim              | ui                |
-| 4          | markview_nvim           | ui                |
 | 2          | mason-lspconfig.nvim    | tool setup        |
 | 2          | mason.nvim              | tool setup        |
 | 2          | neogit                  | tool git          |
@@ -56,6 +55,7 @@ Scored by "importance":
 | 4          | trouble.nvim            | tool              |
 | 3          | vim-eunuch              | tool cmd          |
 | 2          | vim-fugitive            | tool git          |
+| 2          | vim-lion                | tool keys         |
 | 4          | vim-repeat              | tool keys         |
 | 3          | vim-surround            | tool keys         |
 | 3          | vim-trailing-whitespace | tool keys         |
