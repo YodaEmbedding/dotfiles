@@ -28,7 +28,7 @@ Scored by "importance":
 | 10         | lazy.nvim               | plugin manager    |
 | 2          | lazydev.nvim            | tool lsp          |
 | 4          | local-highlight.nvim    | ui                |
-| 3          | lsp-lens.nvim           | ui lsp            |
+| 2          | lsp-lens.nvim           | ui lsp            |
 | 1          | lsp-progress.nvim       | ui lsp            |
 | 4          | lspkind-nvim            | ui lsp            |
 | 4          | ltex-utils.nvim         | tool lsp          |
@@ -66,34 +66,34 @@ Scored by "importance":
 | 5          | virt-column.nvim        | ui                |
 | 4          | which-key.nvim          | ui                |
 | 2          | wilder.nvim             | tool completion   |
-|            | cmp-buffer              | tool completion   |
-|            | cmp-latex-symbols       | tool completion   |
-|            | cmp-nvim-lsp-signature-help | tool completion   |
-|            | cmp-nvim-lsp            | tool completion   |
-|            | cmp-path                | tool completion   |
-|            | cmp-tmux                | tool completion   |
-|            | cmp-vsnip               | tool completion   |
-|            | conform.nvim            | tool format       |
-|            | efmls-configs-nvim      | tool format       |
+| 3          | cmp-buffer              | tool completion   |
+| 2          | cmp-latex-symbols       | tool completion   |
+| 4          | cmp-nvim-lsp-signature-help | tool completion   |
+| 9          | cmp-nvim-lsp            | tool completion   |
+| 2          | cmp-path                | tool completion   |
+| 2          | cmp-tmux                | tool completion   |
+| 1          | cmp-vsnip               | tool completion   |
+| 5          | conform.nvim            | tool format       |
+| 5          | efmls-configs-nvim      | tool format       |
 |            | faster.nvim             | background        |
-|            | jsonfly.nvim            | tool navigation   |
-|            | match-visual.nvim       | ui                |
+| 1          | jsonfly.nvim            | tool navigation   |
+| 5          | match-visual.nvim       | ui                |
 |            | mini.nvim               | ...               |
 |            | molten-nvim             | tool              |
-|            | namu.nvim               | tool navigation   |
-|            | no-neck-pain.nvim       | ui                |
+| 3          | namu.nvim               | tool navigation   |
+| 1          | no-neck-pain.nvim       | ui                |
 |            | nvim-treesitter-textobjects | tool keys         |
-|            | nvim-web-devicons       | ui                |
+| 3          | nvim-web-devicons       | ui                |
 |            | plenary.nvim            | library           |
-|            | render-markdown.nvim    | ui                |
-|            | smear-cursor.nvim       | ui                |
+| 4          | render-markdown.nvim    | ui                |
+| 3          | smear-cursor.nvim       | ui                |
 |            | snacks.nvim             | ...               |
 |            | sqlite.lua              | library           |
 |            | telescope-all-recent.nvim | tool navigation   |
 |            | telescope-fzf-native.nvim | tool navigation   |
 |            | telescope-fzy-native.nvim | tool navigation   |
 |            | telescope-smart-history.nvim | tool navigation   |
-|            | visual-whitespace.nvim  | ui                |
+| 3          | visual-whitespace.nvim  | ui                |
 
 
 
