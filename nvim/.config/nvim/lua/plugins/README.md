@@ -81,7 +81,6 @@ Scored by "importance":
 |            | mini.nvim               | ...               |
 |            | molten-nvim             | tool              |
 | 3          | namu.nvim               | tool navigation   |
-| 1          | no-neck-pain.nvim       | ui                |
 |            | nvim-treesitter-textobjects | tool keys         |
 | 3          | nvim-web-devicons       | ui                |
 |            | plenary.nvim            | library           |
@@ -113,6 +112,7 @@ Disabled:
 | 1          | nvim_various_textobjs   | tool keys         |
 | 1          | aerial_nvim             | tool navigation   |
 | 1          | garbage_day_nvim        | background        |
+| 1          | no-neck-pain.nvim       | ui                |
 
 
 `!sort -t'|' -k4,4 -rk2,2`

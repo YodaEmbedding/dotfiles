@@ -39,7 +39,6 @@
   "mini.nvim": { "branch": "main", "commit": "126ce3328c78399dcff58272f6f540a373b62a75" },
   "namu.nvim": { "branch": "main", "commit": "6759df3cddb1d6d11442b953f8b63e64350229f3" },
   "neogit": { "branch": "master", "commit": "90dcfa7b2bd5f3f35d1a7afe24dde9e2bc482cd4" },
-  "no-neck-pain.nvim": { "branch": "main", "commit": "0463fbb77bcab4cc9716ba1e87255bbe4d002de7" },
   "nvim-cmp": { "branch": "main", "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9" },
   "nvim-hlslens": { "branch": "main", "commit": "6d42444785ea0d41555d033485910c5e78916f3b" },
   "nvim-lastplace": { "branch": "main", "commit": "0bb6103c506315044872e0f84b1f736c4172bb20" },
