@@ -29,7 +29,7 @@ if not _G.plugin_loaded("telescope.nvim") then
     { "gCi", vim.lsp.buf.incoming_calls,   desc = "Incoming calls" },
     { "gCo", vim.lsp.buf.outgoing_calls,   desc = "Outgoing calls" },
     { "gS",  vim.lsp.buf.document_symbol,  desc = "Document symbols" },
-    { "gw",  vim.lsp.buf.workspace_symbol, desc = "Workspace symbols" },
+    { "gW",  vim.lsp.buf.workspace_symbol, desc = "Workspace symbols" },
   }
   vim.list_extend(mappings, more_mappings)
 end
