@@ -268,9 +268,9 @@ alias syuz='systemctl --user stop'
 alias v='nvim'
 alias vim='nvim'
 alias vimprivate='vim -u NONE -c "setlocal history=0 nobackup nomodeline noshelltemp noswapfile noundofile nowritebackup secure viminfo=\"\""'
-alias vp='nvim_mkdir'
+alias vv='nvim_mkdir_p'
 
-nvim_mkdir() {
+nvim_mkdir_p() {
   local filename="$1"
   mkdir -p "$(dirname "$filename")"
   nvim "$filename"
