@@ -33,5 +33,14 @@ return {
 
   opts = {
     -- auto_preview = false,
+    modes = {
+      diagnostics = {
+        filter = {
+          ["not"] = {
+            severity = vim.diagnostic.severity.HINT,
+          },
+        },
+      },
+    },
   },
 }
