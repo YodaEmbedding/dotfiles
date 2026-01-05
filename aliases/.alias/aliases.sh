@@ -17,10 +17,8 @@ alias less='less -r'
 
 # ls
 LS_OPTIONS='--color=auto -h --time-style="+%Y-%m-%d %H:%M:%S" --group-directories-first'
-alias l='ll'
 alias ll='ls -l'
 alias ls="ls ${LS_OPTIONS}"
-alias ls_symbolic='ls -al --color=always | grep "\->"'
 
 # mv
 alias mv='mv -i'
@@ -67,77 +65,18 @@ alias gla='git log --color --oneline --graph --full-history --branches --remotes
 alias gle='git log --graph --decorate $(git rev-list --walk-reflogs --branches --remotes --tags)'
 alias gp='git push'
 alias gpl='git pull'
-alias gplr='git pull --rebase'
 alias grb='git rebase'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbca='git_continue "git add --update && git rebase --continue"'
 alias grbi='git rebase --interactive'
-alias gre='git reset'
 alias grs='git reset'
-alias grsh='git reset HEAD'
-alias grsh~='git reset HEAD~'
 alias gs='git status'
 alias gsh='git show'
 alias gw='git worktree'
 alias gwa='git worktree add'
 alias gwl='git worktree list'
 alias gwr='git worktree remove'
-
-alias gcd='git_commit_date_sign'
-alias gcmd='git_commit_date_sign --message'
-alias gitc='git_commit_select'
-alias gitd='git_commit_browse'
-alias gith='git_history_browse'
-
-alias chore='git_commit_message_with_prefix "chore: "'
-alias chored='git_commit_message_with_prefix "chore(deps): "'
-alias chorer='git_commit_message_with_prefix "chore(release): "'
-alias docs='git_commit_message_with_prefix "docs: "'
-alias feat='git_commit_message_with_prefix "feat: "'
-alias fix='git_commit_message_with_prefix "fix: "'
-alias perf='git_commit_message_with_prefix "perf: "'
-alias refactor='git_commit_message_with_prefix "refactor: "'
-alias style='git_commit_message_with_prefix "style: "'
-alias wip='git_commit_message_with_prefix "wip: "'
-
-alias chore:='git_commit_message_with_prefix_easy "chore: "'
-alias chored:='git_commit_message_with_prefix_easy "chore(deps): "'
-alias chorer:='git_commit_message_with_prefix_easy "chore(release): "'
-alias docs:='git_commit_message_with_prefix_easy "docs: "'
-alias feat:='git_commit_message_with_prefix_easy "feat: "'
-alias fix:='git_commit_message_with_prefix_easy "fix: "'
-alias perf:='git_commit_message_with_prefix_easy "perf: "'
-alias refactor:='git_commit_message_with_prefix_easy "refactor: "'
-alias style:='git_commit_message_with_prefix_easy "style: "'
-alias wip:='git_commit_message_with_prefix_easy "wip: "'
-
-git_commit_message_with_prefix() {
-  local prefix="$1"
-  shift 1
-  local message="$1"
-  if [ "$#" -lt 1 ]; then
-    # If no message, trim ": " from the prefix.
-    prefix="${prefix%: }"
-  else
-    shift 1
-  fi
-  local args=("$@")
-  git commit --message "${prefix}${message}" "${args[@]}"
-}
-
-git_commit_message_with_prefix_easy() {
-  local prefix="$1"
-  shift 1
-  local message="$@"
-  if [ "$#" -lt 1 ]; then
-    # If no message, trim ": " from the prefix.
-    prefix="${prefix%: }"
-  else
-    shift 1
-  fi
-  git commit --message "${prefix}${message}"
-}
 
 git_commit_browse() {
   local out=$(git log --oneline --color | fzf --ansi --multi --reverse)
@@ -229,7 +168,6 @@ git_select_commit_interactively() {
 
 # python
 alias p='python'
-alias py='python'
 
 # rsync
 alias rsync="rsync -h"
@@ -280,10 +218,6 @@ nvim_mkdir_p() {
 
 
 ### OTHER UTILITIES ###
-
-# at
-alias atqq='for j in $(atq | sort -k6,6 -k3,3M -k4,4 -k5,5 | cut -f 1); do atq | grep -P "^$j\t" | tr "\n" "\t"; at -c "$j" | tail -n 2 | head -n 1; done'
-alias atqqq='for j in $(atq | sort -k6,6 -k3,3M -k4,4 -k5,5 | cut -f 1); do atq | grep -P "^$j\t"; at -c "$j" | tail -n 2; done'
 
 # bat
 alias c="bat --pager='less -RFi'"
@@ -432,43 +366,12 @@ alias l="lfcd"
 # nix-shell
 alias nx="nix-shell"
 alias nxz='nix-shell --command "PROMPT_BGCOLOR=60 PROMPT_NAME=nix zsh"'
-alias nz='nxz'
-alias nzp='nxz -p'
-
-# nixos
-alias nxor="sudo nixos-rebuild"
-
-# nnn
-alias n='nnn'
 
 # parallel
 alias parallel='parallel --will-cite'
 
-# poetry
-alias po='poetry'
-alias poa='poetry add'
-alias poi='poetry install'
-alias pol='poetry lock'
-alias por='poetry run'
-alias porp='poetry run python'
-alias pos='poetry shell'
-alias posh='poetry_shell'
-alias pou='poetry-user'
-alias poua='poetry-user add'
-
-alias poetry-user='poetry --directory ~/.config/pypoetry/envs/default'
-
-poetry_shell() {
-  local d="$PWD"
-  cd "$1"
-  local venv="$(poetry env info --path)"
-  cd "$d"
-  source "$venv/bin/activate"
-}
-
 # ptpython
 alias pp="ptpython"
-alias ptpy='tmux rename-window "py"; pp'
 
 # ranger (open navigated folder in terminal on exit)
 alias r='ranger'
@@ -477,7 +380,6 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 # ripgrep
 alias rg="rg --hidden --glob '!.git' --smart-case"
 alias rgi='rg --ignore-case'
-alias rgs='rg --case-sensitive'
 alias rgpy='rg -t py'
 
 # stat
@@ -494,9 +396,6 @@ tarfprog() {
   tar cf - "$1" -P | pv -s $(du -sb "$1" | awk '{print $1}') | gzip > "$1.tar.gz"
 }
 
-# todo.sh
-alias t="todo.sh"
-
 # thunar
 alias th='bgrnd thunar'
 
@@ -507,14 +406,6 @@ alias uv-user-pip='uv --directory="$HOME/.config/uv/envs/default" pip'
 alias uvu='uv-user'
 alias pip='uv-user-pip'
 alias python='uv-user run python'
-
-# wtwitch
-alias tw='wtwitch'
-alias tw_online="wtwitch c | sed '/^ Offline:\$/,\$d'"
-alias tw_watch="tw_online | grep '^  ' | fzf --ansi | sed 's/^   \\([^:]\\+\\).*/\\1/' | xargs wtwitch watch"
-alias twc='tw_online'
-alias tws='wtwitch sub'
-alias tww='tw_watch'
 
 # yazi
 alias y='yazicd'
@@ -542,8 +433,6 @@ zipf() {
 ### PACKAGE MANAGEMENT ###
 
 # Pacman
-alias sp='sudo pacman'
-alias sps='sudo pacman -S'
 alias orphans='pacman -Qtdq'
 
 # AUR package managers: paru
@@ -551,32 +440,10 @@ alias parus='paru -S'
 alias paruq='paru -Qs'
 alias paruss='paru -Ss'
 
-# AUR package managers: pikaur
-alias pk='pikaur'
-alias pkq='pikaur -Qs'
-alias pks='pikaur -S --noconfirm'
-alias pku='pikaur -Syu'
-
-# AUR package managers: trizen
-alias tz='trizen'
-alias tzq='trizen -Qs'
-alias tzs='trizen --noedit -S'
-alias tzu='trizen --noedit -Syu'
-
-# AUR package managers: yay
-alias yayq='yay -Qs'
-alias yays='yay -S --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed'
-alias yayu='yay -Syu --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed --ignore="$(tr "\n" "," < ~/.pkgignorelist)"'
-alias yaya='yay -aSyu --noconfirm --nocleanmenu --nodiffmenu --noeditmenu --noredownload --norebuild --needed --ignore="$(tr "\n" "," < ~/.pkgignorelist)"'
-
 # AUR: misc
 aururl() {
   xdg-open "https://aur.archlinux.org/packages/$1"
 }
-
-# Homebrew
-alias bi='brew install'
-alias bic='brew install --cask'
 
 
 
@@ -590,10 +457,6 @@ alias commands='print -rl -- ${(k)aliases} ${(k)functions} ${(k)parameters} ${(k
 # Dropdown terminal
 alias dropdown='b alacritty --class dropdown -e tmux new-session -A -s 0 &'
 alias dropdowna='b alacritty --class dropdown -e tmux attach -t 0 &'
-
-# emoji
-alias lenny='emoji -lc'
-alias shruggie='emoji -sc'
 
 # File opening (in background)
 bgrnd() {
@@ -660,9 +523,6 @@ alias updatefrece='systemctl --user --no-block start update-frece-dir.service; s
 
 
 ### FILE PATHS ###
-
-# File common
-alias todo='vim ~/Dropbox/misc/notepad/todo-txt/todo.txt'
 
 # File config
 alias aliases='cd ~/dotfiles/aliases/.alias; f="$(fd | fzf)" && vim "$f"'
