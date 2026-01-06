@@ -10,6 +10,7 @@ alias .....='cd ../../../..'
 alias ......='cd ../../../../..'
 alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
+alias .,='d=$(p=$PWD; while print -r -- "$p" && [[ $p != / ]]; do p=${p:h}; done | fzf) && cd -- "$d"'
 
 # cp
 alias cp='cp -i'
