@@ -20,8 +20,6 @@ return {
 
   opts = {
     dictionary = {
-      -- path = vim.api.nvim_call_function("stdpath", { "state" }) .. "/ltex/",
-      -- path = vim.api.nvim_call_function("stdpath", { "config" }) .. "/spell/",
       path = vim.fn.stdpath("config") .. "/spell/",
 
       filename = function(lang)
@@ -35,18 +33,10 @@ return {
         local encoding = "utf-8"
         -- NOTE: This encoding is evaluated after entering (good) and after leaving (bad) the buffer.
         -- local encoding = vim.api.nvim_buf_get_option(0, "fileencoding")
+
         local filename = lang_prefix .. "." .. encoding .. ".add"
-
-        -- print(lang, encoding, filename)
-
         return filename
       end,
     },
-  },
-
-  _ = {
-    on_attach = function(client, bufnr)
-      require("ltex-utils").on_attach(bufnr)
-    end,
   },
 }
