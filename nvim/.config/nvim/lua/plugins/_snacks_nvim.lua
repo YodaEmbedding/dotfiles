@@ -13,6 +13,7 @@ return {
     -- bigfile = { enabled = true },
     -- dashboard = { enabled = true },
     -- explorer = { enabled = true },
+    -- image = { enabled = true },
     -- indent = { enabled = true },
     -- input = { enabled = true },
     -- picker = { enabled = true },
