@@ -45,6 +45,7 @@ return {
       -- "hls",
       -- "jdtls",
       -- "ltex",
+      -- "ltex_plus",
       -- "kotlin_language_server",
       -- "metals",
       -- "pylyzer",
