@@ -1,6 +1,10 @@
 return {
   "nvim-focus/focus.nvim",
 
+  init = function()
+    vim.g.focus_disable = true
+  end,
+
   config = function()
     require("focus").setup {
       autoresize = {
