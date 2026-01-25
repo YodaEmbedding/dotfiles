@@ -28,7 +28,7 @@ return {
     -- Also helps with synctex:
     vim.g.vimtex_view_method = (
       (vim.fn.executable("zathura") == 1 and "zathura") or
-      (vim.fn.executable("skim") == 1 and "skim") or
+      (vim.fn.executable("skimpdf") == 1 and "skim") or
       nil
     )
   end,
