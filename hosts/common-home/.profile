@@ -44,6 +44,7 @@ if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
   export RUST_BACKTRACE=1
   export TF_CPP_MIN_LOG_LEVEL=2
   export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
+  export UV_NO_SYNC=1
 fi
 
 
