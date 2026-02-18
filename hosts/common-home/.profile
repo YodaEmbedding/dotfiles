@@ -138,6 +138,9 @@ case "$HOSTNAME" in
     SHELL=$(which zsh)
     export SHELL
 
+    export TMPDIR="$HOME/data/tmp/tmpdir"
+    mkdir -p "$TMPDIR"
+
     export CURL_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
     export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
 
