@@ -139,7 +139,8 @@ case "$HOSTNAME" in
     export SHELL
 
     export TMPDIR="$HOME/data/tmp/tmpdir"
-    mkdir -p "$TMPDIR"
+    export TMPDIR="/dev/shm/$USER/slurm-${SLURM_JOB_ID}"
+    mkdir -p -m 700 "$TMPDIR"
 
     export CURL_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
     export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
