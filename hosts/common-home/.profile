@@ -144,6 +144,8 @@ case "$HOSTNAME" in
 
     export CURL_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
     export SSL_CERT_FILE=/etc/ssl/certs/ca-bundle.crt
+    export HF_DATASETS_CACHE="$(readlink -f "$HOME/.cache/huggingface")/datasets"
+    export HF_HUB_CACHE="$(readlink -f "$HOME/.cache/huggingface")/hub"
 
     if [[ -f "$HOME/.local/spack/share/spack/setup-env.sh" ]]; then
       if [[ -z "${SPACK_ENV:-}" ]]; then
