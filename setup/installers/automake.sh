@@ -16,4 +16,11 @@ tar xf "$PKGNAME-$VERSION.tar.gz"
 cd "$PKGNAME-$VERSION" || exit 1
 
 ./configure --prefix=$HOME/.local
+
+# Fixes:
+# help2man: can't get `--help' info from automake-1.16
+# Try `--no-discard-stderr' if option outputs to stderr
+sed -i 's/help2man/help2man --no-discard-stderr/g' Makefile
+
+make
 make install
