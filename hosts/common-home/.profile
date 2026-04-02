@@ -150,9 +150,13 @@ case "$HOSTNAME" in
 
     if [[ -f "$HOME/.local/spack/share/spack/setup-env.sh" ]]; then
       if [[ -z "${SPACK_ENV:-}" ]]; then
+        # export SPACK_PYTHON="/pa/apps/python/cpython-3.13.1-linux-x86_64-gnu/bin/python"
         export SPACK_PYTHON="$HOME/.local/share/uv/python/cpython-3.14.0rc1-linux-x86_64-gnu/bin/python"
+        echo "$(date +%T) Starting spack setup..."
         source "$HOME/.local/spack/share/spack/setup-env.sh"
+        echo "$(date +%T) Finished spack setup."
         spack env activate default
+        echo "$(date +%T) Finished spack env activate default."
         # eval "$(spack env activate default --sh)"
       fi
     fi
