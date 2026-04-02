@@ -140,6 +140,7 @@ case "$HOSTNAME" in
 
     export TMPDIR="$HOME/data/tmp/tmpdir"
     export TMPDIR="/dev/shm/$USER/slurm-${SLURM_JOB_ID}"
+    export TMPDIR="/var/tmp/$USER/slurm-${SLURM_JOB_ID}"
     mkdir -p -m 700 "$TMPDIR"
 
     export CURL_CA_BUNDLE=/etc/ssl/certs/ca-bundle.crt
