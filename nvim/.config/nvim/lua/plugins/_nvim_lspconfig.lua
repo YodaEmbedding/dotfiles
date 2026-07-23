@@ -13,7 +13,7 @@ return {
 
     -- Enabled servers:
     servers = {
-      "basedpyright",
+      -- "basedpyright",
       "bashls",
       -- "ccls",
       "clangd",
@@ -26,6 +26,7 @@ return {
       -- "ltex",
       "ltex_plus",
       "lua_ls",
+      "pyrefly",
       -- "pyright",
       -- "ruff",
       "rust_analyzer",

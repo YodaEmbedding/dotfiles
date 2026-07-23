@@ -13,6 +13,7 @@ return {
       "basedpyright",
       "bashls",
       "lua_ls",
+      "pyrefly",
       "ruff",
       "vimls",
 
