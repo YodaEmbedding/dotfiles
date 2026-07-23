@@ -42,6 +42,7 @@ if [[ -z "${_COMMON_PROFILE_LOADED:-}" ]]; then
     export MANROFFOPT="-c"
   fi
   export RUST_BACKTRACE=1
+  export SQUEUE_FORMAT="%.14i %.9P %.18j %.8u %.2t %.11M %.1D %.16R"
   export TF_CPP_MIN_LOG_LEVEL=2
   export TMUX_STATUS_STYLE="bold,bg=colour234,fg=colour250"
   export TQDM_DYNAMIC_NCOLS=1
