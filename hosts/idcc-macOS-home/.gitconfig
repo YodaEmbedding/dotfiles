@@ -12,6 +12,9 @@
 [credential]
     helper = cache --timeout=86400
 
+[rerere]
+	enabled = true
+
 [worktree]
 	useRelativePaths = true
 
