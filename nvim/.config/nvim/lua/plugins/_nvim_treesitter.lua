@@ -3,11 +3,16 @@ return {
   branch = "main",
   version = false,
   lazy = false,
+
+  dependencies = {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  },
+
   build = ":TSUpdate",
   config = function()
     local ts = require("nvim-treesitter")
     ts.setup({})
-    ts.install {
+    local parsers = {
       "asm",
       "bash",
       "bibtex",
@@ -127,6 +132,8 @@ return {
         attach(buf)
       end)
     end
+
+    ts.install(parsers)
 
     vim.keymap.set("n", "gnn", function()
       vim.treesitter.select("parent", vim.v.count1)
