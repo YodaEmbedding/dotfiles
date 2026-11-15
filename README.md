@@ -37,6 +37,9 @@ stow -t ~ -d hosts common-home
 
 ## Configuration Details
 
+See [Neovim configuration provenance and migration notes](docs/neovim-provenance.md)
+for source examples, local customizations, and upgrade decisions.
+
 List of configs, which directories these belong in, and other details.
 
 | Name           | Stow dir | Dependencies                                         | Details                                          |
