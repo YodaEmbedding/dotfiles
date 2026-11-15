@@ -12,6 +12,9 @@
 [credential]
     helper = cache --timeout=86400
 
+[worktree]
+	useRelativePaths = true
+
 [url "git@github.com:"]
     insteadOf = https://github.com
 
