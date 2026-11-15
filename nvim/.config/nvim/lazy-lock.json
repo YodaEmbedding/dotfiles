@@ -42,7 +42,7 @@
   "nvim-hlslens": { "branch": "main", "commit": "be2d7b2be01860b5445a007ff2bc72b29896db6b" },
   "nvim-lastplace": { "branch": "main", "commit": "0bb6103c506315044872e0f84b1f736c4172bb20" },
   "nvim-lspconfig": { "branch": "master", "commit": "05588aab66016c6836634b87ca2d392d097515f2" },
-  "nvim-scrollbar": { "branch": "main", "commit": "00fe857e7cd97ee5e556de643ee920b003a96b03" },
+  "nvim-scrollbar": { "branch": "refactor/v2", "commit": "577c488dc6f30cd0e2faa5eebe6e19f7d343181e" },
   "nvim-tree.lua": { "branch": "master", "commit": "5cc8d425c2bf3c09041a2db3cfff6197e2dce34d" },
   "nvim-treesitter": { "branch": "master", "commit": "42fc28ba918343ebfd5565147a42a26580579482" },
   "nvim-treesitter-context": { "branch": "master", "commit": "8decd73460d26ef0a0befb745d022dd1fc2c38b8" },
