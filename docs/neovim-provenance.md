@@ -13,9 +13,10 @@ settings.
 
 | Component | Current configuration | Migration status |
 | --- | --- | --- |
-| Treesitter | `main` with curated parsers, LaTeX exclusion and native selection keys | Customizations applied after the template pass; installed checkout/parser updates remain pending |
-| Treesitter textobjects | Separate `main` spec with restored options and buffer-local editing keys | Customizations applied; mapping precedence checked headlessly |
+| Treesitter | `main` with curated parsers, LaTeX exclusion and native selection keys | Installed checkout matches the lockfile; automatic CLI/first-install flow tested with a local fixture |
+| Treesitter textobjects | Separate `main` spec with restored options and buffer-local editing keys | Installed checkout matches the lockfile; normal startup/FileType attachment retained |
 | Yati | Disabled; standard Treesitter indentation is the current trial, including Python | A compatible Yati port or another Python indenter remains an alternative |
+| CLI provisioning | Mason tool installer synchronously ensures a missing `tree-sitter-cli` before Treesitter loads | Fresh installation and the existing-CLI fast path tested |
 | Scrollbar | `refactor/v2`, native named marks and search | Applied in local commit `2fe01b2` |
 | hlslens | Independent `opts = {}` setup | Old scrollbar adapter removed in `2fe01b2` |
 | render-markdown | Eleven Minimal-style checkbox meanings and custom glyphs | Applied in `05918d9`; retain during Treesitter work |
@@ -255,8 +256,9 @@ been settled.
 | Parser updates during plugin builds | Retain an update/install workflow compatible with the chosen branch |
 
 The reviewed `main` README requires Neovim 0.12 or later and a tree-sitter CLI
-of at least 0.26.1. No `tree-sitter` executable was found on the shell PATH
-during this audit.
+of at least 0.26.1. The CLI was absent at the initial audit; a later inspection
+found Mason-managed version 0.27.2. The automatic provisioning added below
+removes the need for a separate Homebrew installation on each machine.
 Disabling each consumer is not the underlying fix. After migration, retest
 Markdown with fenced code through indent-o-matic, render-markdown, and
 treesitter-context, as well as Python indentation and the mappings above.
@@ -294,7 +296,8 @@ locally cached `origin/main` refs inspected during this audit. This does not
 mean the installed plugin checkouts or parsers have already been updated.
 The required CLI was not found, so full runtime validation remains pending.
 
-Local commit `ed1d685` contains only the two Treesitter specs, the Yati
+Local commit `63ae103` (originally `ed1d685` before history was reorganized)
+contains only the two Treesitter specs, the Yati
 disabling, and the lockfile changes. The personal layer, other plugins,
 and unrelated working changes remain outside that commit. The old parser
 inventory and bindings remain preserved above and in the appendix for later
@@ -325,8 +328,10 @@ list and preserved in full in the historical appendix:
 | `zathurarc` | Not listed in the reviewed main catalog; leave deferred rather than inventing an unverified parser definition |
 
 Availability was checked against the moving upstream catalog on 2026-11-15.
-The installed checkouts still need updating to the pinned revisions; verify the
-actual installer results then. No new parser dependencies are added merely to
+At the time of this customization pass, the installed checkouts still needed
+updating. A later inspection during CLI provisioning confirmed that both now
+match the lockfile; the complete 83-parser inventory has not been rebuilt as
+part of the isolated validation. No new parser dependencies are added merely to
 replace these two unavailable grammars.
 
 Headless validation used real locally installed Lua/Python/LaTeX parsers while
@@ -335,7 +340,77 @@ the LaTeX exclusion, selection growth/shrink, Python indentation precedence,
 buffer-local mapping precedence, and unsupported-filetype guards. All plugin
 specs passed Lua syntax checks. These checks do not exercise the new installer
 or the new textobjects plugin's selection/movement/swap algorithms. Full
-end-to-end validation still requires plugin/parser updates and the missing CLI.
+end-to-end validation was deferred at this stage. The later CLI provisioning
+pass below adds a real installer/CLI/parser fixture test; it is not a rebuild
+of every configured language.
+
+### Third pass: automatic CLI provisioning
+
+The user requested automatic setup when bringing these dotfiles to another
+machine. Homebrew is an optional installation method, not a required part of
+that workflow. The CLI itself remains a dependency of the rewritten parser
+installer.
+
+Configuration: [Mason tool installer spec](../nvim/.config/nvim/lua/plugins/_mason_tool_installer_nvim.lua).
+
+```lua
+return {
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
+
+  dependencies = {
+    "williamboman/mason.nvim",
+  },
+
+  opts = {
+    ensure_installed = { "tree-sitter-cli" },
+    run_on_start = false,
+  },
+
+  config = function(_, opts)
+    require("mason-tool-installer").setup(opts)
+
+    if vim.fn.executable("tree-sitter") == 0 then
+      vim.cmd.MasonToolsInstallSync()
+    end
+  end,
+}
+```
+
+The helper is pinned in the lockfile to
+`443f1ef8b5e6bf47045cb2217b6f748a223cf7dc`. Its source was downloaded at that
+exact revision into a temporary directory and inspected for this change.
+Sources: [helper configuration](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim/blob/443f1ef8b5e6bf47045cb2217b6f748a223cf7dc/README.md),
+[Mason's CLI package](https://github.com/mason-org/mason-registry/blob/main/packages/tree-sitter-cli/package.yaml),
+and the [LazyVim CLI-bootstrap example](https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/treesitter.lua).
+The helper handles registry refresh, downloading and installation errors.
+Existing C compiler, archive-tool and network requirements still apply.
+
+Treesitter depends on the helper, which depends on Mason. Mason setup makes its
+bin directory available to Neovim. The helper's config checks for the executable
+and calls `MasonToolsInstallSync` only when it is missing. This finishes CLI
+installation before the dependency's setup returns, so ordinary plugin load
+ordering is sufficient. An existing executable skips the installation check.
+
+`run_on_start = false` disables the helper's separate background startup check;
+the explicit config call performs the synchronous check instead. Treesitter
+uses the normal `:TSUpdate` build command and `ts.install(parsers)` directly.
+There is no `with_cli` wrapper or custom registry-event listener.
+
+This favors a smaller configuration over nonblocking first-time setup. A new
+machine waits for the CLI download during startup. Parser installation remains
+asynchronous, and one restart may be needed after the initial parser download
+before highlighting and textobjects attach. The configuration deliberately
+omits automatic post-install reattachment and temporary migration guards.
+
+Validation used isolated data/cache/state directories and the actual helper,
+Mason, CLI, Treesitter and textobjects. A local compressed CLI archive replaced
+the remote download, and a tiny local grammar replaced the 83-language install
+request. The fresh-install check verified that the synchronous config returned
+only after the CLI was executable and that parser builds then succeeded. A
+second Neovim launch verified that an existing CLI skipped installer/registry
+work and that highlighting, indentation, selection, movement and swapping
+worked normally. The configured parser inventory was preserved. No installed
+plugin checkouts or user parser directories were changed by the tests.
 
 ### Source snapshots for the new templates
 
@@ -397,11 +472,16 @@ return {
   branch = "main",
   version = false,
   lazy = false,
+
+  dependencies = {
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  },
+
   build = ":TSUpdate",
   config = function()
     local ts = require("nvim-treesitter")
     ts.setup({})
-    ts.install {
+    local parsers = {
       "asm",
       "bash",
       "bibtex",
@@ -522,6 +602,8 @@ return {
       end)
     end
 
+    ts.install(parsers)
+
     vim.keymap.set("n", "gnn", function()
       vim.treesitter.select("parent", vim.v.count1)
     end)
@@ -535,9 +617,10 @@ return {
 }
 ```
 
-Installation is asynchronous. If a parser or query is not yet installed at
-attachment time, reopen the buffer after installation. Automatic attachment
-immediately after a first install is not provided by this configuration.
+Installation is asynchronous. A fresh setup may require one Neovim restart
+after the initial parser installation before highlighting and textobjects
+attach; the configuration deliberately omits automatic post-install
+reattachment.
 Native parent/child selection replaces the old selection module; it is not a
 claim of identical node choice in every situation.
 
