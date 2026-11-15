@@ -9,7 +9,7 @@ source "${SCRIPT_DIR}/_utils.sh" || exit 1
 init_install_dir
 
 PKGNAME="gettext"
-VERSION=0.21
+VERSION=1.0
 
 wget -nc "https://ftp.gnu.org/gnu/$PKGNAME/$PKGNAME-$VERSION.tar.gz"
 tar xf "$PKGNAME-$VERSION.tar.gz"
